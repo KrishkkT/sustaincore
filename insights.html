@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights | SustainCore Sustainability Intelligence</title>
-    <meta name="description"
-        content="Read the latest analysis on ESG trends, carbon regulations, and environmental policy from SustainCore's technical experts.">
+    <title>Insights | SustainCore ESG & Regulatory Intelligence</title>
+    <meta name="description" content="Technical analysis on carbon markets, CBAM policy, and ESG disclosure standards. Informed by SustainCore's industrial consulting expertise.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,15 +20,24 @@
     <!-- Header Placeholder -->
     <div id="header-root"></div>
 
-    <main class="pt-40">
+    <main class="relative min-h-screen">
+        <!-- Animated Background Elements -->
+        <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-20">
+            <svg class="absolute top-[10%] left-[-5%] w-[1000px] h-[1000px] text-brand-blue/10 animate-pulse-slow" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <rect x="50" y="50" width="100" height="100" stroke="currentColor" stroke-width="0.2" fill="none" transform="rotate(45 100 100)" />
+            </svg>
+        </div>
+
         <!-- Header -->
-        <section class="max-w-7xl mx-auto px-6 mb-32 border-b border-slate-200 pb-20">
-            <h1 class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter">
-                Global <span class="italic text-brand-blue">Intelligence.</span>
-            </h1>
-            <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
-                Technical analysis and regulatory deep-dives for the sustainability-conscious enterprise.
-            </p>
+        <section class="max-w-7xl mx-auto px-6 py-40 mb-32 border-b border-slate-200 relative">
+            <div class="reveal-on-scroll">
+                <h1 class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter leading-none">
+                    Global <span class="italic text-brand-blue">Intelligence.</span>
+                </h1>
+                <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
+                    Technical analysis and regulatory deep-dives for the sustainability-conscious enterprise.
+                </p>
+            </div>
         </section>
 
         <!-- Insights Grid (Paper Style) -->

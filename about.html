@@ -4,9 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | The SustainCore Methodology</title>
-    <meta name="description"
-        content="Learn about SustainCore's science-led approach to environmental sustainability and regulatory compliance.">
+    <title>About Us | SustainCore Methodology & Science-Led Mandate</title>
+    <meta name="description" content="Discover SustainCore's industrial engineering approach to ESG. We treat sustainability as a technical challenge, not a marketing one.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,18 +20,28 @@
     <!-- Header Placeholder -->
     <div id="header-root"></div>
 
-    <main class="pt-40">
+    <main class="relative">
+        <!-- Animated Background Elements -->
+        <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden opacity-30">
+            <svg class="absolute top-0 right-0 w-[800px] h-[800px] text-brand-blue/10 animate-pulse-slow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="0.5" stroke-dasharray="2 4" />
+            </svg>
+            <svg class="absolute bottom-[-100px] left-[-100px] w-[600px] h-[600px] text-brand-green/10 animate-spin-slow" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 20C55.8 20 20 55.8 20 100S55.8 180 100 180 180 144.2 180 100" stroke="currentColor" stroke-width="0.5" stroke-dasharray="1 5" />
+            </svg>
+        </div>
+
         <!-- Hero -->
-        <section class="max-w-7xl mx-auto px-6 mb-32">
-            <h1 class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter">
-                Our <span
-                    class="bg-gradient-to-r from-brand-blue to-brand-green bg-clip-text text-transparent italic">Scientific</span>
-                Mandate.
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-500 max-w-2xl leading-relaxed">
-                We believe that sustainability is not a marketing problem, but a technical one. We solve it with
-                rigorous data and regulatory integrity.
-            </p>
+        <section class="max-w-7xl mx-auto px-6 py-40 mb-32 relative">
+            <div class="reveal-on-scroll">
+                <h1 class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter leading-none">
+                    Our <span class="bg-gradient-to-r from-brand-blue to-brand-green bg-clip-text text-transparent italic">Scientific</span> Mandate.
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-500 max-w-2xl leading-relaxed">
+                    We believe that sustainability is not a marketing problem, but a technical one. We solve it with
+                    rigorous data and regulatory integrity.
+                </p>
+            </div>
         </section>
 
         <!-- Vision/Mission -->
