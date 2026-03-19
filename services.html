@@ -20,23 +20,28 @@
     <!-- Header Placeholder -->
     <div id="header-root"></div>
 
-    <main class="pt-32">
+    <main>
         <!-- Hero Section -->
-        <section class="relative h-screen flex items-center justify-center overflow-hidden bg-brand-charcoal">
-            <video class="absolute inset-0 w-full h-full object-cover z-0" playsinline autoplay muted loop>
+        <section class="relative h-[95vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-charcoal">
+            <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-80" playsinline autoplay muted loop>
                 <source src="/public/services_animation.mp4" type="video/mp4">
             </video>
             
-            <div class="absolute inset-0 z-10 bg-[#0b5394]/70 backdrop-blur-[2px]"></div>
+            <!-- Dark Gradient Overlay -->
+            <div class="absolute inset-0 z-10 bg-gradient-to-br from-brand-blue/80 via-brand-charcoal/70 to-brand-charcoal/90"></div>
+            
+            <!-- Subtle light effect -->
+            <div class="absolute inset-0 z-10 opacity-30 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_60%)]"></div>
 
             <div class="relative z-20 max-w-7xl mx-auto px-6 text-center animate-fade-in">
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8">
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-10">
+                    <span class="w-1.5 h-1.5 rounded-full bg-brand-lightGreen animate-pulse"></span>
                     <span class="text-[10px] font-bold tracking-[0.3em] text-white/80 uppercase">Service Intelligence</span>
                 </div>
-                <h1 class="text-5xl md:text-8xl font-display font-extrabold text-white mb-8 tracking-tighter">
+                <h1 class="text-5xl md:text-[6.5rem] font-display font-extrabold text-white mb-8 tracking-tighter leading-[1]">
                     Strategic <span class="italic text-brand-lightGreen">Precision.</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+                <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light mb-14">
                     We bridge the gap between complex environmental data and boardroom-ready strategy.
                 </p>
             </div>
