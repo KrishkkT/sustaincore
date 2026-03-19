@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustaincore ESG Consulting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            color: #0b2b1e;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            /* Dark gradient overlay using brand color (#0b5394) */
+            background: linear-gradient(135deg, rgba(11,83,148,0.85) 0%, rgba(6,32,58,0.7) 100%);
+            z-index: 1;
+        }
+        
+        /* Optional: Light floating particles (simulate reflection) */
+        .hero-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08) 0%, transparent 60%);
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+            color: #ffffff;
+        }
+        .hero-headline {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(40px, 6vw, 70px);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+        .hero-subtext {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 300;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* --- Services Section --- */
+        .services-section {
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .section-header {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+
+        .section-label {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #2E8B57;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-label::before, .section-label::after {
+            content: '';
+            width: 30px;
+            height: 1px;
+            background: #2E8B57;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: #0b2b1e;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            perspective: 1500px;
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .services-grid { grid-template-columns: 1fr; }
+            .hero-headline { margin-bottom: 1rem; }
+            .section-header { margin-bottom: 3rem; }
+        }
+
+        /* --- Flip Card Corporate Design --- */
+        .card {
+            background-color: transparent;
+            width: 100%;
+            height: 320px;
+            perspective: 1200px;
+            cursor: pointer;
+        }
+        
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(11, 43, 30, 0.05);
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg) translateY(-5px);
+            box-shadow: 0 20px 40px rgba(11, 43, 30, 0.1);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(11, 43, 30, 0.05);
+            background: #ffffff;
+        }
+
+        /* Front Side */
+        .card-front {
+            justify-content: space-between;
+            z-index: 2;
+            background: linear-gradient(145deg, #ffffff 0%, #fcfdfe 100%);
+        }
+
+        .card-tag {
+            align-self: flex-start;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        
+        .tag-eu { background: #eef2ff; color: #0b5394; }
+        .tag-global { background: #e6f4ea; color: #2E8B57; }
+        .tag-india { background: #fff5e6; color: #d97706; }
+
+        .card-front-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #0b2b1e;
+            line-height: 1.25;
+            margin-top: 1.5rem;
+        }
+
+        .card-icon {
+            margin-top: auto;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(46, 139, 87, 0.08);
+            border-radius: 50%;
+            color: #2E8B57;
+            transition: all 0.3s ease;
+        }
+
+        /* Back Side */
+        .card-back {
+            transform: rotateY(180deg);
+            background: #fafafb;
+            justify-content: space-between;
+            border: 1px solid rgba(46, 139, 87, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-back::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: #2E8B57;
+        }
+
+        .card-back-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0b2b1e;
+            margin-bottom: 1rem;
+        }
+
+        .card-back-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #556b60;
+            font-weight: 400;
+        }
+
+        .card-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2E8B57;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: opacity 0.2s;
+            margin-top: auto;
+        }
+        .card-link:hover {
+            opacity: 0.7;
+        }
+        .card-link svg {
+            width: 14px; height: 14px;
+        }
+
+        /* --- Footer / View All --- */
+        .view-all-container {
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0b2b1e;
+            color: #ffffff;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 14px 32px;
+            border-radius: 30px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .btn-primary:hover {
+            background: #ffffff;
+            color: #0b2b1e;
+            border-color: #0b2b1e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <video class="hero-video" playsinline autoplay muted loop>
+            <source src="public/hero_animation.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-headline fade-in-up">Your Environmental & Sustainability Partner</h1>
+            <p class="hero-subtext fade-in-up delay-1">Helping businesses achieve ESG compliance, carbon accountability, and regulatory excellence.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-header">
+            <div class="section-label">Our Impact</div>
+            <h2 class="section-title">Where we make the difference.</h2>
+        </div>
+
+        <div class="services-grid">
+            
+            <!-- CBAM -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-tag tag-eu">EU Regulation</span>
+                        <h3 class="card-front-title">CBAM Advisory & Reporting</h3>
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div>
+                            <h4 class="card-back-title">CBAM Advisory</h4>
+                            <p class="card-back-desc">The EU's Carbon Border Adjustment Mechanism taxes embedded emissions on imports into the EU. We help exporters calculate, report and comply with obligations before financial penalties.</p>
+                        </div>
+                        <a href="#" class="card-link">Read more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IREC -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-tag tag-global">Global Standards</span>
+                        <h3 class="card-front-title">IREC Certification</h3>
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div>
+                            <h4 class="card-back-title">IREC Certification</h4>
+                            <p class="card-back-desc">International Renewable Energy Certificates verify that 1 MWh of energy was generated from a renewable source. We manage the full certification process from issuance to retirement.</p>
+                        </div>
+                        <a href="#" class="card-link">Read more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carbon Credits -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-tag tag-global">Net Zero</span>
+                        <h3 class="card-front-title">Carbon Credits</h3>
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div>
+                            <h4 class="card-back-title">Carbon Credits</h4>
+                            <p class="card-back-desc">We help businesses offset Scope 1, 2 and 3 emissions through verified carbon credits — sourced, validated and retired to standards including GHG Protocol and ISO 14064.</p>
+                        </div>
+                        <a href="#" class="card-link">Read more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EcoVadis -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-tag tag-global">Supply Chain</span>
+                        <h3 class="card-front-title">EcoVadis Assessment</h3>
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div>
+                            <h4 class="card-back-title">EcoVadis Assessment</h4>
+                            <p class="card-back-desc">EcoVadis is a globally recognised platform that evaluates a company's performance across four pillars: environment, labour, ethics, and sustainable procurement.</p>
+                        </div>
+                        <a href="#" class="card-link">Read more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BRSR -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-tag tag-india">SEBI Mandate</span>
+                        <h3 class="card-front-title">BRSR Reporting</h3>
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div>
+                            <h4 class="card-back-title">BRSR Reporting</h4>
+                            <p class="card-back-desc">Business Responsibility & Sustainability Reporting is mandatory for India's top listed companies. We handle data collection, gap analysis, and SEBI submission end to end.</p>
+                        </div>
+                        <a href="#" class="card-link">Read more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GPCB -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <span class="card-tag tag-india">Regulatory</span>
+                        <h3 class="card-front-title">GPCB Compliance</h3>
+                        <div class="card-icon">
+                            <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                    </div>
+                    <div class="card-back">
+                        <div>
+                            <h4 class="card-back-title">GPCB Compliance</h4>
+                            <p class="card-back-desc">The Gujarat Pollution Control Board mandates CTE and CTO consents. We manage documentation, inspections, and regulatory submissions from application to NOC approval.</p>
+                        </div>
+                        <a href="#" class="card-link">Read more <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="view-all-container">
+            <a href="#" class="btn-primary">View all services <span>&rarr;</span></a>
+        </div>
+    </section>
+
+</body>
+</html>

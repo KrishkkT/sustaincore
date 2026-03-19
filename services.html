@@ -19,159 +19,158 @@
     <div id="header-root"></div>
 
     <main class="pt-32">
-        <!-- Hero -->
-        <section class="max-w-7xl mx-auto px-6 mb-32">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8">
-                <span class="text-xs font-bold tracking-widest text-brand-blue uppercase">Full Capacities</span>
+        <!-- Hero Section -->
+        <section class="relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden bg-brand-charcoal">
+            <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-70" playsinline autoplay muted loop>
+                <source src="public/hero_animation.mp4" type="video/mp4">
+            </video>
+            
+            <div class="absolute inset-0 z-10 bg-gradient-to-br from-brand-blue/80 via-brand-charcoal/70 to-brand-charcoal/90"></div>
+
+            <div class="relative z-20 max-w-7xl mx-auto px-6 text-center animate-fade-in">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-8">
+                    <span class="text-[10px] font-bold tracking-[0.3em] text-white/80 uppercase">Service Intelligence</span>
+                </div>
+                <h1 class="text-5xl md:text-8xl font-display font-extrabold text-white mb-8 tracking-tighter">
+                    Strategic <span class="italic text-brand-lightGreen">Precision.</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto leading-relaxed font-light">
+                    We bridge the gap between complex environmental data and boardroom-ready strategy.
+                </p>
             </div>
-            <h1 class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter">
-                Strategic <span class="italic text-brand-green">Precision.</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-slate-500 max-w-2xl leading-relaxed">
-                We bridge the gap between complex environmental data and boardroom-ready strategy.
-            </p>
         </section>
 
-        <!-- Services Grid with Slider -->
-        <section class="max-w-7xl mx-auto px-6 pb-32">
-            <div class="max-w-7xl mx-auto px-6 mb-24 rounded-4xl overflow-hidden shadow-2xl">
-                <img src="/renewable_energy_innovation_1772785077991.png" alt="Renewable Energy Transition"
-                    class="w-full h-[400px] object-cover">
-            </div>
-
-            <div class="flex items-center justify-between mb-12">
-                <h2 class="text-4xl font-bold text-brand-charcoal">Global Capacities</h2>
-                <div class="flex gap-4">
-                    <button id="prev-btn"
-                        class="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                            class="rotate-180">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </button>
-                    <button id="next-btn"
-                        class="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center hover:bg-brand-blue hover:text-white hover:border-brand-blue transition-all group">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="overflow-hidden relative" id="service-slider-container">
-                <div class="flex gap-12 transition-transform duration-500 ease-out" id="service-slider"
-                    style="width: max-content;">
-                    <!-- ESG Capability -->
-                    <div class="card p-12 flex flex-col justify-between group min-w-[400px] max-w-[450px]" id="esg">
-                        <div>
-                            <div class="text-brand-blue font-bold tracking-widest text-xs uppercase mb-10">Capacity 01
-                                // ESG</div>
-                            <h2 class="text-4xl font-bold mb-8 group-hover:text-brand-blue transition-colors">ESG
-                                Disclosures & <br />Advisory</h2>
-                            <p class="text-slate-500 text-lg mb-12 leading-relaxed">Complete alignment with BRSR, GRI,
-                                and SASB. We prepare audit-ready disclosures that stand up to institutional scrutiny.
-                            </p>
-                            <div class="grid grid-cols-2 gap-4 mb-12">
-                                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 italic font-medium">
-                                    Audit Transparency</div>
-                                <div class="p-6 rounded-3xl bg-slate-50 border border-slate-100 italic font-medium">
-                                    Stakeholder Mapping</div>
-                            </div>
-                        </div>
-                        <div class="pt-8 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-slate-400 font-medium">View Frameworks</span>
-                            <div
-                                class="w-12 h-12 rounded-full bg-brand-charcoal flex items-center justify-center text-white group-hover:bg-brand-blue transition-all">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Carbon Capability -->
-                    <div class="card p-12 flex flex-col justify-between group min-w-[400px] max-w-[450px]" id="carbon">
-                        <div>
-                            <div class="text-brand-green font-bold tracking-widest text-xs uppercase mb-10">Capacity 02
-                                // CLIMATE</div>
-                            <h2 class="text-4xl font-bold mb-8 group-hover:text-brand-green transition-colors">Carbon
-                                Inventory & <br />LCA Analysis</h2>
-                            <p class="text-slate-500 text-lg mb-12 leading-relaxed">Precision carbon footprinting across
-                                Scope 1, 2, and 3. Life Cycle Assessments that reveal hidden efficiencies.</p>
-                            <div class="grid grid-cols-1 gap-4 mb-12">
-                                <div
-                                    class="p-6 rounded-3xl bg-brand-charcoal text-white flex items-center justify-between">
-                                    <span class="font-bold">Net Zero Roadmap</span>
-                                    <span class="text-brand-lightGreen text-xs">Science-Based Targets</span>
+        <!-- Solutions Grid (Premium Flip-Cards 3x2) -->
+        <section class="py-32 bg-brand-offWhite">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- CBAM -->
+                    <div class="group h-[380px] cursor-pointer [perspective:1000px]">
+                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
+                                <span class="self-start px-4 py-1.5 rounded-full bg-blue-50 text-brand-blue text-[10px] font-bold uppercase tracking-wider">EU Regulation</span>
+                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">CBAM Advisory & Reporting</h3>
+                                <div class="w-12 h-12 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                                 </div>
                             </div>
-                        </div>
-                        <div class="pt-8 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-slate-400 font-medium">LCA Methodologies</span>
-                            <div
-                                class="w-12 h-12 rounded-full bg-brand-charcoal flex items-center justify-center text-white group-hover:bg-brand-green transition-all">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
+                                <div>
+                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
+                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">CBAM Advisory</h4>
+                                     <p class="text-slate-500 text-sm leading-relaxed">End-to-end compliance for EU exporters. Quarterly reporting, embedded carbon calculations, and regulatory alignment for 2026 mandates.</p>
+                                </div>
+                                <a href="/cbam.html" class="text-brand-green font-bold text-sm flex items-center gap-2">Explore Framework ↗</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- CBAM Capability -->
-                    <div class="card p-12 bg-white border-none group relative overflow-hidden ring-1 ring-slate-100 hover:ring-brand-blue/20 min-w-[400px] max-w-[450px]"
-                        id="compliance">
-                        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-blue/5 blur-[100px] rounded-full"></div>
-                        <div class="relative z-10 flex flex-col h-full justify-between">
-                            <div>
-                                <div class="text-brand-blue font-bold tracking-widest text-xs uppercase mb-10">Capacity
-                                    03 // EXPORT</div>
-                                <h2
-                                    class="text-4xl font-bold mb-8 text-brand-charcoal group-hover:text-brand-blue transition-colors">
-                                    CBAM Regulatory <br />Compliance</h2>
-                                <p class="text-slate-500 text-lg mb-12 leading-relaxed">Seamless transition into the EU
-                                    Carbon Border Adjustment Mechanism. Quarterly reporting and embedded emission
-                                    calculations.</p>
+                    <!-- IREC -->
+                    <div class="group h-[380px] cursor-pointer [perspective:1000px]">
+                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
+                                <span class="self-start px-4 py-1.5 rounded-full bg-emerald-50 text-brand-green text-[10px] font-bold uppercase tracking-wider">Renewable Energy</span>
+                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">IREC Certification</h3>
+                                <div class="w-12 h-12 rounded-full bg-brand-green/5 flex items-center justify-center text-brand-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                                </div>
                             </div>
-                            <div class="pt-8 border-t border-slate-100 flex items-center justify-between">
-                                <a href="/cbam.html" class="btn-primary py-3 px-8 text-sm">Access Timer Portal</a>
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
+                                <div>
+                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
+                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">IREC Certification</h4>
+                                     <p class="text-slate-500 text-sm leading-relaxed">International Renewable Energy Certificates verification. Management from issuance to retirement for corporate renewable energy goals.</p>
+                                </div>
+                                <a href="#" class="text-brand-green font-bold text-sm flex items-center gap-2">Our Process ↗</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Testing Capability -->
-                    <div class="card p-12 flex flex-col justify-between group min-w-[400px] max-w-[450px]" id="testing">
-                        <div>
-                            <div class="text-slate-400 font-bold tracking-widest text-xs uppercase mb-10">Capacity 04 //
-                                LAB</div>
-                            <h2 class="text-4xl font-bold mb-8 group-hover:text-brand-blue transition-colors">
-                                Environmental <br />Impact Testing</h2>
-                            <p class="text-slate-500 text-lg mb-12 leading-relaxed">Scientific verification of soil,
-                                water, and air quality metrics. Data-backed proof for corporate environmental claims.
-                            </p>
-                        </div>
-                        <div class="pt-8 border-t border-slate-100 flex items-center justify-between">
-                            <span class="text-slate-400 font-medium">Lab Capabilities</span>
-                            <div
-                                class="w-12 h-12 rounded-full bg-brand-charcoal flex items-center justify-center text-white group-hover:bg-brand-blue transition-all">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M5 12h14" />
-                                    <path d="m12 5 7 7-7 7" />
-                                </svg>
+                    <!-- Carbon Credits -->
+                    <div class="group h-[380px] cursor-pointer [perspective:1000px]">
+                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
+                                <span class="self-start px-4 py-1.5 rounded-full bg-green-50 text-brand-green text-[10px] font-bold uppercase tracking-wider">Climate Goal</span>
+                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">Carbon Credits</h3>
+                                <div class="w-12 h-12 rounded-full bg-brand-green/5 flex items-center justify-center text-brand-green">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
+                                <div>
+                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
+                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">Carbon Offsetting</h4>
+                                     <p class="text-slate-500 text-sm leading-relaxed">Verified carbon credits sourced to global standards (GHG Protocol, ISO 14064) for Scope 1, 2, and 3 emissions offsetting.</p>
+                                </div>
+                                <a href="#" class="text-brand-green font-bold text-sm flex items-center gap-2">Offset Strategy ↗</a>
                             </div>
                         </div>
                     </div>
+
+                    <!-- EcoVadis -->
+                    <div class="group h-[380px] cursor-pointer [perspective:1000px]">
+                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
+                                <span class="self-start px-4 py-1.5 rounded-full bg-slate-50 text-slate-500 text-[10px] font-bold uppercase tracking-wider">Supply Chain</span>
+                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">EcoVadis Assessment</h3>
+                                <div class="w-12 h-12 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
+                                <div>
+                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
+                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">EcoVadis Advisory</h4>
+                                     <p class="text-slate-500 text-sm leading-relaxed">Improving sustainability performance across environment, labor, ethics, and procurement pillars for global retail suppliers.</p>
+                                </div>
+                                <a href="#" class="text-brand-green font-bold text-sm flex items-center gap-2">Scale Score ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BRSR -->
+                    <div class="group h-[380px] cursor-pointer [perspective:1000px]">
+                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
+                                <span class="self-start px-4 py-1.5 rounded-full bg-orange-50 text-orange-600 text-[10px] font-bold uppercase tracking-wider">SEBI Mandate</span>
+                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">BRSR Reporting</h3>
+                                <div class="w-12 h-12 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
+                                <div>
+                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
+                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">BRSR Reporting</h4>
+                                     <p class="text-slate-500 text-sm leading-relaxed">Comprehensive reporting for SEBI's mandate. Data collection, gap analysis, and final submission for listed companies.</p>
+                                </div>
+                                <a href="#" class="text-brand-green font-bold text-sm flex items-center gap-2">Compliance Brief ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GPCB -->
+                    <div class="group h-[380px] cursor-pointer [perspective:1000px]">
+                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
+                                <span class="self-start px-4 py-1.5 rounded-full bg-blue-50 text-brand-blue text-[10px] font-bold uppercase tracking-wider">Regulatory</span>
+                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">GPCB Compliance</h3>
+                                <div class="w-12 h-12 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                                </div>
+                            </div>
+                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
+                                <div>
+                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
+                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">GPCB Compliance</h4>
+                                     <p class="text-slate-500 text-sm leading-relaxed">Management of CTE and CTO consents. Our engineers handle documentation and submissions from application to final NOC.</p>
+                                </div>
+                                <a href="#" class="text-brand-green font-bold text-sm flex items-center gap-2">Regulatory Services ↗</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -194,7 +193,6 @@
 
     <script type="module" src="/src/js/main.js"></script>
     <script type="module" src="/src/js/animations.js"></script>
-    <script type="module" src="/src/js/slider.js"></script>
 </body>
 
 </html>
