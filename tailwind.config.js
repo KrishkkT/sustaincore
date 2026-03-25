@@ -1,4 +1,6 @@
 export default {
+    mode: 'jit',
+    darkMode: 'class',
     content: [
         "./index.html",
         "./about.html",
@@ -12,12 +14,12 @@ export default {
         extend: {
             colors: {
                 brand: {
-                    blue: "#0b5394",
-                    green: "#2E8B57",
-                    lightGreen: "#00FF9D", // More vibrant lime
-                    charcoal: "#0F1115",   // Greenlyte style
-                    softGray: "#F8FAFC",
-                    offWhite: "#FCFCFC",
+                    green: "var(--g)",
+                    blue: "var(--b)",
+                    charcoal: "var(--text)",
+                    softGray: "var(--bg2)",
+                    offWhite: "var(--bg)",
+                    beige: "var(--bg2)",
                 }
             },
             fontFamily: {
@@ -25,7 +27,7 @@ export default {
                 display: ['Outfit', 'sans-serif'],
             },
             boxShadow: {
-                'glass': '0 8px 32px 0 rgba(11, 83, 148, 0.1)',
+                'glass': '0 8px 32px 0 rgba(26, 74, 107, 0.1)',
                 'premium': '0 20px 50px rgba(0, 0, 0, 0.05)',
             },
             borderRadius: {

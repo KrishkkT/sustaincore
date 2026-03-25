@@ -9,16 +9,105 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerPlaceholder) headerPlaceholder.innerHTML = header;
     if (footerPlaceholder) footerPlaceholder.innerHTML = footer;
 
+    // Theme Toggle Logic
+    const themeToggleBtn = document.getElementById('theme-toggle');
+
+    // Initial state based on localStorage or system preference
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'true');
+    } else {
+        document.documentElement.classList.remove('dark');
+        if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'false');
+    }
+
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', function() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeToggleBtn.setAttribute('aria-checked', 'false');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeToggleBtn.setAttribute('aria-checked', 'true');
+            }
+        });
+    }
+
     // Mobile menu toggle logic
     const setupMobileMenu = () => {
-        const menuBtn = document.querySelector('button.md\\:hidden');
-        if (menuBtn) {
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
             menuBtn.addEventListener('click', () => {
-                // Simple alert for now, can be expanded to a real menu
-                console.log('Mobile menu clicked');
+                mobileMenu.classList.remove('translate-x-full');
             });
         }
+
+        if (closeBtn && mobileMenu) {
+            closeBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        }
+
+        // Also close menu when a link inside it is clicked
+        const mobileLinks = document.querySelectorAll('#mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) mobileMenu.classList.add('translate-x-full');
+            });
+        });
     };
 
     setupMobileMenu();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Services Tabs Logic - Custom Mapping for 4 Pillars -> 8 existing sections
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.panel');
+    
+    if(tabBtns.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // remove active from all
+                tabBtns.forEach(b => b.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
+                
+                // add active to clicked
+                btn.classList.add('active');
+                
+                // direct 1:1 mapping from data-tab to panel ID
+                const targetId = btn.getAttribute('data-tab');
+                const p = document.getElementById(targetId);
+                if(p) p.classList.add('active');
+            });
+        });
+
+        // Trigger the active tab on load to ensure mapped panels are displayed
+        const initialActive = document.querySelector('.tab-btn.active');
+        if(initialActive) {
+            initialActive.click();
+        }
+    }
+
+    // FAQ Accordion Logic
+    const faqBtns = document.querySelectorAll('.faq-btn');
+    faqBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all others in same panel
+            const panel = item.closest('.panel');
+            if(panel) {
+                panel.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+            }
+            
+            if(!isActive) item.classList.add('active');
+        });
+    });
 });

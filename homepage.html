@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SustainCore — Section 1: Hero</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.hero {
+  position: relative; min-height: 100vh;
+  display: flex; flex-direction: column;
+  overflow: hidden; background: #050f09;
+  font-family: 'DM Sans', sans-serif;
+}
+.hero-canvas { position: absolute; inset: 0; z-index: 0; }
+canvas { display: block; width: 100%; height: 100%; }
+.hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background:
+    linear-gradient(to top, rgba(5,15,9,0.98) 0%, rgba(5,15,9,0.65) 38%, rgba(5,15,9,0.2) 65%, rgba(5,15,9,0.45) 100%),
+    linear-gradient(to right, rgba(5,15,9,0.55) 0%, transparent 65%);
+}
+
+/* NAV */
+.hero-nav {
+  position: relative; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.75rem 3rem;
+}
+.sc-logo-wrap { display: flex; flex-direction: column; gap: 1px; }
+.sc-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; line-height: 1; }
+.sc-logo span { color: #4caf7d; }
+.sc-tagline-nav { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(76,175,125,0.7); font-weight: 400; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 12px; color: rgba(255,255,255,0.45); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+.nav-links a:hover { color: #4caf7d; }
+.nav-cta { font-size: 12px; font-weight: 500; padding: 9px 22px; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 100px; text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; transition: border-color 0.2s, background 0.2s; }
+.nav-cta:hover { border-color: #4caf7d; background: rgba(76,175,125,0.1); }
+
+/* CONTENT */
+.hero-content {
+  position: relative; z-index: 10;
+  flex: 1; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 0 3rem 5rem;
+}
+.hero-headline {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900; font-size: clamp(72px, 10vw, 140px);
+  line-height: 0.87; text-transform: uppercase; letter-spacing: -2px;
+  color: #ffffff; margin-bottom: 2.25rem;
+  opacity: 0; animation: fadeUp 0.8s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.hl-white { display: block; }
+.hl-green { display: block; color: #4caf7d; }
+.hl-outline { display: block; -webkit-text-stroke: 2px rgba(255,255,255,0.25); color: transparent; }
+
+.hero-bottom {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp 0.7s 0.85s ease forwards;
+}
+.hero-sub {
+  font-size: 15px; font-weight: 300;
+  color: rgba(255,255,255,0.55); line-height: 1.8; max-width: 400px;
+  border-left: 2px solid #4caf7d; padding-left: 1rem;
+}
+.hero-sub strong { color: rgba(255,255,255,0.85); font-weight: 400; }
+
+.hero-stats { display: flex; gap: 2rem; }
+.stat { text-align: right; }
+.stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 32px; font-weight: 700; color: #fff; line-height: 1; }
+.stat-label { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 3px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* SCROLL HINT ONLY — strip and CTA row removed */
+.scroll-hint {
+  position: absolute; right: 3rem; bottom: 3.5rem; z-index: 10;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  opacity: 0; animation: fadeIn 1s 1.2s ease forwards;
+}
+.scroll-hint span { font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.25); writing-mode: vertical-rl; }
+.scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, #4caf7d, transparent); animation: scrollPulse 2s 1.4s ease-in-out infinite; }
+
+@keyframes fadeUp   { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn   { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scrollPulse { 0%, 100% { transform: scaleY(1); opacity: 0.5; } 50% { transform: scaleY(1.4); opacity: 1; } }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-canvas"><canvas id="c"></canvas></div>
+  <div class="hero-overlay"></div>
+
+  <nav class="hero-nav">
+    <div class="sc-logo-wrap">
+      <div class="sc-logo">Sustain<span>Core</span></div>
+      <div class="sc-tagline-nav">Sustainability at Core</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Insights</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-cta">Free consultation</a>
+  </nav>
+
+  <div class="hero-content">
+    <h1 class="hero-headline">
+      <span class="hl-white">Start</span>
+      <span class="hl-green">Today.</span>
+      <span class="hl-outline">Lead</span>
+      <span class="hl-white">Tomorrow.</span>
+    </h1>
+    <div class="hero-bottom">
+      <p class="hero-sub">
+        The global market rewards businesses that <strong>act on sustainability</strong> &mdash; not ones that plan to.
+        SustainCore gets you moving, from day one.
+      </p>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-val">15+</div><div class="stat-label">ESG frameworks</div></div>
+        <div class="stat"><div class="stat-val">6</div><div class="stat-label">Service areas</div></div>
+        <div class="stat"><div class="stat-val">1</div><div class="stat-label">End-to-end partner</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
+function resize() {
+  canvas.width  = canvas.offsetWidth  * devicePixelRatio;
+  canvas.height = canvas.offsetHeight * devicePixelRatio;
+  ctx.scale(devicePixelRatio, devicePixelRatio);
+}
+resize();
+window.addEventListener('resize', resize);
+const W = () => canvas.offsetWidth;
+const H = () => canvas.offsetHeight;
+
+const particles = Array.from({length: 100}, () => ({
+  x: Math.random() * 1400, y: Math.random() * 900,
+  r: Math.random() * 2.2 + 0.3,
+  dx: (Math.random() - 0.5) * 0.35,
+  dy: -(Math.random() * 0.45 + 0.08),
+  opacity: Math.random() * 0.55 + 0.08,
+  color: Math.random() > 0.55 ? '#4caf7d' : Math.random() > 0.5 ? '#a8e6c3' : '#ffffff',
+  pulse: Math.random() * Math.PI * 2
+}));
+
+const blobs = [
+  { x: 0.72, y: 0.28, r: 300, color: 'rgba(45,122,79,0.13)',  dx:  0.0003,  dy:  0.00015 },
+  { x: 0.25, y: 0.65, r: 220, color: 'rgba(76,175,125,0.07)', dx: -0.00018, dy:  0.00025 },
+  { x: 0.88, y: 0.72, r: 180, color: 'rgba(13,43,30,0.5)',    dx:  0.00012, dy: -0.0002  },
+];
+
+let t = 0;
+function draw() {
+  const w = W(), h = H();
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = '#050f09';
+  ctx.fillRect(0, 0, w, h);
+
+  blobs.forEach(b => {
+    b.x += b.dx; b.y += b.dy;
+    if (b.x < 0.1 || b.x > 0.9) b.dx *= -1;
+    if (b.y < 0.1 || b.y > 0.9) b.dy *= -1;
+    const g = ctx.createRadialGradient(b.x*w, b.y*h, 0, b.x*w, b.y*h, b.r);
+    g.addColorStop(0, b.color); g.addColorStop(1, 'transparent');
+    ctx.fillStyle = g;
+    ctx.beginPath(); ctx.arc(b.x*w, b.y*h, b.r, 0, Math.PI*2); ctx.fill();
+  });
+
+  ctx.strokeStyle = 'rgba(76,175,125,0.035)'; ctx.lineWidth = 1;
+  for (let x = 0; x < w; x += 65) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+  for (let y = 0; y < h; y += 65) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+
+  particles.forEach(p => {
+    p.pulse += 0.018;
+    ctx.globalAlpha = p.opacity * (0.7 + 0.3 * Math.sin(p.pulse));
+    ctx.fillStyle = p.color;
+    ctx.beginPath(); ctx.arc(p.x % w, p.y % h, p.r, 0, Math.PI*2); ctx.fill();
+    p.x += p.dx; p.y += p.dy;
+    if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
+    if (p.x < 0) p.x = w;
+    if (p.x > w) p.x = 0;
+  });
+
+  ctx.globalAlpha = 0.1 + 0.035 * Math.sin(t * 0.4);
+  const streak = ctx.createLinearGradient(0, 0, w, 0);
+  streak.addColorStop(0, 'transparent');
+  streak.addColorStop(0.25, '#4caf7d');
+  streak.addColorStop(0.75, '#2d7a4f');
+  streak.addColorStop(1, 'transparent');
+  ctx.fillStyle = streak;
+  ctx.fillRect(0, h * (0.68 + 0.03 * Math.sin(t * 0.18)), w, 1.5);
+  ctx.globalAlpha = 1;
+  t += 0.016;
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SustainCore — Section 2: The Crisis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .s2 {
+      font-family: 'DM Sans', sans-serif;
+      background: #060d07;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0 3rem;
+      text-align: center;
+    }
+
+    .s2-connector {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, #050f09 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .s2::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 38%, rgba(239,68,68,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 100%, rgba(76,175,125,0.12) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .s2-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .s2-inner {
+      position: relative; z-index: 2;
+      max-width: 820px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6rem 0 0;
+    }
+
+    .s2-echo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      opacity: 0;
+      animation: fadeIn 0.6s 0.2s ease forwards;
+    }
+    .s2-echo-line {
+      width: 40px; height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.15));
+    }
+    .s2-echo-line.right {
+      background: linear-gradient(to left, transparent, rgba(255,255,255,0.15));
+    }
+    .s2-echo-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px; font-weight: 900;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+    }
+    .s2-echo-text .hero-ref { color: rgba(76,175,125,0.5); font-style: italic; }
+
+    .s2-label {
+      font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(239,68,68,0.7);
+      margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 10px;
+      opacity: 0; animation: fadeIn 0.5s 0.5s ease forwards;
+    }
+    .s2-label::before, .s2-label::after {
+      content: ''; display: block;
+      width: 28px; height: 1px;
+      background: rgba(239,68,68,0.4);
+    }
+
+    .s2-counter-wrap { position: relative; margin-bottom: 1.75rem; }
+    .s2-counter {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(100px, 18vw, 200px);
+      font-weight: 900; line-height: 0.85;
+      letter-spacing: -6px; color: #fff;
+      display: inline-flex; align-items: baseline;
+    }
+    .s2-counter-unit {
+      font-size: 0.28em; letter-spacing: -1px;
+      color: rgba(239,68,68,0.8); margin-left: 6px;
+    }
+    .s2-pulse {
+      position: absolute; inset: -20px; border-radius: 50%;
+      border: 1px solid rgba(239,68,68,0.12);
+      animation: pulseRing 2.5s 2s ease-out infinite;
+      pointer-events: none;
+    }
+    .s2-pulse2 {
+      position: absolute; inset: -44px; border-radius: 50%;
+      border: 1px solid rgba(239,68,68,0.06);
+      animation: pulseRing 2.5s 2.5s ease-out infinite;
+      pointer-events: none;
+    }
+
+    .s2-context {
+      font-size: clamp(14px, 1.7vw, 17px);
+      font-weight: 300; color: rgba(255,255,255,0.45);
+      line-height: 1.85; max-width: 520px;
+      margin-bottom: 0.75rem;
+      opacity: 0; animation: fadeUp 0.7s 2.8s ease forwards;
+    }
+    .s2-context strong { color: rgba(255,255,255,0.88); font-weight: 400; }
+
+    .s2-callback {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.2);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeIn 0.6s 3.1s ease forwards;
+    }
+    .s2-callback .today { color: #4caf7d; }
+    .s2-callback .tomorrow { color: rgba(255,255,255,0.45); }
+
+    .s2-deepdive {
+      margin-bottom: 4rem;
+      opacity: 0; animation: fadeIn 0.6s 3.4s ease forwards;
+    }
+    .s2-deepdive a {
+      font-size: 11px; color: rgba(255,255,255,0.22);
+      text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .s2-deepdive a:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.35); }
+
+    @keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+    @keyframes fadeUp  { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes pulseRing {
+      0%   { transform:scale(0.95); opacity:0.6; }
+      100% { transform:scale(1.2);  opacity:0; }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="s2">
+  <div class="s2-connector"></div>
+  <div class="s2-grid"></div>
+
+  <div class="s2-inner">
+
+    <div class="s2-echo">
+      <div class="s2-echo-line"></div>
+      <div class="s2-echo-text">Why <span class="hero-ref">today</span> can't wait</div>
+      <div class="s2-echo-line right"></div>
+    </div>
+
+    <div class="s2-label">The scale of the crisis</div>
+
+    <div class="s2-counter-wrap">
+      <div class="s2-pulse"></div>
+      <div class="s2-pulse2"></div>
+      <div class="s2-counter">
+        <span id="counter">0.0</span><span class="s2-counter-unit">°C</span>
+      </div>
+    </div>
+
+    <p class="s2-context">
+      <strong>1.6°C above pre-industrial levels.</strong> 2024 was the warmest year in 175 years of recorded history. The environmental crisis is already reaching business balance sheets — <strong>$38 trillion in global GDP is at risk by 2050.</strong>
+    </p>
+
+    <div class="s2-callback">
+      Those who start <span class="today">today</span> — will lead <span class="tomorrow">tomorrow.</span>
+    </div>
+
+    <div class="s2-deepdive">
+      <a href="#">Explore the full data behind the sustainability crisis ↗</a>
+    </div>
+
+
+
+  </div>
+</div>
+
+<script>
+  const el = document.getElementById('counter');
+  const target = 1.6;
+  const duration = 2600;
+  const delay = 800;
+  let start = null;
+  function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+  function animate(ts) {
+    if (!start) start = ts;
+    const p = Math.min((ts - start) / duration, 1);
+    el.textContent = (easeOutExpo(p) * target).toFixed(1);
+    if (p < 1) requestAnimationFrame(animate);
+    else el.textContent = '1.6';
+  }
+  setTimeout(() => requestAnimationFrame(animate), delay);
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SustainCore — Section 2: Crisis Data Charts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    .s2 { font-family: 'DM Sans', sans-serif; background: #080e0a; overflow: hidden; }
+
+    .s2-alarm {
+      background: #b91c1c; padding: 0.65rem 3rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .s2-alarm-dot { width: 8px; height: 8px; border-radius: 50%; background: #fff; animation: blink 1.2s ease-in-out infinite; flex-shrink: 0; }
+    .s2-alarm-text { font-family: 'Barlow Condensed', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; }
+    .s2-alarm-text span { opacity: 0.5; margin: 0 1.25rem; }
+
+    .s2-intro {
+      padding: 4rem 3rem 3rem;
+      display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .s2-label { font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4caf7d; margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; }
+    .s2-label::before { content: ''; width: 28px; height: 1px; background: #4caf7d; display: block; }
+    .s2-title { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(40px, 5vw, 68px); font-weight: 900; text-transform: uppercase; color: #fff; line-height: 0.92; letter-spacing: -1.5px; }
+    .s2-title .red { color: #ef4444; }
+    .s2-title .green { color: #4caf7d; }
+    .s2-desc { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.8; max-width: 300px; border-left: 1px solid rgba(76,175,125,0.3); padding-left: 1rem; }
+
+    .s2-panels { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: rgba(255,255,255,0.05); }
+
+    .s2-panel { background: #0a120c; padding: 2rem 2rem 1.5rem; position: relative; overflow: hidden; transition: background 0.3s; }
+    .s2-panel:hover { background: #0e1810; }
+    .s2-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+    .s2-panel.p1::before { background: linear-gradient(to right, #ef4444, transparent); }
+    .s2-panel.p2::before { background: linear-gradient(to right, #f97316, transparent); }
+    .s2-panel.p3::before { background: linear-gradient(to right, #eab308, transparent); }
+    .s2-panel.p4::before { background: linear-gradient(to right, #4caf7d, transparent); }
+
+    .s2-panel-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 8px; }
+    .p1 .s2-panel-tag { color: #ef4444; }
+    .p2 .s2-panel-tag { color: #f97316; }
+    .p3 .s2-panel-tag { color: #eab308; }
+    .p4 .s2-panel-tag { color: #4caf7d; }
+    .s2-panel-tag::before { content: ''; width: 16px; height: 1px; display: block; }
+    .p1 .s2-panel-tag::before { background: #ef4444; }
+    .p2 .s2-panel-tag::before { background: #f97316; }
+    .p3 .s2-panel-tag::before { background: #eab308; }
+    .p4 .s2-panel-tag::before { background: #4caf7d; }
+
+    .chart-wrap { width: 100%; height: 130px; margin-bottom: 1.25rem; position: relative; }
+    .chart-wrap canvas { display: block; width: 100% !important; height: 100% !important; }
+
+    .s2-stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(44px, 5vw, 62px); font-weight: 900; line-height: 0.88; letter-spacing: -2px; margin-bottom: 0.4rem; }
+    .p1 .s2-stat-num { color: #ef4444; }
+    .p2 .s2-stat-num { color: #f97316; }
+    .p3 .s2-stat-num { color: #eab308; }
+    .p4 .s2-stat-num { color: #4caf7d; }
+    .s2-stat-num sup { font-size: 0.38em; vertical-align: super; letter-spacing: 0; }
+    .s2-panel-title { font-size: 14px; font-weight: 500; color: #fff; line-height: 1.3; margin-bottom: 0.4rem; }
+    .s2-panel-desc { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.6; }
+    .s2-panel-source { margin-top: 0.75rem; font-size: 10px; color: rgba(255,255,255,0.18); letter-spacing: 0.05em; text-transform: uppercase; }
+
+    .s2-turn {
+      padding: 3rem;
+      background: linear-gradient(135deg, #0a120c 0%, #0d2b1e 55%, #1a4a2e 100%);
+      display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;
+      position: relative; overflow: hidden;
+    }
+    .s2-turn::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(76,175,125,0.15) 0%, transparent 60%); }
+    .s2-turn-left { position: relative; z-index: 1; }
+    .s2-turn-label { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: #4caf7d; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+    .s2-turn-label::before { content: ''; width: 20px; height: 1px; background: #4caf7d; display: block; }
+    .s2-turn-headline { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(24px, 3vw, 38px); font-weight: 900; text-transform: uppercase; color: #fff; line-height: 1.05; letter-spacing: -0.5px; max-width: 480px; }
+    .s2-turn-headline .green { color: #4caf7d; }
+    .s2-turn-right { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+    .s2-turn-stat { text-align: right; padding: 0.9rem 1.25rem; background: rgba(76,175,125,0.08); border: 1px solid rgba(76,175,125,0.2); border-radius: 12px; }
+    .s2-turn-stat-val { font-family: 'Barlow Condensed', sans-serif; font-size: 28px; font-weight: 900; color: #4caf7d; line-height: 1; }
+    .s2-turn-stat-label { font-size: 11px; color: rgba(255,255,255,0.4); margin-top: 3px; }
+    .s2-cta { display: inline-block; padding: 13px 26px; background: #4caf7d; color: #0d2b1e; font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 100px; text-decoration: none; transition: transform 0.15s, box-shadow 0.2s; white-space: nowrap; }
+    .s2-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(76,175,125,0.35); }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  </style>
+</head>
+<body>
+
+<div class="s2">
+
+  <div class="s2-alarm">
+    <div class="s2-alarm-dot"></div>
+    <div class="s2-alarm-text">
+      2024 — Warmest year in 175 years of records
+      <span>·</span> 1.6°C above pre-industrial levels
+      <span>·</span> $182B in US climate disaster damages
+      <span>·</span> The crisis is not coming — it is here
+    </div>
+  </div>
+
+  <div class="s2-intro">
+    <div>
+      <div class="s2-label">The scale of the crisis</div>
+      <h2 class="s2-title">The planet<br>is sending<br><span class="red">a bill.</span><br><span class="green">Will your</span><br><span class="green">business</span><br><span class="green">be ready?</span></h2>
+    </div>
+    <p class="s2-desc">Four forces are converging simultaneously — rising temperatures, accelerating industry impact, mounting business risk, and a rapidly closing timeline. Here is what the data shows.</p>
+  </div>
+
+  <div class="s2-panels">
+
+    <div class="s2-panel p1">
+      <div class="s2-panel-tag">01 — Planet in distress</div>
+      <div class="chart-wrap"><canvas id="c1"></canvas></div>
+      <div class="s2-stat-num">1.6<sup>°C</sup></div>
+      <div class="s2-panel-title">Above pre-industrial levels in 2024</div>
+      <div class="s2-panel-desc">2024 was the warmest year in 175 years of records — the first to breach 1.5°C. The 10 warmest years all occurred in the last decade.</div>
+      <div class="s2-panel-source">Source: Copernicus / NASA / NOAA</div>
+    </div>
+
+    <div class="s2-panel p2">
+      <div class="s2-panel-tag">02 — Industry impact</div>
+      <div class="chart-wrap"><canvas id="c2"></canvas></div>
+      <div class="s2-stat-num">37<sup>Gt</sup></div>
+      <div class="s2-panel-title">Global CO₂ emissions from industry in 2023</div>
+      <div class="s2-panel-desc">Industrial CO₂ hit a record high in 2023. Manufacturing, energy and construction account for over 70% of all global emissions.</div>
+      <div class="s2-panel-source">Source: IEA / Global Carbon Project</div>
+    </div>
+
+    <div class="s2-panel p3">
+      <div class="s2-panel-tag">03 — Business risk</div>
+      <div class="chart-wrap"><canvas id="c3"></canvas></div>
+      <div class="s2-stat-num">$38<sup>T</sup></div>
+      <div class="s2-panel-title">Projected GDP loss from climate damage by 2050</div>
+      <div class="s2-panel-desc">Climate risk will wipe 10–23% from global GDP by 2100. Companies without a sustainability strategy face the steepest losses.</div>
+      <div class="s2-panel-source">Source: Swiss Re / WEF</div>
+    </div>
+
+    <div class="s2-panel p4">
+      <div class="s2-panel-tag">04 — The opportunity window</div>
+      <div class="chart-wrap"><canvas id="c4"></canvas></div>
+      <div class="s2-stat-num">$14<sup>T</sup></div>
+      <div class="s2-panel-title">Green economy market size by 2030</div>
+      <div class="s2-panel-desc">Every $1 invested in sustainability generates up to $19 in avoided losses. The green economy is the fastest-growing market on the planet.</div>
+      <div class="s2-panel-source">Source: WEF / CDP</div>
+    </div>
+
+  </div>
+
+  <div class="s2-turn">
+    <div class="s2-turn-left">
+      <div class="s2-turn-label">The SustainCore response</div>
+      <div class="s2-turn-headline">The crisis is real.<br><span class="green">The opportunity</span><br>is bigger.</div>
+    </div>
+    <div class="s2-turn-right">
+      <div class="s2-turn-stat">
+        <div class="s2-turn-stat-val">$19 return</div>
+        <div class="s2-turn-stat-label">for every $1 invested in sustainability</div>
+      </div>
+      <a href="#" class="s2-cta">See how we help you act →</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  const GRID = 'rgba(255,255,255,0.06)';
+  const TICK = 'rgba(255,255,255,0.3)';
+  const FONT = { family: 'DM Sans', size: 10 };
+
+  function baseOpts(yLabel) {
+    return {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: { duration: 1200, easing: 'easeOutQuart' },
+      plugins: { legend: { display: false }, tooltip: { enabled: false } },
+      scales: {
+        x: {
+          ticks: { color: TICK, font: FONT, maxRotation: 0 },
+          grid: { color: GRID, drawBorder: false },
+          border: { color: 'rgba(255,255,255,0.15)' }
+        },
+        y: {
+          title: { display: true, text: yLabel, color: 'rgba(255,255,255,0.3)', font: { family:'DM Sans', size:9 } },
+          ticks: { color: TICK, font: FONT },
+          grid: { color: GRID, drawBorder: false },
+          border: { color: 'rgba(255,255,255,0.15)' }
+        }
+      }
+    };
+  }
+
+  new Chart(document.getElementById('c1'), {
+    type: 'line',
+    data: {
+      labels: ['1980','1985','1990','1995','2000','2005','2010','2015','2020','2024'],
+      datasets: [{
+        data: [0.27, 0.12, 0.45, 0.38, 0.42, 0.68, 0.72, 0.90, 1.02, 1.60],
+        borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.08)',
+        borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#ef4444', fill: true, tension: 0.4
+      }]
+    },
+    options: { ...baseOpts('°C above baseline'), scales: { ...baseOpts('°C above baseline').scales, y: { ...baseOpts('°C above baseline').scales.y, min: 0, max: 1.8 } } }
+  });
+
+  new Chart(document.getElementById('c2'), {
+    type: 'bar',
+    data: {
+      labels: ['2000','2005','2010','2015','2018','2020','2021','2022','2023'],
+      datasets: [{
+        data: [25.0, 28.5, 32.0, 33.5, 34.8, 31.5, 33.9, 36.0, 37.0],
+        backgroundColor: 'rgba(249,115,22,0.6)', borderColor: '#f97316', borderWidth: 1, borderRadius: 3
+      }]
+    },
+    options: { ...baseOpts('GtCO₂'), scales: { ...baseOpts('GtCO₂').scales, y: { ...baseOpts('GtCO₂').scales.y, min: 20, max: 40 } } }
+  });
+
+  new Chart(document.getElementById('c3'), {
+    type: 'bar',
+    data: {
+      labels: ['2025','2030','2035','2040','2045','2050'],
+      datasets: [{
+        data: [2.5, 6.0, 12.0, 20.0, 30.0, 38.0],
+        backgroundColor: 'rgba(234,179,8,0.6)', borderColor: '#eab308', borderWidth: 1, borderRadius: 3
+      }]
+    },
+    options: { ...baseOpts('$T projected loss'), scales: { ...baseOpts('$T projected loss').scales, y: { ...baseOpts('$T projected loss').scales.y, min: 0, max: 42 } } }
+  });
+
+  new Chart(document.getElementById('c4'), {
+    type: 'line',
+    data: {
+      labels: ['2018','2019','2020','2021','2022','2023','2024','2025','2027','2030'],
+      datasets: [{
+        data: [3.0, 3.5, 3.8, 4.2, 4.8, 5.3, 6.0, 7.2, 10.0, 14.0],
+        borderColor: '#4caf7d', backgroundColor: 'rgba(76,175,125,0.1)',
+        borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#4caf7d', fill: true, tension: 0.4
+      }]
+    },
+    options: { ...baseOpts('Market size ($T)'), scales: { ...baseOpts('Market size ($T)').scales, y: { ...baseOpts('Market size ($T)').scales.y, min: 0, max: 16 } } }
+  });
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SustainCore — Section 3: Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.s3 { font-family: 'DM Sans', sans-serif; background: #f5f0e8; }
+
+/* Header */
+.s3-header {
+  padding: 4rem 3rem 2.5rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: end;
+}
+.s3-label {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #2d7a4f;
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;
+}
+.s3-label::before { content: ''; width: 28px; height: 1.5px; background: #2d7a4f; display: block; }
+.s3-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(38px, 5vw, 60px); font-weight: 900;
+  text-transform: uppercase; color: #0d2b1e;
+  line-height: 0.9; letter-spacing: -1.5px;
+}
+.s3-title .green { color: #2d7a4f; }
+.s3-desc {
+  font-size: 14px; font-weight: 300; color: #6b7c74;
+  line-height: 1.8; border-left: 2px solid rgba(45,122,79,0.3);
+  padding-left: 1rem; align-self: end;
+}
+
+/* Canvas — overflow: visible so flipped faces aren't clipped */
+.s3-canvas {
+  margin: 0 3rem;
+  border-radius: 20px;
+  overflow: visible;
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 24px 60px rgba(13,43,30,0.25);
+}
+.s3-canvas::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(6,20,10,0.62);
+  z-index: 0; border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Grid — perspective here, single context for all cards */
+.s3-grid {
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 260px);
+  border-radius: 20px;
+  overflow: hidden;         /* clips bg image to rounded corners only */
+  perspective: 1200px;      /* single perspective context */
+  isolation: isolate;
+}
+
+/* Flip card — sizing wrapper only, no perspective */
+.flip-card {
+  width: 100%; height: 100%;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;       /* each card composited independently */
+  box-shadow: inset 1px 0 0 rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.flip-card:nth-child(1) { box-shadow: none; }
+.flip-card:nth-child(2),
+.flip-card:nth-child(3) { box-shadow: inset 1px 0 0 rgba(255,255,255,0.1); }
+.flip-card:nth-child(4) { box-shadow: inset 0 1px 0 rgba(255,255,255,0.1); }
+.flip-card:nth-child(5),
+.flip-card:nth-child(6) { box-shadow: inset 1px 0 0 rgba(255,255,255,0.1), inset 0 1px 0 rgba(255,255,255,0.1); }
+
+.flip-inner {
+  width: 100%; height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  will-change: transform;   /* own compositing layer — prevents z-fighting */
+}
+.flip-card:hover .flip-inner { transform: rotateY(180deg); }
+
+.flip-front,
+.flip-back {
+  position: absolute; inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Front face */
+.flip-front {
+  background: transparent;
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 1.75rem;
+  position: relative;
+}
+.flip-front::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(6,20,10,0.78) 0%, rgba(6,20,10,0.12) 60%, transparent 100%);
+  pointer-events: none; transition: background 0.3s;
+}
+.flip-card:hover .flip-front::before {
+  background: linear-gradient(to top, rgba(13,60,30,0.88) 0%, rgba(45,122,79,0.22) 60%, transparent 100%);
+}
+.flip-front-content {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.flip-front-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(19px, 2vw, 26px); font-weight: 900;
+  text-transform: uppercase; color: #ffffff;
+  line-height: 1.0; letter-spacing: -0.5px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.flip-tag {
+  display: inline-block; font-size: 9px; font-weight: 500;
+  padding: 3px 10px; border-radius: 100px;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  width: fit-content; backdrop-filter: blur(4px);
+}
+.tag-india  { background: rgba(120,53,15,0.55);  color: #fcd34d; border: 1px solid rgba(251,191,36,0.25); }
+.tag-global { background: rgba(20,83,45,0.55);   color: #6ee7b7; border: 1px solid rgba(76,175,125,0.25); }
+.tag-eu     { background: rgba(30,58,138,0.55);  color: #93c5fd; border: 1px solid rgba(147,197,253,0.25); }
+
+/* Back face — solid bg, explicit z-index */
+.flip-back {
+  background: #0d2b1e;
+  transform: rotateY(180deg);
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  padding: 1.75rem;
+  position: relative;
+  z-index: 2;
+}
+.flip-back::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(to right, #4caf7d, transparent);
+}
+.flip-back-top {
+  display: flex; flex-direction: column; gap: 0.5rem;
+  overflow: hidden;
+}
+.flip-back-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: -0.2px;
+  color: rgba(255,255,255,0.4);
+}
+.flip-back-desc {
+  font-size: 13px; font-weight: 300;
+  color: rgba(255,255,255,0.85); line-height: 1.65;
+  overflow: hidden;
+}
+.flip-back-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; font-weight: 500; color: #4caf7d;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  text-decoration: none; border-bottom: 1px solid rgba(76,175,125,0.3);
+  padding-bottom: 2px; width: fit-content; flex-shrink: 0;
+  transition: color 0.2s, border-color 0.2s;
+}
+.flip-back-link:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+/* View all */
+.s3-view-all {
+  display: flex; justify-content: center;
+  padding: 1.75rem 3rem 3rem;
+}
+.s3-view-all a {
+  font-size: 12px; font-weight: 500; color: #0d2b1e;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  text-decoration: none; border-bottom: 1px solid rgba(13,43,30,0.25);
+  padding-bottom: 3px; transition: color 0.2s, border-color 0.2s;
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.s3-view-all a:hover { color: #2d7a4f; border-color: #2d7a4f; }
+</style>
+</head>
+<body>
+
+<div class="s3">
+
+  <div class="s3-header">
+    <div>
+      <div class="s3-label">Our services</div>
+      <h2 class="s3-title">Where we<br><span class="green">make the</span><br>difference.</h2>
+    </div>
+    <p class="s3-desc">Some of today's most critical sustainability services. Hover any card to explore what's included.</p>
+  </div>
+
+  <div class="s3-canvas">
+    <div class="s3-grid">
+
+      <!-- CBAM -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-front-content">
+              <div class="flip-front-name">CBAM Advisory &amp; Reporting</div>
+              <span class="flip-tag tag-eu">EU Regulation &middot; Live 2026</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-top">
+              <div class="flip-back-name">CBAM Advisory &amp; Reporting</div>
+              <p class="flip-back-desc">The EU's Carbon Border Adjustment Mechanism taxes embedded emissions on imports into the EU. We help exporters calculate, report and comply with CBAM obligations — before the financial penalties hit.</p>
+            </div>
+            <a href="#" class="flip-back-link">Read more &#8599;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- IREC -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-front-content">
+              <div class="flip-front-name">IREC Certification</div>
+              <span class="flip-tag tag-global">Renewable Energy &middot; Global</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-top">
+              <div class="flip-back-name">IREC Certification</div>
+              <p class="flip-back-desc">International Renewable Energy Certificates verify that 1 MWh of energy was generated from a renewable source. We manage the full certification process — from issuance to retirement.</p>
+            </div>
+            <a href="#" class="flip-back-link">Read more &#8599;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carbon Credits -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-front-content">
+              <div class="flip-front-name">Carbon Credits</div>
+              <span class="flip-tag tag-global">Offset Strategy &middot; Net Zero</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-top">
+              <div class="flip-back-name">Carbon Credits</div>
+              <p class="flip-back-desc">We help businesses offset Scope 1, 2 and 3 emissions through verified carbon credits — sourced, validated and retired to globally recognised standards including GHG Protocol and ISO 14064.</p>
+            </div>
+            <a href="#" class="flip-back-link">Read more &#8599;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- EcoVadis -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-front-content">
+              <div class="flip-front-name">EcoVadis Assessment</div>
+              <span class="flip-tag tag-global">Supply Chain &middot; Procurement</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-top">
+              <div class="flip-back-name">EcoVadis Assessment</div>
+              <p class="flip-back-desc">EcoVadis evaluates companies across environment, labour, ethics and sustainable procurement. We guide you through every stage — from scorecard gap analysis to certification improvement.</p>
+            </div>
+            <a href="#" class="flip-back-link">Read more &#8599;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRSR -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-front-content">
+              <div class="flip-front-name">BRSR Reporting</div>
+              <span class="flip-tag tag-india">SEBI Mandate &middot; India</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-top">
+              <div class="flip-back-name">BRSR Reporting</div>
+              <p class="flip-back-desc">Business Responsibility &amp; Sustainability Reporting is mandatory for India's top listed companies under SEBI. We handle data collection, gap analysis, report preparation and submission end to end.</p>
+            </div>
+            <a href="#" class="flip-back-link">Read more &#8599;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- GPCB -->
+      <div class="flip-card">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="flip-front-content">
+              <div class="flip-front-name">GPCB Compliance</div>
+              <span class="flip-tag tag-india">Gujarat &middot; Regulatory</span>
+            </div>
+          </div>
+          <div class="flip-back">
+            <div class="flip-back-top">
+              <div class="flip-back-name">GPCB Compliance</div>
+              <p class="flip-back-desc">The Gujarat Pollution Control Board mandates CTE and CTO consents for industries in Gujarat. We manage documentation, inspections and regulatory submissions — from first application to NOC approval.</p>
+            </div>
+            <a href="#" class="flip-back-link">Read more &#8599;</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="s3-view-all">
+    <a href="#">View all our services &#8599;</a>
+  </div>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SustainCore — Section 5: CTA &amp; Footer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .s5 { font-family: 'DM Sans', sans-serif; background: #0d2b1e; }
+    .s5-cta { padding: 6rem 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.07); position: relative; overflow: hidden; }
+    .s5-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 0% 50%, rgba(76,175,125,0.12) 0%, transparent 60%), radial-gradient(ellipse at 100% 100%, rgba(45,122,79,0.08) 0%, transparent 50%); pointer-events: none; }
+    .s5-cta-left { position: relative; z-index: 1; }
+    .s5-cta-label { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #4caf7d; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; }
+    .s5-cta-label::before { content: ''; width: 28px; height: 1.5px; background: #4caf7d; display: block; }
+    .s5-cta-headline { font-family: 'Barlow Condensed', sans-serif; font-size: clamp(42px, 5.5vw, 72px); font-weight: 900; text-transform: uppercase; color: #ffffff; line-height: 0.9; letter-spacing: -1.5px; margin-bottom: 1.5rem; }
+    .s5-cta-headline .green { color: #4caf7d; }
+    .s5-cta-headline .outline { -webkit-text-stroke: 2px rgba(255,255,255,0.3); color: transparent; }
+    .s5-cta-sub { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.8; max-width: 400px; }
+    .s5-cta-right { position: relative; z-index: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2.5rem; }
+    .s5-form-title { font-family: 'Barlow Condensed', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: -0.3px; color: #fff; margin-bottom: 1.5rem; }
+    .s5-form-row { margin-bottom: 0.85rem; }
+    .s5-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 0.85rem; }
+    .s5-form-row input, .s5-form-row select, .s5-form-row textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 11px 16px; font-size: 13px; font-weight: 300; color: #fff; font-family: 'DM Sans', sans-serif; outline: none; transition: border-color 0.2s; }
+    .s5-form-row input:focus, .s5-form-row select:focus, .s5-form-row textarea:focus { border-color: #4caf7d; }
+    .s5-form-row textarea { resize: none; height: 85px; }
+    .s5-form-row select option { background: #0d2b1e; color: #fff; }
+    .s5-form-row input::placeholder, .s5-form-row textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .phone-wrap { display: flex; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; background: rgba(255,255,255,0.06); transition: border-color 0.2s; }
+    .phone-wrap:focus-within { border-color: #4caf7d; }
+    .phone-wrap.phone-error { border-color: rgba(239,68,68,0.7) !important; }
+    .phone-wrap.phone-valid { border-color: rgba(76,175,125,0.7) !important; }
+    .phone-flag-select { display: flex; align-items: center; padding: 0 10px; background: rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.1); cursor: pointer; position: relative; flex-shrink: 0; }
+    .phone-flag-select select { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; border: none; background: transparent; }
+    .flag-display { display: flex; align-items: center; gap: 5px; pointer-events: none; white-space: nowrap; }
+    .flag-emoji { font-size: 20px; line-height: 1; }
+    .flag-code { font-size: 12px; color: rgba(255,255,255,0.6); font-weight: 300; }
+    .flag-arrow { font-size: 8px; color: rgba(255,255,255,0.25); margin-left: 1px; }
+    .phone-input { flex: 1; background: transparent !important; border: none !important; border-radius: 0 !important; padding: 11px 14px !important; color: #fff !important; font-size: 13px !important; font-family: 'DM Sans', sans-serif !important; outline: none !important; }
+    .phone-input::placeholder { color: rgba(255,255,255,0.3) !important; }
+    .phone-error-msg { font-size: 11px; color: rgba(239,68,68,0.8); margin-top: 5px; padding-left: 4px; display: none; }
+    .s5-submit { width: 100%; margin-top: 0.5rem; padding: 13px; background: #4caf7d; color: #0d2b1e; font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; border: none; border-radius: 10px; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s, transform 0.15s; }
+    .s5-submit:hover { background: #3d9b6a; transform: translateY(-1px); }
+    .s5-footer { padding: 4rem 3rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .s5-footer-grid { display: grid; grid-template-columns: 1.8fr 1.2fr 1.5fr; gap: 3rem; margin-bottom: 3rem; }
+    .s5-brand-logo { font-family: 'Barlow Condensed', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; margin-bottom: 0.4rem; }
+    .s5-brand-logo span { color: #4caf7d; }
+    .s5-brand-tag { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(76,175,125,0.6); margin-bottom: 1.25rem; }
+    .s5-brand-desc { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.4); line-height: 1.75; max-width: 300px; }
+    .s5-col-title { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .s5-col-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+    .s5-col-links a { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; display: flex; align-items: center; gap: 6px; }
+    .s5-col-links a:hover { color: #4caf7d; }
+    .s5-col-links a::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: rgba(76,175,125,0.4); flex-shrink: 0; transition: background 0.2s; }
+    .s5-col-links a:hover::before { background: #4caf7d; }
+    .s5-col-links .view-all { color: #4caf7d; font-weight: 500; }
+    .s5-col-links .view-all::before { background: #4caf7d; }
+    .s5-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 1rem; }
+    .s5-contact-icon { width: 16px; height: 16px; flex-shrink: 0; margin-top: 2px; opacity: 0.5; }
+    .s5-contact-text { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.55; text-decoration: none; transition: color 0.2s; }
+    a.s5-contact-text:hover { color: #4caf7d; }
+    .s5-linkedin { display: inline-flex; align-items: center; gap: 8px; margin-top: 0.5rem; padding: 7px 14px; border: 1px solid rgba(255,255,255,0.12); border-radius: 100px; font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.5); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+    .s5-linkedin:hover { border-color: #4caf7d; color: #4caf7d; }
+    .s5-linkedin-icon { width: 14px; height: 14px; }
+    .s5-bottom { padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .s5-copy { font-size: 12px; color: rgba(255,255,255,0.25); letter-spacing: 0.03em; }
+    .s5-copy span { color: rgba(76,175,125,0.5); }
+    .s5-bottom-links { display: flex; gap: 1.5rem; }
+    .s5-bottom-links a { font-size: 12px; color: rgba(255,255,255,0.25); text-decoration: none; transition: color 0.2s; }
+    .s5-bottom-links a:hover { color: rgba(255,255,255,0.6); }
+  </style>
+</head>
+<body>
+<div class="s5">
+  <div class="s5-cta">
+    <div class="s5-cta-left">
+      <div class="s5-cta-label">Get in touch</div>
+      <h2 class="s5-cta-headline">Let's build your<br><span class="green">sustainable</span><br><span class="outline">future.</span><br>Together.</h2>
+      <p class="s5-cta-sub">Tell us about your business and your sustainability goals. We'll take it from there — no jargon, no obligation.</p>
+    </div>
+    <div class="s5-cta-right">
+      <div class="s5-form-title">Book a free consultation</div>
+      <div class="s5-form-grid">
+        <div class="s5-form-row"><input type="text" placeholder="Full name" /></div>
+        <div class="s5-form-row"><input type="text" placeholder="Company name" /></div>
+      </div>
+      <div class="s5-form-row"><input type="email" placeholder="Email address" /></div>
+      <div class="s5-form-row">
+        <div class="phone-wrap" id="phone-wrap">
+          <div class="phone-flag-select">
+            <select id="country-select" onchange="updateFlag(this)">
+              <option value="in" data-flag="🇮🇳" data-code="+91" data-min="10" data-max="10">India (+91)</option>
+              <option value="af" data-flag="🇦🇫" data-code="+93" data-min="9" data-max="9">Afghanistan (+93)</option>
+              <option value="al" data-flag="🇦🇱" data-code="+355" data-min="9" data-max="9">Albania (+355)</option>
+              <option value="dz" data-flag="🇩🇿" data-code="+213" data-min="9" data-max="9">Algeria (+213)</option>
+              <option value="ar" data-flag="🇦🇷" data-code="+54" data-min="10" data-max="10">Argentina (+54)</option>
+              <option value="am" data-flag="🇦🇲" data-code="+374" data-min="8" data-max="8">Armenia (+374)</option>
+              <option value="au" data-flag="🇦🇺" data-code="+61" data-min="9" data-max="9">Australia (+61)</option>
+              <option value="at" data-flag="🇦🇹" data-code="+43" data-min="10" data-max="11">Austria (+43)</option>
+              <option value="az" data-flag="🇦🇿" data-code="+994" data-min="9" data-max="9">Azerbaijan (+994)</option>
+              <option value="bh" data-flag="🇧🇭" data-code="+973" data-min="8" data-max="8">Bahrain (+973)</option>
+              <option value="bd" data-flag="🇧🇩" data-code="+880" data-min="10" data-max="10">Bangladesh (+880)</option>
+              <option value="by" data-flag="🇧🇾" data-code="+375" data-min="9" data-max="10">Belarus (+375)</option>
+              <option value="be" data-flag="🇧🇪" data-code="+32" data-min="9" data-max="9">Belgium (+32)</option>
+              <option value="bt" data-flag="🇧🇹" data-code="+975" data-min="8" data-max="8">Bhutan (+975)</option>
+              <option value="bo" data-flag="🇧🇴" data-code="+591" data-min="8" data-max="8">Bolivia (+591)</option>
+              <option value="ba" data-flag="🇧🇦" data-code="+387" data-min="8" data-max="8">Bosnia (+387)</option>
+              <option value="br" data-flag="🇧🇷" data-code="+55" data-min="10" data-max="11">Brazil (+55)</option>
+              <option value="bn" data-flag="🇧🇳" data-code="+673" data-min="7" data-max="7">Brunei (+673)</option>
+              <option value="bg" data-flag="🇧🇬" data-code="+359" data-min="9" data-max="9">Bulgaria (+359)</option>
+              <option value="kh" data-flag="🇰🇭" data-code="+855" data-min="8" data-max="9">Cambodia (+855)</option>
+              <option value="ca" data-flag="🇨🇦" data-code="+1" data-min="10" data-max="10">Canada (+1)</option>
+              <option value="cl" data-flag="🇨🇱" data-code="+56" data-min="9" data-max="9">Chile (+56)</option>
+              <option value="cn" data-flag="🇨🇳" data-code="+86" data-min="11" data-max="11">China (+86)</option>
+              <option value="co" data-flag="🇨🇴" data-code="+57" data-min="10" data-max="10">Colombia (+57)</option>
+              <option value="cr" data-flag="🇨🇷" data-code="+506" data-min="8" data-max="8">Costa Rica (+506)</option>
+              <option value="hr" data-flag="🇭🇷" data-code="+385" data-min="8" data-max="9">Croatia (+385)</option>
+              <option value="cy" data-flag="🇨🇾" data-code="+357" data-min="8" data-max="8">Cyprus (+357)</option>
+              <option value="cz" data-flag="🇨🇿" data-code="+420" data-min="9" data-max="9">Czech Republic (+420)</option>
+              <option value="dk" data-flag="🇩🇰" data-code="+45" data-min="8" data-max="8">Denmark (+45)</option>
+              <option value="eg" data-flag="🇪🇬" data-code="+20" data-min="10" data-max="10">Egypt (+20)</option>
+              <option value="ee" data-flag="🇪🇪" data-code="+372" data-min="7" data-max="8">Estonia (+372)</option>
+              <option value="et" data-flag="🇪🇹" data-code="+251" data-min="9" data-max="9">Ethiopia (+251)</option>
+              <option value="fi" data-flag="🇫🇮" data-code="+358" data-min="9" data-max="10">Finland (+358)</option>
+              <option value="fr" data-flag="🇫🇷" data-code="+33" data-min="9" data-max="9">France (+33)</option>
+              <option value="ge" data-flag="🇬🇪" data-code="+995" data-min="9" data-max="9">Georgia (+995)</option>
+              <option value="de" data-flag="🇩🇪" data-code="+49" data-min="10" data-max="11">Germany (+49)</option>
+              <option value="gh" data-flag="🇬🇭" data-code="+233" data-min="9" data-max="9">Ghana (+233)</option>
+              <option value="gr" data-flag="🇬🇷" data-code="+30" data-min="10" data-max="10">Greece (+30)</option>
+              <option value="hk" data-flag="🇭🇰" data-code="+852" data-min="8" data-max="8">Hong Kong (+852)</option>
+              <option value="hu" data-flag="🇭🇺" data-code="+36" data-min="9" data-max="9">Hungary (+36)</option>
+              <option value="is" data-flag="🇮🇸" data-code="+354" data-min="7" data-max="7">Iceland (+354)</option>
+              <option value="id" data-flag="🇮🇩" data-code="+62" data-min="9" data-max="12">Indonesia (+62)</option>
+              <option value="ir" data-flag="🇮🇷" data-code="+98" data-min="10" data-max="10">Iran (+98)</option>
+              <option value="iq" data-flag="🇮🇶" data-code="+964" data-min="10" data-max="10">Iraq (+964)</option>
+              <option value="ie" data-flag="🇮🇪" data-code="+353" data-min="9" data-max="9">Ireland (+353)</option>
+              <option value="il" data-flag="🇮🇱" data-code="+972" data-min="9" data-max="9">Israel (+972)</option>
+              <option value="it" data-flag="🇮🇹" data-code="+39" data-min="9" data-max="10">Italy (+39)</option>
+              <option value="jp" data-flag="🇯🇵" data-code="+81" data-min="10" data-max="11">Japan (+81)</option>
+              <option value="jo" data-flag="🇯🇴" data-code="+962" data-min="9" data-max="9">Jordan (+962)</option>
+              <option value="kz" data-flag="🇰🇿" data-code="+7" data-min="10" data-max="10">Kazakhstan (+7)</option>
+              <option value="ke" data-flag="🇰🇪" data-code="+254" data-min="9" data-max="9">Kenya (+254)</option>
+              <option value="kw" data-flag="🇰🇼" data-code="+965" data-min="8" data-max="8">Kuwait (+965)</option>
+              <option value="lv" data-flag="🇱🇻" data-code="+371" data-min="8" data-max="8">Latvia (+371)</option>
+              <option value="lb" data-flag="🇱🇧" data-code="+961" data-min="7" data-max="8">Lebanon (+961)</option>
+              <option value="lt" data-flag="🇱🇹" data-code="+370" data-min="8" data-max="8">Lithuania (+370)</option>
+              <option value="lu" data-flag="🇱🇺" data-code="+352" data-min="9" data-max="9">Luxembourg (+352)</option>
+              <option value="my" data-flag="🇲🇾" data-code="+60" data-min="9" data-max="10">Malaysia (+60)</option>
+              <option value="mv" data-flag="🇲🇻" data-code="+960" data-min="7" data-max="7">Maldives (+960)</option>
+              <option value="mt" data-flag="🇲🇹" data-code="+356" data-min="8" data-max="8">Malta (+356)</option>
+              <option value="mx" data-flag="🇲🇽" data-code="+52" data-min="10" data-max="10">Mexico (+52)</option>
+              <option value="mn" data-flag="🇲🇳" data-code="+976" data-min="8" data-max="8">Mongolia (+976)</option>
+              <option value="ma" data-flag="🇲🇦" data-code="+212" data-min="9" data-max="9">Morocco (+212)</option>
+              <option value="mm" data-flag="🇲🇲" data-code="+95" data-min="8" data-max="10">Myanmar (+95)</option>
+              <option value="np" data-flag="🇳🇵" data-code="+977" data-min="10" data-max="10">Nepal (+977)</option>
+              <option value="nl" data-flag="🇳🇱" data-code="+31" data-min="9" data-max="9">Netherlands (+31)</option>
+              <option value="nz" data-flag="🇳🇿" data-code="+64" data-min="8" data-max="10">New Zealand (+64)</option>
+              <option value="ng" data-flag="🇳🇬" data-code="+234" data-min="8" data-max="10">Nigeria (+234)</option>
+              <option value="no" data-flag="🇳🇴" data-code="+47" data-min="8" data-max="8">Norway (+47)</option>
+              <option value="om" data-flag="🇴🇲" data-code="+968" data-min="8" data-max="8">Oman (+968)</option>
+              <option value="pk" data-flag="🇵🇰" data-code="+92" data-min="10" data-max="10">Pakistan (+92)</option>
+              <option value="pe" data-flag="🇵🇪" data-code="+51" data-min="9" data-max="9">Peru (+51)</option>
+              <option value="ph" data-flag="🇵🇭" data-code="+63" data-min="10" data-max="10">Philippines (+63)</option>
+              <option value="pl" data-flag="🇵🇱" data-code="+48" data-min="9" data-max="9">Poland (+48)</option>
+              <option value="pt" data-flag="🇵🇹" data-code="+351" data-min="9" data-max="9">Portugal (+351)</option>
+              <option value="qa" data-flag="🇶🇦" data-code="+974" data-min="8" data-max="8">Qatar (+974)</option>
+              <option value="ro" data-flag="🇷🇴" data-code="+40" data-min="9" data-max="9">Romania (+40)</option>
+              <option value="ru" data-flag="🇷🇺" data-code="+7" data-min="10" data-max="10">Russia (+7)</option>
+              <option value="sa" data-flag="🇸🇦" data-code="+966" data-min="9" data-max="9">Saudi Arabia (+966)</option>
+              <option value="rs" data-flag="🇷🇸" data-code="+381" data-min="8" data-max="9">Serbia (+381)</option>
+              <option value="sg" data-flag="🇸🇬" data-code="+65" data-min="8" data-max="8">Singapore (+65)</option>
+              <option value="sk" data-flag="🇸🇰" data-code="+421" data-min="9" data-max="9">Slovakia (+421)</option>
+              <option value="si" data-flag="🇸🇮" data-code="+386" data-min="8" data-max="8">Slovenia (+386)</option>
+              <option value="za" data-flag="🇿🇦" data-code="+27" data-min="9" data-max="9">South Africa (+27)</option>
+              <option value="kr" data-flag="🇰🇷" data-code="+82" data-min="9" data-max="10">South Korea (+82)</option>
+              <option value="es" data-flag="🇪🇸" data-code="+34" data-min="9" data-max="9">Spain (+34)</option>
+              <option value="lk" data-flag="🇱🇰" data-code="+94" data-min="9" data-max="9">Sri Lanka (+94)</option>
+              <option value="se" data-flag="🇸🇪" data-code="+46" data-min="9" data-max="9">Sweden (+46)</option>
+              <option value="ch" data-flag="🇨🇭" data-code="+41" data-min="9" data-max="9">Switzerland (+41)</option>
+              <option value="tw" data-flag="🇹🇼" data-code="+886" data-min="9" data-max="10">Taiwan (+886)</option>
+              <option value="tz" data-flag="🇹🇿" data-code="+255" data-min="9" data-max="9">Tanzania (+255)</option>
+              <option value="th" data-flag="🇹🇭" data-code="+66" data-min="9" data-max="9">Thailand (+66)</option>
+              <option value="tn" data-flag="🇹🇳" data-code="+216" data-min="8" data-max="8">Tunisia (+216)</option>
+              <option value="tr" data-flag="🇹🇷" data-code="+90" data-min="10" data-max="10">Turkey (+90)</option>
+              <option value="ua" data-flag="🇺🇦" data-code="+380" data-min="9" data-max="9">Ukraine (+380)</option>
+              <option value="ae" data-flag="🇦🇪" data-code="+971" data-min="9" data-max="9">UAE (+971)</option>
+              <option value="gb" data-flag="🇬🇧" data-code="+44" data-min="10" data-max="10">UK (+44)</option>
+              <option value="us" data-flag="🇺🇸" data-code="+1" data-min="10" data-max="10">USA (+1)</option>
+              <option value="uy" data-flag="🇺🇾" data-code="+598" data-min="8" data-max="9">Uruguay (+598)</option>
+              <option value="uz" data-flag="🇺🇿" data-code="+998" data-min="9" data-max="9">Uzbekistan (+998)</option>
+              <option value="ve" data-flag="🇻🇪" data-code="+58" data-min="10" data-max="10">Venezuela (+58)</option>
+              <option value="vn" data-flag="🇻🇳" data-code="+84" data-min="9" data-max="10">Vietnam (+84)</option>
+              <option value="ye" data-flag="🇾🇪" data-code="+967" data-min="9" data-max="9">Yemen (+967)</option>
+              <option value="zm" data-flag="🇿🇲" data-code="+260" data-min="9" data-max="9">Zambia (+260)</option>
+              <option value="zw" data-flag="🇿🇼" data-code="+263" data-min="9" data-max="9">Zimbabwe (+263)</option>
+            </select>
+            <div class="flag-display">
+              <span class="flag-emoji" id="flag-emoji">🇮🇳</span>
+              <span class="flag-code" id="flag-code">+91</span>
+              <span class="flag-arrow">&#9660;</span>
+            </div>
+          </div>
+          <input type="tel" class="phone-input" id="phone-input" placeholder="Number" oninput="onPhoneInput(this)" />
+        </div>
+        <div class="phone-error-msg" id="phone-error-msg"></div>
+      </div>
+      <div class="s5-form-row">
+        <select>
+          <option value="">Select a service</option>
+          <option>BRSR Reporting</option>
+          <option>Carbon &amp; Climate Solutions</option>
+          <option>CBAM Advisory</option>
+          <option>EcoVadis Assessment</option>
+          <option>ESG &amp; Sustainability Reporting</option>
+          <option>GPCB Compliance</option>
+          <option>IREC Certification</option>
+          <option>Regulatory Compliance</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="s5-form-row">
+        <textarea placeholder="Tell us about your project or challenge..."></textarea>
+      </div>
+      <button class="s5-submit" onclick="handleSubmit(event)">Send message &#8594;</button>
+    </div>
+  </div>
+
+  <div class="s5-footer">
+    <div class="s5-footer-grid">
+      <div>
+        <div class="s5-brand-logo">Sustain<span>Core</span></div>
+        <div class="s5-brand-tag">Sustainability at Core</div>
+        <p class="s5-brand-desc">A full-service environmental consultancy helping businesses navigate ESG, carbon, compliance and sustainability &mdash; from strategy to execution.</p>
+      </div>
+      <div>
+        <div class="s5-col-title">Our Services</div>
+        <ul class="s5-col-links">
+          <li><a href="#">BRSR Reporting</a></li>
+          <li><a href="#">Carbon &amp; Climate Solutions</a></li>
+          <li><a href="#">CBAM Advisory</a></li>
+          <li><a href="#">EcoVadis Assessment</a></li>
+          <li><a href="#">ESG &amp; Sustainability Reporting</a></li>
+          <li><a href="#">GPCB Compliance</a></li>
+          <li><a href="#">IREC Certification</a></li>
+          <li><a href="#">Regulatory Compliance</a></li>
+          <li><a href="#" class="view-all">View all services &#8594;</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="s5-col-title">Contact Us</div>
+        <div class="s5-contact-item">
+          <svg class="s5-contact-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <a href="mailto:sustaincore.es@gmail.com" class="s5-contact-text">sustaincore.es@gmail.com</a>
+        </div>
+        <div class="s5-contact-item">
+          <svg class="s5-contact-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.47 2 2 0 0 1 3.55 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.54a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <div>
+            <div class="s5-contact-text">+91 93276 35935 (India)</div>
+            <div class="s5-contact-text" style="margin-top:3px;">+49 17687966904 (Germany)</div>
+          </div>
+        </div>
+        <div class="s5-contact-item">
+          <svg class="s5-contact-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+          </svg>
+          <div class="s5-contact-text">Ahmedabad, Gujarat, India</div>
+        </div>
+        <a href="#" class="s5-linkedin">
+          <svg class="s5-linkedin-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+          Follow us on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="s5-bottom">
+    <div class="s5-copy">&copy; 2026 <span>SustainCore</span> Environmental Solutions Pvt. Ltd. All rights reserved.</div>
+    <div class="s5-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  const countryData = {};
+  document.querySelectorAll('#country-select option').forEach(opt => {
+    countryData[opt.value] = {
+      flag: opt.getAttribute('data-flag'),
+      code: opt.getAttribute('data-code'),
+      min: parseInt(opt.getAttribute('data-min')),
+      max: parseInt(opt.getAttribute('data-max')),
+      name: opt.text.split(' (')[0]
+    };
+  });
+  function updateFlag(sel) {
+    const c = countryData[sel.value];
+    document.getElementById('flag-emoji').textContent = c.flag;
+    document.getElementById('flag-code').textContent = c.code;
+    const input = document.getElementById('phone-input');
+    input.value = ''; input.maxLength = c.max;
+    const wrap = document.getElementById('phone-wrap');
+    const errMsg = document.getElementById('phone-error-msg');
+    wrap.classList.remove('phone-error','phone-valid');
+    errMsg.style.display = 'none';
+  }
+  function onPhoneInput(input) {
+    const digits = input.value.replace(/\D/g,'');
+    const sel = document.getElementById('country-select');
+    const c = countryData[sel.value];
+    input.value = digits.slice(0, c.max);
+    const wrap = document.getElementById('phone-wrap');
+    const errMsg = document.getElementById('phone-error-msg');
+    if (digits.length === 0) { wrap.classList.remove('phone-error','phone-valid'); errMsg.style.display='none'; }
+    else if (digits.length >= c.min && digits.length <= c.max) { wrap.classList.remove('phone-error'); wrap.classList.add('phone-valid'); errMsg.style.display='none'; }
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    const input = document.getElementById('phone-input');
+    const sel = document.getElementById('country-select');
+    const c = countryData[sel.value];
+    const digits = input.value.replace(/\D/g,'');
+    const wrap = document.getElementById('phone-wrap');
+    const errMsg = document.getElementById('phone-error-msg');
+    if (digits.length > 0 && (digits.length < c.min || digits.length > c.max)) {
+      wrap.classList.add('phone-error'); wrap.classList.remove('phone-valid');
+      errMsg.style.display = 'block';
+      errMsg.textContent = c.min === c.max
+        ? 'Please enter a valid ' + c.min + '-digit number for ' + c.name
+        : 'Please enter a valid ' + c.min + '\u2013' + c.max + ' digit number for ' + c.name;
+      input.focus(); return;
+    }
+    wrap.classList.remove('phone-error'); errMsg.style.display='none';
+    alert('Message sent successfully! We will be in touch shortly.');
+  }
+</script>
+</body>
+</html>
+
+

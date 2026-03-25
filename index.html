@@ -2,281 +2,485 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SustainCore | ESG Compliance & Carbon Accountability Experts</title>
-    <meta name="description" content="SustainCore provides expert ESG consulting, EU CBAM compliance reporting, and verified carbon strategies for global enterprises. Transform your sustainability into a strategic advantage.">
-    <meta name="keywords" content="ESG consulting, CBAM compliance, carbon reporting, sustainability strategy, BRSR reporting, IREC certification, net zero roadmap">
-    <meta name="author" content="SustainCore">
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sustaincore.in/">
-    <meta property="og:title" content="SustainCore | High-Fidelity Sustainability Solutions">
-    <meta property="og:description" content="Helping businesses achieve ESG excellence through scientific precision and regulatory integrity.">
-    <meta property="og:image" content="https://sustaincore.in/public/og-image.png">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SustainCore | Enterprise ESG Consulting & Environmental Solutions</title>
+  <meta name="description"
+    content="SustainCore delivers high-precision ESG reporting, carbon footprint engineering, and NABL-accredited environmental monitoring. Science-based sustainability for the modern enterprise.">
+  <meta property="og:title" content="SustainCore | Enterprise ESG Consulting">
+  <meta property="og:description"
+    content="High-precision ESG reporting, carbon footprint engineering, and NABL-accredited environmental monitoring.">
+  <meta property="og:image" content="/Frame 4.svg">
+  <link rel="icon" href="/Frame 4.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/index-sections.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 </head>
 
-<body class="bg-brand-offWhite overflow-x-hidden">
-    <!-- Header Placeholder -->
+<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
+
+
+  <section class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="/hero_animation.mp4" type="video/mp4">
+    </video>
+    <div class="hero-canvas"><canvas id="c"></canvas></div>
+    <div class="hero-overlay"></div>
+
     <div id="header-root"></div>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative h-[95vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-brand-charcoal">
-            <video class="absolute inset-0 w-full h-full object-cover z-0 opacity-80" playsinline autoplay muted loop>
-                <source src="public/hero_animation.mp4" type="video/mp4">
-            </video>
-            
-            <!-- Dark Gradient Overlay using brand blue -->
-            <div class="absolute inset-0 z-10 bg-gradient-to-br from-brand-blue/80 via-brand-charcoal/70 to-brand-charcoal/90"></div>
-            
-            <!-- Subtle floating effect overlay (optional grain/light) -->
-            <div class="absolute inset-0 z-10 opacity-30 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,transparent_60%)]"></div>
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        <span class="hl-white">Start</span>
+        <span class="hl-green">Today.</span>
+        <span class="hl-outline">Lead</span>
+        <span class="hl-white">Tomorrow.</span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-sub">
+          The global market rewards businesses that <strong>act on sustainability</strong> &mdash; not ones that plan
+          to.
+          SustainCore gets you moving, from day one.
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-val">15+</div>
+            <div class="stat-label">ESG frameworks</div>
+          </div>
+          <div class="stat">
+            <div class="stat-val">6</div>
+            <div class="stat-label">Service areas</div>
+          </div>
+          <div class="stat">
+            <div class="stat-val">1</div>
+            <div class="stat-label">End-to-end partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="relative z-20 max-w-7xl mx-auto px-6 text-center">
-                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/5 backdrop-blur-md mb-10 animate-fade-in">
-                    <span class="w-1.5 h-1.5 rounded-full bg-brand-lightGreen animate-pulse"></span>
-                    <span class="text-[10px] font-bold tracking-[0.3em] text-white/80 uppercase">Established ESG Excellence</span>
-                </div>
 
-                <h1 class="text-5xl md:text-[6.5rem] font-display font-extrabold text-white mb-8 tracking-tighter leading-[1] animate-slide-up">
-                    Your Environmental & <br /> <span class="text-brand-lightGreen italic">Sustainability</span> Partner
-                </h1>
 
-                <p class="text-lg md:text-xl text-white/80 max-w-3xl mx-auto mb-14 animate-slide-up font-light leading-relaxed" style="animation-delay: 0.1s">
-                    Helping businesses achieve ESG compliance, carbon accountability, and regulatory excellence through high-fidelity data and verified carbon strategies.
-                </p>
 
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 animate-slide-up" style="animation-delay: 0.25s">
-                    <a href="/services.html" class="bg-white text-brand-charcoal hover:bg-brand-lightGreen hover:text-brand-charcoal px-10 py-5 rounded-full font-bold transition-all duration-300 shadow-xl shadow-black/20">Explore Solutions</a>
-                    <a href="/contact.html" class="flex items-center gap-3 group text-white font-bold transition-all">
-                        Consult Advisory
-                        <div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-brand-charcoal transition-all">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /><path d="m12 5 7 7-7 7" /></svg>
-                        </div>
-                    </a>
-                </div>
+
+
+  <div class="s2">
+    <div class="s2-connector"></div>
+    <div class="s2-grid"></div>
+
+    <div class="s2-inner">
+      <div class="s2-counter-wrap">
+        <div class="s2-pulse"></div>
+        <div class="s2-pulse2"></div>
+        <div class="s2-counter">
+          <span id="counter">0.0</span><span class="s2-counter-unit">°C</span>
+        </div>
+      </div>
+
+      <p class="s2-context">
+        <strong>1.6°C above pre-industrial levels.</strong> 2024 was the warmest year in 175 years of recorded history.
+        The environmental crisis is already reaching business balance sheets — <strong>$38 trillion in global GDP is at
+          risk by 2050.</strong>
+      </p>
+
+      <div class="s2-callback">
+        Those who start <span class="today">today</span> — will lead <span class="tomorrow">tomorrow.</span>
+      </div>
+
+      <div class="s2-deepdive">
+        <a href="#">Explore the full data behind the sustainability crisis ↗</a>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="s2">
+
+    <div class="s2-alarm">
+      <div class="s2-alarm-dot"></div>
+      <div class="s2-alarm-text">
+        2024 — Warmest year in 175 years of records
+        <span>·</span> 1.6°C above pre-industrial levels
+        <span>·</span> $182B in US climate disaster damages
+        <span>·</span> The crisis is not coming — it is here
+      </div>
+    </div>
+
+    <div class="s2-intro">
+      <div>
+        <div class="s2-label">The scale of the crisis</div>
+        <h2 class="s2-title">The planet<br>is sending<br><span class="red">a bill.</span><br><span class="green">Will
+            your</span><br><span class="green">business</span><br><span class="green">be ready?</span></h2>
+      </div>
+      <p class="s2-desc">Four forces are converging simultaneously — rising temperatures, accelerating industry impact,
+        mounting business risk, and a rapidly closing timeline. Here is what the data shows.</p>
+    </div>
+
+    <div class="s2-panels">
+
+      <div class="s2-panel p1">
+        <div class="s2-panel-tag">01 — Planet in distress</div>
+        <div class="chart-wrap"><canvas id="c1"></canvas></div>
+        <div class="s2-stat-num">1.6<sup>°C</sup></div>
+        <div class="s2-panel-title">Above pre-industrial levels in 2024</div>
+        <div class="s2-panel-desc">2024 was the warmest year in 175 years of records — the first to breach 1.5°C. The 10
+          warmest years all occurred in the last decade.</div>
+        <div class="s2-panel-source">Source: Copernicus / NASA / NOAA</div>
+      </div>
+
+      <div class="s2-panel p2">
+        <div class="s2-panel-tag">02 — Industry impact</div>
+        <div class="chart-wrap"><canvas id="c2"></canvas></div>
+        <div class="s2-stat-num">37<sup>Gt</sup></div>
+        <div class="s2-panel-title">Global CO₂ emissions from industry in 2023</div>
+        <div class="s2-panel-desc">Industrial CO₂ hit a record high in 2023. Manufacturing, energy and construction
+          account for over 70% of all global emissions.</div>
+        <div class="s2-panel-source">Source: IEA / Global Carbon Project</div>
+      </div>
+
+      <div class="s2-panel p3">
+        <div class="s2-panel-tag">03 — Business risk</div>
+        <div class="chart-wrap"><canvas id="c3"></canvas></div>
+        <div class="s2-stat-num">$38<sup>T</sup></div>
+        <div class="s2-panel-title">Projected GDP loss from climate damage by 2050</div>
+        <div class="s2-panel-desc">Climate risk will wipe 10–23% from global GDP by 2100. Companies without a
+          sustainability strategy face the steepest losses.</div>
+        <div class="s2-panel-source">Source: Swiss Re / WEF</div>
+      </div>
+
+      <div class="s2-panel p4">
+        <div class="s2-panel-tag">04 — The opportunity window</div>
+        <div class="chart-wrap"><canvas id="c4"></canvas></div>
+        <div class="s2-stat-num">$14<sup>T</sup></div>
+        <div class="s2-panel-title">Green economy market size by 2030</div>
+        <div class="s2-panel-desc">Every $1 invested in sustainability generates up to $19 in avoided losses. The green
+          economy is the fastest-growing market on the planet.</div>
+        <div class="s2-panel-source">Source: WEF / CDP</div>
+      </div>
+
+    </div>
+
+    <div class="s2-turn">
+      <div class="s2-turn-left">
+        <div class="s2-turn-label">Strategic Response · 2026</div>
+        <h2 class="s2-turn-headline">The crisis is real.<br><span class="green">The opportunity</span><br>is even
+          bigger.</h2>
+        <p class="s2-turn-desc">We transform environmental complexity into enterprise value through high-precision
+          carbon engineering and scientific ESG stewardship.</p>
+      </div>
+      <div class="s2-turn-right">
+        <div class="s2-turn-stat">
+          <div class="s2-turn-stat-val">$19<sup>x</sup></div>
+          <div class="s2-turn-stat-label">Return on sustainability investment</div>
+        </div>
+        <div class="s2-turn-actions">
+          <a href="/services.html" class="s2-cta">Explore Solutions →</a>
+          <a href="/contact.html" class="s2-cta-alt">Advisory Connect</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="s3">
+
+    <div class="s3-header">
+      <div>
+        <div class="s3-label">Our services</div>
+        <h2 class="s3-title">Where we<br><span class="green">make the</span><br>difference.</h2>
+      </div>
+      <p class="s3-desc">Some of today's most critical sustainability services. Hover any card to explore what's
+        included.</p>
+    </div>
+
+    <div class="s3-canvas">
+      <div class="s3-grid">
+
+        <!-- ESG Reporting -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-content">
+                <div class="flip-front-name">ESG Reporting</div>
+                <span class="flip-tag tag-global">BRSR &middot; GRI &middot; CDP</span>
+              </div>
             </div>
-        </section>
-
-        <!-- Mission Section -->
-        <section class="bg-white py-40 relative overflow-hidden border-t border-slate-50">
-            <div
-                class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-blue/5 blur-[160px] rounded-full translate-x-1/2 -translate-y-1/2">
+            <div class="flip-back">
+              <div class="flip-back-top">
+                <div class="flip-back-name">ESG Reporting</div>
+                <p class="flip-back-desc">Assurance-ready disclosures across BRSR, GRI, CDP, TCFD, and SASB. We
+                  structure integrated reporting that aligns seamlessly with both Indian (SEBI) mandates and global
+                  investor expectations.</p>
+              </div>
+              <a href="/services.html" class="flip-back-link">Explore frameworks &#8599;</a>
             </div>
+          </div>
+        </div>
 
-            <div class="max-w-7xl mx-auto px-6 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
-                    <div>
-                        <div class="text-brand-blue font-bold tracking-[0.2em] text-xs uppercase mb-6 animate-fade-in">
-                            Our Mandate</div>
-                        <h2
-                            class="text-brand-charcoal text-5xl md:text-7xl font-display font-extrabold mb-10 leading-[1.1] tracking-tight">
-                            The era of <br />"Check-Box" <br />Sustainability is <span
-                                class="bg-gradient-to-r from-brand-blue to-brand-green bg-clip-text text-transparent italic">Over.</span>
-                        </h2>
-                        <p class="text-slate-500 text-xl md:text-2xl leading-relaxed mb-16 font-medium">
-                            We don't just report data; we engineer resilience. SUSTAINCORE provides the scientific
-                            backbone for global organizations searching for absolute regulatory transparency.
-                        </p>
-                        <a href="/about.html"
-                            class="group flex items-center gap-4 text-brand-charcoal font-bold text-lg">
-                            <span
-                                class="border-b-2 border-brand-blue pb-1 group-hover:border-brand-charcoal transition-all">Our
-                                4-Step Methodology</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="text-brand-blue group-hover:translate-x-2 transition-transform">
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                            </svg>
-                        </a>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-6 relative">
-                        <div class="absolute -inset-10 bg-brand-blue/5 blur-3xl rounded-full z-0"></div>
-                        <div
-                            class="p-10 rounded-4xl bg-brand-softGray border border-slate-100 hover:border-brand-blue/40 transition-all duration-500 group relative z-10">
-                            <div
-                                class="text-brand-blue font-display text-5xl font-extrabold mb-4 group-hover:scale-110 transition-transform origin-left">
-                                99.9%</div>
-                            <div class="text-slate-500 text-xs font-bold uppercase tracking-[0.2em]">Data Fidelity</div>
-                        </div>
-                        <div
-                            class="p-10 rounded-4xl bg-brand-softGray border border-slate-100 hover:border-brand-blue/40 transition-all duration-500 group relative z-10 mt-12">
-                            <div
-                                class="text-brand-blue font-display text-5xl font-extrabold mb-4 group-hover:scale-110 transition-transform origin-left">
-                                500+</div>
-                            <div class="text-slate-500 text-xs font-bold uppercase tracking-[0.2em]">Audits Certified
-                            </div>
-                        </div>
-                        <div
-                            class="col-span-2 p-12 rounded-4xl bg-brand-blue relative overflow-hidden group shadow-2xl shadow-brand-blue/20">
-                            <div
-                                class="absolute top-0 right-0 w-40 h-40 bg-white/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2">
-                            </div>
-                            <div class="relative z-10 flex items-center justify-between">
-                                <div>
-                                    <h3 class="text-white text-3xl font-bold mb-2">Global Compliance</h3>
-                                    <p class="text-white/70 font-medium">Verified EU Carbon Border Adjustment Experts
-                                    </p>
-                                </div>
-                                <div
-                                    class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center text-white rotate-12 group-hover:rotate-0 transition-transform">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                                        <path d="M2 12h20" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Carbon & Climate -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-content">
+                <div class="flip-front-name">Carbon &amp; Climate</div>
+                <span class="flip-tag tag-eu">CBAM &middot; Net Zero &middot; Scope 1-3</span>
+              </div>
             </div>
-        </section>
-
-        <!-- Our Services Section -->
-        <section class="py-40 bg-brand-offWhite relative">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-24">
-                    <div class="text-brand-green font-bold tracking-[0.2em] text-xs uppercase mb-6 flex items-center justify-center gap-4">
-                        <span class="w-12 h-px bg-brand-green/30"></span> Our Impact <span class="w-12 h-px bg-brand-green/30"></span>
-                    </div>
-                    <h2 class="text-5xl md:text-7xl font-display font-bold text-brand-charcoal mb-8 tracking-tighter">Where we make the difference.</h2>
-                </div>
-
-                <!-- Services Grid (Flip Cards) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- CBAM -->
-                    <div class="group h-[360px] cursor-pointer [perspective:1000px]">
-                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
-                            <!-- Front -->
-                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
-                                <span class="self-start px-4 py-1.5 rounded-full bg-blue-50 text-brand-blue text-[10px] font-bold uppercase tracking-wider">EU Regulation</span>
-                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">CBAM Advisory & Reporting</h3>
-                                <div class="w-12 h-12 rounded-full bg-brand-blue/5 flex items-center justify-center text-brand-blue group-hover:scale-110 transition-transform">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                                </div>
-                            </div>
-                            <!-- Back -->
-                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
-                                <div class="relative overflow-hidden">
-                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
-                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">CBAM Advisory</h4>
-                                     <p class="text-slate-500 text-sm leading-relaxed">The EU's Carbon Border Adjustment Mechanism taxes embedded emissions on imports. We help exporters calculate, report and comply with obligations.</p>
-                                </div>
-                                <a href="/cbam.html" class="text-brand-green font-bold text-sm flex items-center gap-2 hover:opacity-70 transition-opacity">Read more ↗</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- IREC -->
-                    <div class="group h-[360px] cursor-pointer [perspective:1000px]">
-                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
-                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
-                                <span class="self-start px-4 py-1.5 rounded-full bg-emerald-50 text-brand-green text-[10px] font-bold uppercase tracking-wider">Global Standards</span>
-                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">IREC Certification</h3>
-                                <div class="w-12 h-12 rounded-full bg-brand-green/5 flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
-                                </div>
-                            </div>
-                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
-                                <div>
-                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
-                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">IREC Certification</h4>
-                                     <p class="text-slate-500 text-sm leading-relaxed">International Renewable Energy Certificates verify clean energy generation. We bridge the gap from audit and issuance to final retirement.</p>
-                                </div>
-                                <a href="/services.html" class="text-brand-green font-bold text-sm flex items-center gap-2 hover:opacity-70 transition-opacity">Read more ↗</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Carbon -->
-                    <div class="group h-[360px] cursor-pointer [perspective:1000px]">
-                        <div class="relative h-full w-full rounded-4xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-premium bg-white">
-                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] bg-white border border-slate-100">
-                                <span class="self-start px-4 py-1.5 rounded-full bg-green-50 text-brand-green text-[10px] font-bold uppercase tracking-wider">Net Zero</span>
-                                <h3 class="text-2xl font-bold text-brand-charcoal leading-tight">Carbon Credits</h3>
-                                <div class="w-12 h-12 rounded-full bg-brand-green/5 flex items-center justify-center text-brand-green group-hover:scale-110 transition-transform">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5l6.74-6.76z"/><line x1="16" y1="8" x2="2" y2="22"/><line x1="17.5" y1="15" x2="9" y2="15"/></svg>
-                                </div>
-                            </div>
-                            <div class="absolute inset-0 h-full w-full rounded-4xl p-10 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] bg-brand-softGray border border-brand-green/20">
-                                <div>
-                                     <div class="absolute top-0 left-0 w-8 h-1 bg-brand-green"></div>
-                                     <h4 class="text-lg font-bold text-brand-charcoal mb-4 pt-4">Carbon Credits</h4>
-                                     <p class="text-slate-500 text-sm leading-relaxed">High-fidelity carbon offsetting through verified projects. Sourced and retired to globally recognized GHG and ISO standards.</p>
-                                </div>
-                                <a href="/services.html" class="text-brand-green font-bold text-sm flex items-center gap-2 hover:opacity-70 transition-opacity">Read more ↗</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="mt-20 text-center">
-                    <a href="/services.html" class="btn-primary">View All Services</a>
-                </div>
+            <div class="flip-back">
+              <div class="flip-back-top">
+                <div class="flip-back-name">Carbon &amp; Climate</div>
+                <p class="flip-back-desc">End-to-end carbon accounting, including precise organizational and product
+                  footprints. We engineer Net-Zero roadmaps, CBAM compliance advisory, and verified carbon credit
+                  strategies.</p>
+              </div>
+              <a href="/cbam.html" class="flip-back-link">Read our strategy &#8599;</a>
             </div>
-        </section>
+          </div>
+        </div>
 
-    </main>
+        <!-- Environmental Compliance -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-content">
+                <div class="flip-front-name">Environmental Compliance</div>
+                <span class="flip-tag tag-india">CTE/CTO &middot; EIA &middot; Clearances</span>
+              </div>
+            </div>
+            <div class="flip-back">
+              <div class="flip-back-top">
+                <div class="flip-back-name">Environmental Compliance</div>
+                <p class="flip-back-desc">Flawless execution of CPCB/SPCB mandates. We secure Environmental Clearances,
+                  conduct robust EIA studies, manage Consent to Establish/Operate, and structure compliant waste
+                  management rules.</p>
+              </div>
+              <a href="/services.html" class="flip-back-link">View legal coverage &#8599;</a>
+            </div>
+          </div>
+        </div>
 
-    <!-- Footer Placeholder -->
+        <!-- Testing & Monitoring -->
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <div class="flip-front-content">
+                <div class="flip-front-name">Testing &amp; Monitoring</div>
+                <span class="flip-tag tag-global">Air &middot; Stack &middot; Labs</span>
+              </div>
+            </div>
+            <div class="flip-back">
+              <div class="flip-back-top">
+                <div class="flip-back-name">Testing &amp; Monitoring</div>
+                <p class="flip-back-desc">NABL-accredited technical analysis spanning ambient air quality, isokinetic
+                  stack emissions, industrial wastewater diagnostics, and occupational noise monitoring for absolute
+                  regulatory safety.</p>
+              </div>
+              <a href="/services.html" class="flip-back-link">Explore testing depth &#8599;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="s3-view-all">
+      <a href="#">View all our services &#8599;</a>
+    </div>
+
+  </div>
+
+
+
+  <div class="s5">
+    <div class="s5-cta">
+      <div class="s5-cta-left">
+        <div class="s5-cta-label">Get in touch</div>
+        <h2 class="s5-cta-headline">Let's build your<br><span class="green">sustainable</span><br><span
+            class="outline">future.</span><br>Together.</h2>
+        <p class="s5-cta-sub">Tell us about your business and your sustainability goals. We'll take it from there — no
+          jargon, no obligation.</p>
+      </div>
+      <div class="s5-cta-right">
+        <div class="s5-form-title">Book a free consultation</div>
+        <div class="s5-form-grid">
+          <div class="s5-form-row"><input type="text" placeholder="Full name" /></div>
+          <div class="s5-form-row"><input type="text" placeholder="Company name" /></div>
+        </div>
+        <div class="s5-form-row"><input type="email" placeholder="Email address" /></div>
+        <div class="s5-form-row">
+          <div class="phone-wrap" id="phone-wrap">
+            <div class="phone-flag-select">
+              <select id="country-select" onchange="updateFlag(this)">
+                <option value="in" data-flag="🇮🇳" data-code="+91" data-min="10" data-max="10">India (+91)</option>
+                <option value="af" data-flag="🇦🇫" data-code="+93" data-min="9" data-max="9">Afghanistan (+93)</option>
+                <option value="al" data-flag="🇦🇱" data-code="+355" data-min="9" data-max="9">Albania (+355)</option>
+                <option value="dz" data-flag="🇩🇿" data-code="+213" data-min="9" data-max="9">Algeria (+213)</option>
+                <option value="ar" data-flag="🇦🇷" data-code="+54" data-min="10" data-max="10">Argentina (+54)</option>
+                <option value="am" data-flag="🇦🇲" data-code="+374" data-min="8" data-max="8">Armenia (+374)</option>
+                <option value="au" data-flag="🇦🇺" data-code="+61" data-min="9" data-max="9">Australia (+61)</option>
+                <option value="at" data-flag="🇦🇹" data-code="+43" data-min="10" data-max="11">Austria (+43)</option>
+                <option value="az" data-flag="🇦🇿" data-code="+994" data-min="9" data-max="9">Azerbaijan (+994)
+                </option>
+                <option value="bh" data-flag="🇧🇭" data-code="+973" data-min="8" data-max="8">Bahrain (+973)</option>
+                <option value="bd" data-flag="🇧🇩" data-code="+880" data-min="10" data-max="10">Bangladesh (+880)
+                </option>
+                <option value="by" data-flag="🇧🇾" data-code="+375" data-min="9" data-max="10">Belarus (+375)</option>
+                <option value="be" data-flag="🇧🇪" data-code="+32" data-min="9" data-max="9">Belgium (+32)</option>
+                <option value="bt" data-flag="🇧🇹" data-code="+975" data-min="8" data-max="8">Bhutan (+975)</option>
+                <option value="bo" data-flag="🇧🇴" data-code="+591" data-min="8" data-max="8">Bolivia (+591)</option>
+                <option value="ba" data-flag="🇧🇦" data-code="+387" data-min="8" data-max="8">Bosnia (+387)</option>
+                <option value="br" data-flag="🇧🇷" data-code="+55" data-min="10" data-max="11">Brazil (+55)</option>
+                <option value="bn" data-flag="🇧🇳" data-code="+673" data-min="7" data-max="7">Brunei (+673)</option>
+                <option value="bg" data-flag="🇧🇬" data-code="+359" data-min="9" data-max="9">Bulgaria (+359)</option>
+                <option value="kh" data-flag="🇰🇭" data-code="+855" data-min="8" data-max="9">Cambodia (+855)</option>
+                <option value="ca" data-flag="🇨🇦" data-code="+1" data-min="10" data-max="10">Canada (+1)</option>
+                <option value="cl" data-flag="🇨🇱" data-code="+56" data-min="9" data-max="9">Chile (+56)</option>
+                <option value="cn" data-flag="🇨🇳" data-code="+86" data-min="11" data-max="11">China (+86)</option>
+                <option value="co" data-flag="🇨🇴" data-code="+57" data-min="10" data-max="10">Colombia (+57)</option>
+                <option value="cr" data-flag="🇨🇷" data-code="+506" data-min="8" data-max="8">Costa Rica (+506)
+                </option>
+                <option value="hr" data-flag="🇭🇷" data-code="+385" data-min="8" data-max="9">Croatia (+385)</option>
+                <option value="cy" data-flag="🇨🇾" data-code="+357" data-min="8" data-max="8">Cyprus (+357)</option>
+                <option value="cz" data-flag="🇨🇿" data-code="+420" data-min="9" data-max="9">Czech Republic (+420)
+                </option>
+                <option value="dk" data-flag="🇩🇰" data-code="+45" data-min="8" data-max="8">Denmark (+45)</option>
+                <option value="eg" data-flag="🇪🇬" data-code="+20" data-min="10" data-max="10">Egypt (+20)</option>
+                <option value="ee" data-flag="🇪🇪" data-code="+372" data-min="7" data-max="8">Estonia (+372)</option>
+                <option value="et" data-flag="🇪🇹" data-code="+251" data-min="9" data-max="9">Ethiopia (+251)</option>
+                <option value="fi" data-flag="🇫🇮" data-code="+358" data-min="9" data-max="10">Finland (+358)</option>
+                <option value="fr" data-flag="🇫🇷" data-code="+33" data-min="9" data-max="9">France (+33)</option>
+                <option value="ge" data-flag="🇬🇪" data-code="+995" data-min="9" data-max="9">Georgia (+995)</option>
+                <option value="de" data-flag="🇩🇪" data-code="+49" data-min="10" data-max="11">Germany (+49)</option>
+                <option value="gh" data-flag="🇬🇭" data-code="+233" data-min="9" data-max="9">Ghana (+233)</option>
+                <option value="gr" data-flag="🇬🇷" data-code="+30" data-min="10" data-max="10">Greece (+30)</option>
+                <option value="hk" data-flag="🇭🇰" data-code="+852" data-min="8" data-max="8">Hong Kong (+852)</option>
+                <option value="hu" data-flag="🇭🇺" data-code="+36" data-min="9" data-max="9">Hungary (+36)</option>
+                <option value="is" data-flag="🇮🇸" data-code="+354" data-min="7" data-max="7">Iceland (+354)</option>
+                <option value="id" data-flag="🇮🇩" data-code="+62" data-min="9" data-max="12">Indonesia (+62)</option>
+                <option value="ir" data-flag="🇮🇷" data-code="+98" data-min="10" data-max="10">Iran (+98)</option>
+                <option value="iq" data-flag="🇮🇶" data-code="+964" data-min="10" data-max="10">Iraq (+964)</option>
+                <option value="ie" data-flag="🇮🇪" data-code="+353" data-min="9" data-max="9">Ireland (+353)</option>
+                <option value="il" data-flag="🇮🇱" data-code="+972" data-min="9" data-max="9">Israel (+972)</option>
+                <option value="it" data-flag="🇮🇹" data-code="+39" data-min="9" data-max="10">Italy (+39)</option>
+                <option value="jp" data-flag="🇯🇵" data-code="+81" data-min="10" data-max="11">Japan (+81)</option>
+                <option value="jo" data-flag="🇯🇴" data-code="+962" data-min="9" data-max="9">Jordan (+962)</option>
+                <option value="kz" data-flag="🇰🇿" data-code="+7" data-min="10" data-max="10">Kazakhstan (+7)</option>
+                <option value="ke" data-flag="🇰🇪" data-code="+254" data-min="9" data-max="9">Kenya (+254)</option>
+                <option value="kw" data-flag="🇰🇼" data-code="+965" data-min="8" data-max="8">Kuwait (+965)</option>
+                <option value="lv" data-flag="🇱🇻" data-code="+371" data-min="8" data-max="8">Latvia (+371)</option>
+                <option value="lb" data-flag="🇱🇧" data-code="+961" data-min="7" data-max="8">Lebanon (+961)</option>
+                <option value="lt" data-flag="🇱🇹" data-code="+370" data-min="8" data-max="8">Lithuania (+370)</option>
+                <option value="lu" data-flag="🇱🇺" data-code="+352" data-min="9" data-max="9">Luxembourg (+352)
+                </option>
+                <option value="my" data-flag="🇲🇾" data-code="+60" data-min="9" data-max="10">Malaysia (+60)</option>
+                <option value="mv" data-flag="🇲🇻" data-code="+960" data-min="7" data-max="7">Maldives (+960)</option>
+                <option value="mt" data-flag="🇲🇹" data-code="+356" data-min="8" data-max="8">Malta (+356)</option>
+                <option value="mx" data-flag="🇲🇽" data-code="+52" data-min="10" data-max="10">Mexico (+52)</option>
+                <option value="mn" data-flag="🇲🇳" data-code="+976" data-min="8" data-max="8">Mongolia (+976)</option>
+                <option value="ma" data-flag="🇲🇦" data-code="+212" data-min="9" data-max="9">Morocco (+212)</option>
+                <option value="mm" data-flag="🇲🇲" data-code="+95" data-min="8" data-max="10">Myanmar (+95)</option>
+                <option value="np" data-flag="🇳🇵" data-code="+977" data-min="10" data-max="10">Nepal (+977)</option>
+                <option value="nl" data-flag="🇳🇱" data-code="+31" data-min="9" data-max="9">Netherlands (+31)</option>
+                <option value="nz" data-flag="🇳🇿" data-code="+64" data-min="8" data-max="10">New Zealand (+64)
+                </option>
+                <option value="ng" data-flag="🇳🇬" data-code="+234" data-min="8" data-max="10">Nigeria (+234)</option>
+                <option value="no" data-flag="🇳🇴" data-code="+47" data-min="8" data-max="8">Norway (+47)</option>
+                <option value="om" data-flag="🇴🇲" data-code="+968" data-min="8" data-max="8">Oman (+968)</option>
+                <option value="pk" data-flag="🇵🇰" data-code="+92" data-min="10" data-max="10">Pakistan (+92)</option>
+                <option value="pe" data-flag="🇵🇪" data-code="+51" data-min="9" data-max="9">Peru (+51)</option>
+                <option value="ph" data-flag="🇵🇭" data-code="+63" data-min="10" data-max="10">Philippines (+63)
+                </option>
+                <option value="pl" data-flag="🇵🇱" data-code="+48" data-min="9" data-max="9">Poland (+48)</option>
+                <option value="pt" data-flag="🇵🇹" data-code="+351" data-min="9" data-max="9">Portugal (+351)</option>
+                <option value="qa" data-flag="🇶🇦" data-code="+974" data-min="8" data-max="8">Qatar (+974)</option>
+                <option value="ro" data-flag="🇷🇴" data-code="+40" data-min="9" data-max="9">Romania (+40)</option>
+                <option value="ru" data-flag="🇷🇺" data-code="+7" data-min="10" data-max="10">Russia (+7)</option>
+                <option value="sa" data-flag="🇸🇦" data-code="+966" data-min="9" data-max="9">Saudi Arabia (+966)
+                </option>
+                <option value="rs" data-flag="🇷🇸" data-code="+381" data-min="8" data-max="9">Serbia (+381)</option>
+                <option value="sg" data-flag="🇸🇬" data-code="+65" data-min="8" data-max="8">Singapore (+65)</option>
+                <option value="sk" data-flag="🇸🇰" data-code="+421" data-min="9" data-max="9">Slovakia (+421)</option>
+                <option value="si" data-flag="🇸🇮" data-code="+386" data-min="8" data-max="8">Slovenia (+386)</option>
+                <option value="za" data-flag="🇿🇦" data-code="+27" data-min="9" data-max="9">South Africa (+27)
+                </option>
+                <option value="kr" data-flag="🇰🇷" data-code="+82" data-min="9" data-max="10">South Korea (+82)
+                </option>
+                <option value="es" data-flag="🇪🇸" data-code="+34" data-min="9" data-max="9">Spain (+34)</option>
+                <option value="lk" data-flag="🇱🇰" data-code="+94" data-min="9" data-max="9">Sri Lanka (+94)</option>
+                <option value="se" data-flag="🇸🇪" data-code="+46" data-min="9" data-max="9">Sweden (+46)</option>
+                <option value="ch" data-flag="🇨🇭" data-code="+41" data-min="9" data-max="9">Switzerland (+41)</option>
+                <option value="tw" data-flag="🇹🇼" data-code="+886" data-min="9" data-max="10">Taiwan (+886)</option>
+                <option value="tz" data-flag="🇹🇿" data-code="+255" data-min="9" data-max="9">Tanzania (+255)</option>
+                <option value="th" data-flag="🇹🇭" data-code="+66" data-min="9" data-max="9">Thailand (+66)</option>
+                <option value="tn" data-flag="🇹🇳" data-code="+216" data-min="8" data-max="8">Tunisia (+216)</option>
+                <option value="tr" data-flag="🇹🇷" data-code="+90" data-min="10" data-max="10">Turkey (+90)</option>
+                <option value="ua" data-flag="🇺🇦" data-code="+380" data-min="9" data-max="9">Ukraine (+380)</option>
+                <option value="ae" data-flag="🇦🇪" data-code="+971" data-min="9" data-max="9">UAE (+971)</option>
+                <option value="gb" data-flag="🇬🇧" data-code="+44" data-min="10" data-max="10">UK (+44)</option>
+                <option value="us" data-flag="🇺🇸" data-code="+1" data-min="10" data-max="10">USA (+1)</option>
+                <option value="uy" data-flag="🇺🇾" data-code="+598" data-min="8" data-max="9">Uruguay (+598)</option>
+                <option value="uz" data-flag="🇺🇿" data-code="+998" data-min="9" data-max="9">Uzbekistan (+998)
+                </option>
+                <option value="ve" data-flag="🇻🇪" data-code="+58" data-min="10" data-max="10">Venezuela (+58)</option>
+                <option value="vn" data-flag="🇻🇳" data-code="+84" data-min="9" data-max="10">Vietnam (+84)</option>
+                <option value="ye" data-flag="🇾🇪" data-code="+967" data-min="9" data-max="9">Yemen (+967)</option>
+                <option value="zm" data-flag="🇿🇲" data-code="+260" data-min="9" data-max="9">Zambia (+260)</option>
+                <option value="zw" data-flag="🇿🇼" data-code="+263" data-min="9" data-max="9">Zimbabwe (+263)</option>
+              </select>
+              <div class="flag-display">
+                <span class="flag-emoji" id="flag-emoji">🇮🇳</span>
+                <span class="flag-code" id="flag-code">+91</span>
+                <span class="flag-arrow">&#9660;</span>
+              </div>
+            </div>
+            <input type="tel" class="phone-input" id="phone-input" placeholder="Number" oninput="onPhoneInput(this)" />
+          </div>
+          <div class="phone-error-msg" id="phone-error-msg"></div>
+        </div>
+        <div class="s5-form-row">
+          <select>
+            <option value="">Select a service</option>
+            <option>BRSR Reporting</option>
+            <option>Carbon &amp; Climate Solutions</option>
+            <option>CBAM Advisory</option>
+            <option>EcoVadis Assessment</option>
+            <option>ESG &amp; Sustainability Reporting</option>
+            <option>GPCB Compliance</option>
+            <option>IREC Certification</option>
+            <option>Regulatory Compliance</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="s5-form-row">
+          <textarea placeholder="Tell us about your project or challenge..."></textarea>
+        </div>
+        <button class="s5-submit" onclick="handleSubmit(event)">Send message &#8594;</button>
+      </div>
+    </div>
     <div id="footer-root"></div>
-
-    <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/animations.js"></script>
-    <script type="module" src="/src/js/form-handler.js"></script>
-    <style>
-        .animate-fade-in {
-            animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        .animate-slide-up {
-            animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(60px);
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-    </style>
+  </div>
+  <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/index-scripts.js"></script>
 </body>
 
 </html>
