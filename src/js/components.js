@@ -97,8 +97,8 @@ export const footer = `
 
     <div>
       <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-8 tracking-wide">Connect</h4>
-      <form class="space-y-4">
-        <input type="email" placeholder="Email Address" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-brand-green/30 dark:focus:ring-brand-green/50 text-sm">
+      <form id="subscribe-form" class="space-y-4">
+        <input type="email" name="email" required placeholder="Email Address" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-brand-green/30 dark:focus:ring-brand-green/50 text-sm">
         <button type="submit" class="w-full py-3.5 bg-brand-charcoal dark:bg-brand-green text-white rounded-xl font-bold hover:bg-brand-blue dark:hover:bg-[#3d694b] transition-all tracking-wider text-[13px] uppercase">SUBSCRIBE</button>
       </form>
     </div>

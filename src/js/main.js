@@ -12,24 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');
 
-    // Initial state based on localStorage or system preference
-    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark');
-        if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'true');
-    } else {
-        document.documentElement.classList.remove('dark');
-        if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'false');
+    // Initial state: Always force Light Mode on refresh for "Light-First" excellence
+    document.documentElement.classList.remove('dark');
+    if (themeToggleBtn) {
+        themeToggleBtn.setAttribute('aria-checked', 'false');
     }
+    // We can still keep the toggle logic working for the current session
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', function() {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
                 themeToggleBtn.setAttribute('aria-checked', 'false');
             } else {
                 document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
                 themeToggleBtn.setAttribute('aria-checked', 'true');
             }
         });

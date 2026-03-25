@@ -448,11 +448,17 @@
 .foot a{color:var(--g);text-decoration:none;}
 
 .dark {
-  --g:#4a7c59;--gd:#3a6347;--gl:#6aaa80;--gp:rgba(74,124,89,0.1);--gp2:rgba(74,124,89,0.05);
-  --b:#1a4a6b;--bd:#123550;--bp:rgba(26,74,107,0.1);
-  --bg:#060a0f;--bg2:#0f1115;--bg3:#13151a;
-  --w:#0f1115;--text:#e2e8f0;--text2:#cbd5e1;--muted:#94a3b8;
-  --bdr:rgba(255,255,255,0.05);--bdr2:rgba(255,255,255,0.1);
+  --g:#4a7c59;--gd:#3a6347;--gl:#6aaa80;--gp:rgba(74,124,89,0.15);--gp2:rgba(74,124,89,0.08);
+  --b:#1a4a6b;--bd:#123550;--bp:rgba(26,74,107,0.15);
+  --bg: #334155; /* Slate 700 - Much lighter than obsidian */
+  --bg2: #475569; /* Slate 600 */
+  --bg3: #64748b; /* Slate 500 */
+  --w: #475569;
+  --text: #f1f5f9; /* Slate 50 */
+  --text2: #e2e8f0; /* Slate 200 */
+  --muted: #cbd5e1; /* Slate 300 */
+  --bdr: rgba(255,255,255,0.1);
+  --bdr2: rgba(255,255,255,0.2);
 }
 
 /* --- Custom Modal Feedback System --- */

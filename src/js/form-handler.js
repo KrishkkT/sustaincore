@@ -45,33 +45,59 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    if (!contactForm) return;
-
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const formData = new FormData(contactForm);
+    const handleFormSubmission = async (form, successTitle, successMessage) => {
+        const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
-
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Dispatching Communication...';
+
+        submitBtn.textContent = 'Processing...';
         submitBtn.disabled = true;
 
         try {
-            console.log('Sending data to endpoint:', data);
+            const formspreeId = 'maqlwazp';
+            const endpoint = `https://formspree.io/f/${formspreeId}`;
 
-            // Simulation of submission
-            await new Promise(resolve => setTimeout(resolve, 1800));
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
 
-            showModal('success', 'Mandate Dispatched', `Your communication has been successfully routed to SustainCore. We will contact you at ${data.email} within 24 business hours.`);
-            contactForm.reset();
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            showModal('success', successTitle, successMessage.replace('{email}', data.email || 'your address'));
+            form.reset();
         } catch (error) {
             console.error('Submission failed:', error);
-            showModal('error', 'Transmission Failed', 'A critical network interruption prevented your mandate from reaching our systems. Please attempt direct electronic correspondence.');
+            showModal('error', 'Transmission Failed', 'A network interruption prevented your mandate from reaching our systems. Please attempt direct correspondence.');
         } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
         }
-    });
+    };
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleFormSubmission(
+                contactForm,
+                'Mandate Dispatched',
+                'Your communication has been successfully routed to SustainCore. We will contact you at {email} within 24 business hours.'
+            );
+        });
+    }
+
+    // Handle Newsletter/Subscribe Form
+    const footerSubscribeForm = document.getElementById('subscribe-form');
+    if (footerSubscribeForm) {
+        footerSubscribeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleFormSubmission(
+                footerSubscribeForm,
+                'Subscription Success',
+                'Your email ({email}) has been added to our circular. You will receive the SustainCore quarterly update starting this week.'
+            );
+        });
+    }
 });

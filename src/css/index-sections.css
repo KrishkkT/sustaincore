@@ -13,10 +13,10 @@
 }
 
 .dark {
-  --hero-bg: #050f09;
+  --hero-bg: var(--bg);
   --hero-text-primary: #ffffff;
   --hero-text-secondary: rgba(255, 255, 255, 0.55);
-  --hero-overlay: linear-gradient(to top, rgba(5, 15, 9, 0.98) 0%, rgba(5, 15, 9, 0.65) 38%, rgba(5, 15, 9, 0.2) 65%, rgba(5, 15, 9, 0.45) 100%);
+  --hero-overlay: linear-gradient(to top, var(--bg) 0%, rgba(17, 24, 39, 0.65) 38%, rgba(17, 24, 39, 0.2) 65%, rgba(17, 24, 39, 0.45) 100%);
 }
 
 .hero {
@@ -329,7 +329,7 @@ canvas {
 }
 
 .dark .s2 {
-  background: #060d07;
+  background: var(--bg);
 }
 
 .s2-connector {
@@ -338,7 +338,7 @@ canvas {
   left: 0;
   right: 0;
   height: 120px;
-  background: linear-gradient(to bottom, #050f09 0%, transparent 100%);
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -587,7 +587,7 @@ canvas {
 }
 
 .dark .s2 {
-  background: #080e0a;
+  background: var(--bg);
 }
 
 .s2-alarm {
