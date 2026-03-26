@@ -74,97 +74,7 @@ function draw() {
 draw();
 
 
-  const el = document.getElementById('counter');
-  const target = 1.6;
-  const duration = 2600;
-  const delay = 800;
-  let start = null;
-  function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
-  function animate(ts) {
-    if (!start) start = ts;
-    const p = Math.min((ts - start) / duration, 1);
-    el.textContent = (easeOutExpo(p) * target).toFixed(1);
-    if (p < 1) requestAnimationFrame(animate);
-    else el.textContent = '1.6';
-  }
-  setTimeout(() => requestAnimationFrame(animate), delay);
-
-
-  const GRID = 'rgba(255,255,255,0.06)';
-  const TICK = 'rgba(255,255,255,0.3)';
-  const FONT = { family: 'DM Sans', size: 10 };
-
-  function baseOpts(yLabel) {
-    return {
-      responsive: true,
-      maintainAspectRatio: false,
-      animation: { duration: 1200, easing: 'easeOutQuart' },
-      plugins: { legend: { display: false }, tooltip: { enabled: false } },
-      scales: {
-        x: {
-          ticks: { color: TICK, font: FONT, maxRotation: 0 },
-          grid: { color: GRID, drawBorder: false },
-          border: { color: 'rgba(255,255,255,0.15)' }
-        },
-        y: {
-          title: { display: true, text: yLabel, color: 'rgba(255,255,255,0.3)', font: { family:'DM Sans', size:9 } },
-          ticks: { color: TICK, font: FONT },
-          grid: { color: GRID, drawBorder: false },
-          border: { color: 'rgba(255,255,255,0.15)' }
-        }
-      }
-    };
-  }
-
-  new Chart(document.getElementById('c1'), {
-    type: 'line',
-    data: {
-      labels: ['1980','1985','1990','1995','2000','2005','2010','2015','2020','2024'],
-      datasets: [{
-        data: [0.27, 0.12, 0.45, 0.38, 0.42, 0.68, 0.72, 0.90, 1.02, 1.60],
-        borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.08)',
-        borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#ef4444', fill: true, tension: 0.4
-      }]
-    },
-    options: { ...baseOpts('°C above baseline'), scales: { ...baseOpts('°C above baseline').scales, y: { ...baseOpts('°C above baseline').scales.y, min: 0, max: 1.8 } } }
-  });
-
-  new Chart(document.getElementById('c2'), {
-    type: 'bar',
-    data: {
-      labels: ['2000','2005','2010','2015','2018','2020','2021','2022','2023'],
-      datasets: [{
-        data: [25.0, 28.5, 32.0, 33.5, 34.8, 31.5, 33.9, 36.0, 37.0],
-        backgroundColor: 'rgba(249,115,22,0.6)', borderColor: '#f97316', borderWidth: 1, borderRadius: 3
-      }]
-    },
-    options: { ...baseOpts('GtCO₂'), scales: { ...baseOpts('GtCO₂').scales, y: { ...baseOpts('GtCO₂').scales.y, min: 20, max: 40 } } }
-  });
-
-  new Chart(document.getElementById('c3'), {
-    type: 'bar',
-    data: {
-      labels: ['2025','2030','2035','2040','2045','2050'],
-      datasets: [{
-        data: [2.5, 6.0, 12.0, 20.0, 30.0, 38.0],
-        backgroundColor: 'rgba(234,179,8,0.6)', borderColor: '#eab308', borderWidth: 1, borderRadius: 3
-      }]
-    },
-    options: { ...baseOpts('$T projected loss'), scales: { ...baseOpts('$T projected loss').scales, y: { ...baseOpts('$T projected loss').scales.y, min: 0, max: 42 } } }
-  });
-
-  new Chart(document.getElementById('c4'), {
-    type: 'line',
-    data: {
-      labels: ['2018','2019','2020','2021','2022','2023','2024','2025','2027','2030'],
-      datasets: [{
-        data: [3.0, 3.5, 3.8, 4.2, 4.8, 5.3, 6.0, 7.2, 10.0, 14.0],
-        borderColor: '#4caf7d', backgroundColor: 'rgba(76,175,125,0.1)',
-        borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#4caf7d', fill: true, tension: 0.4
-      }]
-    },
-    options: { ...baseOpts('Market size ($T)'), scales: { ...baseOpts('Market size ($T)').scales, y: { ...baseOpts('Market size ($T)').scales.y, min: 0, max: 16 } } }
-  });
+  // Form logic (already updated to avoid errors)
 
 
   const countryData = {};
@@ -198,22 +108,92 @@ draw();
     if (digits.length === 0) { wrap.classList.remove('phone-error','phone-valid'); errMsg.style.display='none'; }
     else if (digits.length >= c.min && digits.length <= c.max) { wrap.classList.remove('phone-error'); wrap.classList.add('phone-valid'); errMsg.style.display='none'; }
   }
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const input = document.getElementById('phone-input');
+    
+    const form = e.target.closest('div'); // The form wrapper
+    const name = form.querySelector('input[placeholder="Full name"]').value;
+    const company = form.querySelector('input[placeholder="Company name"]').value;
+    const email = form.querySelector('input[type="email"]').value;
+    const phone = document.getElementById('phone-input').value;
+    const countryCode = document.getElementById('flag-code').textContent;
+    const service = form.querySelector('select').value;
+    const message = form.querySelector('textarea').value;
+
     const sel = document.getElementById('country-select');
     const c = countryData[sel.value];
-    const digits = input.value.replace(/\D/g,'');
+    const digits = phone.replace(/\D/g,'');
     const wrap = document.getElementById('phone-wrap');
     const errMsg = document.getElementById('phone-error-msg');
-    if (digits.length > 0 && (digits.length < c.min || digits.length > c.max)) {
-      wrap.classList.add('phone-error'); wrap.classList.remove('phone-valid');
-      errMsg.style.display = 'block';
-      errMsg.textContent = c.min === c.max
-        ? 'Please enter a valid ' + c.min + '-digit number for ' + c.name
-        : 'Please enter a valid ' + c.min + '\u2013' + c.max + ' digit number for ' + c.name;
-      input.focus(); return;
+
+    // Validation
+    if (!name || !email || !service) {
+      alert('Please fill in all required fields (Name, Email, and Service).');
+      return;
     }
-    wrap.classList.remove('phone-error'); errMsg.style.display='none';
-    alert('Message sent successfully! We will be in touch shortly.');
+
+    if (digits.length > 0 && (digits.length < c.min || digits.length > c.max)) {
+      wrap.classList.add('phone-error');
+      errMsg.style.display = 'block';
+      errMsg.textContent = 'Please enter a valid phone number.';
+      return;
+    }
+
+    const submitBtn = form.querySelector('.s5-submit');
+    const originalBtnText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<span class="animate-pulse">Processing...</span>';
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/maqlwazp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          company,
+          email,
+          phone: `${countryCode} ${digits}`,
+          service,
+          message,
+          source: 'Homepage Consultation Form'
+        })
+      });
+
+      if (response.ok) {
+        showSuccessModal();
+        // Clear form
+        form.querySelectorAll('input, textarea').forEach(i => i.value = '');
+        form.querySelector('select').value = '';
+        wrap.classList.remove('phone-valid','phone-error');
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (err) {
+      alert('Oops! There was a problem submitting your form. Please try again later.');
+    } finally {
+      submitBtn.innerHTML = originalBtnText;
+      submitBtn.disabled = false;
+    }
   }
+
+  function showSuccessModal() {
+    const modal = document.getElementById('success-modal');
+    if (modal) {
+      modal.classList.add('active');
+      // Auto-close after 5 seconds
+      setTimeout(() => {
+        modal.classList.remove('active');
+      }, 5000);
+    } else {
+      alert('Message sent successfully! We will be in touch shortly.');
+    }
+  }
+
+  // Global close function for modal
+  window.closeModal = function() {
+    const modal = document.getElementById('success-modal');
+    if (modal) modal.classList.remove('active');
+  };

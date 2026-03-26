@@ -4,19 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CBAM Compliance Portal | SustainCore</title>
+    <title>CBAM Compliance | EU Export Regulatory Advisory</title>
     <meta name="description"
-        content="Manage your EU CBAM regulatory deadlines. Professional advisory and quarterly reporting for industrial exporters.">
+        content="Navigate EU Carbon Border Adjustment Mechanism (CBAM) requirements. Expert verification for exporters in cement, steel, aluminum, and chemical sectors.">
+    <meta property="og:title" content="CBAM Compliance | SustainCore Advisory">
+    <meta property="og:description"
+        content="Strategic advisory for EU CBAM regulations. Ensure compliance for your high-emission exports.">
+    <meta property="og:image" content="/Frame 4.svg">
+    <link rel="icon" href="/Frame 4.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
         rel="stylesheet">
-  <script type="module" crossorigin src="/assets/cbam-Bbe_gZFk.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-Dzfrb3b0.js">
+  <script type="module" crossorigin src="/assets/main-YTPwhKjc.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DyTbGT2g.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-sections-D3HC_iLg.css">
 </head>
 
-<body class="bg-brand-offWhite overflow-x-hidden">
+<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
     <!-- Header Placeholder -->
     <div id="header-root"></div>
 
@@ -46,7 +52,7 @@
                     class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter leading-[0.9]">
                     CBAM <br />Compliance <span class="text-brand-blue">Portal.</span>
                 </h1>
-                <p class="text-xl text-slate-500 max-w-xl leading-relaxed">
+                <p class="text-xl text-brand-charcoal opacity-70 max-w-xl leading-relaxed">
                     Managing the Carbon Border Adjustment Mechanism (CBAM) requires precision. We provide the tools and
                     advisory to protect your EU market access.
                 </p>
@@ -54,7 +60,7 @@
 
             <!-- Timer Card -->
             <div
-                class="card p-10 bg-white border-2 border-brand-blue/20 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
+                class="card p-10 bg-brand-softGray dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 flex flex-col gap-8 shadow-2xl relative overflow-hidden">
                 <div
                     class="absolute top-0 right-0 w-32 h-32 bg-brand-blue/5 rounded-full -translate-y-1/2 translate-x-1/2">
                 </div>
@@ -64,61 +70,143 @@
 
                 <div class="grid grid-cols-4 gap-4" id="cbam-timer">
                     <div class="flex flex-col items-center">
-                        <div class="text-4xl md:text-6xl font-display font-extrabold text-brand-charcoal" id="days">--
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-brand-charcoal dark:text-white"
+                            id="days">--
                         </div>
                         <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Days</div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="text-4xl md:text-6xl font-display font-extrabold text-brand-charcoal" id="hours">--
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-brand-charcoal dark:text-white"
+                            id="hours">--
                         </div>
                         <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Hours</div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="text-4xl md:text-6xl font-display font-extrabold text-brand-charcoal" id="minutes">
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-brand-charcoal dark:text-white"
+                            id="minutes">
                             --</div>
                         <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Mins</div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="text-4xl md:text-6xl font-display font-extrabold text-brand-blue" id="seconds">--
+                        <div class="text-4xl md:text-5xl font-display font-extrabold text-brand-blue" id="seconds">--
                         </div>
                         <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-2">Secs</div>
                     </div>
                 </div>
 
-                <div class="pt-8 border-t border-slate-100 grid grid-cols-2 gap-8 items-center">
+                <div class="pt-8 border-t border-slate-200 dark:border-slate-700 grid grid-cols-2 gap-8 items-center">
                     <div>
                         <div class="text-[10px] font-bold text-slate-400 uppercase mb-1">Current Quarter</div>
-                        <div class="text-sm font-bold text-brand-charcoal">FY 2026 // Q1</div>
+                        <div class="text-sm font-bold text-brand-charcoal dark:text-white">FY 2026 // Q1</div>
                     </div>
-                    <a href="/contact.html" class="btn-primary py-3 text-center text-sm">Request Filing Support</a>
+                    <a href="/contact.html" class="btn-primary py-3 text-center text-sm rounded-xl">Request Filing
+                        Support</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CBAM Estimator Dashboard Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="cbam-calc-container" id="cbam-calc">
+                <div class="calc-grid">
+                    <div class="calc-inputs">
+                        <div class="sec-h" style="margin-bottom: 2rem; text-align: left; padding: 0;">
+                            <div class="sec-t" style="font-size: 1.75rem;">CBAM Cost Estimator 2026</div>
+                            <div class="sec-sub" style="font-size: 0.95rem; max-width: 100%;">Project your financial
+                                exposure under the definitive EU regime based on verified benchmarks.</div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Industry Category</label>
+                            <select>
+                                <option>Iron & Steel (72, 73)</option>
+                                <option>Aluminium (76)</option>
+                                <option>Cement (2523)</option>
+                                <option>Fertilizers (3102, 3105)</option>
+                                <option>Hydrogen (2804 10 00)</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Export Quantity (Netmass Tonnes)</label>
+                            <input type="number" id="calc-netmass" value="1000" step="100">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Embedded Emissions (SEE tCO₂/t)</label>
+                            <input type="number" id="calc-see" value="2.4" step="0.1">
+                        </div>
+
+                        <div class="input-group">
+                            <label>EU Benchmark (tCO₂/t)</label>
+                            <input type="number" id="calc-benchmark" value="1.6" step="0.1">
+                        </div>
+
+                        <div class="input-group">
+                            <label>ETS Certificate Cost (€/tCO₂)</label>
+                            <input type="number" id="calc-cost" value="85" step="5">
+                        </div>
+                    </div>
+
+                    <div class="calc-results relative overflow-hidden">
+                        <div class="res-item">
+                            <div class="res-label">Declared Netmass</div>
+                            <div class="res-value" id="out-netmass">1,000 t</div>
+                        </div>
+
+                        <div class="res-item">
+                            <div class="res-label">Total Embedded Emissions</div>
+                            <div class="res-value" id="out-emissions">2,400 tCO₂</div>
+                        </div>
+
+                        <div class="res-item">
+                            <div class="res-label">Phase-Out Protection</div>
+                            <div class="res-value" id="out-phaseout">97.50%</div>
+                        </div>
+
+                        <div class="res-item full">
+                            <div class="res-label">Est. CBAM Certificate Obligation (2026)</div>
+                            <div class="res-value highlight" id="out-cost">€0</div>
+                            <div class="res-label"
+                                style="margin-top: 1rem; text-transform: none; color: rgba(255,255,255,0.4); line-height: 1.4;">
+                                *Filing Requirement = [Total Emissions - (Benchmark * Netmass * 0.975)] certificates.
+                                Calculated based on quarterly average EU ETS pricing.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Compliance Details -->
         <section class="max-w-7xl mx-auto px-6 mb-32 grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="p-10 rounded-4xl bg-brand-softGray border border-slate-100">
+            <div class="p-10 rounded-4xl bg-brand-softGray border border-brand-softGray">
                 <div
-                    class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-blue shadow-sm mb-8">
+                    class="w-12 h-12 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center text-brand-blue shadow-sm mb-8">
                     01</div>
                 <h3 class="text-xl font-bold mb-4">Initial Assessment</h3>
-                <p class="text-slate-500 leading-relaxed">Evaluation of product scope, classification, and embedded
+                <p class="text-slate-500 dark:text-slate-300 leading-relaxed">Evaluation of product scope,
+                    classification, and embedded
                     emission benchmarks.</p>
             </div>
-            <div class="p-10 rounded-4xl bg-brand-softGray border border-slate-100">
+            <div
+                class="p-10 rounded-4xl bg-brand-softGray dark:bg-slate-800 border border-slate-100 dark:border-slate-800">
                 <div
-                    class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-blue shadow-sm mb-8">
+                    class="w-12 h-12 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center text-brand-blue shadow-sm mb-8">
                     02</div>
                 <h3 class="text-xl font-bold mb-4">Data Inventory</h3>
-                <p class="text-slate-500 leading-relaxed">Collection of installation-level data required for precise CO2
+                <p class="text-slate-500 dark:text-slate-300 leading-relaxed">Collection of installation-level data
+                    required for precise CO2
                     intensity calculation.</p>
             </div>
-            <div class="p-10 rounded-4xl bg-brand-softGray border border-slate-100">
+            <div
+                class="p-10 rounded-4xl bg-brand-softGray dark:bg-slate-800 border border-slate-100 dark:border-slate-800">
                 <div
-                    class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-brand-blue shadow-sm mb-8">
+                    class="w-12 h-12 bg-white dark:bg-slate-900 rounded-2xl flex items-center justify-center text-brand-blue shadow-sm mb-8">
                     03</div>
                 <h3 class="text-xl font-bold mb-4">Submission</h3>
-                <p class="text-slate-500 leading-relaxed">Formal filing within the EU CBAM transitional registry before
+                <p class="text-slate-500 dark:text-slate-300 leading-relaxed">Formal filing within the EU CBAM
+                    transitional registry before
                     each deadline.</p>
             </div>
         </section>
@@ -126,7 +214,7 @@
 
     <!-- Footer Placeholder -->
     <div id="footer-root"></div>
-
+
     <style>
         @keyframes marquee {
             0% {

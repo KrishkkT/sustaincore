@@ -1,0 +1,716 @@
+/* SustainCore Professional Service Category Page Styles */
+
+:root {
+  --sp-blue: #1a4a6b;
+  --sp-green: #2d7a4f;
+  --sp-slate: #f1f5f9;
+  --sp-text: #2d3748;
+  --sp-muted: #718096;
+}
+
+/* Base Layout */
+.sp-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Hero Section --- */
+.sp-hero {
+  padding-top: 13rem; /* Accommodates fixed navbar + pill sub-nav */
+  padding-bottom: 6rem;
+  background: white;
+  overflow: hidden;
+}
+
+.sp-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.sp-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--sp-blue);
+  margin-bottom: 1.5rem;
+}
+
+.sp-hero-desc {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--sp-text);
+  margin-bottom: 2.5rem;
+}
+
+.sp-hero-img {
+  width: 100%;
+  height: 550px;
+  border-radius: 3rem;
+  object-fit: cover;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Pain Points Section --- */
+.sp-pain {
+  background: var(--sp-slate);
+  padding: 8rem 0;
+}
+
+.sp-section-h {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 5rem;
+}
+
+.sp-section-t {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--sp-blue);
+  margin-bottom: 1rem;
+}
+
+.sp-section-sub {
+  color: var(--sp-muted);
+  font-size: 1.1rem;
+}
+
+.sp-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.sp-card {
+  background: white;
+  padding: 3.5rem 2.5rem;
+  border-radius: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.sp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(26, 74, 107, 0.08);
+  border-color: rgba(26, 74, 107, 0.1);
+}
+
+.sp-card-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--sp-slate);
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+  color: var(--sp-green);
+}
+
+.sp-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sp-blue);
+  margin-bottom: 1rem;
+}
+
+.sp-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--sp-muted);
+}
+
+/* --- Protocol Section --- */
+.sp-protocol {
+  padding: 10rem 0;
+  background: white;
+}
+
+.sp-step-flow {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sp-step-flow::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: dashed #e2e8f0;
+  z-index: 0;
+  background-image: linear-gradient(to right, #e2e8f0 33%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 10px 2px;
+  background-repeat: repeat-x;
+}
+
+.sp-step {
+  width: 200px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.sp-step-num {
+  width: 60px;
+  height: 60px;
+  background: white;
+  border: 2px solid var(--sp-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--sp-green);
+}
+
+.sp-step-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--sp-blue);
+  margin-bottom: 1rem;
+}
+
+.sp-step-list {
+  text-align: left;
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--sp-muted);
+}
+
+.sp-step-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.sp-step-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--sp-green);
+}
+
+/* --- Deliverables Section --- */
+.sp-deliver {
+  padding: 8rem 0;
+  background: var(--sp-blue);
+  color: white;
+  border-radius: 4rem;
+  margin: 2rem;
+}
+
+.sp-deliver .sp-section-t {
+  color: white;
+}
+
+.sp-deliver-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.sp-deliver-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.sp-deliver-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sp-deliver-item span {
+  width: 10px;
+  height: 10px;
+  background: var(--sp-green);
+  border-radius: 50%;
+}
+
+/* --- Framework Row --- */
+.sp-trust {
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.sp-trust-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+.sp-trust-logos img {
+  height: 40px;
+}
+
+/* --- Technical Specs Section --- */
+.sp-specs {
+  padding: 8rem 0;
+  background: white;
+}
+
+.sp-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.sp-spec-card {
+  padding: 3rem;
+  background: var(--sp-slate);
+  border-radius: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sp-spec-h {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sp-blue);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sp-spec-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sp-spec-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.sp-spec-item:last-child {
+  border-bottom: none;
+}
+
+.sp-spec-label {
+  font-weight: 600;
+  color: var(--sp-text);
+}
+
+.sp-spec-val {
+  color: var(--sp-muted);
+}
+
+/* --- FAQ Section --- */
+.sp-faq {
+  padding: 8rem 0;
+  background: var(--sp-slate);
+}
+
+.sp-faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sp-faq-item {
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.sp-faq-btn {
+  width: 100%;
+  padding: 2rem;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--sp-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sp-faq-btn:hover {
+  background: rgba(26, 74, 107, 0.02);
+}
+
+.sp-faq-ans {
+  padding: 0 2rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--sp-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.sp-faq-item.active .sp-faq-ans {
+  padding-bottom: 2rem;
+  max-height: 500px;
+}
+
+.sp-faq-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.sp-faq-item.active .sp-faq-icon {
+  transform: rotate(45deg);
+}
+
+/* --- Utilities --- */
+.sp-hero-num {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--sp-green);
+  letter-spacing: 0.2em;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+  .sp-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .sp-hero-img {
+    height: 400px;
+    order: -1;
+  }
+
+  .sp-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-step-flow {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .sp-step-flow::before {
+    display: none;
+  }
+
+  .sp-step {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sp-deliver-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-deliver-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-spec-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- What's Included Section --- */
+.sp-included {
+  padding: 8rem 0;
+  background: linear-gradient(to bottom, #ffffff, #f9fafb);
+  position: relative;
+}
+
+.sp-inc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.sp-inc-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: white;
+  padding: 2.25rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sp-inc-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  border-color: var(--sp-green);
+}
+
+.sp-inc-icon {
+  width: 52px;
+  height: 52px;
+  background: var(--sp-green);
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(50, 201, 143, 0.2);
+}
+
+.sp-inc-text {
+  font-weight: 800;
+  color: var(--sp-dark);
+  font-size: 1.15rem;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 900px) {
+  .sp-inc-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  
+  .sp-inc-item {
+    padding: 1.75rem;
+  }
+}
+
+/* --- Sub-Navigation Bar (Premium Centered Pill) --- */
+.sp-sub-nav {
+  position: fixed;
+  top: 114px; /* Perfectly clears the main navbar */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 45;
+  background: white;
+  width: max-content;
+  max-width: 98%;
+  padding: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 100px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.sp-sub-nav-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  justify-content: flex-start;
+}
+
+.sp-sub-nav-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.sp-sub-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--sp-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: all 0.3s ease;
+}
+
+.sp-sub-nav-link span {
+  font-size: 0.65rem;
+  opacity: 0.5;
+}
+
+.sp-sub-nav-link:hover {
+  color: var(--sp-blue);
+  background: var(--sp-slate);
+}
+
+.sp-sub-nav-link.active {
+  background: var(--sp-green);
+  color: white;
+}
+
+.sp-sub-nav-link.active span {
+  color: white;
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .sp-sub-nav {
+    top: 108px; /* Clears mobile navbar overlap */
+    max-width: 94%;
+  }
+  
+  .sp-sub-nav-inner {
+    padding: 0 0.5rem;
+  }
+
+  .sp-sub-nav-inner::after {
+    content: '';
+    flex: 0 0 1rem;
+    height: 1px;
+  }
+  
+  .sp-hero {
+    padding-top: 12rem;
+  }
+}
+/* --- Dark Mode Overrides (Premium Slate) --- */
+.dark .sp-hero {
+  background: var(--bg);
+}
+
+.dark .sp-hero-title {
+  color: var(--text);
+}
+
+.dark .sp-hero-desc {
+  color: var(--text2);
+}
+
+.dark .sp-pain {
+  background: var(--bg2);
+}
+
+.dark .sp-card {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .sp-card-title {
+  color: var(--text);
+}
+
+.dark .sp-card-icon {
+  background: var(--bg);
+}
+
+.dark .sp-protocol {
+  background: var(--bg);
+}
+
+.dark .sp-step-num {
+  background: var(--bg);
+  border-color: var(--gl);
+  color: var(--gl);
+}
+
+.dark .sp-step-title {
+  color: var(--text);
+}
+
+.dark .sp-step-list li::before {
+  color: var(--gl);
+}
+
+.dark .sp-specs {
+  background: var(--bg);
+}
+
+.dark .sp-spec-card {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .sp-spec-h {
+  color: var(--text);
+}
+
+.dark .sp-spec-label {
+  color: var(--text2);
+}
+
+.dark .sp-spec-item {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .sp-faq {
+  background: var(--bg2);
+}
+
+.dark .sp-faq-item {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .sp-faq-btn {
+  color: var(--text);
+}
+
+.dark .sp-faq-btn:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dark .sp-included {
+  background: linear-gradient(to bottom, var(--bg), var(--bg2));
+}
+
+.dark .sp-inc-item {
+  background: var(--bg3);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .sp-inc-text {
+  color: var(--text);
+}
+
+.dark .sp-sub-nav {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.dark .sp-sub-nav-link:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+.dark .sp-sub-nav-link.active {
+  background: var(--g);
+  color: white;
+}

@@ -4,125 +4,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insights | SustainCore Sustainability Intelligence</title>
+    <title>Insights | Environmental Intelligence & Industry Trends</title>
     <meta name="description"
-        content="Read the latest analysis on ESG trends, carbon regulations, and environmental policy from SustainCore's technical experts.">
+        content="Stay informed on the latest ESG regulations, carbon markets, and environmental monitoring best practices. Expert analysis from SustainCore.">
+    <meta property="og:title" content="Insights | SustainCore Knowledge Hub">
+    <meta property="og:description"
+        content="Expert analysis on ESG regulations, carbon markets, and sustainability technology.">
+    <meta property="og:image" content="/Frame 4.svg">
+    <link rel="icon" href="/Frame 4.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-  <script type="module" crossorigin src="/assets/main-Dzfrb3b0.js"></script>
-  <script type="module" crossorigin src="/assets/animations-C1vDQrDF.js"></script>
+        rel="stylesheet">
+  <script type="module" crossorigin src="/assets/insights-CJPjHifx.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-YTPwhKjc.js">
+  <link rel="modulepreload" crossorigin href="/assets/animations-CUUnA715.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-DyTbGT2g.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-sections-D3HC_iLg.css">
 </head>
 
-<body class="bg-[#FBFBFB] overflow-x-hidden">
+<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
     <!-- Header Placeholder -->
     <div id="header-root"></div>
 
     <main class="pt-40">
         <!-- Header -->
-        <section class="max-w-7xl mx-auto px-6 mb-32 border-b border-slate-200 pb-20">
-            <h1 class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal mb-8 tracking-tighter">
-                Global <span class="italic text-brand-blue">Intelligence.</span>
+        <section class="max-w-7xl mx-auto px-6 mb-32">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 text-brand-blue mb-10">
+                <span class="text-[10px] font-bold tracking-[0.3em] uppercase">Intelligence Hub</span>
+            </div>
+            <h1 class="text-6xl md:text-[100px] font-display font-black text-brand-charcoal mb-10 tracking-tighter leading-[0.85]">
+                Global <span class="italic text-brand-blue font-light">Intelligence.</span>
             </h1>
-            <p class="text-xl text-slate-500 max-w-2xl leading-relaxed">
-                Technical analysis and regulatory deep-dives for the sustainability-conscious enterprise.
+            <p class="text-2xl text-brand-charcoal opacity-70 max-w-2xl leading-relaxed font-light">
+                Technical analysis and regulatory deep-dives for the sustainability-conscious enterprise. We transform complexity into actionable insights.
             </p>
         </section>
 
-        <!-- Insights Grid (Paper Style) -->
+        <!-- Scale of Crisis: Data Section -->
+        <section class="bg-brand-softGray py-32 rounded-[3.5rem] mx-6 mb-40 border border-slate-200 shadow-sm relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-full h-full bg-[url('/grid.svg')] opacity-[0.05]"></div>
+            <div class="max-w-7xl mx-auto px-12 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
+                    <div>
+                        <div class="text-[10px] font-bold text-brand-blue uppercase tracking-[0.4em] mb-8">The Data Narrative</div>
+                        <h2 class="text-4xl md:text-6xl font-display font-black text-brand-charcoal leading-tight mb-8">
+                            The planet is sending <br/><span class="text-brand-green italic">a bill.</span>
+                        </h2>
+                        <p class="text-xl text-slate-500 leading-relaxed max-w-xl">
+                            Environmental risk is no longer external. It is hitting balance sheets today. 2024 breached the 1.5°C threshold, signaling a permanent shift in industrial operating costs.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                            <div class="text-5xl font-display font-black text-brand-blue mb-2">1.6°C</div>
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Global Warming Breach</div>
+                        </div>
+                        <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                            <div class="text-5xl font-display font-black text-brand-green">37Gt</div>
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Annual CO2 Output</div>
+                        </div>
+                        <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                            <div class="text-5xl font-display font-black text-brand-blue">$38T</div>
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">GDP Risk by 2050</div>
+                        </div>
+                        <div class="p-8 bg-white rounded-3xl shadow-sm border border-slate-100 text-center">
+                            <div class="text-5xl font-display font-black text-brand-green">$14T</div>
+                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Green Tech Market</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Indicators (Small Charts) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="p-6 bg-white/50 backdrop-blur-xl border border-white rounded-2xl">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Carbon Index</div>
+                        <div class="h-24"><canvas id="c1"></canvas></div>
+                    </div>
+                    <div class="p-6 bg-white/50 backdrop-blur-xl border border-white rounded-2xl">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Industry SEE</div>
+                        <div class="h-24"><canvas id="c2"></canvas></div>
+                    </div>
+                    <div class="p-6 bg-white/50 backdrop-blur-xl border border-white rounded-2xl">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">ETS Trading Vol</div>
+                        <div class="h-24"><canvas id="c3"></canvas></div>
+                    </div>
+                    <div class="p-6 bg-white/50 backdrop-blur-xl border border-white rounded-2xl">
+                        <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Green Bond Yield</div>
+                        <div class="h-24"><canvas id="c4"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insights Grid (Premium Paper Style) -->
         <section class="max-w-7xl mx-auto px-6 pb-40">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-slate-200 border border-slate-200">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Article 1 -->
-                <article class="bg-white p-12 md:p-20 group hover:bg-slate-50 transition-colors">
-                    <div class="flex items-center gap-4 mb-10">
-                        <span
-                            class="text-[10px] font-bold tracking-widest text-brand-blue uppercase bg-brand-blue/5 px-3 py-1 rounded">Regulation</span>
-                        <span class="text-xs text-slate-400 font-medium">March 2026</span>
+                <!-- Article 1: CBAM -->
+                <article class="p-8 bg-white border border-slate-200 rounded-3xl group hover:shadow-2xl transition-all flex flex-col">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-brand-blue uppercase bg-brand-blue/5 px-3 py-1 rounded">Regulation</span>
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">March 2026</span>
                     </div>
-                    <a href="#" class="block">
-                        <h2
-                            class="text-4xl font-bold text-brand-charcoal mb-8 leading-tight group-hover:text-brand-blue transition-colors">
-                            Decoding CBAM: The Transitional Phase & Beyond</h2>
+                    <a href="#" class="block mb-6">
+                        <h2 class="text-3xl font-bold text-brand-charcoal leading-tight group-hover:text-brand-blue transition-colors">
+                            CBAM 2026: The Hard Phase Begins</h2>
                     </a>
-                    <p class="text-lg text-slate-500 mb-12 leading-relaxed">
-                        A technical guide on how the EU's Carbon Border Adjustment Mechanism will impact global supply
-                        chains in the coming fiscal year.
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 flex-grow">
+                        An analysis of the EU's Carbon Border Adjustment Mechanism as it moves from reporting to real financial certificates. How exporters should budget for 'Carbon Premiums'.
                     </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100"></div>
-                            <span class="text-sm font-bold text-brand-charcoal">Aditi Sharma</span>
-                        </div>
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">8 Min Read</span>
+                    <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-brand-charcoal uppercase tracking-widest">By Dr. Aditi Sharma</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">8 Min Read</span>
                     </div>
                 </article>
 
-                <!-- Article 2 -->
-                <article class="bg-white p-12 md:p-20 group hover:bg-slate-50 transition-colors">
-                    <div class="flex items-center gap-4 mb-10">
-                        <span
-                            class="text-[10px] font-bold tracking-widest text-brand-green uppercase bg-brand-green/5 px-3 py-1 rounded">ESG
-                            Strategy</span>
-                        <span class="text-xs text-slate-400 font-medium">February 2026</span>
+                <!-- Article 2: BRSR 2.0 -->
+                <article class="p-8 bg-white border border-slate-200 rounded-3xl group hover:shadow-2xl transition-all flex flex-col">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-brand-green uppercase bg-brand-green/5 px-3 py-1 rounded">ESG Reporting</span>
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Feb 2026</span>
                     </div>
-                    <a href="#" class="block">
-                        <h2
-                            class="text-4xl font-bold text-brand-charcoal mb-8 leading-tight group-hover:text-brand-green transition-colors">
-                            From Compliance to Competitive Advantage</h2>
+                    <a href="#" class="block mb-6">
+                        <h2 class="text-3xl font-bold text-brand-charcoal leading-tight group-hover:text-brand-green transition-colors">
+                            BRSR 2.0: SEBI's Internal Audit Mandate</h2>
                     </a>
-                    <p class="text-lg text-slate-500 mb-12 leading-relaxed">
-                        How forward-thinking organizations are using BRSR reporting as a tool for operational efficiency
-                        and investor confidence.
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 flex-grow">
+                        SEBI's latest update requires mandatory assurance for BRSR Core. We look at the top 10 gaps found during initial 2025 pilot audits across NSE 1000 firms.
                     </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100"></div>
-                            <span class="text-sm font-bold text-brand-charcoal">Vikram K.</span>
-                        </div>
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">12 Min Read</span>
+                    <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-brand-charcoal uppercase tracking-widest">By Vikram K.</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">12 Min Read</span>
                     </div>
                 </article>
 
-                <!-- Article 3 -->
-                <article class="bg-white p-12 md:p-20 group hover:bg-slate-50 transition-colors">
-                    <div class="flex items-center gap-4 mb-10">
-                        <span
-                            class="text-[10px] font-bold tracking-widest text-slate-400 uppercase bg-slate-100 px-3 py-1 rounded">Carbon
-                            Auditing</span>
-                        <span class="text-xs text-slate-400 font-medium">January 2026</span>
+                <!-- Article 3: Renewable Energy -->
+                <article class="p-8 bg-white border border-slate-200 rounded-3xl group hover:shadow-2xl transition-all flex flex-col">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-[10px] font-bold tracking-widest text-slate-400 uppercase bg-slate-100 px-3 py-1 rounded">Energy Markets</span>
+                        <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Jan 2026</span>
                     </div>
-                    <a href="#" class="block">
-                        <h2
-                            class="text-4xl font-bold text-brand-charcoal mb-8 leading-tight group-hover:text-brand-blue transition-colors">
-                            Scope 3 Emissions: The Final Frontier of Transparency</h2>
+                    <a href="#" class="block mb-6">
+                        <h2 class="text-3xl font-bold text-brand-charcoal leading-tight group-hover:text-brand-blue transition-colors">
+                            IREC vs. TIGR: Navigating REC Markets</h2>
                     </a>
-                    <p class="text-lg text-slate-500 mb-12 leading-relaxed">
-                        Identifying and measuring indirect emissions across complex industrial value chains using
-                        high-fidelity data modelling.
+                    <p class="text-slate-500 text-sm leading-relaxed mb-10 flex-grow">
+                        With increasing demand for Scope 2 neutrality, identifying the right Renewable Energy Certificate (REC) instrument is critical. A comparison of global standards.
                     </p>
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-full bg-slate-100"></div>
-                            <span class="text-sm font-bold text-brand-charcoal">S. Mehta</span>
-                        </div>
-                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">15 Min Read</span>
+                    <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-brand-charcoal uppercase tracking-widest">By S. Mehta</span>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">10 Min Read</span>
                     </div>
                 </article>
 
                 <!-- Newsletter Callout -->
-                <div class="bg-brand-charcoal p-12 md:p-20 flex flex-col justify-center">
-                    <h2 class="text-3xl font-display font-bold text-white mb-6">Stay ahead of the <span
-                            class="text-brand-lightGreen italic">mandate.</span></h2>
-                    <p class="text-slate-400 text-lg mb-10 leading-relaxed">Get our monthly regulatory brief delivered
-                        to your corporate inbox.</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Corporate Email"
-                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:outline-none focus:ring-1 focus:ring-brand-blue">
-                        <button class="w-full btn-secondary py-4 uppercase tracking-widest text-sm">Subscribe to
-                            Brief</button>
+                <div class="lg:col-span-3 bg-brand-blue rounded-4xl p-12 md:p-20 flex flex-col lg:flex-row items-center gap-16 text-white mt-12 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-[100px] rounded-full"></div>
+                    <div class="max-w-xl text-center lg:text-left relative z-10">
+                        <h2 class="text-3xl md:text-5xl font-display font-black mb-6 leading-tight">Stay ahead of the <span class="text-brand-green italic font-light">mandate.</span></h2>
+                        <p class="text-white/70 text-lg leading-relaxed mb-0">Get our monthly regulatory brief delivered to your corporate inbox. No jargon, just technical utility.</p>
+                    </div>
+                    <form action="https://formspree.io/f/mqaelonl" method="POST" class="flex-grow w-full lg:w-auto relative z-10 flex flex-col sm:flex-row gap-4">
+                        <input type="email" name="email" placeholder="Corporate Email" class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-brand-green">
+                        <button type="submit" class="px-8 py-4 bg-white text-brand-blue rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all whitespace-nowrap">Subscribe to Brief</button>
                     </form>
                 </div>
 
@@ -132,7 +178,8 @@
 
     <!-- Footer Placeholder -->
     <div id="footer-root"></div>
-
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 </body>
 
 </html>
