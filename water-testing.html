@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="stylesheet" href="/src/css/service-pages.css">
   <link rel="icon" href="/Frame 4.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -16,14 +18,85 @@
 
   <nav class="sp-sub-nav">
     <div class="sp-sub-nav-inner">
-      <a href="/esg-reporting.html" class="sp-sub-nav-link"><span>01</span> ESG Reporting</a>
-      <a href="/carbon-climate.html" class="sp-sub-nav-link"><span>02</span> Carbon & Climate</a>
-      <a href="/ratings-targets.html" class="sp-sub-nav-link"><span>03</span> Ratings & Targets</a>
-      <a href="/clearances-eia.html" class="sp-sub-nav-link"><span>04</span> Clearances & EIA</a>
-      <a href="/licenses-epr.html" class="sp-sub-nav-link"><span>05</span> Licenses & EPR</a>
-      <a href="/management-systems.html" class="sp-sub-nav-link"><span>06</span> Management Systems</a>
-      <a href="/water-testing.html" class="sp-sub-nav-link active"><span>07</span> Water Testing</a>
-      <a href="/air-monitoring.html" class="sp-sub-nav-link"><span>08</span> Air Monitoring</a>
+      <!-- 01 ESG Reporting -->
+      <div class="sp-sub-nav-item">
+        <a href="/esg-reporting.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>01</span> ESG Reporting</a>
+        <div class="sp-dropdown">
+          <a href="/esg-reporting.html#brsr" class="sp-dropdown-link">BRSR Modeling</a>
+          <a href="/esg-reporting.html#cdp" class="sp-dropdown-link">CDP Disclosure</a>
+          <a href="/esg-reporting.html#gri" class="sp-dropdown-link">GRI Implementation</a>
+          <a href="/esg-reporting.html#sasb" class="sp-dropdown-link">SASB Alignment</a>
+          <a href="/esg-reporting.html#tcfd" class="sp-dropdown-link">TCFD Integration</a>
+        </div>
+      </div>
+      <!-- 02 Carbon & Climate -->
+      <div class="sp-sub-nav-item">
+        <a href="/carbon-climate.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>02</span> Carbon & Climate</a>
+        <div class="sp-dropdown">
+          <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
+          <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Inventory</a>
+          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
+          <a href="/carbon-climate.html#footprint" class="sp-dropdown-link">Carbon Footprint</a>
+          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
+        </div>
+      </div>
+      <!-- 03 Ratings & Targets -->
+      <div class="sp-sub-nav-item">
+        <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>03</span> Ratings & Targets</a>
+        <div class="sp-dropdown">
+          <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Assessment</a>
+          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
+          <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
+        </div>
+      </div>
+      <!-- 04 Clearances & EIA -->
+      <div class="sp-sub-nav-item">
+        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>04</span> Clearances & EIA</a>
+        <div class="sp-dropdown">
+          <a href="/clearances-eia.html#cgwa" class="sp-dropdown-link">Groundwater (CGWA)</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (SEIAA)</a>
+          <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
+          <a href="/clearances-eia.html#renewals" class="sp-dropdown-link">Renewals & Amendments</a>
+        </div>
+      </div>
+      <!-- 05 Licenses & EPR -->
+      <div class="sp-sub-nav-item">
+        <a href="/licenses-epr.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>05</span> Licenses & EPR</a>
+        <div class="sp-dropdown">
+          <a href="/licenses-epr.html#epr" class="sp-dropdown-link">EPR Compliance</a>
+          <a href="/licenses-epr.html#cte-cto" class="sp-dropdown-link">CTE / CTO Liaison</a>
+          <a href="/licenses-epr.html#hazardous" class="sp-dropdown-link">Hazardous Waste Auth</a>
+        </div>
+      </div>
+      <!-- 06 Management Systems -->
+      <div class="sp-sub-nav-item">
+        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>06</span> Management
+          Systems</a>
+        <div class="sp-dropdown">
+          <a href="/management-systems.html#ems1" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#ems2" class="sp-dropdown-link">Env. Mgmt (Integrated)</a>
+          <a href="/management-systems.html#audits" class="sp-dropdown-link">Audits & Renewals</a>
+        </div>
+      </div>
+      <!-- 07 Water Testing -->
+      <div class="sp-sub-nav-item">
+        <a href="/water-testing.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>07</span> Water
+          Testing</a>
+        <div class="sp-dropdown">
+          <a href="/water-testing.html#drinking" class="sp-dropdown-link">Drinking Water Testing</a>
+          <a href="/water-testing.html#analysis" class="sp-dropdown-link">Water & Wastewater</a>
+          <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
+        </div>
+      </div>
+      <!-- 08 Air Monitoring -->
+      <div class="sp-sub-nav-item">
+        <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>08</span> Air Monitoring</a>
+        <div class="sp-dropdown">
+          <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack / Emission</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -34,10 +107,14 @@
           <div>
             <div class="sp-hero-num" style="margin-bottom: 2rem;">07</div>
             <h1 class="sp-hero-title">Water Testing & Analysis</h1>
-            <p class="sp-hero-desc">Secure the purity of your operations with NABL-accredited precision. We provide end-to-end monitoring for Drinking Water, Effluent, and Ground Water to ensure total regulatory compliance.</p>
-            <a href="/index.html#consultation" class="btn-primary" style="display: inline-block; text-decoration: none;">Lab Consultation</a>
+            <p class="sp-hero-desc">Secure the purity of your operations with NABL-accredited precision. We provide
+              end-to-end monitoring for Drinking Water, Effluent, and Ground Water to ensure total regulatory
+              compliance.</p>
+            <a href="/index.html#consultation" class="btn-primary"
+              style="display: inline-block; text-decoration: none;">Lab Consultation</a>
           </div>
-          <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&q=80" alt="Water Testing" class="sp-hero-img">
+          <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&q=80" alt="Water Testing"
+            class="sp-hero-img">
         </div>
       </div>
     </section>
@@ -49,22 +126,76 @@
           <h2 class="sp-section-t" style="color: var(--sp-blue);">What's Included</h2>
           <p class="sp-section-sub">High-precision aqueous analysis and auditing.</p>
         </div>
-        <div class="sp-inc-grid">
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">NABL Accredited Effluent & Potable Reports</span>
+        <div class="svc-container">
+          <!-- Drinking Water Testing Card -->
+          <div class="svc-card" id="drinking">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1729043730133-2d1d1a22760d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RHJpbmtpbmclMjBXYXRlciUyMFRlc3Rpbmd8ZW58MHx8MHx8fDA%3D?w=800&q=80"
+                alt="Drinking Water Testing" class="svc-card-img">
+              <div class="svc-card-chip">IS 10500:2012 · NABL · POTABLE</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Drinking Water Testing</h3>
+              <p class="svc-card-desc">High-precision analysis of potable water sources as per IS 10500:2012 standards
+                to ensure safety for human consumption in residential and industrial settings.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Essential parameter testing (pH, Turbidity)</li>
+                <li>Toxic metal screening (Lead, Arsenic)</li>
+                <li>Pathogenic bacteria counting</li>
+                <li>Pesticide residue analysis</li>
+                <li>Workplace water safety certification</li>
+              </ul>
+              <a href="files/7-drinking.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">ETP / STP System Performance Audits</span>
+
+          <!-- Water & Wastewater Analysis Card -->
+          <div class="svc-card" id="analysis">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1708601909272-435c8b3aa5d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFdhdGVyJTIwJTI2JTIwV2FzdGV3YXRlciUyMEFuYWx5c2lzfGVufDB8fDB8fHww?w=800&q=80"
+                alt="Water & Wastewater Analysis" class="svc-card-img">
+              <div class="svc-card-chip">PROCESS WATER · RAW · INDUSTRIAL</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Water & Wastewater Analysis</h3>
+              <p class="svc-card-desc">Comprehensive analysis of raw water, process water, and sewage to optimize
+                treatment plant performance and monitor resource quality.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Raw water characterization</li>
+                <li>Ion exchange & softener audits</li>
+                <li>STP inlet/outlet monitoring</li>
+                <li>Heavy metal & trace element scan</li>
+                <li>Seasonal water quality variation study</li>
+              </ul>
+              <a href="files/7-analysis.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Groundwater & Soil Contamination Profiles</span>
-          </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Heavy Metal & Hazardous Chemical Screening</span>
+
+          <!-- Effluent Analysis Card -->
+          <div class="svc-card" id="effluent">
+            <div class="svc-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=800&q=80" alt="Effluent Analysis"
+                class="svc-card-img">
+              <div class="svc-card-chip">SPCB COMPLIANT · BOD/COD · NABL</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Effluent Analysis</h3>
+              <p class="svc-card-desc">Periodic testing of treated and untreated industrial effluent to ensure discharge
+                parameters meet stringent State Pollution Control Board (SPCB) limits.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>BOD & COD quantification</li>
+                <li>Total Dissolved Solids (TDS) monitoring</li>
+                <li>Oil & Grease (O&G) detection</li>
+                <li>Specialized organic pollutant scan</li>
+                <li>NABL certified test reports (Form X)</li>
+              </ul>
+              <a href="files/7-effluent.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -80,17 +211,20 @@
           <div class="sp-card">
             <div class="sp-card-icon">01</div>
             <h3 class="sp-card-title">Sampling Errors</h3>
-            <p class="sp-card-text">Poor sampling techniques in the field lead to flawed lab results. We use scientific, multi-point collection to ensure data representativeness.</p>
+            <p class="sp-card-text">Poor sampling techniques in the field lead to flawed lab results. We use scientific,
+              multi-point collection to ensure data representativeness.</p>
           </div>
           <div class="sp-card">
             <div class="sp-card-icon">02</div>
             <h3 class="sp-card-title">ETP Performance</h3>
-            <p class="sp-card-text">Testing is reactive; optimizing your Effluent Treatment Plant is proactive. We identify why your parameters are over the legal limit.</p>
+            <p class="sp-card-text">Testing is reactive; optimizing your Effluent Treatment Plant is proactive. We
+              identify why your parameters are over the legal limit.</p>
           </div>
           <div class="sp-card">
             <div class="sp-card-icon">03</div>
             <h3 class="sp-card-title">Legal Deadlines</h3>
-            <p class="sp-card-text">Missing a mandatory CTO/CTE testing cycle creates a liability. We manage your testing calendar so you never miss a deadline.</p>
+            <p class="sp-card-text">Missing a mandatory CTO/CTE testing cycle creates a liability. We manage your
+              testing calendar so you never miss a deadline.</p>
           </div>
         </div>
       </div>
@@ -148,7 +282,8 @@
         <div class="sp-deliver-grid">
           <div>
             <h2 class="sp-section-t" style="color: white;">Analysis Assets</h2>
-            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your water quality management.</p>
+            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your
+              water quality management.</p>
           </div>
           <div class="sp-deliver-list">
             <div class="sp-deliver-item"><span></span>NABL Lab Reports</div>
@@ -170,7 +305,10 @@
         <div class="sp-spec-grid">
           <div class="sp-spec-card">
             <div class="sp-spec-h">
-              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.675.337a4 4 0 01-2.547.414l-2.433-.487a2 2 0 00-1.285.238L3 17.5V21h18v-4.572l-1.572-1.001zM12 3h.01M9.167 6.667h.01M14.833 6.667h.01M6.667 10h.01M17.333 10h.01"/></svg>
+              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.675.337a4 4 0 01-2.547.414l-2.433-.487a2 2 0 00-1.285.238L3 17.5V21h18v-4.572l-1.572-1.001zM12 3h.01M9.167 6.667h.01M14.833 6.667h.01M6.667 10h.01M17.333 10h.01" />
+              </svg>
               Regulatory Limits
             </div>
             <ul class="sp-spec-list">
@@ -194,7 +332,10 @@
           </div>
           <div class="sp-spec-card">
             <div class="sp-spec-h">
-              <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
               Laboratory Standards
             </div>
             <ul class="sp-spec-list">
@@ -224,57 +365,61 @@
     <section class="sp-faq">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">Water FAQs</h2>
-          <p class="sp-section-sub">Clarifying the science of water resource management.</p>
+          <h2 class="sp-section-t">Common Questions</h2>
+          <p class="sp-section-sub">Technical guidance on aqueous analysis.</p>
         </div>
         <div class="sp-faq-list">
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              How often must effluent testing be done?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              How frequent should effluent testing be?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Testing frequency is typically dictated by your SPCB Consent to Operate (CTO). Most industrial units require monthly laboratory testing of treated effluent, and continuous online monitoring (OCEMS) for parameters like pH, Flow, BOD, and COD if the unit falls under high-pollution categories.
+              As per SPCB/CPCB norms, most industries need to monitor discharge parameters daily (internal) and conduct
+              NABL-certified third-party testing monthly or quarterly, depending on their "Red/Orange" category and
+              consent conditions.
             </div>
           </div>
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              What is ZLD and is it mandatory?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              What are the NABL parameters for drinking water safety?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Zero Liquid Discharge (ZLD) is a treatment process where all industrial wastewater is recycled and reused, leaving no liquid waste for discharge. It is mandatory for specific highly polluting sectors (Textiles, Distilleries, Tannery, etc.) and in "Critically Polluted Areas" as designated by the CPCB.
+              The IS 10500:2012 standard specifies around 33 essential parameters including pH, TDS, Heavy Metals (Lead,
+              Mercury), and microbiological counts (E.coli). Our NABL reports provide a pass/fail summary against these
+              specific limits.
             </div>
           </div>
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              Are NABL-accredited results required for SPCB?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              Do we need ZLD (Zero Liquid Discharge) verification?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Yes. State Pollution Control Boards and environmental auditors only accept reports from laboratories accredited by the National Accreditation Board for Testing and Calibration Laboratories (NABL) or recognized by MoEFCC under the Environment (Protection) Act, 1986.
-            </div>
-          </div>
-          <div class="sp-faq-item">
-            <button class="sp-faq-btn">
-              What is IS 10500:2012?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            </button>
-            <div class="sp-faq-ans">
-              IS 10500:2012 is the Bureau of Indian Standards (BIS) standard for drinking water. It specifies the "Acceptable" and "Permissible" limits for various physical, chemical, and bacteriological parameters. Compliance with this standard is mandatory for all workplace drinking water supplies.
+              If your CTO (Consent to Operate) specifies ZLD conditions, you must maintain exhaustive water-balance
+              charts and salt recovery logs. We provide technical auditing to verify that no untreated wastewater is
+              leaving the perimeter.
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Trust Row -->
     <section class="sp-trust">
       <div class="sp-container">
         <div class="sp-trust-logos">
           <span>NABL Accredited</span>
-          <span>BIS Compliant</span>
-          <span>OCEMS Specialist</span>
-          <span>ZLD Verified</span>
+          <span>SPCB Approved</span>
+          <span>ISO 17025 Labs</span>
+          <span>Form X Certified</span>
         </div>
       </div>
     </section>

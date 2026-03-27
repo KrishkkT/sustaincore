@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="stylesheet" href="/src/css/service-pages.css">
   <link rel="icon" href="/Frame 4.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -16,14 +18,84 @@
 
   <nav class="sp-sub-nav">
     <div class="sp-sub-nav-inner">
-      <a href="/esg-reporting.html" class="sp-sub-nav-link"><span>01</span> ESG Reporting</a>
-      <a href="/carbon-climate.html" class="sp-sub-nav-link"><span>02</span> Carbon & Climate</a>
-      <a href="/ratings-targets.html" class="sp-sub-nav-link"><span>03</span> Ratings & Targets</a>
-      <a href="/clearances-eia.html" class="sp-sub-nav-link"><span>04</span> Clearances & EIA</a>
-      <a href="/licenses-epr.html" class="sp-sub-nav-link"><span>05</span> Licenses & EPR</a>
-      <a href="/management-systems.html" class="sp-sub-nav-link active"><span>06</span> Management Systems</a>
-      <a href="/water-testing.html" class="sp-sub-nav-link"><span>07</span> Water Testing</a>
-      <a href="/air-monitoring.html" class="sp-sub-nav-link"><span>08</span> Air Monitoring</a>
+      <!-- 01 ESG Reporting -->
+      <div class="sp-sub-nav-item">
+        <a href="/esg-reporting.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>01</span> ESG Reporting</a>
+        <div class="sp-dropdown">
+          <a href="/esg-reporting.html#brsr" class="sp-dropdown-link">BRSR Modeling</a>
+          <a href="/esg-reporting.html#cdp" class="sp-dropdown-link">CDP Disclosure</a>
+          <a href="/esg-reporting.html#gri" class="sp-dropdown-link">GRI Implementation</a>
+          <a href="/esg-reporting.html#sasb" class="sp-dropdown-link">SASB Alignment</a>
+          <a href="/esg-reporting.html#tcfd" class="sp-dropdown-link">TCFD Integration</a>
+        </div>
+      </div>
+      <!-- 02 Carbon & Climate -->
+      <div class="sp-sub-nav-item">
+        <a href="/carbon-climate.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>02</span> Carbon & Climate</a>
+        <div class="sp-dropdown">
+          <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
+          <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Inventory</a>
+          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
+          <a href="/carbon-climate.html#footprint" class="sp-dropdown-link">Carbon Footprint</a>
+          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
+        </div>
+      </div>
+      <!-- 03 Ratings & Targets -->
+      <div class="sp-sub-nav-item">
+        <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>03</span> Ratings & Targets</a>
+        <div class="sp-dropdown">
+          <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Assessment</a>
+          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
+          <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
+        </div>
+      </div>
+      <!-- 04 Clearances & EIA -->
+      <div class="sp-sub-nav-item">
+        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>04</span> Clearances & EIA</a>
+        <div class="sp-dropdown">
+          <a href="/clearances-eia.html#cgwa" class="sp-dropdown-link">Groundwater (CGWA)</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (SEIAA)</a>
+          <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
+          <a href="/clearances-eia.html#renewals" class="sp-dropdown-link">Renewals & Amendments</a>
+        </div>
+      </div>
+      <!-- 05 Licenses & EPR -->
+      <div class="sp-sub-nav-item">
+        <a href="/licenses-epr.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>05</span> Licenses & EPR</a>
+        <div class="sp-dropdown">
+          <a href="/licenses-epr.html#epr" class="sp-dropdown-link">EPR Compliance</a>
+          <a href="/licenses-epr.html#cte-cto" class="sp-dropdown-link">CTE / CTO Liaison</a>
+          <a href="/licenses-epr.html#hazardous" class="sp-dropdown-link">Hazardous Waste Auth</a>
+        </div>
+      </div>
+      <!-- 06 Management Systems -->
+      <div class="sp-sub-nav-item">
+        <a href="/management-systems.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>06</span> Management
+          Systems</a>
+        <div class="sp-dropdown">
+          <a href="/management-systems.html#ems1" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#ems2" class="sp-dropdown-link">Env. Mgmt (Integrated)</a>
+          <a href="/management-systems.html#audits" class="sp-dropdown-link">Audits & Renewals</a>
+        </div>
+      </div>
+      <!-- 07 Water Testing -->
+      <div class="sp-sub-nav-item">
+        <a href="/water-testing.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>07</span> Water Testing</a>
+        <div class="sp-dropdown">
+          <a href="/water-testing.html#drinking" class="sp-dropdown-link">Drinking Water Testing</a>
+          <a href="/water-testing.html#analysis" class="sp-dropdown-link">Water & Wastewater</a>
+          <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
+        </div>
+      </div>
+      <!-- 08 Air Monitoring -->
+      <div class="sp-sub-nav-item">
+        <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>08</span> Air Monitoring</a>
+        <div class="sp-dropdown">
+          <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack / Emission</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -34,10 +106,13 @@
           <div>
             <div class="sp-hero-num" style="margin-bottom: 2rem;">06</div>
             <h1 class="sp-hero-title">Management Systems</h1>
-            <p class="sp-hero-desc">Embed institutional excellence through globally recognized ISO standards. We provide the internal architecture for ISO 14001, 45001, and 9001 certification, moving beyond compliance to real performance.</p>
-            <a href="/index.html#consultation" class="btn-primary" style="display: inline-block; text-decoration: none;">Audit My System</a>
+            <p class="sp-hero-desc">Building resilient frameworks for environmental and operational excellence. We
+              design, implement, and audit management systems that turn compliance into a competitive advantage.</p>
+            <a href="/index.html#consultation" class="btn-primary"
+              style="display: inline-block; text-decoration: none;">Build Your System</a>
           </div>
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&q=80" alt="Management Systems" class="sp-hero-img">
+          <img src="https://images.unsplash.com/photo-1454165833767-027ffea9e77b?w=1200&q=80" alt="Management Systems"
+            class="sp-hero-img">
         </div>
       </div>
     </section>
@@ -47,24 +122,77 @@
       <div class="sp-container">
         <div class="sp-section-h">
           <h2 class="sp-section-t" style="color: var(--sp-blue);">What's Included</h2>
-          <p class="sp-section-sub">Operational excellence through standardized protocols.</p>
+          <p class="sp-section-sub">Standardized frameworks for global environmental performance.</p>
         </div>
-        <div class="sp-inc-grid">
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">ISO 14001:2015 & 45001:2018 Implementation</span>
+        <div class="svc-container">
+          <!-- EMS ISO 14001 Card -->
+          <div class="svc-card" id="ems1">
+            <div class="svc-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80"
+                alt="Environmental Management Systems (ISO 14001)" class="svc-card-img">
+              <div class="svc-card-chip">ISO 14001:2015 · CERTIFICATION</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Environmental Management Systems (ISO 14001)</h3>
+              <p class="svc-card-desc">End-to-end implementation of the ISO 14001:2015 standard, helping organizations
+                manage environmental responsibilities in a systematic manner.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Gap analysis & readiness assessment</li>
+                <li>Process & procedure documentation</li>
+                <li>Aspect-Impact mapping & risk audit</li>
+                <li>Internal auditor training</li>
+                <li>Certification body liaison support</li>
+              </ul>
+              <a href="files/6-ems-iso.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Integrated Management System (IMS) Design</span>
+
+          <!-- EMS Integrated Card -->
+          <div class="svc-card" id="ems2">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://plus.unsplash.com/premium_photo-1745182312745-cdb5d212803a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RW52aXJvbm1lbnRhbCUyME1hbmFnZW1lbnQlMjBTeXN0ZW1zJTIwKEludGVncmF0ZWQpfGVufDB8fDB8fHww?w=800&q=80"
+                alt="Environmental Management Systems (Integrated)" class="svc-card-img">
+              <div class="svc-card-chip">IMS · ISO 45001 · ISO 50001</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Environmental Management Systems (Integrated)</h3>
+              <p class="svc-card-desc">Integrating EMS with Health & Safety (ISO 45001) and Energy (ISO 50001) systems
+                to create a unified, lean management framework.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Integrated Manual & Policy design</li>
+                <li>Unified risk register development</li>
+                <li>Synergy identification across standards</li>
+                <li>Digital IMS dashboard setup</li>
+                <li>Multi-standard internal auditing</li>
+              </ul>
+              <a href="files/6-ems-ims.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Internal Lead Auditor Training Programs</span>
-          </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Live Regulatory Legal Register & Updates</span>
+
+          <!-- Audits & Renewals Card -->
+          <div class="svc-card" id="audits">
+            <div class="svc-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
+                alt="Regulatory Audits & Renewals" class="svc-card-img">
+              <div class="svc-card-chip">PERIODIC · RENEWALS · AUDIT</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Regulatory Audits & Renewals</h3>
+              <p class="svc-card-desc">Ensuring continuous validity of your management systems through periodic internal
+                audits, surveillance audit support, and timely renewals.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Pre-surveillance check-ups</li>
+                <li>Non-conformity (NC) closure support</li>
+                <li>Management Review Meeting (MRM) guidance</li>
+                <li>Standard version migration support</li>
+                <li>Continuous improvement auditing</li>
+              </ul>
+              <a href="files/6-audits.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -80,17 +208,20 @@
           <div class="sp-card">
             <div class="sp-card-icon">01</div>
             <h3 class="sp-card-title">Document Bloat</h3>
-            <p class="sp-card-text">Traditional ISO systems create mountains of paperwork that no one reads. We build "Lean" systems that focus on high-impact environmental metrics.</p>
+            <p class="sp-card-text">Traditional ISO systems create mountains of paperwork that no one reads. We build
+              "Lean" systems that focus on high-impact environmental metrics.</p>
           </div>
           <div class="sp-card">
             <div class="sp-card-icon">02</div>
             <h3 class="sp-card-title">Training Gaps</h3>
-            <h3 class="sp-card-text">A system is only as good as the team running it. Without internal capacity building, the system collapses after the auditor leaves.</h3>
+            <h3 class="sp-card-text">A system is only as good as the team running it. Without internal capacity
+              building, the system collapses after the auditor leaves.</h3>
           </div>
           <div class="sp-card">
             <div class="sp-card-icon">03</div>
             <h3 class="sp-card-title">Non-Performance</h3>
-            <p class="sp-card-text">A certificate shouldn't just be an ornament. It should drive lower costs, fewer accidents, and reduced environmental impacts.</p>
+            <p class="sp-card-text">A certificate shouldn't just be an ornament. It should drive lower costs, fewer
+              accidents, and reduced environmental impacts.</p>
           </div>
         </div>
       </div>
@@ -148,7 +279,8 @@
         <div class="sp-deliver-grid">
           <div>
             <h2 class="sp-section-t" style="color: white;">System Assets</h2>
-            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your management system.</p>
+            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your
+              management system.</p>
           </div>
           <div class="sp-deliver-list">
             <div class="sp-deliver-item"><span></span>ISO 14001 Manual</div>
@@ -170,7 +302,10 @@
         <div class="sp-spec-grid">
           <div class="sp-spec-card">
             <div class="sp-spec-h">
-              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
               Core ISO Standards
             </div>
             <ul class="sp-spec-list">
@@ -194,7 +329,10 @@
           </div>
           <div class="sp-spec-card">
             <div class="sp-spec-h">
-              <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+              <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
               Technical Implementation
             </div>
             <ul class="sp-spec-list">
@@ -224,57 +362,61 @@
     <section class="sp-faq">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">Systems FAQs</h2>
-          <p class="sp-section-sub">Closing the loop on operational excellence mapping.</p>
+          <h2 class="sp-section-t">Common Questions</h2>
+          <p class="sp-section-sub">Clarifying ISO certification and management systems.</p>
         </div>
         <div class="sp-faq-list">
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              How long does ISO 14001 certification take?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              How often are ISO surveillance audits?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Depending on the organization's size and complexity, a full implementation typically takes 4 to 8 months. This includes the initial gap analysis, documentation of policies and SOPs, employee training, conducting internal audits, and the Stage 1 & 2 external certification audits.
+              Once an organization is certified, surveillance audits are typically conducted annually to ensure
+              continued adherence to the standard. A full re-certification audit occurs every 3 years. We provide
+              support for NC closure and MRM preparation before every audit.
             </div>
           </div>
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              Is an Integrated Management System (IMS) possible?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              What are the benefits of an Integrated Management System (IMS)?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Yes. Modern ISO standards use the "High-Level Structure" (Annex SL), making it highly efficient to combine ISO 9001, 14001, and 45001 into a single Integrated Management System. This reduces documentation overlap by up to 40% and simplifies the audit process.
+              An IMS integrates ISO 9001 (Quality), 14001 (Environment), and 45001 (OH&S) into a single framework. This
+              reduces documentation duplication, streamlines internal audits, and ensures that different management
+              objectives don't conflict with each other.
             </div>
           </div>
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              Does ISO certification guarantee legal compliance?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              Can we migrate from OHSAS 18001 to ISO 45001?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              While ISO 14001 requires a *commitment* to compliance, it is not a compliance certificate itself. However, it provides the technical framework (Legal Register, Compliance Evaluation) to ensure you never miss a renewal or a new regulatory requirement, significantly reducing legal risks.
-            </div>
-          </div>
-          <div class="sp-faq-item">
-            <button class="sp-faq-btn">
-              What is the role of an Internal Auditor?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            </button>
-            <div class="sp-faq-ans">
-              Internal auditors act as a first line of defense. They independently verify that the system is functioning as documented before the external certification body arrives. We provide certified Lead Auditors to conduct these internal checkups, ensuring a stress-free Stage 2 audit.
+              Yes, OHSAS 18001 has been replaced by the ISO 45001:2018 standard. We help organizations perform a gap
+              analysis and migrate their existing safety management systems to the new ISO high-level structure (Annex
+              SL).
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Trust Row -->
     <section class="sp-trust">
       <div class="sp-container">
         <div class="sp-trust-logos">
-          <span>IRCA Certified</span>
-          <span>ISO 14001 Approved</span>
-          <span>OHSAS Aligned</span>
-          <span>EnMS Expert</span>
+          <span>ISO Specialist</span>
+          <span>Lead Auditor Team</span>
+          <span>IMS Expert</span>
+          <span>NABL Partner</span>
         </div>
       </div>
     </section>

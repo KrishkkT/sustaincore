@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Load theme from localStorage or default to Light
     const savedTheme = localStorage.getItem('sustain-theme') || 'light';
-    
+
     if (savedTheme === 'dark') {
         htmlElement.classList.add('dark');
         if (themeToggleBtn) themeToggleBtn.setAttribute('aria-checked', 'true');
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', function() {
+        themeToggleBtn.addEventListener('click', function () {
             if (htmlElement.classList.contains('dark')) {
                 htmlElement.classList.remove('dark');
                 themeToggleBtn.setAttribute('aria-checked', 'false');
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const panels = document.querySelectorAll('.panel');
     const megaLinks = document.querySelectorAll('.mega-item');
-    
+
     const scrollToContentTop = () => {
         const target = document.getElementById('services-scroll-target') || document.getElementById('services-nav-anchor');
         if (!target) return;
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (href && href.includes('#')) {
                 const targetId = href.split('#')[1];
                 const onServicesPage = window.location.pathname.includes('services.html');
-                
+
                 if (onServicesPage) {
                     // Prevent default jump if already on services page
                     e.preventDefault();
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } else if (tabBtns.length > 0) {
             const initialActive = document.querySelector('.tab-btn.active');
-            if(initialActive) {
+            if (initialActive) {
                 const targetId = initialActive.getAttribute('data-tab');
                 activateTab(targetId);
             }
@@ -185,14 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
     faqBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const item = btn.parentElement;
-            
+
             // Close all other FAQ items site-wide
             document.querySelectorAll('.faq-item.active, .sp-faq-item.active').forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
                 }
             });
-            
+
             // Toggle the clicked one
             item.classList.toggle('active');
         });
@@ -214,8 +214,8 @@ window.showToast = (title, message, type = 'success') => {
     const container = createToastContainer();
     const toast = document.createElement('div');
     toast.className = `toast toast-${type}`;
-    
-    const icon = type === 'success' ? 
+
+    const icon = type === 'success' ?
         `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>` :
         `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>`;
 
@@ -231,7 +231,7 @@ window.showToast = (title, message, type = 'success') => {
     `;
 
     container.appendChild(toast);
-    
+
     // Trigger entrance animation
     setTimeout(() => toast.classList.add('show'), 100);
 
@@ -250,7 +250,7 @@ window.showToast = (title, message, type = 'success') => {
 };
 
 // Update Formspree Submission Logic to use Toasts
-window.handleSubmit = async function(event) {
+window.handleSubmit = async function (event) {
     event.preventDefault();
     const form = event.target;
     const data = new FormData(form);

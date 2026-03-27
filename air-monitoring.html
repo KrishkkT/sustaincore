@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="stylesheet" href="/src/css/service-pages.css">
   <link rel="icon" href="/Frame 4.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -16,14 +18,85 @@
 
   <nav class="sp-sub-nav">
     <div class="sp-sub-nav-inner">
-      <a href="/esg-reporting.html" class="sp-sub-nav-link"><span>01</span> ESG Reporting</a>
-      <a href="/carbon-climate.html" class="sp-sub-nav-link"><span>02</span> Carbon & Climate</a>
-      <a href="/ratings-targets.html" class="sp-sub-nav-link"><span>03</span> Ratings & Targets</a>
-      <a href="/clearances-eia.html" class="sp-sub-nav-link"><span>04</span> Clearances & EIA</a>
-      <a href="/licenses-epr.html" class="sp-sub-nav-link"><span>05</span> Licenses & EPR</a>
-      <a href="/management-systems.html" class="sp-sub-nav-link"><span>06</span> Management Systems</a>
-      <a href="/water-testing.html" class="sp-sub-nav-link"><span>07</span> Water Testing</a>
-      <a href="/air-monitoring.html" class="sp-sub-nav-link active"><span>08</span> Air Monitoring</a>
+      <!-- 01 ESG Reporting -->
+      <div class="sp-sub-nav-item">
+        <a href="/esg-reporting.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>01</span> ESG Reporting</a>
+        <div class="sp-dropdown">
+          <a href="/esg-reporting.html#brsr" class="sp-dropdown-link">BRSR Modeling</a>
+          <a href="/esg-reporting.html#cdp" class="sp-dropdown-link">CDP Disclosure</a>
+          <a href="/esg-reporting.html#gri" class="sp-dropdown-link">GRI Implementation</a>
+          <a href="/esg-reporting.html#sasb" class="sp-dropdown-link">SASB Alignment</a>
+          <a href="/esg-reporting.html#tcfd" class="sp-dropdown-link">TCFD Integration</a>
+        </div>
+      </div>
+      <!-- 02 Carbon & Climate -->
+      <div class="sp-sub-nav-item">
+        <a href="/carbon-climate.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>02</span> Carbon & Climate</a>
+        <div class="sp-dropdown">
+          <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
+          <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Inventory</a>
+          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
+          <a href="/carbon-climate.html#footprint" class="sp-dropdown-link">Carbon Footprint</a>
+          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
+        </div>
+      </div>
+      <!-- 03 Ratings & Targets -->
+      <div class="sp-sub-nav-item">
+        <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>03</span> Ratings & Targets</a>
+        <div class="sp-dropdown">
+          <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Assessment</a>
+          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
+          <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
+        </div>
+      </div>
+      <!-- 04 Clearances & EIA -->
+      <div class="sp-sub-nav-item">
+        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>04</span> Clearances & EIA</a>
+        <div class="sp-dropdown">
+          <a href="/clearances-eia.html#cgwa" class="sp-dropdown-link">Groundwater (CGWA)</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (SEIAA)</a>
+          <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
+          <a href="/clearances-eia.html#renewals" class="sp-dropdown-link">Renewals & Amendments</a>
+        </div>
+      </div>
+      <!-- 05 Licenses & EPR -->
+      <div class="sp-sub-nav-item">
+        <a href="/licenses-epr.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>05</span> Licenses & EPR</a>
+        <div class="sp-dropdown">
+          <a href="/licenses-epr.html#epr" class="sp-dropdown-link">EPR Compliance</a>
+          <a href="/licenses-epr.html#cte-cto" class="sp-dropdown-link">CTE / CTO Liaison</a>
+          <a href="/licenses-epr.html#hazardous" class="sp-dropdown-link">Hazardous Waste Auth</a>
+        </div>
+      </div>
+      <!-- 06 Management Systems -->
+      <div class="sp-sub-nav-item">
+        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>06</span> Management
+          Systems</a>
+        <div class="sp-dropdown">
+          <a href="/management-systems.html#ems1" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#ems2" class="sp-dropdown-link">Env. Mgmt (Integrated)</a>
+          <a href="/management-systems.html#audits" class="sp-dropdown-link">Audits & Renewals</a>
+        </div>
+      </div>
+      <!-- 07 Water Testing -->
+      <div class="sp-sub-nav-item">
+        <a href="/water-testing.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>07</span> Water Testing</a>
+        <div class="sp-dropdown">
+          <a href="/water-testing.html#drinking" class="sp-dropdown-link">Drinking Water Testing</a>
+          <a href="/water-testing.html#analysis" class="sp-dropdown-link">Water & Wastewater</a>
+          <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
+        </div>
+      </div>
+      <!-- 08 Air Monitoring -->
+      <div class="sp-sub-nav-item">
+        <a href="/air-monitoring.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>08</span> Air
+          Monitoring</a>
+        <div class="sp-dropdown">
+          <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack / Emission</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -34,10 +107,14 @@
           <div>
             <div class="sp-hero-num" style="margin-bottom: 2rem;">08</div>
             <h1 class="sp-hero-title">Air Monitoring & Emissions</h1>
-            <p class="sp-hero-desc">Breathe confidence into your corporate transparency. We provide technical monitoring for Stack Emissions, Ambient Air, and VOCs to ensure you stay ahead of stringent environmental regulations.</p>
-            <a href="/index.html#consultation" class="btn-primary" style="display: inline-block; text-decoration: none;">Stack Audit</a>
+            <p class="sp-hero-desc">Breathe confidence into your corporate transparency. We provide technical monitoring
+              for Stack Emissions, Ambient Air, and VOCs to ensure you stay ahead of stringent environmental
+              regulations.</p>
+            <a href="/index.html#consultation" class="btn-primary"
+              style="display: inline-block; text-decoration: none;">Stack Audit</a>
           </div>
-          <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=1200&q=80" alt="Air Monitoring" class="sp-hero-img">
+          <img src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?w=1200&q=80" alt="Air Monitoring"
+            class="sp-hero-img">
         </div>
       </div>
     </section>
@@ -49,22 +126,53 @@
           <h2 class="sp-section-t" style="color: var(--sp-blue);">What's Included</h2>
           <p class="sp-section-sub">Real-time data for atmospheric and industrial safety.</p>
         </div>
-        <div class="sp-inc-grid">
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Stack & Flue Gas Emission Testing</span>
+        <div class="svc-container">
+          <!-- Workplace Air Quality Monitoring Card -->
+          <div class="svc-card" id="workplace">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1768796372063-4da660e034b8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V29ya3BsYWNlJTIwQWlyJTIwUXVhbGl0eSUyME1vbml0b3Jpbmd8ZW58MHx8MHx8fDA%3D?w=800&q=80"
+                alt="Workplace Air Quality Monitoring" class="svc-card-img">
+              <div class="svc-card-chip">OSHA · IAQ · WORKZONE</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Workplace Air Quality Monitoring</h3>
+              <p class="svc-card-desc">Specialized assessment of air quality within industrial work zones and corporate
+                offices to ensure worker health and safety as per OSHA and factory norms.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>VOC & chemical vapor screening</li>
+                <li>Indoor Air Quality (IAQ) profiling</li>
+                <li>Ventilation efficiency mapping</li>
+                <li>CO2 & Oxygen level monitoring</li>
+                <li>Particulate matter (Dust) audit</li>
+              </ul>
+              <a href="files/8-workplace.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Ambient Air Quality (AAQ) Monitoring</span>
-          </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Indoor Air Quality (IAQ) & Noise Audits</span>
-          </div>
-          <div class="sp-inc-item">
-            <div class="sp-inc-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-            <span class="sp-inc-text">Continuous Emission (CEMS) Calibration</span>
+
+          <!-- Stack / Emission Monitoring Card -->
+          <div class="svc-card" id="stack">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1612798692278-c6f93f289b40?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3RhY2slMjAlMkYlMjBFbWlzc2lvbiUyME1vbml0b3Jpbmd8ZW58MHx8MHx8fDA%3D?w=800&q=80"
+                alt="Stack / Emission Monitoring" class="svc-card-img">
+              <div class="svc-card-chip">SPCB/CPCB · ISOKINETIC · NABL</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Stack / Emission Monitoring</h3>
+              <p class="svc-card-desc">High-precision isokinetic sampling of industrial stack emissions to quantify PM,
+                SOx, NOx, and other pollutants for regulatory compliance.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Flue gas velocity & temperature</li>
+                <li>Isokinetic particulate sampling</li>
+                <li>SO2, NOx, CO concentration monitoring</li>
+                <li>Stack geometry & port-hole audit</li>
+                <li>Real-time CEMS data verification</li>
+              </ul>
+              <a href="files/8-stack.html" class="svc-learn-more">Learn More & Case Studies →</a>
+            </div>
           </div>
         </div>
       </div>
@@ -74,23 +182,27 @@
       <div class="sp-container">
         <div class="sp-section-h">
           <h2 class="sp-section-t">Emission visibility</h2>
-          <p class="sp-section-sub">Undetected leaks are not just environmental risks; they are operational inefficiencies.</p>
+          <p class="sp-section-sub">Undetected leaks are not just environmental risks; they are operational
+            inefficiencies.</p>
         </div>
         <div class="sp-card-grid">
           <div class="sp-card">
             <div class="sp-card-icon">01</div>
             <h3 class="sp-card-title">Real-time Gaps</h3>
-            <p class="sp-card-text">Traditional spot-testing misses the "peaks." We identify where your filtration systems are failing during high-load periods.</p>
+            <p class="sp-card-text">Traditional spot-testing misses the "peaks." We identify where your filtration
+              systems are failing during high-load periods.</p>
           </div>
           <div class="sp-card">
             <div class="sp-card-icon">02</div>
             <h3 class="sp-card-title">VOC Volatility</h3>
-            <p class="sp-card-text">Managing volatile organic compounds requires specialized sensors and technical expertise that standard auditors often lack.</p>
+            <p class="sp-card-text">Managing volatile organic compounds requires specialized sensors and technical
+              expertise that standard auditors often lack.</p>
           </div>
           <div class="sp-card">
             <div class="sp-card-icon">03</div>
             <h3 class="sp-card-title">Regulatory Shift</h3>
-            <p class="sp-card-text">New NAAQS standards are tougher. If your equipment hasn't been calibrated to these new benchmarks, you are at risk of fines.</p>
+            <p class="sp-card-text">New NAAQS standards are tougher. If your equipment hasn't been calibrated to these
+              new benchmarks, you are at risk of fines.</p>
           </div>
         </div>
       </div>
@@ -148,7 +260,8 @@
         <div class="sp-deliver-grid">
           <div>
             <h2 class="sp-section-t" style="color: white;">Emission Assets</h2>
-            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your atmospheric management.</p>
+            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your
+              atmospheric management.</p>
           </div>
           <div class="sp-deliver-list">
             <div class="sp-deliver-item"><span></span>NAAQS Audit Report</div>
@@ -170,7 +283,10 @@
         <div class="sp-spec-grid">
           <div class="sp-spec-card">
             <div class="sp-spec-h">
-              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+              <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
               Stack & Ambient
             </div>
             <ul class="sp-spec-list">
@@ -194,7 +310,10 @@
           </div>
           <div class="sp-spec-card">
             <div class="sp-spec-h">
-              <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/></svg>
+              <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+              </svg>
               Noise & Vibration
             </div>
             <ul class="sp-spec-list">
@@ -224,57 +343,61 @@
     <section class="sp-faq">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">Air Quality FAQs</h2>
-          <p class="sp-section-sub">Clarifying the complexities of atmospheric monitoring.</p>
+          <h2 class="sp-section-t">Common Questions</h2>
+          <p class="sp-section-sub">Navigation through atmospheric monitoring standards.</p>
         </div>
         <div class="sp-faq-list">
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              How often is stack monitoring required?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              What is Isokinetic sampling and why is it necessary?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Typically, stack monitoring is required once every quarter or once every six months, as specified in your Consent to Operate (CTO). For highly polluting industries (Red Category), continuous emission monitoring systems (CEMS) are mandatory for real-time reporting to the CPCB/SPCB servers.
+              Isokinetic sampling ensures that the velocity of the air entering the sampling probe is the same as the
+              velocity of the gas in the stack. This is critical for capturing particulate matter (PM) accurately
+              without biasing the sample by size or concentration.
             </div>
           </div>
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              What is Isokinetic Sampling?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              Do we need 24-hour ambient air monitoring?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Isokinetic sampling ensures that the sample of air taken from the stack represents the exact velocity and particulate concentration of the gas in the stack. If the sampling speed is too fast or too slow, the particulate data will be skewed. We use digital V-probe systems to ensure perfect isokinetic ratios.
+              Yes, as per NAAQS 2009, ambient air quality must be monitored over a 24-hour cycle at specific factory
+              perimeter locations to account for diurnal variations in wind patterns and emission signatures from
+              neighboring industrial clusters.
             </div>
           </div>
           <div class="sp-faq-item">
             <button class="sp-faq-btn">
-              What are the NAAQS limits for PM2.5?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              How is the required stack height determined?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
             </button>
             <div class="sp-faq-ans">
-              Per the National Ambient Air Quality Standards (2009), the 24-hour limit for PM2.5 is 60 µg/m³ and the annual limit is 40 µg/m³. For PM10, the 24-hour limit is 100 µg/m³. Non-compliance often triggers additional dust mitigation requirements from the local pollution control board.
-            </div>
-          </div>
-          <div class="sp-faq-item">
-            <button class="sp-faq-btn">
-              Does SustainCore support CEMS connectivity?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-            </button>
-            <div class="sp-faq-ans">
-              Yes. We assist in the installation, calibration, and maintenance of Continuous Emission Monitoring Systems. We also provide the specialized software bridge required to push your real-time data securely to the CPCB's "Central Real-time Monitoring Portal."
+              Stack height is calculated using CPCB formulas based on your DG set capacity (kVA) or the sulfur content
+              of your fuel (kg/hr). Proper height is essential to ensure pollutants are dispersed effectively above the
+              "wake" zone of neighboring buildings.
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Trust Row -->
     <section class="sp-trust">
       <div class="sp-container">
         <div class="sp-trust-logos">
-          <span>EPA Method 5 Aligned</span>
-          <span>NAAQMS Compliant</span>
+          <span>NABL Accredited</span>
+          <span>CPCB Registered</span>
+          <span>EPA Method Team</span>
           <span>CEMS Specialist</span>
-          <span>SPCB Approved</span>
         </div>
       </div>
     </section>

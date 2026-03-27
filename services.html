@@ -18,6 +18,109 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="/src/css/services-dossier.css">
+  <style>
+    .tab-bar {
+      position: relative;
+      overflow: visible !important;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .tab-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 240px;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      padding: 0.75rem;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease;
+    }
+
+    .dark .tab-dropdown {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .tab-btn-wrapper:hover .tab-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .dark .dropdown-item {
+      color: #94a3b8;
+    }
+
+    .dropdown-item:hover {
+      background: #f1f5f9;
+      color: var(--brand-blue-light);
+    }
+
+    .dark .dropdown-item:hover {
+      background: #334155;
+      color: #60a5fa;
+    }
+
+    .dropdown-item .external-link {
+      opacity: 0.5;
+      font-size: 10px;
+      margin-left: 8px;
+    }
+
+    .dropdown-item:hover .external-link {
+      opacity: 1;
+    }
+
+    /* Ensure category bar stays on top */
+    .tab-wrap {
+      z-index: 50;
+    }
+
+    .svc-learn-more {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1.5rem;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--brand-blue-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .svc-learn-more:hover {
+      color: var(--brand-green);
+      transform: translateX(5px);
+    }
+  </style>
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -26,7 +129,7 @@
 
   <main class="pt-32 pb-32">
     <div id="services-scroll-target" class="absolute -top-40"></div>
-    
+
     <!-- Hero Section -->
     <div class="px-8 mb-24 max-w-[1440px] mx-auto text-center" data-aos="fade-up">
       <div class="inline-block px-4 py-1.5 mb-6 bg-brand-blue-light/10 border border-brand-blue-light/20 rounded-full">
@@ -34,107 +137,159 @@
       </div>
       <h1 class="font-display text-5xl md:text-7xl font-extrabold text-brand-charcoal mb-8 leading-[1.1]">
         ESG, Compliance & <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-light to-brand-green">Specialized Solutions</span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-light to-brand-green">Specialized
+          Solutions</span>
       </h1>
       <p class="text-xl md:text-2xl text-brand-charcoal/70 max-w-3xl mx-auto leading-relaxed">
-        From carbon inventory and CBAM advisory to NABL-accredited testing — we deliver the precision and proof required for corporate resilience.
+        From carbon inventory and CBAM advisory to NABL-accredited testing — we deliver the precision and proof required
+        for corporate resilience.
       </p>
     </div>
-    
+
     <!-- Services Overview Grid -->
     <div class="px-8 mb-24 max-w-[1440px] mx-auto" id="services-overview">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- 01: ESG Reporting -->
-        <a href="#esg-reporting" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        <a href="#esg-reporting"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">ESG Reporting</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">BRSR, GRI, and SASB aligned disclosures for listed entities.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">BRSR, GRI, and SASB aligned
+            disclosures for listed entities.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 02: Carbon & Climate -->
-        <a href="#carbon-climate" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+        <a href="#carbon-climate"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Carbon & Climate</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Net Zero roadmaps, Scope 1-3 audits, and CBAM advisory.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Net Zero roadmaps, Scope
+            1-3 audits, and CBAM advisory.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 03: Ratings & Targets -->
-        <a href="#ratings-targets" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        <a href="#ratings-targets"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Ratings & Targets</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">EcoVadis, CDP, and SBTi performance optimization.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">EcoVadis, CDP, and SBTi
+            performance optimization.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 04: Clearances & EIA -->
-        <a href="#clearances-eia" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        <a href="#clearances-eia"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Clearances & EIA</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Regulatory clearances, impact studies, and EC advisory.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Regulatory clearances,
+            impact studies, and EC advisory.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 05: Licenses & EPR -->
-        <a href="#licenses-epr" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <a href="#licenses-epr"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Licenses & EPR</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">EPR registration, Rule 9, and waste management permits.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">EPR registration, Rule 9,
+            and waste management permits.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 06: Management Systems -->
-        <a href="#management-systems" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-slate-50 dark:bg-slate-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        <a href="#management-systems"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-slate-50 dark:bg-slate-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Mgmt. Systems</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">ISO 14001, 45001, and 50001 implementation & audit.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">ISO 14001, 45001, and 50001
+            implementation & audit.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 07: Water Testing -->
-        <a href="#water-testing" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-cyan-50 dark:bg-cyan-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+        <a href="#water-testing"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-cyan-50 dark:bg-cyan-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Water Testing</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">IS 10500 analysis, effluent monitoring, and ZLD audits.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">IS 10500 analysis, effluent
+            monitoring, and ZLD audits.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
         </a>
 
         <!-- 08: Air Monitoring -->
-        <a href="#air-monitoring" class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div class="w-12 h-12 bg-sky-50 dark:bg-sky-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+        <a href="#air-monitoring"
+          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
+          <div
+            class="w-12 h-12 bg-sky-50 dark:bg-sky-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+            </svg>
           </div>
           <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Air Monitoring</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Isokinetic sampling, CEMS, and workplace air monitoring.</p>
+          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Isokinetic sampling, CEMS,
+            and workplace air monitoring.</p>
           <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
             Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
           </div>
@@ -144,14 +299,97 @@
 
     <div class="tab-wrap" id="services-nav-anchor">
       <div class="tab-bar" id="tabBar">
-        <button class="tab-btn active" data-tab="esg-reporting"><span class="n">01</span>ESG Reporting</button>
-        <button class="tab-btn" data-tab="carbon-climate"><span class="n">02</span>Carbon &amp; Climate</button>
-        <button class="tab-btn" data-tab="ratings-targets"><span class="n">03</span>Ratings &amp; Targets</button>
-        <button class="tab-btn" data-tab="clearances-eia"><span class="n">04</span>Clearances &amp; EIA</button>
-        <button class="tab-btn" data-tab="licenses-epr"><span class="n">05</span>Licenses &amp; EPR</button>
-        <button class="tab-btn" data-tab="management-systems"><span class="n">06</span>Management Systems</button>
-        <button class="tab-btn" data-tab="water-testing"><span class="n">07</span>Water Testing</button>
-        <button class="tab-btn" data-tab="air-monitoring"><span class="n">08</span>Air Monitoring</button>
+        <!-- 01 ESG Reporting -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn active" data-tab="esg-reporting"><span class="n">01</span>ESG Reporting</button>
+          <div class="tab-dropdown">
+            <a href="#brsr-reporting" class="dropdown-item">BRSR Reporting <span class="external-link">→</span></a>
+            <a href="#cdp-disclosure" class="dropdown-item">CDP Disclosure <span class="external-link">→</span></a>
+            <a href="#gri-reporting" class="dropdown-item">GRI Reporting <span class="external-link">→</span></a>
+            <a href="#sasb-standards" class="dropdown-item">SASB Standards <span class="external-link">→</span></a>
+            <a href="#tcfd-reporting" class="dropdown-item">TCFD Reporting <span class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 02 Carbon & Climate -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="carbon-climate"><span class="n">02</span>Carbon &amp; Climate</button>
+          <div class="tab-dropdown">
+            <a href="#cbam-advisory" class="dropdown-item">CBAM Advisory <span class="external-link">→</span></a>
+            <a href="#ghg-inventory" class="dropdown-item">GHG Inventory <span class="external-link">→</span></a>
+            <a href="#ghg-verification" class="dropdown-item">GHG Verification <span class="external-link">→</span></a>
+            <a href="#pcf-accounting" class="dropdown-item">Product Carbon Footprint <span
+                class="external-link">→</span></a>
+            <a href="#carbon-credits" class="dropdown-item">Carbon Credits <span class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 03 Ratings & Targets -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="ratings-targets"><span class="n">03</span>Ratings &amp; Targets</button>
+          <div class="tab-dropdown">
+            <a href="#materiality-assessment" class="dropdown-item">Materiality Assessment <span
+                class="external-link">→</span></a>
+            <a href="#ecovadis-assessment" class="dropdown-item">EcoVadis Assessment <span
+                class="external-link">→</span></a>
+            <a href="#epd-declaration" class="dropdown-item">EPD Declaration <span class="external-link">→</span></a>
+            <a href="#sbti-targets" class="dropdown-item">SBTi Targets <span class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 04 Clearances & EIA -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="clearances-eia"><span class="n">04</span>Clearances &amp; EIA</button>
+          <div class="tab-dropdown">
+            <a href="#eia-studies" class="dropdown-item">EIA Studies <span class="external-link">→</span></a>
+            <a href="#ec-renewals" class="dropdown-item">EC Renewals <span class="external-link">→</span></a>
+            <a href="#cgwa-permission" class="dropdown-item">CGWA Permission <span class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 05 Licenses & EPR -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="licenses-epr"><span class="n">05</span>Licenses &amp; EPR</button>
+          <div class="tab-dropdown">
+            <a href="#epr-compliance" class="dropdown-item">EPR Compliance <span class="external-link">→</span></a>
+            <a href="#cte-cto-consents" class="dropdown-item">CTE / CTO Consents <span
+                class="external-link">→</span></a>
+            <a href="#rule-9-auth" class="dropdown-item">Rule 9 Authorisation <span class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 06 Management Systems -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="management-systems"><span class="n">06</span>Mgmt. Systems</button>
+          <div class="tab-dropdown">
+            <a href="#ems-implementation" class="dropdown-item">EMS (ISO 14001) <span class="external-link">→</span></a>
+            <a href="#iso-certification" class="dropdown-item">ISO Certification <span
+                class="external-link">→</span></a>
+            <a href="#regulatory-audits" class="dropdown-item">Regulatory Audits <span
+                class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 07 Water Testing -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="water-testing"><span class="n">07</span>Water Testing</button>
+          <div class="tab-dropdown">
+            <a href="#drinking-water" class="dropdown-item">Drinking Water <span class="external-link">→</span></a>
+            <a href="#wastewater-analysis" class="dropdown-item">Wastewater Analysis <span
+                class="external-link">→</span></a>
+            <a href="#effluent-analysis" class="dropdown-item">Effluent Analysis <span
+                class="external-link">→</span></a>
+          </div>
+        </div>
+
+        <!-- 08 Air Monitoring -->
+        <div class="tab-btn-wrapper">
+          <button class="tab-btn" data-tab="air-monitoring"><span class="n">08</span>Air Monitoring</button>
+          <div class="tab-dropdown">
+            <a href="#stack-monitoring" class="dropdown-item">Stack Monitoring <span class="external-link">→</span></a>
+            <a href="#workplace-air" class="dropdown-item">Workplace Air <span class="external-link">→</span></a>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -186,13 +424,8 @@
                 (assurance-required subset) applies to the top 150 companies from FY 2023-24, expanding to 1000 by FY
                 2026-27. Our structured cross-functional data framework reduces internal reporting burden by up to 40%.
               </div>
-              <ul class="svc-feats">
-                <li>Materiality assessment &amp; KPI mapping across all 9 NGRBC principles</li>
-                <li>Cross-functional data collection templates &amp; team coordination</li>
-                <li>BRSR Core preparation for top 150/1000 assured reporting</li>
-                <li>Board-level presentation, regulator submission &amp; audit trail</li>
-                <li>Year-on-year improvement tracking &amp; peer benchmarking</li>
               </ul>
+              <a href="files/1-brsr.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
@@ -211,17 +444,12 @@
                 drafting aligned with TCFD, and a targeted strategy to reach Leadership band. A strong CDP score
                 protects supplier contracts, attracts ESG-focused capital and signals genuine climate commitment to
                 markets.</div>
-              <ul class="svc-feats">
-                <li>Climate, Water Security &amp; Forest modules — full response drafting</li>
-                <li>Gap analysis vs prior scores and sector peer benchmarks</li>
-                <li>TCFD alignment integrated throughout all Climate responses</li>
-                <li>Pre-submission internal evidence review and quality check</li>
-                <li>A-list / Leadership band improvement roadmap</li>
               </ul>
+              <a href="files/1-cdp.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="gri-reporting">
             <div class="svc-img">
               <!-- GRI: A printed sustainability report document being reviewed at a desk -->
               <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=700&q=80"
@@ -243,10 +471,11 @@
                 <li>Double materiality determination (impact + financial)</li>
                 <li>GRI Content Index preparation and with-reference declaration</li>
               </ul>
+              <a href="files/1-gri.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="sasb-standards">
             <div class="svc-img">
               <!-- SASB: Financial data and investment metrics — investor-grade ESG metrics -->
               <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80"
@@ -268,10 +497,11 @@
                 <li>SASB-TCFD-GRI integration to eliminate duplicate data collection</li>
                 <li>ISSB IFRS S1/S2 readiness alignment guidance</li>
               </ul>
+              <a href="files/1-sasb.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="tcfd-reporting">
             <div class="svc-img">
               <!-- TCFD: A flooded city street or extreme weather event — physical climate risk -->
               <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=700&q=80"
@@ -293,6 +523,7 @@
                 <li>Financial impact quantification with sensitivity analysis</li>
                 <li>Governance structure review and board climate oversight alignment</li>
               </ul>
+              <a href="files/1-tcfd.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
@@ -430,7 +661,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Book free call →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/esg-reporting.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore ESG Deep-Dive</a>
+          <a href="/esg-reporting.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore ESG Deep-Dive</a>
         </div>
       </div><!-- /t1 -->
 
@@ -448,7 +680,7 @@
         <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
         <div class="svc-grid">
 
-          <div class="svc-card">
+          <div class="svc-card" id="cbam-advisory">
             <div class="svc-img">
               <!-- CBAM: Steel or aluminium factory — exactly the sectors CBAM covers -->
               <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=700&q=80"
@@ -470,10 +702,11 @@
                 <li>Authorised CBAM declarant registration support</li>
                 <li>Certificate obligation monitoring and annual financial exposure modelling</li>
               </ul>
+              <a href="files/2-cbam.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="ghg-inventory">
             <div class="svc-img">
               <!-- GHG Inventory: Energy meters, utility consumption tracking — Scope 1/2 data -->
               <img
@@ -496,10 +729,11 @@
                 <li>Base year setting, intensity ratios and year-on-year comparison</li>
                 <li>Emission factor documentation for assurance and regulatory use</li>
               </ul>
+              <a href="files/2-ghg.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="ghg-verification">
             <div class="svc-img">
               <!-- GHG Verification: A third-party auditor with clipboard reviewing industrial data -->
               <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80"
@@ -521,10 +755,11 @@
                 <li>Limited assurance (review) and reasonable assurance pathways</li>
                 <li>Post-verification corrective actions and next-cycle improvement plan</li>
               </ul>
+              <a href="files/2-ghg.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="pcf-accounting">
             <div class="svc-img">
               <!-- Product Carbon Footprint: A product manufacturing line / LCA concept -->
               <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80"
@@ -546,10 +781,11 @@
                 <li>Emissions hotspot identification and abatement cost curve</li>
                 <li>Reduction roadmap aligned with SBTi near-term pathways</li>
               </ul>
+              <a href="files/2-pcf.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="carbon-credits">
             <div class="svc-img">
               <!-- Carbon Credits: A forest or reforestation project — nature-based solutions -->
               <img
@@ -572,6 +808,7 @@
                 <li>Official credit retirement with certificates and public registry records</li>
                 <li>Net zero strategy alignment and carbon claims defensibility review</li>
               </ul>
+              <a href="files/2-cc.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
@@ -702,7 +939,8 @@
           </div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/carbon-climate.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore Carbon Deep-Dive</a>
+          <a href="/carbon-climate.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore Carbon Deep-Dive</a>
         </div>
       </div><!-- /t2 -->
 
@@ -718,7 +956,7 @@
         <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
         <div class="svc-grid">
 
-          <div class="svc-card">
+          <div class="svc-card" id="materiality-assessment">
             <div class="svc-img">
               <!-- Materiality: A stakeholder workshop / focus group around a table discussing -->
               <img
@@ -745,7 +983,7 @@
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="ecovadis-assessment">
             <div class="svc-img">
               <!-- EcoVadis: A supply chain — logistics, trucks, warehousing — supply chain ratings -->
               <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80"
@@ -770,7 +1008,7 @@
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="epd-declaration">
             <div class="svc-img">
               <!-- EPD: A building material / construction product with spec sheet -->
               <img
@@ -797,7 +1035,7 @@
             </div>
           </div>
 
-          <div class="svc-card">
+          <div class="svc-card" id="sbti-targets">
             <div class="svc-img">
               <!-- SBTi: A renewable energy installation (solar/wind) representing the 1.5°C transition -->
               <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?w=700&q=80"
@@ -959,7 +1197,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Start gap analysis →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/ratings-targets.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore Ratings Deep-Dive</a>
+          <a href="/ratings-targets.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore Ratings Deep-Dive</a>
         </div>
       </div><!-- /t3 -->
 
@@ -998,7 +1237,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="eia-studies">
             <div class="svc-img">
               <!-- EIA: Field team conducting environmental baseline survey in a natural area -->
               <img src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=700&q=80"
@@ -1022,7 +1261,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="ec-renewals">
             <div class="svc-img">
               <!-- EC Renewal: A clock or calendar showing deadline management — time-critical -->
               <img src="https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=700&q=80"
@@ -1046,7 +1285,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="cgwa-permission">
             <div class="svc-img">
               <!-- CGWA: A borewell or groundwater pump in an industrial setting -->
               <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=700&q=80"
@@ -1205,7 +1444,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Get free EC screening →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/clearances-eia.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore EC Deep-Dive</a>
+          <a href="/clearances-eia.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore EC Deep-Dive</a>
         </div>
       </div><!-- /t4 -->
 
@@ -1220,7 +1460,7 @@
         </div>
         <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
         <div class="svc-grid">
-          <div class="svc-card">
+          <div class="svc-card" id="epr-compliance">
             <div class="svc-img">
               <!-- EPR: Recycling facility sorting plastic bottles — plastic EPR obligation -->
               <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=700&q=80"
@@ -1245,7 +1485,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="cte-cto-consents">
             <div class="svc-img">
               <!-- CTE/CTO: Pollution control board office or environmental inspector visit -->
               <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80"
@@ -1270,7 +1510,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="rule-9-auth">
             <div class="svc-img">
               <!-- Rule 9: Hazardous waste drums in a secure storage facility -->
               <img
@@ -1422,7 +1662,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Free licence audit →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/licenses-epr.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore License Deep-Dive</a>
+          <a href="/licenses-epr.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore
+            License Deep-Dive</a>
         </div>
       </div><!-- /t5 -->
 
@@ -1437,7 +1678,7 @@
         </div>
         <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
         <div class="svc-grid">
-          <div class="svc-card">
+          <div class="svc-card" id="ems-implementation">
             <div class="svc-img">
               <!-- EMS: A factory with environmental monitoring gauges and controls visible -->
               <img
@@ -1463,7 +1704,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="iso-certification">
             <div class="svc-img">
               <!-- ISO Certification: A certification body auditor with clipboard at a factory -->
               <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80"
@@ -1488,7 +1729,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="regulatory-audits">
             <div class="svc-img">
               <!-- Regulatory audit: An environmental inspector reviewing compliance records -->
               <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80"
@@ -1646,7 +1887,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Start certification →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/management-systems.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore ISO Deep-Dive</a>
+          <a href="/management-systems.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore ISO Deep-Dive</a>
         </div>
       </div><!-- /t6 -->
 
@@ -1661,7 +1903,7 @@
         </div>
         <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
         <div class="svc-grid">
-          <div class="svc-card">
+          <div class="svc-card" id="drinking-water">
             <div class="svc-img">
               <!-- Drinking water: Clean tap water or drinking water sample collection -->
               <img src="https://images.unsplash.com/photo-1559825481-12a05cc00344?w=800&q=80"
@@ -1685,7 +1927,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="wastewater-analysis">
             <div class="svc-img">
               <!-- Wastewater analysis: Industrial water testing and chemical analysis -->
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=80"
@@ -1709,7 +1951,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="effluent-analysis">
             <div class="svc-img">
               <!-- Effluent: Industrial effluent discharge pipe into treatment system — ZLD -->
               <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=700&q=80"
@@ -1862,7 +2104,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Book testing →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/water-testing.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore Water Deep-Dive</a>
+          <a href="/water-testing.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore Water Deep-Dive</a>
         </div>
       </div><!-- /t7 -->
 
@@ -1877,7 +2120,7 @@
         </div>
         <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
         <div class="svc-grid">
-          <div class="svc-card">
+          <div class="svc-card" id="stack-monitoring">
             <div class="svc-img">
               <!-- Stack monitoring: Sampling probe inserted into a chimney stack flue gas -->
               <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80"
@@ -1902,7 +2145,7 @@
               </ul>
             </div>
           </div>
-          <div class="svc-card">
+          <div class="svc-card" id="workplace-air">
             <div class="svc-img">
               <!-- Workplace air: A worker in PPE (mask/respirator) in a dusty or chemical factory -->
               <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=700&q=80"
@@ -2058,7 +2301,8 @@
           <div class="cta-btns"><a href="/contact.html" class="btn-s">Book monitoring visit →</a></div>
         </div>
         <div style="text-align: center; margin-top: 4rem;">
-          <a href="/air-monitoring.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore Air Deep-Dive</a>
+          <a href="/air-monitoring.html" class="btn-primary"
+            style="display: inline-block; text-decoration: none;">Explore Air Deep-Dive</a>
         </div>
       </div><!-- /t8 -->
 

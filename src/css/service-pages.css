@@ -526,6 +526,7 @@
   border-radius: 100px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
+  overflow: visible;
 }
 
 .sp-sub-nav-inner {
@@ -533,7 +534,7 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 1rem;
-  overflow-x: auto;
+  overflow: visible;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   justify-content: flex-start;
@@ -713,4 +714,257 @@
 .dark .sp-sub-nav-link.active {
   background: var(--g);
   color: white;
+}
+/* --- Detailed Service Cards --- */
+.svc-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.svc-card {
+  background: white;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+  border-color: var(--sp-green);
+}
+
+.svc-card-img-wrap {
+  position: relative;
+  height: 240px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.svc-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.svc-card:hover .svc-card-img {
+  transform: scale(1.1);
+}
+
+.svc-card-chip {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--sp-green);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.svc-card-body {
+  padding: 2.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.svc-card-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--sp-blue);
+  margin-bottom: 1.25rem;
+}
+
+.svc-card-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--sp-muted);
+  margin-bottom: 2rem;
+}
+
+.svc-card-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+.svc-card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+
+.svc-card-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.95rem;
+  color: var(--sp-text);
+  line-height: 1.4;
+}
+
+.svc-card-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 6px;
+  height: 6px;
+  background: var(--sp-green);
+  border-radius: 50%;
+}
+
+.svc-learn-more {
+  margin-top: auto;
+  font-weight: 700;
+  color: var(--sp-green);
+  text-decoration: none;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.svc-learn-more:hover {
+  gap: 0.75rem;
+}
+
+/* --- Dropdown Styles --- */
+.sp-sub-nav-item {
+  position: relative;
+}
+
+.sp-dropdown-toggle::after {
+  content: '▼';
+  font-size: 0.5rem;
+  margin-left: 0.35rem;
+  transition: transform 0.3s ease;
+}
+
+.sp-sub-nav-item:hover .sp-dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.sp-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+}
+
+.sp-sub-nav-item:hover .sp-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(5px);
+}
+
+.sp-dropdown-link {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--sp-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.sp-dropdown-link:hover {
+  background: var(--sp-slate);
+  color: var(--sp-blue);
+}
+
+@media (max-width: 768px) {
+  .svc-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dark .svc-card {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.dark .svc-card-title {
+  color: var(--text);
+}
+
+.dark .svc-card-desc {
+  color: var(--text2);
+}
+
+.dark .svc-card-list li {
+  color: var(--text2);
+}
+
+.dark .svc-card-chip {
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--gl);
+}
+
+.dark .svc-card-divider {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark .svc-learn-more {
+  color: var(--gl);
+}
+
+.dark .sp-dropdown {
+  background: var(--bg2);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .sp-dropdown-link:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+.dark .sp-hero {
+  background: var(--bg);
+}
+
+.dark .sp-dropdown-link {
+  color: var(--text2);
+}
+
+.dark .sp-section-t {
+  color: var(--text);
+}
+
+.dark .sp-section-sub {
+  color: var(--text2);
+}
+
+.dark .sp-sub-nav-link {
+  color: var(--text2);
+}
+
+.dark .sp-sub-nav-link:hover {
+  color: var(--g);
 }

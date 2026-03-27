@@ -2,12 +2,8 @@ export default {
     mode: 'jit',
     darkMode: 'class',
     content: [
-        "./index.html",
-        "./about.html",
-        "./services.html",
-        "./cbam.html",
-        "./insights.html",
-        "./contact.html",
+        "./*.html",
+        "./files/*.html",
         "./src/**/*.{js,ts,jsx,tsx,html}",
     ],
     theme: {
