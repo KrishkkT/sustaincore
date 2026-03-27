@@ -1205,21 +1205,30 @@
 }
 
 .dark {
-  --g: #4ade80; /* Brighter green for dark mode contrast */
+  --g: #4ade80;
+  /* Brighter green for dark mode contrast */
   --gd: #22c55e;
   --gl: #86efac;
   --gp: rgba(74, 222, 128, 0.15);
   --gp2: rgba(74, 222, 128, 0.08);
-  --b: #38bdf8; /* Brighter blue for contrast */
+  --b: #38bdf8;
+  /* Brighter blue for contrast */
   --bd: #0ea5e9;
   --bp: rgba(56, 189, 248, 0.15);
-  --bg: #0f172a; /* Slate 900 - Premium Deep Slate */
-  --bg2: #1e293b; /* Slate 800 */
-  --bg3: #334155; /* Slate 700 */
-  --w: #1e293b;   /* Surface color */
-  --text: #f8fafc; /* Slate 50 */
-  --text2: #e2e8f0; /* Slate 200 */
-  --muted: #94a3b8; /* Slate 400 */
+  --bg: #0f172a;
+  /* Slate 900 - Premium Deep Slate */
+  --bg2: #1e293b;
+  /* Slate 800 */
+  --bg3: #334155;
+  /* Slate 700 */
+  --w: #1e293b;
+  /* Surface color */
+  --text: #f8fafc;
+  /* Slate 50 */
+  --text2: #e2e8f0;
+  /* Slate 200 */
+  --muted: #94a3b8;
+  /* Slate 400 */
   --bdr: rgba(255, 255, 255, 0.1);
   --bdr2: rgba(255, 255, 255, 0.15);
   --card-bg: #1e293b;
@@ -1328,217 +1337,214 @@
 @media (min-width: 768px) {
   .s3-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    /* Decreased from 1.5rem */
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 1024px) {
   .s3-grid {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 0;
-    border-radius: 20px;
-    overflow: hidden;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+    /* Decreased from 1.25rem */
     perspective: 2500px;
-    /* Flatter 3D perspective for distortion-free rotation */
     isolation: isolate;
   }
+}
 
-  @media (min-width: 768px) {
-    .s3-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
+/* Generic Flip Card Styles - Mobile First */
+.flip-card {
+  width: 100%;
+  min-height: 320px;
+  /* Adjusted for mobile-first */
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+  border-radius: 1.5rem;
+  /* Adjusted for mobile-first */
+  overflow: hidden;
+  /* Adjusted for mobile-first */
+  margin-bottom: 0.75rem;
+  /* Decreased from 1rem */
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
 
-  @media (min-width: 1024px) {
-    .s3-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+.flip-card:nth-child(3n+1) {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
 
+.flip-card:nth-child(-n+3) {
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.flip-card:nth-child(1) {
+  box-shadow: none;
+}
+
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  /* Premium quint-out transition */
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Support tap-flip or hover-flip depending on class */
+.flip-card.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  /* Added for consistency */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Added for consistency */
+}
+
+.flip-front {
+  background: rgba(6, 20, 10, 0.15);
+  /* Reverted to match desktop transparency */
+  backdrop-filter: blur(1px);
+  /* Reverted to match desktop blur */
+  -webkit-backdrop-filter: blur(1px);
+  justify-content: flex-end;
+  padding: 2rem;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.flip-front::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(6, 20, 10, 0.4) 0%, rgba(6, 20, 10, 0.05) 60%, transparent 100%);
+  /* Reverted to match desktop gradient */
+  z-index: 1;
+}
+
+.flip-front-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 1s ease;
+}
+
+.flip-card:hover .flip-front-img {
+  transform: scale(1.1);
+}
+
+.flip-front-content {
+  position: relative;
+  z-index: 2;
+}
+
+.flip-front-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.flip-tag {
+  @apply text-[9px] font-bold uppercase tracking-widest text-white border border-white/30 px-3 py-1 rounded-full bg-white/5 inline-block;
+}
+
+.flip-back {
+  background: rgba(13, 43, 30, 0.9);
+  /* Sophisticated semi-transparent green glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: rotateY(180deg);
+  padding: 2.25rem;
+  /* Adjusted padding */
+  justify-content: space-between;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.flip-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, #10b981, transparent);
+}
+
+.flip-back-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.flip-back-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+.flip-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background: #10b981;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.flip-btn:hover {
+  background: white;
+  color: #0d2b1e;
+}
+
+@media (min-width: 1024px) {
   .flip-card {
-    width: 100%;
-    height: 280px;
+    min-height: 280px;
     /* Standardized high-fidelity height */
-    cursor: pointer;
-    position: relative;
-    isolation: isolate;
-    background-color: transparent;
-    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   }
 
-  .flip-card:nth-child(3n+1) {
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  }
-
-  .flip-card:nth-child(-n+3) {
-    box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.1);
-  }
-
-  .flip-card:nth-child(1) {
-    box-shadow: none;
-  }
-
-  .flip-inner {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    /* Premium quint-out transition */
-    will-change: transform;
-    transform-origin: center center;
-  }
-
+  /* Disable hover flip on mobile, allow it on desktop */
   .flip-card:hover .flip-inner {
     transform: rotateY(180deg);
   }
-
-  .flip-front,
-  .flip-back {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .flip-front {
-    background: rgba(6, 20, 10, 0.15);
-    /* Highly transparent glass base */
-    backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
-    justify-content: flex-end;
-    padding: 2rem;
-    z-index: 2;
-    transform: rotateY(0deg);
-  }
-
-  .flip-front::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(6, 20, 10, 0.4) 0%, rgba(6, 20, 10, 0.05) 60%, transparent 100%);
-    z-index: 1;
-  }
-
-  .flip-front-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    transition: transform 1s ease;
-  }
-
-  .flip-card:hover .flip-front-img {
-    transform: scale(1.1);
-  }
-
-  .flip-front-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .flip-front-name {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 800;
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-  }
-
-  .flip-tag {
-    @apply text-[9px] font-bold uppercase tracking-widest text-white border border-white/30 px-3 py-1 rounded-full bg-white/5 inline-block;
-  }
-
-  .flip-back {
-    background: rgba(13, 43, 30, 0.4);
-    /* Sophisticated semi-transparent green glass */
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    transform: rotateY(180deg);
-    padding: 2rem;
-    justify-content: space-between;
-    z-index: 1;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-  }
-
-  .flip-back::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(to right, #10b981, transparent);
-  }
-
-  .flip-back-name {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.75rem;
-  }
-
-  .flip-back-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 1.5rem;
-  }
-
-  .flip-back-link {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #10b981;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(16, 185, 129, 0.3);
-    padding-bottom: 2px;
-    transition: all 0.3s ease;
-  }
-
-  .flip-back-link:hover {
-    color: white;
-    border-color: white;
-  }
-
-  /* Support tap-flip on mobile adds class-driven behavior */
-  .flip-card.is-flipped .flip-inner {
-    transform: rotateY(180deg);
-  }
 }
 
-/* Mobile-first S3 service cards layout */
-.s3-grid {
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 0 auto;
-}
-
-.flip-card {
-  min-height: 320px;
-  border-radius: 1.5rem;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
+/* Mobile-first S3 service cards layout overrides handled above */
 
 .s3-view-all {
   text-align: center;
@@ -1641,6 +1647,7 @@
 
 /* Contact page full width form behavior */
 @media (max-width: 767px) {
+
   .grid.grid-cols-1.md\:grid-cols-2,
   .grid.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3 {
     grid-template-columns: 1fr !important;

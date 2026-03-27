@@ -1731,3 +1731,59 @@ a.s5-contact-text:hover {
   color: var(--text);
   opacity: 1;
 }
+
+/* --- Mobile Layout Overrides --- */
+@media (max-width: 1023px) {
+  /* Services Section (s3) */
+  .s3-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 3rem 1.5rem 2rem;
+    text-align: left;
+  }
+
+  .s3-desc {
+    align-self: flex-start;
+    max-width: 100%;
+  }
+
+  .s3-canvas {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .s3-grid {
+    grid-template-columns: 1fr !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Get in Touch Section (s5) */
+  .s5-cta {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 1.5rem 3rem;
+  }
+
+  .s5-cta-left {
+    text-align: left;
+  }
+
+  .s5-cta-headline {
+    font-size: clamp(36px, 10vw, 48px);
+    line-height: 1.0;
+  }
+
+  .s5-cta-sub {
+    max-width: 100%;
+  }
+
+  .s5-cta-right {
+    padding: 1.5rem;
+    margin: 0;
+  }
+
+  .s5-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

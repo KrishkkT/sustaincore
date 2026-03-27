@@ -1,4 +1,24 @@
 
+
+// Ensure hero video autoplays
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.querySelector('.hero-video');
+  if (video) {
+    video.muted = true;
+    video.play().catch(err => {
+      console.warn("Hero video autoplay was prevented by browser. Retrying on first interaction.", err);
+      // Fallback: try to play on any user interaction if blocked
+      const playOnInteraction = () => {
+        video.play();
+        document.removeEventListener('click', playOnInteraction);
+        document.removeEventListener('touchstart', playOnInteraction);
+      };
+      document.addEventListener('click', playOnInteraction);
+      document.addEventListener('touchstart', playOnInteraction);
+    });
+  }
+});
+
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 function resize() {
