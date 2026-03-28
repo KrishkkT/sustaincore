@@ -49,14 +49,19 @@ function updateTimer() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    document.getElementById('days').textContent = days.toString().padStart(2, '0');
-    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    const daysEl = document.getElementById('cd-d');
+    const hoursEl = document.getElementById('cd-h');
+    const minutesEl = document.getElementById('cd-m');
+    const secondsEl = document.getElementById('cd-s');
+
+    if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+    if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+    if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+    if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('cbam-timer')) {
+    if (document.getElementById('cd-d')) {
         updateTimer();
         setInterval(updateTimer, 1000);
     }

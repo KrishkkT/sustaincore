@@ -534,7 +534,8 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 1rem;
-  overflow: visible;
+  overflow-x: auto;
+  overflow-y: visible;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   justify-content: flex-start;
@@ -589,6 +590,21 @@
   
   .sp-sub-nav-inner {
     padding: 0 0.5rem;
+    overflow-x: auto;
+    overflow-y: visible;
+    width: 100%;
+  }
+
+  /* Prevent dropdown from being clipped when scrolling horizontally */
+  .sp-sub-nav-inner .sp-sub-nav-item {
+    position: static;
+  }
+
+  .sp-sub-nav-inner .sp-dropdown {
+    left: 1rem;
+    right: 1rem;
+    width: auto;
+    min-width: 0;
   }
 
   .sp-sub-nav-inner::after {

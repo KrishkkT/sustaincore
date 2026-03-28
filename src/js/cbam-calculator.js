@@ -317,13 +317,26 @@ function phaseCalc() {
 
 // ─── UI HANDLERS ────────────────────────────────────────────────────────
 function switchCalcTab(name, btn) {
-    document.querySelectorAll('.calc-tab').forEach(b => b.classList.remove('active'));
+    // Remove active class from all tabs
+    document.querySelectorAll('.calc-tab').forEach(b => {
+        b.classList.remove('active');
+        b.classList.remove('text-brand-blue');
+        b.classList.remove('border-brand-blue');
+        b.classList.add('text-slate-400');
+    });
+    
+    // Hide all content panes
     document.querySelectorAll('.calc-content').forEach(p => {
         p.classList.add('hidden');
         p.classList.remove('block');
     });
     
+    // Activate selected tab
     btn.classList.add('active');
+    btn.classList.add('text-brand-blue');
+    btn.classList.add('border-brand-blue');
+    btn.classList.remove('text-slate-400');
+    
     const pane = document.getElementById('calc-' + name);
     if (pane) {
         pane.classList.remove('hidden');

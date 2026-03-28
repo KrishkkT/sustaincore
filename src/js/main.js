@@ -1,7 +1,7 @@
 import '../css/main.css';
 import { header, footer } from './components.js';
-import './cbam-calculator.js';
-import './cbam-timer.js';
+// import './cbam-calculator.js';
+// import './cbam-timer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Inject Header and Footer
