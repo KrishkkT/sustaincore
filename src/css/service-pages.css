@@ -915,9 +915,34 @@
   color: var(--sp-blue);
 }
 
-@media (max-width: 768px) {
-  .svc-container {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .sp-sub-nav-inner .sp-dropdown {
+    position: relative;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+    min-width: 0;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  /* Show dropdown on hover/tap for mobile too, but inline */
+  .sp-sub-nav-item:hover .sp-dropdown {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+  
+  .sp-dropdown-link {
+    padding: 0.5rem;
+    font-size: 0.75rem;
   }
 }
 
