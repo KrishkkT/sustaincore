@@ -28,27 +28,6 @@
   --bdr2:   rgba(74,124,89,.28);
 }
 
-.dark {
-  --g:    #4ade80;
-  --b:    #3b82f6;
-  --bg:   #0f172a;
-  --bg2:  #1e293b;
-  --bg3:  #334155;
-  --w:    #1e293b;
-  --text:   #f8fafc;
-  --text2:  #e2e8f0;
-  --muted:  #94a3b8;
-  --bdr:    rgba(255,255,255,0.1);
-  --bdr2:   rgba(255,255,255,0.2);
-  --g05: rgba(74,222,128,0.05);
-  --g10: rgba(74,222,128,0.1);
-  --g20: rgba(74,222,128,0.2);
-  --g35: rgba(74,222,128,0.35);
-  --b05: rgba(59,130,246,0.05);
-  --b10: rgba(59,130,246,0.1);
-  --b20: rgba(59,130,246,0.2);
-}
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body {

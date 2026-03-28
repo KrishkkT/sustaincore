@@ -138,18 +138,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Attach to Mega Menu Links (if on same page)
+    // Attach to Mega Menu Links
     megaLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href && href.includes('#')) {
-                const targetId = href.split('#')[1];
-                const onServicesPage = window.location.pathname.includes('services.html');
-
-                if (onServicesPage) {
-                    // Prevent default jump if already on services page
+                const parts = href.split('#');
+                const targetPage = parts[0];
+                const targetId = parts[1];
+                
+                // If we are already on the target page, we can just activate existing tabs/scroll
+                if (window.location.pathname.includes(targetPage)) {
                     e.preventDefault();
-                    activateTab(targetId);
+                    if (typeof activateTab === 'function') activateTab(targetId);
                     scrollToContentTop();
                     history.pushState(null, null, `#${targetId}`);
                 }
@@ -197,6 +198,27 @@ document.addEventListener('DOMContentLoaded', () => {
             item.classList.toggle('active');
         });
     });
+
+    // Services Dropdown Toggle (Desktop Navbar)
+    const navServicesDropdown = document.getElementById('nav-services-dropdown');
+    const navServicesToggle = document.getElementById('nav-services-toggle');
+    
+    if (navServicesDropdown && navServicesToggle) {
+        // Handle click to toggle
+        navServicesToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            navServicesDropdown.classList.toggle('group/mega');
+        });
+        
+        // Handle hover to show (already handled by Tailwind group-hover, but this ensures click persistence)
+        navServicesDropdown.addEventListener('mouseenter', () => {
+            navServicesDropdown.classList.add('group/mega');
+        });
+        
+        navServicesDropdown.addEventListener('mouseleave', () => {
+            navServicesDropdown.classList.remove('group/mega');
+        });
+    }
 });
 
 // Toast Notification System

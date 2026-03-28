@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CEMS — Continuous Emission Monitoring System — SustainCore Environmental Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="sustaincore-shared.css"/>
+<style>
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+.reveal-d3{transition-delay:.3s;}
+.reveal-d4{transition-delay:.4s;}
+
+/* CEMS architecture diagram */
+.cems-arch{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:var(--bdr);border:1px solid var(--bdr);border-radius:18px;overflow:hidden;margin-top:2rem;}
+.ca-block{background:var(--w);padding:1.5rem 1.25rem;position:relative;}
+.ca-block+.ca-block{border-left:1px solid var(--bdr);}
+.ca-arrow{position:absolute;top:50%;right:-12px;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:var(--bg);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:10px;color:var(--g);z-index:2;}
+.ca-icon{width:38px;height:38px;border-radius:10px;background:var(--g10);border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:center;margin-bottom:.85rem;}
+.ca-icon svg{width:18px;height:18px;stroke:var(--g);fill:none;stroke-width:1.8;}
+.ca-name{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:.4rem;}
+.ca-desc{font-size:11.5px;font-weight:300;color:var(--muted);line-height:1.6;}
+
+/* Industry mandate table */
+.mandate-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem;}
+.mandate-card{background:var(--w);border-radius:14px;border:1px solid var(--bdr);padding:1.25rem 1.4rem;}
+.mandate-industry{font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:.5rem;display:flex;align-items:center;gap:.55rem;}
+.mandate-dot{width:6px;height:6px;border-radius:50%;background:var(--g);flex-shrink:0;}
+.mandate-params{font-size:12px;font-weight:300;color:var(--muted);line-height:1.65;}
+</style>
+</head>
+<body>
+
+<nav class="sc-nav">
+  <a href="../index.html" class="sc-nav-logo">
+    <svg viewBox="0 0 200 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59"/>
+      <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z" fill="#1a4a6b"/>
+      <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17" fill="#4a7c59">Sustain</text>
+      <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17" fill="#1a4a6b">Core</text>
+      <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61" letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
+    </svg>
+  </a>
+  <ul class="sc-nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../index.html" class="active">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Insights</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#contact" class="sc-nav-cta">Free Consultation</a>
+</nav>
+
+<div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
+<div class="bc">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../sustaincore_services.html">Services</a>
+  <span class="sep">/</span>
+  <a href="../sustaincore_services.html">Air Quality Monitoring</a>
+  <span class="sep">/</span>
+  <span class="sep">CEMS</span>
+</div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-hero-tag">Air Quality Monitoring &middot; Category 05</div>
+    <h1 class="svc-hero-title">Continuous Emission<br><em>Monitoring Systems</em><br><span class="bt">CEMS &mdash; CPCB Mandated</span></h1>
+    <div class="svc-hero-body">
+      <p class="svc-hero-desc">CEMS &mdash; Continuous Emission Monitoring Systems &mdash; are automated systems that measure and transmit real-time stack emission data 24&times;7 to the CPCB&rsquo;s central data server. They are <strong>mandatory for 17 categories of large industries under CPCB&rsquo;s 2014 Direction and subsequent amendments.</strong> Non-compliant industries face automatic flagging, penalties and closure notices. We provide end-to-end CEMS services: system selection, installation, calibration, CPCB connectivity, AMC and regulatory compliance management.</p>
+      <div class="svc-hero-pills">
+        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>CPCB</strong> Mandated industries</div>
+        <div class="svc-hero-pill blue"><span class="pill-icon"></span>Real-time data transmission</div>
+        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>QAL1 / EN 14181</strong> Certified</div>
+        <div class="svc-hero-pill blue"><span class="pill-icon"></span>CPCB server connectivity</div>
+        <div class="svc-hero-pill"><span class="pill-icon"></span>Annual AMC &amp; calibration</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+    <div class="svc-hero-img">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80" alt="CEMS continuous emission monitoring system control room"/>
+      <div class="svc-hero-img-caption">
+        <div class="svc-hero-img-title">24&times;7 Real-Time<br><em>Emission Surveillance</em></div>
+        <div class="svc-hero-stat-row">
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">17+</div><div class="svc-hero-stat-l">Mandated industry categories</div></div>
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">24&times;7</div><div class="svc-hero-stat-l">Real-time data to CPCB server</div></div>
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">&lt;15 min</div><div class="svc-hero-stat-l">Data averaging &amp; transmission interval</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="rule" style="margin-top:3rem;"></div>
+
+<!-- STATS -->
+<div class="svc-section">
+  <div class="stats-row reveal">
+    <div class="stat-block"><div class="stat-block-v">17+</div><div class="stat-block-l">Industry sectors mandated for CEMS by CPCB</div></div>
+    <div class="stat-block"><div class="stat-block-v">24&times;7</div><div class="stat-block-l">Continuous data transmission to CPCB server</div></div>
+    <div class="stat-block"><div class="stat-block-v">90%</div><div class="stat-block-l">Minimum data availability required per month</div></div>
+    <div class="stat-block"><div class="stat-block-v">15 min</div><div class="stat-block-l">Maximum data averaging period for transmission</div></div>
+  </div>
+
+  <!-- CEMS ARCHITECTURE -->
+  <div class="sec-label">System architecture</div>
+  <h2 class="sec-title">How a CEMS works &mdash;<br><em>probe to CPCB server</em></h2>
+  <p class="sec-sub">A complete CEMS comprises four interconnected subsystems that together provide legally compliant, continuous, tamper-evident emission data transmitted directly to the CPCB central server.</p>
+  <div class="cems-arch">
+    <div class="ca-block">
+      <div class="ca-arrow">&rarr;</div>
+      <div class="ca-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="ca-name">Sampling Probe &amp; Conditioning</div>
+      <div class="ca-desc">Extractive probe inserted into the stack draws a representative gas sample. Sample conditioning system removes moisture and particulates before analysis.</div>
+    </div>
+    <div class="ca-block">
+      <div class="ca-arrow">&rarr;</div>
+      <div class="ca-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+      <div class="ca-name">Gas Analysers</div>
+      <div class="ca-desc">Certified gas analysers measure SO₂, NOₓ, CO, CO₂, O₂ and particulates in real time. Must be QAL1-certified under EN 14181 / CPCB specifications.</div>
+    </div>
+    <div class="ca-block">
+      <div class="ca-arrow">&rarr;</div>
+      <div class="ca-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <div class="ca-name">Data Acquisition System (DAS)</div>
+      <div class="ca-desc">DAS collects, timestamps and stores all analyser outputs. Calculates 15-minute averages, daily averages and emission loads. Includes tamper-evident logging.</div>
+    </div>
+    <div class="ca-block">
+      <div class="ca-icon"><svg viewBox="0 0 24 24"><path d="M1 6l10.5 10.5L23 6"/><path d="M1 6h22v12a2 2 0 01-2 2H3a2 2 0 01-2-2V6z"/></svg></div>
+      <div class="ca-name">CPCB Server Connectivity</div>
+      <div class="ca-desc">Secure, encrypted data transmission to the CPCB central data server every 15 minutes. GPRS/internet connectivity with automatic retransmission on failure.</div>
+    </div>
+  </div>
+
+  <!-- MANDATED INDUSTRIES -->
+  <div class="sec-label mt3">CPCB mandated industries</div>
+  <h2 class="sec-title">Is your industry required<br><em>to install CEMS?</em></h2>
+  <p class="sec-sub">The CPCB has mandated CEMS for 17 major polluting industry categories under its 2014 Direction. The following industries must have operational CEMS transmitting data to the CPCB server.</p>
+  <div class="mandate-grid">
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Thermal Power Plants</div>
+      <div class="mandate-params">SO₂, NOₓ, PM, CO, O₂, stack gas flow rate, opacity</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Cement Plants</div>
+      <div class="mandate-params">PM, SO₂, NOₓ — kiln, raw mill and clinker cooler stacks</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Iron &amp; Steel (Integrated)</div>
+      <div class="mandate-params">PM, SO₂, NOₓ — sinter plant, blast furnace, coke oven stacks</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Pulp &amp; Paper Industry</div>
+      <div class="mandate-params">PM, SO₂, TRS (Total Reduced Sulphur), NOₓ — recovery boiler</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Fertiliser Plants</div>
+      <div class="mandate-params">PM, SO₂, NOₓ, NH₃ &mdash; prilling towers, granulators, boilers</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Petrochemicals &amp; Refineries</div>
+      <div class="mandate-params">SO₂, NOₓ, CO, PM, H₂S — process heaters and boilers</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Chlor-Alkali Industry</div>
+      <div class="mandate-params">Cl₂, HCl, PM — scrubbing stacks and process vents</div>
+    </div>
+    <div class="mandate-card">
+      <div class="mandate-industry"><div class="mandate-dot"></div>Common Hazardous Waste Incinerators</div>
+      <div class="mandate-params">PM, SO₂, NOₓ, CO, HCl, dioxins/furans (periodic), opacity</div>
+    </div>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <div class="sec-label mt3">Why it matters</div>
+  <h2 class="sec-title">Non-functional CEMS means<br><em>automatic non-compliance.</em></h2>
+  <p class="sec-sub">The CPCB monitors data transmission in real time. Gaps in data, sensor failures or CEMS downtime of more than 10% in any month automatically trigger non-compliance flags &mdash; regardless of actual emission levels.</p>
+  <div class="why-grid mt2">
+    <div class="why-card reveal reveal-d1">
+      <div class="why-card-n">01</div>
+      <div class="why-card-title">Automatic Non-Compliance Flagging</div>
+      <div class="why-card-desc">The CPCB&rsquo;s central server monitors data continuity in real time. Any gap exceeding 15 minutes, data transmission failure, or sensor malfunction is automatically flagged. Industries with more than 10% data unavailability in a month are listed as non-compliant &mdash; without any inspector visit.</div>
+    </div>
+    <div class="why-card reveal reveal-d2">
+      <div class="why-card-n">02</div>
+      <div class="why-card-title">Consent to Operate Linkage</div>
+      <div class="why-card-desc">Functional CEMS with active data transmission is a mandatory condition in the CTO of all mandated industries. An inoperative or non-transmitting CEMS is treated as a violation of CTO conditions and can result in notice of consent revocation, irrespective of whether actual emissions are within limits.</div>
+    </div>
+    <div class="why-card reveal reveal-d3">
+      <div class="why-card-n">03</div>
+      <div class="why-card-title">Real-Time Exceedance Detection</div>
+      <div class="why-card-desc">When CEMS data exceeds prescribed limits for two or more consecutive 15-minute averaging periods, the CPCB server automatically generates an exceedance alert. This triggers regulatory correspondence and, in severe cases, immediate show-cause action without waiting for periodic manual monitoring reports.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">What we do</div>
+    <h2 class="sec-title">Complete CEMS lifecycle &mdash;<br><em>installation to annual AMC</em></h2>
+    <p class="sec-sub">We provide the full spectrum of CEMS services: system design, equipment supply, installation, CPCB connectivity commissioning, calibration, annual maintenance and regulatory data management.</p>
+    <div class="wedo-grid mt3 reveal">
+      <div class="wedo-img">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22731c9a2c?w=800&q=80" alt="CEMS installation engineering industrial control system"/>
+      </div>
+      <div class="wedo-body">
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">CEMS Design &amp; Equipment Selection</div><div class="wedo-item-desc">Selection of QAL1-certified analysers and sampling systems appropriate for your stack conditions (temperature, flow, gas matrix). System design for single or multi-stack installations, including shelter, conditioning and DAS specifications.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">Installation &amp; Commissioning</div><div class="wedo-item-desc">Physical installation of sampling probes, conditioning systems, analysers and DAS. Site acceptance testing, zero and span calibration using certified reference gases, and initial 30-day performance demonstration before CPCB connection.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">CPCB Server Connectivity</div><div class="wedo-item-desc">Configuration of secure GPRS/internet data transmission to the CPCB central server in the required XML/JSON format. Connectivity testing, data validation and generation of the CPCB-required installation certificate and connectivity report.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">QAL2 Calibration &amp; AST (Annual Tests)</div><div class="wedo-item-desc">EN 14181 QAL2 calibration using parallel reference method testing to establish system-specific calibration functions. Annual System Test (AST) with parallel reference method comparison, as required for continued CPCB compliance of the installed system.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">Annual Maintenance Contract (AMC)</div><div class="wedo-item-desc">Scheduled preventive maintenance, consumables replacement (filters, probes, reference gas cylinders), corrective maintenance for analyser failures, data gap management and monthly data availability reports &mdash; maintaining minimum 90% CPCB data availability.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="svc-section">
+  <div class="sec-label">Our process</div>
+  <h2 class="sec-title">How we <em>implement your CEMS</em></h2>
+  <p class="sec-sub mb4">A six-stage implementation programme from site survey to live CPCB data transmission, typically completed in 8&ndash;14 weeks depending on site complexity and number of stacks.</p>
+  <div class="process-steps p6 reveal">
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">01</div>
+      <div class="ps-title">Site Survey</div>
+      <div class="ps-desc">Stack characterisation, access assessment, gas matrix analysis and CPCB parameter list confirmation against your industry category.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">02</div>
+      <div class="ps-title">System Design</div>
+      <div class="ps-desc">Analyser selection (QAL1 certified), sampling and conditioning system design, DAS specification and site layout drawing for SPCB approval.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">03</div>
+      <div class="ps-title">Installation</div>
+      <div class="ps-desc">Mechanical installation of probes, conditioning, analysers, DAS shelter. Electrical and instrument loop checks. Safety testing.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">04</div>
+      <div class="ps-title">Calibration &amp; Testing</div>
+      <div class="ps-desc">Zero/span calibration, linearity checks, response time testing and 30-day reliability demonstration per CPCB commissioning protocol.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">05</div>
+      <div class="ps-title">CPCB Connectivity</div>
+      <div class="ps-desc">Data transmission configuration, CPCB server registration, connectivity test report and installation certificate preparation for regulatory submission.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-n">06</div>
+      <div class="ps-title">AMC &amp; Compliance</div>
+      <div class="ps-desc">Ongoing scheduled maintenance, QAL2 / AST calibration, data gap management and monthly availability reports to maintain CPCB compliance.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERABLES -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">Key deliverables</div>
+    <h2 class="sec-title">What you receive from<br><em>every CEMS engagement</em></h2>
+    <div class="deliverables-grid mt3">
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="deliv-title">Installed &amp; Commissioned CEMS</div><div class="deliv-desc">Fully operational CEMS transmitting data live to the CPCB central server &mdash; meeting all CPCB technical specifications and QAL1 analyser certification requirements.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><div class="deliv-title">CPCB Installation Certificate</div><div class="deliv-desc">Formal CPCB installation and connectivity certificate confirming system compliance &mdash; required for submission to your SPCB as part of CTO renewal documentation.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <div><div class="deliv-title">QAL2 Calibration Report</div><div class="deliv-desc">EN 14181 QAL2 calibration report with system calibration functions, reference method parallel test data and uncertainty analysis &mdash; required for SPCB annual submission.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div><div class="deliv-title">Monthly Data Availability Reports</div><div class="deliv-desc">Monthly report showing data availability percentage, exceedance events, maintenance interventions and overall system performance against the 90% CPCB availability requirement.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <div><div class="deliv-title">Annual System Test (AST) Report</div><div class="deliv-desc">Annual parallel reference method test confirming CEMS accuracy is maintained within specified tolerance limits &mdash; required annually under EN 14181 / CPCB guidelines.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <div><div class="deliv-title">Exceedance Alert Management</div><div class="deliv-desc">Real-time SMS/email alerts to your EHS team when CEMS data approaches or exceeds limits, allowing corrective action before CPCB automatic enforcement flags are triggered.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO + SECTORS -->
+<div class="svc-section">
+  <div class="who-section reveal mb4">
+    <div class="who-inner">
+      <div class="who-label">Who this is for</div>
+      <div class="who-title">Required for your facility if you are&hellip;</div>
+      <div class="who-chips">
+        <span class="who-chip">Thermal power plant above 25 MW capacity</span>
+        <span class="who-chip">Cement plant with kiln capacity above threshold</span>
+        <span class="who-chip">Integrated steel plant with blast furnace or sinter plant</span>
+        <span class="who-chip">Fertiliser / petrochemical plant in CPCB Direction list</span>
+        <span class="who-chip">Industry with CEMS condition in Consent to Operate</span>
+        <span class="who-chip">Hazardous waste incinerator operator</span>
+        <span class="who-chip">Industry with existing CEMS experiencing data gaps or calibration failures</span>
+      </div>
+    </div>
+  </div>
+  <div class="sectors-wrap">
+    <div class="sectors-label">Industries we serve</div>
+    <div class="sectors-grid">
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Thermal Power</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Cement &amp; Clinker</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Integrated Steel</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Fertilisers</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Petrochemicals &amp; Refineries</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Pulp &amp; Paper</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Chlor-Alkali</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Hazardous Waste Incinerators</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
+    <div class="faq-wrap mt3">
+      <div class="faq-item">
+        <button class="faq-btn">Is CEMS mandatory for my industry? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>CEMS is mandated by CPCB for 17 major industry categories under its 2014 Direction and subsequent amendments. The mandated categories include: thermal power plants, cement plants, integrated iron and steel, petroleum refineries, fertiliser plants, pulp and paper mills, sugar industries, distilleries, chlor-alkali plants, caustic soda plants, common effluent treatment plants (CETPs), common biomedical waste treatment facilities, common hazardous waste incineration and treatment facilities, glass manufacturing, tanneries, zinc and lead smelters, and copper smelters. The specific stacks, parameters and transmission requirements vary by sector. You should also check whether your SPCB or individual CTO specifies CEMS requirements beyond the national mandate, as several states have expanded the list.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">What happens if our CEMS stops transmitting data? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>The CPCB server automatically records data gaps. If transmission is interrupted for more than 15 minutes, the gap is logged. If total data unavailability exceeds 10% in any calendar month, the industry is automatically classified as non-compliant for that month &mdash; regardless of actual emission levels. Persistent non-compliance triggers a show-cause notice. Under our AMC, we monitor transmission health 24&times;7 and dispatch engineers within 4 hours of any system fault to restore connectivity and minimise data gaps. We also maintain substitute measurement data using parallel portable analysers for periods where the CEMS is unavailable for maintenance, per CPCB data substitution guidelines.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">What is the difference between QAL1, QAL2 and AST in CEMS? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>These are three quality assurance levels defined under European Standard EN 14181, which the CPCB has adopted as the reference for CEMS quality assurance in India. QAL1 is the type-approval certification of the analyser equipment itself &mdash; demonstrated by the manufacturer before sale. Only QAL1-certified analysers are accepted for CPCB-mandated CEMS. QAL2 is the site-specific calibration of a QAL1-certified analyser installed at your particular stack &mdash; conducted after installation using parallel reference method measurements. It establishes site-specific calibration functions accounting for your gas matrix. AST (Annual Surveillance Test) is a repeat parallel reference method test conducted annually to confirm that the QAL2 calibration remains valid. All three are required for a CPCB-compliant CEMS installation.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED SERVICES -->
+<div class="svc-section">
+  <div class="sec-label">Related services</div>
+  <h2 class="sec-title">Services that <em>work alongside CEMS</em></h2>
+  <div class="related-grid mt2">
+    <a href="svc-stack-monitoring.html" class="related-card">
+      <div class="related-card-cat">Air Quality Monitoring</div>
+      <div class="related-card-title">Stack Emission Monitoring</div>
+      <div class="related-card-desc">Manual isokinetic stack monitoring provides the reference method data required for QAL2 and AST calibration of your installed CEMS.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="svc-ambient-air.html" class="related-card">
+      <div class="related-card-cat">Air Quality Monitoring</div>
+      <div class="related-card-title">Ambient Air Quality Monitoring</div>
+      <div class="related-card-desc">Ambient monitoring around your facility boundary provides the receptor-side data that contextualises CEMS emission measurements for regulatory and community purposes.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="svc-env-clearance.html" class="related-card">
+      <div class="related-card-cat">Approvals &amp; Clearances</div>
+      <div class="related-card-title">Environmental Clearance</div>
+      <div class="related-card-desc">CEMS installation and data availability are mandatory compliance conditions in Environmental Clearances for large industries under the EIA Notification.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="svc-section" id="contact">
+  <div class="cta-band reveal blue">
+    <div>
+      <div class="cta-band-title">CEMS non-compliant or not yet installed?</div>
+      <div class="cta-band-sub">Tell us your industry category, number of stacks and current compliance status &mdash; we&rsquo;ll confirm your CEMS obligations and fastest path to compliance within 24 hours.</div>
+    </div>
+    <div class="cta-band-btns">
+      <a href="mailto:info@sustaincore.in" class="btn-wh blue">Get CEMS assessment &rarr;</a>
+      <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="float">
+  <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+    WhatsApp
+  </a>
+  <a href="#contact" class="float-cb"><div class="pulse"></div>Free consultation</a>
+</div>
+<footer class="sc-foot">
+  <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd. &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a> &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
+</footer>
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;const ans=item.querySelector('.faq-ans');const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ans').style.maxHeight=null;});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  });
+});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

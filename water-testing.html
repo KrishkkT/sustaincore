@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script>(function(){const t=localStorage.getItem('sustain-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');})();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Water Testing & Analysis | SustainCore</title>
@@ -35,9 +36,10 @@
         <div class="sp-dropdown">
           <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
           <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Inventory</a>
-          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
           <a href="/carbon-climate.html#footprint" class="sp-dropdown-link">Carbon Footprint</a>
+          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
           <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
+          <a href="/carbon-climate.html#irec" class="sp-dropdown-link">I-REC Certification</a>
         </div>
       </div>
       <!-- 03 Ratings & Targets -->
@@ -45,7 +47,7 @@
         <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>03</span> Ratings & Targets</a>
         <div class="sp-dropdown">
           <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
-          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Strategy</a>
           <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
           <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
         </div>
@@ -54,10 +56,8 @@
       <div class="sp-sub-nav-item">
         <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>04</span> Clearances & EIA</a>
         <div class="sp-dropdown">
-          <a href="/clearances-eia.html#cgwa" class="sp-dropdown-link">Groundwater (CGWA)</a>
-          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (SEIAA)</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (EC)</a>
           <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
-          <a href="/clearances-eia.html#renewals" class="sp-dropdown-link">Renewals & Amendments</a>
         </div>
       </div>
       <!-- 05 Licenses & EPR -->
@@ -71,30 +71,32 @@
       </div>
       <!-- 06 Management Systems -->
       <div class="sp-sub-nav-item">
-        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>06</span> Management
-          Systems</a>
+        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>06</span> Management Systems</a>
         <div class="sp-dropdown">
-          <a href="/management-systems.html#ems1" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
-          <a href="/management-systems.html#ems2" class="sp-dropdown-link">Env. Mgmt (Integrated)</a>
-          <a href="/management-systems.html#audits" class="sp-dropdown-link">Audits & Renewals</a>
+          <a href="/management-systems.html#iso14001" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#iso45001" class="sp-dropdown-link">Health & Safety (ISO 45001)</a>
+          <a href="/management-systems.html#iso50001" class="sp-dropdown-link">Energy Mgmt (ISO 50001)</a>
+          <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a>
         </div>
       </div>
       <!-- 07 Water Testing -->
       <div class="sp-sub-nav-item">
-        <a href="/water-testing.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>07</span> Water
-          Testing</a>
+        <a href="/water-testing.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>07</span> Water Testing</a>
         <div class="sp-dropdown">
-          <a href="/water-testing.html#drinking" class="sp-dropdown-link">Drinking Water Testing</a>
-          <a href="/water-testing.html#analysis" class="sp-dropdown-link">Water & Wastewater</a>
           <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
+          <a href="/water-testing.html#groundwater" class="sp-dropdown-link">Groundwater Analysis</a>
+          <a href="/water-testing.html#audit" class="sp-dropdown-link">Water Audit</a>
+          <a href="/water-testing.html#risk" class="sp-dropdown-link">Water Risk Assessment</a>
         </div>
       </div>
       <!-- 08 Air Monitoring -->
       <div class="sp-sub-nav-item">
         <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>08</span> Air Monitoring</a>
         <div class="sp-dropdown">
+          <a href="/air-monitoring.html#ambient" class="sp-dropdown-link">Ambient Air Quality</a>
+          <a href="/air-monitoring.html#cems" class="sp-dropdown-link">CEMS Solutions</a>
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack Monitoring</a>
           <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
-          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack / Emission</a>
         </div>
       </div>
     </div>
@@ -127,54 +129,6 @@
           <p class="sp-section-sub">High-precision aqueous analysis and auditing.</p>
         </div>
         <div class="svc-container">
-          <!-- Drinking Water Testing Card -->
-          <div class="svc-card" id="drinking">
-            <div class="svc-card-img-wrap">
-              <img
-                src="https://plus.unsplash.com/premium_photo-1729043730133-2d1d1a22760d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8RHJpbmtpbmclMjBXYXRlciUyMFRlc3Rpbmd8ZW58MHx8MHx8fDA%3D?w=800&q=80"
-                alt="Drinking Water Testing" class="svc-card-img">
-              <div class="svc-card-chip">IS 10500:2012 · NABL · POTABLE</div>
-            </div>
-            <div class="svc-card-body">
-              <h3 class="svc-card-title">Drinking Water Testing</h3>
-              <p class="svc-card-desc">High-precision analysis of potable water sources as per IS 10500:2012 standards
-                to ensure safety for human consumption in residential and industrial settings.</p>
-              <div class="svc-card-divider"></div>
-              <ul class="svc-card-list">
-                <li>Essential parameter testing (pH, Turbidity)</li>
-                <li>Toxic metal screening (Lead, Arsenic)</li>
-                <li>Pathogenic bacteria counting</li>
-                <li>Pesticide residue analysis</li>
-                <li>Workplace water safety certification</li>
-              </ul>
-              <a href="files/7-drinking.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <!-- Water & Wastewater Analysis Card -->
-          <div class="svc-card" id="analysis">
-            <div class="svc-card-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1708601909272-435c8b3aa5d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fFdhdGVyJTIwJTI2JTIwV2FzdGV3YXRlciUyMEFuYWx5c2lzfGVufDB8fDB8fHww?w=800&q=80"
-                alt="Water & Wastewater Analysis" class="svc-card-img">
-              <div class="svc-card-chip">PROCESS WATER · RAW · INDUSTRIAL</div>
-            </div>
-            <div class="svc-card-body">
-              <h3 class="svc-card-title">Water & Wastewater Analysis</h3>
-              <p class="svc-card-desc">Comprehensive analysis of raw water, process water, and sewage to optimize
-                treatment plant performance and monitor resource quality.</p>
-              <div class="svc-card-divider"></div>
-              <ul class="svc-card-list">
-                <li>Raw water characterization</li>
-                <li>Ion exchange & softener audits</li>
-                <li>STP inlet/outlet monitoring</li>
-                <li>Heavy metal & trace element scan</li>
-                <li>Seasonal water quality variation study</li>
-              </ul>
-              <a href="files/7-analysis.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
           <!-- Effluent Analysis Card -->
           <div class="svc-card" id="effluent">
             <div class="svc-card-img-wrap">
@@ -184,8 +138,7 @@
             </div>
             <div class="svc-card-body">
               <h3 class="svc-card-title">Effluent Analysis</h3>
-              <p class="svc-card-desc">Periodic testing of treated and untreated industrial effluent to ensure discharge
-                parameters meet stringent State Pollution Control Board (SPCB) limits.</p>
+              <p class="svc-card-desc">Periodic testing of industrial effluent to ensure discharge parameters meet State Pollution Control Board (SPCB) limits.</p>
               <div class="svc-card-divider"></div>
               <ul class="svc-card-list">
                 <li>BOD & COD quantification</li>
@@ -194,7 +147,73 @@
                 <li>Specialized organic pollutant scan</li>
                 <li>NABL certified test reports (Form X)</li>
               </ul>
-              <a href="files/7-effluent.html" class="svc-learn-more">Learn More & Case Studies →</a>
+              <a href="files/7-effluent.html" class="svc-learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Groundwater Analysis Card -->
+          <div class="svc-card" id="groundwater">
+            <div class="svc-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?w=800&q=80" alt="Groundwater Analysis"
+                class="svc-card-img">
+              <div class="svc-card-chip">CGWA · BOREWELL · MONITORING</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Groundwater Analysis</h3>
+              <p class="svc-card-desc">Hydrogeological assessment and monitoring of borewell water quality to ensure compliance with CGWA No Objection Certificates (NOC).</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Multi-point borewell sampling</li>
+                <li>Aquifer contamination mapping</li>
+                <li>Heavy metal & pesticide screening</li>
+                <li>Pre-monsoon & Post-monsoon trends</li>
+                <li>Piezometric level correlation</li>
+              </ul>
+              <a href="files/7-groundwater.html" class="svc-learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Water Audit Card -->
+          <div class="svc-card" id="audit">
+            <div class="svc-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1468436139062-f60a71c5c892?w=800&q=80" alt="Water Audit"
+                class="svc-card-img">
+              <div class="svc-card-chip">RESOURCE OPTIMIZATION · NPC</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Water Audit</h3>
+              <p class="svc-card-desc">Comprehensive quantification of water use across your facility to identify conservation opportunities and optimize resource efficiency.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Source-to-sink water mapping</li>
+                <li>Specific Water Consumption (SWC)</li>
+                <li>Treatment plant efficiency audit</li>
+                <li>Leak detection & loss mitigation</li>
+                <li>Rainwater harvesting potential</li>
+              </ul>
+              <a href="files/7-water audit.html" class="svc-learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Water Risk Assessment Card -->
+          <div class="svc-card" id="risk">
+            <div class="svc-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1582738411706-bfc8e691d1c2?w=800&q=80" alt="Water Risk Assessment"
+                class="svc-card-img">
+              <div class="svc-card-chip">WATERSHED · SCARCITY · STRATEGY</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Water Risk Assessment</h3>
+              <p class="svc-card-desc">Evaluating physical, regulatory, and reputational water risks at the watershed level to ensure long-term operational resilience.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Watershed stress & scarcity mapping</li>
+                <li>Regulatory compliance risk audit</li>
+                <li>Community impact assessment</li>
+                <li>Long-term replenishment strategy</li>
+                <li>Climate-water nexus modeling</li>
+              </ul>
+              <a href="files/7-water_risk_assessment.html" class="svc-learn-more">Learn More</a>
             </div>
           </div>
         </div>
@@ -428,6 +447,49 @@
   <div id="footer-root"></div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script>
+    // Position category nav dropdowns properly
+    function positionCategoryDropdowns() {
+      const nav = document.querySelector('.sp-sub-nav');
+      if (!nav) return;
+      const navRect = nav.getBoundingClientRect();
+      
+      document.querySelectorAll('.sp-sub-nav-item').forEach(item => {
+        const dropdown = item.querySelector('.sp-dropdown');
+        if (!dropdown) return;
+        
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.left + (rect.width / 2);
+        
+        // Relative coordinates are needed because the parent .sp-sub-nav has 
+        // a transform/perspective, making it a containing block for fixed children.
+        dropdown.style.top = (rect.bottom - navRect.top + 2) + 'px';
+        dropdown.style.left = (itemCenter - navRect.left) + 'px';
+        dropdown.style.transform = 'scale(1) translateY(0px) translateX(-50%)';
+      });
+    }
+    
+    // Position on load and on interactions
+    document.addEventListener('DOMContentLoaded', () => {
+      positionCategoryDropdowns();
+      const inner = document.querySelector('.sp-sub-nav-inner');
+      if (inner) {
+        inner.addEventListener('scroll', positionCategoryDropdowns, { passive: true });
+      }
+    });
+    window.addEventListener('resize', positionCategoryDropdowns);
+    window.addEventListener('scroll', positionCategoryDropdowns, { passive: true });
+
+    // Service card click handler
+    document.querySelectorAll('.svc-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.tagName !== 'A') {
+          const link = this.querySelector('.svc-learn-more');
+          if (link) link.click();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

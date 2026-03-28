@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CBAM Compliance | EU Export Regulatory Advisory</title>
@@ -149,7 +150,462 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
+
+        /* V3 COMPARISON & PENALTY STYLES */
+        .comp-box {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid rgba(74, 124, 89, 0.15);
+            margin-top: 2rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .comp-box {
+            background: #1e293b;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .comp-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1a2c1e;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .dark .comp-title {
+            color: #f8fafc;
+        }
+
+        .comp-sub {
+            font-size: 0.875rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .dark .comp-sub {
+            color: #94a3b8;
+        }
+
+        .comp-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .comp-cols {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .comp-col {
+            border-radius: 20px;
+            padding: 1.75rem;
+        }
+
+        .cc-default {
+            background: #fef2f2;
+            border: 1px solid #fee2e2;
+        }
+
+        .dark .cc-default {
+            background: rgba(239, 68, 68, 0.05);
+            border-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .cc-actual {
+            background: #f0fdf4;
+            border: 1px solid #dcfce7;
+        }
+
+        .dark .cc-actual {
+            background: rgba(34, 197, 94, 0.05);
+            border-color: rgba(34, 197, 94, 0.1);
+        }
+
+        .cc-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.25rem;
+        }
+
+        .cc-default .cc-label {
+            color: #dc2626;
+        }
+
+        .cc-actual .cc-label {
+            color: #16a34a;
+        }
+
+        .cc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .cc-row {
+            border-bottom-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .cc-row:last-child {
+            border-bottom: none;
+            margin-top: 0.5rem;
+            padding-top: 1rem;
+            border-top: 2px dashed rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .cc-row:last-child {
+            border-top-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .cc-row-lbl {
+            font-size: 0.8125rem;
+            color: #64748b;
+        }
+
+        .dark .cc-row-lbl {
+            color: #94a3b8;
+        }
+
+        .cc-row-val {
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+
+        .cc-default .cc-row-val {
+            color: #ef4444;
+        }
+
+        .cc-actual .cc-row-val {
+            color: #22c55e;
+        }
+
+        .penalty-box {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.5rem;
+            border: 1px solid #fee2e2;
+            margin-top: 2rem;
+            box-shadow: 0 20px 40px rgba(220, 38, 38, 0.05);
+        }
+
+        .dark .penalty-box {
+            background: #1e293b;
+            border-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .penalty-head {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .penalty-icon {
+            width: 48px;
+            height: 48px;
+            background: #fef2f2;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #dc2626;
+        }
+
+        .dark .penalty-icon {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .penalty-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #1a2c1e;
+            letter-spacing: -0.02em;
+        }
+
+        .dark .penalty-title {
+            color: #f8fafc;
+        }
+
+        .penalty-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .penalty-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .pg {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 1.25rem;
+            border: 1px solid #f1f5f9;
+        }
+
+        .dark .pg {
+            background: rgba(255, 255, 255, 0.02);
+            border-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .pg-val {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #dc2626;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+
+        .pg-lbl {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+        }
+
+        .dark .pg-lbl {
+            color: #94a3b8;
+        }
+
+        /* V3 FORMULA & NOTES STYLES */
+        .formula-main {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .formula-main .hl {
+            color: #6aaa80;
+            /* brand-lightGreen equivalent */
+            font-weight: 700;
+        }
+
+        .formula-main .eq {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .formula-notes {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1rem;
+        }
+
+        @media (min-width: 1280px) {
+            .formula-notes {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .fn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.25rem;
+        }
+
+        .fn-label {
+            font-size: 0.625rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #6aaa80;
+            margin-bottom: 0.5rem;
+        }
+
+        .fn-desc {
+            font-size: 0.75rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .formula-source {
+            font-size: 0.625rem;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 1.5rem;
+            line-height: 1.5;
+        }
+
+        /* SUSTAINCORE SERVICE CARDS (LONG) */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .help-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .help-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 2.25rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dark .help-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .help-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: #3b82f6;
+            /* brand-blue */
+        }
+
+        .help-num {
+            font-size: 56px;
+            font-weight: 800;
+            color: rgba(59, 130, 246, 0.1);
+            line-height: 1;
+            margin-bottom: 1.25rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .help-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #1a2c1e;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .dark .help-title {
+            color: #fff;
+        }
+
+        .help-desc {
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: #64748b;
+            line-height: 1.8;
+            margin-bottom: 1.75rem;
+            flex-grow: 1;
+        }
+
+        .dark .help-desc {
+            color: #94a3b8;
+        }
+
+        .help-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+        }
+
+        .help-items li {
+            font-size: 0.8125rem;
+            color: #475569;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .dark .help-items li {
+            color: #cbd5e1;
+        }
+
+        .help-items li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #6aaa80;
+            /* SustainCore Green */
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        @keyframes lineGrow {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 1; box-shadow: 0 0 15px rgba(74, 222, 128, 0.4); }
+            50% { opacity: 1; box-shadow: 0 0 30px rgba(74, 222, 128, 0.8), 0 0 50px rgba(59, 130, 246, 0.3); }
+        }
+        .timeline-track {
+            position: absolute;
+            top: 216px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: rgba(226, 232, 240, 0.2);
+            transform: translateY(-50%);
+            border-radius: 20px;
+            z-index: 0;
+        }
+        .dark .timeline-track {
+            background: rgba(30, 41, 59, 0.4);
+        }
+        .timeline-progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, 
+                #4ade80 0%, 
+                #3b82f6 25%, 
+                #60a5fa 50%, 
+                #3b82f6 75%, 
+                #4ade80 100%);
+            background-size: 200% auto;
+            border-radius: 20px;
+            animation: 
+                lineGrow 5s cubic-bezier(0.16, 1, 0.3, 1) forwards, 
+                shine 3s linear infinite,
+                pulseGlow 2s ease-in-out infinite;
+            position: relative;
+        }
+        .timeline-progress::after {
+            content: '';
+            position: absolute;
+            right: -4px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 
+                0 0 10px #fff, 
+                0 0 20px #4ade80, 
+                0 0 40px #3b82f6,
+                0 0 60px rgba(59, 130, 246, 0.5);
+            z-index: 10;
+        }
     </style>
+
+
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -250,9 +706,12 @@
                     </div>
 
                     <!-- Countdown Box -->
-                    <div class="deadline-box bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl group cd-box">
-                        <div class="cd-tag text-[9px] font-bold text-brand-green tracking-widest uppercase mb-2">Next CBAM deadline</div>
-                        <div class="cd-name text-lg font-black text-white mb-1" id="cd-name">First Annual Declaration (2026 imports)</div>
+                    <div
+                        class="deadline-box bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl group cd-box">
+                        <div class="cd-tag text-[9px] font-bold text-brand-green tracking-widest uppercase mb-2">Next
+                            CBAM deadline</div>
+                        <div class="cd-name text-lg font-black text-white mb-1" id="cd-name">First Annual Declaration
+                            (2026 imports)</div>
                         <div class="cd-date text-xs text-white/50 mb-6" id="cd-date">Due: 30 September 2027</div>
 
                         <div class="cd-units grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
@@ -275,9 +734,15 @@
                         </div>
 
                         <div class="cd-sw flex flex-wrap justify-center gap-2 md:gap-3">
-                            <button style="color: white;" class="cd-sw-btn px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest" onclick="setDL(0)">Declarant reg.</button>
-                            <button style="color: white;" class="cd-sw-btn active px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest" onclick="setDL(1)">Annual decl.</button>
-                            <button style="color: white;" class="cd-sw-btn px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest" onclick="setDL(2)">Certificate sale</button>
+                            <button style="color: white;"
+                                class="cd-sw-btn px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest"
+                                onclick="setDL(0)">Declarant reg.</button>
+                            <button style="color: white;"
+                                class="cd-sw-btn active px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest"
+                                onclick="setDL(1)">Annual decl.</button>
+                            <button style="color: white;"
+                                class="cd-sw-btn px-4 py-2 rounded-full border border-white/10 text-[10px] font-bold uppercase tracking-widest"
+                                onclick="setDL(2)">Certificate sale</button>
                         </div>
                     </div>
                 </div>
@@ -618,40 +1083,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- FORMULA BOX (EXPANDED CONTENT) -->
-            <div class="mt-24">
-                <div class="formula-box">
-                    <div class="formula-inner">
-                        <div class="formula-label">Official CBAM cost formula — Regulation (EU) 2023/956</div>
-                        <div class="formula-main">
-                            <span class="hl">CBAM Certificates (tCO₂e)</span> <span class="eq">=</span> <span
-                                class="hl">Volume (t)</span> <span class="eq">×</span> <span class="hl">Embedded EF
-                                (tCO₂e/t)</span> <span class="eq">×</span> <span class="hl">Phase-in Factor</span><br>
-                            <span class="hl">CBAM Certificate Cost (€)</span> <span class="eq">=</span> <span
-                                class="hl">CBAM Certificates (tCO₂e)</span> <span class="eq">×</span> <span
-                                class="hl">ETS Price (€/tCO₂e)</span>
-                        </div>
-                        <div class="formula-notes">
-                            <div class="fn">
-                                <div class="fn-label">Embedded EF</div>
-                                <div class="fn-desc">Either verified actual installation data or EU-assigned default
-                                    values (+10% markup in 2026).</div>
-                            </div>
-                            <div class="fn">
-                                <div class="fn-label">Phase-in Factor</div>
-                                <div class="fn-desc">2.5% (2026), 5% (2027), 10% (2028), rising to 100% by 2034.</div>
-                            </div>
-                            <div class="fn">
-                                <div class="fn-label">ETS Price</div>
-                                <div class="fn-desc">Weekly average ETS auction price from the previous week. ~€70-90/t.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="formula-source">Sources: Regulation (EU) 2023/956 · Commission Implementing
-                            Regulation (EU) 2025/2621</div>
-                    </div>
-                </div>
         </section>
 
         <!-- TIMELINE SECTION -->
@@ -669,20 +1100,18 @@
 
             <div class="relative">
                 <!-- Line -->
-                <div class="absolute top-1/2 left-0 w-full h-[1px] bg-slate-200 dark:bg-slate-800 hidden lg:block">
+                <div class="timeline-track hidden lg:block">
+                    <div class="timeline-progress"></div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
                     <div class="group">
-                        <div class="mb-4 lg:mb-12">
+                        <div class="mb-4 lg:mb-24">
                             <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
                                 01</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2023 – 2025</h4>
                             <p class="text-xs text-brand-green font-bold uppercase tracking-wider mt-1">Transitional
                                 Phase</p>
-                        </div>
-                        <div
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-slate-900 mx-auto mb-8 hidden lg:flex items-center justify-center group-hover:bg-brand-green group-hover:scale-125 transition-all">
                         </div>
                         <div
                             class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm group-hover:shadow-md transition-all">
@@ -697,7 +1126,7 @@
                     </div>
 
                     <div class="group">
-                        <div class="mb-4 lg:mb-12">
+                        <div class="mb-4 lg:mb-24">
                             <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
                                 02</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2026 – 2027</h4>
@@ -705,16 +1134,12 @@
                             </p>
                         </div>
                         <div
-                            class="w-10 h-10 rounded-full bg-brand-blue border-4 border-white dark:border-slate-900 mx-auto mb-8 hidden lg:flex items-center justify-center animate-pulse">
-                            <div class="w-2 h-2 rounded-full bg-white"></div>
-                        </div>
-                        <div
                             class="p-6 rounded-2xl bg-brand-blue/5 border border-brand-blue/20 shadow-sm group-hover:shadow-md transition-all">
                             <ul
                                 class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
                                 <li class="flex gap-2"><span class="text-brand-blue">•</span> <span><strong
-                                            class="text-brand-charcoal dark:text-white font-medium">Mandatory
-                                            verification</strong> by EU accredited verifiers.</span></li>
+                                             class="text-brand-charcoal dark:text-white font-medium">Mandatory
+                                             verification</strong> by EU accredited verifiers.</span></li>
                                 <li class="flex gap-2"><span class="text-brand-blue">•</span> Phase-in factor starts at
                                     2.5% reduction.</li>
                                 <li class="flex gap-2"><span class="text-brand-blue">•</span> First annual declaration
@@ -724,7 +1149,7 @@
                     </div>
 
                     <div class="group">
-                        <div class="mb-4 lg:mb-12">
+                        <div class="mb-4 lg:mb-24">
                             <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
                                 03</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2028 – 2033</h4>
@@ -732,15 +1157,12 @@
                             </p>
                         </div>
                         <div
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-slate-900 mx-auto mb-8 hidden lg:flex items-center justify-center group-hover:bg-amber-500 group-hover:scale-125 transition-all">
-                        </div>
-                        <div
                             class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm group-hover:shadow-md transition-all">
                             <ul
                                 class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
                                 <li class="flex gap-2"><span>•</span> <span>Inclusion of <strong
-                                            class="text-brand-charcoal dark:text-white font-medium">indirect
-                                            emissions</strong> for more sectors.</span></li>
+                                             class="text-brand-charcoal dark:text-white font-medium">indirect
+                                             emissions</strong> for more sectors.</span></li>
                                 <li class="flex gap-2"><span>•</span> Gradual phase-out of free ETS allowances.</li>
                                 <li class="flex gap-2"><span>•</span> Possible scope expansion to chemicals/polymers.
                                 </li>
@@ -749,22 +1171,19 @@
                     </div>
 
                     <div class="group">
-                        <div class="mb-4 lg:mb-12">
+                        <div class="mb-4 lg:mb-24">
                             <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
                                 04</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2034 Onwards</h4>
                             <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">Full Maturity</p>
                         </div>
                         <div
-                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border-4 border-white dark:border-slate-900 mx-auto mb-8 hidden lg:flex items-center justify-center group-hover:bg-brand-charcoal group-hover:scale-125 transition-all">
-                        </div>
-                        <div
                             class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm group-hover:shadow-md transition-all">
                             <ul
                                 class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
                                 <li class="flex gap-2"><span>•</span> <span><strong
-                                            class="text-brand-charcoal dark:text-white font-medium">100% CBAM
-                                            liability</strong> (No ETS free allowances).</span></li>
+                                             class="text-brand-charcoal dark:text-white font-medium">100% CBAM
+                                             liability</strong> (No ETS free allowances).</span></li>
                                 <li class="flex gap-2"><span>•</span> Full alignment with EU carbon leakage goals.</li>
                                 <li class="flex gap-2"><span>•</span> Mature secondary certificate market.</li>
                             </ul>
@@ -941,121 +1360,109 @@
                         <div class="p-8 md:p-12">
                             <!-- Tab 1: Simple -->
                             <div id="calc-simple" class="calc-content block">
-                                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12">
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sector</label>
-                                        <select id="s-sector" onchange="sectorChange()"
-                                            class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none">
-                                            <option value="steel">Iron & Steel</option>
-                                            <option value="aluminium">Aluminium</option>
-                                            <option value="cement">Cement</option>
-                                            <option value="fertiliser">Fertilisers</option>
-                                            <option value="hydrogen">Hydrogen</option>
-                                            <option value="electricity">Electricity</option>
-                                        </select>
+                                <div class="space-y-10 mb-12">
+                                    <!-- Row 1: Selectors -->
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Sector</label>
+                                            <select id="s-sector" onchange="sectorChange()"
+                                                class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-bold outline-none ring-1 ring-slate-100 dark:ring-slate-800 focus:ring-brand-blue transition-all">
+                                                <option value="steel">Iron & Steel</option>
+                                                <option value="aluminium">Aluminium</option>
+                                                <option value="cement">Cement</option>
+                                                <option value="fertiliser">Fertilisers</option>
+                                                <option value="hydrogen">Hydrogen</option>
+                                                <option value="electricity">Electricity</option>
+                                            </select>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Year</label>
+                                            <select id="s-year" onchange="sectorChange()"
+                                                class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-bold outline-none ring-1 ring-slate-100 dark:ring-slate-800 focus:ring-brand-blue transition-all">
+                                                <option value="2026">2026 (2.5%)</option>
+                                                <option value="2027">2027 (5%)</option>
+                                                <option value="2028">2028 (10%)</option>
+                                                <option value="2030">2030 (22%)</option>
+                                                <option value="2034">2034 (100%)</option>
+                                            </select>
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Volume (t/y)</label>
+                                            <input type="number" id="s-vol" value="5000" oninput="simpleCalc()"
+                                                class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-bold outline-none ring-1 ring-slate-100 dark:ring-slate-800 focus:ring-brand-blue transition-all">
+                                        </div>
                                     </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Year</label>
-                                        <select id="s-year" onchange="sectorChange()"
-                                            class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none">
-                                            <option value="2026">2026 (2.5%)</option>
-                                            <option value="2027">2027 (5%)</option>
-                                            <option value="2028">2028 (10%)</option>
-                                            <option value="2030">2030 (22%)</option>
-                                            <option value="2034">2034 (100%)</option>
-                                        </select>
+
+                                    <!-- Row 2: Full-Width ETS Slider -->
+                                    <div class="space-y-4 p-8 bg-slate-50/50 dark:bg-slate-800/20 rounded-[2rem] border border-slate-100 dark:border-slate-800">
+                                        <div class="flex justify-between items-center px-2">
+                                            <div class="flex flex-col">
+                                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Carbon Price (ETS)</span>
+                                                <span class="text-[9px] text-slate-500 font-light italic">Drag to adjust the projected EU ETS price per tonne of CO₂e</span>
+                                            </div>
+                                            <span class="text-xl font-black text-brand-blue">€<span id="s-ets-val">70</span></span>
+                                        </div>
+                                        <input type="range" id="s-ets" min="10" max="150" value="70" step="1" oninput="simpleCalc()"
+                                            class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-blue">
+                                        <div class="flex justify-between px-1 text-[8px] font-bold text-slate-400 uppercase tracking-tighter">
+                                            <span>€10</span>
+                                            <span>€45</span>
+                                            <span>€80</span>
+                                            <span>€115</span>
+                                            <span>€150</span>
+                                        </div>
                                     </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Volume
-                                            (t/y)</label>
-                                        <input type="number" id="s-vol" value="5000" oninput="simpleCalc()"
-                                            class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none">
+
+                                    <!-- Row 3: Emission Factors -->
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Direct Default EF</label>
+                                            <input type="number" id="s-def-direct-ef" step="0.001" oninput="simpleCalc()"
+                                                class="w-full bg-amber-50/50 dark:bg-amber-900/5 border border-amber-100 dark:border-amber-900/20 rounded-xl px-4 py-3 text-xs font-bold text-amber-600 dark:text-amber-400 outline-none">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Indirect Default EF</label>
+                                            <input type="number" id="s-def-indirect-ef" step="0.001" oninput="simpleCalc()"
+                                                class="w-full bg-amber-50/50 dark:bg-amber-900/5 border border-amber-100 dark:border-amber-900/20 rounded-xl px-4 py-3 text-xs font-bold text-amber-600 dark:text-amber-400 outline-none">
+                                        </div>
+                                        <div class="space-y-2">
+                                            <label class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest">Verified Actual EF</label>
+                                            <input type="number" id="s-act-ef" step="0.001" oninput="simpleCalc()"
+                                                class="w-full bg-emerald-50/50 dark:bg-emerald-900/5 border border-emerald-100 dark:border-emerald-900/20 rounded-xl px-4 py-3 text-xs font-bold text-emerald-600 dark:text-emerald-400 outline-none">
+                                        </div>
                                     </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">ETS
-                                            Price (€)</label>
-                                        <input type="number" id="s-ets" value="70" oninput="simpleCalc()"
-                                            class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Default
-                                            EF</label>
-                                        <input type="number" id="s-def-ef" step="0.001" oninput="simpleCalc()"
-                                            class="w-full bg-amber-50/50 dark:bg-amber-900/5 border border-amber-100 dark:border-amber-900/20 rounded-xl px-4 py-3 text-xs font-bold text-amber-600 dark:text-amber-400 outline-none">
-                                    </div>
-                                    <div class="space-y-2">
-                                        <label
-                                            class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Actual
-                                            EF</label>
-                                        <input type="number" id="s-act-ef" step="0.001" oninput="simpleCalc()"
-                                            class="w-full bg-emerald-50/50 dark:bg-emerald-900/5 border border-emerald-100 dark:border-emerald-900/20 rounded-xl px-4 py-3 text-xs font-bold text-emerald-600 dark:text-emerald-400 outline-none">
-                                    </div>
+                                    <input type="hidden" id="s-def-ef">
                                 </div>
 
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                                    <div
-                                        class="p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-800">
-                                        <div class="text-[9px] font-bold text-slate-400 uppercase mb-4 tracking-widest">
-                                            Default Scenario</div>
-                                        <div class="space-y-4">
-                                            <div class="flex justify-between items-end">
-                                                <span
-                                                    class="text-[10px] text-slate-500 uppercase font-medium">Certificates</span>
-                                                <span id="r-certs-def"
-                                                    class="text-lg font-display font-black text-brand-charcoal dark:text-white leading-none">--</span>
-                                            </div>
-                                            <div
-                                                class="flex justify-between items-end pt-4 border-t border-slate-200/50 dark:border-slate-700/50">
-                                                <span class="text-[10px] text-red-500 uppercase font-bold">Total
-                                                    Cost</span>
-                                                <span id="r-def-cost"
-                                                    class="text-2xl font-display font-black text-red-500 leading-none">--</span>
-                                            </div>
+                                    <div class="p-8 bg-slate-50 dark:bg-slate-800/50 rounded-3xl border border-slate-100 dark:border-slate-800 flex flex-col justify-between">
+                                        <div>
+                                            <div class="text-[10px] font-bold text-slate-400 uppercase mb-4 tracking-widest">Default Compliance Cost</div>
+                                            <div id="s-breakdown" class="space-y-1 mb-4"></div>
+                                        </div>
+                                        <div class="flex justify-between items-end pt-4 border-t border-slate-200/50 dark:border-slate-700/50">
+                                            <span class="text-[10px] text-red-500 uppercase font-black tracking-wider">Total</span>
+                                            <span id="s-res-def" class="text-3xl font-display font-black text-red-500">--</span>
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 bg-emerald-50/30 dark:bg-emerald-900/5 rounded-3xl border border-emerald-100 dark:border-emerald-900/20">
-                                        <div
-                                            class="text-[9px] font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-4 tracking-widest">
-                                            Actual Data Power</div>
-                                        <div class="space-y-4">
-                                            <div class="flex justify-between items-end">
-                                                <span
-                                                    class="text-[10px] text-slate-500 uppercase font-medium">Certificates</span>
-                                                <span id="r-certs-act"
-                                                    class="text-lg font-display font-black text-brand-charcoal dark:text-white leading-none">--</span>
-                                            </div>
-                                            <div
-                                                class="flex justify-between items-end pt-4 border-t border-emerald-100 dark:border-emerald-900/20">
-                                                <span
-                                                    class="text-[10px] text-emerald-600 dark:text-emerald-400 uppercase font-bold">Total
-                                                    Cost</span>
-                                                <span id="r-act-cost"
-                                                    class="text-2xl font-display font-black text-emerald-600 dark:text-emerald-400 leading-none">--</span>
-                                            </div>
+                                    <div class="p-8 bg-emerald-50/30 dark:bg-emerald-900/5 rounded-3xl border border-emerald-100 dark:border-emerald-900/20 flex flex-col justify-between">
+                                        <div>
+                                            <div class="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase mb-4 tracking-widest">Actual Data Power</div>
+                                            <div class="text-[11px] text-slate-500 leading-relaxed mb-4">Verification reduces liability by substituting higher default factors with your site-specific performance.</div>
+                                        </div>
+                                        <div class="flex justify-between items-end pt-4 border-t border-emerald-100 dark:border-emerald-900/20">
+                                            <span class="text-[10px] text-emerald-600 dark:text-emerald-400 uppercase font-black tracking-wider">Actual</span>
+                                            <span id="s-res-act" class="text-3xl font-display font-black text-emerald-600 dark:text-emerald-400">--</span>
                                         </div>
                                     </div>
 
-                                    <div
-                                        class="p-8 bg-brand-charcoal rounded-3xl border border-brand-charcoal shadow-xl relative overflow-hidden">
-                                        <div
-                                            class="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-transparent opacity-50">
-                                        </div>
-                                        <div class="relative z-10">
-                                            <div
-                                                class="text-[9px] font-bold text-white/40 uppercase mb-4 tracking-widest">
-                                                Annual Saving</div>
-                                            <div id="r-saving"
-                                                class="text-4xl font-display font-black text-white mb-2 leading-none tracking-tighter">
-                                                --</div>
-                                            <p class="text-[10px] text-white/50 font-light leading-relaxed">By switching
-                                                to verified actual data instead of EU default values.</p>
+                                    <div class="p-8 bg-brand-charcoal rounded-3xl border border-brand-charcoal shadow-xl relative overflow-hidden flex flex-col justify-between">
+                                        <div class="absolute inset-0 bg-gradient-to-br from-brand-blue/20 to-transparent opacity-50"></div>
+                                        <div class="relative z-10 text-[10px] font-bold text-white/40 uppercase mb-4 tracking-widest">Verified Savings</div>
+                                        <div class="relative z-10 flex flex-col gap-1 items-start">
+                                            <div id="s-res-save" class="text-5xl font-display font-black text-white leading-none tracking-tighter">--</div>
+                                            <p class="text-[10px] text-white/50 font-light mt-2 italic">Calculated based on EU Phase-in factor and provided ETS values.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -1118,17 +1525,12 @@
                             <div id="calc-detailed" class="calc-content hidden">
                                 <div class="flex flex-col lg:flex-row gap-8">
                                     <div class="lg:w-3/4">
-                                        <div
-                                            class="flex items-center justify-between mb-8 pb-4 border-b border-slate-100 dark:border-slate-800">
-                                            <h4
-                                                class="text-xs font-bold text-brand-charcoal dark:text-white uppercase tracking-widest">
-                                                Multi-Product Inventory</h4>
-                                            <div class="flex gap-4">
-                                                <div class="flex items-center gap-2">
-                                                    <span
-                                                        class="text-[9px] font-bold text-slate-400 uppercase">Year</span>
+                                        <div class="flex flex-col gap-8 mb-12">
+                                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 items-end pb-8 border-b border-slate-100 dark:border-slate-800">
+                                                <div class="space-y-2">
+                                                    <label class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Submission Year</label>
                                                     <select id="d-year" onchange="detailCalc()"
-                                                        class="bg-slate-50 dark:bg-slate-800 border-none rounded-lg px-3 py-1.5 text-[10px] font-bold outline-none">
+                                                        class="w-full bg-slate-50 dark:bg-slate-800 border-none rounded-xl px-4 py-3 text-xs font-bold outline-none">
                                                         <option value="2026">2026</option>
                                                         <option value="2027">2027</option>
                                                         <option value="2028">2028</option>
@@ -1136,11 +1538,13 @@
                                                         <option value="2034">2034</option>
                                                     </select>
                                                 </div>
-                                                <div class="flex items-center gap-2">
-                                                    <span class="text-[9px] font-bold text-slate-400 uppercase">ETS
-                                                        €</span>
-                                                    <input type="number" id="d-ets" value="70" oninput="detailCalc()"
-                                                        class="w-16 bg-slate-50 dark:bg-slate-800 border-none rounded-lg px-3 py-1.5 text-[10px] font-bold outline-none text-center">
+                                                <div class="col-span-1 md:col-span-3 space-y-2">
+                                                    <div class="flex justify-between items-center px-1">
+                                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Carbon Price (ETS)</span>
+                                                        <span class="text-xs font-black text-brand-blue">€<span id="d-ets-val">70</span>/t</span>
+                                                    </div>
+                                                    <input type="range" id="d-ets" min="10" max="150" value="70" step="1" oninput="detailCalc()"
+                                                        class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-blue">
                                                 </div>
                                             </div>
                                         </div>
@@ -1172,6 +1576,16 @@
                                                         class="text-3xl font-display font-black text-red-400 leading-none tracking-tighter">
                                                         --</div>
                                                 </div>
+                                                <div class="space-y-4 pt-4 border-t border-white/5">
+                                                    <div class="flex justify-between items-end">
+                                                        <span class="text-[8px] text-white/30 uppercase font-medium">↳ Default Direct</span>
+                                                        <span id="dt-cost-def-direct" class="text-xs font-bold text-white/50">--</span>
+                                                    </div>
+                                                    <div class="flex justify-between items-end">
+                                                        <span class="text-[8px] text-white/30 uppercase font-medium">↳ Default Indirect</span>
+                                                        <span id="dt-cost-def-indirect" class="text-xs font-bold text-white/50">--</span>
+                                                    </div>
+                                                </div>
                                                 <div>
                                                     <div
                                                         class="text-[9px] font-bold text-white/40 uppercase mb-2 tracking-widest">
@@ -1202,14 +1616,18 @@
                                     <table class="w-full text-left min-w-[800px]">
                                         <thead class="bg-slate-50 dark:bg-slate-800/50">
                                             <tr
-                                                class="text-[9px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 dark:border-slate-800">
-                                                <th class="py-5 px-4 font-black">CN Code / Product</th>
-                                                <th class="py-5 px-2">Volume</th>
-                                                <th class="py-5 px-2">Def EF</th>
-                                                <th class="py-5 px-2">Act EF</th>
-                                                <th class="py-5 px-2">Default Cost</th>
-                                                <th class="py-5 px-2">Actual Cost</th>
-                                                <th class="py-5 px-4">Net Saving</th>
+                                                class="text-[8px] font-bold text-slate-400 uppercase tracking-widest border-b border-slate-100 dark:border-slate-800">
+                                                <th class="py-5 px-4 font-black">Code / Product</th>
+                                                <th class="py-5 px-2">Vol</th>
+                                                <th class="py-5 px-2">Def Dir</th>
+                                                <th class="py-5 px-2">Def Ind</th>
+                                                <th class="py-5 px-2 text-red-400">Def Tot</th>
+                                                <th class="py-5 px-2 text-emerald-500">Act EF</th>
+                                                <th class="py-5 px-2">Cost Dir</th>
+                                                <th class="py-5 px-2">Cost Ind</th>
+                                                <th class="py-5 px-2">Cost Tot</th>
+                                                <th class="py-5 px-2">Act Cost</th>
+                                                <th class="py-5 px-4 text-brand-blue">Saving</th>
                                             </tr>
                                         </thead>
                                         <tbody id="det-tbody" class="text-brand-charcoal dark:text-white">
@@ -1294,79 +1712,93 @@
                         </div>
                     </div>
 
-                    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                        <div>
-                            <div
-                                class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-green mb-6">
-                                <span class="w-5 h-[1.5px] bg-brand-green"></span>
-                                The Methodology
-                            </div>
-                            <h2
-                                class="text-4xl md:text-5xl font-display font-black mb-8 leading-[1.1] tracking-tighter">
-                                How CBAM <span class="text-brand-green italic font-light">Costs</span> are Defined
-                            </h2>
-                            <div class="space-y-6">
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
-                                        1</div>
-                                    <div>
-                                        <div class="text-sm font-bold mb-1">Embedded Emissions (E)</div>
-                                        <p class="text-[11px] text-white/50 font-light leading-relaxed">Direct +
-                                            Indirect emissions (Specific emissions per tonne of product) based on
-                                            verified data or EU default values.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
-                                        2</div>
-                                    <div>
-                                        <div class="text-sm font-bold mb-1">CBAM Certificates (C)</div>
-                                        <p class="text-[11px] text-white/50 font-light leading-relaxed">Required units
-                                            equal to (Emissions × Volume) adjusted by the EU ETS Phase-out factor of the
-                                            current year.</p>
-                                    </div>
-                                </div>
-                                <div class="flex gap-4">
-                                    <div
-                                        class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
-                                        3</div>
-                                    <div>
-                                        <div class="text-sm font-bold mb-1">Certificate Price (P)</div>
-                                        <p class="text-[11px] text-white/50 font-light leading-relaxed">Based on the
-                                            weekly average auction price of EU ETS allowances. Published every Monday.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="relative z-10">
+
+                        <div
+                            class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-green mb-6">
+                            <span class="w-5 h-[1.5px] bg-brand-green"></span>
+                            The Methodology
                         </div>
+                        <h2 class="text-4xl md:text-5xl font-display font-black mb-8 leading-[1.1] tracking-tighter">
+                            How CBAM <span class="text-brand-green italic font-light">Costs</span> are Defined
+                        </h2>
+                        <p class="text-slate-400 font-light leading-relaxed max-w-2xl text-sm mb-12">
+                            Regulation (EU) 2023/956 establishes a clear mathematical framework for carbon costs.
+                            We transition your compliance from "estimated world averages" to "verified actual data,"
+                            ensuring your EU importer pays the lowest possible carbon price.
+                        </p>
 
-                        <div class="bg-white/5 border border-white/10 rounded-[2.5rem] p-10 backdrop-blur-xl">
-                            <div
-                                class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-10 text-center">
-                                Cost Formula (Article 21)</div>
-                            <div class="text-center font-display mb-12">
-                                <div class="text-[42px] md:text-[56px] font-black leading-none tracking-tighter mb-2">
-                                    Cost = C × P</div>
-                                <div class="text-[10px] text-brand-green font-bold uppercase tracking-[0.3em]">Liability
-                                    Equation</div>
-                            </div>
-
-                            <div class="space-y-6 pt-10 border-t border-white/5">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-[11px] text-white/40 font-light italic">where Certificates (C)
-                                        =</span>
-                                    <span class="text-sm font-bold text-brand-green">(Vol × E) × (1 - FM)</span>
+                        <!-- Steps Horizontal on Desktop -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
+                                    1</div>
+                                <div>
+                                    <div class="text-sm font-bold mb-1">Embedded Emissions (E)</div>
+                                    <p class="text-[11px] text-white/50 font-light leading-relaxed">Direct +
+                                        Indirect emissions based on verified data or EU default values.</p>
                                 </div>
-                                <p class="text-[10px] text-white/30 font-light italic leading-relaxed text-center">
-                                    *FM = Free Allocation Multiplier (decreases from 2026 to 2034)
-                                </p>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
+                                    2</div>
+                                <div>
+                                    <div class="text-sm font-bold mb-1">CBAM Certificates (C)</div>
+                                    <p class="text-[11px] text-white/50 font-light leading-relaxed">Required units
+                                        equal to (Emissions × Volume) adjusted by the EU ETS Phase-out factor.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[10px] font-bold shrink-0">
+                                    3</div>
+                                <div>
+                                    <div class="text-sm font-bold mb-1">Certificate Price (P)</div>
+                                    <p class="text-[11px] text-white/50 font-light leading-relaxed">Based on the
+                                        weekly average auction price of EU ETS allowances.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Full Width Formula Box -->
+                    <div class="pt-16">
+                        <div class="formula-main text-center max-w-4xl mx-auto">
+                            <div class="mt-6 md:mt-2">
+                                <span class="hl">CBAM Certificate Cost (€)</span> <span class="eq">=</span> <span
+                                    class="hl">Volume (t)</span> <span class="eq">×</span> <span class="hl">Embedded EF
+                                    (tCO₂e/t)</span> <span class="eq">×</span> <span class="hl">CBAM Phase-in
+                                    Factor</span><br> <span class="eq">×</span> <span class="hl">ETS Price
+                                    (€/tCO₂e)</span>
+                            </div>
+                        </div>
+
+                        <div class="formula-notes mt-16 max-w-6xl mx-auto">
+                            <div class="fn">
+                                <div class="fn-label">Embedded EF</div>
+                                <div class="fn-desc text-[10px] leading-relaxed">Verified actual data or EU default
+                                    values (incl. markup: +10% 2026, +20% 2027, +30% 2028+).</div>
+                            </div>
+                            <div class="fn">
+                                <div class="fn-label">Phase-in Factor</div>
+                                <div class="fn-desc text-[10px] leading-relaxed">ETS phase-out: 2.5% (2026), 5% (2027),
+                                    10% (2028), 16% (2029), 22% (2030) … 100% (2034).</div>
+                            </div>
+                            <div class="fn">
+                                <div class="fn-label">ETS Price</div>
+                                <div class="fn-desc text-[10px] leading-relaxed">Weekly average ETS auction price.
+                                    Fluctuates based on European carbon market.</div>
+                            </div>
+                        </div>
+                        <div class="formula-source text-center max-w-2xl mx-auto">Sources: Regulation (EU) 2023/956 as
+                            amended by (EU) 2025/2083 · IR (EU) 2025/2621 · Art. 21, Reg. 2023/956.</div>
+                    </div>
                 </div>
             </section>
+
+
     </main>
 
     <!-- FAQ SECTION -->
@@ -1382,155 +1814,69 @@
                 </h2>
             </div>
 
-            <div class="data-comparison-grid">
-                <!-- THE SCENARIO CARD -->
-                <div class="data-card relative group h-full overflow-hidden">
-                    <div
-                        class="absolute -inset-1 bg-gradient-to-r from-brand-blue/20 to-brand-green/20 rounded-[40px] blur opacity-25 group-hover:opacity-100 transition duration-1000">
+            <!-- COMPARISON BOX -->
+            <div class="comp-box scroll-reveal">
+                <div class="comp-title">Why verified actual data matters — a concrete example</div>
+                <div class="comp-sub">10,000 tonnes of hot-rolled steel (7208) exported to the EU. ETS price €70/t. Year
+                    2026 (CBAM factor 2.5%).</div>
+                <div class="comp-cols">
+                    <div class="comp-col cc-default">
+                        <div class="cc-label">Using EU default values (no verified data)</div>
+                        <div class="cc-row"><span class="cc-row-lbl">Default EF (7208, world avg)</span><span
+                                class="cc-row-val">2.28 tCO₂/t</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">+10% punitive markup (2026)</span><span
+                                class="cc-row-val">2.508 tCO₂/t</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">Total embedded emissions</span><span
+                                class="cc-row-val">25,080 tCO₂</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">CBAM certificates (× 2.5%)</span><span
+                                class="cc-row-val">627 tCO₂e</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">CBAM cost (2026)</span><span
+                                class="cc-row-val">€43,890</span></div>
                     </div>
-                    <div
-                        class="relative bg-white dark:bg-slate-900 rounded-[40px] p-8 md:p-12 border border-slate-100 dark:border-slate-800 shadow-2xl h-full flex flex-col justify-between">
-                        <div>
-                            <div
-                                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
-                                <div class="flex items-center gap-5">
-                                    <div
-                                        class="w-14 h-14 bg-brand-green/10 rounded-2xl flex items-center justify-center text-brand-green">
-                                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <h4
-                                            class="text-2xl font-black text-brand-charcoal dark:text-white leading-tight">
-                                            Hot-Rolled Steel 7208</h4>
-                                        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">10,000
-                                            Metric Tonnes annual volume</span>
-                                    </div>
-                                </div>
-                                <div
-                                    class="bg-slate-50 dark:bg-slate-800 px-6 py-3 rounded-2xl border border-slate-100 dark:border-slate-700">
-                                    <div class="text-[9px] font-bold text-brand-blue uppercase tracking-[0.2em] mb-1">
-                                        Scenario</div>
-                                    <div class="text-sm font-black text-brand-charcoal dark:text-white">Definitive
-                                        Phase 2026</div>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                                <div
-                                    class="bg-red-50/50 dark:bg-red-950/20 p-8 rounded-3xl border border-red-100/50 dark:border-red-900/20 relative overflow-hidden">
-                                    <div class="relative z-10">
-                                        <div class="text-[10px] font-bold text-red-400 uppercase tracking-widest mb-4">
-                                            EU Default Value (No Data)</div>
-                                        <div class="text-4xl font-black text-red-500 mb-2">€43,890</div>
-                                        <p class="text-xs text-red-600/70 font-medium leading-relaxed">Includes
-                                            mandatory +10% punitive markup for non-reporting.</p>
-                                    </div>
-                                    <div class="absolute -right-4 -bottom-4 opacity-5 text-red-500"><svg
-                                            class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                                clip-rule="evenodd" />
-                                        </svg></div>
-                                </div>
-                                <div
-                                    class="bg-emerald-50/50 dark:bg-emerald-950/20 p-8 rounded-3xl border border-emerald-100/50 dark:border-emerald-900/20 relative overflow-hidden">
-                                    <div class="relative z-10">
-                                        <div
-                                            class="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mb-4">
-                                            Verified Actual Data</div>
-                                        <div class="text-4xl font-black text-emerald-500 mb-2">€28,000</div>
-                                        <p class="text-xs text-emerald-600/70 font-medium leading-relaxed">Based on
-                                            installation-specific primary monitoring data.</p>
-                                    </div>
-                                    <div class="absolute -right-4 -bottom-4 opacity-5 text-emerald-500"><svg
-                                            class="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd"
-                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                                clip-rule="evenodd" />
-                                        </svg></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div
-                            class="bg-brand-blue/5 dark:bg-brand-blue/10 rounded-3xl p-8 flex flex-col md:flex-row justify-between items-center gap-8 border border-brand-blue/10">
-                            <div class="max-w-md">
-                                <div class="text-[10px] font-bold text-brand-blue uppercase tracking-widest mb-2">
-                                    Strategic Impact</div>
-                                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-light">
-                                    Eliminating verified data gaps directly reduces your certificate liability by
-                                    over 1/3 in year one.</p>
-                            </div>
-                            <div class="text-center md:text-right">
-                                <div class="text-5xl font-display font-black text-brand-blue tracking-tighter">
-                                    €15,890</div>
-                                <div class="text-[10px] font-bold text-brand-green uppercase tracking-[0.2em] mt-2">
-                                    Annual Savings / 2026</div>
-                            </div>
-                        </div>
+                    <div class="comp-col cc-actual">
+                        <div class="cc-label">Using verified actual data (SustainCore)</div>
+                        <div class="cc-row"><span class="cc-row-lbl">Actual verified EF (installation)</span><span
+                                class="cc-row-val">1.60 tCO₂/t</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">Punitive markup</span><span class="cc-row-val">—
+                                None</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">Total embedded emissions</span><span
+                                class="cc-row-val">16,000 tCO₂</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">CBAM certificates (× 2.5%)</span><span
+                                class="cc-row-val">400 tCO₂e</span></div>
+                        <div class="cc-row"><span class="cc-row-lbl">CBAM cost (2026)</span><span
+                                class="cc-row-val">€28,000</span></div>
                     </div>
                 </div>
+                <div class="comp-saving"
+                    style="text-align: center; margin-top: 1.5rem; padding: 1rem; background: rgba(74, 124, 89, 0.05); border-radius: 12px; border: 1px solid rgba(74, 124, 89, 0.1); font-size: 0.875rem; color: #16a34a; font-weight: 600;">
+                    Verified actual data reduces your EU customer's CBAM cost by <strong>€15,890 (36%)</strong> in year
+                    one.
+                </div>
+            </div>
 
-                <!-- PENALTY CARD -->
-                <div
-                    class="bg-brand-charcoal dark:bg-slate-900 rounded-[40px] p-10 md:p-12 border border-slate-800 shadow-2xl flex flex-col justify-between h-full relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-red-500/10 blur-[100px] rounded-full"></div>
-                    <div class="relative z-10">
-                        <div
-                            class="w-14 h-14 bg-red-500/10 rounded-2xl flex items-center justify-center text-red-500 mb-10">
-                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                            </svg>
-                        </div>
-                        <h3 class="text-3xl font-black text-white mb-6 tracking-tight">Non-Compliance Risks.</h3>
-                        <p class="text-slate-400 text-sm font-light leading-relaxed mb-10">Failing to provide
-                            verified data triggers severe financial and legal enforcement under Art. 26/27.</p>
-
-                        <div class="space-y-8">
-                            <div class="flex gap-5">
-                                <div class="text-red-500 font-bold text-sm tracking-widest pt-1">01</div>
-                                <div>
-                                    <div class="text-white font-bold mb-1">€100/tonne Penalty</div>
-                                    <p class="text-xs text-slate-500 font-light leading-relaxed text-[11px]">Applied
-                                        to every tonne of embedded emissions not covered by certificates.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-5">
-                                <div class="text-red-500 font-bold text-sm tracking-widest pt-1">02</div>
-                                <div>
-                                    <div class="text-white font-bold mb-1">Import Bans</div>
-                                    <p class="text-xs text-slate-500 font-light leading-relaxed text-[11px]">
-                                        Mandatory customs denial for any goods from non-authorized declarants.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-5">
-                                <div class="text-red-500 font-bold text-sm tracking-widest pt-1">03</div>
-                                <div>
-                                    <div class="text-white font-bold mb-1">No Liability Caps</div>
-                                    <p class="text-xs text-slate-500 font-light leading-relaxed text-[11px]">Unlike
-                                        the transitional phase, definitive phase penalties scale without limit.</p>
-                                </div>
-                            </div>
-                        </div>
+            <!-- PENALTY BOX -->
+            <div class="penalty-box scroll-reveal">
+                <div class="penalty-head">
+                    <div class="penalty-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path
+                                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
                     </div>
-
-                    <div class="mt-12 pt-8 border-t border-slate-800 relative z-10">
-                        <a href="#contact" class="flex items-center justify-between text-white group/btn">
-                            <span class="text-[10px] font-bold uppercase tracking-widest">Verify Your Data
-                                Today</span>
-                            <svg class="w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none"
-                                stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
+                    <div>
+                        <div class="penalty-title">Non-compliance is no longer an option</div>
+                        <div class="penalty-sub">Definitive Phase (2026+) penalties are severe and retrospective.</div>
+                    </div>
+                </div>
+                <div class="penalty-grid">
+                    <div class="pg"><span class="pg-val">€100/t</span><span class="pg-lbl">CO₂e Penalty</span></div>
+                    <div class="pg"><span class="pg-val">Uncapped</span><span class="pg-lbl">Financial Risk</span></div>
+                    <div class="pg"><span class="pg-val">Ban</span><span class="pg-lbl">Customs clearance risk</span>
                     </div>
                 </div>
             </div>
+
+        </div>
         </div>
         </div>
     </section>
@@ -1546,13 +1892,114 @@
             </h2>
             <div id="cbam-flow-diagram"></div>
         </div>
+        <!-- SUSTAINCORE CBAM SERVICES (LONG CARDS) -->
+        <section class="max-w-7xl mx-auto px-6 py-24 border-t border-slate-100 dark:border-slate-800" id="how-we-help">
+            <div class="mb-16">
+                <p class="text-slate-500 max-w-2xl font-light leading-relaxed text-lg dark:text-slate-400">
+                    End-to-end CBAM compliance for Indian and global exporters — from initial exposure assessment to
+                    ongoing verified emissions data delivery to your EU importers.
+                </p>
+            </div>
+
+            <div class="help-grid">
+                <div class="help-card scroll-reveal">
+                    <div class="help-num">01</div>
+                    <div class="help-title">CBAM Scope Assessment & Exposure Quantification</div>
+                    <div class="help-desc">Rapid, accurate assessment confirming which product lines fall in scope,
+                        confirming CN codes against Annex I, calculating your volume against the 50t threshold, and
+                        modelling certificate costs under both default and actual emission scenarios for 2026–2034.
+                    </div>
+                    <ul class="help-items">
+                        <li>CN code mapping against Regulation (EU) 2023/956 Annex I</li>
+                        <li>Volume threshold confirmation and annual exposure modelling</li>
+                        <li>Default vs actual cost comparison with savings quantification</li>
+                        <li>Priority action plan ranked by financial impact</li>
+                    </ul>
+                </div>
+
+                <div class="help-card scroll-reveal">
+                    <div class="help-num">02</div>
+                    <div class="help-title">Embedded Emissions Calculation (EU Methodology)</div>
+                    <div class="help-desc">We calculate embedded GHG emissions using the EU's prescribed methodology per
+                        Annex IV of Implementing Regulation (EU) 2023/1773 — not national equivalents. Covering direct
+                        (Scope 1) emissions and indirect electricity emissions where required (cement, fertilisers),
+                        formatted in the EU Communication Template your EU importer needs.</div>
+                    <ul class="help-items">
+                        <li>Production-level GHG inventory per installation (Annex IV methodology)</li>
+                        <li>Direct emissions: combustion, process, fugitive</li>
+                        <li>Indirect electricity emissions for cement and fertilisers</li>
+                        <li>EU Communication Template data per shipment per product</li>
+                    </ul>
+                </div>
+
+                <div class="help-card scroll-reveal">
+                    <div class="help-num">03</div>
+                    <div class="help-title">Third-Party Verification Coordination</div>
+                    <div class="help-desc">We prepare your data to verification standard and coordinate with an
+                        EU-accredited ISO 14065 verifier — including the mandatory on-site inspection in 2026. We
+                        pre-close all potential findings before the verifier arrives, preventing a failed verification
+                        that would revert to costly default values with markup.</div>
+                    <ul class="help-items">
+                        <li>Verification readiness assessment and evidence documentation</li>
+                        <li>EU-accredited ISO 14065 verifier selection and coordination</li>
+                        <li>On-site audit preparation and accompaniment</li>
+                        <li>5% materiality threshold compliance assurance</li>
+                    </ul>
+                </div>
+
+                <div class="help-card scroll-reveal">
+                    <div class="help-num">04</div>
+                    <div class="help-title">EU Importer Data Delivery System</div>
+                    <div class="help-desc">We establish an annual data delivery system ensuring verified emissions data
+                        reaches your EU importer before their 30 September declaration deadline, in the exact EU
+                        Communication Template format required by the CBAM Registry.</div>
+                    <ul class="help-items">
+                        <li>Annual emissions data calendar aligned to EU deadlines</li>
+                        <li>Per-shipment EU Communication Template preparation</li>
+                        <li>Direct coordination with your EU importer's compliance team</li>
+                        <li>Regulatory update monitoring for your specific products</li>
+                    </ul>
+                </div>
+
+                <div class="help-card scroll-reveal">
+                    <div class="help-num">05</div>
+                    <div class="help-title">Art. 9 Carbon Price Deduction Support</div>
+                    <div class="help-desc">Under Article 9 of Regulation (EU) 2023/956, only explicit carbon prices
+                        effectively paid in the production country (national ETS or carbon tax — not voluntary credits)
+                        can be deducted. We identify eligible Indian mechanisms, calculate the deductible amount and
+                        prepare the verification documentation required for the deduction claim.</div>
+                    <ul class="help-items">
+                        <li>Identification of Art. 9–eligible India carbon pricing instruments</li>
+                        <li>Deductible amount calculation per tonne CO₂</li>
+                        <li>Independent verification of carbon price paid</li>
+                        <li>Deduction documentation for EU importer's declaration</li>
+                    </ul>
+                </div>
+
+                <div class="help-card scroll-reveal">
+                    <div class="help-num">06</div>
+                    <div class="help-title">CBAM-Aligned Decarbonisation Roadmap</div>
+                    <div class="help-desc">Every tonne eliminated from your production saves the ETS price (€70+/t now,
+                        ~€130/t by 2030) — multiplied by the rising CBAM factor. We build a production-level
+                        decarbonisation roadmap that identifies the highest-return emission reduction investments and
+                        models their ROI against projected certificate savings year by year.</div>
+                    <ul class="help-items">
+                        <li>Production-level emission reduction opportunity mapping</li>
+                        <li>ROI modelling: investment vs cumulative CBAM savings</li>
+                        <li>Fuel switching, process optimisation, energy efficiency options</li>
+                        <li>SBTi 1.5°C near-term target alignment</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </section>
 
     <!-- FAQ SECTION -->
     <section class="bg-slate-50 dark:bg-slate-900/50 py-24 border-t border-slate-100 dark:border-slate-800">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-10">
-                <a href="#contact" class="inline-flex items-center justify-center px-8 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-brand-blue transition-all">
+                <a href="#contact"
+                    class="inline-flex items-center justify-center px-8 py-3 bg-brand-green text-white font-bold rounded-full hover:bg-brand-blue transition-all">
                     Book Assessment →
                 </a>
             </div>
@@ -1689,37 +2136,37 @@
     <!-- Calculator Scripts -->
     <script type="module" src="/src/js/cbam-data.js"></script>
     <script type="module" src="/src/js/cbam-calculator.js"></script>
-        <script>
-            // FAQ Toggle
-            document.querySelectorAll('.faq-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const item = btn.closest('.faq-item');
-                    const isOpen = item.classList.contains('open');
-                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-                    document.querySelectorAll('.faq-ans').forEach(a => a.classList.add('hidden'));
-                    if (!isOpen) {
-                        item.classList.add('open');
-                        item.querySelector('.faq-ans').classList.remove('hidden');
-                    }
-                });
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.closest('.faq-item');
+                const isOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+                document.querySelectorAll('.faq-ans').forEach(a => a.classList.add('hidden'));
+                if (!isOpen) {
+                    item.classList.add('open');
+                    item.querySelector('.faq-ans').classList.remove('hidden');
+                }
             });
+        });
 
-            // Flow Diagram Injector
-            (function () {
-                const el = document.getElementById('cbam-flow-diagram');
-                if (!el) return;
-                const steps = [
-                    { num: '01', title: 'Scope Assessment', sub: 'Week 1', desc: 'We confirm CN codes and model financial exposure in 48h.', icon: 'M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
-                    { num: '02', title: 'Emissions Audit', sub: 'Weeks 1–3', desc: 'Installation-level GHG inventory per EU Annex IV math.', icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-                    { num: '03', title: 'Verification', sub: 'Weeks 3–5', desc: 'ISO 14065 prep and accredited third-party audit management.', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
-                    { num: '04', title: 'Data Delivery', sub: 'Weeks 5–6', desc: 'Submission-ready EU Communication Templates for importers.', icon: 'M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z' },
-                    { num: '05', title: 'Art. 9 Deduction', sub: 'Ongoing', desc: 'Verification of national carbon prices paid for deduction.', icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
-                    { num: '06', title: 'Decarbonisation', sub: 'Strategic', desc: 'ROI modeling for reduction projects vs certificate savings.', icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' }
-                ];
+        // Flow Diagram Injector
+        (function () {
+            const el = document.getElementById('cbam-flow-diagram');
+            if (!el) return;
+            const steps = [
+                { num: '01', title: 'Scope Assessment', sub: 'Week 1', desc: 'We confirm CN codes and model financial exposure in 48h.', icon: 'M9 12l2 2 4-4M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+                { num: '02', title: 'Emissions Audit', sub: 'Weeks 1–3', desc: 'Installation-level GHG inventory per EU Annex IV math.', icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+                { num: '03', title: 'Verification', sub: 'Weeks 3–5', desc: 'ISO 14065 prep and accredited third-party audit management.', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+                { num: '04', title: 'Data Delivery', sub: 'Weeks 5–6', desc: 'Submission-ready EU Communication Templates for importers.', icon: 'M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z' },
+                { num: '05', title: 'Art. 9 Deduction', sub: 'Ongoing', desc: 'Verification of national carbon prices paid for deduction.', icon: 'M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z' },
+                { num: '06', title: 'Decarbonisation', sub: 'Strategic', desc: 'ROI modeling for reduction projects vs certificate savings.', icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6' }
+            ];
 
-                let html = '<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">';
-                steps.forEach(s => {
-                    html += `
+            let html = '<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4 mt-12">';
+            steps.forEach(s => {
+                html += `
                 <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group">
                     <div class="w-10 h-10 rounded-xl bg-brand-blue/5 flex items-center justify-center mb-4 group-hover:bg-brand-blue/10 transition-colors">
                         <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${s.icon}"/></svg>
@@ -1729,11 +2176,29 @@
                     <div class="text-[9px] font-bold text-brand-blue uppercase tracking-widest mb-3">${s.sub}</div>
                     <div class="text-[10px] text-slate-500 leading-relaxed font-light">${s.desc}</div>
                 </div>`;
-                });
-                html += '</div>';
-                el.innerHTML = html;
-            })();
-        </script>
+            });
+            html += '</div>';
+            el.innerHTML = html;
+        })();
+        // Intersection Observer for scroll-reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

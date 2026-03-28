@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script>(function(){const t=localStorage.getItem('sustain-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');})();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Air Monitoring & Emissions | SustainCore</title>
@@ -35,9 +36,10 @@
         <div class="sp-dropdown">
           <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
           <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Inventory</a>
-          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
           <a href="/carbon-climate.html#footprint" class="sp-dropdown-link">Carbon Footprint</a>
+          <a href="/carbon-climate.html#verification" class="sp-dropdown-link">GHG Verification</a>
           <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
+          <a href="/carbon-climate.html#irec" class="sp-dropdown-link">I-REC Certification</a>
         </div>
       </div>
       <!-- 03 Ratings & Targets -->
@@ -45,7 +47,7 @@
         <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>03</span> Ratings & Targets</a>
         <div class="sp-dropdown">
           <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
-          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Strategy</a>
           <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
           <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
         </div>
@@ -54,10 +56,8 @@
       <div class="sp-sub-nav-item">
         <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>04</span> Clearances & EIA</a>
         <div class="sp-dropdown">
-          <a href="/clearances-eia.html#cgwa" class="sp-dropdown-link">Groundwater (CGWA)</a>
-          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (SEIAA)</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (EC)</a>
           <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
-          <a href="/clearances-eia.html#renewals" class="sp-dropdown-link">Renewals & Amendments</a>
         </div>
       </div>
       <!-- 05 Licenses & EPR -->
@@ -71,30 +71,32 @@
       </div>
       <!-- 06 Management Systems -->
       <div class="sp-sub-nav-item">
-        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>06</span> Management
-          Systems</a>
+        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>06</span> Management Systems</a>
         <div class="sp-dropdown">
-          <a href="/management-systems.html#ems1" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
-          <a href="/management-systems.html#ems2" class="sp-dropdown-link">Env. Mgmt (Integrated)</a>
-          <a href="/management-systems.html#audits" class="sp-dropdown-link">Audits & Renewals</a>
+          <a href="/management-systems.html#iso14001" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#iso45001" class="sp-dropdown-link">Health & Safety (ISO 45001)</a>
+          <a href="/management-systems.html#iso50001" class="sp-dropdown-link">Energy Mgmt (ISO 50001)</a>
+          <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a>
         </div>
       </div>
       <!-- 07 Water Testing -->
       <div class="sp-sub-nav-item">
         <a href="/water-testing.html" class="sp-sub-nav-link sp-dropdown-toggle"><span>07</span> Water Testing</a>
         <div class="sp-dropdown">
-          <a href="/water-testing.html#drinking" class="sp-dropdown-link">Drinking Water Testing</a>
-          <a href="/water-testing.html#analysis" class="sp-dropdown-link">Water & Wastewater</a>
           <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
+          <a href="/water-testing.html#groundwater" class="sp-dropdown-link">Groundwater Analysis</a>
+          <a href="/water-testing.html#audit" class="sp-dropdown-link">Water Audit</a>
+          <a href="/water-testing.html#risk" class="sp-dropdown-link">Water Risk Assessment</a>
         </div>
       </div>
       <!-- 08 Air Monitoring -->
       <div class="sp-sub-nav-item">
-        <a href="/air-monitoring.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>08</span> Air
-          Monitoring</a>
+        <a href="/air-monitoring.html" class="sp-sub-nav-link active sp-dropdown-toggle"><span>08</span> Air Monitoring</a>
         <div class="sp-dropdown">
+          <a href="/air-monitoring.html#ambient" class="sp-dropdown-link">Ambient Air Quality</a>
+          <a href="/air-monitoring.html#cems" class="sp-dropdown-link">CEMS Solutions</a>
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack Monitoring</a>
           <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
-          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack / Emission</a>
         </div>
       </div>
     </div>
@@ -136,7 +138,7 @@
               <div class="svc-card-chip">OSHA · IAQ · WORKZONE</div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title">Workplace Air Quality Monitoring</h3>
+              <h3 class="svc-card-title">Workplace Air Quality</h3>
               <p class="svc-card-desc">Specialized assessment of air quality within industrial work zones and corporate
                 offices to ensure worker health and safety as per OSHA and factory norms.</p>
               <div class="svc-card-divider"></div>
@@ -147,7 +149,7 @@
                 <li>CO2 & Oxygen level monitoring</li>
                 <li>Particulate matter (Dust) audit</li>
               </ul>
-              <a href="files/8-workplace.html" class="svc-learn-more">Learn More & Case Studies →</a>
+              <a href="files/8-workplace-air.html" class="svc-learn-more">Learn More</a>
             </div>
           </div>
 
@@ -160,7 +162,7 @@
               <div class="svc-card-chip">SPCB/CPCB · ISOKINETIC · NABL</div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title">Stack / Emission Monitoring</h3>
+              <h3 class="svc-card-title">Stack Monitoring</h3>
               <p class="svc-card-desc">High-precision isokinetic sampling of industrial stack emissions to quantify PM,
                 SOx, NOx, and other pollutants for regulatory compliance.</p>
               <div class="svc-card-divider"></div>
@@ -169,9 +171,55 @@
                 <li>Isokinetic particulate sampling</li>
                 <li>SO2, NOx, CO concentration monitoring</li>
                 <li>Stack geometry & port-hole audit</li>
-                <li>Real-time CEMS data verification</li>
+                <li>Technical defense with SPCB</li>
               </ul>
-              <a href="files/8-stack.html" class="svc-learn-more">Learn More & Case Studies →</a>
+              <a href="files/8-stack-monitoring.html" class="svc-learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Ambient Air Card -->
+          <div class="svc-card" id="ambient">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&q=80"
+                alt="Ambient Air Quality" class="svc-card-img">
+              <div class="svc-card-chip">NAAQMS · FRM · PERIMETER</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">Ambient Air Monitoring</h3>
+              <p class="svc-card-desc">Perimeter air quality monitoring using Federal Reference Methods (FRM) to ensure adherence to National Ambient Air Quality Standards.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>PM2.5 & PM10 24-hour cycle</li>
+                <li>Oxides of Nitrogen & Sulfur</li>
+                <li>Ozone & Carbon Monoxide profiles</li>
+                <li>Meteorological station setup</li>
+                <li>Directional pollution mapping</li>
+              </ul>
+              <a href="files/8-ambientair.html" class="svc-learn-more">Learn More</a>
+            </div>
+          </div>
+
+          <!-- CEMS Card -->
+          <div class="svc-card" id="cems">
+            <div class="svc-card-img-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bbbda5046849?w=800&q=80"
+                alt="CEMS Solutions" class="svc-card-img">
+              <div class="svc-card-chip">CPCB CONNECT · REAL-TIME</div>
+            </div>
+            <div class="svc-card-body">
+              <h3 class="svc-card-title">CEMS Solutions</h3>
+              <p class="svc-card-desc">Expert support for Continuous Emission Monitoring Systems (CEMS) and OCEMS connectivity to CPCB/SPCB central servers.</p>
+              <div class="svc-card-divider"></div>
+              <ul class="svc-card-list">
+                <li>Analyzer selection & setup</li>
+                <li>Real-time data calibration</li>
+                <li>Server connectivity management</li>
+                <li>System uptime auditing</li>
+                <li>Digital performance dashboards</li>
+              </ul>
+              <a href="files/8-cems.html" class="svc-learn-more">Learn More</a>
             </div>
           </div>
         </div>
@@ -406,6 +454,49 @@
   <div id="footer-root"></div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script>
+    // Position category nav dropdowns properly
+    function positionCategoryDropdowns() {
+      const nav = document.querySelector('.sp-sub-nav');
+      if (!nav) return;
+      const navRect = nav.getBoundingClientRect();
+      
+      document.querySelectorAll('.sp-sub-nav-item').forEach(item => {
+        const dropdown = item.querySelector('.sp-dropdown');
+        if (!dropdown) return;
+        
+        const rect = item.getBoundingClientRect();
+        const itemCenter = rect.left + (rect.width / 2);
+        
+        // Relative coordinates are needed because the parent .sp-sub-nav has 
+        // a transform/perspective, making it a containing block for fixed children.
+        dropdown.style.top = (rect.bottom - navRect.top + 2) + 'px';
+        dropdown.style.left = (itemCenter - navRect.left) + 'px';
+        dropdown.style.transform = 'scale(1) translateY(0px) translateX(-50%)';
+      });
+    }
+    
+    // Position on load and on interactions
+    document.addEventListener('DOMContentLoaded', () => {
+      positionCategoryDropdowns();
+      const inner = document.querySelector('.sp-sub-nav-inner');
+      if (inner) {
+        inner.addEventListener('scroll', positionCategoryDropdowns, { passive: true });
+      }
+    });
+    window.addEventListener('resize', positionCategoryDropdowns);
+    window.addEventListener('scroll', positionCategoryDropdowns, { passive: true });
+
+    // Service card click handler
+    document.querySelectorAll('.svc-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.tagName !== 'A') {
+          const link = this.querySelector('.svc-learn-more');
+          if (link) link.click();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

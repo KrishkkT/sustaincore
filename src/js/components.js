@@ -13,8 +13,8 @@ export const header = `
   
   <div class="hidden md:flex items-center gap-8">
     <a href="/" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Home</a>
-    <div class="nav-item-services group/mega">
-      <a href="/services.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200 flex items-center gap-1">
+    <div class="nav-item-services group/mega" id="nav-services-dropdown">
+      <a class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200 flex items-center gap-1 cursor-pointer" id="nav-services-toggle">
         Services 
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover/mega:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
       </a>
@@ -178,10 +178,10 @@ export const footer = `
     <div>
       <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-8 tracking-wide">Solutions</h4>
       <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
-        <li><a href="/services.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">ESG Reporting</a></li>
-        <li><a href="/services.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Carbon Solutions</a></li>
-        <li><a href="/services.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Compliance</a></li>
-        <li><a href="/services.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Environmental Testing</a></li>
+        <li><a href="/esg-reporting.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">ESG Reporting</a></li>
+        <li><a href="/carbon-climate.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Carbon Solutions</a></li>
+        <li><a href="/ratings-targets.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Ratings & Targets</a></li>
+        <li><a href="/clearances-eia.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Clearance & Compliance</a></li>
       </ul>
     </div>
 

@@ -8,7 +8,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
                 about: resolve(__dirname, 'about.html'),
-                services: resolve(__dirname, 'services.html'),
+
                 cbam: resolve(__dirname, 'cbam.html'),
                 insights: resolve(__dirname, 'insights.html'),
                 contact: resolve(__dirname, 'contact.html'),

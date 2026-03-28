@@ -527,6 +527,7 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   overflow: visible;
+  perspective: 1000px;
 }
 
 .sp-sub-nav-inner {
@@ -748,12 +749,23 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  position: relative;
+  cursor: pointer;
 }
 
 .svc-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
   border-color: var(--sp-green);
+}
+
+.svc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 5;
+  cursor: pointer;
 }
 
 .svc-card-img-wrap {
@@ -850,10 +862,15 @@
   color: var(--sp-green);
   text-decoration: none;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  transition: gap 0.3s ease;
+  display: block;
+  padding: 1.5rem 0;
+  transition: color 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.svc-card:hover .svc-learn-more {
+  color: var(--sp-blue);
 }
 
 .svc-learn-more:hover {
@@ -863,6 +880,7 @@
 /* --- Dropdown Styles --- */
 .sp-sub-nav-item {
   position: relative;
+  z-index: 50;
 }
 
 .sp-dropdown-toggle::after {
@@ -877,26 +895,26 @@
 }
 
 .sp-dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
+  position: fixed;
   background: white;
-  min-width: 200px;
+  min-width: 250px;
   border-radius: 1.5rem;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0.75rem;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(10px);
+  transform: scale(0.95) translateY(-10px);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 100;
+  z-index: 9999;
+  pointer-events: none;
 }
 
 .sp-sub-nav-item:hover .sp-dropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateY(5px);
+  transform: scale(1) translateY(0px);
+  pointer-events: auto;
 }
 
 .sp-dropdown-link {

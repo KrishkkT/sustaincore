@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script>(function(){const t=localStorage.getItem('sustain-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');})();</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Insights | Environmental Intelligence & Industry Trends</title>
@@ -43,7 +44,7 @@
         <section class="bg-brand-softGray dark:bg-slate-900/50 py-32 rounded-[3.5rem] mx-6 mb-40 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
             <div class="absolute top-0 right-0 w-full h-full bg-[url('/grid.svg')] opacity-[0.05]"></div>
             <div class="max-w-7xl mx-auto px-12 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-16">
                     <div>
                         <div class="text-[10px] font-bold text-brand-blue uppercase tracking-[0.4em] mb-8">The Data Narrative</div>
                         <h2 class="text-4xl md:text-6xl font-display font-black text-brand-charcoal dark:text-white leading-tight mb-8">
@@ -74,22 +75,65 @@
                 </div>
 
                 <!-- Live Indicators (Expanded Charts) -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="p-8 bg-white/85 dark:bg-slate-800/60 backdrop-blur-xl border border-white dark:border-slate-700 rounded-3xl h-[320px]">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Carbon Index (1980-2024)</div>
-                        <div class="h-[220px]"><canvas id="c1"></canvas></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                    <!-- 01: Planet in Distress -->
+                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                        <div class="w-full text-left flex items-center gap-3 mb-8">
+                            <span class="w-4 h-[1px] bg-red-500"></span>
+                            <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.3em]">01 — Planet in Distress</span>
+                        </div>
+                        <div class="w-full h-[220px] mb-8"><canvas id="c1"></canvas></div>
+                        <div class="text-center space-y-4">
+                            <div class="text-7xl font-display font-black text-white leading-none">1.6<span class="text-red-500">°C</span></div>
+                            <h3 class="text-xl font-bold text-white tracking-tight">Above pre-industrial levels in 2024</h3>
+                            <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">2024 was the warmest year in 175 years of records — the first to breach 1.5°C. The 10 warmest years all occurred in the last decade.</p>
+                            <div class="text-[9px] font-bold text-slate-600 uppercase tracking-widest pt-4">Source: COPERNICUS / NASA / NOAA</div>
+                        </div>
                     </div>
-                    <div class="p-8 bg-white/85 dark:bg-slate-800/60 backdrop-blur-xl border border-white dark:border-slate-700 rounded-3xl h-[320px]">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Annual CO₂ Output</div>
-                        <div class="h-[220px]"><canvas id="c2"></canvas></div>
+
+                    <!-- 02: Industry Impact -->
+                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                        <div class="w-full text-left flex items-center gap-3 mb-8">
+                            <span class="w-4 h-[1px] bg-amber-600"></span>
+                            <span class="text-[10px] font-bold text-amber-600 uppercase tracking-[0.3em]">02 — Industry Impact</span>
+                        </div>
+                        <div class="w-full h-[220px] mb-8"><canvas id="c2"></canvas></div>
+                        <div class="text-center space-y-4">
+                            <div class="text-7xl font-display font-black text-white leading-none">37<span class="text-amber-600">Gt</span></div>
+                            <h3 class="text-xl font-bold text-white tracking-tight">Global CO₂ emissions from industry in 2023</h3>
+                            <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">Industrial CO₂ hit a record high in 2023. Manufacturing, energy and construction account for over 70% of all global emissions.</p>
+                            <div class="text-[9px] font-bold text-slate-600 uppercase tracking-widest pt-4">Source: IEA / GLOBAL CARBON PROJECT</div>
+                        </div>
                     </div>
-                    <div class="p-8 bg-white/85 dark:bg-slate-800/60 backdrop-blur-xl border border-white dark:border-slate-700 rounded-3xl h-[320px]">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Economic Risk Projection ($T)</div>
-                        <div class="h-[220px]"><canvas id="c3"></canvas></div>
+
+                    <!-- 03: Business Risk -->
+                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                        <div class="w-full text-left flex items-center gap-3 mb-8">
+                            <span class="w-4 h-[1px] bg-yellow-500"></span>
+                            <span class="text-[10px] font-bold text-yellow-500 uppercase tracking-[0.3em]">03 — Business Risk</span>
+                        </div>
+                        <div class="w-full h-[220px] mb-8"><canvas id="c3"></canvas></div>
+                        <div class="text-center space-y-4">
+                            <div class="text-7xl font-display font-black text-white leading-none"><span class="text-yellow-500">$</span>38<span class="text-yellow-500">T</span></div>
+                            <h3 class="text-xl font-bold text-white tracking-tight">Projected GDP loss from climate damage by 2050</h3>
+                            <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">Climate risk will wipe 10–23% from global GDP by 2100. Companies without a sustainability strategy face the steepest losses.</p>
+                            <div class="text-[9px] font-bold text-slate-600 uppercase tracking-widest pt-4">Source: SWISS RE / WEF</div>
+                        </div>
                     </div>
-                    <div class="p-8 bg-white/85 dark:bg-slate-800/60 backdrop-blur-xl border border-white dark:border-slate-700 rounded-3xl h-[320px]">
-                        <div class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Green Tech Market Growth</div>
-                        <div class="h-[220px]"><canvas id="c4"></canvas></div>
+
+                    <!-- 04: The Opportunity Window -->
+                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                        <div class="w-full text-left flex items-center gap-3 mb-8">
+                            <span class="w-4 h-[1px] bg-emerald-500"></span>
+                            <span class="text-[10px] font-bold text-emerald-500 uppercase tracking-[0.3em]">04 — The Opportunity Window</span>
+                        </div>
+                        <div class="w-full h-[220px] mb-8"><canvas id="c4"></canvas></div>
+                        <div class="text-center space-y-4">
+                            <div class="text-7xl font-display font-black text-white leading-none"><span class="text-emerald-500">$</span>14<span class="text-emerald-500">T</span></div>
+                            <h3 class="text-xl font-bold text-white tracking-tight">Green economy market size by 2030</h3>
+                            <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">Every $1 invested in sustainability generates up to $1.9 in avoided losses. The green economy is the fastest-growing market on the planet.</p>
+                            <div class="text-[9px] font-bold text-slate-600 uppercase tracking-widest pt-4">Source: WEF / CDP</div>
+                        </div>
                     </div>
                 </div>
             </div>

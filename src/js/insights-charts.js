@@ -19,27 +19,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Chart.js Configuration
     if (typeof Chart !== 'undefined') {
-        const GRID = 'rgba(255,255,255,0.06)';
-        const TICK = 'rgba(255,255,255,0.3)';
-        const FONT = { family: 'Inter', size: 10 };
+        const GRID = 'rgba(255,255,255,0.08)';
+        const TICK = 'rgba(255,255,255,0.6)';
+        const FONT = { family: 'Inter', size: 10, weight: 500 };
 
         function baseOpts(yLabel) {
             return {
                 responsive: true,
                 maintainAspectRatio: false,
-                animation: { duration: 1200, easing: 'easeOutQuart' },
-                plugins: { legend: { display: false }, tooltip: { enabled: false } },
+                layout: { padding: { top: 10, bottom: 5, left: 0, right: 0 } },
+                animation: { duration: 1600, easing: 'easeOutQuart' },
+                plugins: { 
+                    legend: { display: false }, 
+                    tooltip: { 
+                        enabled: true,
+                        backgroundColor: '#111',
+                        padding: 12,
+                        cornerRadius: 8,
+                        displayColors: false
+                    } 
+                },
                 scales: {
                     x: {
-                        ticks: { color: TICK, font: FONT, maxRotation: 0 },
-                        grid: { color: GRID, drawBorder: false },
-                        border: { color: 'rgba(255,255,255,0.15)' }
+                        ticks: { color: TICK, font: FONT, padding: 10 },
+                        grid: { color: GRID, drawOnChartArea: true, drawTicks: false },
+                        border: { display: true, color: 'rgba(255,255,255,0.2)', width: 1 }
                     },
                     y: {
-                        title: { display: true, text: yLabel, color: 'rgba(255,255,255,0.3)', font: { family:'Inter', size:9 } },
-                        ticks: { color: TICK, font: FONT },
-                        grid: { color: GRID, drawBorder: false },
-                        border: { color: 'rgba(255,255,255,0.15)' }
+                        ticks: { color: TICK, font: FONT, padding: 10 },
+                        grid: { color: GRID, drawOnChartArea: true, drawTicks: false },
+                        border: { display: true, color: 'rgba(255,255,255,0.2)', width: 1 }
                     }
                 }
             };
@@ -53,11 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     labels: ['1980','1985','1990','1995','2000','2005','2010','2015','2020','2024'],
                     datasets: [{
                         data: [0.27, 0.12, 0.45, 0.38, 0.42, 0.68, 0.72, 0.90, 1.02, 1.60],
-                        borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.08)',
-                        borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#ef4444', fill: true, tension: 0.4
+                        borderColor: '#ef4444', 
+                        backgroundColor: 'rgba(239,68,68,0.05)',
+                        borderWidth: 3, pointRadius: 4, pointBackgroundColor: '#ef4444', fill: true, tension: 0.4
                     }]
                 },
-                options: { ...baseOpts('°C above baseline'), scales: { ...baseOpts('°C above baseline').scales, y: { ...baseOpts('°C above baseline').scales.y, min: 0, max: 1.8 } } }
+                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 0, max: 2.0, ticks: { ...baseOpts().scales.y.ticks, stepSize:0.5 } } } }
             });
         }
 
@@ -69,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     labels: ['2000','2005','2010','2015','2018','2020','2021','2022','2023'],
                     datasets: [{
                         data: [25.0, 28.5, 32.0, 33.5, 34.8, 31.5, 33.9, 36.0, 37.0],
-                        backgroundColor: 'rgba(249,115,22,0.6)', borderColor: '#f97316', borderWidth: 1, borderRadius: 3
+                        backgroundColor: 'rgba(180,83,9,0.7)', borderColor: '#b45309', borderWidth: 1, borderRadius: 4
                     }]
                 },
-                options: { ...baseOpts('GtCO₂'), scales: { ...baseOpts('GtCO₂').scales, y: { ...baseOpts('GtCO₂').scales.y, min: 20, max: 40 } } }
+                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 20, max: 40, ticks: { ...baseOpts().scales.y.ticks, stepSize:5 } } } }
             });
         }
 
@@ -84,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     labels: ['2025','2030','2035','2040','2045','2050'],
                     datasets: [{
                         data: [2.5, 6.0, 12.0, 20.0, 30.0, 38.0],
-                        backgroundColor: 'rgba(234,179,8,0.6)', borderColor: '#eab308', borderWidth: 1, borderRadius: 3
+                        backgroundColor: 'rgba(202,138,4,0.7)', borderColor: '#ca8a04', borderWidth: 1, borderRadius: 4
                     }]
                 },
-                options: { ...baseOpts('$T projected loss'), scales: { ...baseOpts('$T projected loss').scales, y: { ...baseOpts('$T projected loss').scales.y, min: 0, max: 42 } } }
+                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 0, max: 45, ticks: { ...baseOpts().scales.y.ticks, stepSize:10 } } } }
             });
         }
 
@@ -99,11 +109,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     labels: ['2018','2019','2020','2021','2022','2023','2024','2025','2027','2030'],
                     datasets: [{
                         data: [3.0, 3.5, 3.8, 4.2, 4.8, 5.3, 6.0, 7.2, 10.0, 14.0],
-                        borderColor: '#4caf7d', backgroundColor: 'rgba(76,175,125,0.1)',
-                        borderWidth: 2, pointRadius: 3, pointBackgroundColor: '#4caf7d', fill: true, tension: 0.4
+                        borderColor: '#10b981', 
+                        backgroundColor: 'rgba(16,185,129,0.05)',
+                        borderWidth: 3, pointRadius: 4, pointBackgroundColor: '#10b981', fill: true, tension: 0.4
                     }]
                 },
-                options: { ...baseOpts('Market size ($T)'), scales: { ...baseOpts('Market size ($T)').scales, y: { ...baseOpts('Market size ($T)').scales.y, min: 0, max: 16 } } }
+                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 0, max: 16, ticks: { ...baseOpts().scales.y.ticks, stepSize:4 } } } }
             });
         }
     }
