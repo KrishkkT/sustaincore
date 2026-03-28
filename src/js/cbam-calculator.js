@@ -6,11 +6,6 @@ import { CN_CODES } from './cbam-data.js';
  */
 
 // ─── CONSTANTS ─────────────────────────────────────────────────────────
-// ... [rest of the file content] ...
-// (Note: I will include the full updated file content in the ReplacementContent)
-
-
-// ─── CONSTANTS ─────────────────────────────────────────────────────────
 const CBAM_FACTORS = {
     2026: 0.025, 2027: 0.05, 2028: 0.10, 2029: 0.16, 
     2030: 0.22, 2031: 0.34, 2032: 0.49, 2033: 0.70, 2034: 1.00
@@ -133,7 +128,7 @@ function simpleCalc() {
 let rowCounter = 0;
 
 function getSectorCNOptions(sector) {
-    // Filter CN_CODES from cbam-data.js (assumed global or imported)
+    // Filter CN_CODES from imported module
     return CN_CODES.filter(c => c[2] === sector).map(c => {
         const total = (c[3] || 0) + (c[4] || 0);
         return `<option value="${c[0]}" data-def="${total.toFixed(3)}">${c[0]} — ${c[1].substring(0,60)}...</option>`;
@@ -161,20 +156,20 @@ function addProductRow(sectorDefault = 'steel') {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-end">
             <div class="space-y-2">
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Sector</label>
-                <select class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="updateCnList(${id}, this.value)">${sectorOpts}</select>
+                <select class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.updateCnList(${id}, this.value)">${sectorOpts}</select>
             </div>
             <div class="space-y-2 lg:col-span-2">
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Product / CN Code <span id="def-hint-${id}" class="text-brand-green font-bold normal-case"></span></label>
-                <select id="cn-sel-${id}" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="onCnChange(${id})">${cnOpts}</select>
+                <select id="cn-sel-${id}" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.onCnChange(${id})">${cnOpts}</select>
             </div>
             <div class="space-y-2">
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Vol (t/yr)</label>
-                <input type="number" id="vol-${id}" value="1000" min="0" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" oninput="detailCalc()" />
+                <input type="number" id="vol-${id}" value="1000" min="0" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" oninput="window.detailCalc()" />
             </div>
             <div class="space-y-2 relative">
-                <button onclick="removeRow(${id})" class="absolute -top-6 right-0 text-red-500 hover:text-red-600 text-xs font-bold transition-colors" title="Remove row">✕ Remove</button>
+                <button onclick="window.removeRow(${id})" class="absolute -top-6 right-0 text-red-500 hover:text-red-600 text-xs font-bold transition-colors" title="Remove row">✕ Remove</button>
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Actual EF</label>
-                <input type="number" id="aef-${id}" step="0.001" placeholder="Verified" class="w-full bg-emerald-50/50 dark:bg-emerald-900/5 border border-emerald-100 dark:border-emerald-900/20 rounded-xl px-4 py-3 text-xs font-bold text-emerald-600 dark:text-emerald-400 outline-none" oninput="detailCalc()" />
+                <input type="number" id="aef-${id}" step="0.001" placeholder="Verified" class="w-full bg-emerald-50/50 dark:bg-emerald-900/5 border border-emerald-100 dark:border-emerald-900/20 rounded-xl px-4 py-3 text-xs font-bold text-emerald-600 dark:text-emerald-400 outline-none" oninput="window.detailCalc()" />
             </div>
         </div>
     `;
@@ -366,28 +361,54 @@ function setDL(i) {
 function tick() {
     const now = new Date(), diff = DEADLINES[curDL].date - now;
     if (diff <= 0) {
-        ['cd-d', 'cd-h', 'cd-m', 'cd-s'].forEach(id => document.getElementById(id).textContent = '00');
+        ['cd-d', 'cd-h', 'cd-m', 'cd-s'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = '00';
+        });
         return;
     }
     const d = Math.floor(diff / 864e5), h = Math.floor(diff % 864e5 / 36e5), m = Math.floor(diff % 36e5 / 6e4), s = Math.floor(diff % 6e4 / 1e3);
-    document.getElementById('cd-d').textContent = String(d).padStart(2, '0');
-    document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
-    document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
-    document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+    const dayEl = document.getElementById('cd-d');
+    const hrEl = document.getElementById('cd-h');
+    const minEl = document.getElementById('cd-m');
+    const secEl = document.getElementById('cd-s');
+    
+    if (dayEl) dayEl.textContent = String(d).padStart(2, '0');
+    if (hrEl) hrEl.textContent = String(h).padStart(2, '0');
+    if (minEl) minEl.textContent = String(m).padStart(2, '0');
+    if (secEl) secEl.textContent = String(s).padStart(2, '0');
 }
 
 // ─── INITIALIZATION ────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
     // Initial Calc Setup
-    sectorChange();
+    if (document.getElementById('s-sector')) sectorChange();
     
-    // Add 2 initial rows for Detailed Calculator (User requested exactly 2 by default)
-    addProductRow('steel');
-    addProductRow('aluminium');
+    // Add 2 initial rows for Detailed Calculator
+    const rowsCont = document.getElementById('product-rows');
+    if (rowsCont) {
+        addProductRow('steel');
+        addProductRow('aluminium');
+    }
     
-    phaseCalc();
+    if (document.getElementById('po-vol')) phaseCalc();
     
     // Countdown setup
-    setDL(1);
-    setInterval(tick, 1000);
+    if (document.getElementById('cd-name')) {
+        setDL(1);
+        setInterval(tick, 1000);
+    }
 });
+
+// Expose functions to window for inline onclick handlers
+window.setCurrency = setCurrency;
+window.sectorChange = sectorChange;
+window.simpleCalc = simpleCalc;
+window.addProductRow = addProductRow;
+window.updateCnList = updateCnList;
+window.onCnChange = onCnChange;
+window.removeRow = removeRow;
+window.detailCalc = detailCalc;
+window.phaseCalc = phaseCalc;
+window.switchCalcTab = switchCalcTab;
+window.setDL = setDL;
