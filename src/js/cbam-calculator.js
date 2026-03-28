@@ -1,7 +1,14 @@
+import { CN_CODES } from './cbam-data.js';
+
 /**
  * SustainCore CBAM Calculator & Interactive Suite
  * Implements EU methodology (Regulation 2023/956)
  */
+
+// ─── CONSTANTS ─────────────────────────────────────────────────────────
+// ... [rest of the file content] ...
+// (Note: I will include the full updated file content in the ReplacementContent)
+
 
 // ─── CONSTANTS ─────────────────────────────────────────────────────────
 const CBAM_FACTORS = {
