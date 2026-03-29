@@ -50,6 +50,16 @@ function setCurrency(curr) {
         btn.classList.toggle('text-slate-400', !isSelected);
     });
 
+    // Update Slider Labels with Currency conversion
+    const c = CURRENCIES[curr];
+    const ticks = [10, 45, 80, 115, 150];
+    ticks.forEach((val, i) => {
+        const sEl = document.getElementById(`s-ets-l${i+1}`);
+        const dEl = document.getElementById(`d-ets-l${i+1}`);
+        if (sEl) sEl.textContent = c.sym + Math.round(val * c.rate);
+        if (dEl) dEl.textContent = c.sym + Math.round(val * c.rate);
+    });
+
     // Recalculate everything
     simpleCalc();
     detailCalc();
@@ -99,11 +109,20 @@ function sectorChange() {
 
 function simpleCalc() {
     const vol = parseFloat(document.getElementById('s-vol').value) || 0;
-    const ets = parseFloat(document.getElementById('s-ets').value) || 70;
+    const etsBase = parseFloat(document.getElementById('s-ets').value) || 70;
+    const c = CURRENCIES[activeCurr];
+    const ets = etsBase * c.rate; // Scale input by current rate
     
     // Update live display for ETS range
     const etsDisplay = document.getElementById('s-ets-val');
-    if (etsDisplay) etsDisplay.textContent = ets;
+    if (etsDisplay) {
+        etsDisplay.textContent = c.sym + Math.round(ets);
+        // Remove symbol from parent if it's hardcoded
+        const parent = etsDisplay.parentElement;
+        if (parent.innerHTML.includes('€')) {
+            parent.innerHTML = parent.innerHTML.replace('€', '');
+        }
+    }
 
     // Granular inputs
     const defDirectEf = parseFloat(document.getElementById('s-def-direct-ef').value) || 0;
@@ -154,6 +173,19 @@ function simpleCalc() {
     } else if (box) {
         box.style.display = 'none';
     }
+
+    // Update Bottom Summary IDs
+    const rVol = document.getElementById('r-vol');
+    const rDefEf = document.getElementById('r-def-ef');
+    const rActEf = document.getElementById('r-act-ef');
+    const rEts = document.getElementById('r-ets');
+    const rFactor = document.getElementById('r-factor');
+
+    if (rVol) rVol.textContent = fv(vol) + ' t';
+    if (rDefEf) rDefEf.textContent = ft(defDirectEf + defIndirectEf, 3);
+    if (rActEf) rActEf.textContent = ft(actEf, 3);
+    if (rEts) rEts.textContent = c.sym + Math.round(ets) + '/t';
+    if (rFactor) rFactor.textContent = (factor * 100).toFixed(1) + '%';
 }
 
 // ─── DETAILED CN MULTI-PRODUCT ─────────────────────────────────────────
@@ -249,11 +281,20 @@ function removeRow(id) {
 
 function detailCalc() {
     const yr = parseInt(document.getElementById('d-year').value) || 2026;
-    const ets = parseFloat(document.getElementById('d-ets').value) || 70;
-    
+    const etsBase = parseFloat(document.getElementById('d-ets').value) || 70;
+    const c = CURRENCIES[activeCurr];
+    const ets = etsBase * c.rate;
+
     // Update live display for ETS price if it exists
     const etsDisplay = document.getElementById('d-ets-val');
-    if (etsDisplay) etsDisplay.textContent = ets;
+    if (etsDisplay) {
+        etsDisplay.textContent = c.sym + Math.round(ets);
+        // Remove symbol from parent if it's hardcoded
+        const parent = etsDisplay.parentElement;
+        if (parent.innerHTML.includes('€')) {
+            parent.innerHTML = parent.innerHTML.replace('€', '');
+        }
+    }
 
     const factor = CBAM_FACTORS[yr] || 0.025;
     const rows = document.querySelectorAll('#product-rows .product-row');
@@ -378,7 +419,7 @@ function phaseCalc() {
         return `<tr class="${r.yr === 2026 ? 'bg-white/5' : ''} border-b border-white/5 text-[11px]">
             <td class="py-3 px-2 font-bold">${r.yr}</td>
             <td class="py-3 px-2">${(r.f * 100).toFixed(1)}%</td>
-            <td class="py-3 px-2 text-muted-foreground">€${ets}/t</td>
+            <td class="py-3 px-2 text-muted-foreground">${c.sym}${Math.round(ets)}/t</td>
             <td class="py-3 px-2 text-muted-foreground">${r.markup}</td>
             <td class="py-3 px-2">${ft(certs, 0)}</td>
             <td class="py-3 px-2 font-bold text-red-400">${fe(cost)}</td>

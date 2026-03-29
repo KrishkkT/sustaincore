@@ -308,3 +308,82 @@ window.handleSubmit = async function (event) {
         button.innerHTML = originalText;
     }
 };
+
+// Back to Top Button Logic
+const setupBackToTop = () => {
+    // Create button if it doesn't exist
+    if (document.querySelector('.back-to-top')) return;
+
+    const btn = document.createElement('div');
+    btn.className = 'back-to-top';
+    btn.innerHTML = `
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    `;
+    document.body.appendChild(btn);
+
+    // Scroll listener for visibility
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            btn.classList.add('show');
+        } else {
+            btn.classList.remove('show');
+        }
+    });
+
+    // Click listener for smooth scroll
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+};
+
+// Centralized Subscription Engine (Handles all Newsletter forms)
+document.addEventListener('submit', async (e) => {
+    const form = e.target;
+    // Target any form with "newsletter" or "subscribe" in its ID/class
+    if (form.id.includes('newsletter') || form.id.includes('subscribe') || form.classList.contains('subscribe-form')) {
+        e.preventDefault();
+        
+        const emailInput = form.querySelector('input[type="email"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (!emailInput || !submitBtn) return;
+
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'WAIT...';
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: emailInput.value })
+            });
+
+            if (response.ok) {
+                submitBtn.textContent = 'DONE!';
+                emailInput.value = '';
+                if (window.showToast) window.showToast('Subscribed', 'Technical brief added to queue.', 'success');
+            } else if (response.status === 404) {
+                throw new Error("404: API Bridge Offline. Please restart 'npm run dev'.");
+            } else {
+                throw new Error("API Limit reached / Server error");
+            }
+        } catch (err) {
+            console.error("Subscription Error:", err);
+            const errorMsg = err.message.includes('404') ? "API Bridge Offline - Please restart terminal." : "Service Unavailable - Please try again.";
+            if (window.showToast) window.showToast('Sync Error', errorMsg, 'error');
+            submitBtn.textContent = 'RETRY?';
+        } finally {
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }, 4000);
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', setupBackToTop);

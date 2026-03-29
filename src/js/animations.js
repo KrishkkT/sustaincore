@@ -1,14 +1,24 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// SustainCore Global Animations (GSAP)
+// Relying on Global GSAP from CDN for prototype stability
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Smooth entrance for hero text
-    const heroTimeline = gsap.timeline();
-    heroTimeline
-        .to('.animate-fade-in', { opacity: 1, y: 0, duration: 1.2, ease: 'expo.out' })
-        .to('.animate-slide-up', { opacity: 1, y: 0, duration: 1.2, stagger: 0.1, ease: 'expo.out' }, '-=0.8');
+    const fadeInTarget = document.querySelector('.animate-fade-in');
+    const slideUpTarget = document.querySelector('.animate-slide-up');
+    
+    if (fadeInTarget || slideUpTarget) {
+        const heroTimeline = gsap.timeline();
+        if (fadeInTarget) {
+            heroTimeline.to('.animate-fade-in', { opacity: 1, y: 0, duration: 1.2, ease: 'expo.out' });
+        }
+        if (slideUpTarget) {
+            heroTimeline.to('.animate-slide-up', { opacity: 1, y: 0, duration: 1.2, stagger: 0.1, ease: 'expo.out' }, '-=0.8');
+        }
+    }
 
     // 2. Class-based Reveal on Scroll
     const revealElements = gsap.utils.toArray('.reveal-on-scroll');
@@ -81,16 +91,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Parallax Mission Stats
     const statsSection = document.querySelector('.bg-brand-softGray');
     if (statsSection) {
-        gsap.from(statsSection.querySelectorAll('.rounded-4xl'), {
-            y: 60,
-            opacity: 0,
-            stagger: 0.2,
-            scrollTrigger: {
-                trigger: statsSection,
-                start: 'top 85%',
-                once: true
-            }
-        });
+        const statsCards = statsSection.querySelectorAll('.rounded-4xl');
+        if (statsCards.length > 0) {
+            gsap.from(statsCards, {
+                y: 60,
+                opacity: 0,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: statsSection,
+                    start: 'top 85%',
+                    once: true
+                }
+            });
+        }
     }
 
     // 5. Header Stability

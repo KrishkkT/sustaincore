@@ -557,7 +557,7 @@
         }
         .timeline-track {
             position: absolute;
-            top: 216px;
+            top: 102px;
             left: 0;
             width: 100%;
             height: 3px;
@@ -1405,11 +1405,11 @@
                                         <input type="range" id="s-ets" min="10" max="150" value="70" step="1" oninput="simpleCalc()"
                                             class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-blue">
                                         <div class="flex justify-between px-1 text-[8px] font-bold text-slate-400 uppercase tracking-tighter">
-                                            <span>€10</span>
-                                            <span>€45</span>
-                                            <span>€80</span>
-                                            <span>€115</span>
-                                            <span>€150</span>
+                                            <span id="s-ets-l1">€10</span>
+                                            <span id="s-ets-l2">€45</span>
+                                            <span id="s-ets-l3">€80</span>
+                                            <span id="s-ets-l4">€115</span>
+                                            <span id="s-ets-l5">€150</span>
                                         </div>
                                     </div>
 
@@ -1545,6 +1545,13 @@
                                                     </div>
                                                     <input type="range" id="d-ets" min="10" max="150" value="70" step="1" oninput="detailCalc()"
                                                         class="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-blue">
+                                                    <div class="flex justify-between px-1 text-[8px] font-bold text-slate-400 uppercase tracking-tighter">
+                                                        <span id="d-ets-l1">€10</span>
+                                                        <span id="d-ets-l2">€45</span>
+                                                        <span id="d-ets-l3">€80</span>
+                                                        <span id="d-ets-l4">€115</span>
+                                                        <span id="d-ets-l5">€150</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

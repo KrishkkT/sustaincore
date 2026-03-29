@@ -1,0 +1,9 @@
+{
+  "framework": "vite",
+  "devCommand": "npm run start-frontend -- --port 5173",
+  "functions": {
+    "api/*.js": {
+      "runtime": "vercel-node@latest"
+    }
+  }
+}
