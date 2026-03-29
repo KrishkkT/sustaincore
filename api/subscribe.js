@@ -1,19 +1,39 @@
 import fs from 'fs';
 import path from 'path';
 
-const DB_PATH = path.resolve(process.cwd(), 'api', 'db.json');
+const IS_VERCEL = process.env.VERCEL === '1';
+const DB_PATH = IS_VERCEL 
+    ? path.join('/tmp', 'db.json') 
+    : path.resolve(process.cwd(), 'api', 'db.json');
 
 function getDb() {
     try {
-        if (!fs.existsSync(DB_PATH)) return { subscribers: [], articles: [] };
+        if (!fs.existsSync(DB_PATH)) {
+            if (IS_VERCEL) {
+                const bundlePath = path.resolve(process.cwd(), 'api', 'db.json');
+                if (fs.existsSync(bundlePath)) {
+                    fs.copyFileSync(bundlePath, DB_PATH);
+                } else {
+                    return { subscribers: [], articles: [] };
+                }
+            } else {
+                return { subscribers: [], articles: [] };
+            }
+        }
         return JSON.parse(fs.readFileSync(DB_PATH, 'utf8'));
-    } catch {
+    } catch (e) {
+        console.error("Subs DB Read Error:", e);
         return { subscribers: [], articles: [] };
     }
 }
 
 function saveDb(db) {
-    fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+    try {
+        fs.writeFileSync(DB_PATH, JSON.stringify(db, null, 2));
+    } catch (e) {
+        console.error("Subs DB Write Error:", e);
+        throw e;
+    }
 }
 
 export default async function handler(request, response) {
