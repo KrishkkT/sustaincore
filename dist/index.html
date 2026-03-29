@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <script>(function(){const t=localStorage.getItem('sustain-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');})();</script>
+  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SustainCore | Enterprise ESG Consulting & Environmental Solutions</title>
@@ -20,18 +20,41 @@
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
-    rel="stylesheet">
+    rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   <style>
-    .chart-card { background: rgba(15, 23, 42, 0.89); border: 1px solid rgba(148, 163, 184, 0.3); border-radius: 1.5rem; padding: 1rem; min-height: 240px; }
-    .chart-card h3 { font-size: 0.95rem; font-weight: 700; color: #38bdf8; margin-bottom: 0.75rem; }
-    .animate-slide-up { opacity: 0; transform: translateY(16px); animation: slideUpIn 0.8s ease-out forwards; }
-    @keyframes slideUpIn { to { opacity: 1; transform: translateY(0); } }
+    .chart-card {
+      background: rgba(15, 23, 42, 0.89);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 1.5rem;
+      padding: 1rem;
+      min-height: 240px;
+    }
+
+    .chart-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 0.75rem;
+    }
+
+    .animate-slide-up {
+      opacity: 0;
+      transform: translateY(16px);
+      animation: slideUpIn 0.8s ease-out forwards;
+    }
+
+    @keyframes slideUpIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
-  <script type="module" crossorigin src="/assets/main-BvoFQu-e.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/main-BCv0qXQG.js">
-  <link rel="stylesheet" crossorigin href="/assets/main-4R_z5gua.css">
-  <link rel="stylesheet" crossorigin href="/assets/index-sections-UXNgJu8C.css">
+  <script type="module" crossorigin src="/assets/main-Cgy1MK4M.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/main-DjUPexD1.js">
+  <link rel="stylesheet" crossorigin href="/assets/main-AUBD7efo.css">
+  <link rel="stylesheet" crossorigin href="/assets/index-sections-GMmL08BL.css">
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -95,29 +118,65 @@
 
 
   <!-- Crisis narrative / data callout -->
-  <section class="bg-gradient-to-r from-[#fdfaf5] via-[#f8f5ee] to-[#eef2f3] text-brand-charcoal py-20 px-6 md:px-12 rounded-3xl border border-[#e2e8f0] shadow-lg animate-slide-up" id="crisis-cta">
-    <div class="max-w-4xl mx-auto text-center">
-      <div class="space-y-6">
-        <div class="text-[10px] font-bold uppercase tracking-[0.24em] text-brand-green">Why today can’t wait</div>
-        <h2 class="text-4xl md:text-5xl font-black leading-tight">The scale of the crisis</h2>
-        <div class="flex flex-wrap justify-center gap-4">
-          <div class="bg-white border border-slate-200 rounded-3xl p-5 min-w-[150px] shadow-sm">
-            <div class="text-6xl font-display font-black text-brand-green">1.6°C</div>
-            <div class="text-sm uppercase tracking-wider text-slate-500">above pre-industrial levels in 2024</div>
+  <section
+    class="relative overflow-hidden bg-gradient-to-br from-[#fdfaf5] via-[#f8f5ee] to-[#eef2f3] py-28 md:py-32 px-6 md:px-12 w-full animate-slide-up"
+    id="crisis-cta">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Column: Metrics -->
+        <div class="flex flex-col md:flex-row lg:flex-col gap-6 order-2 lg:order-1">
+          <div
+            class="bg-white/70 backdrop-blur-md border border-white/50 rounded-[40px] p-10 flex-1 shadow-xl shadow-brand-green/5 group hover:bg-white transition-all duration-500">
+            <div class="text-7xl md:text-8xl font-display font-black text-brand-green leading-none mb-4" id="stat-temp"
+              data-target="1.6">0</div>
+            <div
+              class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 group-hover:text-slate-600 transition-colors">
+              Above pre-industrial levels (2024)</div>
           </div>
-          <div class="bg-white border border-slate-200 rounded-3xl p-5 min-w-[150px] shadow-sm">
-            <div class="text-6xl font-display font-black text-brand-blue">$38T</div>
-            <div class="text-sm uppercase tracking-wider text-slate-500">GDP risk by 2050</div>
+          <div
+            class="bg-white/70 backdrop-blur-md border border-white/50 rounded-[40px] p-10 flex-1 shadow-xl shadow-brand-blue/5 group hover:bg-white transition-all duration-500 md:mt-8 lg:mt-0">
+            <div class="text-7xl md:text-8xl font-display font-black text-brand-blue leading-none mb-4" id="stat-gdp"
+              data-target="38">0</div>
+            <div
+              class="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400 group-hover:text-slate-600 transition-colors">
+              Total global GDP risk by 2050</div>
           </div>
         </div>
-        <p class="text-lg text-slate-600 leading-relaxed mb-3">1.6°C above pre-industrial levels. 2024 was the warmest year in 175 years of recorded history. The environmental crisis is already reaching business balance sheets — $38 trillion in global GDP is at risk by 2050.</p>
-        <p class="text-lg font-semibold text-brand-charcoal">Those who start today — will lead tomorrow.</p>
-        <a href="/insights.html" class="text-brand-blue font-bold text-lg inline-flex items-center gap-2 hover:text-brand-green">Explore the full data behind the sustainability crisis ↗</a>
+
+        <!-- Right Column: Story -->
+        <div class="text-left order-1 lg:order-2 space-y-8">
+          <div>
+            <div class="text-[11px] font-bold uppercase tracking-[0.3em] text-brand-green mb-6">Why today can’t wait
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black text-brand-charcoal leading-[1.05] tracking-tight">The scale of
+              <br>the crisis.
+            </h2>
+          </div>
+          <div class="space-y-6">
+            <p class="text-xl text-slate-600 leading-relaxed font-medium">
+              1.6&deg;C above pre-industrial levels. 2024 was the warmest year in 175 years of recorded history.
+              The environmental crisis is already reaching business balance sheets —
+              <span class="text-brand-blue font-bold">$38 trillion</span> in global GDP is at risk by 2050.
+            </p>
+            <p class="text-xl font-bold text-brand-charcoal border-l-4 border-brand-green pl-6 py-2">
+              Those who start today — will lead tomorrow.
+            </p>
+          </div>
+          <a href="/insights.html"
+            class="inline-flex items-center gap-3 bg-brand-charcoal text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-brand-blue hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+            Explore the Data
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
-      </div>
-    </div>
+  </div>
+  </div>
   </section>
   <div class="s3">
 
@@ -257,7 +316,7 @@
     </div>
 
     <div class="s3-view-all">
-      <a href="/services.html">View all our services &#8599;</a>
+      <a href="/esg-reporting.html">View all our services &#8599;</a>
     </div>
 
   </div>
@@ -270,7 +329,7 @@
         <div class="s5-cta-label">Get in touch</div>
         <h2 class="s5-cta-headline">Let's build your<br><span class="green">sustainable</span><br><span
             class="outline">future.</span><br>Together.</h2>
-        <p class="s5-cta-sub">Tell us about your business and your sustainability goals. We'll take it from there â€” no
+        <p class="s5-cta-sub">Tell us about your business and your sustainability goals. We'll take it from there — no
           jargon, no obligation.</p>
       </div>
       <form action="https://formspree.io/f/maqlwazp" method="POST" class="s5-cta-right" onsubmit="handleSubmit(event)">
@@ -284,18 +343,18 @@
           <div class="phone-wrap" id="phone-wrap">
             <div class="phone-flag-select">
               <select id="country-select" onchange="updateFlag(this)">
-                <option value="in" data-flag="ðŸ‡®ðŸ‡³" data-code="+91" data-min="10" data-max="10">India (+91)</option>
-                <option value="us" data-flag="ðŸ‡ºðŸ‡¸" data-code="+1" data-min="10" data-max="10">USA (+1)</option>
-                <option value="gb" data-flag="ðŸ‡¬ðŸ‡§" data-code="+44" data-min="10" data-max="10">UK (+44)</option>
-                <option value="ae" data-flag="ðŸ‡¦ðŸ‡ª" data-code="+971" data-min="9" data-max="9">UAE (+971)</option>
-                <option value="sg" data-flag="ðŸ‡¸ðŸ‡¬" data-code="+65" data-min="8" data-max="8">Singapore (+65)</option>
-                <option value="au" data-flag="ðŸ‡¦ðŸ‡º" data-code="+61" data-min="9" data-max="9">Australia (+61)</option>
-                <option value="de" data-flag="ðŸ‡©ðŸ‡ª" data-code="+49" data-min="10" data-max="11">Germany (+49)</option>
-                <option value="ca" data-flag="ðŸ‡¨ðŸ‡¦" data-code="+1" data-min="10" data-max="10">Canada (+1)</option>
-                <option value="fr" data-flag="ðŸ‡«ðŸ‡·" data-code="+33" data-min="9" data-max="9">France (+33)</option>
+                <option value="in" data-flag="🇮🇳" data-code="+91" data-min="10" data-max="10">India (+91)</option>
+                <option value="us" data-flag="🇺🇸" data-code="+1" data-min="10" data-max="10">USA (+1)</option>
+                <option value="gb" data-flag="🇬🇧" data-code="+44" data-min="10" data-max="10">UK (+44)</option>
+                <option value="ae" data-flag="🇦🇪" data-code="+971" data-min="9" data-max="9">UAE (+971)</option>
+                <option value="sg" data-flag="🇸🇬" data-code="+65" data-min="8" data-max="8">Singapore (+65)</option>
+                <option value="au" data-flag="🇦🇺" data-code="+61" data-min="9" data-max="9">Australia (+61)</option>
+                <option value="de" data-flag="🇩🇪" data-code="+49" data-min="10" data-max="11">Germany (+49)</option>
+                <option value="ca" data-flag="🇨🇦" data-code="+1" data-min="10" data-max="10">Canada (+1)</option>
+                <option value="fr" data-flag="🇫🇷" data-code="+33" data-min="9" data-max="9">France (+33)</option>
               </select>
               <div class="flag-display">
-                <span class="flag-emoji" id="flag-emoji">ðŸ‡®ðŸ‡³</span>
+                <span class="flag-emoji" id="flag-emoji">🇮🇳</span>
                 <span class="flag-code" id="flag-code">+91</span>
                 <span class="flag-arrow">&#9660;</span>
               </div>
@@ -346,8 +405,7 @@
       </button>
     </div>
   </div>
-
+
 </body>
 
 </html>
-

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Workplace Air Quality Monitoring — SustainCore Environmental Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+.reveal-d3{transition-delay:.3s;}
+.reveal-d4{transition-delay:.4s;}
+
+/* TWA / STEL limits visual */
+.exposure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+.exp-card{background:var(--w);border-radius:14px;border:1px solid var(--bdr);padding:1.3rem 1.25rem;transition:border-color .2s,box-shadow .2s;}
+.exp-card:hover{border-color:var(--g35);box-shadow:0 8px 20px rgba(26,74,107,.08);}
+.exp-pollutant{font-size:13px;font-weight:600;color:var(--text);margin-bottom:.25rem;}
+.exp-formula{font-size:10.5px;font-weight:400;color:var(--muted);margin-bottom:.6rem;font-style:italic;}
+.exp-limits{display:flex;gap:.75rem;}
+.exp-limit{flex:1;background:var(--bg2);border-radius:8px;padding:.55rem .65rem;border:1px solid var(--bdr);}
+.exp-limit-label{font-size:8.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.2rem;}
+.exp-limit-val{font-size:12.5px;font-weight:600;color:var(--text);}
+.exp-limit-unit{font-size:10px;font-weight:300;color:var(--muted);}
+
+/* Zone map strip */
+.zone-strip{display:flex;gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--bdr);margin-top:2rem;}
+.zone-block{flex:1;padding:1.25rem 1rem;background:var(--w);border-right:1px solid var(--bdr);}
+.zone-block:last-child{border-right:none;}
+.zone-code{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:.4rem;}
+.zone-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:.35rem;}
+.zone-ex{font-size:11.5px;font-weight:300;color:var(--muted);line-height:1.6;}
+</style>
+  <link rel="stylesheet" crossorigin href="/assets/sustaincore-shared-DnZQpHfI.css">
+</head>
+<body>
+
+<nav class="sc-nav">
+  <a href="../index.html" class="sc-nav-logo">
+    <svg viewBox="0 0 200 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59"/>
+      <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z" fill="#1a4a6b"/>
+      <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17" fill="#4a7c59">Sustain</text>
+      <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17" fill="#1a4a6b">Core</text>
+      <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61" letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
+    </svg>
+  </a>
+  <ul class="sc-nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../sustaincore_services.html" class="active">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Insights</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#contact" class="sc-nav-cta">Free Consultation</a>
+</nav>
+
+<div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
+<div class="bc">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../sustaincore_services.html">Services</a>
+  <span class="sep">/</span>
+  <a href="../sustaincore_services.html">Air Quality Monitoring</a>
+  <span class="sep">/</span>
+  <span class="sep">Workplace Air Quality Monitoring</span>
+</div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-hero-tag">Air Quality Monitoring &middot; Category 05</div>
+    <h1 class="svc-hero-title">Workplace Air<br><em>Quality Monitoring</em><br><span class="bt">OEL &middot; TWA &middot; STEL Assessment</span></h1>
+    <div class="svc-hero-body">
+      <p class="svc-hero-desc">Workplace air quality monitoring measures the concentration of airborne chemical, dust and biological hazards at worker breathing zones inside your facility &mdash; comparing them against Occupational Exposure Limits (OELs). <strong>It is a legal duty under the Factories Act, 1948, the Manufacture, Storage and Import of Hazardous Chemicals Rules and ISO 45001.</strong> It also directly drives your EcoVadis Labour score and BRSR Principle 5 disclosures on worker health and safety.</p>
+      <div class="svc-hero-pills">
+        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>Factories Act</strong> 1948 Compliance</div>
+        <div class="svc-hero-pill blue"><span class="pill-icon"></span>ACGIH TLV / IS 5182 Methods</div>
+        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>Personal &amp; Area</strong> Sampling</div>
+        <div class="svc-hero-pill blue"><span class="pill-icon"></span>NABL Accredited Analysis</div>
+        <div class="svc-hero-pill"><span class="pill-icon"></span>ISO 45001 aligned</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+    <div class="svc-hero-img">
+      <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80" alt="Workplace air quality monitoring industrial hygiene sampling"/>
+      <div class="svc-hero-img-caption">
+        <div class="svc-hero-img-title">Protecting Workers<br><em>at the Breathing Zone</em></div>
+        <div class="svc-hero-stat-row">
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">700+</div><div class="svc-hero-stat-l">Chemicals with OEL limits</div></div>
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">8 hr</div><div class="svc-hero-stat-l">TWA reference period</div></div>
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">NABL</div><div class="svc-hero-stat-l">Accredited lab analysis</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="rule" style="margin-top:3rem;"></div>
+
+<!-- STATS -->
+<div class="svc-section">
+  <div class="stats-row reveal">
+    <div class="stat-block"><div class="stat-block-v">700+</div><div class="stat-block-l">Chemical substances with established OEL limits</div></div>
+    <div class="stat-block"><div class="stat-block-v">8 hr</div><div class="stat-block-l">TWA reference shift for chronic exposure assessment</div></div>
+    <div class="stat-block"><div class="stat-block-v">15 min</div><div class="stat-block-l">STEL reference period for acute peak exposure</div></div>
+    <div class="stat-block"><div class="stat-block-v">NABL</div><div class="stat-block-l">Accredited analysis &mdash; court &amp; tribunal valid</div></div>
+  </div>
+
+  <!-- OEL EXAMPLES -->
+  <div class="sec-label">Key occupational exposure limits</div>
+  <h2 class="sec-title">Substances we monitor &mdash;<br><em>with TWA and STEL reference limits</em></h2>
+  <p class="sec-sub">We measure personal and area concentrations against ACGIH Threshold Limit Values (TLVs), OSHA PELs and Indian Factory Schedule standards. Below are commonly monitored substances across industrial sectors.</p>
+  <div class="exposure-grid">
+    <div class="exp-card">
+      <div class="exp-pollutant">Total Inhalable Dust</div>
+      <div class="exp-formula">PNOR / Nuisance dust</div>
+      <div class="exp-limits">
+        <div class="exp-limit"><div class="exp-limit-label">TWA</div><div class="exp-limit-val">10 <span class="exp-limit-unit">mg/m³</span></div></div>
+        <div class="exp-limit"><div class="exp-limit-label">Respirable</div><div class="exp-limit-val">3 <span class="exp-limit-unit">mg/m³</span></div></div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-pollutant">Silica (Crystalline)</div>
+      <div class="exp-formula">SiO₂ — Respirable fraction</div>
+      <div class="exp-limits">
+        <div class="exp-limit"><div class="exp-limit-label">TWA</div><div class="exp-limit-val">0.025 <span class="exp-limit-unit">mg/m³</span></div></div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-pollutant">Carbon Monoxide</div>
+      <div class="exp-formula">CO</div>
+      <div class="exp-limits">
+        <div class="exp-limit"><div class="exp-limit-label">TWA</div><div class="exp-limit-val">25 <span class="exp-limit-unit">ppm</span></div></div>
+        <div class="exp-limit"><div class="exp-limit-label">STEL</div><div class="exp-limit-val">200 <span class="exp-limit-unit">ppm</span></div></div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-pollutant">Ammonia</div>
+      <div class="exp-formula">NH₃</div>
+      <div class="exp-limits">
+        <div class="exp-limit"><div class="exp-limit-label">TWA</div><div class="exp-limit-val">25 <span class="exp-limit-unit">ppm</span></div></div>
+        <div class="exp-limit"><div class="exp-limit-label">STEL</div><div class="exp-limit-val">35 <span class="exp-limit-unit">ppm</span></div></div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-pollutant">Toluene</div>
+      <div class="exp-formula">C₆H₅CH₃ — VOC</div>
+      <div class="exp-limits">
+        <div class="exp-limit"><div class="exp-limit-label">TWA</div><div class="exp-limit-val">20 <span class="exp-limit-unit">ppm</span></div></div>
+        <div class="exp-limit"><div class="exp-limit-label">STEL</div><div class="exp-limit-val">75 <span class="exp-limit-unit">ppm</span></div></div>
+      </div>
+    </div>
+    <div class="exp-card">
+      <div class="exp-pollutant">Sulphur Dioxide</div>
+      <div class="exp-formula">SO₂</div>
+      <div class="exp-limits">
+        <div class="exp-limit"><div class="exp-limit-label">TWA</div><div class="exp-limit-val">0.25 <span class="exp-limit-unit">ppm</span></div></div>
+        <div class="exp-limit"><div class="exp-limit-label">STEL</div><div class="exp-limit-val">0.50 <span class="exp-limit-unit">ppm</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MONITORING ZONES -->
+  <div class="sec-label mt3">Monitoring zone types</div>
+  <h2 class="sec-title">Where we sample &mdash;<br><em>personal, area and source zones</em></h2>
+  <p class="sec-sub">A comprehensive workplace air quality survey covers three distinct sampling zones, each answering a different question about worker exposure and emission source control.</p>
+  <div class="zone-strip">
+    <div class="zone-block">
+      <div class="zone-code">Zone A</div>
+      <div class="zone-name">Personal Breathing Zone</div>
+      <div class="zone-ex">Lapel or helmet-mounted personal air sampler worn by the worker for the full 8-hour shift. Provides the most legally defensible measure of individual exposure. Required for ACGIH TLV/TWA comparison and chronic health risk assessment.</div>
+    </div>
+    <div class="zone-block">
+      <div class="zone-code">Zone B</div>
+      <div class="zone-name">Area / General Workplace</div>
+      <div class="zone-ex">Fixed samplers placed at representative locations across the work area at breathing height (1.5m). Identifies spatial distribution of contamination and areas requiring engineering controls or improved ventilation.</div>
+    </div>
+    <div class="zone-block">
+      <div class="zone-code">Zone C</div>
+      <div class="zone-name">Source / Near-Process Zone</div>
+      <div class="zone-ex">Samplers positioned close to specific emission sources — open tanks, mixing operations, welding points, furnace openings — to characterise source strength for local exhaust ventilation design.</div>
+    </div>
+    <div class="zone-block">
+      <div class="zone-code">Zone D</div>
+      <div class="zone-name">Control Room / Office</div>
+      <div class="zone-ex">Background and control zone measurements confirming that engineering barriers are effective and that administrative and clerical workers near production areas are not at risk of secondary exposure.</div>
+    </div>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <div class="sec-label mt3">Why it matters</div>
+  <h2 class="sec-title">Worker exposure is a legal,<br><em>ethical and commercial obligation.</em></h2>
+  <p class="sec-sub">Unmonitored workplace air quality exposes your business to criminal liability, insurance exclusions, occupational disease compensation claims, ISO 45001 non-conformances and EcoVadis score penalties &mdash; simultaneously.</p>
+  <div class="why-grid mt2">
+    <div class="why-card reveal reveal-d1">
+      <div class="why-card-n">01</div>
+      <div class="why-card-title">Factories Act Legal Duty</div>
+      <div class="why-card-desc">Under Sections 11&ndash;20 of the Factories Act, 1948, employers have a statutory duty to maintain workplace environments free from hazardous concentrations of dust, fumes and chemicals. Factory Inspectors have powers to enter, inspect and prosecute. Failure to monitor is itself an offence, independent of whether actual exposures exceed limits.</div>
+    </div>
+    <div class="why-card reveal reveal-d2">
+      <div class="why-card-n">02</div>
+      <div class="why-card-title">ISO 45001 &amp; OHSAS 18001</div>
+      <div class="why-card-desc">ISO 45001 Clause 6.1 requires hazard identification and occupational health risk assessment as a core management system requirement. Workplace air quality monitoring data is the primary evidence base for chemical exposure risk assessment. Without it, an ISO 45001 audit will raise a major non-conformance.</div>
+    </div>
+    <div class="why-card reveal reveal-d3">
+      <div class="why-card-n">03</div>
+      <div class="why-card-title">EcoVadis &amp; BRSR Scoring</div>
+      <div class="why-card-desc">EcoVadis evaluates occupational health and safety management as part of its Labour &amp; Human Rights theme &mdash; one of the four weighted scoring criteria. Documented workplace air quality monitoring with corrective action programmes significantly improves your Labour theme score. BRSR Principle 5 (P5) requires specific KPI disclosure on workplace health and safety, including monitoring data.</div>
+    </div>
+    <div class="why-card reveal reveal-d4">
+      <div class="why-card-n">04</div>
+      <div class="why-card-title">Occupational Disease Liability</div>
+      <div class="why-card-desc">Chronic occupational diseases &mdash; silicosis, asbestosis, chronic solvent encephalopathy, noise-induced hearing loss &mdash; attract workmen&rsquo;s compensation claims, insurance litigation and reputational damage. Regular workplace monitoring, documented corrective actions and engineering controls are your primary legal defence against occupational disease compensation claims.</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">What we do</div>
+    <h2 class="sec-title">From hazard survey to<br><em>exposure report &amp; corrective plan</em></h2>
+    <p class="sec-sub">We conduct complete industrial hygiene surveys: hazard identification, sampling strategy design, personal and area air sampling, NABL-accredited laboratory analysis and a full occupational exposure assessment report with risk-ranked corrective recommendations.</p>
+    <div class="wedo-grid mt3 reveal">
+      <div class="wedo-img">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="Industrial hygiene personal air sampling worker monitoring"/>
+      </div>
+      <div class="wedo-body">
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">Workplace Hazard Walk-Through Survey</div><div class="wedo-item-desc">Industrial hygienist-led facility walk-through to identify all chemical, dust and biological hazards, assess exposure routes, evaluate existing controls and design a targeted sampling strategy covering the most material exposure scenarios.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">Personal Air Sampling (TWA &amp; STEL)</div><div class="wedo-item-desc">Full-shift (8-hour) personal air sampling at the breathing zone of workers in high-exposure job categories, using calibrated low-flow pumps and appropriate sample media (XAD, OVS, silica gel, PTFE filters). Short-term samples for STEL assessment during peak-exposure tasks.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">Area Air Sampling</div><div class="wedo-item-desc">Fixed-location samplers across all production zones, storage areas, loading bays and control rooms &mdash; mapping the spatial distribution of contamination and identifying localised hotspots requiring priority engineering intervention.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">NABL-Accredited Laboratory Analysis</div><div class="wedo-item-desc">Collected samples analysed by our NABL-accredited laboratory using NIOSH, OSHA and IS 5182 analytical methods for each target analyte &mdash; producing quantified results with analytical uncertainty, detection limits and QA/QC documentation.</div></div>
+        </div>
+        <div class="wedo-item">
+          <div class="wedo-dot"></div>
+          <div><div class="wedo-item-title">Occupational Exposure Report &amp; Risk Assessment</div><div class="wedo-item-desc">Full report comparing all measured concentrations against applicable OELs (TWA and STEL), risk-ranking each exposure scenario by severity, identifying which workers are at chronic or acute risk, and providing prioritised engineering, administrative and PPE recommendations.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="svc-section">
+  <div class="sec-label">Our process</div>
+  <h2 class="sec-title">How we <em>conduct workplace monitoring</em></h2>
+  <p class="sec-sub mb4">A five-stage process delivering a complete occupational air quality assessment and corrective action plan within 10&ndash;14 working days of field sampling.</p>
+  <div class="process-steps p5 reveal">
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">01</div>
+      <div class="ps-title">Hazard Survey</div>
+      <div class="ps-desc">Walk-through survey identifying all chemical and dust hazards, existing controls assessment and sampling strategy design by a qualified industrial hygienist.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">02</div>
+      <div class="ps-title">Field Sampling</div>
+      <div class="ps-desc">Personal breathing zone and area air sampling across all high-risk zones and job categories. In-situ gas measurement for reactive chemicals where appropriate.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">03</div>
+      <div class="ps-title">Laboratory Analysis</div>
+      <div class="ps-desc">NABL-accredited analysis of all collected samples using applicable NIOSH, OSHA or IS methods with full QA/QC documentation.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-arrow">&rarr;</div>
+      <div class="ps-n">04</div>
+      <div class="ps-title">Exposure Assessment</div>
+      <div class="ps-desc">OEL comparison, health risk classification, exposure band assignment and identification of workers and zones requiring immediate or planned corrective action.</div>
+    </div>
+    <div class="ps">
+      <div class="ps-n">05</div>
+      <div class="ps-title">Report &amp; Corrective Plan</div>
+      <div class="ps-desc">Full NABL report with exposure assessment, risk prioritisation and ranked corrective action plan covering engineering controls, administrative measures and PPE.</div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERABLES -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">Key deliverables</div>
+    <h2 class="sec-title">What you receive from<br><em>every workplace monitoring survey</em></h2>
+    <div class="deliverables-grid mt3">
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+        <div><div class="deliv-title">NABL-Accredited Test Report</div><div class="deliv-desc">Signed NABL laboratory test report for all monitored parameters with analytical results, detection limits, QA/QC data and chain-of-custody documentation &mdash; legally valid for Factory Inspector inspections and tribunal proceedings.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><div class="deliv-title">Occupational Exposure Assessment Report</div><div class="deliv-desc">Complete occupational hygiene report comparing all personal and area results against applicable OELs (TWA and STEL), with exposure band classification per hazard and job group, and chronic versus acute risk assessment.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
+        <div><div class="deliv-title">Facility Exposure Map</div><div class="deliv-desc">Spatial map of the facility showing measured concentrations per zone, colour-coded by risk level (safe / action level / OEL exceeded) for visual communication to management and workers.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+        <div><div class="deliv-title">Corrective Action Plan</div><div class="deliv-desc">Risk-prioritised corrective actions covering engineering controls (LEV, enclosure, substitution), administrative measures (job rotation, exposure time limits) and PPE selection &mdash; with implementation timelines and responsible parties.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div><div class="deliv-title">ISO 45001 / Factory Act Evidence Pack</div><div class="deliv-desc">Documentation package formatted for ISO 45001 Clause 6.1 hazard register, Clause 8.1.1 operational control records, and Factory Inspector submission including all sampling records, field data sheets and calibration certificates.</div></div>
+      </div>
+      <div class="deliv-card reveal">
+        <div class="deliv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div><div class="deliv-title">BRSR / EcoVadis Data Summary</div><div class="deliv-desc">Ready-to-use data summary for BRSR Principle 5 worker health &amp; safety KPI disclosures and EcoVadis Labour theme documentation, with key metrics formatted for questionnaire submission.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO + SECTORS -->
+<div class="svc-section">
+  <div class="who-section reveal mb4">
+    <div class="who-inner">
+      <div class="who-label">Who this is for</div>
+      <div class="who-title">Required or strongly recommended if you operate&hellip;</div>
+      <div class="who-chips">
+        <span class="who-chip">Chemical processing plant with solvent, acid or alkali handling</span>
+        <span class="who-chip">Dusty environment &mdash; cement, stone, mineral processing, foundry</span>
+        <span class="who-chip">Paint shop, surface treatment or electroplating facility</span>
+        <span class="who-chip">Welding and metal fabrication operations</span>
+        <span class="who-chip">Pharmaceutical manufacturing &mdash; API and formulation</span>
+        <span class="who-chip">Pesticide or agrochemical production or packaging</span>
+        <span class="who-chip">Factory requiring ISO 45001 certification or recertification</span>
+        <span class="who-chip">Company with EcoVadis Labour theme score below target</span>
+      </div>
+    </div>
+  </div>
+  <div class="sectors-wrap">
+    <div class="sectors-label">Industries we serve</div>
+    <div class="sectors-grid">
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Chemicals &amp; Petrochemicals</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Pharmaceuticals &amp; APIs</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Paints, Coatings &amp; Inks</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Foundries &amp; Metal Casting</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Textiles &amp; Dyeing</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Fertilisers &amp; Agrochemicals</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Cement &amp; Construction Materials</div></div>
+      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Battery &amp; Electroplating</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
+    <div class="faq-wrap mt3">
+      <div class="faq-item">
+        <button class="faq-btn">What is the difference between TWA and STEL exposure limits? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>The Time-Weighted Average (TWA) is the 8-hour average airborne concentration to which a worker may be repeatedly exposed day after day without adverse health effects &mdash; the chronic exposure limit. The Short-Term Exposure Limit (STEL) is the 15-minute average concentration that should not be exceeded at any time during the working day, even if the 8-hour TWA is within limits &mdash; it protects against acute effects from brief high-concentration exposures. Both limits are set by ACGIH as Threshold Limit Values (TLVs), and where Indian standards exist under the Factories Act Schedules, those apply. We measure both &mdash; personal full-shift sampling for TWA and short-duration grab or pump samples during peak-exposure tasks for STEL.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">How frequently should workplace air monitoring be conducted? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>Under ISO 45001 and good industrial hygiene practice, monitoring frequency depends on exposure risk level. Initial baseline monitoring should be conducted when any new chemical is introduced or processes change significantly. For ongoing surveillance: exposures below 0.1&times; OEL &mdash; annually or on process change; exposures 0.1&ndash;0.5&times; OEL &mdash; every 6 months; exposures 0.5&ndash;1&times; OEL &mdash; quarterly; exposures above OEL &mdash; monthly until corrective actions reduce concentrations below the limit. The Factories Act and specific industry rules (chemical, hazardous chemicals rules) may prescribe more frequent monitoring for specific substances or factory categories.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Does workplace air monitoring cover noise and heat stress as well? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>Occupational noise dosimetry and heat stress measurement (WBGT &mdash; Wet Bulb Globe Temperature) are separate monitoring services from airborne chemical and dust monitoring, but we provide all three as part of a comprehensive industrial hygiene survey. Noise dosimetry measures workers&rsquo; daily noise exposure against the 85 dB(A) action level and 90 dB(A) limit under the Factories Act. WBGT heat stress monitoring is critical for workers in foundries, glass plants, steel mills and outdoor operations. We recommend combining air quality, noise and heat stress monitoring into a single facility survey to minimise production disruption and reduce total assessment cost.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED SERVICES -->
+<div class="svc-section">
+  <div class="sec-label">Related services</div>
+  <h2 class="sec-title">Services that <em>complement workplace monitoring</em></h2>
+  <div class="related-grid mt2">
+    <a href="svc-stack-monitoring.html" class="related-card">
+      <div class="related-card-cat">Air Quality Monitoring</div>
+      <div class="related-card-title">Stack Emission Monitoring</div>
+      <div class="related-card-desc">Source-level stack emission data confirms that control equipment is working &mdash; complementing the worker-level exposure data from indoor monitoring.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="svc-ecovadis.html" class="related-card">
+      <div class="related-card-cat">Assessments &amp; Ratings</div>
+      <div class="related-card-title">EcoVadis Assessment</div>
+      <div class="related-card-desc">Documented workplace air quality monitoring with corrective actions is one of the strongest evidence sources for improving your EcoVadis Labour &amp; Human Rights theme score.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="svc-iso.html" class="related-card">
+      <div class="related-card-cat">Systems &amp; Certifications</div>
+      <div class="related-card-title">ISO 45001 Certification</div>
+      <div class="related-card-desc">Workplace air quality monitoring is a core evidence requirement for ISO 45001 Clause 6.1 hazard identification and Clause 8.1 operational control compliance.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="svc-section" id="contact">
+  <div class="cta-band reveal">
+    <div>
+      <div class="cta-band-title">Schedule your workplace air quality survey.</div>
+      <div class="cta-band-sub">Tell us your facility type, the chemicals or dust hazards present and the number of workers &mdash; we&rsquo;ll design a targeted sampling strategy and confirm availability within 24 hours.</div>
+    </div>
+    <div class="cta-band-btns">
+      <a href="mailto:info@sustaincore.in" class="btn-wh">Request survey &rarr;</a>
+      <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="float">
+  <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+    WhatsApp
+  </a>
+  <a href="#contact" class="float-cb"><div class="pulse"></div>Free consultation</a>
+</div>
+<footer class="sc-foot">
+  <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd. &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a> &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
+</footer>
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;const ans=item.querySelector('.faq-ans');const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ans').style.maxHeight=null;});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  });
+});
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>

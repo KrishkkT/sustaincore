@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Science Based Targets (SBTi) — SustainCore Environmental Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
+<style>
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-d1{transition-delay:.1s;}
+.reveal-d2{transition-delay:.2s;}
+.reveal-d3{transition-delay:.3s;}
+.reveal-d4{transition-delay:.4s;}
+
+/* Scope emissions visual */
+.scope-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2rem;}
+.scope-card{border-radius:16px;padding:1.5rem;position:relative;overflow:hidden;}
+.scope-card.s1{background:rgba(74,124,89,.07);border:1px solid rgba(74,124,89,.25);}
+.scope-card.s2{background:rgba(26,74,107,.06);border:1px solid rgba(26,74,107,.2);}
+.scope-card.s3{background:var(--bg2);border:1px solid var(--bdr);}
+.scope-label{font-size:9.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;}
+.scope-card.s1 .scope-label{color:var(--g);}
+.scope-card.s2 .scope-label{color:var(--b);}
+.scope-card.s3 .scope-label{color:var(--muted);}
+.scope-title{font-size:16px;font-weight:600;color:var(--text);margin-bottom:.65rem;}
+.scope-desc{font-size:12.5px;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:1rem;}
+.scope-examples{list-style:none;display:flex;flex-direction:column;gap:.3rem;}
+.scope-examples li{font-size:11.5px;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.5;}
+.scope-examples li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:6px;}
+
+/* Pathway strip */
+.pathway-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem;}
+.pathway-card{background:var(--w);border-radius:14px;border:1px solid var(--bdr);padding:1.4rem;transition:border-color .2s,box-shadow .2s;}
+.pathway-card:hover{border-color:var(--g35);box-shadow:0 8px 22px rgba(26,74,107,.08);}
+.pathway-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:.35rem;}
+.pathway-target{font-size:11px;font-weight:500;color:var(--g);margin-bottom:.5rem;}
+.pathway-desc{font-size:11.5px;font-weight:300;color:var(--muted);line-height:1.65;}
+</style>
+  <link rel="stylesheet" crossorigin href="/assets/sustaincore-shared-DnZQpHfI.css">
+</head>
+<body>
+
+<nav class="sc-nav">
+  <a href="../index.html" class="sc-nav-logo">
+    <svg viewBox="0 0 200 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59"/>
+      <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z" fill="#1a4a6b"/>
+      <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17" fill="#4a7c59">Sustain</text>
+      <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17" fill="#1a4a6b">Core</text>
+      <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61" letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
+    </svg>
+  </a>
+  <ul class="sc-nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../sustaincore_services.html" class="active">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Insights</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="#contact" class="sc-nav-cta">Free Consultation</a>
+</nav>
+
+<div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
+<div class="bc">
+  <a href="../index.html">Home</a>
+  <span class="sep">/</span>
+  <a href="../sustaincore_services.html">Services</a>
+  <span class="sep">/</span>
+  <a href="../sustaincore_services.html">Assessments &amp; Ratings</a>
+  <span class="sep">/</span>
+  <span class="sep">Science Based Targets (SBTi)</span>
+</div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-inner">
+    <div class="svc-hero-tag">Assessments &amp; Ratings &middot; Category 03</div>
+    <h1 class="svc-hero-title">Science Based<br><em>Targets</em><br><span class="bt">SBTi 1.5&deg;C Pathway</span></h1>
+    <div class="svc-hero-body">
+      <p class="svc-hero-desc">Science Based Targets (SBTi) are the global gold standard for corporate climate commitments &mdash; verified by the Science Based Targets initiative to confirm alignment with a maximum 1.5&deg;C global temperature rise. <strong>Over 7,000 companies are committed. Investors, buyers and regulators now treat SBTi as the credibility threshold for serious net-zero claims.</strong> We take you from GHG inventory to SBTi-validated targets.</p>
+      <div class="svc-hero-pills">
+        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>1.5&deg;C</strong> aligned pathway</div>
+        <div class="svc-hero-pill blue"><span class="pill-icon"></span>Near-term &amp; Long-term targets</div>
+        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>Scope 1, 2 &amp; 3</strong> covered</div>
+        <div class="svc-hero-pill blue"><span class="pill-icon"></span>SBTi Corporate Standard</div>
+        <div class="svc-hero-pill"><span class="pill-icon"></span>Net-zero target validation</div>
+      </div>
+    </div>
+  </div>
+  <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+    <div class="svc-hero-img">
+      <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1400&q=80" alt="Science based targets net zero climate pathway"/>
+      <div class="svc-hero-img-caption">
+        <div class="svc-hero-img-title">Credible Climate<br><em>Commitment</em></div>
+        <div class="svc-hero-stat-row">
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">7,000+</div><div class="svc-hero-stat-l">Companies committed globally</div></div>
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">1.5&deg;C</div><div class="svc-hero-stat-l">Paris Agreement alignment</div></div>
+          <div class="svc-hero-stat"><div class="svc-hero-stat-v">5&ndash;10 yr</div><div class="svc-hero-stat-l">Near-term target horizon</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="rule" style="margin-top:3rem;"></div>
+
+<!-- STATS -->
+<div class="svc-section">
+  <div class="stats-row reveal">
+    <div class="stat-block"><div class="stat-block-v">7,000+</div><div class="stat-block-l">Companies with SBTi commitments globally</div></div>
+    <div class="stat-block"><div class="stat-block-v">42%</div><div class="stat-block-l">Near-term Scope 1+2 reduction by 2030 (1.5&deg;C)</div></div>
+    <div class="stat-block"><div class="stat-block-v">90%</div><div class="stat-block-l">Net-zero Scope 1+2+3 by 2050</div></div>
+    <div class="stat-block"><div class="stat-block-v">24 mo</div><div class="stat-block-l">Commitment window: targets submitted within 24 months</div></div>
+  </div>
+
+  <!-- SCOPE CARDS -->
+  <div class="sec-label">What SBTi covers</div>
+  <h2 class="sec-title">Scope 1, 2 and 3 &mdash;<br><em>the full emissions picture</em></h2>
+  <p class="sec-sub">SBTi requires setting targets across all three emission scopes. We build your GHG inventory and target framework covering every source material to your footprint.</p>
+  <div class="scope-grid">
+    <div class="scope-card s1">
+      <div class="scope-label">Scope 1</div>
+      <div class="scope-title">Direct emissions</div>
+      <div class="scope-desc">Emissions from sources owned or controlled by the company &mdash; the most directly actionable scope for most industrial businesses.</div>
+      <ul class="scope-examples">
+        <li>Fuel combustion in boilers and furnaces</li>
+        <li>Company-owned vehicle fleet</li>
+        <li>Process emissions (cement, chemicals)</li>
+        <li>Fugitive emissions from refrigerants</li>
+        <li>On-site power generation</li>
+      </ul>
+    </div>
+    <div class="scope-card s2">
+      <div class="scope-label">Scope 2</div>
+      <div class="scope-title">Purchased energy</div>
+      <div class="scope-desc">Indirect emissions from the generation of purchased electricity, steam, heat or cooling consumed by the company.</div>
+      <ul class="scope-examples">
+        <li>Purchased grid electricity</li>
+        <li>Purchased steam or heat</li>
+        <li>RE100 and PPA strategy impact</li>
+        <li>Market-based vs location-based accounting</li>
+        <li>Renewable energy certificates (RECs)</li>
+      </ul>
+    </div>
+    <div class="scope-card s3">
+      <div class="scope-label">Scope 3</div>
+      <div class="scope-title">Value chain emissions</div>
+      <div class="scope-desc">All other indirect emissions in the company&rsquo;s value chain, both upstream (suppliers) and downstream (customers and product use).</div>
+      <ul class="scope-examples">
+        <li>Purchased goods and services (Cat. 1)</li>
+        <li>Business travel and commuting</li>
+        <li>Downstream product use and end-of-life</li>
+        <li>Investments and financed emissions</li>
+        <li>Upstream and downstream transportation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WHY IT MATTERS -->
+  <div class="sec-label mt3">Why it matters</div>
+  <h2 class="sec-title">SBTi is the global credibility<br><em>standard for net-zero claims.</em></h2>
+  <p class="sec-sub">Without SBTi validation, your net-zero or carbon neutral claims are vulnerable to greenwashing accusations. With it, you have the world&rsquo;s most credible independent climate commitment &mdash; recognised by investors, buyers and regulators.</p>
+  <div class="why-grid mt2">
+    <div class="why-card reveal reveal-d1">
+      <div class="why-card-n">01</div>
+      <div class="why-card-title">Investor Requirement</div>
+      <div class="why-card-desc">CDP A-List status, MSCI ESG ratings, Sustainalytics and institutional investor ESG screens all evaluate SBTi commitment and validation status. Companies without SBTi targets face increasing cost-of-capital disadvantages as climate-oriented capital allocation accelerates.</div>
+    </div>
+    <div class="why-card reveal reveal-d2">
+      <div class="why-card-n">02</div>
+      <div class="why-card-title">Supply Chain Pressure</div>
+      <div class="why-card-desc">Global buyers with their own SBTi commitments are setting Scope 3 supplier engagement requirements &mdash; asking or requiring key suppliers to set their own SBTi-aligned targets. Not having targets means being a &ldquo;high-emission supplier&rdquo; in their Scope 3 inventory.</div>
+    </div>
+    <div class="why-card reveal reveal-d3">
+      <div class="why-card-n">03</div>
+      <div class="why-card-title">Greenwashing Protection</div>
+      <div class="why-card-desc">SBTi validation independently verifies that your climate targets are genuinely aligned with limiting warming to 1.5&deg;C &mdash; protecting you from the growing regulatory and reputational risk of greenwashing allegations against unverified net-zero claims.</div>
+    </div>
+    <div class="why-card reveal reveal-d4">
+      <div class="why-card-n">04</div>
+      <div class="why-card-title">BRSR &amp; ESG Disclosure Anchor</div>
+      <div class="why-card-desc">BRSR Principle 6 on environmental responsibility and climate risk disclosure is substantially strengthened by SBTi-validated targets. It also anchors TCFD climate scenario analysis and CDP climate module responses, reducing total ESG reporting effort significantly.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SBTi PATHWAYS -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">SBTi target types</div>
+    <h2 class="sec-title">Near-term, long-term<br><em>and net-zero targets</em></h2>
+    <p class="sec-sub">SBTi requires near-term targets (5&ndash;10 year horizon) and encourages long-term and net-zero targets for full science-alignment. We set all three in a single integrated framework.</p>
+    <div class="pathway-strip">
+      <div class="pathway-card">
+        <div class="pathway-name">Near-Term Targets</div>
+        <div class="pathway-target">5&ndash;10 year horizon &mdash; 2030 typical</div>
+        <div class="pathway-desc">Scope 1+2: minimum 42% absolute reduction by 2030 from base year (1.5&deg;C pathway). Scope 3: 25% absolute or 42% intensity reduction if Scope 3 &gt;40% of total footprint. Must be submitted within 24 months of commitment.</div>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-name">Long-Term Targets</div>
+        <div class="pathway-target">Net-zero by 2050 or earlier</div>
+        <div class="pathway-desc">Scope 1+2: 90% absolute reduction by 2050. Scope 3: 90% absolute reduction. Residual emissions (max 10%) addressed through permanent carbon removal &mdash; not offset credits. Validated under SBTi Corporate Net-Zero Standard.</div>
+      </div>
+      <div class="pathway-card">
+        <div class="pathway-name">SME Fast-Track</div>
+        <div class="pathway-target">Streamlined pathway for SMEs</div>
+        <div class="pathway-desc">SBTi SME target-setting tool allows smaller companies to commit to a standardised 1.5&deg;C target without full sector-specific pathway modelling &mdash; significantly reducing time and cost to commitment and validation.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<div class="svc-section">
+  <div class="sec-label">What we do</div>
+  <h2 class="sec-title">From GHG inventory<br><em>to validated SBTi targets</em></h2>
+  <p class="sec-sub">We manage the complete SBTi journey &mdash; GHG inventory, target modelling, commitment letter, target submission and post-validation progress reporting &mdash; so you reach SBTi validation with minimal internal burden.</p>
+  <div class="wedo-grid mt3 reveal">
+    <div class="wedo-img">
+      <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80" alt="Science based targets climate strategy net zero planning"/>
+    </div>
+    <div class="wedo-body">
+      <div class="wedo-item">
+        <div class="wedo-dot"></div>
+        <div><div class="wedo-item-title">GHG Inventory (Scope 1, 2 &amp; 3)</div><div class="wedo-item-desc">Full GHG Protocol-compliant inventory covering all material Scope 1, 2 and 3 categories. We identify the base year, collect activity data and apply appropriate emission factors &mdash; producing the audit-ready inventory that SBTi requires as the foundation for target-setting.</div></div>
+      </div>
+      <div class="wedo-item">
+        <div class="wedo-dot"></div>
+        <div><div class="wedo-item-title">Materiality Screening &amp; Sector Pathway Selection</div><div class="wedo-item-desc">Screening of all 15 Scope 3 categories for materiality, identification of your applicable SBTi sector guidance (steel, cement, apparel, ICT, buildings, transport etc.) and selection of the appropriate sector-specific decarbonisation pathway.</div></div>
+      </div>
+      <div class="wedo-item">
+        <div class="wedo-dot"></div>
+        <div><div class="wedo-item-title">Target Modelling &amp; Ambition Setting</div><div class="wedo-item-desc">Modelling of near-term and long-term target options using SBTi-approved methods (Absolute Contraction Approach, Sectoral Decarbonisation Approach, Economic Intensity Contraction). We identify the most achievable targets that still meet 1.5&deg;C validation criteria.</div></div>
+      </div>
+      <div class="wedo-item">
+        <div class="wedo-dot"></div>
+        <div><div class="wedo-item-title">Commitment Letter &amp; SBTi Submission</div><div class="wedo-item-desc">Preparation of the SBTi commitment letter, target submission forms and all supporting documentation. We manage the SBTi online portal submission and respond to SBTi reviewer queries during the validation process.</div></div>
+      </div>
+      <div class="wedo-item">
+        <div class="wedo-dot"></div>
+        <div><div class="wedo-item-title">Decarbonisation Roadmap</div><div class="wedo-item-desc">Post-validation roadmap identifying specific emission reduction initiatives, capital investment requirements, timelines and KPIs to track annual progress against your validated SBTi targets &mdash; turning a commitment into an actionable internal programme.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">Our process</div>
+    <h2 class="sec-title">How we <em>deliver SBTi validation</em></h2>
+    <p class="sec-sub mb4" style="margin-bottom:3rem;">A six-phase programme from GHG inventory to SBTi-validated targets, typically completed in 16&ndash;24 weeks depending on Scope 3 data complexity.</p>
+    <div class="process-steps p6 reveal">
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="ps-n">01</div>
+        <div class="ps-title">GHG Inventory</div>
+        <div class="ps-desc">Full Scope 1, 2 and 3 inventory per GHG Protocol Corporate Standard. Base year selection, data collection, emission factor application and assurance-ready documentation.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="ps-n">02</div>
+        <div class="ps-title">Scope 3 Screening</div>
+        <div class="ps-desc">Materiality screening of all 15 Scope 3 categories. Identification of material categories requiring full quantification vs. screening-level estimates.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="ps-n">03</div>
+        <div class="ps-title">Pathway &amp; Method Selection</div>
+        <div class="ps-desc">SBTi sector guidance application, decarbonisation pathway selection (ACA, SDA, EICA) and target ambition modelling against 1.5&deg;C validation criteria.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="ps-n">04</div>
+        <div class="ps-title">Commitment &amp; Submission</div>
+        <div class="ps-desc">Commitment letter preparation, SBTi online portal submission, supporting documentation package and query management with SBTi reviewers.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="ps-n">05</div>
+        <div class="ps-title">Validation &amp; Publication</div>
+        <div class="ps-desc">SBTi validation confirmation, targets published on the SBTi website. Commitment and validation communications for investors, customers and ESG disclosures.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-n">06</div>
+        <div class="ps-title">Decarbonisation Roadmap</div>
+        <div class="ps-desc">Initiative-level action plan with reduction quantities, investment requirements, timelines and annual progress KPIs to track delivery against validated targets.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DELIVERABLES -->
+<div class="svc-section">
+  <div class="sec-label">Key deliverables</div>
+  <h2 class="sec-title">What you receive from<br><em>every SBTi engagement</em></h2>
+  <div class="deliverables-grid mt3">
+    <div class="deliv-card reveal">
+      <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="deliv-title">SBTi-Validated Targets</div><div class="deliv-desc">Near-term and long-term targets validated by the Science Based Targets initiative and published on the SBTi website &mdash; the global credibility standard for 1.5&deg;C alignment.</div></div>
+    </div>
+    <div class="deliv-card reveal">
+      <div class="deliv-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+      <div><div class="deliv-title">Full GHG Inventory</div><div class="deliv-desc">GHG Protocol-compliant Scope 1, 2 and 3 inventory with base year data, emission factors, calculation methodology and assurance-ready documentation.</div></div>
+    </div>
+    <div class="deliv-card reveal">
+      <div class="deliv-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+      <div><div class="deliv-title">Target Modelling Workbook</div><div class="deliv-desc">Fully documented SBTi-approved target calculations, pathway model, ambition scenarios and sensitivity analysis &mdash; the technical foundation for the SBTi submission.</div></div>
+    </div>
+    <div class="deliv-card reveal">
+      <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
+      <div><div class="deliv-title">SBTi Submission Package</div><div class="deliv-desc">Complete SBTi commitment letter, online portal submission, target disclosure templates and all supporting evidence required for the SBTi validation process.</div></div>
+    </div>
+    <div class="deliv-card reveal">
+      <div class="deliv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+      <div><div class="deliv-title">Decarbonisation Roadmap</div><div class="deliv-desc">Initiative-level action plan with emission reduction quantities per initiative, capital expenditure estimates, implementation timelines and annual KPIs for progress tracking.</div></div>
+    </div>
+    <div class="deliv-card reveal">
+      <div class="deliv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+      <div><div class="deliv-title">Progress Reporting Template</div><div class="deliv-desc">Annual tracking template for Scope 1, 2 and 3 emissions against validated base year and target trajectory &mdash; ready for BRSR, CDP and TCFD climate disclosure integration.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- WHO + SECTORS -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="who-section reveal mb4">
+      <div class="who-inner">
+        <div class="who-label">Who this is for</div>
+        <div class="who-title">Right for your organisation if you are&hellip;</div>
+        <div class="who-chips">
+          <span class="who-chip">Company making a net-zero or carbon neutrality claim</span>
+          <span class="who-chip">Supplier to a company with SBTi Scope 3 engagement requirement</span>
+          <span class="who-chip">Organisation seeking CDP A-List or MSCI AAA rating</span>
+          <span class="who-chip">Business seeking green bond, sustainability-linked loan or ESG financing</span>
+          <span class="who-chip">Listed company building credible BRSR climate risk disclosures</span>
+          <span class="who-chip">Indian subsidiary of an MNC with global SBTi commitment</span>
+          <span class="who-chip">Company wanting to differentiate on genuine decarbonisation credentials</span>
+        </div>
+      </div>
+    </div>
+    <div class="sectors-wrap">
+      <div class="sectors-label">Industries we serve</div>
+      <div class="sectors-grid">
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Manufacturing &amp; Industrials</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Steel &amp; Metals</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Chemicals &amp; Petrochemicals</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Textiles &amp; Apparel</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Real Estate &amp; Construction</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Financial Services</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">IT &amp; Technology</div></div>
+        <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Food &amp; Beverages</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FRAMEWORKS -->
+<div class="svc-section">
+  <div class="sec-label">Frameworks &amp; Standards</div>
+  <h2 class="sec-title">SBTi sits at the centre of<br><em>the global climate disclosure ecosystem.</em></h2>
+  <p class="sec-sub">SBTi-validated targets directly satisfy the most demanding requirements of CDP, TCFD, BRSR, GRI and ISSB S2 &mdash; anchoring your entire climate disclosure programme to a single, independently verified foundation.</p>
+  <div class="framework-badges mt2">
+    <span class="fw-badge g">SBTi Corporate Standard</span>
+    <span class="fw-badge g">GHG Protocol Corporate Standard</span>
+    <span class="fw-badge b">TCFD Climate Risk Framework</span>
+    <span class="fw-badge b">CDP Climate Module</span>
+    <span class="fw-badge n">ISSB IFRS S2 Climate Disclosures</span>
+    <span class="fw-badge n">GRI 305 Emissions Standard</span>
+    <span class="fw-badge n">BRSR Principle 6 &mdash; Environment</span>
+    <span class="fw-badge b">Net Zero Standard &mdash; Race to Zero</span>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="svc-section alt">
+  <div class="svc-section-inner">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
+    <div class="faq-wrap mt3">
+      <div class="faq-item">
+        <button class="faq-btn">What is the difference between SBTi near-term and net-zero targets? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>Near-term targets cover the next 5&ndash;10 years (typically to 2030) and require Scope 1+2 absolute reductions of at least 42% and Scope 3 reductions of at least 25% from a base year, consistent with a 1.5&deg;C pathway. Net-zero targets &mdash; validated under the SBTi Corporate Net-Zero Standard &mdash; require 90% absolute reduction in Scope 1, 2 and 3 emissions by 2050 at the latest, with residual emissions addressed through permanent carbon removal (not offset credits). Near-term targets are mandatory; net-zero targets are best practice. We recommend setting both simultaneously, as the near-term target modelling is a direct input to the net-zero pathway design.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Do we need Scope 3 data before we can commit to SBTi? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>Scope 3 targets are required only if Scope 3 emissions represent 40% or more of your total Scope 1+2+3 footprint. For many manufacturing companies with significant direct energy use, Scope 1+2 dominate and Scope 3 targets are not required &mdash; though SBTi strongly encourages them. You can commit to SBTi before completing your full Scope 3 inventory, as you have 24 months after commitment to submit validated targets. However, we recommend completing the Scope 3 screening before committing, so you are not surprised by a mandatory Scope 3 target requirement. We conduct the full Scope 3 materiality screening as part of our kickoff phase.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Can Indian SMEs set SBTi targets and is there a faster pathway? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>Yes &mdash; SBTi has a dedicated SME (Small and Medium Enterprise) pathway that significantly simplifies the process for companies with revenues below &euro;500 million. The SME fast-track uses a standardised commitment rather than full sector-specific target modelling, allowing SMEs to commit and have their targets validated much faster and at lower cost. The SME commitment requires agreeing to reduce Scope 1 and 2 emissions in half before 2030 and achieving net-zero before 2050 &mdash; a fixed commitment rather than a customised pathway. We guide Indian SMEs through the SME eligibility assessment and submission process, which is substantially faster than the full corporate pathway.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">How does SBTi differ from carbon neutrality or net-zero claims? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>This is one of the most important distinctions in corporate sustainability. &ldquo;Carbon neutral&rdquo; claims typically offset Scope 1 and 2 emissions using purchased carbon credits &mdash; without requiring any actual emission reductions. &ldquo;Net-zero&rdquo; without SBTi validation is an unverified claim with no standardised methodology. SBTi specifically requires actual emission reductions &mdash; not offset credits &mdash; to meet 42% Scope 1+2 reduction targets by 2030 and 90% by 2050. Carbon removal can address only residual emissions (maximum 10%) at net-zero, not replace the reduction requirement. This makes SBTi the only globally recognised standard that prevents &ldquo;net-zero&rdquo; from being used as a greenwashing shield without genuine decarbonisation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">What happens if we miss our SBTi targets? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
+        <div class="faq-ans"><p>SBTi requires annual public progress reporting against your validated targets. If a company fails to make sufficient progress without a legitimate documented reason (such as major M&amp;A restructuring), SBTi can revoke your validated target status and remove you from the SBTi website &mdash; a significant reputational consequence. This is why we build the decarbonisation roadmap as part of every engagement: targets that are validated but not backed by concrete, funded reduction initiatives create substantial delivery risk. Our roadmap identifies initiatives with sufficient combined reduction potential to hit near-term targets, with contingency initiatives built in for years where primary initiatives underperform.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED SERVICES -->
+<div class="svc-section">
+  <div class="sec-label">Related services</div>
+  <h2 class="sec-title">Services that <em>build your SBTi programme</em></h2>
+  <div class="related-grid mt2">
+    <a href="svc-materiality.html" class="related-card">
+      <div class="related-card-cat">Assessments &amp; Ratings</div>
+      <div class="related-card-title">Materiality Assessment</div>
+      <div class="related-card-desc">A completed materiality assessment defines which climate-related topics are most significant to your business &mdash; the strategic context for SBTi target-setting.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="svc-cbam.html" class="related-card">
+      <div class="related-card-cat">Carbon &amp; Climate</div>
+      <div class="related-card-title">CBAM Advisory</div>
+      <div class="related-card-desc">The GHG inventory built for SBTi provides the verified embedded emissions data needed for CBAM compliance &mdash; one data collection serves both programmes.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+    <a href="svc-brsr.html" class="related-card">
+      <div class="related-card-cat">ESG Reporting</div>
+      <div class="related-card-title">BRSR Reporting</div>
+      <div class="related-card-desc">SBTi-validated targets significantly strengthen BRSR Principle 6 disclosures and provide the quantified climate commitments investors expect to see.</div>
+      <div class="related-card-link">Learn more &rarr;</div>
+    </a>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="svc-section" id="contact">
+  <div class="cta-band reveal">
+    <div>
+      <div class="cta-band-title">Ready to set science-based targets?</div>
+      <div class="cta-band-sub">Free 45-minute scoping call &mdash; we&rsquo;ll assess your Scope 3 materiality, identify your applicable SBTi pathway and outline the steps to validation.</div>
+    </div>
+    <div class="cta-band-btns">
+      <a href="mailto:info@sustaincore.in" class="btn-wh">Book free call &rarr;</a>
+      <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="float">
+  <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
+    WhatsApp
+  </a>
+  <a href="#contact" class="float-cb"><div class="pulse"></div>Free consultation</a>
+</div>
+
+<footer class="sc-foot">
+  <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd.
+  &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a>
+  &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a>
+  &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const item=btn.parentElement;
+    const ans=item.querySelector('.faq-ans');
+    const open=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ans').style.maxHeight=null;});
+    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+  });
+});
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
