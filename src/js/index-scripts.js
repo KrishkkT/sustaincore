@@ -225,12 +225,23 @@ draw();
       if (!startTimestamp) startTimestamp = timestamp;
       const progress = Math.min((timestamp - startTimestamp) / duration, 1);
       const value = progress * (end - start) + start;
-      // Handle decimals for 1.6
+      
+      let formattedValue;
       if (end % 1 !== 0) {
-        obj.innerHTML = value.toFixed(1);
+        formattedValue = value.toFixed(1);
       } else {
-        obj.innerHTML = Math.floor(value);
+        formattedValue = Math.floor(value);
       }
+
+      // Add units based on ID
+      if (obj.id === 'stat-temp') {
+        obj.innerHTML = formattedValue + '°C';
+      } else if (obj.id === 'stat-gdp') {
+        obj.innerHTML = '$' + formattedValue + 'T';
+      } else {
+        obj.innerHTML = formattedValue;
+      }
+
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }

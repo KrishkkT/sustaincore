@@ -1,336 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>TCFD Reporting — SustainCore Environmental Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TCFD Reporting — SustainCore Environmental Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet" />
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
 
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-d1{transition-delay:.1s;}
-.reveal-d2{transition-delay:.2s;}
-.reveal-d3{transition-delay:.3s;}
-.reveal-d4{transition-delay:.4s;}
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    .reveal-d1 {
+      transition-delay: .1s;
+    }
 
-</style>
+    .reveal-d2 {
+      transition-delay: .2s;
+    }
+
+    .reveal-d3 {
+      transition-delay: .3s;
+    }
+
+    .reveal-d4 {
+      transition-delay: .4s;
+    }
+  </style>
   <link rel="stylesheet" crossorigin href="/assets/sustaincore-shared-DnZQpHfI.css">
 </head>
+
 <body>
-<nav class="sc-nav">
-  <a href="../index.html" class="sc-nav-logo"><svg viewBox="0 0 200 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59"/>
-  <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z" fill="#1a4a6b"/>
-  <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17" fill="#4a7c59">Sustain</text>
-  <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17" fill="#1a4a6b">Core</text>
-  <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61" letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
-</svg></a>
-  <ul class="sc-nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../sustaincore_services.html" class="active">Services</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Insights</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <a href="#contact" class="sc-nav-cta">Free Consultation</a>
-</nav>
+  <nav class="sc-nav">
+    <a href="../index.html" class="sc-nav-logo"><svg viewBox="0 0 200 38" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59" />
+        <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z"
+          fill="#1a4a6b" />
+        <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17"
+          fill="#4a7c59">Sustain</text>
+        <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17"
+          fill="#1a4a6b">Core</text>
+        <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61"
+          letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
+      </svg></a>
+    <ul class="sc-nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../sustaincore_services.html" class="active">Services</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Insights</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <a href="#contact" class="sc-nav-cta">Free Consultation</a>
+  </nav>
 
-<div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
+  <div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
 
-<div class="bc">
-  <a href="../index.html">Home</a>
-  <span class="sep">/</span>
-  <a href="../sustaincore_services.html">Services</a>
-  <span class="sep">/</span>
-  <a href="../sustaincore_services.html">ESG Reporting</a>
-  <span class="sep">/</span>
-  <span class="sep">TCFD Reporting</span>
-</div>
-
-<section class="svc-hero">
-  <div class="svc-hero-inner">
-    <div class="svc-hero-tag">ESG Reporting &middot; Category 01</div>
-    <h1 class="svc-hero-title">TCFD Climate Risk<br><em>Disclosure</em><br><span class='bt'>for Boards &amp; Investors</span></h1>
-    <div class="svc-hero-body">
-      <p class="svc-hero-desc">TCFD translates climate risk into financial language — governance, strategy, risk management and metrics — which is precisely what institutional investors and regulators now require. <strong>We quantify physical and transition risk, conduct scenario analysis and build board-ready climate disclosures.</strong></p>
-      <div class="svc-hero-pills"><div class="svc-hero-pill "><span class="pill-icon"></span><strong>Scenario analysis</strong> 1.5°C · 2°C · 4°C</div>
-<div class="svc-hero-pill blue"><span class="pill-icon"></span><strong>Full framework</strong> 4 TCFD Pillars</div>
-<div class="svc-hero-pill "><span class="pill-icon"></span>Financial risk quantification</div>
-<div class="svc-hero-pill blue"><span class="pill-icon"></span>Board-level governance</div></div>
+    <div class="bc">
+      <a href="../index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="../sustaincore_services.html">Services</a>
+      <span class="sep">/</span>
+      <a href="../sustaincore_services.html">ESG Reporting</a>
+      <span class="sep">/</span>
+      <span class="sep">TCFD Reporting</span>
     </div>
-  </div>
-  <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
-    <div class="svc-hero-img">
-      <img src="https://images.unsplash.com/photo-1504608524841-42584120d693?w=1400&q=80" alt="TCFD Reporting"/>
-      <div class="svc-hero-img-caption">
-        <div class="svc-hero-img-title">Task Force on<br><em>Climate-related Disclosures</em></div>
-        <div class="svc-hero-stat-row"><div class="svc-hero-stat"><div class="svc-hero-stat-v">4 pillars</div><div class="svc-hero-stat-l">Full TCFD</div></div><div class="svc-hero-stat"><div class="svc-hero-stat-v">$97tn</div><div class="svc-hero-stat-l">Supporter AUM</div></div><div class="svc-hero-stat"><div class="svc-hero-stat-v">3 scenarios</div><div class="svc-hero-stat-l">1.5°C · 2°C · 4°C</div></div></div>
+
+    <section class="svc-hero">
+      <div class="svc-hero-inner">
+        <div class="svc-hero-tag">ESG Reporting &middot; Category 01</div>
+        <h1 class="svc-hero-title">TCFD Climate Risk<br><em>Disclosure</em><br><span class='bt'>for Boards &amp;
+            Investors</span></h1>
+        <div class="svc-hero-body">
+          <p class="svc-hero-desc">TCFD translates climate risk into financial language — governance, strategy, risk
+            management and metrics — which is precisely what institutional investors and regulators now require.
+            <strong>We quantify physical and transition risk, conduct scenario analysis and build board-ready climate
+              disclosures.</strong></p>
+          <div class="svc-hero-pills">
+            <div class="svc-hero-pill "><span class="pill-icon"></span><strong>Scenario analysis</strong> 1.5°C · 2°C ·
+              4°C</div>
+            <div class="svc-hero-pill blue"><span class="pill-icon"></span><strong>Full framework</strong> 4 TCFD
+              Pillars</div>
+            <div class="svc-hero-pill "><span class="pill-icon"></span>Financial risk quantification</div>
+            <div class="svc-hero-pill blue"><span class="pill-icon"></span>Board-level governance</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+        <div class="svc-hero-img">
+          <img src="https://images.unsplash.com/photo-1504608524841-42584120d693?w=1400&q=80" alt="TCFD Reporting" />
+          <div class="svc-hero-img-caption">
+            <div class="svc-hero-img-title">Task Force on<br><em>Climate-related Disclosures</em></div>
+            <div class="svc-hero-stat-row">
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">4 pillars</div>
+                <div class="svc-hero-stat-l">Full TCFD</div>
+              </div>
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">$97tn</div>
+                <div class="svc-hero-stat-l">Supporter AUM</div>
+              </div>
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">3 scenarios</div>
+                <div class="svc-hero-stat-l">1.5°C · 2°C · 4°C</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="rule" style="margin-top:3rem;"></div>
+
+    <div class="svc-section">
+      <div class="stats-row reveal">
+        <div class="stat-block">
+          <div class="stat-block-v">4</div>
+          <div class="stat-block-l">TCFD disclosure pillars</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">1.5°C</div>
+          <div class="stat-block-l">Paris-aligned pathway</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">$97tn</div>
+          <div class="stat-block-l">Institutional AUM supporting TCFD</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">2026</div>
+          <div class="stat-block-l">Mandatory in India trajectory</div>
+        </div>
+      </div>
+      <div class="sec-label">Why it matters</div>
+      <h2 class="sec-title">Climate is a financial risk.<br><em>TCFD makes that legible.</em></h2>
+      <p class="sec-sub">The era of treating climate risk as a non-financial issue is over. TCFD gives investors,
+        lenders and regulators a standardised framework to assess how climate change threatens your business model.</p>
+      <div class="why-grid mt2">
+        <div class="why-card reveal reveal-d1">
+          <div class="why-card-n">01</div>
+          <div class="why-card-title">Investor Demand</div>
+          <div class="why-card-desc">Over $97 trillion in institutional assets are managed by organisations that have
+            publicly committed to TCFD. They require TCFD-aligned disclosures from portfolio companies to assess
+            climate-related financial exposure.</div>
+        </div>
+        <div class="why-card reveal reveal-d2">
+          <div class="why-card-n">02</div>
+          <div class="why-card-title">Regulatory Trajectory</div>
+          <div class="why-card-desc">TCFD is already mandatory in the UK, EU (via CSRD) and Australia. India&rsquo;s
+            SEBI has embedded TCFD principles in BRSR. Voluntary disclosure today builds mandatory compliance readiness
+            for tomorrow.</div>
+        </div>
+        <div class="why-card reveal reveal-d3">
+          <div class="why-card-n">03</div>
+          <div class="why-card-title">Lender &amp; Rating Agency Scrutiny</div>
+          <div class="why-card-desc">Green bond frameworks, sustainability-linked loans and ESG credit ratings all
+            require TCFD-aligned climate risk assessments as part of their due diligence and ongoing monitoring
+            processes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">What we do</div>
+        <h2 class="sec-title">TCFD-aligned climate risk<br><em>analysis and disclosure</em></h2>
+        <p class="sec-sub">We deliver the four-pillar TCFD framework — governance, strategy, risk management, metrics —
+          with quantified financial exposure and scenario-tested strategy.</p>
+        <div class="wedo-grid mt3 reveal">
+          <div class="wedo-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
+              alt="TCFD Reporting delivery" /></div>
+          <div class="wedo-body">
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Climate Scenario Analysis</div>
+                <div class="wedo-item-desc">We conduct scenario analysis across 1.5°C, 2°C and 4°C pathways using IEA,
+                  IPCC and NGFS scenarios — translating physical and transition risk into quantified financial exposure
+                  for your specific assets and markets.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Physical Risk Assessment</div>
+                <div class="wedo-item-desc">Acute risks (floods, cyclones, heatwaves) and chronic risks (sea level rise,
+                  temperature shifts, rainfall changes) are mapped to your operating locations using WRI Aqueduct,
+                  CLIMADA and peer-reviewed hazard datasets.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Transition Risk Assessment</div>
+                <div class="wedo-item-desc">Regulatory, technology and market transition risks are assessed under each
+                  scenario — carbon pricing impacts, stranded asset risk, technology disruption and changing demand
+                  patterns for your products.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Governance Structure Review</div>
+                <div class="wedo-item-desc">We review your board&rsquo;s oversight of climate risk, management
+                  responsibilities, incentive structures and reporting lines — designing the governance framework TCFD
+                  requires and institutional investors inspect.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Financial Impact Quantification</div>
+                <div class="wedo-item-desc">Risk exposures are translated into financial language — EBITDA impact,
+                  capital expenditure requirements, asset impairment scenarios — giving your board and investors a
+                  quantified basis for strategy decisions.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section">
+      <div class="sec-label">Our process</div>
+      <h2 class="sec-title">How we <em>deliver your TCFD report</em></h2>
+      <p class="sec-sub mb4">A five-phase delivery programme covering the full TCFD framework from governance assessment
+        through to investor-ready disclosure.</p>
+      <div class="process-steps p5 reveal">
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="ps-n">01</div>
+          <div class="ps-title">Risk Identification</div>
+          <div class="ps-desc">Identify all physical and transition climate risks and opportunities relevant to your
+            business model, value chain and operating geographies.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="ps-n">02</div>
+          <div class="ps-title">Scenario Analysis</div>
+          <div class="ps-desc">Conduct quantitative and qualitative scenario analysis across 1.5°C, 2°C and 4°C pathways
+            for your most material risk categories.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="ps-n">03</div>
+          <div class="ps-title">Financial Impact Modelling</div>
+          <div class="ps-desc">Translate risk scenarios into financial exposure — revenue impact, capex requirements,
+            asset values, insurance costs and regulatory costs.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="ps-n">04</div>
+          <div class="ps-title">Governance &amp; Strategy Alignment</div>
+          <div class="ps-desc">Review board oversight, management roles and strategic response — designing the
+            governance and strategy narrative TCFD requires.</div>
+        </div>
+        <div class="ps">
+
+          <div class="ps-n">05</div>
+          <div class="ps-title">Disclosure Drafting &amp; Review</div>
+          <div class="ps-desc">Draft the full four-pillar TCFD disclosure, facilitate board review and prepare for
+            integration into Annual Report, CDP and lender reporting.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Key deliverables</div>
+        <h2 class="sec-title">What you receive from<br><em>every TCFD engagement</em></h2>
+        <div class="deliverables-grid mt3">
+          <div class="deliv-card reveal">
+            <div class="deliv-icon "><svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Full TCFD Report</div>
+              <div class="deliv-desc">Four-pillar TCFD disclosure covering Governance, Strategy, Risk Management and
+                Metrics &amp; Targets — board-approved and investor-ready.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="deliv-icon "><svg viewBox="0 0 24 24">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Climate Scenario Analysis</div>
+              <div class="deliv-desc">Quantitative and qualitative scenario analysis across 1.5°C, 2°C and 4°C pathways
+                with sector-specific transition and physical risk modelling.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="deliv-icon "><svg viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Financial Risk Quantification</div>
+              <div class="deliv-desc">Financial translation of climate risks — EBITDA impact ranges, asset impairment
+                scenarios, stranded asset analysis and capital expenditure requirements.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="deliv-icon "><svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Physical Risk Assessment</div>
+              <div class="deliv-desc">Geospatial hazard mapping of all operating locations against acute and chronic
+                climate hazards using WRI Aqueduct and peer-reviewed climate datasets.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="deliv-icon "><svg viewBox="0 0 24 24">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Strategic Response Plan</div>
+              <div class="deliv-desc">Board-level climate strategy document outlining resilience measures, low-carbon
+                transition investments and opportunity capture plans under each scenario.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="deliv-icon "><svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Governance Framework Design</div>
+              <div class="deliv-desc">Documented board and management climate oversight structure satisfying TCFD
+                governance pillar requirements and institutional investor governance standards.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section">
+      <div class="who-section reveal mb4">
+        <div class="who-inner">
+          <div class="who-label">Who this is for</div>
+          <div class="who-title">Right for your organisation if you are&hellip;</div>
+          <div class="who-chips"><span class="who-chip">Company seeking institutional investor credibility</span>
+            <span class="who-chip">Organisation applying for green bonds or SLL loans</span>
+            <span class="who-chip">Business preparing BRSR with TCFD climate integration</span>
+            <span class="who-chip">Company under CDP Climate module submission</span>
+            <span class="who-chip">Export-oriented business with EU customer requirements</span>
+            <span class="who-chip">Listed company with SEBI BRSR TCFD obligations</span>
+            <span class="who-chip">Organisation setting science-based climate targets</span>
+          </div>
+        </div>
+      </div>
+      <div class="sectors-wrap">
+        <div class="sectors-label">Industries we serve</div>
+        <div class="sectors-grid">
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Energy &amp; Utilities</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Steel &amp; Metals</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Cement &amp; Construction</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Chemicals &amp; Petrochemicals</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Real Estate</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Agriculture &amp; Food</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Financial Services</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Infrastructure</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Frameworks &amp; Standards</div>
+        <h2 class="sec-title">The climate framework<br><em>that connects everything</em></h2>
+        <p class="sec-sub">TCFD is the connective tissue of climate disclosure — embedded in CDP, BRSR, GRI, green bond
+          standards and ISSB. One rigorous TCFD assessment populates all.</p>
+        <div class="framework-badges mt2"><span class="fw-badge g">TCFD — Full Framework</span>
+          <span class="fw-badge g">NGFS Scenarios</span>
+          <span class="fw-badge b">IEA Net Zero 2050</span>
+          <span class="fw-badge b">CDP Climate Alignment</span>
+          <span class="fw-badge n">BRSR Climate Section</span>
+          <span class="fw-badge n">GRI 201 &amp; 201</span>
+          <span class="fw-badge b">ISSB IFRS S1/S2</span>
+          <span class="fw-badge n">Green Bond Principles</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+      <div class="faq-wrap mt3">
+        <div class="faq-item">
+          <button class="faq-btn">Is TCFD mandatory in India? <span class="faq-icon"><svg viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>TCFD is not yet formally mandatory for Indian companies as a standalone requirement, but SEBI has
+              embedded TCFD principles within the BRSR framework — making TCFD-aligned disclosures de facto mandatory
+              for top listed companies. Beyond SEBI, lenders offering green bonds or sustainability-linked loans
+              increasingly require TCFD disclosure. Given the pace of global regulatory adoption (mandatory in UK, EU,
+              Australia), Indian companies with global investors or customers should treat TCFD as a near-term mandatory
+              requirement.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">What is climate scenario analysis and why does it matter? <span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>Climate scenario analysis tests your business strategy against multiple plausible futures — a 1.5°C world
+              where rapid decarbonisation drives regulatory and market change, a 2°C world with moderate transition, and
+              a 4°C world with severe physical climate impacts. For each scenario, we quantify the financial exposure to
+              your specific assets, supply chain and markets. Without scenario analysis, you cannot meaningfully assess
+              whether your current strategy is resilient to climate change — which is precisely what TCFD, and
+              increasingly regulators, require.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">How does TCFD relate to ISSB IFRS S1/S2? <span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>ISSB IFRS S2 (Climate-related Disclosures) is directly built on TCFD&rsquo;s four-pillar framework. A
+              company that has implemented TCFD is therefore substantially ready for IFRS S2 compliance. The key
+              additional IFRS S2 requirements are more explicit quantitative financial impact disclosure and physical
+              risk disclosure at asset level. Our TCFD reports are designed with IFRS S2 readiness built in, so you are
+              not required to redo significant work when ISSB becomes mandatory in your jurisdiction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Related services</div>
+        <h2 class="sec-title">Services that <em>complement TCFD Reporting</em></h2>
+        <div class="related-grid mt2"><a href="svc-cdp.html" class="related-card">
+            <div class="related-card-cat">ESG Reporting</div>
+            <div class="related-card-title">CDP Disclosure</div>
+            <div class="related-card-desc">CDP Climate module is the primary external reporting vehicle for TCFD — we
+              deliver both simultaneously.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+          <a href="svc-gri.html" class="related-card">
+            <div class="related-card-cat">ESG Reporting</div>
+            <div class="related-card-title">GRI Reporting</div>
+            <div class="related-card-desc">Integrate TCFD climate risk disclosures within your GRI report as required by
+              GRI 2021 Topic Standards.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+          <a href="svc-ghg.html" class="related-card">
+            <div class="related-card-cat">Carbon &amp; Climate</div>
+            <div class="related-card-title">GHG Inventory &amp; Accounting</div>
+            <div class="related-card-desc">The Scope 1, 2 and 3 emissions data that underpins every TCFD Metrics &amp;
+              Targets section.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc-section" id="contact">
+      <div class="cta-band reveal">
+        <div>
+          <div class="cta-band-title">Start your TCFD assessment.</div>
+          <div class="cta-band-sub">Free 45-minute scoping call — we&rsquo;ll identify your most material climate risks
+            and design a TCFD delivery programme.</div>
+        </div>
+        <div class="cta-band-btns">
+          <a href="mailto:sustaincore.es@gmail.com" class="btn-wh">Book free call &rarr;</a>
+          <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
+        </div>
       </div>
     </div>
   </div>
-</section>
-<div class="rule" style="margin-top:3rem;"></div>
-
-<div class="svc-section">
-  <div class="stats-row reveal"><div class="stat-block">
-  <div class="stat-block-v">4</div>
-  <div class="stat-block-l">TCFD disclosure pillars</div>
-</div>
-<div class="stat-block">
-  <div class="stat-block-v">1.5°C</div>
-  <div class="stat-block-l">Paris-aligned pathway</div>
-</div>
-<div class="stat-block">
-  <div class="stat-block-v">$97tn</div>
-  <div class="stat-block-l">Institutional AUM supporting TCFD</div>
-</div>
-<div class="stat-block">
-  <div class="stat-block-v">2026</div>
-  <div class="stat-block-l">Mandatory in India trajectory</div>
-</div></div>
-  <div class="sec-label">Why it matters</div>
-  <h2 class="sec-title">Climate is a financial risk.<br><em>TCFD makes that legible.</em></h2>
-  <p class="sec-sub">The era of treating climate risk as a non-financial issue is over. TCFD gives investors, lenders and regulators a standardised framework to assess how climate change threatens your business model.</p>
-  <div class="why-grid mt2"><div class="why-card reveal reveal-d1">
-  <div class="why-card-n">01</div>
-  <div class="why-card-title">Investor Demand</div>
-  <div class="why-card-desc">Over $97 trillion in institutional assets are managed by organisations that have publicly committed to TCFD. They require TCFD-aligned disclosures from portfolio companies to assess climate-related financial exposure.</div>
-</div><div class="why-card reveal reveal-d2">
-  <div class="why-card-n">02</div>
-  <div class="why-card-title">Regulatory Trajectory</div>
-  <div class="why-card-desc">TCFD is already mandatory in the UK, EU (via CSRD) and Australia. India&rsquo;s SEBI has embedded TCFD principles in BRSR. Voluntary disclosure today builds mandatory compliance readiness for tomorrow.</div>
-</div><div class="why-card reveal reveal-d3">
-  <div class="why-card-n">03</div>
-  <div class="why-card-title">Lender &amp; Rating Agency Scrutiny</div>
-  <div class="why-card-desc">Green bond frameworks, sustainability-linked loans and ESG credit ratings all require TCFD-aligned climate risk assessments as part of their due diligence and ongoing monitoring processes.</div>
-</div></div>
-</div>
-
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">What we do</div>
-    <h2 class="sec-title">TCFD-aligned climate risk<br><em>analysis and disclosure</em></h2>
-    <p class="sec-sub">We deliver the four-pillar TCFD framework — governance, strategy, risk management, metrics — with quantified financial exposure and scenario-tested strategy.</p>
-    <div class="wedo-grid mt3 reveal">
-      <div class="wedo-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="TCFD Reporting delivery"/></div>
-      <div class="wedo-body"><div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Climate Scenario Analysis</div><div class="wedo-item-desc">We conduct scenario analysis across 1.5°C, 2°C and 4°C pathways using IEA, IPCC and NGFS scenarios — translating physical and transition risk into quantified financial exposure for your specific assets and markets.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Physical Risk Assessment</div><div class="wedo-item-desc">Acute risks (floods, cyclones, heatwaves) and chronic risks (sea level rise, temperature shifts, rainfall changes) are mapped to your operating locations using WRI Aqueduct, CLIMADA and peer-reviewed hazard datasets.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Transition Risk Assessment</div><div class="wedo-item-desc">Regulatory, technology and market transition risks are assessed under each scenario — carbon pricing impacts, stranded asset risk, technology disruption and changing demand patterns for your products.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Governance Structure Review</div><div class="wedo-item-desc">We review your board&rsquo;s oversight of climate risk, management responsibilities, incentive structures and reporting lines — designing the governance framework TCFD requires and institutional investors inspect.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Financial Impact Quantification</div><div class="wedo-item-desc">Risk exposures are translated into financial language — EBITDA impact, capital expenditure requirements, asset impairment scenarios — giving your board and investors a quantified basis for strategy decisions.</div></div>
-</div></div>
-    </div>
+  <div class="float">
+    <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
+      </svg>
+      WhatsApp
+    </a>
+    <a href="#contact" class="float-cb">
+      <div class="pulse"></div>Free consultation
+    </a>
   </div>
-</div>
-
-<div class="svc-section">
-  <div class="sec-label">Our process</div>
-  <h2 class="sec-title">How we <em>deliver your TCFD report</em></h2>
-  <p class="sec-sub mb4">A five-phase delivery programme covering the full TCFD framework from governance assessment through to investor-ready disclosure.</p>
-  <div class="process-steps p5 reveal"><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">01</div>
-  <div class="ps-title">Risk Identification</div>
-  <div class="ps-desc">Identify all physical and transition climate risks and opportunities relevant to your business model, value chain and operating geographies.</div>
-</div><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">02</div>
-  <div class="ps-title">Scenario Analysis</div>
-  <div class="ps-desc">Conduct quantitative and qualitative scenario analysis across 1.5°C, 2°C and 4°C pathways for your most material risk categories.</div>
-</div><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">03</div>
-  <div class="ps-title">Financial Impact Modelling</div>
-  <div class="ps-desc">Translate risk scenarios into financial exposure — revenue impact, capex requirements, asset values, insurance costs and regulatory costs.</div>
-</div><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">04</div>
-  <div class="ps-title">Governance &amp; Strategy Alignment</div>
-  <div class="ps-desc">Review board oversight, management roles and strategic response — designing the governance and strategy narrative TCFD requires.</div>
-</div><div class="ps">
-  
-  <div class="ps-n">05</div>
-  <div class="ps-title">Disclosure Drafting &amp; Review</div>
-  <div class="ps-desc">Draft the full four-pillar TCFD disclosure, facilitate board review and prepare for integration into Annual Report, CDP and lender reporting.</div>
-</div></div>
-</div>
-
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Key deliverables</div>
-    <h2 class="sec-title">What you receive from<br><em>every TCFD engagement</em></h2>
-    <div class="deliverables-grid mt3"><div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-  <div><div class="deliv-title">Full TCFD Report</div><div class="deliv-desc">Four-pillar TCFD disclosure covering Governance, Strategy, Risk Management and Metrics &amp; Targets — board-approved and investor-ready.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-  <div><div class="deliv-title">Climate Scenario Analysis</div><div class="deliv-desc">Quantitative and qualitative scenario analysis across 1.5°C, 2°C and 4°C pathways with sector-specific transition and physical risk modelling.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-  <div><div class="deliv-title">Financial Risk Quantification</div><div class="deliv-desc">Financial translation of climate risks — EBITDA impact ranges, asset impairment scenarios, stranded asset analysis and capital expenditure requirements.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-  <div><div class="deliv-title">Physical Risk Assessment</div><div class="deliv-desc">Geospatial hazard mapping of all operating locations against acute and chronic climate hazards using WRI Aqueduct and peer-reviewed climate datasets.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-  <div><div class="deliv-title">Strategic Response Plan</div><div class="deliv-desc">Board-level climate strategy document outlining resilience measures, low-carbon transition investments and opportunity capture plans under each scenario.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-  <div><div class="deliv-title">Governance Framework Design</div><div class="deliv-desc">Documented board and management climate oversight structure satisfying TCFD governance pillar requirements and institutional investor governance standards.</div></div>
-</div></div>
-  </div>
-</div>
-
-<div class="svc-section">
-  <div class="who-section reveal mb4">
-    <div class="who-inner">
-      <div class="who-label">Who this is for</div>
-      <div class="who-title">Right for your organisation if you are&hellip;</div>
-      <div class="who-chips"><span class="who-chip">Company seeking institutional investor credibility</span>
-<span class="who-chip">Organisation applying for green bonds or SLL loans</span>
-<span class="who-chip">Business preparing BRSR with TCFD climate integration</span>
-<span class="who-chip">Company under CDP Climate module submission</span>
-<span class="who-chip">Export-oriented business with EU customer requirements</span>
-<span class="who-chip">Listed company with SEBI BRSR TCFD obligations</span>
-<span class="who-chip">Organisation setting science-based climate targets</span></div>
-    </div>
-  </div>
-  <div class="sectors-wrap">
-    <div class="sectors-label">Industries we serve</div>
-    <div class="sectors-grid"><div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Energy &amp; Utilities</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Steel &amp; Metals</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Cement &amp; Construction</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Chemicals &amp; Petrochemicals</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Real Estate</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Agriculture &amp; Food</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Financial Services</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Infrastructure</div></div></div>
-  </div>
-</div>
-
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Frameworks &amp; Standards</div>
-    <h2 class="sec-title">The climate framework<br><em>that connects everything</em></h2>
-    <p class="sec-sub">TCFD is the connective tissue of climate disclosure — embedded in CDP, BRSR, GRI, green bond standards and ISSB. One rigorous TCFD assessment populates all.</p>
-    <div class="framework-badges mt2"><span class="fw-badge g">TCFD — Full Framework</span>
-<span class="fw-badge g">NGFS Scenarios</span>
-<span class="fw-badge b">IEA Net Zero 2050</span>
-<span class="fw-badge b">CDP Climate Alignment</span>
-<span class="fw-badge n">BRSR Climate Section</span>
-<span class="fw-badge n">GRI 201 &amp; 201</span>
-<span class="fw-badge b">ISSB IFRS S1/S2</span>
-<span class="fw-badge n">Green Bond Principles</span></div>
-  </div>
-</div>
-
-<div class="svc-section">
-  <div class="sec-label">FAQ</div>
-  <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
-  <div class="faq-wrap mt3"><div class="faq-item">
-  <button class="faq-btn">Is TCFD mandatory in India? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>TCFD is not yet formally mandatory for Indian companies as a standalone requirement, but SEBI has embedded TCFD principles within the BRSR framework — making TCFD-aligned disclosures de facto mandatory for top listed companies. Beyond SEBI, lenders offering green bonds or sustainability-linked loans increasingly require TCFD disclosure. Given the pace of global regulatory adoption (mandatory in UK, EU, Australia), Indian companies with global investors or customers should treat TCFD as a near-term mandatory requirement.</p></div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">What is climate scenario analysis and why does it matter? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>Climate scenario analysis tests your business strategy against multiple plausible futures — a 1.5°C world where rapid decarbonisation drives regulatory and market change, a 2°C world with moderate transition, and a 4°C world with severe physical climate impacts. For each scenario, we quantify the financial exposure to your specific assets, supply chain and markets. Without scenario analysis, you cannot meaningfully assess whether your current strategy is resilient to climate change — which is precisely what TCFD, and increasingly regulators, require.</p></div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">How does TCFD relate to ISSB IFRS S1/S2? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>ISSB IFRS S2 (Climate-related Disclosures) is directly built on TCFD&rsquo;s four-pillar framework. A company that has implemented TCFD is therefore substantially ready for IFRS S2 compliance. The key additional IFRS S2 requirements are more explicit quantitative financial impact disclosure and physical risk disclosure at asset level. Our TCFD reports are designed with IFRS S2 readiness built in, so you are not required to redo significant work when ISSB becomes mandatory in your jurisdiction.</p></div>
-</div></div>
-</div>
-
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Related services</div>
-    <h2 class="sec-title">Services that <em>complement TCFD Reporting</em></h2>
-    <div class="related-grid mt2"><a href="svc-cdp.html" class="related-card">
-  <div class="related-card-cat">ESG Reporting</div>
-  <div class="related-card-title">CDP Disclosure</div>
-  <div class="related-card-desc">CDP Climate module is the primary external reporting vehicle for TCFD — we deliver both simultaneously.</div>
-  <div class="related-card-link">Learn more &rarr;</div>
-</a>
-<a href="svc-gri.html" class="related-card">
-  <div class="related-card-cat">ESG Reporting</div>
-  <div class="related-card-title">GRI Reporting</div>
-  <div class="related-card-desc">Integrate TCFD climate risk disclosures within your GRI report as required by GRI 2021 Topic Standards.</div>
-  <div class="related-card-link">Learn more &rarr;</div>
-</a>
-<a href="svc-ghg.html" class="related-card">
-  <div class="related-card-cat">Carbon &amp; Climate</div>
-  <div class="related-card-title">GHG Inventory &amp; Accounting</div>
-  <div class="related-card-desc">The Scope 1, 2 and 3 emissions data that underpins every TCFD Metrics &amp; Targets section.</div>
-  <div class="related-card-link">Learn more &rarr;</div>
-</a></div>
-  </div>
-</div>
-
-<div class="svc-section" id="contact">
-  <div class="cta-band reveal">
-    <div>
-      <div class="cta-band-title">Start your TCFD assessment.</div>
-      <div class="cta-band-sub">Free 45-minute scoping call — we&rsquo;ll identify your most material climate risks and design a TCFD delivery programme.</div>
-    </div>
-    <div class="cta-band-btns">
-      <a href="mailto:sustaincore.es@gmail.com" class="btn-wh">Book free call &rarr;</a>
-      <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
-    </div>
-  </div>
-</div>
-</div>
-<div class="float">
-  <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-    WhatsApp
-  </a>
-  <a href="#contact" class="float-cb"><div class="pulse"></div>Free consultation</a>
-</div>
-<footer class="sc-foot">
-  <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd.
-  &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a>
-  &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a>
-  &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
-</footer>
-<script>
-document.querySelectorAll('.faq-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const item=btn.parentElement;
-    const ans=item.querySelector('.faq-ans');
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i=>{
-      i.classList.remove('open');
-      i.querySelector('.faq-ans').style.maxHeight=null;
+  <footer class="sc-foot">
+    <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd.
+      &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a>
+      &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a>
+      &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
+  </footer>
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const ans = item.querySelector('.faq-ans');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-ans').style.maxHeight = null;
+        });
+        if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+      });
     });
-    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
-  });
-});
-// Scroll reveal
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
-},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-</script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>

@@ -21,13 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (typeof Chart !== 'undefined') {
         const GRID = 'rgba(255,255,255,0.08)';
         const TICK = 'rgba(255,255,255,0.6)';
+        const LABEL_COLOR = 'rgba(255,255,255,0.9)';
         const FONT = { family: 'Inter', size: 10, weight: 500 };
 
-        function baseOpts(yLabel) {
+        function baseOpts(xTitle, yTitle) {
             return {
                 responsive: true,
                 maintainAspectRatio: false,
-                layout: { padding: { top: 10, bottom: 5, left: 0, right: 0 } },
+                layout: { padding: { top: 20, bottom: 10, left: 10, right: 10 } },
                 animation: { duration: 1600, easing: 'easeOutQuart' },
                 plugins: { 
                     legend: { display: false }, 
@@ -41,11 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 scales: {
                     x: {
+                        title: { 
+                            display: true, 
+                            text: xTitle || 'Year', 
+                            color: LABEL_COLOR, 
+                            font: { ...FONT, size: 12, weight: 700 },
+                            padding: { top: 10 }
+                        },
                         ticks: { color: TICK, font: FONT, padding: 10 },
                         grid: { color: GRID, drawOnChartArea: true, drawTicks: false },
                         border: { display: true, color: 'rgba(255,255,255,0.2)', width: 1 }
                     },
                     y: {
+                        title: { 
+                            display: true, 
+                            text: yTitle || 'Value', 
+                            color: LABEL_COLOR, 
+                            font: { ...FONT, size: 12, weight: 700 },
+                            padding: { bottom: 10 }
+                        },
                         ticks: { color: TICK, font: FONT, padding: 10 },
                         grid: { color: GRID, drawOnChartArea: true, drawTicks: false },
                         border: { display: true, color: 'rgba(255,255,255,0.2)', width: 1 }
@@ -67,7 +82,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         borderWidth: 3, pointRadius: 4, pointBackgroundColor: '#ef4444', fill: true, tension: 0.4
                     }]
                 },
-                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 0, max: 2.0, ticks: { ...baseOpts().scales.y.ticks, stepSize:0.5 } } } }
+                options: { 
+                    ...baseOpts('Year', 'Temp. Rise (°C)'), 
+                    scales: { 
+                        ...baseOpts('Year', 'Temp. Rise (°C)').scales, 
+                        y: { 
+                            ...baseOpts('Year', 'Temp. Rise (°C)').scales.y, 
+                            min: 0, 
+                            max: 2.0, 
+                            ticks: { 
+                                ...baseOpts('Year', 'Temp. Rise (°C)').scales.y.ticks, 
+                                stepSize:0.5 
+                            } 
+                        } 
+                    } 
+                }
             });
         }
 
@@ -82,7 +111,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         backgroundColor: 'rgba(180,83,9,0.7)', borderColor: '#b45309', borderWidth: 1, borderRadius: 4
                     }]
                 },
-                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 20, max: 40, ticks: { ...baseOpts().scales.y.ticks, stepSize:5 } } } }
+                options: { 
+                    ...baseOpts('Year', 'CO₂ Emissions (Gt)'), 
+                    scales: { 
+                        ...baseOpts('Year', 'CO₂ Emissions (Gt)').scales, 
+                        y: { 
+                            ...baseOpts('Year', 'CO₂ Emissions (Gt)').scales.y, 
+                            min: 20, 
+                            max: 40, 
+                            ticks: { 
+                                ...baseOpts('Year', 'CO₂ Emissions (Gt)').scales.y.ticks, 
+                                stepSize:5 
+                            } 
+                        } 
+                    } 
+                }
             });
         }
 
@@ -97,7 +140,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         backgroundColor: 'rgba(202,138,4,0.7)', borderColor: '#ca8a04', borderWidth: 1, borderRadius: 4
                     }]
                 },
-                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 0, max: 45, ticks: { ...baseOpts().scales.y.ticks, stepSize:10 } } } }
+                options: { 
+                    ...baseOpts('Year', 'GDP Loss ($ Trillion)'), 
+                    scales: { 
+                        ...baseOpts('Year', 'GDP Loss ($ Trillion)').scales, 
+                        y: { 
+                            ...baseOpts('Year', 'GDP Loss ($ Trillion)').scales.y, 
+                            min: 0, 
+                            max: 45, 
+                            ticks: { 
+                                ...baseOpts('Year', 'GDP Loss ($ Trillion)').scales.y.ticks, 
+                                stepSize:10 
+                            } 
+                        } 
+                    } 
+                }
             });
         }
 
@@ -114,7 +171,21 @@ document.addEventListener('DOMContentLoaded', () => {
                         borderWidth: 3, pointRadius: 4, pointBackgroundColor: '#10b981', fill: true, tension: 0.4
                     }]
                 },
-                options: { ...baseOpts(), scales: { ...baseOpts().scales, y: { ...baseOpts().scales.y, min: 0, max: 16, ticks: { ...baseOpts().scales.y.ticks, stepSize:4 } } } }
+                options: { 
+                    ...baseOpts('Year', 'Market Size ($ Trillion)'), 
+                    scales: { 
+                        ...baseOpts('Year', 'Market Size ($ Trillion)').scales, 
+                        y: { 
+                            ...baseOpts('Year', 'Market Size ($ Trillion)').scales.y, 
+                            min: 0, 
+                            max: 16, 
+                            ticks: { 
+                                ...baseOpts('Year', 'Market Size ($ Trillion)').scales.y.ticks, 
+                                stepSize:4 
+                            } 
+                        } 
+                    } 
+                }
             });
         }
     }

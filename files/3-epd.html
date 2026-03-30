@@ -1,418 +1,635 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Environmental Product Declaration (EPD) — SustainCore Environmental Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="sustaincore-shared.css"/>
-<style>
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-d1{transition-delay:.1s;}
-.reveal-d2{transition-delay:.2s;}
-.reveal-d3{transition-delay:.3s;}
-.reveal-d4{transition-delay:.4s;}
 
-/* LCA stages visual */
-.lca-stages{display:flex;align-items:stretch;gap:0;margin-top:2rem;border-radius:14px;overflow:hidden;border:1px solid var(--bdr);}
-.lca-stage{flex:1;padding:1.25rem 1rem;background:var(--w);border-right:1px solid var(--bdr);position:relative;}
-.lca-stage:last-child{border-right:none;}
-.lca-stage:hover{background:rgba(74,124,89,.04);}
-.lca-stage-code{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--g);margin-bottom:.4rem;}
-.lca-stage-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:.3rem;}
-.lca-stage-desc{font-size:10.5px;font-weight:300;color:var(--muted);line-height:1.55;}
-.lca-stage.b .lca-stage-code{color:var(--b);}
-</style>
+<head>
+  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Environmental Product Declaration (EPD) | SustainCore</title>
+  <meta name="description"
+    content="Development and registration of Environmental Product Declarations (EPD). ISO 14025 compliant reporting for green building and global supply chain requirements.">
+  <link rel="icon" href="/Frame 4.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="sustaincore-shared.css">
+
+    /* LCA stages visual */
+    .lca-stages {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-top: 2rem;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--bdr);
+    }
+
+    .lca-stage {
+      flex: 1;
+      padding: 1.25rem 1rem;
+      background: var(--w);
+      border-right: 1px solid var(--bdr);
+      position: relative;
+    }
+
+    .lca-stage:last-child {
+      border-right: none;
+    }
+
+    .lca-stage:hover {
+      background: rgba(74, 124, 89, .04);
+    }
+
+    .lca-stage-code {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--g);
+      margin-bottom: .4rem;
+    }
+
+    .lca-stage-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .3rem;
+    }
+
+    .lca-stage-desc {
+      font-size: 10.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .lca-stage.b .lca-stage-code {
+      color: var(--b);
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="sc-nav">
-  <a href="../index.html" class="sc-nav-logo">
-    <svg viewBox="0 0 200 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59"/>
-      <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z" fill="#1a4a6b"/>
-      <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17" fill="#4a7c59">Sustain</text>
-      <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17" fill="#1a4a6b">Core</text>
-      <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61" letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
-    </svg>
-  </a>
-  <ul class="sc-nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../sustaincore_services.html" class="active">Services</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Insights</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <a href="#contact" class="sc-nav-cta">Free Consultation</a>
-</nav>
+  <div id="header-root"></div>
 
-<div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
-<div class="bc">
-  <a href="../index.html">Home</a>
-  <span class="sep">/</span>
-  <a href="../sustaincore_services.html">Services</a>
-  <span class="sep">/</span>
-  <a href="../sustaincore_services.html">Assessments &amp; Ratings</a>
-  <span class="sep">/</span>
-  <span class="sep">Environmental Product Declaration</span>
-</div>
 
-<!-- HERO -->
-<section class="svc-hero">
-  <div class="svc-hero-inner">
-    <div class="svc-hero-tag">Assessments &amp; Ratings &middot; Category 03</div>
-    <h1 class="svc-hero-title">Environmental<br><em>Product Declaration</em><br><span class="bt">ISO 14025 &middot; EN 15804</span></h1>
-    <div class="svc-hero-body">
-      <p class="svc-hero-desc">An Environmental Product Declaration (EPD) is the internationally recognised, third-party verified document quantifying the environmental impact of your product across its entire lifecycle. <strong>Green building standards, EU procurement rules and global supply chains now require them.</strong> We conduct the full LCA, draft the EPD and manage registration with internationally accredited Programme Operators.</p>
-      <div class="svc-hero-pills">
-        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>ISO 14025</strong> Compliant</div>
-        <div class="svc-hero-pill blue"><span class="pill-icon"></span>EN 15804 + A2 (Construction)</div>
-        <div class="svc-hero-pill"><span class="pill-icon"></span><strong>LEED / BREEAM</strong> Accepted</div>
-        <div class="svc-hero-pill blue"><span class="pill-icon"></span>Third-party verified</div>
-        <div class="svc-hero-pill"><span class="pill-icon"></span>GreenTag &bull; IBU &bull; EPD International</div>
+
+  <!-- HERO -->
+  <section class="svc-hero">
+    <div class="svc-hero-inner">
+      <div class="bc">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/ratings-targets.html">Ratings & Targets</a>
+        <span class="sep">/</span>
+        <span>EPD Certification</span>
+      </div>
+      <h1 class="svc-hero-title">Environmental<br><em>Product Declaration</em><br><span class="bt">ISO 14025 &middot;
+          EN 15804</span></h1>
+      <div class="svc-hero-body">
+        <div class="svc-hero-left">
+          <p class="svc-hero-desc">An Environmental Product Declaration (EPD) provides verified, transparent 
+            information about the environmental impact of a product across its entire lifecycle. Based on ISO 14025,
+            EPDs are the gold standard for green procurement. <strong>Let your product's sustainability be verified
+              by science.</strong></p>
+          <div style="margin-top:.5rem;">
+            <a href="/index.html#consultation" class="btn-primary">Get Expert Strategy</a>
+          </div>
+        </div>
+        <div class="svc-hero-pills">
+          <div class="svc-hero-pill"><span class="pill-icon"></span><strong>ISO 14025</strong> Compliant</div>
+          <div class="svc-hero-pill blue"><span class="pill-icon"></span>EN 15804 + A2 (Construction)</div>
+          <div class="svc-hero-pill"><span class="pill-icon"></span><strong>LEED / BREEAM</strong> Accepted</div>
+          <div class="svc-hero-pill blue"><span class="pill-icon"></span>Third-party verified</div>
+          <div class="svc-hero-pill"><span class="pill-icon"></span>GreenTag &bull; IBU &bull; EPD International</div>
+        </div>
       </div>
     </div>
-  </div>
-  <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
-    <div class="svc-hero-img">
-      <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1400&q=80" alt="Product lifecycle assessment manufacturing"/>
-      <div class="svc-hero-img-caption">
-        <div class="svc-hero-img-title">Product-Level<br><em>Environmental Truth</em></div>
-        <div class="svc-hero-stat-row">
-          <div class="svc-hero-stat"><div class="svc-hero-stat-v">ISO</div><div class="svc-hero-stat-l">14025 &amp; 14044 aligned</div></div>
-          <div class="svc-hero-stat"><div class="svc-hero-stat-v">5 yr</div><div class="svc-hero-stat-l">EPD validity period</div></div>
-          <div class="svc-hero-stat"><div class="svc-hero-stat-v">15+</div><div class="svc-hero-stat-l">Impact categories quantified</div></div>
+      <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+        <div class="svc-hero-img">
+          <img src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1400&q=80"
+            alt="Product lifecycle assessment manufacturing" />
+          <div class="svc-hero-img-caption">
+            <div class="svc-hero-img-title">Product-Level<br><em>Environmental Truth</em></div>
+            <div class="svc-hero-stat-row">
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">ISO</div>
+                <div class="svc-hero-stat-l">14025 &amp; 14044 aligned</div>
+              </div>
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">5 yr</div>
+                <div class="svc-hero-stat-l">EPD validity period</div>
+              </div>
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">15+</div>
+                <div class="svc-hero-stat-l">Impact categories quantified</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="rule" style="margin-top:3rem;"></div>
+
+    <!-- LCA STAGES -->
+    <div class="svc-section">
+      <div class="stats-row reveal">
+        <div class="stat-block">
+          <div class="stat-block-v">ISO 14025</div>
+          <div class="stat-block-l">International EPD standard</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">15+</div>
+          <div class="stat-block-l">Environmental impact categories</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">5 yr</div>
+          <div class="stat-block-l">EPD validity after registration</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">100+</div>
+          <div class="stat-block-l">Countries accepting EPDs globally</div>
+        </div>
+      </div>
+
+      <div class="sec-label">Lifecycle stages</div>
+      <h2 class="sec-title">What an EPD covers &mdash;<br><em>cradle to grave</em></h2>
+      <p class="sec-sub">An EPD quantifies environmental impacts across the full product lifecycle in accordance with
+        ISO 14044 LCA methodology and the applicable Product Category Rules (PCR).</p>
+      <div class="lca-stages">
+        <div class="lca-stage">
+          <div class="lca-stage-code">A1&ndash;A3</div>
+          <div class="lca-stage-name">Product Stage</div>
+          <div class="lca-stage-desc">Raw material extraction, transport to factory, and manufacturing process impacts.
+          </div>
+        </div>
+        <div class="lca-stage b">
+          <div class="lca-stage-code">A4&ndash;A5</div>
+          <div class="lca-stage-name">Construction / Installation</div>
+          <div class="lca-stage-desc">Transport to site and installation or assembly process environmental loads.</div>
+        </div>
+        <div class="lca-stage">
+          <div class="lca-stage-code">B1&ndash;B7</div>
+          <div class="lca-stage-name">Use Stage</div>
+          <div class="lca-stage-desc">In-use emissions, energy and water use, maintenance, repair and refurbishment over
+            service life.</div>
+        </div>
+        <div class="lca-stage b">
+          <div class="lca-stage-code">C1&ndash;C4</div>
+          <div class="lca-stage-name">End of Life</div>
+          <div class="lca-stage-desc">Deconstruction, transport to waste facility, waste processing and disposal
+            impacts.</div>
+        </div>
+        <div class="lca-stage">
+          <div class="lca-stage-code">D</div>
+          <div class="lca-stage-name">Beyond Boundary</div>
+          <div class="lca-stage-desc">Net benefits from reuse, recovery and recycling potential beyond the system
+            boundary.</div>
+        </div>
+      </div>
+
+      <!-- WHY IT MATTERS -->
+      <div class="sec-label mt3">Why it matters</div>
+      <h2 class="sec-title">EPDs are becoming<br><em>a market access requirement.</em></h2>
+      <p class="sec-sub">Green building projects, EU public procurement and global buyers increasingly require EPDs as
+        mandatory documentation &mdash; and the EU Green Deal is accelerating this across manufacturing sectors.</p>
+      <div class="why-grid mt2">
+        <div class="why-card reveal reveal-d1">
+          <div class="sp-step-num">01</div>
+          <div class="why-card-title">Green Building Mandates</div>
+          <div class="why-card-desc">LEED v4+, BREEAM, GRIHA and Green Star all award credits for products with verified
+            EPDs. Developers specifying products for certified buildings actively require EPDs from manufacturers
+            &mdash; and will substitute suppliers who cannot provide them.</div>
+        </div>
+        <div class="why-card reveal reveal-d2">
+          <div class="sp-step-num">02</div>
+          <div class="why-card-title">EU Public Procurement</div>
+          <div class="why-card-desc">The EU&rsquo;s Green Public Procurement (GPP) criteria and Construction Products
+            Regulation increasingly require EPDs for products supplied to EU public sector projects. Indian exporters of
+            steel, cement, aluminium and building materials are directly affected.</div>
+        </div>
+        <div class="why-card reveal reveal-d3">
+          <div class="sp-step-num">03</div>
+          <div class="why-card-title">CBAM &amp; Carbon Footprint Support</div>
+          <div class="why-card-desc">An EPD with a verified LCA produces the product-level embedded emissions data that
+            CBAM-regulated exporters need. It also forms the foundation for a Product Carbon Footprint (PCF)
+            certification and satisfies CSRD Scope 3 supplier data requests.</div>
+        </div>
+        <div class="why-card reveal reveal-d4">
+          <div class="sp-step-num">04</div>
+          <div class="why-card-title">Competitive Sustainability Claim</div>
+          <div class="why-card-desc">An EPD is a third-party verified, quantitative sustainability claim that goes far
+            beyond marketing language. It enables you to make specific, credible statements about your product&rsquo;s
+            environmental performance &mdash; and prevents greenwashing accusations.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">What we do</div>
+        <h2 class="sec-title">From LCA to<br><em>registered EPD</em></h2>
+        <p class="sec-sub">We manage the complete EPD development process: LCA study, EPD drafting, third-party critical
+          review, Programme Operator registration and publication on the global EPD registry &mdash; delivering a
+          verified, internationally recognised EPD for your product.</p>
+        <div class="wedo-grid mt3 reveal">
+          <div class="wedo-img">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80"
+              alt="LCA data collection product environmental analysis" />
+          </div>
+          <div class="wedo-body">
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Product Category Rules (PCR) Identification</div>
+                <div class="wedo-item-desc">We identify the applicable PCR for your product type, select the appropriate
+                  Programme Operator (IBU, EPD International, GreenTag, BRE) and define the system boundary, functional
+                  unit and scope of the LCA study.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Life Cycle Assessment (LCA)</div>
+                <div class="wedo-item-desc">Full ISO 14044-compliant LCA covering all relevant lifecycle stages. We
+                  collect primary data from your production process and supplement with ecoinvent background data,
+                  quantifying 15+ environmental impact categories including GWP, AP, EP, ODP and POCP.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">EPD Drafting</div>
+                <div class="wedo-item-desc">Preparation of the EPD document in Programme Operator format, covering all
+                  mandatory content: product description, system boundary, data quality assessment, LCA results table,
+                  and all required EN 15804 + A2 impact category declarations.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Independent Critical Review</div>
+                <div class="wedo-item-desc">Coordination of the mandatory ISO 14044-required critical review by an
+                  independent, qualified LCA practitioner or review panel &mdash; a prerequisite for EPD registration
+                  and publication.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Programme Operator Registration &amp; Publication</div>
+                <div class="wedo-item-desc">Submission to and registration with your chosen accredited Programme
+                  Operator, resulting in a published EPD with a unique registration number valid for five years and
+                  accessible to buyers globally via the EPD registry.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="svc-section">
+      <div class="sec-label">Our process</div>
+      <h2 class="sec-title">How we <em>deliver your EPD</em></h2>
+      <p class="sec-sub mb4">A five-phase process from PCR identification to published EPD, typically completed in
+        10&ndash;16 weeks depending on product complexity and data availability.</p>
+      <div class="process-steps p5 reveal">
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">01</div>
+          <div class="ps-title">Scoping &amp; PCR Selection</div>
+          <div class="ps-desc">Product type classification, PCR identification, Programme Operator selection, system
+            boundary definition and functional unit declaration.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">02</div>
+          <div class="ps-title">Data Collection</div>
+          <div class="ps-desc">Primary production data collection from your facility (energy, materials, water, waste,
+            transport) and background data integration from ecoinvent and regional databases.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">03</div>
+          <div class="ps-title">LCA Modelling</div>
+          <div class="ps-desc">Full ISO 14044-compliant LCA model build, impact assessment across 15+ categories and
+            sensitivity/uncertainty analysis per PCR requirements.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">04</div>
+          <div class="ps-title">EPD Drafting &amp; Review</div>
+          <div class="ps-desc">EPD document preparation to Programme Operator template, independent critical review
+            coordination and resolution of all review comments.</div>
+        </div>
+        <div class="ps">
+          <div class="sp-step-num">05</div>
+          <div class="ps-title">Registration &amp; Publication</div>
+          <div class="ps-desc">Programme Operator submission, registration fee management, final publication on the EPD
+            registry and delivery of the verified, publication-ready EPD document.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELIVERABLES -->
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Key deliverables</div>
+        <h2 class="sec-title">What you receive from<br><em>every EPD engagement</em></h2>
+        <div class="deliverables-grid mt3">
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Registered &amp; Published EPD</div>
+              <div class="deliv-desc">ISO 14025-compliant EPD registered with an accredited Programme Operator,
+                published on the global EPD registry with a unique registration number. Valid for 5 years.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Full LCA Report</div>
+              <div class="deliv-desc">ISO 14044-compliant Life Cycle Assessment study covering all lifecycle stages,
+                impact categories and data quality assessment &mdash; the technical foundation for the EPD.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Critical Review Statement</div>
+              <div class="deliv-desc">Independent expert critical review of the LCA study as required by ISO 14044 and
+                Programme Operator rules, confirming methodological conformance.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Product Carbon Footprint (GWP Data)</div>
+              <div class="deliv-desc">Verified Global Warming Potential data per functional unit usable directly for
+                CBAM embedded emissions declarations, CSRD Scope 3 supplier data requests and PCF certification.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Hotspot Analysis</div>
+              <div class="deliv-desc">Identification of the lifecycle stages and material inputs contributing most to
+                each impact category &mdash; the foundation for a product-level decarbonisation strategy.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+                <line x1="9" y1="9" x2="9.01" y2="9" />
+                <line x1="15" y1="9" x2="15.01" y2="9" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Marketing Communication Pack</div>
+              <div class="deliv-desc">Buyer-facing EPD summary sheet, key impact figures formatted for tenders and
+                procurement responses, and guidance on using EPD claims in compliance with ISO 14021 green claims rules.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHO + SECTORS -->
+    <div class="svc-section">
+      <div class="who-section reveal mb4">
+        <div class="who-inner">
+          <div class="who-label">Who this is for</div>
+          <div class="who-title">Right for your organisation if you are&hellip;</div>
+          <div class="who-chips">
+            <span class="who-chip">Manufacturer supplying to green building projects (LEED / BREEAM)</span>
+            <span class="who-chip">Exporter to the EU facing product-level environmental documentation
+              requirements</span>
+            <span class="who-chip">Steel, cement or aluminium producer with CBAM-regulated exports</span>
+            <span class="who-chip">Company responding to CSRD Scope 3 product emissions data requests</span>
+            <span class="who-chip">Organisation targeting EcoVadis Gold or Platinum</span>
+            <span class="who-chip">Business seeking to substantiate green product claims under ISO 14021</span>
+            <span class="who-chip">Company competing in EU public procurement tenders requiring EPDs</span>
+          </div>
+        </div>
+      </div>
+      <div class="sectors-wrap">
+        <div class="sectors-label">Industries we serve</div>
+        <div class="sectors-grid">
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Steel &amp; Structural Metals</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Cement &amp; Concrete</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Aluminium &amp; Fabricated Metals</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Ceramics &amp; Tiles</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Paints &amp; Coatings</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Plastics &amp; Polymers</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Textiles &amp; Fibres</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Chemicals &amp; Fertilisers</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAMEWORKS -->
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Standards &amp; Frameworks</div>
+        <h2 class="sec-title">Globally recognised.<br><em>Universally accepted.</em></h2>
+        <p class="sec-sub">EPDs produced under ISO 14025 and EN 15804 are accepted by all major green building
+          certification schemes, EU procurement frameworks and supply chain sustainability standards worldwide.</p>
+        <div class="framework-badges mt2">
+          <span class="fw-badge g">ISO 14025 &mdash; EPD Standard</span>
+          <span class="fw-badge g">ISO 14044 &mdash; LCA Requirements</span>
+          <span class="fw-badge b">EN 15804 + A2 (Construction Products)</span>
+          <span class="fw-badge b">LEED v4 / v4.1 MR Credits</span>
+          <span class="fw-badge n">BREEAM Mat-01 Credits</span>
+          <span class="fw-badge n">GRIHA Green Building India</span>
+          <span class="fw-badge n">EU GPP &mdash; Green Public Procurement</span>
+          <span class="fw-badge b">IBU &bull; EPD International &bull; GreenTag</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="svc-section">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+      <div class="faq-wrap mt3">
+        <div class="faq-item">
+          <button class="faq-btn">What is the difference between an EPD and a product carbon footprint? <span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>A Product Carbon Footprint (PCF) quantifies only the greenhouse gas emissions (GWP) associated with a
+              product across its lifecycle &mdash; expressed in kg CO&sup2;e per functional unit. An EPD is broader: it
+              reports 15+ environmental impact categories including GWP, acidification, eutrophication, ozone depletion,
+              photochemical oxidant formation and resource depletion, all verified by a third party and published under
+              an accredited Programme Operator. An EPD contains the PCF data as one of its impact categories. For CBAM
+              purposes, the GWP data from an EPD can directly support embedded emissions declarations, but CBAM requires
+              installation-level verified data rather than product-category averages.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">How long is an EPD valid and what happens when it expires? <span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>EPDs are valid for 5 years from the date of publication by the Programme Operator. After expiry, the EPD
+              is withdrawn from the active registry. To maintain an active EPD, you must update the underlying LCA study
+              and resubmit for a new 5-year registration. The update process is substantially faster than a first EPD
+              &mdash; typically 4&ndash;8 weeks &mdash; because the modelling framework and data collection templates
+              already exist. We track your EPD expiry dates and begin renewal preparation at least 3 months in advance
+              to ensure continuous availability for procurement responses.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Which Programme Operator should we register with? <span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>The choice of Programme Operator (PO) depends on your target markets, product type and applicable Product
+              Category Rules. IBU (Institut Bauen und Umwelt) is strongest for the German and Central European
+              construction market. EPD International (The International EPD System) has the broadest global recognition.
+              GreenTag is widely recognised in Australia and the Asia-Pacific region. BRE is strong for BREEAM-focused
+              UK and European projects. We recommend the PO based on where your primary buyers are located and which
+              green building schemes they specify &mdash; and in many cases we recommend registering with two POs
+              simultaneously to maximise market coverage.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Can one EPD cover multiple product variants? <span class="faq-icon"><svg
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>Yes &mdash; under most PCRs, a single EPD can declare results for multiple product variants (different
+              grades, thicknesses, compositions) within the same product family, provided the variants share the same
+              functional unit and system boundary. The EPD then declares separate LCA results for each variant. This is
+              significantly more cost-efficient than producing individual EPDs per variant and is the approach we
+              recommend for manufacturers with product ranges. Some PCRs do restrict this &mdash; particularly EN 15804
+              for construction products &mdash; and we check applicability during the scoping phase before committing to
+              a product range approach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED SERVICES -->
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Related services</div>
+        <h2 class="sec-title">Services that <em>connect with your EPD</em></h2>
+        <div class="related-grid mt2">
+          <a href="svc-cbam.html" class="related-card">
+            <div class="related-card-cat">Carbon &amp; Climate</div>
+            <div class="related-card-title">CBAM Advisory</div>
+            <div class="related-card-desc">The GWP data from your EPD directly supports CBAM embedded emissions
+              declarations for EU exports of steel, aluminium, cement and fertilisers.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+          <a href="svc-ecovadis.html" class="related-card">
+            <div class="related-card-cat">Assessments &amp; Ratings</div>
+            <div class="related-card-title">EcoVadis Assessment</div>
+            <div class="related-card-desc">A verified EPD significantly strengthens EcoVadis Environment theme scoring
+              &mdash; one of the most efficient paths to Gold or Platinum.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+          <a href="svc-sbti.html" class="related-card">
+            <div class="related-card-cat">Assessments &amp; Ratings</div>
+            <div class="related-card-title">SBTi Target Setting</div>
+            <div class="related-card-desc">The LCA hotspot analysis from your EPD identifies the highest-impact
+              reduction opportunities to inform your SBTi decarbonisation pathway.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="svc-section" id="contact">
+      <div class="cta-band reveal">
+        <div>
+          <div class="cta-band-title">Ready to develop your EPD?</div>
+          <div class="cta-band-sub">Speak with our technical experts to build your sustainability roadmap and secure a registered, internationally recognised EPD.</div>
+        </div>
+        <div class="cta-band-btns">
+          <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
         </div>
       </div>
     </div>
   </div>
-</section>
-<div class="rule" style="margin-top:3rem;"></div>
 
-<!-- LCA STAGES -->
-<div class="svc-section">
-  <div class="stats-row reveal">
-    <div class="stat-block"><div class="stat-block-v">ISO 14025</div><div class="stat-block-l">International EPD standard</div></div>
-    <div class="stat-block"><div class="stat-block-v">15+</div><div class="stat-block-l">Environmental impact categories</div></div>
-    <div class="stat-block"><div class="stat-block-v">5 yr</div><div class="stat-block-l">EPD validity after registration</div></div>
-    <div class="stat-block"><div class="stat-block-v">100+</div><div class="stat-block-l">Countries accepting EPDs globally</div></div>
-  </div>
 
-  <div class="sec-label">Lifecycle stages</div>
-  <h2 class="sec-title">What an EPD covers &mdash;<br><em>cradle to grave</em></h2>
-  <p class="sec-sub">An EPD quantifies environmental impacts across the full product lifecycle in accordance with ISO 14044 LCA methodology and the applicable Product Category Rules (PCR).</p>
-  <div class="lca-stages">
-    <div class="lca-stage">
-      <div class="lca-stage-code">A1&ndash;A3</div>
-      <div class="lca-stage-name">Product Stage</div>
-      <div class="lca-stage-desc">Raw material extraction, transport to factory, and manufacturing process impacts.</div>
-    </div>
-    <div class="lca-stage b">
-      <div class="lca-stage-code">A4&ndash;A5</div>
-      <div class="lca-stage-name">Construction / Installation</div>
-      <div class="lca-stage-desc">Transport to site and installation or assembly process environmental loads.</div>
-    </div>
-    <div class="lca-stage">
-      <div class="lca-stage-code">B1&ndash;B7</div>
-      <div class="lca-stage-name">Use Stage</div>
-      <div class="lca-stage-desc">In-use emissions, energy and water use, maintenance, repair and refurbishment over service life.</div>
-    </div>
-    <div class="lca-stage b">
-      <div class="lca-stage-code">C1&ndash;C4</div>
-      <div class="lca-stage-name">End of Life</div>
-      <div class="lca-stage-desc">Deconstruction, transport to waste facility, waste processing and disposal impacts.</div>
-    </div>
-    <div class="lca-stage">
-      <div class="lca-stage-code">D</div>
-      <div class="lca-stage-name">Beyond Boundary</div>
-      <div class="lca-stage-desc">Net benefits from reuse, recovery and recycling potential beyond the system boundary.</div>
-    </div>
-  </div>
 
-  <!-- WHY IT MATTERS -->
-  <div class="sec-label mt3">Why it matters</div>
-  <h2 class="sec-title">EPDs are becoming<br><em>a market access requirement.</em></h2>
-  <p class="sec-sub">Green building projects, EU public procurement and global buyers increasingly require EPDs as mandatory documentation &mdash; and the EU Green Deal is accelerating this across manufacturing sectors.</p>
-  <div class="why-grid mt2">
-    <div class="why-card reveal reveal-d1">
-      <div class="why-card-n">01</div>
-      <div class="why-card-title">Green Building Mandates</div>
-      <div class="why-card-desc">LEED v4+, BREEAM, GRIHA and Green Star all award credits for products with verified EPDs. Developers specifying products for certified buildings actively require EPDs from manufacturers &mdash; and will substitute suppliers who cannot provide them.</div>
-    </div>
-    <div class="why-card reveal reveal-d2">
-      <div class="why-card-n">02</div>
-      <div class="why-card-title">EU Public Procurement</div>
-      <div class="why-card-desc">The EU&rsquo;s Green Public Procurement (GPP) criteria and Construction Products Regulation increasingly require EPDs for products supplied to EU public sector projects. Indian exporters of steel, cement, aluminium and building materials are directly affected.</div>
-    </div>
-    <div class="why-card reveal reveal-d3">
-      <div class="why-card-n">03</div>
-      <div class="why-card-title">CBAM &amp; Carbon Footprint Support</div>
-      <div class="why-card-desc">An EPD with a verified LCA produces the product-level embedded emissions data that CBAM-regulated exporters need. It also forms the foundation for a Product Carbon Footprint (PCF) certification and satisfies CSRD Scope 3 supplier data requests.</div>
-    </div>
-    <div class="why-card reveal reveal-d4">
-      <div class="why-card-n">04</div>
-      <div class="why-card-title">Competitive Sustainability Claim</div>
-      <div class="why-card-desc">An EPD is a third-party verified, quantitative sustainability claim that goes far beyond marketing language. It enables you to make specific, credible statements about your product&rsquo;s environmental performance &mdash; and prevents greenwashing accusations.</div>
-    </div>
-  </div>
-</div>
+  <div id="footer-root"></div>
 
-<!-- WHAT WE DO -->
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">What we do</div>
-    <h2 class="sec-title">From LCA to<br><em>registered EPD</em></h2>
-    <p class="sec-sub">We manage the complete EPD development process: LCA study, EPD drafting, third-party critical review, Programme Operator registration and publication on the global EPD registry &mdash; delivering a verified, internationally recognised EPD for your product.</p>
-    <div class="wedo-grid mt3 reveal">
-      <div class="wedo-img">
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80" alt="LCA data collection product environmental analysis"/>
-      </div>
-      <div class="wedo-body">
-        <div class="wedo-item">
-          <div class="wedo-dot"></div>
-          <div><div class="wedo-item-title">Product Category Rules (PCR) Identification</div><div class="wedo-item-desc">We identify the applicable PCR for your product type, select the appropriate Programme Operator (IBU, EPD International, GreenTag, BRE) and define the system boundary, functional unit and scope of the LCA study.</div></div>
-        </div>
-        <div class="wedo-item">
-          <div class="wedo-dot"></div>
-          <div><div class="wedo-item-title">Life Cycle Assessment (LCA)</div><div class="wedo-item-desc">Full ISO 14044-compliant LCA covering all relevant lifecycle stages. We collect primary data from your production process and supplement with ecoinvent background data, quantifying 15+ environmental impact categories including GWP, AP, EP, ODP and POCP.</div></div>
-        </div>
-        <div class="wedo-item">
-          <div class="wedo-dot"></div>
-          <div><div class="wedo-item-title">EPD Drafting</div><div class="wedo-item-desc">Preparation of the EPD document in Programme Operator format, covering all mandatory content: product description, system boundary, data quality assessment, LCA results table, and all required EN 15804 + A2 impact category declarations.</div></div>
-        </div>
-        <div class="wedo-item">
-          <div class="wedo-dot"></div>
-          <div><div class="wedo-item-title">Independent Critical Review</div><div class="wedo-item-desc">Coordination of the mandatory ISO 14044-required critical review by an independent, qualified LCA practitioner or review panel &mdash; a prerequisite for EPD registration and publication.</div></div>
-        </div>
-        <div class="wedo-item">
-          <div class="wedo-dot"></div>
-          <div><div class="wedo-item-title">Programme Operator Registration &amp; Publication</div><div class="wedo-item-desc">Submission to and registration with your chosen accredited Programme Operator, resulting in a published EPD with a unique registration number valid for five years and accessible to buyers globally via the EPD registry.</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PROCESS -->
-<div class="svc-section">
-  <div class="sec-label">Our process</div>
-  <h2 class="sec-title">How we <em>deliver your EPD</em></h2>
-  <p class="sec-sub mb4">A five-phase process from PCR identification to published EPD, typically completed in 10&ndash;16 weeks depending on product complexity and data availability.</p>
-  <div class="process-steps p5 reveal">
-    <div class="ps">
-      <div class="ps-arrow">&rarr;</div>
-      <div class="ps-n">01</div>
-      <div class="ps-title">Scoping &amp; PCR Selection</div>
-      <div class="ps-desc">Product type classification, PCR identification, Programme Operator selection, system boundary definition and functional unit declaration.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">&rarr;</div>
-      <div class="ps-n">02</div>
-      <div class="ps-title">Data Collection</div>
-      <div class="ps-desc">Primary production data collection from your facility (energy, materials, water, waste, transport) and background data integration from ecoinvent and regional databases.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">&rarr;</div>
-      <div class="ps-n">03</div>
-      <div class="ps-title">LCA Modelling</div>
-      <div class="ps-desc">Full ISO 14044-compliant LCA model build, impact assessment across 15+ categories and sensitivity/uncertainty analysis per PCR requirements.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">&rarr;</div>
-      <div class="ps-n">04</div>
-      <div class="ps-title">EPD Drafting &amp; Review</div>
-      <div class="ps-desc">EPD document preparation to Programme Operator template, independent critical review coordination and resolution of all review comments.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-n">05</div>
-      <div class="ps-title">Registration &amp; Publication</div>
-      <div class="ps-desc">Programme Operator submission, registration fee management, final publication on the EPD registry and delivery of the verified, publication-ready EPD document.</div>
-    </div>
-  </div>
-</div>
-
-<!-- DELIVERABLES -->
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Key deliverables</div>
-    <h2 class="sec-title">What you receive from<br><em>every EPD engagement</em></h2>
-    <div class="deliverables-grid mt3">
-      <div class="deliv-card reveal">
-        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div><div class="deliv-title">Registered &amp; Published EPD</div><div class="deliv-desc">ISO 14025-compliant EPD registered with an accredited Programme Operator, published on the global EPD registry with a unique registration number. Valid for 5 years.</div></div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="deliv-icon"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-        <div><div class="deliv-title">Full LCA Report</div><div class="deliv-desc">ISO 14044-compliant Life Cycle Assessment study covering all lifecycle stages, impact categories and data quality assessment &mdash; the technical foundation for the EPD.</div></div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="deliv-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div><div class="deliv-title">Critical Review Statement</div><div class="deliv-desc">Independent expert critical review of the LCA study as required by ISO 14044 and Programme Operator rules, confirming methodological conformance.</div></div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="deliv-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-        <div><div class="deliv-title">Product Carbon Footprint (GWP Data)</div><div class="deliv-desc">Verified Global Warming Potential data per functional unit usable directly for CBAM embedded emissions declarations, CSRD Scope 3 supplier data requests and PCF certification.</div></div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="deliv-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <div><div class="deliv-title">Hotspot Analysis</div><div class="deliv-desc">Identification of the lifecycle stages and material inputs contributing most to each impact category &mdash; the foundation for a product-level decarbonisation strategy.</div></div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="deliv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-        <div><div class="deliv-title">Marketing Communication Pack</div><div class="deliv-desc">Buyer-facing EPD summary sheet, key impact figures formatted for tenders and procurement responses, and guidance on using EPD claims in compliance with ISO 14021 green claims rules.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- WHO + SECTORS -->
-<div class="svc-section">
-  <div class="who-section reveal mb4">
-    <div class="who-inner">
-      <div class="who-label">Who this is for</div>
-      <div class="who-title">Right for your organisation if you are&hellip;</div>
-      <div class="who-chips">
-        <span class="who-chip">Manufacturer supplying to green building projects (LEED / BREEAM)</span>
-        <span class="who-chip">Exporter to the EU facing product-level environmental documentation requirements</span>
-        <span class="who-chip">Steel, cement or aluminium producer with CBAM-regulated exports</span>
-        <span class="who-chip">Company responding to CSRD Scope 3 product emissions data requests</span>
-        <span class="who-chip">Organisation targeting EcoVadis Gold or Platinum</span>
-        <span class="who-chip">Business seeking to substantiate green product claims under ISO 14021</span>
-        <span class="who-chip">Company competing in EU public procurement tenders requiring EPDs</span>
-      </div>
-    </div>
-  </div>
-  <div class="sectors-wrap">
-    <div class="sectors-label">Industries we serve</div>
-    <div class="sectors-grid">
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Steel &amp; Structural Metals</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Cement &amp; Concrete</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Aluminium &amp; Fabricated Metals</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Ceramics &amp; Tiles</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Paints &amp; Coatings</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Plastics &amp; Polymers</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Textiles &amp; Fibres</div></div>
-      <div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Chemicals &amp; Fertilisers</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- FRAMEWORKS -->
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Standards &amp; Frameworks</div>
-    <h2 class="sec-title">Globally recognised.<br><em>Universally accepted.</em></h2>
-    <p class="sec-sub">EPDs produced under ISO 14025 and EN 15804 are accepted by all major green building certification schemes, EU procurement frameworks and supply chain sustainability standards worldwide.</p>
-    <div class="framework-badges mt2">
-      <span class="fw-badge g">ISO 14025 &mdash; EPD Standard</span>
-      <span class="fw-badge g">ISO 14044 &mdash; LCA Requirements</span>
-      <span class="fw-badge b">EN 15804 + A2 (Construction Products)</span>
-      <span class="fw-badge b">LEED v4 / v4.1 MR Credits</span>
-      <span class="fw-badge n">BREEAM Mat-01 Credits</span>
-      <span class="fw-badge n">GRIHA Green Building India</span>
-      <span class="fw-badge n">EU GPP &mdash; Green Public Procurement</span>
-      <span class="fw-badge b">IBU &bull; EPD International &bull; GreenTag</span>
-    </div>
-  </div>
-</div>
-
-<!-- FAQ -->
-<div class="svc-section">
-  <div class="sec-label">FAQ</div>
-  <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
-  <div class="faq-wrap mt3">
-    <div class="faq-item">
-      <button class="faq-btn">What is the difference between an EPD and a product carbon footprint? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-      <div class="faq-ans"><p>A Product Carbon Footprint (PCF) quantifies only the greenhouse gas emissions (GWP) associated with a product across its lifecycle &mdash; expressed in kg CO&sup2;e per functional unit. An EPD is broader: it reports 15+ environmental impact categories including GWP, acidification, eutrophication, ozone depletion, photochemical oxidant formation and resource depletion, all verified by a third party and published under an accredited Programme Operator. An EPD contains the PCF data as one of its impact categories. For CBAM purposes, the GWP data from an EPD can directly support embedded emissions declarations, but CBAM requires installation-level verified data rather than product-category averages.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn">How long is an EPD valid and what happens when it expires? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-      <div class="faq-ans"><p>EPDs are valid for 5 years from the date of publication by the Programme Operator. After expiry, the EPD is withdrawn from the active registry. To maintain an active EPD, you must update the underlying LCA study and resubmit for a new 5-year registration. The update process is substantially faster than a first EPD &mdash; typically 4&ndash;8 weeks &mdash; because the modelling framework and data collection templates already exist. We track your EPD expiry dates and begin renewal preparation at least 3 months in advance to ensure continuous availability for procurement responses.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn">Which Programme Operator should we register with? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-      <div class="faq-ans"><p>The choice of Programme Operator (PO) depends on your target markets, product type and applicable Product Category Rules. IBU (Institut Bauen und Umwelt) is strongest for the German and Central European construction market. EPD International (The International EPD System) has the broadest global recognition. GreenTag is widely recognised in Australia and the Asia-Pacific region. BRE is strong for BREEAM-focused UK and European projects. We recommend the PO based on where your primary buyers are located and which green building schemes they specify &mdash; and in many cases we recommend registering with two POs simultaneously to maximise market coverage.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn">Can one EPD cover multiple product variants? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-      <div class="faq-ans"><p>Yes &mdash; under most PCRs, a single EPD can declare results for multiple product variants (different grades, thicknesses, compositions) within the same product family, provided the variants share the same functional unit and system boundary. The EPD then declares separate LCA results for each variant. This is significantly more cost-efficient than producing individual EPDs per variant and is the approach we recommend for manufacturers with product ranges. Some PCRs do restrict this &mdash; particularly EN 15804 for construction products &mdash; and we check applicability during the scoping phase before committing to a product range approach.</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- RELATED SERVICES -->
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Related services</div>
-    <h2 class="sec-title">Services that <em>connect with your EPD</em></h2>
-    <div class="related-grid mt2">
-      <a href="svc-cbam.html" class="related-card">
-        <div class="related-card-cat">Carbon &amp; Climate</div>
-        <div class="related-card-title">CBAM Advisory</div>
-        <div class="related-card-desc">The GWP data from your EPD directly supports CBAM embedded emissions declarations for EU exports of steel, aluminium, cement and fertilisers.</div>
-        <div class="related-card-link">Learn more &rarr;</div>
-      </a>
-      <a href="svc-ecovadis.html" class="related-card">
-        <div class="related-card-cat">Assessments &amp; Ratings</div>
-        <div class="related-card-title">EcoVadis Assessment</div>
-        <div class="related-card-desc">A verified EPD significantly strengthens EcoVadis Environment theme scoring &mdash; one of the most efficient paths to Gold or Platinum.</div>
-        <div class="related-card-link">Learn more &rarr;</div>
-      </a>
-      <a href="svc-sbti.html" class="related-card">
-        <div class="related-card-cat">Assessments &amp; Ratings</div>
-        <div class="related-card-title">SBTi Target Setting</div>
-        <div class="related-card-desc">The LCA hotspot analysis from your EPD identifies the highest-impact reduction opportunities to inform your SBTi decarbonisation pathway.</div>
-        <div class="related-card-link">Learn more &rarr;</div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<!-- CTA -->
-<div class="svc-section" id="contact">
-  <div class="cta-band reveal">
-    <div>
-      <div class="cta-band-title">Ready to develop your EPD?</div>
-      <div class="cta-band-sub">Free 45-minute scoping call &mdash; we&rsquo;ll identify the right PCR and Programme Operator for your product, outline the LCA data requirements and quote a fixed-fee timeline.</div>
-    </div>
-    <div class="cta-band-btns">
-      <a href="mailto:info@sustaincore.in" class="btn-wh">Book free scoping call &rarr;</a>
-      <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
-    </div>
-  </div>
-</div>
-</div>
-
-<div class="float">
-  <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-    WhatsApp
-  </a>
-  <a href="#contact" class="float-cb"><div class="pulse"></div>Free consultation</a>
-</div>
-
-<footer class="sc-foot">
-  <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd.
-  &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a>
-  &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a>
-  &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
-</footer>
-
-<script>
-document.querySelectorAll('.faq-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const item=btn.parentElement;
-    const ans=item.querySelector('.faq-ans');
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-ans').style.maxHeight=null;});
-    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
-  });
-});
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
-},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-</script>
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const ans = item.querySelector('.faq-ans');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-ans').style.maxHeight = null; });
+        if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+      });
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>

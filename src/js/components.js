@@ -1,5 +1,5 @@
 export const header = `
-<nav class="fixed top-6 left-0 right-0 mx-auto w-[92%] max-w-6xl z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border border-brand-softGray dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="main-nav">
+<nav class="fixed top-0 left-0 right-0 mx-auto w-[92%] max-w-6xl z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border border-brand-softGray dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="main-nav">
   <a href="/" class="flex items-center gap-3 group">
     <img src="/Frame 4.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
     <div class="flex flex-col -gap-1">
@@ -11,7 +11,7 @@ export const header = `
     </div>
   </a>
   
-  <div class="hidden md:flex items-center gap-8">
+  <div class="hidden md:flex items-center gap-8 navbar-items">
     <a href="/" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Home</a>
     <div class="nav-item-services group/mega" id="nav-services-dropdown">
       <a class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200 flex items-center gap-1 cursor-pointer" id="nav-services-toggle">
@@ -25,8 +25,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
           </div>
           <div>
-            <span class="title">ESG Reporting</span>
-            <span class="desc">BRSR, GRI, SASB & TCFD framework disclosures.</span>
+            <span class="title">ESG Reporting & Sustainability Disclosure</span>
+            <span class="desc">BRSR, CDP, GRI, SASB & TCFD disclosures.</span>
           </div>
         </a>
         
@@ -35,8 +35,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C10.9 14.36 12 15 12 18c0 2.5-2.03 4-5 4-.74 0-1.42-.09-2-.25"/></svg>
           </div>
           <div>
-            <span class="title">Carbon & Climate</span>
-            <span class="desc">GHG inventory, CBAM advisory & Net Zero.</span>
+            <span class="title">Carbon Management & Climate Action</span>
+            <span class="desc">GHG inventory, CBAM, PCF & Carbon Credits.</span>
           </div>
         </a>
 
@@ -45,8 +45,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
           </div>
           <div>
-            <span class="title">Ratings & Targets</span>
-            <span class="desc">EcoVadis, SBTi & Materiality analysis.</span>
+            <span class="title">Sustainability Assessment & ESG Rating</span>
+            <span class="desc">EcoVadis, SBTi, EPD & Materiality analysis.</span>
           </div>
         </a>
 
@@ -55,18 +55,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div>
-            <span class="title">Clearances & EIA</span>
-            <span class="desc">Environmental audits & regulatory approvals.</span>
-          </div>
-        </a>
-
-        <a href="/licenses-epr.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34"/><polygon points="18 2 22 6 12 16 8 16 8 12 18 2"/></svg>
-          </div>
-          <div>
-            <span class="title">Licenses & EPR</span>
-            <span class="desc">Plastic, E-waste & Battery waste management.</span>
+            <span class="title">GPCB Compliance & Env. Approval</span>
+            <span class="desc">EC, EIA, Consent management & EPR.</span>
           </div>
         </a>
 
@@ -75,8 +65,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
           <div>
-            <span class="title">Management Systems</span>
-            <span class="desc">ISO 14001, 45001 & 50001 implementation.</span>
+            <span class="title">Environmental Audits</span>
+            <span class="desc">ISO 14001, 45001, 50001 & Compliance audits.</span>
           </div>
         </a>
 
@@ -85,8 +75,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
           </div>
           <div>
-            <span class="title">Water Testing</span>
-            <span class="desc">Potable, Waste & NABL accredited analysis.</span>
+            <span class="title">Water and Wastewater Quality Testing</span>
+            <span class="desc">Effluent analysis, Groundwater & Water audits.</span>
           </div>
         </a>
 
@@ -95,8 +85,8 @@ export const header = `
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a3.5 3.5 0 1 1-5.83-2.66h.1a4.5 4.5 0 1 1 2.33-8.13h.1a5.5 5.5 0 1 1 8.8 6.06h.1a4.5 4.5 0 1 1-5.5 4.73Z"/></svg>
           </div>
           <div>
-            <span class="title">Air Monitoring</span>
-            <span class="desc">Ambient, Stack & Indoor air quality audits.</span>
+            <span class="title">Air Quality Monitoring & Emission Testing</span>
+            <span class="desc">Stack, Ambient, CEMS & Workplace air quality.</span>
           </div>
         </a>
       </div>
@@ -104,6 +94,8 @@ export const header = `
     <a href="/cbam.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">CBAM</a>
     <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">About</a>
     <a href="/insights.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Insights</a>
+    <a href="/join-us.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Careers</a>
+    <a href="/partners.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Partners</a>
     <a href="/contact.html" class="px-7 py-2.5 bg-brand-green text-white rounded-full text-[13px] font-bold tracking-wide uppercase hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">Free Consultation</a>
     
     <!-- Theme Toggle Switch -->
@@ -137,11 +129,10 @@ export const header = `
     </button>
     <div id="mobile-services-list" class="hidden flex flex-col gap-2 px-3">
       <a href="/esg-reporting.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">ESG Reporting</a>
-      <a href="/carbon-climate.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Carbon & Climate</a>
-      <a href="/ratings-targets.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Ratings & Targets</a>
-      <a href="/clearances-eia.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Clearances & EIA</a>
-      <a href="/licenses-epr.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Licenses & EPR</a>
-      <a href="/management-systems.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Management Systems</a>
+      <a href="/carbon-climate.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Carbon Management</a>
+      <a href="/ratings-targets.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Sustainability Ratings</a>
+      <a href="/clearances-eia.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">GPCB Compliance</a>
+      <a href="/management-systems.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Environmental Audits</a>
       <a href="/water-testing.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Water Testing</a>
       <a href="/air-monitoring.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Air Monitoring</a>
     </div>
@@ -153,9 +144,9 @@ export const header = `
 `;
 
 export const footer = `
-<footer class="bg-brand-softGray dark:bg-slate-900 text-brand-charcoal dark:text-slate-300 pt-32 pb-12 border-t border-slate-200 dark:border-slate-800">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
-    <div class="col-span-1 md:col-span-1">
+<footer class="bg-brand-softGray dark:bg-slate-900 text-brand-charcoal dark:text-slate-300 pt-20 pb-12 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
+    <div class="col-span-1 md:col-span-1 md:-ml-4">
       <div class="flex items-center gap-3 mb-8 group">
         <img src="/Frame 4.svg" alt="SustainCore" class="h-8 w-auto">
         <div class="flex flex-col">
@@ -176,12 +167,15 @@ export const footer = `
     </div>
     
     <div>
-      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-8 tracking-wide">Solutions</h4>
+      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-0 tracking-wide">Solutions</h4>
       <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">ESG Reporting</a></li>
-        <li><a href="/carbon-climate.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Carbon Solutions</a></li>
+        <li><a href="/carbon-climate.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Ratings & Targets</a></li>
-        <li><a href="/clearances-eia.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Clearance & Compliance</a></li>
+        <li><a href="/clearances-eia.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">GPCB Compliance</a></li>
+        <li><a href="/management-systems.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Environmental Audits</a></li>
+        <li><a href="/water-testing.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Water Testing</a></li>
+        <li><a href="/air-monitoring.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Air Monitoring</a></li>
       </ul>
     </div>
 
@@ -191,6 +185,8 @@ export const footer = `
         <li><a href="/about.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Our Mission</a></li>
         <li><a href="/cbam.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">CBAM Advisory</a></li>
         <li><a href="/insights.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Insights</a></li>
+        <li><a href="/join-us.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Careers</a></li>
+        <li><a href="/partners.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Partners</a></li>
         <li><a href="/contact.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Contact</a></li>
       </ul>
     </div>
@@ -204,7 +200,7 @@ export const footer = `
     </div>
   </div>
   
-  <div class="max-w-7xl mx-auto px-6 pt-10 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 dark:text-slate-400 text-[13px]">
+  <div class="max-w-7xl mx-auto px-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 dark:text-slate-400 text-[13px]">
     <p>© 2026 SustainCore Environmental Solutions Pvt. Ltd.</p>
     <div class="flex gap-8">
       <a href="/imprint.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Imprint</a>

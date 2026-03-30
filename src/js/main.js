@@ -90,6 +90,26 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Sticky main navbar (scroll-triggered, expands to full width with top position)
+    const mainNav = document.getElementById('main-nav');
+    const subNav = document.querySelector('.sp-sub-nav');
+    const updateStickyBars = () => {
+        if (!mainNav) return;
+        const threshold = 120; // start stickiness after some scroll threshold
+        const scrolled = window.scrollY > threshold;
+
+        mainNav.classList.toggle('scrolled', scrolled);
+        document.body.classList.toggle('main-nav-scrolled', scrolled);
+
+        if (subNav) {
+            subNav.classList.toggle('scrolled', scrolled);
+        }
+    };
+
+    window.addEventListener('scroll', updateStickyBars, { passive: true });
+    window.addEventListener('load', updateStickyBars);
+    updateStickyBars();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -186,16 +206,28 @@ document.addEventListener('DOMContentLoaded', () => {
     faqBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const item = btn.parentElement;
+            const ans = item.querySelector('.faq-ans, .sp-faq-ans');
 
             // Close all other FAQ items site-wide
             document.querySelectorAll('.faq-item.active, .sp-faq-item.active').forEach(otherItem => {
                 if (otherItem !== item) {
                     otherItem.classList.remove('active');
+                    const otherAns = otherItem.querySelector('.faq-ans, .sp-faq-ans');
+                    if (otherAns) otherAns.style.maxHeight = null;
                 }
             });
 
             // Toggle the clicked one
             item.classList.toggle('active');
+            
+            // Handle maxHeight for animation
+            if (ans) {
+                if (item.classList.contains('active')) {
+                    ans.style.maxHeight = ans.scrollHeight + 'px';
+                } else {
+                    ans.style.maxHeight = null;
+                }
+            }
         });
     });
 

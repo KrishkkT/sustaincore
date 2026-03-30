@@ -1,161 +1,900 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <script>(function(){const t=localStorage.getItem('sustain-theme')||(window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');if(t==='dark')document.documentElement.classList.add('dark');})();</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Mission | Scientific Stewardship at SustainCore</title>
-    <meta name="description"
-        content="Learn about SustainCore's commitment to verifiable sustainability, our expert-led approach to environmental compliance, and our vision for industrial ecological balance.">
-    <meta property="og:title" content="Our Mission | SustainCore Corporate Profile">
-    <meta property="og:description"
-        content="Defining the future of verifiable sustainability through scientific integrity and data transparency.">
-    <meta property="og:image" content="/Frame 4.svg">
-    <link rel="icon" href="/Frame 4.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="/src/css/main.css">
-    <link rel="stylesheet" href="/src/css/index-sections.css">
+<script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | SustainCore</title>
+<meta name="description"
+  content="Learn about SustainCore’s mission to help organizations navigate environmental regulations and build future-ready operations with science-based consulting.">
+<meta property="og:title" content="About SustainCore | Enterprise ESG & Environmental Advisory">
+<meta property="og:description"
+  content="Guided by science, integrity, and sustainability, we help organizations build responsible, future-ready operations.">
+<meta property="og:image" content="/Frame 4.svg">
+<link rel="icon" href="/Frame 4.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap"
+  rel="stylesheet" />
+<style>
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --beige: #fdfaf5;
+    --beige-dark: #f8f5ee;
+    --beige-mid: #eef2f3;
+    --navy: #0D2340;
+    --navy-mid: #1A3A5C;
+    --navy-light: #2E5480;
+    --forest: #2C5F3F;
+    --forest-mid: #3D7A54;
+    --forest-light: #5A9E72;
+    --forest-pale: #E8F2EC;
+    --text: #1A1A1A;
+    --text-mid: #4A4A4A;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+    --caps: 'Cinzel', serif;
+    --shadow-sm: 0 2px 12px rgba(13, 35, 64, 0.07);
+    --shadow-md: 0 8px 40px rgba(13, 35, 64, 0.12);
+    --shadow-lg: 0 20px 60px rgba(13, 35, 64, 0.15);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .page-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 0;
+    overflow: hidden;
+    margin-top: 0 !important;
+  }
+
+  .page-hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 5vw;
+    background: var(--beige);
+  }
+
+  .page-hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 2rem;
+  }
+
+  .page-hero-headline {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 2.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .page-hero-headline em {
+    font-style: italic;
+    color: var(--forest);
+  }
+
+  .page-hero-body {
+    font-family: var(--sans);
+    font-size: 1.15rem;
+    color: var(--text-mid);
+    max-width: 540px;
+    margin-bottom: 3.5rem;
+  }
+
+  .page-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--navy);
+    transition: gap 0.3s;
+  }
+
+  .page-hero-cta:hover {
+    gap: 1.8rem;
+  }
+
+  .page-hero-cta-arrow {
+    font-size: 1.2rem;
+  }
+
+  .page-hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+  }
+
+  .page-hero-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* ── STRIP ── */
+  .intro-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 10vw;
+    border-radius: 0 !important;
+    margin-top: -1rem !important;
+    background: var(--navy);
+    color: #fff;
+  }
+
+  .intro-strip-text {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 300;
+    max-width: 600px;
+    line-height: 1.4;
+  }
+
+  .intro-strip-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    margin: 0 4rem;
+  }
+
+  .intro-strip-tag {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    line-height: 2;
+  }
+
+  /* ── SECTION CORE ── */
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw;
+  }
+
+  .section-label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--forest);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--forest);
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 3rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--forest);
+  }
+
+  .section-body {
+    font-family: var(--sans);
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 600px;
+  }
+
+  /* ── VISION ── */
+  .vision-section {
+    background: var(--beige);
+  }
+
+  .vision-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .vision-image-wrap {
+    position: relative;
+  }
+
+  .vision-image-wrap img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: contrast(1.02) saturate(0.9);
+  }
+
+  .vision-image-accent {
+    position: absolute;
+    bottom: -2rem;
+    right: -2rem;
+    width: 140px;
+    height: 140px;
+    background: var(--forest-pale);
+    border: 2px solid var(--forest-light);
+    z-index: -1;
+  }
+
+  .vision-image-line {
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    width: 60px;
+    height: 60px;
+    border-top: 2px solid var(--navy);
+    border-left: 2px solid var(--navy);
+  }
+
+  .vision-quote {
+    font-family: var(--serif);
+    font-size: 1.65rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--navy);
+    border-left: 3px solid var(--forest);
+    padding-left: 2rem;
+    margin: 2.5rem 0;
+  }
+
+  /* ── MISSION ── */
+  .mission-section {
+    background: var(--beige-dark);
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .mission-image-wrap img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+  }
+
+  /* ── VALUES ── */
+  .values-section {
+    background: var(--navy);
+    margin-left: -10vw;
+    margin-right: -10vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0 !important;
+    border-radius: 20px !important;
+  }
+
+  .values-section .section-label {
+    color: var(--forest-light);
+  }
+
+  .values-section .section-label::before {
+    background: var(--forest-light);
+  }
+
+  .values-section .section-title {
+    color: var(--beige);
+  }
+
+  .values-section .section-title em {
+    color: var(--forest-light);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    border: 1px solid rgba(245, 240, 232, 0.08);
+  }
+
+  .value-card {
+    background: var(--navy);
+    padding: 2rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.35s;
+    cursor: default;
+  }
+
+  .value-card:hover {
+    background: var(--navy-mid);
+  }
+
+  .value-title {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--beige);
+    margin-bottom: 1.2rem;
+  }
+
+  .value-text {
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    color: rgba(253, 250, 232, 0.65);
+    line-height: 1.6;
+  }
+
+  /* ── REVEALS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .d1 {
+    transition-delay: 0.1s;
+  }
+
+  .d2 {
+    transition-delay: 0.2s;
+  }
+
+  .d3 {
+    transition-delay: 0.3s;
+  }
+
+  .d4 {
+    transition-delay: 0.4s;
+  }
+
+  /* ── PURPOSE ── */
+  .purpose-section {
+    background: var(--forest-pale);
+  }
+
+  .purpose-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .purpose-rotated {
+    font-family: var(--caps);
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--forest);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    border-left: 1px solid var(--forest-mid);
+    padding-left: 1rem;
+  }
+
+  .purpose-content {
+    padding: 5rem 0;
+  }
+
+  .purpose-text {
+    font-family: var(--serif);
+    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+    font-weight: 300;
+    line-height: 1.6;
+    color: var(--navy);
+  }
+
+  .purpose-text em {
+    font-style: italic;
+    color: var(--forest);
+  }
+
+  .purpose-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: 2rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--forest);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--forest);
+  }
+
+  .purpose-pill::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--forest);
+  }
+
+  /* ── MORE SECTION ── */
+  .more-section {
+    background: var(--white);
+  }
+
+  .more-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .more-card {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  .more-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s;
+  }
+
+  .more-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .more-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13, 35, 64, 0.9) 0%, transparent 100%);
+  }
+
+  .more-card-content {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    right: 3rem;
+    color: #fff;
+  }
+
+  .more-card-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    margin-bottom: 1rem;
+  }
+
+  .more-card-title {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .more-card-body {
+    font-size: 0.95rem;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    max-width: 400px;
+  }
+
+  .more-card-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+    transition: border-color 0.3s;
+  }
+
+  .more-card-link:hover {
+    border-color: #fff;
+  }
+
+  @media (max-width: 1024px) {
+    .page-hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .page-hero-right {
+      order: -1;
+      height: 400px;
+    }
+
+    .vision-grid,
+    .mission-grid,
+    .more-grid {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+    .mission-image-wrap {
+      order: -1;
+    }
+
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .intro-strip {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .intro-strip-divider {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 </head>
 
-<body class="overflow-x-hidden">
-    <!-- Header Placeholder -->
-    <div id="header-root"></div>
+<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden m-0 p-0">
 
-    <main class="pt-40">
-        <!-- Hero: Impactful & Minimal -->
-        <section class="max-w-7xl mx-auto px-6 mb-40 relative">
-            <div class="absolute -top-40 -right-20 w-[600px] h-[600px] bg-brand-blue/5 blur-[150px] rounded-full"></div>
-            <div class="relative z-10 text-center lg:text-left">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-blue/10 text-brand-blue mb-10">
-                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase">Scientific Stewardship</span>
-                </div>
-                <h1 class="text-6xl md:text-[120px] font-display font-black text-brand-charcoal dark:text-white mb-12 tracking-tighter leading-[0.85]">
-                    Engineering <br/><span class="text-brand-green italic font-light">Ecological Balance.</span>
-                </h1>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <p class="text-2xl text-brand-charcoal dark:text-white opacity-70 leading-relaxed font-light about-para">
-                        SustainCore was founded on a single premise: that the environmental crisis is an engineering challenge, not just a policy one. We provide the technical infrastructure for a sustainable world.
-                    </p>
-                    <div class="flex flex-col gap-8">
-                        <div class="flex gap-10 border-l border-slate-200 pl-10">
-                            <div>
-                                <div class="text-4xl font-display font-bold text-brand-blue">200+</div>
-                                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">Enterprises Scoped</div>
-                            </div>
-                            <div>
-                                <div class="text-4xl font-display font-bold text-brand-green">14M</div>
-                                <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mt-1">tCO2e Audited</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div id="header-root"></div>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-left">
+      <div class="page-hero-eyebrow reveal">About SustainCore</div>
+      <h1 class="page-hero-headline reveal d1">
+        The Firm Built <br />for <em>What's Next.</em>
+      </h1>
+      <p class="page-hero-body reveal d2">
+        We are a team of environmental scientists, regulatory experts,
+        and sustainability strategists united by one belief:
+        that enterprise and ecology are not in conflict — they are in partnership.
+      </p>
+      <a href="/index.html#consultation" class="page-hero-cta reveal d3">
+        Say hi <span class="page-hero-cta-arrow">→</span>
+      </a>
+    </div>
+    <div class="page-hero-right">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85"
+        alt="SustainCore office and team" />
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip">
+    <div class="intro-strip-text reveal">
+      "Sustainability is not a compliance exercise. It is the most important business decision of this decade."
+    </div>
+    <div class="intro-strip-divider"></div>
+    <div class="intro-strip-tag reveal d2">ESG · Environmental<br />Regulatory · Carbon</div>
+  </div>
+
+  <!-- VISION -->
+  <section class="section vision-section">
+    <div class="section-inner">
+      <div class="vision-grid">
+        <div class="reveal-left">
+          <div class="vision-image-wrap">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&q=85"
+              alt="Sustainable vision" />
+            <div class="vision-image-accent"></div>
+            <div class="vision-image-line"></div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="section-label">Our Vision</div>
+          <h2 class="section-title">
+            Making sustainability the default —<br />
+            <em>not the exception</em> — for Indian enterprise.
+          </h2>
+          <blockquote class="vision-quote">
+            "To be the most trusted ESG and environmental advisory firm for businesses
+            operating in and out of India — known not just for what we deliver,
+            but for how honestly we deliver it."
+          </blockquote>
+          <p class="section-body">
+            The ESG landscape in India is at an inflection point. Regulations are tightening,
+            investors are watching, and the cost of inaction is climbing every quarter.
+            SustainCore exists to ensure businesses don't just keep up — they get ahead.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PURPOSE -->
+  <section class="purpose-section">
+    <div class="purpose-inner">
+      <div class="purpose-rotated reveal">Our Purpose</div>
+      <div class="purpose-content">
+        <p class="purpose-text reveal d1">
+          Guided by <em>science, integrity,</em> and sustainability, we help organizations
+          navigate environmental regulations and build responsible,
+          <em>future-ready operations.</em>
+        </p>
+        <div class="purpose-pill reveal d2">ESG · Environmental · Regulatory · Carbon</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section class="section mission-section">
+    <div class="section-inner">
+      <div class="mission-grid">
+        <div class="reveal-left">
+          <div class="section-label">Our Mission</div>
+          <div class="mission-big">
+            Helping businesses act on sustainability with <em>clarity, science,</em> and accountability.
+          </div>
+          <p class="mission-body">
+            We bring together regulatory expertise, environmental science, and commercial
+            thinking so that enterprises of every size can move from intention to action —
+            without getting lost in complexity. Every framework we deploy, every report
+            we produce, every clearance we pursue is grounded in verifiable fact and
+            a genuine commitment to outcomes that matter.
+          </p>
+        </div>
+        <div class="reveal-right">
+          <div class="mission-image-wrap">
+            <div class="mission-image-stripe"></div>
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=85"
+              alt="Sustainable future" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section values-section">
+    <div class="section-inner">
+      <div class="section-label reveal">Our Values</div>
+      <h2 class="section-title reveal d1">Principles we won't <em>compromise on.</em></h2>
+      <div class="values-grid">
+
+        <!-- Integrity -->
+        <div class="value-card reveal d1">
+          <div class="value-icon-wrap">
+            <svg class="value-icon-svg icon-integrity" viewBox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle class="circle-ring" cx="32" cy="32" r="26" stroke="#5A9E72" stroke-width="1.5" fill="none" />
+              <path class="check-path" d="M20 32 L28 40 L44 24" stroke="#5A9E72" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            </svg>
+          </div>
+          <div class="value-title">Integrity</div>
+          <div class="value-text">We say what the data says, not what clients want to hear. Our advice is only worth
+            something if it is honest — every time, without exception.</div>
+        </div>
+
+        <!-- Responsibility -->
+        <div class="value-card reveal d2">
+          <div class="value-icon-wrap">
+            <svg class="value-icon-svg icon-responsibility" viewBox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="leaf-path"
+                d="M32 52 C32 52 12 40 12 24 C12 16 20 10 32 10 C44 10 52 16 52 24 C52 40 32 52 32 52Z" stroke="#5A9E72"
+                stroke-width="1.5" fill="none" stroke-linejoin="round" />
+              <line class="leaf-vein" x1="32" y1="52" x2="32" y2="22" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="value-title">Responsibility</div>
+          <div class="value-text">We take full ownership of every mandate — from first assessment to final submission.
+            We don't hand off and disappear.</div>
+        </div>
+
+        <!-- Clarity -->
+        <div class="value-card reveal d3">
+          <div class="value-icon-wrap">
+            <svg class="value-icon-svg icon-clarity" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line class="line1" x1="14" y1="22" x2="50" y2="22" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" />
+              <line class="line2" x1="14" y1="32" x2="42" y2="32" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" />
+              <line class="line3" x1="14" y1="42" x2="34" y2="42" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="value-title">Clarity</div>
+          <div class="value-text">The sustainability space thrives on complexity. We cut through it. Every
+            recommendation we make is actionable, explainable, and grounded in fact.</div>
+        </div>
+
+        <!-- Impact -->
+        <div class="value-card reveal d4">
+          <div class="value-icon-wrap">
+            <svg class="value-icon-svg icon-impact" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="circle-bg" cx="32" cy="32" r="6" fill="rgba(90,158,114,0.2)" stroke="none" />
+              <line class="arrow-shaft" x1="32" y1="50" x2="32" y2="20" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" />
+              <path class="arrow-head" d="M22 28 L32 18 L42 28" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" fill="none" />
+            </svg>
+          </div>
+          <div class="value-title">Impact</div>
+          <div class="value-text">We measure ourselves by outcomes, not outputs. A report filed means nothing. A
+            business genuinely reducing its footprint — that's why we exist.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE ABOUT US -->
+  <section class="section more-section">
+    <div class="section-inner">
+      <div class="section-label reveal">More About Us</div>
+      <h2 class="section-title reveal d1">Two ways to <em>get closer.</em></h2>
+      <div class="more-grid">
+        <!-- Partners card -->
+        <div class="more-card reveal-left">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=85" alt="Partners" />
+          <div class="more-card-overlay"></div>
+          <div class="more-card-content">
+            <div class="more-card-eyebrow">Work With Us</div>
+            <div class="more-card-title">Partners</div>
+            <div class="more-card-body">
+              We are building partnerships with industry bodies, certification agencies, and
+              technology platforms that share our commitment to credible sustainability action.
             </div>
-        </section>
-
-        <!-- Vision & Strategic Advantage -->
-        <section class="bg-brand-charcoal text-white py-40 rounded-[4rem] mx-6 mb-40 overflow-hidden relative shadow-2xl">
-            <div class="absolute top-0 left-0 w-full h-full bg-[url('/grid-white.svg')] opacity-[0.03]"></div>
-            <div class="max-w-7xl mx-auto px-12 relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-32">
-                    <div>
-                        <h2 class="text-brand-green font-bold text-xs uppercase tracking-[0.4em] mb-10">The Core Mandate</h2>
-                        <p class="text-4xl md:text-6xl font-display font-bold leading-tight mb-12">
-                            Transforming <span class="italic text-brand-blue">Complexity</span> <br/>into Clarity.
-                        </p>
-                        <p class="text-xl text-slate-400 leading-relaxed max-w-xl">
-                            We bridge the gap between heavy industry and regulatory mandates through high-fidelity data modelling and scientific integrity.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-                        <div class="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all">
-                            <h3 class="text-lg font-bold mb-4 text-brand-green">Verifiable Data</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Every metric we produce is audit-ready and based on installation-level primary data.</p>
-                        </div>
-                        <div class="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all">
-                            <h3 class="text-lg font-bold mb-4 text-brand-blue">Regulatory Edge</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Deep expertise in CBAM, BRSR, and global I-REC standards to protect your market access.</p>
-                        </div>
-                        <div class="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all">
-                            <h3 class="text-lg font-bold mb-4 text-white">Scale Neutral</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">From MSMEs to global conglomerates, our systems adapt to your specific operational scale.</p>
-                        </div>
-                        <div class="group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-white/10 transition-all">
-                            <h3 class="text-lg font-bold mb-4 text-brand-green">Future Proof</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">We don't just solve for current mandates; we build for the 2030 and 2050 climate horizons.</p>
-                        </div>
-                    </div>
-                </div>
+            <a href="/partners.html" class="more-card-link">Explore partnerships →</a>
+          </div>
+        </div>
+        <!-- Join Us card -->
+        <div class="more-card reveal-right">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=85"
+            alt="Join SustainCore team" />
+          <div class="more-card-overlay"></div>
+          <div class="more-card-content">
+            <div class="more-card-eyebrow">Careers</div>
+            <div class="more-card-title">Join Us</div>
+            <div class="more-card-body">
+              SustainCore is a new firm with a big mission. If you have a background in ESG,
+              environmental science, or regulatory affairs — we'd love to hear from you.
             </div>
-        </section>
+            <a href="/join-us.html" class="more-card-link">See open roles →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- Methodology: The Protocol -->
-        <section class="py-20 relative px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-32">
-                    <h2 class="text-xs font-bold text-brand-blue uppercase tracking-[0.5em] mb-6">The Methodology</h2>
-                    <h3 class="text-4xl md:text-6xl font-display font-black text-brand-charcoal dark:text-white">The SustainCore Protocol.</h3>
-                </div>
+  <!-- Newsletter Callout -->
+  <div
+    class="lg:col-span-2 ml-14 mr-14 bg-brand-blue rounded-4xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-16 text-white mt-12 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-[100px] rounded-full"></div>
+    <div class="max-w-xl text-center lg:text-left relative z-10">
+      <h2 class="text-3xl md:text-5xl font-display font-black mb-6 leading-tight">Stay ahead of the
+        <span class="text-brand-green italic font-light">mandate.</span>
+      </h2>
+      <p class="text-white/70 text-lg leading-relaxed mb-0">Get our monthly regulatory brief delivered
+        to your corporate inbox. No jargon, just technical utility.</p>
+    </div>
+    <form id="newsletter-form" class="flex-grow w-full lg:w-auto relative z-10 flex flex-col sm:flex-row gap-4">
+      <input type="email" id="subscriber-email" name="email" placeholder="Corporate Email" required
+        class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-brand-green">
+      <button type="submit" id="subscribe-btn"
+        class="px-8 py-4 bg-white text-brand-blue rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all whitespace-nowrap">Subscribe
+        to Brief</button>
+    </form>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Phase 01 -->
-                    <div class="glass-premium p-10 rounded-4xl border border-slate-200 dark:border-white/10 group hover:border-brand-blue transition-all duration-500">
-                        <div class="text-6xl font-display font-black text-brand-blue/10 group-hover:text-brand-blue/20 transition-all mb-8 italic">01</div>
-                        <h4 class="text-xl font-bold mb-6 text-brand-charcoal dark:text-white">Diagnostic</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-10">We blueprint your regulatory landscape, identifying every mandate from CBAM to local pollution control board requirements.</p>
-                        <div class="h-1 w-12 bg-brand-blue/20 group-hover:w-full transition-all duration-700"></div>
-                    </div>
-                    <!-- Phase 02 -->
-                    <div class="glass-premium p-10 rounded-4xl border border-slate-200 dark:border-white/10 group hover:border-brand-green transition-all duration-500 md:mt-12">
-                        <div class="text-6xl font-display font-black text-brand-green/10 group-hover:text-brand-green/20 transition-all mb-8 italic">02</div>
-                        <h4 class="text-xl font-bold mb-6 text-brand-charcoal dark:text-white">Inventory</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-10">Multi-source data collection. We aggregate primary emissions data across Scope 1, 2, and the complex Scope 3 supply chain.</p>
-                        <div class="h-1 w-12 bg-brand-green/20 group-hover:w-full transition-all duration-700"></div>
-                    </div>
-                    <!-- Phase 03 -->
-                    <div class="glass-premium p-10 rounded-4xl border border-slate-200 dark:border-white/10 group hover:border-brand-blue transition-all duration-500">
-                        <div class="text-6xl font-display font-black text-brand-blue/10 group-hover:text-brand-blue/20 transition-all mb-8 italic">03</div>
-                        <h4 class="text-xl font-bold mb-6 text-brand-charcoal dark:text-white">Integration</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-10">We embed ESG workflows into your existing ERP systems, ensuring sustainability becomes a continuous operational pulse.</p>
-                        <div class="h-1 w-12 bg-brand-blue/20 group-hover:w-full transition-all duration-700"></div>
-                    </div>
-                    <!-- Phase 04 -->
-                    <div class="glass-premium p-10 rounded-4xl border border-slate-200 dark:border-white/10 group hover:border-brand-green transition-all duration-500 md:mt-12">
-                        <div class="text-6xl font-display font-black text-brand-green/10 group-hover:text-brand-green/20 transition-all mb-8 italic">04</div>
-                        <h4 class="text-xl font-bold mb-6 text-brand-charcoal dark:text-white">Verification</h4>
-                        <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-10">Rigorous audit and final certification. We deliver disclosures that provide absolute confidence to shareholders and regulators.</p>
-                        <div class="h-1 w-12 bg-brand-green/20 group-hover:w-full transition-all duration-700"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+  </div>
+  <div id="footer-root"></div>
 
-        <!-- Leadership Quote -->
-        <section class="max-w-5xl mx-auto px-6 py-40 text-center">
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-softGray mb-12">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-brand-blue">
-                    <path d="M10 20H15L13 25H9L11 20ZM20 20H25L23 25H19L21 20Z" fill="currentColor"/>
-                </svg>
-            </div>
-            <p class="text-4xl md:text-5xl font-display font-bold text-brand-charcoal dark:text-white italic mb-12 tracking-tight leading-tight">
-                "Our goal is to make environmental impact as transparent, traceable, and impactful as financial performance."
-            </p>
-            <div class="space-y-2">
-                <div class="font-bold text-brand-charcoal dark:text-white uppercase tracking-[0.3em] text-sm">Dr. Aditi Sharma</div>
-                <div class="text-slate-400 text-xs font-bold uppercase tracking-widest">Lead Technical Strategist</div>
-            </div>
-        </section>
-    </main>
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObserver.observe(el));
 
-    <!-- Footer Placeholder -->
-    <div id="footer-root"></div>
+    // Animate value icons when in view
+    const valueCards = document.querySelectorAll('.value-card');
+    const iconObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('animated'), 200);
+        }
+      });
+    }, { threshold: 0.3 });
+    valueCards.forEach(c => iconObserver.observe(c));
 
-    <script type="module" src="/src/js/main.js"></script>
-    <script type="module" src="/src/js/animations.js"></script>
+    // Newsletter
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('.newsletter-btn');
+      btn.textContent = 'Subscribed ✓';
+      btn.style.background = '#0D2340';
+      btn.style.color = '#F5F0E8';
+    }
+  </script>
 </body>
 
 </html>

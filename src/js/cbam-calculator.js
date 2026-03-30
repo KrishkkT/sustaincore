@@ -54,8 +54,8 @@ function setCurrency(curr) {
     const c = CURRENCIES[curr];
     const ticks = [10, 45, 80, 115, 150];
     ticks.forEach((val, i) => {
-        const sEl = document.getElementById(`s-ets-l${i+1}`);
-        const dEl = document.getElementById(`d-ets-l${i+1}`);
+        const sEl = document.getElementById(`s-ets-l${i + 1}`);
+        const dEl = document.getElementById(`d-ets-l${i + 1}`);
         if (sEl) sEl.textContent = c.sym + Math.round(val * c.rate);
         if (dEl) dEl.textContent = c.sym + Math.round(val * c.rate);
     });
@@ -89,18 +89,14 @@ function sectorChange() {
 
     if (d) {
         const markup = getMarkup(s, yr);
-        const directEl = document.getElementById('s-def-direct-ef');
-        const indirectEl = document.getElementById('s-def-indirect-ef');
         const totalEl = document.getElementById('s-def-ef');
-        
+
         const directVal = d.direct * markup;
         const indirectVal = d.indirect * markup;
         const totalVal = directVal + indirectVal;
 
-        if (directEl) directEl.value = directVal.toFixed(3);
-        if (indirectEl) indirectEl.value = indirectVal.toFixed(3);
         if (totalEl) totalEl.value = totalVal.toFixed(3);
-        
+
         const actEl = document.getElementById('s-act-ef');
         if (actEl) actEl.value = d.actual.toFixed(3);
     }
@@ -112,7 +108,7 @@ function simpleCalc() {
     const etsBase = parseFloat(document.getElementById('s-ets').value) || 70;
     const c = CURRENCIES[activeCurr];
     const ets = etsBase * c.rate; // Scale input by current rate
-    
+
     // Update live display for ETS range
     const etsDisplay = document.getElementById('s-ets-val');
     if (etsDisplay) {
@@ -125,15 +121,12 @@ function simpleCalc() {
     }
 
     // Granular inputs
-    const defDirectEf = parseFloat(document.getElementById('s-def-direct-ef').value) || 0;
-    const defIndirectEf = parseFloat(document.getElementById('s-def-indirect-ef').value) || 0;
+    const defEf = parseFloat(document.getElementById('s-def-ef').value) || 0;
     const actEf = parseFloat(document.getElementById('s-act-ef').value) || 0;
     const yr = parseInt(document.getElementById('s-year').value) || 2026;
     const factor = CBAM_FACTORS[yr] || 0.025;
 
-    const costDefDirect = vol * defDirectEf * factor * ets;
-    const costDefIndirect = vol * defIndirectEf * factor * ets;
-    const costDef = costDefDirect + costDefIndirect;
+    const costDef = vol * defEf * factor * ets;
     const costAct = vol * actEf * factor * ets;
     const saving = costDef - costAct;
 
@@ -148,20 +141,7 @@ function simpleCalc() {
         resSave.className = saving >= 0 ? 'text-green-500 font-bold' : 'text-red-500 font-bold';
     }
 
-    // Detail breakdown in simple result
-    const breakEl = document.getElementById('s-breakdown');
-    if (breakEl) {
-        breakEl.innerHTML = `
-            <div class="flex justify-between text-[11px] text-slate-500 mt-3 pt-3 border-t border-slate-100 dark:border-slate-800/50">
-                <span class="opacity-70 uppercase tracking-tight font-semibold">Direct Cost Contribution:</span>
-                <span class="font-bold">${fe(costDefDirect)}</span>
-            </div>
-            <div class="flex justify-between text-[11px] text-slate-500 mb-2">
-                <span class="opacity-70 uppercase tracking-tight font-semibold">Indirect Cost Contribution:</span>
-                <span class="font-bold">${fe(costDefIndirect)}</span>
-            </div>
-        `;
-    }
+    // Detail breakdown removed.
 
     const box = document.getElementById('rib-save');
     if (saving > 100) {
@@ -175,14 +155,18 @@ function simpleCalc() {
     }
 
     // Update Bottom Summary IDs
+    const rTotalDef = document.getElementById('r-total-def');
+    const rTotalAct = document.getElementById('r-total-act');
     const rVol = document.getElementById('r-vol');
     const rDefEf = document.getElementById('r-def-ef');
     const rActEf = document.getElementById('r-act-ef');
     const rEts = document.getElementById('r-ets');
     const rFactor = document.getElementById('r-factor');
 
+    if (rTotalDef) rTotalDef.textContent = fe(costDef);
+    if (rTotalAct) rTotalAct.textContent = fe(costAct);
     if (rVol) rVol.textContent = fv(vol) + ' t';
-    if (rDefEf) rDefEf.textContent = ft(defDirectEf + defIndirectEf, 3);
+    if (rDefEf) rDefEf.textContent = ft(defEf, 3);
     if (rActEf) rActEf.textContent = ft(actEf, 3);
     if (rEts) rEts.textContent = c.sym + Math.round(ets) + '/t';
     if (rFactor) rFactor.textContent = (factor * 100).toFixed(1) + '%';
@@ -223,9 +207,11 @@ function addProductRow(sectorDefault = 'steel') {
                 <select class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.updateCnList(${id}, this.value)">${sectorOpts}</select>
             </div>
             <div class="space-y-2 lg:col-span-2">
-                <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Product / CN Code</label>
+                <div class="flex justify-between items-center">
+                    <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Product / CN Code</label>
+                    <div id="def-hint-${id}" class="text-[9px] text-brand-green font-bold"></div>
+                </div>
                 <select id="cn-sel-${id}" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.onCnChange(${id})">${cnOpts}</select>
-                <div id="def-hint-${id}" class="text-[10px] text-brand-green font-bold mt-1 px-1"></div>
             </div>
             <div class="space-y-2">
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Vol (t/yr)</label>
@@ -266,7 +252,7 @@ function onCnChange(id) {
                 hint.innerHTML = `<span class="opacity-50 italic">No default emission data found for this code.</span>`;
             } else {
                 hint.classList.replace('text-slate-400', 'text-brand-green');
-                hint.innerHTML = `Direct: <strong>${d.toFixed(3)}</strong> | Indirect: <strong>${i.toFixed(3)}</strong> | Total: <strong>${t.toFixed(3)}</strong>`;
+                hint.innerHTML = `Total EF: <strong>${t.toFixed(3)}</strong> t CO₂/t`;
             }
         }
     }
@@ -299,8 +285,7 @@ function detailCalc() {
     const factor = CBAM_FACTORS[yr] || 0.025;
     const rows = document.querySelectorAll('#product-rows .product-row');
 
-    let totalCostDefDirect = 0;
-    let totalCostDefIndirect = 0;
+    let totalCostDef = 0;
     let totalCostAct = 0;
     let tableHtml = '';
 
@@ -319,42 +304,34 @@ function detailCalc() {
         const defEfDirectBase = parseFloat(opt.getAttribute('data-direct')) || 0;
         const defEfIndirectBase = parseFloat(opt.getAttribute('data-indirect')) || 0;
         const defEfBase = parseFloat(opt.getAttribute('data-def')) || 0;
-        
+
         const sectorSel = row.querySelector('select');
         const sector = sectorSel ? sectorSel.value : 'steel';
         const markup = getMarkup(sector, yr);
-        
+
         const defEfDirect = defEfDirectBase * markup;
-        const defEfIndirect = defEfIndirectBase * markup;
         const defEf = defEfBase * markup;
 
         const vol = parseFloat(document.getElementById('vol-' + id).value) || 0;
         const aefInput = document.getElementById('aef-' + id);
         const actEf = aefInput && aefInput.value ? parseFloat(aefInput.value) : null;
 
-        const costDefDirect = vol * defEfDirect * factor * ets;
-        const costDefIndirect = vol * defEfIndirect * factor * ets;
         const costDef = vol * defEf * factor * ets;
-        
+
         const certsAct = actEf !== null ? vol * actEf * factor : (vol * defEf * factor);
         const costAct = certsAct * ets;
         const saving = costDef - costAct;
 
-        totalCostDefDirect += costDefDirect;
-        totalCostDefIndirect += costDefIndirect;
+        totalCostDef += costDef;
         totalCostAct += costAct;
 
         tableHtml += `
-            <tr class="border-b border-slate-50 dark:border-slate-800/50 text-[10px]">
-                <td class="py-4 px-4 font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">${shortName}</td>
+            <tr class="border-b border-slate-100 dark:border-slate-800/50 hover:bg-white dark:hover:bg-slate-800/50 transition-colors text-[10px]">
+                <td class="py-4 px-4 font-bold max-w-[150px] truncate" title="${cnFull}">${shortName}</td>
                 <td class="py-4 px-2 text-slate-500 font-medium">${fv(vol)}</td>
-                <td class="py-4 px-2 text-slate-400">${ft(defEfDirect, 2)}</td>
-                <td class="py-4 px-2 text-slate-400">${ft(defEfIndirect, 2)}</td>
                 <td class="py-4 px-2 text-red-500 font-bold">${ft(defEf, 2)}</td>
                 <td class="py-4 px-2 font-bold ${actEf !== null ? 'text-emerald-500' : 'text-slate-400'}">${actEf !== null ? ft(actEf, 2) : 'Default'}</td>
-                <td class="py-4 px-2 text-slate-500">${fe(costDefDirect)}</td>
-                <td class="py-4 px-2 text-slate-500">${fe(costDefIndirect)}</td>
-                <td class="py-4 px-2 text-slate-700 dark:text-white font-bold">${fe(costDef)}</td>
+                <td class="py-4 px-2 text-slate-700 dark:text-white font-bold text-red-400">${fe(costDef)}</td>
                 <td class="py-4 px-2 text-emerald-500 font-bold">${fe(costAct)}</td>
                 <td class="py-4 px-4 font-black ${saving > 0.01 ? 'text-brand-blue' : 'text-slate-400'}">${saving > 0.01 ? fe(saving) : '—'}</td>
             </tr>
@@ -364,19 +341,13 @@ function detailCalc() {
     const tbody = document.getElementById('det-tbody');
     if (tbody) tbody.innerHTML = tableHtml;
 
-    const totalCostDef = totalCostDefDirect + totalCostDefIndirect;
-    
     // Update summary entries
     const defCostEl = document.getElementById('dt-cost-def');
     const actCostEl = document.getElementById('dt-cost-act');
     const savingEl = document.getElementById('dt-saving');
-    const directDefCostEl = document.getElementById('dt-cost-def-direct');
-    const indirectDefCostEl = document.getElementById('dt-cost-def-indirect');
 
     if (defCostEl) defCostEl.textContent = fe(totalCostDef);
     if (actCostEl) actCostEl.textContent = fe(totalCostAct);
-    if (directDefCostEl) directDefCostEl.textContent = fe(totalCostDefDirect);
-    if (indirectDefCostEl) indirectDefCostEl.textContent = fe(totalCostDefIndirect);
 
     const totalSaving = totalCostDef - totalCostAct;
     if (savingEl) savingEl.textContent = fe(totalSaving);
@@ -407,6 +378,7 @@ function phaseCalc() {
     const ef = parseFloat(document.getElementById('po-ef').value) || 1.9;
     const baseEts = parseFloat(document.getElementById('po-ets').value) || 70;
     const tbody = document.getElementById('po-tbody');
+    const c = CURRENCIES[activeCurr];
 
     if (!tbody) return;
 
@@ -494,14 +466,55 @@ function tick() {
     if (secEl) secEl.textContent = String(s).padStart(2, '0');
 }
 
+// ─── EVOLUTION TIMELINE ───────────────────────────────────────────────
+function updateEvolutionTimeline() {
+    const currentYear = new Date().getFullYear();
+    const phases = [
+        { id: 'phase-01', startYear: 2023, endYear: 2025, gridPosition: 12.5 },
+        { id: 'phase-02', startYear: 2026, endYear: 2027, gridPosition: 37.5 },
+        { id: 'phase-03', startYear: 2028, endYear: 2033, gridPosition: 62.5 },
+        { id: 'phase-04', startYear: 2034, endYear: 2035, gridPosition: 87.5 }
+    ];
+
+    let activePhaseId = 'phase-04';
+    let progressPct = 87.5;
+
+    for (const phase of phases) {
+        if (currentYear >= phase.startYear && currentYear <= phase.endYear) {
+            activePhaseId = phase.id;
+            progressPct = phase.gridPosition;
+            break;
+        }
+    }
+
+    const progressEl = document.getElementById('timeline-progress');
+    if (progressEl) {
+        progressEl.style.width = progressPct + '%';
+    }
+
+    document.querySelectorAll('.timeline-phase').forEach(el => {
+        el.classList.remove('active-phase');
+        if (el.id === activePhaseId) {
+            el.classList.add('active-phase');
+        }
+    });
+}
+
 // ─── INITIALIZATION ────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
+// Run initializations
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initAll);
+} else {
+    initAll();
+}
+
+function initAll() {
     // Initial Calc Setup
     if (document.getElementById('s-sector')) sectorChange();
 
     // Add 2 initial rows for Detailed Calculator
     const rowsCont = document.getElementById('product-rows');
-    if (rowsCont) {
+    if (rowsCont && rowsCont.children.length === 0) {
         addProductRow('steel');
     }
 
@@ -512,7 +525,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setDL(1);
         setInterval(tick, 1000);
     }
-});
+
+    // Timeline setup
+    if (document.getElementById('timeline-progress')) {
+        updateEvolutionTimeline();
+        // Update every 10 minutes to keep it "live" during long sessions
+        setInterval(updateEvolutionTimeline, 10 * 60 * 1000);
+    }
+
+    // Default calculator tab activation (fix edge cases where inline markup may not set JS state)
+    const firstTab = document.querySelector('.calc-tab');
+    if (firstTab) {
+        switchCalcTab('simple', firstTab);
+    }
+}
 
 // Expose functions to window for inline onclick handlers
 window.setCurrency = setCurrency;
@@ -526,3 +552,4 @@ window.detailCalc = detailCalc;
 window.phaseCalc = phaseCalc;
 window.switchCalcTab = switchCalcTab;
 window.setDL = setDL;
+window.updateEvolutionTimeline = updateEvolutionTimeline;

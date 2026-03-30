@@ -1,340 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>GRI Reporting — SustainCore Environmental Solutions</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="sustaincore-shared.css"/>
-<style>
-
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-.reveal.visible{opacity:1;transform:translateY(0);}
-.reveal-d1{transition-delay:.1s;}
-.reveal-d2{transition-delay:.2s;}
-.reveal-d3{transition-delay:.3s;}
-.reveal-d4{transition-delay:.4s;}
-
-
-</style>
+  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRI Reporting | SustainCore</title>
+  <meta name="description"
+    content="Global standards for sustainability reporting. GRI 2021 Universal Standards alignment for transparent stakeholder communication.">
+  <link rel="icon" href="/Frame 4.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="sustaincore-shared.css">
 </head>
+
 <body>
-<nav class="sc-nav">
-  <a href="../index.html" class="sc-nav-logo"><svg viewBox="0 0 200 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59"/>
-  <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z" fill="#1a4a6b"/>
-  <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17" fill="#4a7c59">Sustain</text>
-  <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17" fill="#1a4a6b">Core</text>
-  <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61" letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
-</svg></a>
-  <ul class="sc-nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../sustaincore_services.html" class="active">Services</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Insights</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <a href="#contact" class="sc-nav-cta">Free Consultation</a>
-</nav>
+  <div id="header-root"></div>
 
-<div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
 
-<div class="bc">
-  <a href="../index.html">Home</a>
-  <span class="sep">/</span>
-  <a href="../sustaincore_services.html">Services</a>
-  <span class="sep">/</span>
-  <a href="../sustaincore_services.html">ESG Reporting</a>
-  <span class="sep">/</span>
-  <span class="sep">GRI Reporting</span>
-</div>
 
-<section class="svc-hero">
-  <div class="svc-hero-inner">
-    <div class="svc-hero-tag">ESG Reporting &middot; Category 01</div>
-    <h1 class="svc-hero-title">GRI Reporting &amp;<br><em>Sustainability</em> Disclosure<br><span class='bt'>to Global Standards</span></h1>
-    <div class="svc-hero-body">
-      <p class="svc-hero-desc">The GRI Universal Standards are the world&rsquo;s most widely adopted sustainability reporting framework — referenced by over 10,000 organisations across 100 countries. <strong>A credible GRI report is the foundation of global investor trust.</strong> We build end-to-end GRI reports that satisfy NGOs, regulators, institutional investors and procurement teams.</p>
-      <div class="svc-hero-pills"><div class="svc-hero-pill "><span class="pill-icon"></span>GRI Universal Standards 2021</div>
-<div class="svc-hero-pill blue"><span class="pill-icon"></span><strong>Global</strong> 10,000+ organisations</div>
-<div class="svc-hero-pill "><span class="pill-icon"></span>Double Materiality</div>
-<div class="svc-hero-pill blue"><span class="pill-icon"></span><strong>Sector-specific</strong> Topic Standards</div></div>
+  <section class="svc-hero">
+    <div class="svc-hero-inner">
+      <div class="bc">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/esg-reporting.html">ESG Reporting</a>
+        <span class="sep">/</span>
+        <span>GRI Standards</span>
+      </div>
+      <h1 class="svc-hero-title">GRI Reporting &amp;<br><em>Sustainability</em> Disclosure<br><span class='bt'>to
+          Global Standards</span></h1>
+      <div class="svc-hero-body">
+        <div class="svc-hero-left">
+          <p class="svc-hero-desc">The GRI Standards are the world's most widely used impact reporting framework.
+            They allow organizations to be truly transparent about their economic, environmental and social impacts in a
+            way that satisfies diverse global stakeholders — from NGOs to institutional investors. <strong>GRI
+              compliance
+              tells the world you operate with accountability.</strong></p>
+          <div style="margin-top:.5rem;">
+            <a href="/index.html#consultation" class="btn-primary">Get Expert Strategy</a>
+          </div>
+        </div>
+        <div class="svc-hero-pills">
+          <div class="svc-hero-pill "><span class="pill-icon"></span>GRI Universal Standards 2021</div>
+          <div class="svc-hero-pill blue"><span class="pill-icon"></span><strong>Global</strong> 10,000+ organisations
+          </div>
+          <div class="svc-hero-pill "><span class="pill-icon"></span>Double Materiality</div>
+          <div class="svc-hero-pill blue"><span class="pill-icon"></span><strong>Sector-specific</strong> Topic
+            Standards</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
-    <div class="svc-hero-img">
-      <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1400&q=80" alt="GRI Reporting"/>
-      <div class="svc-hero-img-caption">
-        <div class="svc-hero-img-title">Global Reporting<br><em>Initiative 2021</em></div>
-        <div class="svc-hero-stat-row"><div class="svc-hero-stat"><div class="svc-hero-stat-v">GRI 2021</div><div class="svc-hero-stat-l">Current standard</div></div><div class="svc-hero-stat"><div class="svc-hero-stat-v">10,000+</div><div class="svc-hero-stat-l">Global organisations</div></div><div class="svc-hero-stat"><div class="svc-hero-stat-v">90%</div><div class="svc-hero-stat-l">Fortune 500 adoption</div></div></div>
+    <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+      <div class="svc-hero-img">
+        <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1400&q=80" alt="GRI Reporting" />
+        <div class="svc-hero-img-caption">
+          <div class="svc-hero-img-title">Global Reporting<br><em>Initiative 2021</em></div>
+          <div class="svc-hero-stat-row">
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">GRI 2021</div>
+              <div class="svc-hero-stat-l">Current standard</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">10,000+</div>
+              <div class="svc-hero-stat-l">Global organisations</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">90%</div>
+              <div class="svc-hero-stat-l">Fortune 500 adoption</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="rule" style="margin-top:3rem;"></div>
+
+  <div class="svc-section">
+    <div class="stats-row reveal">
+      <div class="stat-block">
+        <div class="stat-block-v">10,000+</div>
+        <div class="stat-block-l">Organisations report with GRI</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">90%</div>
+        <div class="stat-block-l">Of Fortune 500 use GRI</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">2021</div>
+        <div class="stat-block-l">Latest Universal Standards</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">35%</div>
+        <div class="stat-block-l">Effort saved multi-framework</div>
+      </div>
+    </div>
+    <div class="sec-label">Why it matters</div>
+    <h2 class="sec-title">GRI is the language<br><em>global stakeholders speak.</em></h2>
+    <p class="sec-sub">When investors, NGOs, regulators and global customers want to understand your environmental and
+      social impact, GRI is the standard they turn to first.</p>
+    <div class="why-grid mt2">
+      <div class="why-card reveal reveal-d1">
+        <div class="sp-step-num">01</div>
+        <div class="why-card-title">Global Investor Credibility</div>
+        <div class="why-card-desc">GRI disclosure is referenced by UNPRI signatories, ESG rating agencies (MSCI,
+          Sustainalytics) and institutional investors conducting ESG due diligence before capital decisions.</div>
+      </div>
+      <div class="why-card reveal reveal-d2">
+        <div class="sp-step-num">02</div>
+        <div class="why-card-title">Regulatory Alignment</div>
+        <div class="why-card-desc">GRI 2021 satisfies the substantive requirements of BRSR, EU CSRD, TCFD and multiple
+          national sustainability reporting mandates — one framework, multiple compliance paths.</div>
+      </div>
+      <div class="why-card reveal reveal-d3">
+        <div class="sp-step-num">03</div>
+        <div class="why-card-title">Supply Chain Transparency</div>
+        <div class="why-card-desc">MNCs in automotive, retail, pharma and technology sectors require GRI-aligned
+          disclosures from their Indian suppliers as a condition of procurement programmes.</div>
       </div>
     </div>
   </div>
-</section>
-<div class="rule" style="margin-top:3rem;"></div>
 
-<div class="svc-section">
-  <div class="stats-row reveal"><div class="stat-block">
-  <div class="stat-block-v">10,000+</div>
-  <div class="stat-block-l">Organisations report with GRI</div>
-</div>
-<div class="stat-block">
-  <div class="stat-block-v">90%</div>
-  <div class="stat-block-l">Of Fortune 500 use GRI</div>
-</div>
-<div class="stat-block">
-  <div class="stat-block-v">2021</div>
-  <div class="stat-block-l">Latest Universal Standards</div>
-</div>
-<div class="stat-block">
-  <div class="stat-block-v">35%</div>
-  <div class="stat-block-l">Effort saved multi-framework</div>
-</div></div>
-  <div class="sec-label">Why it matters</div>
-  <h2 class="sec-title">GRI is the language<br><em>global stakeholders speak.</em></h2>
-  <p class="sec-sub">When investors, NGOs, regulators and global customers want to understand your environmental and social impact, GRI is the standard they turn to first.</p>
-  <div class="why-grid mt2"><div class="why-card reveal reveal-d1">
-  <div class="why-card-n">01</div>
-  <div class="why-card-title">Global Investor Credibility</div>
-  <div class="why-card-desc">GRI disclosure is referenced by UNPRI signatories, ESG rating agencies (MSCI, Sustainalytics) and institutional investors conducting ESG due diligence before capital decisions.</div>
-</div><div class="why-card reveal reveal-d2">
-  <div class="why-card-n">02</div>
-  <div class="why-card-title">Regulatory Alignment</div>
-  <div class="why-card-desc">GRI 2021 satisfies the substantive requirements of BRSR, EU CSRD, TCFD and multiple national sustainability reporting mandates — one framework, multiple compliance paths.</div>
-</div><div class="why-card reveal reveal-d3">
-  <div class="why-card-n">03</div>
-  <div class="why-card-title">Supply Chain Transparency</div>
-  <div class="why-card-desc">MNCs in automotive, retail, pharma and technology sectors require GRI-aligned disclosures from their Indian suppliers as a condition of procurement programmes.</div>
-</div></div>
-</div>
-
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">What we do</div>
-    <h2 class="sec-title">Complete GRI report delivery —<br><em>from scoping to publication</em></h2>
-    <p class="sec-sub">We manage every aspect of GRI reporting — from stakeholder engagement and materiality determination through to content index preparation and publication.</p>
-    <div class="wedo-grid mt3 reveal">
-      <div class="wedo-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="GRI Reporting delivery"/></div>
-      <div class="wedo-body"><div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Stakeholder Engagement &amp; Materiality</div><div class="wedo-item-desc">We design and facilitate structured stakeholder engagement — investor surveys, employee interviews, community focus groups — producing the double materiality determination required by GRI 2021.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Topic Standards Selection</div><div class="wedo-item-desc">Based on your materiality matrix, we identify the applicable GRI Topic Standards from the full library and map required disclosures to your specific business operations and sector context.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Data Collection &amp; Verification</div><div class="wedo-item-desc">We build structured data collection processes across all departments, verifying inputs against GRI definitions and assembling the evidence documentation needed for limited or reasonable assurance.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">Disclosure Drafting &amp; Narrative Writing</div><div class="wedo-item-desc">All required GRI disclosures are drafted — quantitative performance data, management approach narratives, policies, targets and governance descriptions — in language your stakeholders will read and trust.</div></div>
-</div>
-<div class="wedo-item">
-  <div class="wedo-dot"></div>
-  <div><div class="wedo-item-title">GRI Content Index &amp; Publication</div><div class="wedo-item-desc">We prepare the mandatory GRI Content Index declaring your with-reference status, support assurance provider engagement and manage the complete publication process.</div></div>
-</div></div>
+  <div class="svc-section alt">
+    <div class="svc-section-inner">
+      <div class="sec-label">What we do</div>
+      <h2 class="sec-title">Complete GRI report delivery —<br><em>from scoping to publication</em></h2>
+      <p class="sec-sub">We manage every aspect of GRI reporting — from stakeholder engagement and materiality
+        determination through to content index preparation and publication.</p>
+      <div class="wedo-grid mt3 reveal">
+        <div class="wedo-img"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+            alt="GRI Reporting delivery" /></div>
+        <div class="wedo-body">
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Stakeholder Engagement &amp; Materiality</div>
+              <div class="wedo-item-desc">We design and facilitate structured stakeholder engagement — investor
+                surveys, employee interviews, community focus groups — producing the double materiality determination
+                required by GRI 2021.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Topic Standards Selection</div>
+              <div class="wedo-item-desc">Based on your materiality matrix, we identify the applicable GRI Topic
+                Standards from the full library and map required disclosures to your specific business operations and
+                sector context.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Data Collection &amp; Verification</div>
+              <div class="wedo-item-desc">We build structured data collection processes across all departments,
+                verifying inputs against GRI definitions and assembling the evidence documentation needed for limited
+                or reasonable assurance.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Disclosure Drafting &amp; Narrative Writing</div>
+              <div class="wedo-item-desc">All required GRI disclosures are drafted — quantitative performance data,
+                management approach narratives, policies, targets and governance descriptions — in language your
+                stakeholders will read and trust.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">GRI Content Index &amp; Publication</div>
+              <div class="wedo-item-desc">We prepare the mandatory GRI Content Index declaring your with-reference
+                status, support assurance provider engagement and manage the complete publication process.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="svc-section">
-  <div class="sec-label">Our process</div>
-  <h2 class="sec-title">How we <em>deliver your GRI report</em></h2>
-  <p class="sec-sub mb4">Our five-phase GRI delivery programme ensures your report meets GRI 2021 requirements, satisfies assurance providers and is published on schedule.</p>
-  <div class="process-steps p5 reveal"><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">01</div>
-  <div class="ps-title">Context &amp; Scoping</div>
-  <div class="ps-desc">Define organisational profile, reporting boundary and period, applicable sector supplements and GRI reference level.</div>
-</div><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">02</div>
-  <div class="ps-title">Materiality Determination</div>
-  <div class="ps-desc">Facilitate stakeholder engagement and determine material topics using GRI 2021 double materiality approach — board-approved output.</div>
-</div><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">03</div>
-  <div class="ps-title">Topic Standards Mapping</div>
-  <div class="ps-desc">Select applicable Topic Standards, map required disclosures to data owners and design collection templates per GRI definition.</div>
-</div><div class="ps">
-  <div class="ps-arrow">&rarr;</div>
-  <div class="ps-n">04</div>
-  <div class="ps-title">Data Collection &amp; Drafting</div>
-  <div class="ps-desc">Collect and verify performance data, write management approach disclosures and draft full GRI narrative with supporting evidence.</div>
-</div><div class="ps">
-  
-  <div class="ps-n">05</div>
-  <div class="ps-title">Review, Assurance &amp; Publication</div>
-  <div class="ps-desc">Facilitate management review, support third-party assurance engagement, finalise GRI Content Index and manage publication.</div>
-</div></div>
-</div>
+  <div class="svc-section">
+    <div class="sec-label">Our process</div>
+    <h2 class="sec-title">How we <em>deliver your GRI report</em></h2>
+    <p class="sec-sub mb4">Our five-phase GRI delivery programme ensures your report meets GRI 2021 requirements,
+      satisfies assurance providers and is published on schedule.</p>
+    <div class="process-steps p5 reveal">
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="sp-step-num">01</div>
+        <div class="ps-title">Context &amp; Scoping</div>
+        <div class="ps-desc">Define organisational profile, reporting boundary and period, applicable sector
+          supplements and GRI reference level.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="sp-step-num">02</div>
+        <div class="ps-title">Materiality Determination</div>
+        <div class="ps-desc">Facilitate stakeholder engagement and determine material topics using GRI 2021 double
+          materiality approach — board-approved output.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="sp-step-num">03</div>
+        <div class="ps-title">Topic Standards Mapping</div>
+        <div class="ps-desc">Select applicable Topic Standards, map required disclosures to data owners and design
+          collection templates per GRI definition.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">&rarr;</div>
+        <div class="sp-step-num">04</div>
+        <div class="ps-title">Data Collection &amp; Drafting</div>
+        <div class="ps-desc">Collect and verify performance data, write management approach disclosures and draft full
+          GRI narrative with supporting evidence.</div>
+      </div>
+      <div class="ps">
 
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Key deliverables</div>
-    <h2 class="sec-title">What you receive from<br><em>every GRI engagement</em></h2>
-    <div class="deliverables-grid mt3"><div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
-  <div><div class="deliv-title">Complete GRI Report</div><div class="deliv-desc">Full GRI Universal Standards 2021 aligned sustainability report including all mandatory and material topic disclosures, published in stakeholder-accessible format.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-  <div><div class="deliv-title">GRI Content Index</div><div class="deliv-desc">Mandatory content index declaring GRI with-reference status, mapping every disclosure to report location and noting any GRI-approved omissions with justifications.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-  <div><div class="deliv-title">Materiality Matrix &amp; Report</div><div class="deliv-desc">Double materiality determination documenting stakeholder engagement process, impact and financial materiality findings, topic prioritisation rationale and board approval.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-  <div><div class="deliv-title">Assurance-ready Evidence Package</div><div class="deliv-desc">Complete data audit trail with source documentation, calculation methodologies and verification chains — ready for limited or reasonable third-party assurance.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-  <div><div class="deliv-title">Stakeholder Engagement Report</div><div class="deliv-desc">Documentation of all stakeholder engagement activities, feedback received, how it was incorporated into material topic selection and responses to key concerns.</div></div>
-</div>
-<div class="deliv-card reveal">
-  <div class="deliv-icon "><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
-  <div><div class="deliv-title">Year-on-Year Performance Analysis</div><div class="deliv-desc">Comparison of current period ESG performance against prior-year baseline and sector peer benchmarks across all material GRI Topic Standard indicators.</div></div>
-</div></div>
-  </div>
-</div>
-
-<div class="svc-section">
-  <div class="who-section reveal mb4">
-    <div class="who-inner">
-      <div class="who-label">Who this is for</div>
-      <div class="who-title">Right for your organisation if you are&hellip;</div>
-      <div class="who-chips"><span class="who-chip">Listed company seeking global investor credibility</span>
-<span class="who-chip">Export-oriented manufacturer</span>
-<span class="who-chip">Supplier to EU, US or Japanese MNCs</span>
-<span class="who-chip">Company preparing for green bond issuance</span>
-<span class="who-chip">Business targeting CDP or EcoVadis ratings improvement</span>
-<span class="who-chip">Organisation subject to BRSR who wants global alignment</span>
-<span class="who-chip">PE-backed company preparing for international exit</span></div>
+        <div class="sp-step-num">05</div>
+        <div class="ps-title">Review, Assurance &amp; Publication</div>
+        <div class="ps-desc">Facilitate management review, support third-party assurance engagement, finalise GRI
+          Content Index and manage publication.</div>
+      </div>
     </div>
   </div>
-  <div class="sectors-wrap">
-    <div class="sectors-label">Industries we serve</div>
-    <div class="sectors-grid"><div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Manufacturing &amp; Industrials</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Chemicals &amp; Petrochemicals</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Pharmaceuticals</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Textiles &amp; Apparel</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Food &amp; Beverage</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Financial Services</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">IT Services</div></div>
-<div class="sector-pill"><div class="sector-dot"></div><div class="sector-name">Energy &amp; Utilities</div></div></div>
-  </div>
-</div>
 
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Frameworks &amp; Standards</div>
-    <h2 class="sec-title">Aligned with <em>all major frameworks</em></h2>
-    <p class="sec-sub">GRI forms the backbone of a multi-framework disclosure strategy. Our data architecture ensures a single collection effort populates GRI, BRSR, TCFD and CDP simultaneously.</p>
-    <div class="framework-badges mt2"><span class="fw-badge g">GRI Universal Standards 2021</span>
-<span class="fw-badge g">GRI Sector Standards</span>
-<span class="fw-badge n">BRSR — SEBI</span>
-<span class="fw-badge b">TCFD Integration</span>
-<span class="fw-badge b">CDP Climate &amp; Water</span>
-<span class="fw-badge b">ISSB IFRS S1/S2 Alignment</span>
-<span class="fw-badge n">SDG Mapping</span>
-<span class="fw-badge n">CSRD Readiness</span></div>
-  </div>
-</div>
-
-<div class="svc-section">
-  <div class="sec-label">FAQ</div>
-  <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
-  <div class="faq-wrap mt3"><div class="faq-item">
-  <button class="faq-btn">What is the GRI with-reference declaration? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>GRI&rsquo;s with-reference option means your report presents information aligned with the GRI Standards but does not claim full compliance. It is less stringent than in-accordance reporting, which requires all mandatory disclosures to be complete and accurate. Most first-time reporters begin with with-reference and move to in-accordance within two reporting cycles as data quality and systems improve. We recommend the level appropriate to your current data maturity and stakeholder expectations.</p></div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">How does GRI 2021 differ from GRI Standards 2016? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>GRI 2021 introduced significant changes: the Universal Standards now apply to all organisations (not optional topic-by-topic), stakeholder inclusiveness and materiality determination are more rigorous, double materiality is embedded, and the GRI Sector Standards provide more specific requirements for high-impact sectors (mining, oil &amp; gas, agriculture are already published, with more sectors to follow). The 2021 standards also integrate more explicitly with TCFD and ISSB frameworks, making GRI 2021 the most future-proof reporting choice.</p></div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">How long does a GRI report take to produce? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>First-time GRI reports take 12–18 weeks from kickoff. This includes stakeholder engagement and materiality determination (4-6 weeks), data collection (4-6 weeks), drafting and review (3-4 weeks) and assurance/publication (2-4 weeks). Companies with existing BRSR data can often move faster because much of the environmental and social performance data is already collected. Subsequent annual cycles run in 8-10 weeks.</p></div>
-</div>
-<div class="faq-item">
-  <button class="faq-btn">Do we need third-party assurance for a GRI report? <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></button>
-  <div class="faq-ans"><p>Assurance is not mandatory under GRI Standards but is strongly recommended for credibility with institutional investors and ESG rating agencies. Limited assurance (ISAE 3000) is achievable in 3-4 weeks and significantly increases stakeholder confidence. Reasonable assurance provides higher credibility but requires more preparation time. We build all GRI reports to assurance-ready standard regardless of whether formal assurance is engaged — this means you can add assurance at any point without rework.</p></div>
-</div></div>
-</div>
-
-<div class="svc-section alt">
-  <div class="svc-section-inner">
-    <div class="sec-label">Related services</div>
-    <h2 class="sec-title">Services that <em>complement GRI Reporting</em></h2>
-    <div class="related-grid mt2"><a href="svc-brsr.html" class="related-card">
-  <div class="related-card-cat">ESG Reporting</div>
-  <div class="related-card-title">BRSR Reporting</div>
-  <div class="related-card-desc">Combine GRI with India&rsquo;s mandatory BRSR framework for a single, integrated disclosure covering both national and global requirements.</div>
-  <div class="related-card-link">Learn more &rarr;</div>
-</a>
-<a href="svc-tcfd.html" class="related-card">
-  <div class="related-card-cat">ESG Reporting</div>
-  <div class="related-card-title">TCFD Reporting</div>
-  <div class="related-card-desc">Embed TCFD-aligned climate risk disclosures within your GRI report to satisfy institutional investor climate due diligence simultaneously.</div>
-  <div class="related-card-link">Learn more &rarr;</div>
-</a>
-<a href="svc-materiality.html" class="related-card">
-  <div class="related-card-cat">Assessments &amp; Ratings</div>
-  <div class="related-card-title">Materiality Assessment</div>
-  <div class="related-card-desc">The GRI 2021-compliant double materiality assessment that determines what your report covers and why — essential for credible disclosure.</div>
-  <div class="related-card-link">Learn more &rarr;</div>
-</a></div>
-  </div>
-</div>
-
-<div class="svc-section" id="contact">
-  <div class="cta-band reveal">
-    <div>
-      <div class="cta-band-title">Ready to build your GRI report?</div>
-      <div class="cta-band-sub">Free 45-minute scoping call — we&rsquo;ll map your GRI obligations, materiality process and publication timeline.</div>
-    </div>
-    <div class="cta-band-btns">
-      <a href="mailto:sustaincore.es@gmail.com" class="btn-wh">Book free call &rarr;</a>
-      <a href="https://wa.me/919327635935" class="btn-out">WhatsApp us</a>
+  <div class="svc-section alt">
+    <div class="svc-section-inner">
+      <div class="sec-label">Key deliverables</div>
+      <h2 class="sec-title">What you receive from<br><em>every GRI engagement</em></h2>
+      <div class="deliverables-grid mt3">
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon "><svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+              <polyline points="10 9 9 9 8 9" />
+            </svg></div>
+          <div>
+            <div class="deliv-title">Complete GRI Report</div>
+            <div class="deliv-desc">Full GRI Universal Standards 2021 aligned sustainability report including all
+              mandatory and material topic disclosures, published in stakeholder-accessible format.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon "><svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+              <line x1="16" y1="13" x2="8" y2="13" />
+              <line x1="16" y1="17" x2="8" y2="17" />
+            </svg></div>
+          <div>
+            <div class="deliv-title">GRI Content Index</div>
+            <div class="deliv-desc">Mandatory content index declaring GRI with-reference status, mapping every
+              disclosure to report location and noting any GRI-approved omissions with justifications.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon "><svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg></div>
+          <div>
+            <div class="deliv-title">Materiality Matrix &amp; Report</div>
+            <div class="deliv-desc">Double materiality determination documenting stakeholder engagement process,
+              impact and financial materiality findings, topic prioritisation rationale and board approval.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon "><svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg></div>
+          <div>
+            <div class="deliv-title">Assurance-ready Evidence Package</div>
+            <div class="deliv-desc">Complete data audit trail with source documentation, calculation methodologies and
+              verification chains — ready for limited or reasonable third-party assurance.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon "><svg viewBox="0 0 24 24">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg></div>
+          <div>
+            <div class="deliv-title">Stakeholder Engagement Report</div>
+            <div class="deliv-desc">Documentation of all stakeholder engagement activities, feedback received, how it
+              was incorporated into material topic selection and responses to key concerns.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon "><svg viewBox="0 0 24 24">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+              <polyline points="16 7 22 7 22 13" />
+            </svg></div>
+          <div>
+            <div class="deliv-title">Year-on-Year Performance Analysis</div>
+            <div class="deliv-desc">Comparison of current period ESG performance against prior-year baseline and
+              sector peer benchmarks across all material GRI Topic Standard indicators.</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-</div>
-<div class="float">
-  <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"/></svg>
-    WhatsApp
-  </a>
-  <a href="#contact" class="float-cb"><div class="pulse"></div>Free consultation</a>
-</div>
-<footer class="sc-foot">
-  <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd.
-  &nbsp;&middot;&nbsp; <a href="#">Privacy Policy</a>
-  &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a>
-  &nbsp;&middot;&nbsp; Ahmedabad, India &nbsp;&middot;&nbsp; Germany</p>
-</footer>
-<script>
-document.querySelectorAll('.faq-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const item=btn.parentElement;
-    const ans=item.querySelector('.faq-ans');
-    const open=item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i=>{
-      i.classList.remove('open');
-      i.querySelector('.faq-ans').style.maxHeight=null;
+
+  <div class="svc-section">
+    <div class="who-section reveal mb4">
+      <div class="who-inner">
+        <div class="who-label">Who this is for</div>
+        <div class="who-title">Right for your organisation if you are&hellip;</div>
+        <div class="who-chips"><span class="who-chip">Listed company seeking global investor credibility</span>
+          <span class="who-chip">Export-oriented manufacturer</span>
+          <span class="who-chip">Supplier to EU, US or Japanese MNCs</span>
+          <span class="who-chip">Company preparing for green bond issuance</span>
+          <span class="who-chip">Business targeting CDP or EcoVadis ratings improvement</span>
+          <span class="who-chip">Organisation subject to BRSR who wants global alignment</span>
+          <span class="who-chip">PE-backed company preparing for international exit</span>
+        </div>
+      </div>
+    </div>
+    <div class="sectors-wrap">
+      <div class="sectors-label">Industries we serve</div>
+      <div class="sectors-grid">
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Manufacturing &amp; Industrials</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Chemicals &amp; Petrochemicals</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Pharmaceuticals</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Textiles &amp; Apparel</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Food &amp; Beverage</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Financial Services</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">IT Services</div>
+        </div>
+        <div class="sector-pill">
+          <div class="sector-dot"></div>
+          <div class="sector-name">Energy &amp; Utilities</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-section alt">
+    <div class="svc-section-inner">
+      <div class="sec-label">Frameworks &amp; Standards</div>
+      <h2 class="sec-title">Aligned with <em>all major frameworks</em></h2>
+      <p class="sec-sub">GRI forms the backbone of a multi-framework disclosure strategy. Our data architecture
+        ensures a single collection effort populates GRI, BRSR, TCFD and CDP simultaneously.</p>
+      <div class="framework-badges mt2"><span class="fw-badge g">GRI Universal Standards 2021</span>
+        <span class="fw-badge g">GRI Sector Standards</span>
+        <span class="fw-badge n">BRSR — SEBI</span>
+        <span class="fw-badge b">TCFD Integration</span>
+        <span class="fw-badge b">CDP Climate &amp; Water</span>
+        <span class="fw-badge b">ISSB IFRS S1/S2 Alignment</span>
+        <span class="fw-badge n">SDG Mapping</span>
+        <span class="fw-badge n">CSRD Readiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-section">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+    <div class="faq-wrap mt3">
+      <div class="faq-item">
+        <button class="faq-btn">What is the GRI with-reference declaration? <span class="faq-icon"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span></button>
+        <div class="faq-ans">
+          <p>GRI&rsquo;s with-reference option means your report presents information aligned with the GRI Standards
+            but does not claim full compliance. It is less stringent than in-accordance reporting, which requires all
+            mandatory disclosures to be complete and accurate. Most first-time reporters begin with with-reference and
+            move to in-accordance within two reporting cycles as data quality and systems improve. We recommend the
+            level appropriate to your current data maturity and stakeholder expectations.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">How does GRI 2021 differ from GRI Standards 2016? <span class="faq-icon"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span></button>
+        <div class="faq-ans">
+          <p>GRI 2021 introduced significant changes: the Universal Standards now apply to all organisations (not
+            optional topic-by-topic), stakeholder inclusiveness and materiality determination are more rigorous,
+            double materiality is embedded, and the GRI Sector Standards provide more specific requirements for
+            high-impact sectors (mining, oil &amp; gas, agriculture are already published, with more sectors to
+            follow). The 2021 standards also integrate more explicitly with TCFD and ISSB frameworks, making GRI 2021
+            the most future-proof reporting choice.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">How long does a GRI report take to produce? <span class="faq-icon"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span></button>
+        <div class="faq-ans">
+          <p>First-time GRI reports take 12–18 weeks from kickoff. This includes stakeholder engagement and
+            materiality determination (4-6 weeks), data collection (4-6 weeks), drafting and review (3-4 weeks) and
+            assurance/publication (2-4 weeks). Companies with existing BRSR data can often move faster because much of
+            the environmental and social performance data is already collected. Subsequent annual cycles run in 8-10
+            weeks.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn">Do we need third-party assurance for a GRI report? <span class="faq-icon"><svg
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span></button>
+        <div class="faq-ans">
+          <p>Assurance is not mandatory under GRI Standards but is strongly recommended for credibility with
+            institutional investors and ESG rating agencies. Limited assurance (ISAE 3000) is achievable in 3-4 weeks
+            and significantly increases stakeholder confidence. Reasonable assurance provides higher credibility but
+            requires more preparation time. We build all GRI reports to assurance-ready standard regardless of whether
+            formal assurance is engaged — this means you can add assurance at any point without rework.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-section alt">
+    <div class="svc-section-inner">
+      <div class="sec-label">Related services</div>
+      <h2 class="sec-title">Services that <em>complement GRI Reporting</em></h2>
+      <div class="related-grid mt2"><a href="svc-brsr.html" class="related-card">
+          <div class="related-card-cat">ESG Reporting</div>
+          <div class="related-card-title">BRSR Reporting</div>
+          <div class="related-card-desc">Combine GRI with India&rsquo;s mandatory BRSR framework for a single,
+            integrated disclosure covering both national and global requirements.</div>
+          <div class="related-card-link">Learn more &rarr;</div>
+        </a>
+        <a href="svc-tcfd.html" class="related-card">
+          <div class="related-card-cat">ESG Reporting</div>
+          <div class="related-card-title">TCFD Reporting</div>
+          <div class="related-card-desc">Embed TCFD-aligned climate risk disclosures within your GRI report to satisfy
+            institutional investor climate due diligence simultaneously.</div>
+          <div class="related-card-link">Learn more &rarr;</div>
+        </a>
+        <a href="svc-materiality.html" class="related-card">
+          <div class="related-card-cat">Assessments &amp; Ratings</div>
+          <div class="related-card-title">Materiality Assessment</div>
+          <div class="related-card-desc">The GRI 2021-compliant double materiality assessment that determines what
+            your report covers and why — essential for credible disclosure.</div>
+          <div class="related-card-link">Learn more &rarr;</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-section" id="contact">
+    <div class="cta-band reveal">
+      <div>
+        <div class="cta-band-title">Ready to build your GRI report?</div>
+        <div class="cta-band-sub">Speak with our technical experts to build your sustainability roadmap and secure
+          global stakeholder trust.</div>
+      </div>
+      <div class="cta-band-btns">
+        <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="footer-root"></div>
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const ans = item.querySelector('.faq-ans');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-ans').style.maxHeight = null;
+        });
+        if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+      });
     });
-    if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
-  });
-});
-// Scroll reveal
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');}});
-},{threshold:0.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-</script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>

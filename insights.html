@@ -45,7 +45,7 @@
         </section>
 
         <!-- Scale of Crisis: Data Section -->
-        <section
+        <section id="data-narrative"
             class="bg-brand-softGray dark:bg-slate-900/50 py-32 rounded-[3.5rem] mx-6 mb-40 border border-slate-200 dark:border-slate-800 shadow-sm relative overflow-hidden">
             <div class="absolute top-0 right-0 w-full h-full bg-[url('/grid.svg')] opacity-[0.05]"></div>
             <div class="max-w-7xl mx-auto px-12 relative z-10">
@@ -93,9 +93,9 @@
                 </div>
 
                 <!-- Live Indicators (Expanded Charts) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-12">
                     <!-- 01: Planet in Distress -->
-                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                    <div class="p-6 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
                         <div class="w-full text-left flex items-center gap-3 mb-8">
                             <span class="w-4 h-[1px] bg-red-500"></span>
                             <span class="text-[10px] font-bold text-red-500 uppercase tracking-[0.3em]">01 — Planet in
@@ -116,7 +116,7 @@
                     </div>
 
                     <!-- 02: Industry Impact -->
-                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                    <div class="p-6 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
                         <div class="w-full text-left flex items-center gap-3 mb-8">
                             <span class="w-4 h-[1px] bg-amber-600"></span>
                             <span class="text-[10px] font-bold text-amber-600 uppercase tracking-[0.3em]">02 — Industry
@@ -137,7 +137,7 @@
                     </div>
 
                     <!-- 03: Business Risk -->
-                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                    <div class="p-6 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
                         <div class="w-full text-left flex items-center gap-3 mb-8">
                             <span class="w-4 h-[1px] bg-yellow-500"></span>
                             <span class="text-[10px] font-bold text-yellow-500 uppercase tracking-[0.3em]">03 — Business
@@ -158,7 +158,7 @@
                     </div>
 
                     <!-- 04: The Opportunity Window -->
-                    <div class="p-10 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
+                    <div class="p-6 bg-[#0a0a0a] border border-white/5 rounded-[40px] flex flex-col items-center">
                         <div class="w-full text-left flex items-center gap-3 mb-8">
                             <span class="w-4 h-[1px] bg-emerald-500"></span>
                             <span class="text-[10px] font-bold text-emerald-500 uppercase tracking-[0.3em]">04 — The
@@ -171,7 +171,7 @@
                             <h3 class="text-xl font-bold text-white tracking-tight">Green economy market size by 2030
                             </h3>
                             <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">Every $1 invested in
-                                sustainability generates up to $1.9 in avoided losses. The green economy is the
+                                sustainability generates up to $1.9. The green economy is the
                                 fastest-growing market on the planet.</p>
                             <div class="text-[9px] font-bold text-slate-600 uppercase tracking-widest pt-4">Source: WEF
                                 / CDP</div>
@@ -187,7 +187,8 @@
             <div id="insights-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Data injected via fetchArticles() -->
                 <div class="col-span-full py-20 text-center animate-pulse">
-                    <div class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em]">Synching with Knowledge Hub...</div>
+                    <div class="text-[10px] font-bold text-slate-300 uppercase tracking-[0.3em]">Synching with Knowledge
+                        Hub...</div>
                 </div>
             </div>
         </section>
@@ -195,50 +196,79 @@
         <!-- Premium Article Modal -->
         <div id="article-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 md:p-8">
             <div class="absolute inset-0 bg-slate-900/30 backdrop-blur-2xl" onclick="closeArticle()"></div>
-            <div class="relative w-full max-w-6xl max-h-[90vh] modal-card rounded-[3rem] border border-slate-200 shadow-[0_32px_128px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col transform translate-y-8 opacity-0 transition-all duration-500 scale-95" id="modal-content">
+            <div class="relative w-full max-w-6xl max-h-[90vh] modal-card rounded-[3rem] border border-slate-200 shadow-[0_32px_128px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col transform translate-y-8 opacity-0 transition-all duration-500 scale-95"
+                id="modal-content">
                 <!-- Header -->
                 <div class="p-8 md:p-14 border-b border-slate-100 flex justify-between items-start">
                     <div class="space-y-6">
-                        <div id="modal-meta" class="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-brand-blue">
+                        <div id="modal-meta"
+                            class="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-brand-blue">
                             <!-- Injected -->
                         </div>
-                        <h2 id="modal-title" class="text-4xl md:text-6xl font-display font-black tracking-tighter leading-[0.9] text-slate-900">
+                        <h2 id="modal-title"
+                            class="text-4xl md:text-6xl font-display font-black tracking-tighter leading-[0.9] text-slate-900">
                             <!-- Injected -->
                         </h2>
                     </div>
-                    <button onclick="closeArticle()" class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center hover:bg-red-500 transition-all group shrink-0">
-                        <svg class="w-6 h-6 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+                    <button onclick="closeArticle()"
+                        class="w-14 h-14 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center hover:bg-red-500 transition-all group shrink-0">
+                        <svg class="w-6 h-6 text-slate-400 group-hover:text-white" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
                     </button>
                 </div>
                 <!-- Body -->
-                <div class="p-8 md:p-20 overflow-y-auto custom-scrollbar flex-grow text-slate-600 leading-relaxed space-y-12 text-xl font-light" id="modal-body">
+                <div class="p-8 md:p-20 overflow-y-auto custom-scrollbar flex-grow text-slate-600 leading-relaxed space-y-12 text-xl font-light"
+                    id="modal-body">
                     <!-- Injected -->
                 </div>
                 <!-- Footer -->
-                <div class="p-8 md:p-12 border-t border-slate-100 bg-slate-50 flex justify-between items-center shrink-0">
+                <div
+                    class="p-8 md:p-12 border-t border-slate-100 bg-slate-50 flex justify-between items-center shrink-0">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center text-[12px] font-black italic text-white shadow-xl">SC</div>
+                        <div
+                            class="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center text-[12px] font-black italic text-white shadow-xl">
+                            SC</div>
                         <div>
-                            <div id="modal-author" class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">SustainCore Analyst</div>
-                            <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Global Intelligence Hub</div>
+                            <div id="modal-author"
+                                class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900">SustainCore
+                                Analyst</div>
+                            <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1">Global
+                                Intelligence Hub</div>
                         </div>
                     </div>
-                    <div class="text-[10px] font-bold text-slate-200 uppercase tracking-widest">TRANSMISSION // ENCRYPTED</div>
+                    <div class="text-[10px] font-bold text-slate-200 uppercase tracking-widest">TRANSMISSION //
+                        ENCRYPTED</div>
                 </div>
             </div>
         </div>
 
         <style>
-            .custom-scrollbar::-webkit-scrollbar { width: 5px; }
-            .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-            .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.05); border-radius: 10px; }
-            .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(0,71,255,0.3); }
-            
-            .modal-card { 
-                background: #ffffff !important; 
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: transparent;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 10px;
+            }
+
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(0, 71, 255, 0.3);
+            }
+
+            .modal-card {
+                background: #ffffff !important;
                 backdrop-filter: blur(40px);
                 position: relative;
             }
+
             .modal-card::before {
                 content: '';
                 position: absolute;
@@ -246,8 +276,15 @@
                 background: radial-gradient(circle at top left, rgba(0, 71, 255, 0.03) 0%, transparent 40%);
                 pointer-events: none;
             }
-            #modal-body p { margin-bottom: 2.5rem; }
-            #modal-body strong { color: #0f172a; font-weight: 800; }
+
+            #modal-body p {
+                margin-bottom: 2.5rem;
+            }
+
+            #modal-body strong {
+                color: #0f172a;
+                font-weight: 800;
+            }
         </style>
 
         <script>
@@ -277,16 +314,16 @@
                     <span class="w-1 h-1 rounded-full bg-white/20"></span>
                     <span class="opacity-50">${article.readTime}</span>
                 `;
-                
+
                 document.getElementById('modal-author').textContent = (article.author || "SustainCore Analyst").toUpperCase();
-                
+
                 // Format content with paragraphs
                 const content = article.content || article.description;
                 document.getElementById('modal-body').innerHTML = content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
 
                 const modal = document.getElementById('article-modal');
                 const contentEl = document.getElementById('modal-content');
-                
+
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden'; // Prevent scroll
 
@@ -323,7 +360,7 @@
                 try {
                     const response = await fetch('/api/articles');
                     const text = await response.text();
-                    
+
                     let data;
                     try {
                         data = JSON.parse(text);
@@ -395,36 +432,38 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const title = document.querySelector('h1');
                 const subtitle = document.querySelector('h1 + p');
-                
+
                 if (title) {
                     gsap.from(title, { y: 40, opacity: 0, duration: 1.2, ease: "power4.out" });
                 }
                 if (subtitle) {
                     gsap.from(subtitle, { y: 20, opacity: 0, duration: 1, delay: 0.2, ease: "power4.out" });
                 }
-                
+
                 fetchArticles();
             });
         </script>
-                <!-- Newsletter Callout -->
-                <div class="lg:col-span-3 bg-brand-blue rounded-4xl p-12 md:p-20 flex flex-col lg:flex-row items-center gap-16 text-white mt-12 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-[100px] rounded-full"></div>
-                    <div class="max-w-xl text-center lg:text-left relative z-10">
-                        <h2 class="text-3xl md:text-5xl font-display font-black mb-6 leading-tight">Stay ahead of the
-                            <span class="text-brand-green italic font-light">mandate.</span></h2>
-                        <p class="text-white/70 text-lg leading-relaxed mb-0">Get our monthly regulatory brief delivered
-                            to your corporate inbox. No jargon, just technical utility.</p>
-                    </div>
-                    <form id="newsletter-form" class="flex-grow w-full lg:w-auto relative z-10 flex flex-col sm:flex-row gap-4">
-                        <input type="email" id="subscriber-email" name="email" placeholder="Corporate Email" required
-                            class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-brand-green">
-                        <button type="submit" id="subscribe-btn"
-                            class="px-8 py-4 bg-white text-brand-blue rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all whitespace-nowrap">Subscribe
-                            to Brief</button>
-                    </form>
+        <!-- Newsletter Callout -->
+        <div
+            class="lg:col-span-2 ml-14 mr-14 bg-brand-blue rounded-4xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-16 text-white mt-12 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-[100px] rounded-full"></div>
+            <div class="max-w-xl text-center lg:text-left relative z-10">
+                <h2 class="text-3xl md:text-5xl font-display font-black mb-6 leading-tight">Stay ahead of the
+                    <span class="text-brand-green italic font-light">mandate.</span>
+                </h2>
+                <p class="text-white/70 text-lg leading-relaxed mb-0">Get our monthly regulatory brief delivered
+                    to your corporate inbox. No jargon, just technical utility.</p>
+            </div>
+            <form id="newsletter-form" class="flex-grow w-full lg:w-auto relative z-10 flex flex-col sm:flex-row gap-4">
+                <input type="email" id="subscriber-email" name="email" placeholder="Corporate Email" required
+                    class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-brand-green">
+                <button type="submit" id="subscribe-btn"
+                    class="px-8 py-4 bg-white text-brand-blue rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all whitespace-nowrap">Subscribe
+                    to Brief</button>
+            </form>
 
-                    </div>
-                </div>
+        </div>
+        </div>
     </main>
 
     <!-- Footer Placeholder -->

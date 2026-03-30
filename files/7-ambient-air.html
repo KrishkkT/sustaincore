@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ambient Air Quality Monitoring — SustainCore Environmental Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="sustaincore-shared.css" />
+  <style>
+    /* NAAQ Standards table */
+    .naaqs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .naaqs-card {
+      background: var(--w);
+      border-radius: 14px;
+      border: 1px solid var(--bdr);
+      padding: 1.25rem 1.1rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .naaqs-card:hover {
+      border-color: var(--g35);
+      box-shadow: 0 6px 18px rgba(26, 74, 107, .07);
+    }
+
+    .naaqs-pollutant {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .2rem;
+    }
+
+    .naaqs-formula {
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: .65rem;
+      font-style: italic;
+    }
+
+    .naaqs-limits {
+      display: flex;
+      flex-direction: column;
+      gap: .35rem;
+    }
+
+    .naaqs-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .35rem .55rem;
+      background: var(--bg2);
+      border-radius: 6px;
+      border: 1px solid var(--bdr);
+    }
+
+    .naaqs-area {
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    .naaqs-val {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* Monitoring station types */
+    .station-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+      margin-top: 2rem;
+    }
+
+    .station-card {
+      background: var(--w);
+      border-radius: 16px;
+      border: 1px solid var(--bdr);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+
+    .station-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(26, 74, 107, .1);
+      border-color: var(--g35);
+    }
+
+    .station-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--g), transparent);
+    }
+
+    .station-type {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--g);
+      margin-bottom: .55rem;
+    }
+
+    .station-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+
+    .station-desc {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: .85rem;
+    }
+
+    .station-use {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--b);
+      background: var(--b05);
+      border: 1px solid var(--b10);
+      border-radius: 100px;
+      padding: 3px 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="header-root"></div>
+
+  <section class="svc-hero reveal">
+    <div class="svc-hero-inner">
+      <div class="bc">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/sustaincore_services.html">Air Quality Monitoring</a>
+        <span class="sep">/</span>
+        <span>Ambient Air Quality Monitoring</span>
+      </div>
+
+      <div class="svc-hero-body">
+        <div class="svc-hero-left">
+          <h1 class="svc-hero-title">
+            Ambient Air<br>
+            <em>Quality Monitoring</em><br>
+            <span class="bt">NAAQ Standards &middot; EIA Baseline</span>
+          </h1>
+          <p class="svc-hero-desc">
+            Ambient air quality monitoring measures pollutant concentrations in the outdoor air around your facility boundary and in surrounding communities &mdash; comparing them against India&rsquo;s National Ambient Air Quality (NAAQ) Standards. <strong>It is mandatory for Environmental Clearance applications, EC compliance reporting, EIA studies and GPCB Consent to Operate conditions.</strong> We provide NABL-accredited ambient air monitoring across seasonal baseline and continuous regulatory compliance programmes.
+          </p>
+          <div style="margin-top:.5rem;">
+            <a href="/index.html#consultation" class="btn-primary">Secure Your Compliance</a>
+          </div>
+        </div>
+        <div class="svc-hero-pills">
+          <div class="svc-hero-pill">
+            <span class="pill-icon"></span>
+            <span><strong>NAAQ Standards</strong> 2009</span>
+          </div>
+          <div class="svc-hero-pill blue">
+            <span class="pill-icon"></span>
+            <span>EIA Baseline & EC Compliance</span>
+          </div>
+          <div class="svc-hero-pill">
+            <span class="pill-icon"></span>
+            <span><strong>NABL Accredited</strong> Analysis</span>
+          </div>
+          <div class="svc-hero-pill blue">
+            <span class="pill-icon"></span>
+            <span>GPCB / CPCB Format</span>
+          </div>
+          <div class="svc-hero-pill">
+            <span class="pill-icon"></span>
+            <span>Hi-Vol & AAQMS Stations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+      <div class="svc-hero-img">
+        <img src="https://images.unsplash.com/photo-1495927186917-47fdb1f6b4c4?w=1400&q=80" alt="Ambient air quality monitoring station outdoor environment" />
+        <div class="svc-hero-img-caption">
+          <div class="svc-hero-img-title">Community & Boundary<br><em>Air Quality Assurance</em></div>
+          <div class="svc-hero-stat-row">
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">12</div>
+              <div class="svc-hero-stat-l">Core Parameters</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">24 hr</div>
+              <div class="svc-hero-stat-l">Sampling Duration</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <div class="rule" style="margin-top:3rem;"></div>
+
+    <!-- STATS -->
+    <div class="svc-section reveal">
+      <div class="stats-row reveal">
+        <div class="stat-block">
+          <div class="stat-block-v">12</div>
+          <div class="stat-block-l">NAAQ standard parameters monitored</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">24 hr</div>
+          <div class="stat-block-l">Standard sampling duration per location</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">3 km</div>
+          <div class="stat-block-l">Typical study area radius for EIA baseline</div>
+        </div>
+        <div class="stat-block">
+          <div class="stat-block-v">NABL</div>
+          <div class="stat-block-l">Accredited &mdash; accepted by all regulators &amp; courts</div>
+        </div>
+      </div>
+
+      <!-- NAAQ STANDARDS -->
+      <div class="sec-label">NAAQ Standards 2009</div>
+      <h2 class="sec-title">The prescribed limits &mdash;<br><em>National Ambient Air Quality Standards</em></h2>
+      <p class="sec-sub">The Ministry of Environment, Forest and Climate Change notified the National Ambient Air
+        Quality Standards (NAAQ Standards) in 2009 under the Air (Prevention and Control of Pollution) Act. These are
+        the legal benchmarks against which all ambient monitoring data is assessed.</p>
+      <div class="naaqs-grid">
+        <div class="naaqs-card reveal">
+          <div class="naaqs-pollutant">PM₁₀ (Particulate Matter)</div>
+          <div class="naaqs-formula">24-hour &amp; annual average</div>
+          <div class="naaqs-limits">
+            <div class="naaqs-row"><span class="naaqs-area">Industrial / Residential / Rural</span><span
+                class="naaqs-val">100 µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Sensitive Areas</span><span class="naaqs-val">60
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Annual average</span><span class="naaqs-val">60 µg/m³</span>
+            </div>
+          </div>
+        </div>
+        <div class="naaqs-card reveal">
+          <div class="naaqs-pollutant">PM₂.₅ (Fine Particulates)</div>
+          <div class="naaqs-formula">24-hour &amp; annual average</div>
+          <div class="naaqs-limits">
+            <div class="naaqs-row"><span class="naaqs-area">24-hour average</span><span class="naaqs-val">60
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Annual average</span><span class="naaqs-val">40 µg/m³</span>
+            </div>
+            <div class="naaqs-row"><span class="naaqs-area">Sensitive Areas</span><span class="naaqs-val">40
+                µg/m³</span></div>
+          </div>
+        </div>
+        <div class="naaqs-card reveal">
+          <div class="naaqs-pollutant">Sulphur Dioxide (SO₂)</div>
+          <div class="naaqs-formula">24-hour &amp; annual average</div>
+          <div class="naaqs-limits">
+            <div class="naaqs-row"><span class="naaqs-area">Industrial / Residential</span><span class="naaqs-val">80
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Sensitive Areas</span><span class="naaqs-val">40
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Annual average</span><span class="naaqs-val">50 µg/m³</span>
+            </div>
+          </div>
+        </div>
+        <div class="naaqs-card reveal">
+          <div class="naaqs-pollutant">Nitrogen Dioxide (NO₂)</div>
+          <div class="naaqs-formula">24-hour &amp; annual average</div>
+          <div class="naaqs-limits">
+            <div class="naaqs-row"><span class="naaqs-area">Industrial / Residential</span><span class="naaqs-val">80
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Sensitive Areas</span><span class="naaqs-val">40
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Annual average</span><span class="naaqs-val">40 µg/m³</span>
+            </div>
+          </div>
+        </div>
+        <div class="naaqs-card reveal">
+          <div class="naaqs-pollutant">Ozone (O₃)</div>
+          <div class="naaqs-formula">8-hour &amp; 1-hour average</div>
+          <div class="naaqs-limits">
+            <div class="naaqs-row"><span class="naaqs-area">8-hour average</span><span class="naaqs-val">100
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">1-hour average</span><span class="naaqs-val">180
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Sensitive Areas</span><span class="naaqs-val">100
+                µg/m³</span></div>
+          </div>
+        </div>
+        <div class="naaqs-card reveal">
+          <div class="naaqs-pollutant">Lead (Pb)</div>
+          <div class="naaqs-formula">24-hour &amp; annual average</div>
+          <div class="naaqs-limits">
+            <div class="naaqs-row"><span class="naaqs-area">24-hour average</span><span class="naaqs-val">1.0
+                µg/m³</span></div>
+            <div class="naaqs-row"><span class="naaqs-area">Annual average</span><span class="naaqs-val">0.5
+                µg/m³</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATION TYPES -->
+      <div class="sec-label mt3">Monitoring station types</div>
+      <h2 class="sec-title">Right equipment<br><em>for every monitoring need</em></h2>
+      <p class="sec-sub">We deploy the appropriate monitoring technology for each programme type &mdash; from portable
+        Hi-Vol samplers for EIA baseline studies to online AAQMS stations for continuous real-time EC compliance
+        monitoring.</p>
+      <div class="station-grid">
+        <div class="station-card reveal">
+          <div class="station-type">Manual Sampling</div>
+          <div class="station-name">Hi-Volume Sampler (Hi-Vol)</div>
+          <div class="station-desc">Standard 24-hour filter-based sampling for PM₁₀, PM₂.₅, SO₂, NO₂, CO, heavy metals
+            and other parameters at up to 8 simultaneous locations. Portable, rapid deployment, no infrastructure
+            required.</div>
+          <span class="station-use">EIA Baseline &bull; Periodic Compliance</span>
+        </div>
+        <div class="station-card reveal">
+          <div class="station-type">Continuous Monitoring</div>
+          <div class="station-name">Ambient Air Quality Monitoring Station (AAQMS)</div>
+          <div class="station-desc">Fixed or semi-portable automated station providing real-time, continuous monitoring
+            of PM₁₀, PM₂.₅, SO₂, NOₓ, O₃ and CO with GSM/internet data transmission. Required for EC compliance
+            continuous monitoring conditions.</div>
+          <span class="station-use">EC Compliance &bull; Long-Term Surveillance</span>
+        </div>
+        <div class="station-card reveal">
+          <div class="station-type">Passive Diffusion</div>
+          <div class="station-name">Passive Samplers (Diffusion Tubes)</div>
+          <div class="station-desc">Low-cost passive diffusion tubes for SO₂, NO₂, NH₃, H₂S and VOC monitoring over
+            1&ndash;4 week exposure periods. Ideal for wide-area community impact screening and supplementary spatial
+            coverage around Hi-Vol networks.</div>
+          <span class="station-use">Community Screening &bull; Wide-Area Survey</span>
+        </div>
+      </div>
+
+      <!-- WHY IT MATTERS -->
+      <div class="sec-label mt3">Why it matters</div>
+      <h2 class="sec-title">Ambient monitoring is required at<br><em>every regulatory checkpoint.</em></h2>
+      <p class="sec-sub">Environmental Clearances, half-yearly compliance reports, EIA studies and GPCB inspections all
+        require valid ambient air quality data. Without it, your regulatory submissions are incomplete and rejectable.
+      </p>
+      <div class="why-grid mt2">
+        <div class="why-card reveal reveal-d1">
+          <div class="sp-step-num">01</div>
+          <div class="why-card-title">EIA Baseline Requirement</div>
+          <div class="why-card-desc">Every Environmental Impact Assessment study requires a minimum one-season
+            (preferably two-season) baseline ambient air quality dataset from the study area &mdash; covering a
+            5&ndash;10 km radius around the proposed project. This baseline is mandatory for MoEF&amp;CC / SEIAA EC
+            application and TOR (Terms of Reference) compliance. Without it, your EIA report is technically deficient
+            and will be rejected at scoping.</div>
+        </div>
+        <div class="why-card reveal reveal-d2">
+          <div class="sp-step-num">02</div>
+          <div class="why-card-title">EC Compliance Half-Yearly Report</div>
+          <div class="why-card-desc">Industries holding Environmental Clearances under the EIA Notification are required
+            to submit half-yearly compliance reports to the MoEF&amp;CC and SEIAA. These reports must include current
+            ambient air quality monitoring data from the prescribed monitoring locations around the facility &mdash;
+            typically the fence line, leeward side, nearest habitation and a background location.</div>
+        </div>
+        <div class="why-card reveal reveal-d3">
+          <div class="sp-step-num">03</div>
+          <div class="why-card-title">GPCB Consent Conditions</div>
+          <div class="why-card-desc">GPCB Consent to Operate conditions for Red and Orange category industries
+            frequently require periodic ambient air quality monitoring at specified boundary locations, submitted as
+            part of the annual or bi-annual consent renewal package. Gaps in monitoring data are treated as consent
+            violations during GPCB inspection, with consequences for consent renewal and category classification.</div>
+        </div>
+        <div class="why-card reveal reveal-d4">
+          <div class="sp-step-num">04</div>
+          <div class="why-card-title">Dispersion Modelling Validation</div>
+          <div class="why-card-desc">Air dispersion modelling &mdash; required in EIA studies to predict ground-level
+            concentrations from stack emissions &mdash; must be validated against measured ambient air quality data.
+            Without measured baseline and downwind data, the modelling is unvalidated and vulnerable to challenge during
+            public consultation and EAC review hearings.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="svc-section alt reveal">
+      <div class="svc-section-inner">
+        <div class="sec-label">What we do</div>
+        <h2 class="sec-title">From site selection to<br><em>regulatory submission</em></h2>
+        <p class="sec-sub">We design, conduct and report ambient air quality monitoring programmes covering EIA baseline
+          studies, EC compliance monitoring, seasonal surveys and continuous AAQMS deployments &mdash; all producing
+          NABL-accredited results in CPCB/GPCB-prescribed formats.</p>
+        <div class="wedo-grid mt3 reveal">
+          <div class="wedo-img">
+            <img src="https://images.unsplash.com/photo-1534237710431-e2fc698436d0?w=800&q=80"
+              alt="Ambient air quality monitoring station deployment" />
+          </div>
+          <div class="wedo-body">
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Monitoring Location Selection &amp; Network Design</div>
+                <div class="wedo-item-desc">CPCB guideline-compliant monitoring location selection considering
+                  prevailing wind direction, sensitive receptors (hospitals, schools, residential areas), topography and
+                  EC/GPCB prescribed locations. We optimise the network to provide maximum regulatory utility from
+                  minimum station count.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Hi-Volume Sampling Campaigns</div>
+                <div class="wedo-item-desc">24-hour Hi-Vol sampling for PM₁₀, PM₂.₅, SO₂, NO₂, CO and additional
+                  parameters (Pb, HF, HCl, NH₃, VOCs as applicable) at all designated locations. Minimum 8 consecutive
+                  24-hour sampling days per season per CPCB protocol for EIA baseline studies.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">NABL-Accredited Laboratory Analysis</div>
+                <div class="wedo-item-desc">All collected filter samples analysed at our NABL-accredited laboratory
+                  using gravimetric and wet chemical methods prescribed in IS 5182 and CPCB technical guidelines. Full
+                  QA/QC including field blanks, duplicates and spike recovery documentation.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Meteorological Data Collection</div>
+                <div class="wedo-item-desc">Simultaneous measurement of wind speed, wind direction, temperature,
+                  relative humidity and atmospheric stability class at each monitoring location &mdash; essential for
+                  air dispersion modelling validation and regulatory reporting.</div>
+              </div>
+            </div>
+            <div class="wedo-item">
+              <div class="wedo-dot"></div>
+              <div>
+                <div class="wedo-item-title">Regulatory Report Preparation &amp; Submission</div>
+                <div class="wedo-item-desc">Complete ambient air quality monitoring report in CPCB/GPCB/MoEF prescribed
+                  format: all monitoring results vs. NAAQ Standards, wind roses, meteorological summaries, NABL test
+                  reports and station location maps. Ready for direct insertion into EIA chapters or EC compliance
+                  reports.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="svc-section reveal">
+      <div class="sec-label">Our process</div>
+      <h2 class="sec-title">How we <em>conduct ambient monitoring</em></h2>
+      <p class="sec-sub mb4">A five-stage process delivering a complete, submission-ready ambient air quality monitoring
+        report within 15&ndash;20 working days of sampling completion.</p>
+      <div class="process-steps p5 reveal">
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+      <div class="sp-step-num">01</div>
+          <div class="ps-title">Network Design</div>
+          <div class="ps-desc">Study area mapping, wind rose analysis, sensitive receptor identification, monitoring
+            location finalisation and logistics planning per CPCB guidelines and EC/TOR conditions.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+      <div class="sp-step-num">02</div>
+          <div class="ps-title">Station Deployment</div>
+          <div class="ps-desc">Hi-Vol sampler and meteorological instrument installation at all designated locations.
+            Equipment calibration verification, site security arrangements and sampling schedule commencement.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+      <div class="sp-step-num">03</div>
+          <div class="ps-title">Field Sampling Campaign</div>
+          <div class="ps-desc">24-hour sampling cycles for minimum 8 days per location per season. Daily field
+            inspection, filter and impinger changes, field data recording and chain-of-custody documentation.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+      <div class="sp-step-num">04</div>
+          <div class="ps-title">Laboratory Analysis</div>
+          <div class="ps-desc">NABL-accredited analysis of all samples using IS 5182 methods. Internal QA/QC, outlier
+            review and preliminary data validation before report generation.</div>
+        </div>
+        <div class="ps">
+      <div class="sp-step-num">05</div>
+          <div class="ps-title">Report &amp; Submission</div>
+          <div class="ps-desc">Complete monitoring report in prescribed format with all results, NAAQ comparison, wind
+            roses, meteorological data and NABL certificates. Direct submission to MoEF, SEIAA or GPCB as required.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELIVERABLES -->
+    <div class="svc-section alt reveal">
+      <div class="svc-section-inner">
+        <div class="sec-label">Key deliverables</div>
+        <h2 class="sec-title">What you receive from<br><em>every monitoring programme</em></h2>
+        <div class="deliverables-grid mt3">
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">NABL-Accredited Test Reports</div>
+              <div class="deliv-desc">Signed NABL laboratory analysis reports for all monitored parameters at all
+                locations, accepted by MoEF&amp;CC, SEIAA, GPCB, CPCB, courts and environmental tribunals.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Ambient Air Quality Monitoring Report</div>
+              <div class="deliv-desc">Complete report in CPCB/GPCB prescribed format: all measured concentrations
+                tabulated against NAAQ Standards, summary statistics (mean, maximum, 98th percentile), compliance status
+                and monitoring location maps.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Wind Rose &amp; Meteorological Data</div>
+              <div class="deliv-desc">Seasonal wind rose diagrams, meteorological parameter tables (wind speed,
+                direction, temperature, humidity, stability class) in the format required for air dispersion modelling
+                and EIA chapter inclusion.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Monitoring Location Maps</div>
+              <div class="deliv-desc">GIS-referenced site maps showing all monitoring station locations, study area
+                boundary, sensitive receptors, wind direction overlays and land use classification &mdash; formatted for
+                EIA chapter and regulatory submission.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <line x1="18" y1="20" x2="18" y2="10" />
+                <line x1="12" y1="20" x2="12" y2="4" />
+                <line x1="6" y1="20" x2="6" y2="14" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">EIA-Ready Baseline Chapter</div>
+              <div class="deliv-desc">For EIA engagement clients, a fully drafted air environment baseline chapter
+                incorporating monitoring data, analysis, NAAQ comparison, trend discussion and predictive modelling
+                input data &mdash; ready for inclusion in your EIA report.</div>
+            </div>
+          </div>
+          <div class="deliv-card reveal">
+            <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg></div>
+            <div>
+              <div class="deliv-title">Half-Yearly EC Compliance Data Package</div>
+              <div class="deliv-desc">For EC compliance reporting, a ready-to-submit data package covering all ambient
+                monitoring results for the reporting period, formatted for the MoEF&amp;CC online compliance reporting
+                portal and SEIAA submission.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHO + SECTORS -->
+    <div class="svc-section reveal">
+      <div class="who-section reveal mb4">
+        <div class="who-inner">
+          <div class="who-label">Who this is for</div>
+          <div class="who-title">Required if you are&hellip;</div>
+          <div class="who-chips">
+            <span class="who-chip">Applying for Environmental Clearance under EIA Notification 2006</span>
+            <span class="who-chip">Industry holding EC with half-yearly compliance monitoring conditions</span>
+            <span class="who-chip">Industry with GPCB Consent to Operate requiring boundary ambient monitoring</span>
+            <span class="who-chip">Project requiring EIA study with air quality baseline assessment</span>
+            <span class="who-chip">Expansion project needing post-expansion ambient impact assessment</span>
+            <span class="who-chip">Industry responding to CPCB / GPCB notice for ambient monitoring data</span>
+            <span class="who-chip">Developer preparing air quality chapter for EIA report submission</span>
+          </div>
+        </div>
+      </div>
+      <div class="sectors-wrap">
+        <div class="sectors-label">Industries we serve</div>
+        <div class="sectors-grid">
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Cement &amp; Lime Plants</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Thermal Power Plants</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Chemicals &amp; Petrochemicals</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Steel &amp; Metal Smelting</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Fertilisers &amp; Agrochemicals</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Mining &amp; Quarrying</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Infrastructure &amp; Real Estate</div>
+          </div>
+          <div class="sector-pill">
+            <div class="sector-dot"></div>
+            <div class="sector-name">Pharmaceuticals</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRAMEWORKS -->
+    <div class="svc-section alt reveal">
+      <div class="svc-section-inner">
+        <div class="sec-label">Regulations &amp; Standards</div>
+        <h2 class="sec-title">Monitoring conducted to<br><em>every applicable Indian standard</em></h2>
+        <p class="sec-sub">Our ambient monitoring complies with the full hierarchy of Indian environmental law and CPCB
+          technical standards &mdash; producing data accepted by every regulatory authority, tribunal and court in
+          India.</p>
+        <div class="framework-badges mt2">
+          <span class="fw-badge g">NAAQ Standards, 2009 (MoEF&amp;CC)</span>
+          <span class="fw-badge g">IS 5182 &mdash; Methods for Air Pollutant Measurement</span>
+          <span class="fw-badge b">CPCB Ambient Air Monitoring Guidelines</span>
+          <span class="fw-badge b">EIA Notification, 2006 (Amended)</span>
+          <span class="fw-badge n">Air (P&amp;CP) Act, 1981</span>
+          <span class="fw-badge n">GPCB Consent Conditions Format</span>
+          <span class="fw-badge n">MoEF&amp;CC Half-Yearly Compliance Reporting Portal</span>
+          <span class="fw-badge b">NABL ISO/IEC 17025 Accreditation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="svc-section reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+      <div class="faq-wrap mt3">
+        <div class="faq-item">
+          <button class="faq-btn">How many monitoring locations and sampling days are required for an EIA baseline?
+            <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>CPCB guidelines for EIA studies typically require a minimum of 4 monitoring locations within the 5 km
+              study area: one upwind (background), one leeward (downwind, most impacted direction), one nearest
+              sensitive receptor (school, hospital, habitation) and one fence line location. The minimum monitoring
+              duration is 8 consecutive 24-hour sampling days per season per location. Most EIA TOR conditions require
+              two-season baseline (typically pre-monsoon and post-monsoon), making the total dataset 16 sampling days
+              per location across two seasons. The number of locations can increase for larger study areas or projects
+              with multiple emission sources &mdash; we advise on the optimal network during the scoping phase.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">What parameters are required for EC compliance ambient monitoring? <span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>The parameters required for EC compliance ambient monitoring are specified in your specific Environmental
+              Clearance conditions and vary by industry category. The minimum standard set for most industries includes
+              PM₁₀, PM₂.₅, SO₂ and NO₂. Industries with specific additional pollutant risks (e.g., cement: fluoride;
+              chemicals: HCl, NH₃, specific VOCs; lead smelters: Pb) will have additional parameters listed in their EC.
+              We review your EC conditions at kickoff to confirm the exact parameter list, ensure all are covered and
+              identify any parameters requiring specialised analytical methods not available in standard Hi-Vol sampling
+              &mdash; which require additional planning.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Can continuous AAQMS replace periodic Hi-Vol sampling for compliance? <span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>Continuous Ambient Air Quality Monitoring Stations (AAQMS) are increasingly accepted by CPCB and some
+              SPCBs as an alternative or supplement to periodic Hi-Vol sampling for EC compliance reporting &mdash;
+              particularly for PM₁₀, PM₂.₅, SO₂, NOₓ, O₃ and CO. However, they cannot replace NABL-accredited Hi-Vol
+              analysis for all parameters specified in an EC condition, and some parameters (heavy metals, fluoride,
+              specific VOCs) still require Hi-Vol filter collection and laboratory analysis. We advise on the most
+              efficient combination of AAQMS continuous monitoring and targeted periodic Hi-Vol sampling to satisfy all
+              EC conditions at minimum total cost.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn">Can the same monitoring data be used for both EIA and GPCB compliance? <span
+              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-ans">
+            <p>Yes &mdash; provided the monitoring network, parameters, sampling duration and NABL accreditation meet
+              the requirements of both purposes. EIA baseline studies and GPCB compliance monitoring share the same NAAQ
+              Standard benchmarks and CPCB sampling protocols. We design monitoring programmes to simultaneously satisfy
+              EIA TOR conditions, EC compliance requirements and GPCB consent conditions wherever possible &mdash;
+              avoiding the cost and complexity of running separate parallel programmes. The key is confirming the
+              specific locations and parameters required by each authority before the sampling campaign begins, so that
+              a single well-designed campaign generates regulatory-grade data acceptable to all.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATED SERVICES -->
+    <div class="svc-section alt">
+      <div class="svc-section-inner">
+        <div class="sec-label">Related services</div>
+        <h2 class="sec-title">Services that <em>connect with ambient monitoring</em></h2>
+        <div class="related-grid mt2">
+          <a href="svc-env-clearance.html" class="related-card reveal">
+            <div class="related-card-cat">Approvals &amp; Clearances</div>
+            <div class="related-card-title">Environmental Clearance</div>
+            <div class="related-card-desc">Ambient air quality baseline data is mandatory for every EC application and
+              half-yearly compliance report. We provide both the monitoring and the EC advisory in one integrated
+              programme.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+          <a href="svc-eia.html" class="related-card reveal">
+            <div class="related-card-cat">Approvals &amp; Clearances</div>
+            <div class="related-card-title">Environmental Impact Assessment</div>
+            <div class="related-card-desc">EIA studies require a seasonal ambient air quality baseline covering the full
+              study area. We conduct the monitoring and prepare the air environment chapter.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+          <a href="svc-stack-monitoring.html" class="related-card reveal">
+            <div class="related-card-cat">Air Quality Monitoring</div>
+            <div class="related-card-title">Stack Emission Monitoring</div>
+            <div class="related-card-desc">Ambient and stack monitoring together provide the complete regulatory air
+              quality picture &mdash; source emissions and community-level receptor impact.</div>
+            <div class="related-card-link">Learn more &rarr;</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  <!-- ─── CTA BAND ─── -->
+  <section class="svc-section">
+    <div class="cta-band reveal">
+      <div>
+        <div class="cta-band-title">Ready to secure your compliance?</div>
+        <div class="cta-band-sub">Speak with our technical experts to build your sustainability roadmap.</div>
+      </div>
+      <div class="cta-band-btns">
+        <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <div id="footer-root"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const ans = item.querySelector('.faq-ans');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-ans').style.maxHeight = null;
+        });
+        if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+      });
+    });
+  </script>
+</body>
+</html>

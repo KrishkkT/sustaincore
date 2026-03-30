@@ -17,17 +17,41 @@
 
 /* --- Hero Section --- */
 .sp-hero {
-  padding-top: 13rem; /* Accommodates fixed navbar + pill sub-nav */
-  padding-bottom: 6rem;
+  padding-top: 13.5rem;
+  /* Accommodates fixed navbar + pill sub-nav */
+  padding-bottom: 4rem;
   background: white;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .sp-hero {
+    padding-top: 15rem;
+  }
 }
 
 .sp-hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: clamp(2.5rem, 4vw, 6rem);
   align-items: center;
+}
+
+.sp-hero-img {
+  width: 100%;
+  margin-top: 6rem;
+  max-height: 420px;
+  height: auto;
+  border-radius: 2.5rem;
+  object-fit: cover;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.08);
+  transition: height 0.3s ease, transform 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .sp-hero-img {
+    max-height: 470px;
+  }
 }
 
 .sp-hero-title {
@@ -103,7 +127,7 @@
 .sp-card-icon {
   width: 60px;
   height: 60px;
-  background: var(--sp-slate);
+  background: rgba(74, 124, 89, 0.1);
   border-radius: 1.25rem;
   display: flex;
   align-items: center;
@@ -111,6 +135,10 @@
   margin-bottom: 2rem;
   font-size: 1.5rem;
   color: var(--sp-green);
+}
+
+.sp-card-icon svg {
+  fill: currentColor;
 }
 
 .sp-card-title {
@@ -188,6 +216,7 @@
 
 .sp-step-list {
   text-align: left;
+  margin-left: 2.3rem;
   list-style: none;
   font-size: 0.85rem;
   color: var(--sp-muted);
@@ -380,13 +409,22 @@
   max-height: 500px;
 }
 
-.sp-faq-icon {
+.sp-faq-icon,
+.faq-icon {
   width: 24px;
   height: 24px;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+  color: var(--sp-blue) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.sp-faq-item.active .sp-faq-icon {
+.sp-faq-item.active .sp-faq-icon,
+.sp-faq-item.open .sp-faq-icon,
+.faq-item.active .faq-icon,
+.faq-item.open .faq-icon {
+  color: var(--sp-green) !important;
   transform: rotate(45deg);
 }
 
@@ -464,13 +502,13 @@
 .sp-inc-item {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   background: white;
-  padding: 2.25rem;
-  border-radius: 2rem;
+  padding: 1.2rem;
+  border-radius: 1.5rem;
   border: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sp-inc-item:hover {
@@ -505,7 +543,7 @@
     grid-template-columns: 1fr;
     gap: 1.25rem;
   }
-  
+
   .sp-inc-item {
     padding: 1.75rem;
   }
@@ -514,7 +552,8 @@
 /* --- Sub-Navigation Bar (Premium Centered Pill) --- */
 .sp-sub-nav {
   position: fixed;
-  top: 114px; /* Perfectly clears the main navbar */
+  top: 85px;
+  /* Perfectly clears the main navbar */
   left: 50%;
   transform: translateX(-50%);
   z-index: 45;
@@ -525,9 +564,31 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 100px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: top 0.35s ease, transform 0.35s ease, width 0.35s ease, max-width 0.35s ease;
   overflow: visible;
   perspective: 1000px;
+}
+
+.sp-sub-nav.scrolled {
+  top: 70px;
+  /* under the fixed main navbar */
+  left: 0;
+  right: 0;
+  transform: translateX(0);
+  width: 100%;
+  max-width: 100%;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.sp-sub-nav.scrolled .sp-sub-nav-inner {
+  transform: translateX(75px);
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.sp-sub-nav-inner {
+  transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .sp-sub-nav-inner {
@@ -585,10 +646,11 @@
 
 @media (max-width: 1024px) {
   .sp-sub-nav {
-    top: 108px; /* Clears mobile navbar overlap */
+    top: 108px;
+    /* Clears mobile navbar overlap */
     max-width: 94%;
   }
-  
+
   .sp-sub-nav-inner {
     padding: 0 0.5rem;
     overflow-x: auto;
@@ -613,11 +675,12 @@
     flex: 0 0 1rem;
     height: 1px;
   }
-  
+
   .sp-hero {
     padding-top: 12rem;
   }
 }
+
 /* --- Dark Mode Overrides (Premium Slate) --- */
 .dark .sp-hero {
   background: var(--bg);
@@ -645,7 +708,10 @@
 }
 
 .dark .sp-card-icon {
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.08);
+  /* subtle contrast */
+  color: #ffffff;
+  /* make icon visible */
 }
 
 .dark .sp-protocol {
@@ -732,11 +798,12 @@
   background: var(--g);
   color: white;
 }
+
 /* --- Detailed Service Cards --- */
 .svc-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
+  gap: 2rem;
   margin-top: 4rem;
 }
 
@@ -803,7 +870,7 @@
 }
 
 .svc-card-body {
-  padding: 2.5rem;
+  padding: 0.9rem 1rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -819,9 +886,9 @@
 
 .svc-card-desc {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.2;
   color: var(--sp-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .svc-card-divider {
@@ -833,7 +900,7 @@
 .svc-card-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .svc-card-list li {
@@ -957,7 +1024,7 @@
     visibility: visible;
     transform: none;
   }
-  
+
   .sp-dropdown-link {
     padding: 0.5rem;
     font-size: 0.75rem;
@@ -1026,4 +1093,85 @@
 
 .dark .sp-sub-nav-link:hover {
   color: var(--g);
+}
+
+/* --- CTA Section --- */
+.sp-cta-section {
+  padding: 8rem 0;
+  background: white;
+}
+
+.sp-cta-box {
+  background: var(--sp-blue);
+  background: linear-gradient(135deg, var(--sp-blue) 0%, #0d2b40 100%);
+  padding: 5rem;
+  border-radius: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.sp-cta-box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(45, 122, 79, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.sp-cta-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: white;
+}
+
+.sp-cta-text {
+  font-size: 1.25rem;
+  opacity: 0.8;
+  max-width: 500px;
+}
+
+.sp-cta-box .btn-primary {
+  background: var(--sp-green);
+  color: white !important;
+  padding: 1.5rem 3rem;
+  border-radius: 100px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(45, 122, 79, 0.3);
+  position: relative;
+  z-index: 2;
+}
+
+.sp-cta-box .btn-primary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(45, 122, 79, 0.4);
+  background: #368f5d;
+}
+
+@media (max-width: 1024px) {
+  .sp-cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 4rem 2rem;
+    gap: 3rem;
+  }
+
+  .sp-cta-title {
+    font-size: 2.25rem;
+  }
+}
+
+.dark .sp-cta-section {
+  background: #060a0f;
 }

@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Us | SustainCore</title>
+  <meta name="description"
+    content="Join the SustainCore team to help organizations navigate environmental regulations and build future-ready operations.">
+  <meta property="og:title" content="Join Us | SustainCore Careers">
+  <meta property="og:description"
+    content="Build your career in ESG and environmental engineering with the SustainCore team.">
+  <meta property="og:image" content="/Frame 4.svg">
+  <link rel="icon" href="/Frame 4.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --beige: #F5F0E8;
+      --beige-dark: #EDE5D4;
+      --beige-mid: #D9CEBC;
+      --white: #FDFCFA;
+      --navy: #0D2340;
+      --navy-mid: #1A3A5C;
+      --forest: #2C5F3F;
+      --forest-mid: #3D7A54;
+      --forest-light: #5A9E72;
+      --forest-pale: #EBF4EF;
+      --text: #1A1A1A;
+      --text-mid: #4A4A4A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+      --caps: 'Cinzel', serif;
+      --shadow-sm: 0 2px 16px rgba(13, 35, 64, 0.06);
+      --shadow-md: 0 8px 40px rgba(13, 35, 64, 0.11);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--white);
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Removed legacy Nav CSS - now powered by main.js and global components */
+
+    /* ══ HERO ══ */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 52% 48%;
+      padding-top: 76px;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4vw 6rem 5vw;
+      background: var(--white);
+      position: relative;
+    }
+
+    .hero-left::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 12%;
+      bottom: 12%;
+      width: 1px;
+      background: var(--beige-mid);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--forest);
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 5.5vw, 5.8rem);
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--navy);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .hero-body {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      max-width: 430px;
+      line-height: 1.85;
+      margin-bottom: 3rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 1rem 2.2rem;
+      background: var(--forest);
+      color: var(--white);
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .hero-btn-primary:hover {
+      background: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    .hero-btn-secondary {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      border-bottom: 1px solid var(--beige-mid);
+      padding-bottom: 0.25rem;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .hero-btn-secondary:hover {
+      color: var(--forest);
+      border-color: var(--forest);
+    }
+
+    /* ══ GROWTH PANEL ══ */
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      margin-top: -8rem !important;
+      border-radius: 0 !important;
+      background: var(--navy);
+    }
+
+    .hero-right-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+      filter: grayscale(30%) contrast(1.05);
+      opacity: 0.15;
+    }
+
+    .growth-panel {
+      position: relative;
+      z-index: 2;
+      border-radius: 0 !important;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 4rem;
+    }
+
+    .growth-eyebrow {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      margin-top: 6rem;
+      text-transform: uppercase;
+      color: var(--forest-light);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .growth-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--forest-light);
+    }
+
+    .growth-heading {
+      font-family: var(--caps);
+      font-size: clamp(4rem, 7vw, 8rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, var(--forest-light) 0%, rgba(90, 158, 114, 0.35) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .growth-rows {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .growth-row {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      opacity: 0;
+      transform: translateX(20px);
+    }
+
+    .growth-row:last-child {
+      border-bottom: none;
+    }
+
+    .growth-row.go {
+      animation: growthIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .growth-row:nth-child(1).go {
+      animation-delay: 0.1s;
+    }
+
+    .growth-row:nth-child(2).go {
+      animation-delay: 0.24s;
+    }
+
+    .growth-row:nth-child(3).go {
+      animation-delay: 0.38s;
+    }
+
+    .growth-row:nth-child(4).go {
+      animation-delay: 0.52s;
+    }
+
+    .growth-row:nth-child(5).go {
+      animation-delay: 0.66s;
+    }
+
+    .growth-row:nth-child(6).go {
+      animation-delay: 0.80s;
+    }
+
+    @keyframes growthIn {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .growth-letter {
+      font-family: var(--caps);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--forest-light);
+      text-align: center;
+      line-height: 1;
+    }
+
+    .growth-meaning-main {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: rgba(245, 240, 232, 0.9);
+      line-height: 1.25;
+    }
+
+    .growth-meaning-sub {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: rgba(245, 240, 232, 0.38);
+      text-transform: uppercase;
+      margin-top: 0.15rem;
+    }
+
+    /* ══ INTRO BAND ══ */
+    .intro-band {
+      background: var(--forest);
+      padding: 2.2rem 5vw;
+      display: flex;
+      border-radius: 0 !important;
+      align-items: center;
+      gap: 4rem;
+    }
+
+    .intro-band-quote {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(245, 240, 232, 0.9);
+      flex: 1;
+      line-height: 1.55;
+    }
+
+    .intro-band-rule {
+      width: 1px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.2);
+      flex-shrink: 0;
+    }
+
+    .intro-band-tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(245, 240, 232, 0.5);
+      flex-shrink: 0;
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    /* ══ SHARED ══ */
+    .section-pad {
+      padding: 8rem 5vw;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.66rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--forest);
+    }
+
+    .section-label.light {
+      color: var(--forest-light);
+    }
+
+    .section-label.light::before {
+      background: var(--forest-light);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .section-title.light {
+      color: var(--beige);
+    }
+
+    .section-title.light em {
+      color: var(--forest-light);
+    }
+
+    .section-body {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+    .section-body.light {
+      color: rgba(245, 240, 232, 0.6);
+    }
+
+    /* ══ WHY WORK HERE ══ */
+    .why-section {
+      background: var(--beige);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 5fr 6fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .why-img-wrap {
+      position: relative;
+    }
+
+    .why-img-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      -o-object-fit: cover;
+      object-fit: cover;
+      display: block;
+    }
+
+    .why-corner-tl {
+      position: absolute;
+      top: -18px;
+      left: -18px;
+      width: 44px;
+      height: 44px;
+      border-top: 2px solid var(--forest);
+      border-left: 2px solid var(--forest);
+    }
+
+    .why-corner-br {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      width: 44px;
+      height: 44px;
+      border-bottom: 2px solid var(--navy);
+      border-right: 2px solid var(--navy);
+    }
+
+    .why-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: -2rem;
+      background: var(--white);
+      padding: 1.1rem 1.6rem;
+      box-shadow: var(--shadow-md);
+      border-left: 3px solid var(--forest);
+    }
+
+    .why-badge-big {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .why-badge-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-top: 0.2rem;
+    }
+
+    .why-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-body2 {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-top: 1.2rem;
+    }
+
+    .why-checklist {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .why-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--beige-mid);
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    .why-check:last-child {
+      border-bottom: none;
+    }
+
+    .why-check-dot {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      background: var(--forest-pale);
+      border: 1px solid var(--forest-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.05rem;
+    }
+
+    .why-check-dot svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    /* ══ WHAT WE OFFER ══ */
+    .offer-section {
+      background: var(--white);
+    }
+
+    .offer-header {
+      margin-bottom: 4rem;
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      background: var(--beige-mid);
+      border: 1px solid var(--beige-mid);
+    }
+
+    .offer-card {
+      background: var(--white);
+      padding: 3.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: background 0.35s;
+    }
+
+    .offer-card:hover {
+      background: var(--forest-pale);
+    }
+
+    .offer-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--forest), var(--forest-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s ease;
+    }
+
+    .offer-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Icon wrap */
+    .offer-icon-wrap {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .offer-icon-bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: var(--forest-pale);
+      transform: scale(0);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .offer-card:hover .offer-icon-bg {
+      transform: scale(1);
+    }
+
+    .offer-icon-svg {
+      width: 80px;
+      height: 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Dev icon */
+    .icon-dev .bar {
+      transform-origin: bottom;
+      transform: scaleY(0);
+    }
+
+    .icon-dev .bar-a {
+      transition: transform 0.35s ease 0s;
+    }
+
+    .icon-dev .bar-b {
+      transition: transform 0.35s ease 0.1s;
+    }
+
+    .icon-dev .bar-c {
+      transition: transform 0.35s ease 0.2s;
+    }
+
+    .offer-card:hover .icon-dev .bar {
+      transform: scaleY(1);
+    }
+
+    .icon-dev .aline {
+      stroke-dasharray: 70;
+      stroke-dashoffset: 70;
+      transition: stroke-dashoffset 0.5s ease 0.38s;
+    }
+
+    .icon-dev .atip {
+      stroke-dasharray: 24;
+      stroke-dashoffset: 24;
+      transition: stroke-dashoffset 0.3s ease 0.78s;
+    }
+
+    .offer-card:hover .icon-dev .aline,
+    .offer-card:hover .icon-dev .atip {
+      stroke-dashoffset: 0;
+    }
+
+    /* Leaf icon */
+    .icon-leaf .ring {
+      stroke-dasharray: 200;
+      stroke-dashoffset: 200;
+      transition: stroke-dashoffset 1s ease;
+    }
+
+    .icon-leaf .leaf {
+      stroke-dasharray: 140;
+      stroke-dashoffset: 140;
+      transition: stroke-dashoffset 0.7s ease 0.65s;
+    }
+
+    .icon-leaf .stem {
+      stroke-dasharray: 28;
+      stroke-dashoffset: 28;
+      transition: stroke-dashoffset 0.3s ease 1.25s;
+    }
+
+    .offer-card:hover .icon-leaf .ring,
+    .offer-card:hover .icon-leaf .leaf,
+    .offer-card:hover .icon-leaf .stem {
+      stroke-dashoffset: 0;
+    }
+
+    /* Star icon */
+    .icon-star .star {
+      stroke-dasharray: 280;
+      stroke-dashoffset: 280;
+      transition: stroke-dashoffset 0.9s ease;
+    }
+
+    .icon-star .ray {
+      stroke-dasharray: 18;
+      stroke-dashoffset: 18;
+    }
+
+    .icon-star .r1 {
+      transition: stroke-dashoffset 0.3s ease 0.75s;
+    }
+
+    .icon-star .r2 {
+      transition: stroke-dashoffset 0.3s ease 0.88s;
+    }
+
+    .icon-star .r3 {
+      transition: stroke-dashoffset 0.3s ease 1.01s;
+    }
+
+    .icon-star .r4 {
+      transition: stroke-dashoffset 0.3s ease 1.14s;
+    }
+
+    .offer-card:hover .icon-star .star,
+    .offer-card:hover .icon-star .ray {
+      stroke-dashoffset: 0;
+    }
+
+    .offer-num {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--beige-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .offer-title {
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .offer-text {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.85;
+      flex: 1;
+    }
+
+    .offer-surprise {
+      margin-top: 1.5rem;
+      padding: 1rem 1.1rem;
+      background: rgba(44, 95, 63, 0.07);
+      border-left: 2px solid var(--forest);
+      font-size: 0.8rem;
+      color: var(--forest);
+      line-height: 1.65;
+      font-style: italic;
+    }
+
+    /* ══ SEND CV ══ */
+    .cv-section {
+      background: var(--navy);
+      position: relative;
+      border-radius: 0 !important;
+      overflow: hidden;
+    }
+
+    .cv-section::before {
+      content: 'CAREERS';
+      position: absolute;
+      right: -1rem;
+      bottom: -2rem;
+      font-family: var(--caps);
+      font-size: 18vw;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.025);
+      letter-spacing: 0.08em;
+      pointer-events: none;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .cv-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cv-body {
+      font-size: 1rem;
+      color: rgba(245, 240, 232, 0.6);
+      line-height: 1.9;
+      margin-top: 0.5rem;
+    }
+
+    .cv-right {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 3rem;
+    }
+
+    .cv-areas-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--forest-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-area-list {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2.5rem;
+    }
+
+    .cv-area-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.88rem;
+      color: rgba(245, 240, 232, 0.72);
+      transition: color 0.2s, padding-left 0.2s;
+      cursor: default;
+    }
+
+    .cv-area-item:hover {
+      color: rgba(245, 240, 232, 0.95);
+      padding-left: 0.5rem;
+    }
+
+    .cv-area-item:last-child {
+      border-bottom: none;
+    }
+
+    .cv-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--forest-light);
+      flex-shrink: 0;
+    }
+
+    .cv-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      margin-bottom: 2rem;
+    }
+
+    .cv-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      padding: 1.1rem 2.5rem;
+      background: var(--forest);
+      color: var(--white);
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+    }
+
+    .cv-btn:hover {
+      background: var(--forest-mid);
+      transform: translateY(-2px);
+    }
+
+    .cv-note {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: rgba(245, 240, 232, 0.32);
+      font-style: italic;
+    }
+
+    /* ══ EQUAL OPP + FOOTER ══ */
+    .equal-opp {
+      background: var(--forest-pale);
+      padding: 1.4rem 5vw;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--forest);
+      letter-spacing: 0.04em;
+      border-top: 1px solid rgba(44, 95, 63, 0.12);
+    }
+
+    footer {
+      background: var(--navy-mid);
+      padding: 2.8rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      border-top: 1px solid rgba(245, 240, 232, 0.05);
+    }
+
+    .footer-logo {
+      font-family: var(--caps);
+      font-size: 0.95rem;
+      letter-spacing: 0.16em;
+      color: var(--beige);
+      text-decoration: none;
+    }
+
+    .footer-logo span {
+      color: var(--forest-light);
+    }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(245, 240, 232, 0.35);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-size: 0.72rem;
+      color: rgba(245, 240, 232, 0.45);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--forest-light);
+    }
+
+    /* ══ REVEAL ══ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(30px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+
+    .reveal.in,
+    .reveal-left.in,
+    .reveal-right.in {
+      opacity: 1;
+      transform: none;
+    }
+
+    .d1 {
+      transition-delay: 0.1s;
+    }
+
+    .d2 {
+      transition-delay: 0.2s;
+    }
+
+    .d3 {
+      transition-delay: 0.3s;
+    }
+
+    /* ══ RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-right {
+        min-height: 80vw;
+      }
+
+      .growth-panel {
+        padding: 4rem 5vw;
+      }
+
+      .why-grid,
+      .cv-inner {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-band {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .intro-band-rule {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      /* Removed mobile nav CSS */
+    }
+  </style>
+</head>
+
+<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
+
+  <div id="header-root"></div>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal">Careers at SustainCore</div>
+      <h1 class="hero-headline reveal d1">Grow With<br /><em>Our Team.</em></h1>
+      <p class="hero-body reveal d2">
+        We are always looking for curious minds and passionate professionals who want
+        to contribute to real, measurable sustainable change. If that sounds like you — read on.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a href="#send-cv" class="hero-btn-primary">Send Your CV →</a>
+        <a href="#why-join" class="hero-btn-secondary">Learn more ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <img class="hero-right-img" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&q=80"
+        alt="Team working together" />
+      <div class="growth-panel">
+        <div class="growth-eyebrow">What drives us</div>
+        <div class="growth-heading">GROWTH</div>
+        <div class="growth-rows" id="growthRows">
+          <div class="growth-row">
+            <div class="growth-letter">G</div>
+            <div>
+              <div class="growth-meaning-main">Grit &amp; Determination</div>
+              <div class="growth-meaning-sub">Push through. Stay committed.</div>
+            </div>
+          </div>
+          <div class="growth-row">
+            <div class="growth-letter">R</div>
+            <div>
+              <div class="growth-meaning-main">Resilience in Action</div>
+              <div class="growth-meaning-sub">Adapt, learn, and move forward.</div>
+            </div>
+          </div>
+          <div class="growth-row">
+            <div class="growth-letter">O</div>
+            <div>
+              <div class="growth-meaning-main">Ownership of Impact</div>
+              <div class="growth-meaning-sub">Your work. Your responsibility.</div>
+            </div>
+          </div>
+          <div class="growth-row">
+            <div class="growth-letter">W</div>
+            <div>
+              <div class="growth-meaning-main">Wisdom Through Learning</div>
+              <div class="growth-meaning-sub">Curiosity as a daily practice.</div>
+            </div>
+          </div>
+          <div class="growth-row">
+            <div class="growth-letter">T</div>
+            <div>
+              <div class="growth-meaning-main">Thinking Ahead</div>
+              <div class="growth-meaning-sub">See the future. Shape it now.</div>
+            </div>
+          </div>
+          <div class="growth-row">
+            <div class="growth-letter">H</div>
+            <div>
+              <div class="growth-meaning-main">Heart for the Planet</div>
+              <div class="growth-meaning-sub">Every action, every day.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══ INTRO BAND ══ -->
+  <div class="intro-band">
+    <div class="intro-band-quote">"A career at SustainCore is not just a job — it's a contribution to something that
+      genuinely matters."</div>
+    <div class="intro-band-rule"></div>
+    <div class="intro-band-tag">Founded 2026<br />India &amp; Beyond</div>
+  </div>
+
+  <!-- ══ WHY WORK HERE ══ -->
+  <section class="section-pad why-section" id="why-join">
+    <div class="container">
+      <div class="why-grid">
+        <div class="reveal-left">
+          <div class="why-img-wrap">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=85"
+              alt="Professional at work" />
+            <div class="why-corner-tl"></div>
+            <div class="why-corner-br"></div>
+          </div>
+        </div>
+        <div class="why-text reveal-right">
+          <div class="section-label">Why Join Us</div>
+          <h2 class="section-title">Why work with<br /><em>SustainCore?</em></h2>
+          <p class="section-body">
+            We are building a team of passionate professionals committed to advancing
+            sustainability across Indian enterprise. At SustainCore, we value curiosity,
+            collaboration, and continuous learning.
+          </p>
+          <p class="why-body2">
+            Join us to grow your expertise, contribute to impactful environmental work,
+            and be part of a young, ambitious team creating positive change — from day one.
+            Your work here will have real visibility and real consequence.
+          </p>
+          <div class="why-checklist">
+            <div class="why-check">
+              <div class="why-check-dot"><svg viewBox="0 0 10 10" fill="none">
+                  <path d="M2 5.5L4 7.5L8 3" stroke="#2C5F3F" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></div>
+              Senior exposure from day one — no long chains of delegation
+            </div>
+            <div class="why-check">
+              <div class="why-check-dot"><svg viewBox="0 0 10 10" fill="none">
+                  <path d="M2 5.5L4 7.5L8 3" stroke="#2C5F3F" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></div>
+              Work across ESG, environmental science, regulatory, and carbon — all under one roof
+            </div>
+            <div class="why-check">
+              <div class="why-check-dot"><svg viewBox="0 0 10 10" fill="none">
+                  <path d="M2 5.5L4 7.5L8 3" stroke="#2C5F3F" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></div>
+              Build something from the ground up with a team that shares your values
+            </div>
+            <div class="why-check">
+              <div class="why-check-dot"><svg viewBox="0 0 10 10" fill="none">
+                  <path d="M2 5.5L4 7.5L8 3" stroke="#2C5F3F" stroke-width="1.3" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg></div>
+              A culture that measures success by impact, not just output
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WHAT WE OFFER ══ -->
+  <section class="section-pad offer-section">
+    <div class="container">
+      <div class="offer-header">
+        <div class="section-label reveal">What We Offer</div>
+        <h2 class="section-title reveal d1">Three things you can <em>count on.</em></h2>
+      </div>
+      <div class="offer-grid">
+
+        <!-- Professional Development -->
+        <div class="offer-card reveal d1">
+          <div class="offer-icon-wrap">
+            <div class="offer-icon-bg"></div>
+            <svg class="offer-icon-svg icon-dev" viewBox="0 0 80 80" fill="none">
+              <rect class="bar bar-a" x="12" y="50" width="12" height="18" rx="1.5" fill="#2C5F3F" />
+              <rect class="bar bar-b" x="34" y="38" width="12" height="30" rx="1.5" fill="#3D7A54" />
+              <rect class="bar bar-c" x="56" y="24" width="12" height="44" rx="1.5" fill="#5A9E72" />
+              <path class="aline" d="M12 44 L40 20 L68 12" stroke="#0D2340" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+              <path class="atip" d="M60 10 L68 12 L66 20" stroke="#0D2340" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" fill="none" />
+            </svg>
+          </div>
+          <div class="offer-num">01</div>
+          <div class="offer-title">Professional Development</div>
+          <div class="offer-text">
+            Take ownership, expand your expertise, and grow alongside a company shaping
+            innovative environmental and ESG solutions. You won't be one person in a firm
+            of thousands — your work has direct visibility and your growth is a
+            priority from day one.
+          </div>
+        </div>
+
+        <!-- Sustainability at the Core -->
+        <div class="offer-card reveal d2">
+          <div class="offer-icon-wrap">
+            <div class="offer-icon-bg"></div>
+            <svg class="offer-icon-svg icon-leaf" viewBox="0 0 80 80" fill="none">
+              <circle class="ring" cx="40" cy="40" r="32" stroke="#2C5F3F" stroke-width="1.5" fill="none" />
+              <path class="leaf" d="M40 62 C40 62 18 48 18 30 C18 19 27 12 40 12 C53 12 62 19 62 30 C62 48 40 62 40 62Z"
+                stroke="#5A9E72" stroke-width="1.5" fill="none" stroke-linejoin="round" />
+              <line class="stem" x1="40" y1="62" x2="40" y2="70" stroke="#3D7A54" stroke-width="1.5"
+                stroke-linecap="round" />
+            </svg>
+          </div>
+          <div class="offer-num">02</div>
+          <div class="offer-title">Sustainability at the Core</div>
+          <div class="offer-text">
+            Be part of a team dedicated to advancing environmental responsibility.
+            Every project we take on moves an organisation closer to genuine
+            sustainability — and you will be driving that change, not just
+            supporting it from the sidelines.
+          </div>
+        </div>
+
+        <!-- Perks & Culture -->
+        <div class="offer-card reveal d3">
+          <div class="offer-icon-wrap">
+            <div class="offer-icon-bg"></div>
+            <svg class="offer-icon-svg icon-star" viewBox="0 0 80 80" fill="none">
+              <path class="star"
+                d="M40 10 L45.9 27.6 L64 27.6 L49.6 38.4 L55.5 56 L40 45.2 L24.5 56 L30.4 38.4 L16 27.6 L34.1 27.6 Z"
+                stroke="#2C5F3F" stroke-width="1.5" stroke-linejoin="round" fill="none" />
+            </svg>
+          </div>
+          <div class="offer-num">03</div>
+          <div class="offer-title">Perks &amp; Culture</div>
+          <div class="offer-text">
+            Competitive compensation, flexible working arrangements, and remote
+            opportunities. A collaborative culture where your ideas are heard and
+            your contributions actually shape the direction of the firm.
+          </div>
+          <div class="offer-surprise">
+            And a surprise from our side — because good work deserves to be
+            celebrated in ways you won't expect.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SEND CV ══ -->
+  <section class="section-pad cv-section" id="send-cv">
+    <div class="container">
+      <div class="cv-inner">
+        <div>
+          <div class="section-label light reveal">Get In Touch</div>
+          <h2 class="section-title light reveal d1">Don't see a role listed?<br /><em>That's fine.</em></h2>
+          <p class="cv-body reveal d2">
+            We hire for mindset and expertise, not just open positions. If you have a background
+            in ESG reporting, environmental science, regulatory affairs, carbon accounting,
+            or sustainability consulting — we would love to hear from you.
+          </p>
+        </div>
+        <div class="cv-right reveal d2">
+          <div class="cv-areas-label">We're particularly interested in</div>
+          <div class="cv-area-list">
+            <div class="cv-area-item">
+              <div class="cv-dot"></div>ESG Reporting &amp; Disclosure
+            </div>
+            <div class="cv-area-item">
+              <div class="cv-dot"></div>Environmental Science &amp; EIA
+            </div>
+            <div class="cv-area-item">
+              <div class="cv-dot"></div>Carbon Accounting &amp; Net Zero
+            </div>
+            <div class="cv-area-item">
+              <div class="cv-dot"></div>Regulatory Affairs &amp; Compliance
+            </div>
+            <div class="cv-area-item">
+              <div class="cv-dot"></div>EPR &amp; Waste Management
+            </div>
+            <div class="cv-area-item">
+              <div class="cv-dot"></div>ISO Management Systems
+            </div>
+          </div>
+          <hr class="cv-divider" />
+          <a href="mailto:careers@sustaincore.in" class="cv-btn">Send Your CV →</a>
+          <div class="cv-note">Include a short note about your background and what you are looking for.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EQUAL OPPORTUNITY ══ -->
+  <div class="equal-opp">
+    SustainCore is an equal opportunity employer. We welcome applicants from all backgrounds, experiences, and
+    perspectives.
+  </div>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    // GROWTH rows — trigger on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.growth-row').forEach(r => r.classList.add('go'));
+    });
+
+    // Scroll reveal
+    const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.1 });
+    allReveal.forEach(el => io.observe(el));
+  </script>
+</body>
+
+</html>
