@@ -1,14 +1,8 @@
 export const header = `
 <nav class="fixed top-0 left-0 right-0 mx-auto w-[92%] max-w-6xl z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border border-brand-softGray dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="main-nav">
   <a href="/" class="flex items-center gap-3 group">
-    <img src="/Frame 4.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
-    <div class="flex flex-col -gap-1">
-      <div class="flex items-center">
-        <span class="text-xl font-display font-bold text-brand-green tracking-tight">Sustain</span>
-        <span class="text-xl font-display font-medium text-brand-blue dark:text-white tracking-tight">Core</span>
-      </div>
-      <span class="text-[7px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em] leading-none">Environmental Solutions Pvt. Ltd</span>
-    </div>
+    <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+    <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
   </a>
   
   <div class="hidden md:flex items-center gap-8 navbar-items">
@@ -144,31 +138,26 @@ export const header = `
 `;
 
 export const footer = `
-<footer class="bg-brand-softGray dark:bg-slate-900 text-brand-charcoal dark:text-slate-300 pt-20 pb-12 border-t border-slate-200 dark:border-slate-800">
-  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 mb-16">
-    <div class="col-span-1 md:col-span-1 md:-ml-4">
-      <div class="flex items-center gap-3 mb-8 group">
-        <img src="/Frame 4.svg" alt="SustainCore" class="h-8 w-auto">
-        <div class="flex flex-col">
-          <div class="flex items-center">
-            <span class="text-lg font-display font-bold text-brand-green">Sustain</span>
-            <span class="text-lg font-display font-medium text-brand-blue dark:text-white">Core</span>
-          </div>
-        </div>
+<footer class="bg-brand-softGray dark:bg-slate-900 text-brand-charcoal dark:text-slate-300 pt-14 pb-8 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[320px_1fr_1fr_1fr] gap-6 mb-10">
+    <div class="flex flex-col items-start text-left max-w-[280px]">
+      <div class="flex items-center gap-2 mb-3 group">
+        <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+        <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
       </div>
-      <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-8 text-sm">
+      <p class="text-slate-500 dark:text-slate-400 leading-relaxed mb-3 text-sm">
         Defining the future of verifiable sustainability through scientific integrity and data transparency.
       </p>
-      <div class="flex gap-4">
-        <a href="#" class="w-12 h-12 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white dark:hover:text-white hover:border-transparent transition-all">
+      <div class="flex gap-2">
+        <a href="#" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white dark:hover:text-white hover:border-transparent transition-all">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
     </div>
     
     <div>
-      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-0 tracking-wide">Solutions</h4>
-      <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-3 tracking-wide">Solutions</h4>
+      <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">ESG Reporting</a></li>
         <li><a href="/carbon-climate.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Ratings & Targets</a></li>
@@ -180,8 +169,8 @@ export const footer = `
     </div>
 
     <div>
-      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-8 tracking-wide">Company</h4>
-      <ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-3 tracking-wide">Company</h4>
+      <ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
         <li><a href="/about.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Our Mission</a></li>
         <li><a href="/cbam.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">CBAM Advisory</a></li>
         <li><a href="/insights.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Insights</a></li>
@@ -192,15 +181,15 @@ export const footer = `
     </div>
 
     <div>
-      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-8 tracking-wide">Connect</h4>
-      <form id="subscribe-form" class="space-y-4">
+      <h4 class="font-display font-bold text-brand-blue dark:text-brand-green mb-3 tracking-wide">Connect</h4>
+      <form id="subscribe-form" class="space-y-2">
         <input type="email" name="email" required placeholder="Email Address" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-brand-green/30 dark:focus:ring-brand-green/50 text-sm">
-        <button type="submit" class="w-full py-3.5 bg-brand-charcoal dark:bg-brand-green text-white rounded-xl font-bold hover:bg-brand-blue dark:hover:bg-[#3d694b] transition-all tracking-wider text-[13px] uppercase">SUBSCRIBE</button>
+        <button type="submit" class="w-full py-2.5 bg-brand-charcoal dark:bg-brand-green text-white rounded-xl font-bold hover:bg-brand-blue dark:hover:bg-[#3d694b] transition-all tracking-wider text-[13px] uppercase">SUBSCRIBE</button>
       </form>
     </div>
   </div>
   
-  <div class="max-w-7xl mx-auto px-6 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-500 dark:text-slate-400 text-[13px]">
+  <div class="max-w-7xl mx-auto px-6 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-center justify-between gap-3 text-slate-500 dark:text-slate-400 text-[13px]">
     <p>© 2026 SustainCore Environmental Solutions Pvt. Ltd.</p>
     <div class="flex gap-8">
       <a href="/imprint.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Imprint</a>

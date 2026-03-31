@@ -476,9 +476,11 @@ function updateEvolutionTimeline() {
         { id: 'phase-04', startYear: 2034, endYear: 2035, gridPosition: 87.5 }
     ];
 
-    let activePhaseId = 'phase-04';
-    let progressPct = 87.5;
+    let activePhaseId = 'phase-02';
+    let progressPct = 37.5;
 
+    // Disabled dynamic date logic to hardcode timeline at Phase 02 (Definitive Launch)
+    /*
     for (const phase of phases) {
         if (currentYear >= phase.startYear && currentYear <= phase.endYear) {
             activePhaseId = phase.id;
@@ -486,6 +488,7 @@ function updateEvolutionTimeline() {
             break;
         }
     }
+    */
 
     const progressEl = document.getElementById('timeline-progress');
     if (progressEl) {

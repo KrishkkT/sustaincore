@@ -585,14 +585,29 @@
 
         .timeline-track {
             position: absolute;
-            top: 102px;
-            left: 0;
-            width: 100%;
-            height: 3px;
+            top: 0;
+            left: 20px;
+            width: 3px;
+            height: 100%;
             background: rgba(226, 232, 240, 0.2);
-            transform: translateY(-50%);
             border-radius: 20px;
             z-index: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-track {
+                top: 102px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                transform: translateY(-50%);
+            }
+        }
+
+        @media (max-width: 1023px) {
+            #timeline-container {
+                padding-left: 56px;
+            }
         }
 
         .dark .timeline-track {
@@ -603,36 +618,42 @@
             height: 100%;
             width: 0;
             background: linear-gradient(90deg,
-                    #4ade80 0%,
-                    #3b82f6 25%,
+                    var(--g) 0%,
+                    var(--b) 25%,
                     #60a5fa 50%,
-                    #3b82f6 75%,
-                    #4ade80 100%);
+                    var(--b) 75%,
+                    var(--g) 100%);
             background-size: 200% auto;
             border-radius: 20px;
-            animation:
-                lineGrow 5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-                shine 3s linear infinite,
-                pulseGlow 2s ease-in-out infinite;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
 
         .timeline-progress::after {
             content: '';
             position: absolute;
-            right: -4px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 12px;
-            height: 12px;
+            right: 50%;
+            bottom: -6px;
+            transform: translateX(50%);
+            width: 14px;
+            height: 14px;
             background: #fff;
+            border: 3px solid var(--b);
             border-radius: 50%;
             box-shadow:
-                0 0 10px #fff,
-                0 0 20px #4ade80,
-                0 0 40px #3b82f6,
-                0 0 60px rgba(59, 130, 246, 0.5);
+                0 0 15px var(--b),
+                0 0 30px rgba(59, 130, 246, 0.5);
             z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        @media (min-width: 1024px) {
+            .timeline-progress::after {
+                right: -7px;
+                top: 50%;
+                bottom: auto;
+                transform: translateY(-50%);
+            }
         }
 
         .active-phase>div:last-child {
@@ -1196,90 +1217,69 @@
 
             <div class="relative">
                 <!-- Line -->
-                <div class="timeline-track hidden lg:block">
-                    <div id="timeline-progress" class="timeline-progress" style="width: 0%;"></div>
+                <div class="timeline-track opacity-30 lg:opacity-100">
+                    <div id="timeline-progress" class="timeline-progress" style="width: 0%; height: 0%;"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10" id="timeline-container">
+                    <!-- Phase 01 -->
                     <div id="phase-01" class="group timeline-phase">
                         <div class="mb-4 lg:mb-24">
-                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
-                                01</span>
+                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase phase-title">Phase 01</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2023 – 2025</h4>
-                            <p class="text-xs text-brand-green font-bold uppercase tracking-wider mt-1">Transitional
-                                Phase</p>
+                            <p class="text-xs text-brand-green font-bold uppercase tracking-wider mt-1">Transitional Phase</p>
                         </div>
-                        <div
-                            class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm group-hover:shadow-md transition-all">
-                            <ul
-                                class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                        <div class="phase-card p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm transition-all duration-500 hover:shadow-md">
+                            <ul class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
                                 <li class="flex gap-2"><span>•</span> Quarterly reporting on embedded emissions.</li>
                                 <li class="flex gap-2"><span>•</span> No financial obligation (no certificates).</li>
-                                <li class="flex gap-2"><span>•</span> Default values allowed without limit (regulations
-                                    apply).</li>
+                                <li class="flex gap-2"><span>•</span> Default values allowed without limit (regulations apply).</li>
                             </ul>
                         </div>
                     </div>
 
+                    <!-- Phase 02 -->
                     <div id="phase-02" class="group timeline-phase">
                         <div class="mb-4 lg:mb-24">
-                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
-                                02</span>
+                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase phase-title">Phase 02</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2026 – 2027</h4>
-                            <p class="text-xs text-brand-blue font-bold uppercase tracking-wider mt-1">Definitive Launch
-                            </p>
+                            <p class="text-xs text-brand-blue font-bold uppercase tracking-wider mt-1">Definitive Launch</p>
                         </div>
-                        <div
-                            class="p-6 rounded-2xl bg-brand-blue/5 border border-brand-blue/20 shadow-sm group-hover:shadow-md transition-all">
-                            <ul
-                                class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
-                                <li class="flex gap-2"><span class="text-brand-blue">•</span> <span><strong
-                                            class="text-brand-charcoal dark:text-white font-medium">Mandatory
-                                            verification</strong> by EU accredited verifiers.</span></li>
-                                <li class="flex gap-2"><span class="text-brand-blue">•</span> Phase-in factor starts at
-                                    2.5% reduction.</li>
-                                <li class="flex gap-2"><span class="text-brand-blue">•</span> First annual declaration
-                                    due 31 May 2027.</li>
+                        <div class="phase-card p-6 rounded-2xl bg-brand-blue/5 border border-brand-blue/20 shadow-sm transition-all duration-500 hover:shadow-md">
+                            <ul class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                                <li class="flex gap-2"><span class="text-brand-blue">•</span> <span><strong class="text-brand-charcoal dark:text-white font-medium">Mandatory verification</strong> by EU accredited verifiers.</span></li>
+                                <li class="flex gap-2"><span class="text-brand-blue">•</span> Phase-in factor starts at 2.5% reduction.</li>
+                                <li class="flex gap-2"><span class="text-brand-blue">•</span> First annual declaration due 31 May 2027.</li>
                             </ul>
                         </div>
                     </div>
 
+                    <!-- Phase 03 -->
                     <div id="phase-03" class="group timeline-phase">
                         <div class="mb-4 lg:mb-24">
-                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
-                                03</span>
+                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase phase-title">Phase 03</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2028 – 2033</h4>
-                            <p class="text-xs text-amber-500 font-bold uppercase tracking-wider mt-1">Scope Expansion
-                            </p>
+                            <p class="text-xs text-amber-500 font-bold uppercase tracking-wider mt-1">Scope Expansion</p>
                         </div>
-                        <div
-                            class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm group-hover:shadow-md transition-all">
-                            <ul
-                                class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
-                                <li class="flex gap-2"><span>•</span> <span>Inclusion of <strong
-                                            class="text-brand-charcoal dark:text-white font-medium">indirect
-                                            emissions</strong> for more sectors.</span></li>
+                        <div class="phase-card p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm transition-all duration-500 hover:shadow-md">
+                            <ul class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                                <li class="flex gap-2"><span>•</span> <span>Inclusion of <strong class="text-brand-charcoal dark:text-white font-medium">indirect emissions</strong> for more sectors.</span></li>
                                 <li class="flex gap-2"><span>•</span> Gradual phase-out of free ETS allowances.</li>
-                                <li class="flex gap-2"><span>•</span> Possible scope expansion to chemicals/polymers.
-                                </li>
+                                <li class="flex gap-2"><span>•</span> Possible scope expansion to chemicals/polymers.</li>
                             </ul>
                         </div>
                     </div>
 
+                    <!-- Phase 04 -->
                     <div id="phase-04" class="group timeline-phase">
                         <div class="mb-4 lg:mb-24">
-                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase">Phase
-                                04</span>
+                            <span class="text-[10px] font-black tracking-widest text-slate-400 uppercase phase-title">Phase 04</span>
                             <h4 class="text-lg font-bold text-brand-charcoal dark:text-white">2034 Onwards</h4>
                             <p class="text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">Full Maturity</p>
                         </div>
-                        <div
-                            class="p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm group-hover:shadow-md transition-all">
-                            <ul
-                                class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
-                                <li class="flex gap-2"><span>•</span> <span><strong
-                                            class="text-brand-charcoal dark:text-white font-medium">100% CBAM
-                                            liability</strong> (No ETS free allowances).</span></li>
+                        <div class="phase-card p-6 rounded-2xl bg-white dark:bg-slate-800/50 border border-slate-100 dark:border-slate-800 shadow-sm transition-all duration-500 hover:shadow-md">
+                            <ul class="text-[11px] space-y-3 text-slate-500 dark:text-slate-400 font-light leading-relaxed">
+                                <li class="flex gap-2"><span>•</span> <span><strong class="text-brand-charcoal dark:text-white font-medium">100% CBAM liability</strong> (No ETS free allowances).</span></li>
                                 <li class="flex gap-2"><span>•</span> Full alignment with EU carbon leakage goals.</li>
                                 <li class="flex gap-2"><span>•</span> Mature secondary certificate market.</li>
                             </ul>
@@ -2223,9 +2223,9 @@
     <div id="footer-root"></div>
 
     <script type="module" src="./src/js/main.js"></script>
-    <!-- Calculator Scripts -->
-    <script type="module" src="./src/js/cbam-data.js"></script>
+    <script type="module" src="./src/js/animations.js"></script>
     <script type="module" src="./src/js/cbam-calculator.js"></script>
+    <script type="module" src="./src/js/cbam-timeline.js"></script>
     <script>
         // FAQ Toggle
         document.querySelectorAll('.faq-btn').forEach(btn => {
