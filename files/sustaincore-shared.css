@@ -1,13 +1,13 @@
 /*
   SustainCore Service Pages — Shared Stylesheet
   sustaincore-shared.css
-  Palette: #4a7c59 (green) · #1a4a6b (blue) · #f5f0e8 (beige) · #ffffff (white)
+  Palette: #4a7c59 (green) · #1a4a6b (blue) · #F3F4F6 (off-white) · #ffffff (white)
 */
 
 :root {
   --g: #4a7c59;
   --b: #1a4a6b;
-  --bg: #fdfaf5;
+  --bg: #F3F4F6;
   --w: #ffffff;
   /* tints — no new hues */
   --g05: rgba(74, 124, 89, .05);
@@ -19,8 +19,8 @@
   --b10: rgba(26, 74, 107, .10);
   --b20: rgba(26, 74, 107, .20);
   --b40: rgba(26, 74, 107, .40);
-  --bg2: #ece6da;
-  --bg3: #e3dcd0;
+  --bg2: #E5E7EB;
+  --bg3: #D1D5DB;
   --text: #0f1e15;
   --text2: #2a3f30;
   --muted: #5a6e61;
@@ -120,7 +120,7 @@ h5 {
   align-items: center;
   justify-content: space-between;
   padding: 0 3rem;
-  background: rgba(253, 250, 245, .96);
+  background: rgba(243, 244, 246, .96);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--bdr);
 }
@@ -141,7 +141,7 @@ h5 {
   border-radius: 100px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: top 0.35s ease, width 0.35s ease, max-width 0.35s ease,
-              padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease;
+    padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease;
   overflow: visible;
 }
 
@@ -1153,8 +1153,7 @@ h5 {
 .faq-icon {
   width: 26px;
   height: 26px;
-  border-radius: 50%;
-  border: 1.5px solid var(--bdr2);
+  border: 1px solid var(--bdr2);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1563,10 +1562,21 @@ h5 {
   transform: translateY(0);
 }
 
-.reveal-d1 { transition-delay: .1s; }
-.reveal-d2 { transition-delay: .2s; }
-.reveal-d3 { transition-delay: .3s; }
-.reveal-d4 { transition-delay: .4s; }
+.reveal-d1 {
+  transition-delay: .1s;
+}
+
+.reveal-d2 {
+  transition-delay: .2s;
+}
+
+.reveal-d3 {
+  transition-delay: .3s;
+}
+
+.reveal-d4 {
+  transition-delay: .4s;
+}
 
 /* ─── PREMIUM ICONS & STEPS ─── */
 .sp-card-icon {

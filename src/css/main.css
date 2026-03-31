@@ -1304,7 +1304,7 @@ main,
 
 .mega-menu {
   position: absolute;
-  top: 100%;
+  top: 2rem;
   left: 50%;
   transform: translateX(-50%) translateY(8px);
   width: min(92vw, 880px);
@@ -1375,18 +1375,6 @@ main,
 .mega-item:hover {
   background: var(--gp);
   transform: translateY(-2px);
-}
-
-.mega-item .icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  background: var(--gp2);
-  border-radius: 0.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--g);
-  margin-bottom: 0.5rem;
 }
 
 .mega-item .title {

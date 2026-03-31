@@ -225,6 +225,14 @@
       color: var(--muted);
       line-height: 1.7;
     }
+
+    .svc-hero-pills {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      margin-top: 16rem;
+      align-items: flex-end;
+    }
   </style>
 </head>
 
@@ -331,7 +339,10 @@
             <span class="bt">Assessment</span>
           </h1>
           <p class="svc-hero-desc">
-            An Environmental Impact Assessment is the statutory gateway for every Category A and B project under the EIA Notification 2006. <strong>No Environmental Clearance is issued without it — and no construction can begin without EC.</strong> We prepare rigorous, appraiser-ready EIA reports: baseline studies, impact matrices, EMPs and full public hearing management.
+            An Environmental Impact Assessment is the statutory gateway for every Category A and B project under the EIA
+            Notification 2006. <strong>No Environmental Clearance is issued without it — and no construction can begin
+              without EC.</strong> We prepare rigorous, appraiser-ready EIA reports: baseline studies, impact matrices,
+            EMPs and full public hearing management.
           </p>
           <div style="margin-top:.5rem;">
             <a href="/index.html#consultation" class="btn-primary">Get Clearance Audit</a>
@@ -364,7 +375,8 @@
 
     <div style="max-width:1260px;margin:0 auto;padding:0 3rem 3rem;">
       <div class="svc-hero-img">
-        <img src="../assets/eia-hero.jpg" alt="Environmental Impact Assessment — Baseline study fieldwork" />
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2670&auto=format&fit=crop"
+          alt="Environmental Impact Assessment (EIA) — Technical baseline monitoring" />
         <div class="svc-hero-img-caption">
           <div class="svc-hero-img-title">Statutory gateway to <em>Environmental Clearance</em></div>
           <div class="svc-hero-stat-row">
@@ -732,21 +744,21 @@
     <div class="sec-label">Related Services</div>
     <h2 class="sec-title">Services that <em>complement EIA</em></h2>
     <div class="related-grid">
-      <a href="svc-ec.html" class="related-card reveal">
+      <a href="4-ec.html" class="related-card reveal">
         <div class="related-card-cat">Approvals &amp; Clearances</div>
         <div class="related-card-title">Environmental Clearance</div>
         <div class="related-card-desc">We manage the post-EIA EC application, appraisal representation, EC grant
           follow-up and the complete six-monthly post-EC compliance reporting cycle.</div>
         <div class="related-card-link">Learn more →</div>
       </a>
-      <a href="svc-gpcb.html" class="related-card reveal">
+      <a href="4-gpcb.html" class="related-card reveal">
         <div class="related-card-cat">Approvals &amp; Clearances</div>
         <div class="related-card-title">GPCB Compliance</div>
         <div class="related-card-desc">EC conditions require parallel GPCB CTO/CTE compliance. We manage both processes
           simultaneously to keep your project on schedule.</div>
         <div class="related-card-link">Learn more →</div>
       </a>
-      <a href="svc-epd.html" class="related-card reveal">
+      <a href="3-epd.html" class="related-card reveal">
         <div class="related-card-cat">Assessments &amp; Ratings</div>
         <div class="related-card-title">Environmental Product Declaration</div>
         <div class="related-card-desc">LCA and EPD development builds on the environmental data collected during the EIA
@@ -756,25 +768,25 @@
     </div>
   </section>
 
-    <div class="cta-band reveal">
-  <div class="cta-left">
-    <h3>Ready to secure your compliance?</h3>
-    <p>Speak with our technical experts to build your sustainability roadmap.</p>
-  </div>
-  <div class="cta-band-btns">
-        <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
-      </div>
+  <div class="cta-band reveal">
+    <div class="cta-left">
+      <h3>Ready to secure your compliance?</h3>
+      <p>Speak with our technical experts to build your sustainability roadmap.</p>
     </div>
+    <div class="cta-band-btns">
+      <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
+    </div>
+  </div>
 
   <!-- ─── FOOTER ─── -->
   <div id="footer-root"></div>
 
   <script type="module" src="/src/js/main.js"></script>
   <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
     function toggleFaq(btn) {
       const item = btn.closest('.faq-item');

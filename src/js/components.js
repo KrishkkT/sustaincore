@@ -15,9 +15,6 @@ export const header = `
       
       <div class="mega-menu">
         <a href="/esg-reporting.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-          </div>
           <div>
             <span class="title">ESG Reporting & Sustainability Disclosure</span>
             <span class="desc">BRSR, CDP, GRI, SASB & TCFD disclosures.</span>
@@ -25,9 +22,6 @@ export const header = `
         </a>
         
         <a href="/carbon-climate.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C10.9 14.36 12 15 12 18c0 2.5-2.03 4-5 4-.74 0-1.42-.09-2-.25"/></svg>
-          </div>
           <div>
             <span class="title">Carbon Management & Climate Action</span>
             <span class="desc">GHG inventory, CBAM, PCF & Carbon Credits.</span>
@@ -35,9 +29,6 @@ export const header = `
         </a>
 
         <a href="/ratings-targets.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
           <div>
             <span class="title">Sustainability Assessment & ESG Rating</span>
             <span class="desc">EcoVadis, SBTi, EPD & Materiality analysis.</span>
@@ -55,9 +46,6 @@ export const header = `
         </a>
 
         <a href="/management-systems.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          </div>
           <div>
             <span class="title">Environmental Audits</span>
             <span class="desc">ISO 14001, 45001, 50001 & Compliance audits.</span>
@@ -65,9 +53,6 @@ export const header = `
         </a>
 
         <a href="/water-testing.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-          </div>
           <div>
             <span class="title">Water and Wastewater Quality Testing</span>
             <span class="desc">Effluent analysis, Groundwater & Water audits.</span>
@@ -75,9 +60,6 @@ export const header = `
         </a>
 
         <a href="/air-monitoring.html" class="mega-item">
-          <div class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a3.5 3.5 0 1 1-5.83-2.66h.1a4.5 4.5 0 1 1 2.33-8.13h.1a5.5 5.5 0 1 1 8.8 6.06h.1a4.5 4.5 0 1 1-5.5 4.73Z"/></svg>
-          </div>
           <div>
             <span class="title">Air Quality Monitoring & Emission Testing</span>
             <span class="desc">Stack, Ambient, CEMS & Workplace air quality.</span>

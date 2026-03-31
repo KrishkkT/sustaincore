@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPCB Compliance Services — SustainCore Environmental Solutions</title>
   <link rel="icon" href="/Frame 4.svg">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="sustaincore-shared.css" />
   <style>
     /* ── GPCB-specific overrides & extras ── */
@@ -16,6 +19,7 @@
       gap: 1rem;
       margin-top: 2rem;
     }
+
     .sub-card {
       background: var(--w);
       border: 1px solid var(--bdr);
@@ -25,87 +29,172 @@
       overflow: hidden;
       transition: transform .22s, box-shadow .22s, border-color .22s;
     }
+
     .sub-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 36px rgba(26,74,107,.1);
+      box-shadow: 0 14px 36px rgba(26, 74, 107, .1);
       border-color: var(--g35);
     }
+
     .sub-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: linear-gradient(to right, var(--g), transparent);
     }
+
     .sub-card.blue::before {
       background: linear-gradient(to right, var(--b), transparent);
     }
+
     .sub-card-icon {
-      width: 38px; height: 38px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       background: var(--g10);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: .85rem;
     }
-    .sub-card.blue .sub-card-icon { background: var(--b10); }
+
+    .sub-card.blue .sub-card-icon {
+      background: var(--b10);
+    }
+
     .sub-card-icon svg {
-      width: 18px; height: 18px;
-      stroke: var(--g); fill: none;
-      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      width: 18px;
+      height: 18px;
+      stroke: var(--g);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    .sub-card.blue .sub-card-icon svg { stroke: var(--b); }
+
+    .sub-card.blue .sub-card-icon svg {
+      stroke: var(--b);
+    }
+
     .sub-card-label {
-      font-size: 10px; font-weight: 500;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--g); margin-bottom: .35rem;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--g);
+      margin-bottom: .35rem;
     }
-    .sub-card.blue .sub-card-label { color: var(--b); }
+
+    .sub-card.blue .sub-card-label {
+      color: var(--b);
+    }
+
     .sub-card-title {
-      font-size: 14px; font-weight: 600;
-      color: var(--text); margin-bottom: .45rem;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .45rem;
     }
+
     .sub-card-desc {
-      font-size: 12.5px; font-weight: 300;
-      color: var(--muted); line-height: 1.75;
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
     }
+
     .sub-card-tags {
-      display: flex; flex-wrap: wrap; gap: .35rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
       margin-top: .85rem;
     }
+
     .tag {
-      font-size: 10px; font-weight: 400;
-      padding: 3px 10px; border-radius: 100px;
-      background: var(--bg2); color: var(--muted);
+      font-size: 10px;
+      font-weight: 400;
+      padding: 3px 10px;
+      border-radius: 100px;
+      background: var(--bg2);
+      color: var(--muted);
       border: 1px solid var(--bdr);
     }
+
     /* category band */
     .cat-row {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
-      background: var(--bdr);
       border-radius: 16px;
       overflow: hidden;
       margin-top: 2rem;
     }
+
     .cat-cell {
       padding: 1.5rem 1.25rem;
       background: var(--w);
     }
+
     .cat-badge {
       display: inline-block;
-      font-size: 10px; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase;
-      padding: 3px 10px; border-radius: 100px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
       margin-bottom: .6rem;
     }
-    .cat-badge.red    { background: rgba(220,53,69,.1); color: #dc3545; border: 1px solid rgba(220,53,69,.25); }
-    .cat-badge.orange { background: rgba(253,126,20,.1); color: #fd7e14; border: 1px solid rgba(253,126,20,.25); }
-    .cat-badge.green  { background: rgba(74,124,89,.12); color: var(--g); border: 1px solid var(--g35); }
-    .cat-badge.white  { background: var(--bg2); color: var(--muted); border: 1px solid var(--bdr2); }
-    .cat-pi { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: .3rem; }
-    .cat-label { font-size: 12px; font-weight: 400; color: var(--muted); margin-bottom: .5rem; }
-    .cat-desc { font-size: 11.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+
+    .cat-badge.red {
+      background: rgba(220, 53, 69, .1);
+      color: #dc3545;
+      border: 1px solid rgba(220, 53, 69, .25);
+    }
+
+    .cat-badge.orange {
+      background: rgba(253, 126, 20, .1);
+      color: #fd7e14;
+      border: 1px solid rgba(253, 126, 20, .25);
+    }
+
+    .cat-badge.green {
+      background: rgba(74, 124, 89, .12);
+      color: var(--g);
+      border: 1px solid var(--g35);
+    }
+
+    .cat-badge.white {
+      background: var(--bg2);
+      color: var(--muted);
+      border: 1px solid var(--bdr2);
+    }
+
+    .cat-pi {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+
+    .cat-label {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: .5rem;
+    }
+
+    .cat-desc {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
     /* compliance calendar strip */
     .cal-grid {
       display: grid;
@@ -113,26 +202,58 @@
       gap: .75rem;
       margin-top: 1.5rem;
     }
+
     .cal-item {
-      display: flex; gap: .85rem; align-items: flex-start;
+      display: flex;
+      gap: .85rem;
+      align-items: flex-start;
       background: var(--w);
       border: 1px solid var(--bdr);
       border-radius: 12px;
       padding: 1rem 1.1rem;
     }
+
     .cal-dot {
-      width: 34px; height: 34px; border-radius: 9px;
-      background: var(--g10); flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 600; color: var(--g);
+      width: 45px;
+      height: 45px;
+      border-radius: 9px;
+      background: var(--g10);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--g);
     }
-    .cal-title { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: .2rem; }
-    .cal-desc  { font-size: 11.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+
+    .cal-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .2rem;
+    }
+
+    .cal-desc {
+      font-size: 11.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .svc-hero-pills {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      margin-top: 16rem;
+      align-items: flex-end;
+    }
   </style>
 </head>
+
 <body>
 
-<div id="header-root"></div>
+  <div id="header-root"></div>
   <!-- Category Navigation Bar -->
   <nav class="sp-sub-nav">
     <div class="sp-sub-nav-inner">
@@ -215,650 +336,831 @@
 
 
 
-<!-- ─── HERO ─── -->
-<section class="svc-hero reveal">
-  <div class="svc-hero-inner">
-    <div class="bc">
-      <a href="/index.html">Home</a>
-      <span class="sep">/</span>
-      <span>GPCB Compliance</span>
-    </div>
-
-    <div class="svc-hero-body">
-      <div class="svc-hero-left">
-        <h1 class="svc-hero-title">
-          GPCB <em>Compliance</em><br>
-          <span class="bt">Services</span>
-        </h1>
-        <p class="svc-hero-desc">
-          The Gujarat Pollution Control Board regulates every industry operating in Gujarat — from pre-establishment consent to annual environmental statements. <strong>Non-compliance triggers show-cause notices, closure orders and prosecution.</strong> We manage the complete GPCB compliance cycle: CTE, CTO, renewals, hazardous waste authorisations, and all extended producer responsibility registrations.
-        </p>
-        <div style="margin-top:.5rem;">
-          <a href="/index.html#consultation" class="btn-primary">Get Clearance Audit</a>
-        </div>
+  <!-- ─── HERO ─── -->
+  <section class="svc-hero reveal">
+    <div class="svc-hero-inner">
+      <div class="bc">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <span>GPCB Compliance</span>
       </div>
-      <div class="svc-hero-pills">
-        <div class="svc-hero-pill">
-          <span class="pill-icon"></span>
-          <span>CTE · CTO · CTR</span>
-        </div>
-        <div class="svc-hero-pill blue">
-          <span class="pill-icon"></span>
-          <span>Hazardous Waste Authorization</span>
-        </div>
-        <div class="svc-hero-pill">
-          <span class="pill-icon"></span>
-          <span>E-waste · Battery · Plastic · Used Oil</span>
-        </div>
-        <div class="svc-hero-pill blue">
-          <span class="pill-icon"></span>
-          <span>Annual Environmental Statement</span>
-        </div>
-        <div class="svc-hero-pill">
-          <span class="pill-icon"></span>
-          <strong>Red · Orange · Green · White</strong>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div style="max-width:1260px;margin:0 auto;padding:0 3rem 3rem;">
-    <div class="svc-hero-img">
-      <img src="../assets/gpcb-hero.jpg" alt="GPCB Compliance — Industrial facility in Gujarat" />
-      <div class="svc-hero-img-caption">
-        <div class="svc-hero-img-title">Gujarat Pollution Control <em>Board</em></div>
-        <div class="svc-hero-stat-row">
-          <div class="svc-hero-stat">
-            <div class="svc-hero-stat-v">12+</div>
-            <div class="svc-hero-stat-l">Sub-services</div>
+      <div class="svc-hero-body">
+        <div class="svc-hero-left">
+          <h1 class="svc-hero-title">
+            GPCB <em>Compliance</em><br>
+            <span class="bt">Services</span>
+          </h1>
+          <p class="svc-hero-desc">
+            The Gujarat Pollution Control Board regulates every industry operating in Gujarat — from pre-establishment
+            consent to annual environmental statements. <strong>Non-compliance triggers show-cause notices, closure
+              orders and prosecution.</strong> We manage the complete GPCB compliance cycle: CTE, CTO, renewals,
+            hazardous waste authorisations, and all extended producer responsibility registrations.
+          </p>
+          <div style="margin-top:.5rem;">
+            <a href="/index.html#consultation" class="btn-primary">Get Clearance Audit</a>
           </div>
-          <div class="svc-hero-stat">
-            <div class="svc-hero-stat-v">Red–White</div>
-            <div class="svc-hero-stat-l">All Categories</div>
+        </div>
+        <div class="svc-hero-pills">
+          <div class="svc-hero-pill">
+            <span class="pill-icon"></span>
+            <span>CTE · CTO · CTR</span>
           </div>
-          <div class="svc-hero-stat">
-            <div class="svc-hero-stat-v">e-Gujcop</div>
-            <div class="svc-hero-stat-l">Online Portal</div>
+          <div class="svc-hero-pill blue">
+            <span class="pill-icon"></span>
+            <span>Hazardous Waste Authorization</span>
+          </div>
+          <div class="svc-hero-pill">
+            <span class="pill-icon"></span>
+            <span>E-waste · Battery · Plastic · Used Oil</span>
+          </div>
+          <div class="svc-hero-pill blue">
+            <span class="pill-icon"></span>
+            <span>Annual Environmental Statement</span>
+          </div>
+          <div class="svc-hero-pill">
+            <span class="pill-icon"></span>
+            <strong>Red · Orange · Green · White</strong>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<div class="rule"></div>
-
-<!-- ─── INDUSTRY CATEGORIES ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">Regulatory Framework</div>
-  <h2 class="sec-title">Industry <em>categories</em> under GPCB</h2>
-  <p class="sec-sub">GPCB classifies every industry by its Pollution Index (PI) score — a composite of air, water and hazardous waste impact. Your category determines consent validity, renewal frequency and compliance obligations.</p>
-
-  <div class="cat-row">
-    <div class="cat-cell reveal">
-      <span class="cat-badge red">Red</span>
-      <div class="cat-pi">PI ≥ 60</div>
-      <div class="cat-label">Highly Polluting</div>
-      <div class="cat-desc">Chemicals, pharmaceuticals, dyes, tanneries, smelters. Strictest compliance. CEMS mandatory. CTO valid 5 years. Frequent GPCB inspections.</div>
-    </div>
-    <div class="cat-cell reveal">
-      <span class="cat-badge orange">Orange</span>
-      <div class="cat-pi">PI 41–59</div>
-      <div class="cat-label">Moderately Polluting</div>
-      <div class="cat-desc">Engineering, food processing, textiles (non-dyeing), packaging. Moderate ETP/STP requirements. CTO valid 5 years. Annual environmental statement required.</div>
-    </div>
-    <div class="cat-cell reveal">
-      <span class="cat-badge green">Green</span>
-      <div class="cat-pi">PI 21–40</div>
-      <div class="cat-label">Less Polluting</div>
-      <div class="cat-desc">Light manufacturing, assembling, cold storage, bakeries. Simplified consent process. CTO valid 10 years. Lower compliance burden but registration required.</div>
-    </div>
-    <div class="cat-cell reveal">
-      <span class="cat-badge white">White</span>
-      <div class="cat-pi">PI ≤ 20</div>
-      <div class="cat-label">Non-Polluting</div>
-      <div class="cat-desc">IT, education, trading, services. One-time registration. Perpetual validity CTO. No routine GPCB inspection. Minimal compliance documentation.</div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── SERVICES GRID ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Our Services</div>
-    <h2 class="sec-title">Complete GPCB <em>compliance portfolio</em></h2>
-    <p class="sec-sub">Every approval, authorization and periodic submission your facility needs — managed end-to-end so you can focus on operations.</p>
-
-    <!-- Consent Services -->
-    <h3 style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:.25rem;letter-spacing:-.2px;">Consent Management</h3>
-    <p style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:0;">Core approvals under Water Act 1974 &amp; Air Act 1981</p>
-    <div class="sub-grid">
-      <a href="4-cte.html">
-        <div class="sub-card reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
-          </div>
-          <div class="sub-card-label">Pre-Establishment</div>
-          <div class="sub-card-title">Consent to Establish (CTE)</div>
-          <div class="sub-card-desc">Mandatory approval before site construction or plant installation for any new industrial unit. We prepare the complete application — project report, pollution control plan, effluent and emission details — and submit through the e-Gujcop portal.</div>
-          <div class="sub-card-tags">
-            <span class="tag">New Industry</span>
-            <span class="tag">All Categories</span>
-            <span class="tag">Valid 5 Years</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="4-cto.html">
-        <div class="sub-card reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div class="sub-card-label">Pre-Operation</div>
-          <div class="sub-card-title">Consent to Operate (CTO)</div>
-          <div class="sub-card-desc">Required before commencing production. Granted only after GPCB inspection confirms pollution control infrastructure is installed and functional. We compile the inspection dossier, coordinate site visits and manage post-inspection compliance queries.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Post-Construction</span>
-            <span class="tag">GPCB Inspection</span>
-            <span class="tag">ETP / STP / APC</span>
-          </div>
-        </div>
-      </a>
-      <a href="4-ctr.html">
-        <div class="sub-card reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-          </div>
-          <div class="sub-card-label">Renewal</div>
-          <div class="sub-card-title">Consent to Renew (CTR)</div>
-          <div class="sub-card-desc">CTO renewal before expiry to maintain uninterrupted operations. Expired consent creates legal liability and can halt production. We initiate renewal 3 months before expiry, updating all compliance records and environmental performance data.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Renewal Management</span>
-            <span class="tag">3-Month Pre-Filing</span>
-            <span class="tag">Compliance Update</span>
+    <div style="max-width:1260px;margin:0 auto;padding:0 3rem 3rem;">
+      <div class="svc-hero-img">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2574&auto=format&fit=crop"
+          alt="GPCB Compliance — Consent Management CTE/CTO" />
+        <div class="svc-hero-img-caption">
+          <div class="svc-hero-img-title">Gujarat Pollution Control <em>Board</em></div>
+          <div class="svc-hero-stat-row">
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">12+</div>
+              <div class="svc-hero-stat-l">Sub-services</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">Red–White</div>
+              <div class="svc-hero-stat-l">All Categories</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">e-Gujcop</div>
+              <div class="svc-hero-stat-l">Online Portal</div>
+            </div>
           </div>
         </div>
       </div>
-    </a>
-
-    <!-- Waste Authorizations -->
-    <h3 style="font-size:15px;font-weight:600;color:var(--text);margin:2.5rem 0 .25rem;letter-spacing:-.2px;">Waste Authorizations</h3>
-    <p style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:0;">Mandatory approvals for waste generation, handling, recycling &amp; disposal</p>
-    <div class="sub-grid" style="margin-top:1rem;">
-      <a href="4.1-hwaste.html">
-        <div class="sub-card blue reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
-          </div>
-          <div class="sub-card-label">HW Rules 2016</div>
-          <div class="sub-card-title">Hazardous Waste Authorization</div>
-          <div class="sub-card-desc">Required for any unit generating, storing, transporting or disposing Schedule I/II/III hazardous waste. Covers waste characterisation, storage compliance, transporter empanelment and TSDF linkage. Includes annual return filing.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Generators</span>
-            <span class="tag">Recyclers</span>
-            <span class="tag">TSDF Linkage</span>
-            <span class="tag">Annual Returns</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="4.3-ewaste.html">
-        <div class="sub-card blue reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
-          </div>
-          <div class="sub-card-label">E-Waste Rules 2016</div>
-          <div class="sub-card-title">E-Waste Authorization</div>
-          <div class="sub-card-desc">Mandatory for producers, manufacturers, dealers and refurbishers of electrical and electronic equipment. Covers EPR plan registration with MoEFCC, channel partner identification, collection target compliance and annual e-waste return submission.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Producers / Mfrs</span>
-            <span class="tag">EPR Registration</span>
-            <span class="tag">Annual Return</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="4-battery-waste.html">
-        <div class="sub-card blue reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>
-          </div>
-          <div class="sub-card-label">BW Rules 2022</div>
-          <div class="sub-card-title">Battery Waste Authorization</div>
-          <div class="sub-card-desc">Required under Battery Waste Management Rules 2022 for manufacturers, importers, assemblers, dealers and recyclers of any battery type — EV, industrial, portable or automotive. We manage EPR registration, target setting and compliance reporting.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Manufacturers</span>
-            <span class="tag">Importers</span>
-            <span class="tag">EPR Targets</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="4-plastic-waste.html">
-        <div class="sub-card blue reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <div class="sub-card-label">PWM Rules 2016</div>
-          <div class="sub-card-title">Plastic Waste Authorization</div>
-          <div class="sub-card-desc">Mandatory for plastic manufacturers, importers, brand owners (PIBOs) and recyclers under Plastic Waste Management Rules 2016. Covers EPR registration on the CPCB EPR portal, annual return submission and buy-back/end-of-life documentation.</div>
-          <div class="sub-card-tags">
-            <span class="tag">PIBOs</span>
-            <span class="tag">Recyclers</span>
-            <span class="tag">EPR Portal</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="4-used-oil.html">
-        <div class="sub-card blue reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M12 2v6m0 0l3-3m-3 3L9 5M5 12H2m3 0l-2 2m2-2L3 10M22 12h-3m3 0l-2 2m2-2l-2-2M12 22v-3m0 3l3-2m-3 2l-3-2"/></svg>
-          </div>
-          <div class="sub-card-label">HW Rules — Schedule II</div>
-          <div class="sub-card-title">Used Oil Authorization</div>
-          <div class="sub-card-desc">Required for collectors, recyclers and re-refiners of used lubricating, industrial or automotive oil under Hazardous Waste Rules 2016. Includes storage facility compliance, transporter records and used oil disposal documentation.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Collectors</span>
-            <span class="tag">Re-refiners</span>
-            <span class="tag">Storage Compliance</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="4.2-bio-medical.html">
-        <div class="sub-card blue reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          </div>
-          <div class="sub-card-label">BMW Rules 2016</div>
-          <div class="sub-card-title">Bio-Medical Waste Authorization</div>
-          <div class="sub-card-desc">Mandatory for hospitals, clinics, diagnostic labs, blood banks and veterinary centres. Covers segregation, storage, collection and disposal compliance under BMW Management Rules 2016. We prepare the authorisation application, waste management plan and staff training records.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Healthcare</span>
-            <span class="tag">Labs / Clinics</span>
-            <span class="tag">Waste Management Plan</span>
-          </div>
-        </div>
-      </a>
     </div>
+  </section>
 
-    <!-- Periodic Compliance -->
-    <h3 style="font-size:15px;font-weight:600;color:var(--text);margin:2.5rem 0 .25rem;letter-spacing:-.2px;">Periodic Compliance &amp; Reporting</h3>
-    <p style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:0;">Mandatory submissions to maintain active consent status</p>
-    <div class="sub-grid" style="margin-top:1rem;grid-template-columns:repeat(3,1fr);">
-      <a href="4-annual-env-statement.html">
-        <div class="sub-card reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+  <div class="rule"></div>
+
+  <!-- ─── INDUSTRY CATEGORIES ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">Regulatory Framework</div>
+    <h2 class="sec-title">Industry <em>categories</em> under GPCB</h2>
+    <p class="sec-sub">GPCB classifies every industry by its Pollution Index (PI) score — a composite of air, water and
+      hazardous waste impact. Your category determines consent validity, renewal frequency and compliance obligations.
+    </p>
+
+    <div class="cat-row">
+      <div class="cat-cell reveal">
+        <span class="cat-badge red">Red</span>
+        <div class="cat-pi">PI ≥ 60</div>
+        <div class="cat-label">Highly Polluting</div>
+        <div class="cat-desc">Chemicals, pharmaceuticals, dyes, tanneries, smelters. Strictest compliance. CEMS
+          mandatory. CTO valid 5 years. Frequent GPCB inspections.</div>
+      </div>
+      <div class="cat-cell reveal">
+        <span class="cat-badge orange">Orange</span>
+        <div class="cat-pi">PI 41–59</div>
+        <div class="cat-label">Moderately Polluting</div>
+        <div class="cat-desc">Engineering, food processing, textiles (non-dyeing), packaging. Moderate ETP/STP
+          requirements. CTO valid 5 years. Annual environmental statement required.</div>
+      </div>
+      <div class="cat-cell reveal">
+        <span class="cat-badge green">Green</span>
+        <div class="cat-pi">PI 21–40</div>
+        <div class="cat-label">Less Polluting</div>
+        <div class="cat-desc">Light manufacturing, assembling, cold storage, bakeries. Simplified consent process. CTO
+          valid 10 years. Lower compliance burden but registration required.</div>
+      </div>
+      <div class="cat-cell reveal">
+        <span class="cat-badge white">White</span>
+        <div class="cat-pi">PI ≤ 20</div>
+        <div class="cat-label">Non-Polluting</div>
+        <div class="cat-desc">IT, education, trading, services. One-time registration. Perpetual validity CTO. No
+          routine GPCB inspection. Minimal compliance documentation.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── SERVICES GRID ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Our Services</div>
+      <h2 class="sec-title">Complete GPCB <em>compliance portfolio</em></h2>
+      <p class="sec-sub">Every approval, authorization and periodic submission your facility needs — managed end-to-end
+        so you can focus on operations.</p>
+
+      <!-- Consent Services -->
+      <h3 style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:.25rem;letter-spacing:-.2px;">Consent
+        Management</h3>
+      <p style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:0;">Core approvals under Water Act 1974
+        &amp; Air Act 1981</p>
+      <div class="sub-grid">
+        <a href="4-cte.html">
+          <div class="sub-card reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <polyline points="2 17 12 22 22 17" />
+                <polyline points="2 12 12 17 22 12" />
+              </svg>
+            </div>
+            <div class="sub-card-label">Pre-Establishment</div>
+            <div class="sub-card-title">Consent to Establish (CTE)</div>
+            <div class="sub-card-desc">Mandatory approval before site construction or plant installation for any new
+              industrial unit. We prepare the complete application — project report, pollution control plan, effluent
+              and emission details — and submit through the e-Gujcop portal.</div>
+            <div class="sub-card-tags">
+              <span class="tag">New Industry</span>
+              <span class="tag">All Categories</span>
+              <span class="tag">Valid 5 Years</span>
+            </div>
           </div>
-          <div class="sub-card-label">EPA 1986 — Form V</div>
-          <div class="sub-card-title">Annual Environmental Statement</div>
-          <div class="sub-card-desc">Mandatory annual submission (Form V) under Environment Protection Act 1986 covering resource consumption, waste generation, pollution control performance and environmental incidents. Due by 30 September each year.</div>
-          <div class="sub-card-tags">
-            <span class="tag">Annual</span>
-            <span class="tag">Form V</span>
-            <span class="tag">Sept 30 Deadline</span>
+        </a>
+
+        <a href="4-cto.html">
+          <div class="sub-card reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="sub-card-label">Pre-Operation</div>
+            <div class="sub-card-title">Consent to Operate (CTO)</div>
+            <div class="sub-card-desc">Required before commencing production. Granted only after GPCB inspection
+              confirms pollution control infrastructure is installed and functional. We compile the inspection dossier,
+              coordinate site visits and manage post-inspection compliance queries.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Post-Construction</span>
+              <span class="tag">GPCB Inspection</span>
+              <span class="tag">ETP / STP / APC</span>
+            </div>
           </div>
-        </div>
+        </a>
+        <a href="4-ctr.html">
+          <div class="sub-card reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <polyline points="23 4 23 10 17 10" />
+                <polyline points="1 20 1 14 7 14" />
+                <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+              </svg>
+            </div>
+            <div class="sub-card-label">Renewal</div>
+            <div class="sub-card-title">Consent to Renew (CTR)</div>
+            <div class="sub-card-desc">CTO renewal before expiry to maintain uninterrupted operations. Expired consent
+              creates legal liability and can halt production. We initiate renewal 3 months before expiry, updating all
+              compliance records and environmental performance data.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Renewal Management</span>
+              <span class="tag">3-Month Pre-Filing</span>
+              <span class="tag">Compliance Update</span>
+            </div>
+          </div>
+      </div>
       </a>
 
-      <a href="4-scn-response.html">
-        <div class="sub-card reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <!-- Waste Authorizations -->
+      <h3 style="font-size:15px;font-weight:600;color:var(--text);margin:2.5rem 0 .25rem;letter-spacing:-.2px;">Waste
+        Authorizations</h3>
+      <p style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:0;">Mandatory approvals for waste
+        generation, handling, recycling &amp; disposal</p>
+      <div class="sub-grid" style="margin-top:1rem;">
+        <a href="4.1-hwaste.html">
+          <div class="sub-card blue reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" />
+                <line x1="10" y1="11" x2="10" y2="17" />
+                <line x1="14" y1="11" x2="14" y2="17" />
+              </svg>
+            </div>
+            <div class="sub-card-label">HW Rules 2016</div>
+            <div class="sub-card-title">Hazardous Waste Authorization</div>
+            <div class="sub-card-desc">Required for any unit generating, storing, transporting or disposing Schedule
+              I/II/III hazardous waste. Covers waste characterisation, storage compliance, transporter empanelment and
+              TSDF linkage. Includes annual return filing.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Generators</span>
+              <span class="tag">Recyclers</span>
+              <span class="tag">TSDF Linkage</span>
+              <span class="tag">Annual Returns</span>
+            </div>
           </div>
-          <div class="sub-card-label">Show Cause &amp; Legal</div>
-          <div class="sub-card-title">SCN Response &amp; Compliance Defence</div>
-          <div class="sub-card-desc">Show-cause notice response preparation, closure direction management and GPCB hearing representation. We review the SCN, prepare a technical compliance defence with supporting evidence and accompany clients to GPCB hearings.</div>
-          <div class="sub-card-tags">
-            <span class="tag">SCN Response</span>
-            <span class="tag">Hearing Support</span>
-            <span class="tag">Closure Reversal</span>
+        </a>
+
+        <a href="4.3-ewaste.html">
+          <div class="sub-card blue reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                <line x1="12" y1="12" x2="12" y2="16" />
+                <line x1="10" y1="14" x2="14" y2="14" />
+              </svg>
+            </div>
+            <div class="sub-card-label">E-Waste Rules 2016</div>
+            <div class="sub-card-title">E-Waste Authorization</div>
+            <div class="sub-card-desc">Mandatory for producers, manufacturers, dealers and refurbishers of electrical
+              and electronic equipment. Covers EPR plan registration with MoEFCC, channel partner identification,
+              collection target compliance and annual e-waste return submission.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Producers / Mfrs</span>
+              <span class="tag">EPR Registration</span>
+              <span class="tag">Annual Return</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="4-battery-waste.html">
+          <div class="sub-card blue reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="2" />
+                <path
+                  d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14" />
+              </svg>
+            </div>
+            <div class="sub-card-label">BW Rules 2022</div>
+            <div class="sub-card-title">Battery Waste Authorization</div>
+            <div class="sub-card-desc">Required under Battery Waste Management Rules 2022 for manufacturers, importers,
+              assemblers, dealers and recyclers of any battery type — EV, industrial, portable or automotive. We manage
+              EPR registration, target setting and compliance reporting.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Manufacturers</span>
+              <span class="tag">Importers</span>
+              <span class="tag">EPR Targets</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="4-plastic-waste.html">
+          <div class="sub-card blue reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <div class="sub-card-label">PWM Rules 2016</div>
+            <div class="sub-card-title">Plastic Waste Authorization</div>
+            <div class="sub-card-desc">Mandatory for plastic manufacturers, importers, brand owners (PIBOs) and
+              recyclers under Plastic Waste Management Rules 2016. Covers EPR registration on the CPCB EPR portal,
+              annual return submission and buy-back/end-of-life documentation.</div>
+            <div class="sub-card-tags">
+              <span class="tag">PIBOs</span>
+              <span class="tag">Recyclers</span>
+              <span class="tag">EPR Portal</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="4-used-oil.html">
+          <div class="sub-card blue reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2v6m0 0l3-3m-3 3L9 5M5 12H2m3 0l-2 2m2-2L3 10M22 12h-3m3 0l-2 2m2-2l-2-2M12 22v-3m0 3l3-2m-3 2l-3-2" />
+              </svg>
+            </div>
+            <div class="sub-card-label">HW Rules — Schedule II</div>
+            <div class="sub-card-title">Used Oil Authorization</div>
+            <div class="sub-card-desc">Required for collectors, recyclers and re-refiners of used lubricating,
+              industrial or automotive oil under Hazardous Waste Rules 2016. Includes storage facility compliance,
+              transporter records and used oil disposal documentation.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Collectors</span>
+              <span class="tag">Re-refiners</span>
+              <span class="tag">Storage Compliance</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="4.2-bio-medical.html">
+          <div class="sub-card blue reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+            </div>
+            <div class="sub-card-label">BMW Rules 2016</div>
+            <div class="sub-card-title">Bio-Medical Waste Authorization</div>
+            <div class="sub-card-desc">Mandatory for hospitals, clinics, diagnostic labs, blood banks and veterinary
+              centres. Covers segregation, storage, collection and disposal compliance under BMW Management Rules 2016.
+              We prepare the authorisation application, waste management plan and staff training records.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Healthcare</span>
+              <span class="tag">Labs / Clinics</span>
+              <span class="tag">Waste Management Plan</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Periodic Compliance -->
+      <h3 style="font-size:15px;font-weight:600;color:var(--text);margin:2.5rem 0 .25rem;letter-spacing:-.2px;">Periodic
+        Compliance &amp; Reporting</h3>
+      <p style="font-size:13px;color:var(--muted);font-weight:300;margin-bottom:0;">Mandatory submissions to maintain
+        active consent status</p>
+      <div class="sub-grid" style="margin-top:1rem;grid-template-columns:repeat(3,1fr);">
+        <a href="4-annual-env-statement.html">
+          <div class="sub-card reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+                <polyline points="10 9 9 9 8 9" />
+              </svg>
+            </div>
+            <div class="sub-card-label">EPA 1986 — Form V</div>
+            <div class="sub-card-title">Annual Environmental Statement</div>
+            <div class="sub-card-desc">Mandatory annual submission (Form V) under Environment Protection Act 1986
+              covering resource consumption, waste generation, pollution control performance and environmental
+              incidents. Due by 30 September each year.</div>
+            <div class="sub-card-tags">
+              <span class="tag">Annual</span>
+              <span class="tag">Form V</span>
+              <span class="tag">Sept 30 Deadline</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="4-scn-response.html">
+          <div class="sub-card reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+              </svg>
+            </div>
+            <div class="sub-card-label">Show Cause &amp; Legal</div>
+            <div class="sub-card-title">SCN Response &amp; Compliance Defence</div>
+            <div class="sub-card-desc">Show-cause notice response preparation, closure direction management and GPCB
+              hearing representation. We review the SCN, prepare a technical compliance defence with supporting evidence
+              and accompany clients to GPCB hearings.</div>
+            <div class="sub-card-tags">
+              <span class="tag">SCN Response</span>
+              <span class="tag">Hearing Support</span>
+              <span class="tag">Closure Reversal</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="4-stack-monitoring.html">
+          <div class="sub-card reveal">
+            <div class="sp-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="sub-card-label">Monitoring &amp; Audit</div>
+            <div class="sub-card-title">Ambient &amp; Stack Monitoring Reports</div>
+            <div class="sub-card-desc">Periodic ambient air, stack emission, effluent and groundwater monitoring as
+              mandated by GPCB consent conditions. We organise NABL-accredited laboratory sampling, review results
+              against consent limits and submit compliance reports.</div>
+            <div class="sub-card-tags">
+              <span class="tag">NABL Labs</span>
+              <span class="tag">Stack / Effluent</span>
+              <span class="tag">Compliance Reports</span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── PROCESS ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">Our Process</div>
+    <h2 class="sec-title">How we manage your <em>GPCB compliance</em></h2>
+    <p class="sec-sub">A structured six-phase approach from initial compliance audit to post-submission follow-up —
+      eliminating delays caused by incomplete applications or documentation errors.</p>
+
+    <div class="process-steps p6" style="margin-top:2rem;">
+      <div class="ps">
+        <div class="ps-arrow">→</div>
+        <div class="sp-step-num">01</div>
+        <div class="ps-title">Compliance Audit</div>
+        <div class="ps-desc">Review of all current consents, authorisations, expiry dates and pending obligations. Full
+          gap identification across all applicable GPCB requirements.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">→</div>
+        <div class="sp-step-num">02</div>
+        <div class="ps-title">Document Compilation</div>
+        <div class="ps-desc">Collection and preparation of all required documents — plant layout, process flow, ETP/STP
+          design, monitoring data, pollution control equipment specifications.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">→</div>
+        <div class="sp-step-num">03</div>
+        <div class="ps-title">Application Preparation</div>
+        <div class="ps-desc">Expert completion of GPCB application forms on e-Gujcop portal. Each field calibrated for
+          accuracy; supporting documents cross-referenced per GPCB requirements.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">→</div>
+        <div class="sp-step-num">04</div>
+        <div class="ps-title">Submission &amp; Tracking</div>
+        <div class="ps-desc">Online submission through e-Gujcop. Active portal tracking and follow-up with GPCB regional
+          office to prevent application from becoming dormant in the queue.</div>
+      </div>
+      <div class="ps">
+        <div class="ps-arrow">→</div>
+        <div class="sp-step-num">05</div>
+        <div class="ps-title">Inspection Support</div>
+        <div class="ps-desc">On-site support during GPCB inspection for CTO/CTR. Pre-inspection checklist, officer
+          briefing preparation and management of post-inspection queries or observations.</div>
+      </div>
+      <div class="ps">
+        <div class="sp-step-num">06</div>
+        <div class="ps-title">Ongoing Compliance</div>
+        <div class="ps-desc">Annual environmental statement, periodic monitoring reports, waste authorisation renewals
+          and renewal deadline tracking — managed as a continuous service.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── COMPLIANCE CALENDAR ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Compliance Calendar</div>
+      <h2 class="sec-title">Key GPCB <em>deadlines &amp; obligations</em></h2>
+      <p class="sec-sub">Missing a GPCB deadline is not just a fine — it can trigger show-cause notices and production
+        stoppages. We track every deadline for every client.</p>
+
+      <div class="cal-grid">
+        <div class="cal-item reveal">
+          <div class="cal-dot">Sep</div>
+          <div>
+            <div class="cal-title">Annual Environmental Statement — Form V</div>
+            <div class="cal-desc">Due 30 September every year for all CTO-holding industries. Covers pollution control
+              performance, resource consumption and waste management data under EPA 1986.</div>
           </div>
         </div>
-      </a>
-
-      <a href="4-stack-monitoring.html">
-        <div class="sub-card reveal">
-          <div class="sp-card-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <div class="sub-card-label">Monitoring &amp; Audit</div>
-          <div class="sub-card-title">Ambient &amp; Stack Monitoring Reports</div>
-          <div class="sub-card-desc">Periodic ambient air, stack emission, effluent and groundwater monitoring as mandated by GPCB consent conditions. We organise NABL-accredited laboratory sampling, review results against consent limits and submit compliance reports.</div>
-          <div class="sub-card-tags">
-            <span class="tag">NABL Labs</span>
-            <span class="tag">Stack / Effluent</span>
-            <span class="tag">Compliance Reports</span>
+        <div class="cal-item reveal">
+          <div class="cal-dot">Qtly</div>
+          <div>
+            <div class="cal-title">Effluent &amp; Stack Monitoring Reports</div>
+            <div class="cal-desc">Quarterly (Red category) or half-yearly (Orange/Green) ambient, stack and effluent
+              monitoring submissions per consent conditions. NABL-accredited lab reports required.</div>
           </div>
         </div>
-      </a>
+        <div class="cal-item reveal">
+          <div class="cal-dot">Pre-<br>Expiry</div>
+          <div>
+            <div class="cal-title">CTO / CTR Renewal Application</div>
+            <div class="cal-desc">Application must be submitted before CTO expiry to avoid lapse. GPCB requires renewal
+              filing at least 30 days prior. We initiate preparation 90 days before expiry.</div>
+          </div>
+        </div>
+        <div class="cal-item reveal">
+          <div class="cal-dot">Annual</div>
+          <div>
+            <div class="cal-title">Hazardous Waste Annual Returns</div>
+            <div class="cal-desc">Annual returns for hazardous waste generation, utilisation, storage, disposal and
+              transboundary movement submitted through the GPCB hazardous waste portal by 30 June.</div>
+          </div>
+        </div>
+        <div class="cal-item reveal">
+          <div class="cal-dot">Annual</div>
+          <div>
+            <div class="cal-title">E-waste / Battery / Plastic EPR Returns</div>
+            <div class="cal-desc">Annual EPR compliance returns on CPCB portal confirming collection and recycling
+              targets met. Includes channelisation proof and recycler certificates.</div>
+          </div>
+        </div>
+        <div class="cal-item reveal">
+          <div class="cal-dot">CEMS</div>
+          <div>
+            <div class="cal-title">Continuous Emission Monitoring (Red)</div>
+            <div class="cal-desc">Red category industries must install CEMS with real-time data transmission to GPCB
+              server. We coordinate CEMS vendor selection, calibration records and GPCB data integration.</div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── PROCESS ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">Our Process</div>
-  <h2 class="sec-title">How we manage your <em>GPCB compliance</em></h2>
-  <p class="sec-sub">A structured six-phase approach from initial compliance audit to post-submission follow-up — eliminating delays caused by incomplete applications or documentation errors.</p>
+  <!-- ─── DELIVERABLES ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">Key Deliverables</div>
+    <h2 class="sec-title">What you receive from every <em>GPCB engagement</em></h2>
+    <p class="sec-sub">Tangible outputs at each stage — so you always know exactly where your compliance stands.</p>
 
-  <div class="process-steps p6" style="margin-top:2rem;">
-    <div class="ps">
-      <div class="ps-arrow">→</div>
-      <div class="sp-step-num">01</div>
-      <div class="ps-title">Compliance Audit</div>
-      <div class="ps-desc">Review of all current consents, authorisations, expiry dates and pending obligations. Full gap identification across all applicable GPCB requirements.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">→</div>
-      <div class="sp-step-num">02</div>
-      <div class="ps-title">Document Compilation</div>
-      <div class="ps-desc">Collection and preparation of all required documents — plant layout, process flow, ETP/STP design, monitoring data, pollution control equipment specifications.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">→</div>
-      <div class="sp-step-num">03</div>
-      <div class="ps-title">Application Preparation</div>
-      <div class="ps-desc">Expert completion of GPCB application forms on e-Gujcop portal. Each field calibrated for accuracy; supporting documents cross-referenced per GPCB requirements.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">→</div>
-      <div class="sp-step-num">04</div>
-      <div class="ps-title">Submission &amp; Tracking</div>
-      <div class="ps-desc">Online submission through e-Gujcop. Active portal tracking and follow-up with GPCB regional office to prevent application from becoming dormant in the queue.</div>
-    </div>
-    <div class="ps">
-      <div class="ps-arrow">→</div>
-      <div class="sp-step-num">05</div>
-      <div class="ps-title">Inspection Support</div>
-      <div class="ps-desc">On-site support during GPCB inspection for CTO/CTR. Pre-inspection checklist, officer briefing preparation and management of post-inspection queries or observations.</div>
-    </div>
-    <div class="ps">
-      <div class="sp-step-num">06</div>
-      <div class="ps-title">Ongoing Compliance</div>
-      <div class="ps-desc">Annual environmental statement, periodic monitoring reports, waste authorisation renewals and renewal deadline tracking — managed as a continuous service.</div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── COMPLIANCE CALENDAR ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Compliance Calendar</div>
-    <h2 class="sec-title">Key GPCB <em>deadlines &amp; obligations</em></h2>
-    <p class="sec-sub">Missing a GPCB deadline is not just a fine — it can trigger show-cause notices and production stoppages. We track every deadline for every client.</p>
-
-    <div class="cal-grid">
-      <div class="cal-item reveal">
-        <div class="cal-dot">Sep</div>
+    <div class="deliverables-grid">
+      <div class="deliv-card reveal">
+        <div class="sp-card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+        </div>
         <div>
-          <div class="cal-title">Annual Environmental Statement — Form V</div>
-          <div class="cal-desc">Due 30 September every year for all CTO-holding industries. Covers pollution control performance, resource consumption and waste management data under EPA 1986.</div>
+          <div class="deliv-title">Compliance Gap Report</div>
+          <div class="deliv-desc">Full audit of current status against all applicable GPCB requirements — consents,
+            authorisations, monitoring, periodic submissions — with risk-prioritised gap list and action plan.</div>
         </div>
       </div>
-      <div class="cal-item reveal">
-        <div class="cal-dot">Qtly</div>
+      <div class="deliv-card reveal">
+        <div class="sp-card-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <path d="M3 9h18M9 21V9" />
+          </svg>
+        </div>
         <div>
-          <div class="cal-title">Effluent &amp; Stack Monitoring Reports</div>
-          <div class="cal-desc">Quarterly (Red category) or half-yearly (Orange/Green) ambient, stack and effluent monitoring submissions per consent conditions. NABL-accredited lab reports required.</div>
+          <div class="deliv-title">Completed Application Package</div>
+          <div class="deliv-desc">Fully prepared application — e-Gujcop form, project report, pollution control plan,
+            waste management details and all supporting annexures — ready for submission.</div>
         </div>
       </div>
-      <div class="cal-item reveal">
-        <div class="cal-dot">Pre-<br>Expiry</div>
+      <div class="deliv-card reveal">
+        <div class="sp-card-icon">
+          <svg viewBox="0 0 24 24">
+            <polyline points="9 11 12 14 22 4" />
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+          </svg>
+        </div>
         <div>
-          <div class="cal-title">CTO / CTR Renewal Application</div>
-          <div class="cal-desc">Application must be submitted before CTO expiry to avoid lapse. GPCB requires renewal filing at least 30 days prior. We initiate preparation 90 days before expiry.</div>
+          <div class="deliv-title">Consent / Authorization Certificate</div>
+          <div class="deliv-desc">Final CTE, CTO, CTR or waste authorization certificate from GPCB — the primary legal
+            document authorising your operations. Stored digitally with expiry alerts.</div>
         </div>
       </div>
-      <div class="cal-item reveal">
-        <div class="cal-dot">Annual</div>
+      <div class="deliv-card reveal">
+        <div class="sp-card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+        </div>
         <div>
-          <div class="cal-title">Hazardous Waste Annual Returns</div>
-          <div class="cal-desc">Annual returns for hazardous waste generation, utilisation, storage, disposal and transboundary movement submitted through the GPCB hazardous waste portal by 30 June.</div>
+          <div class="deliv-title">Monitoring &amp; Compliance Reports</div>
+          <div class="deliv-desc">Periodic stack, effluent and ambient monitoring reports from NABL-accredited
+            laboratories, formatted per GPCB requirements for direct submission.</div>
         </div>
       </div>
-      <div class="cal-item reveal">
-        <div class="cal-dot">Annual</div>
+      <div class="deliv-card reveal">
+        <div class="sp-card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+        </div>
         <div>
-          <div class="cal-title">E-waste / Battery / Plastic EPR Returns</div>
-          <div class="cal-desc">Annual EPR compliance returns on CPCB portal confirming collection and recycling targets met. Includes channelisation proof and recycler certificates.</div>
+          <div class="deliv-title">Annual Environmental Statement (Form V)</div>
+          <div class="deliv-desc">Prepared and submitted Form V covering all 12 months of environmental performance data
+            — resource consumption, pollutant loads, waste handled — by the 30 September deadline.</div>
         </div>
       </div>
-      <div class="cal-item reveal">
-        <div class="cal-dot">CEMS</div>
+      <div class="deliv-card reveal">
+        <div class="sp-card-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+        </div>
         <div>
-          <div class="cal-title">Continuous Emission Monitoring (Red)</div>
-          <div class="cal-desc">Red category industries must install CEMS with real-time data transmission to GPCB server. We coordinate CEMS vendor selection, calibration records and GPCB data integration.</div>
+          <div class="deliv-title">Compliance Calendar &amp; Deadline Tracker</div>
+          <div class="deliv-desc">Facility-specific compliance calendar listing every GPCB deadline — consent expiry,
+            monitoring schedule, return filing dates — with automated reminders 90, 60 and 30 days in advance.</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── DELIVERABLES ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">Key Deliverables</div>
-  <h2 class="sec-title">What you receive from every <em>GPCB engagement</em></h2>
-  <p class="sec-sub">Tangible outputs at each stage — so you always know exactly where your compliance stands.</p>
+  <!-- ─── WHO THIS IS FOR ─── -->
+  <section class="svc-section reveal">
+    <div class="who-section">
+      <div class="who-inner">
+        <div class="who-label">Who This Is For</div>
+        <div class="who-title">Right for your organisation if you are…</div>
+        <div class="who-chips">
+          <span class="who-chip">New industry requiring CTE before construction</span>
+          <span class="who-chip">Operating unit approaching CTO renewal deadline</span>
+          <span class="who-chip">Red or Orange category facility with high compliance burden</span>
+          <span class="who-chip">Company holding hazardous waste on-site without authorization</span>
+          <span class="who-chip">Manufacturer subject to EPR under e-waste / battery / plastic rules</span>
+          <span class="who-chip">Healthcare facility needing bio-medical waste authorization</span>
+          <span class="who-chip">Industry that has received a GPCB show-cause notice</span>
+          <span class="who-chip">Expanding facility requiring consent amendment</span>
+          <span class="who-chip">Business seeking a full GPCB compliance health check</span>
+        </div>
 
-  <div class="deliverables-grid">
-    <div class="deliv-card reveal">
-      <div class="sp-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      </div>
-      <div>
-        <div class="deliv-title">Compliance Gap Report</div>
-        <div class="deliv-desc">Full audit of current status against all applicable GPCB requirements — consents, authorisations, monitoring, periodic submissions — with risk-prioritised gap list and action plan.</div>
-      </div>
-    </div>
-    <div class="deliv-card reveal">
-      <div class="sp-card-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      </div>
-      <div>
-        <div class="deliv-title">Completed Application Package</div>
-        <div class="deliv-desc">Fully prepared application — e-Gujcop form, project report, pollution control plan, waste management details and all supporting annexures — ready for submission.</div>
-      </div>
-    </div>
-    <div class="deliv-card reveal">
-      <div class="sp-card-icon">
-        <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-      </div>
-      <div>
-        <div class="deliv-title">Consent / Authorization Certificate</div>
-        <div class="deliv-desc">Final CTE, CTO, CTR or waste authorization certificate from GPCB — the primary legal document authorising your operations. Stored digitally with expiry alerts.</div>
-      </div>
-    </div>
-    <div class="deliv-card reveal">
-      <div class="sp-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      </div>
-      <div>
-        <div class="deliv-title">Monitoring &amp; Compliance Reports</div>
-        <div class="deliv-desc">Periodic stack, effluent and ambient monitoring reports from NABL-accredited laboratories, formatted per GPCB requirements for direct submission.</div>
-      </div>
-    </div>
-    <div class="deliv-card reveal">
-      <div class="sp-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-      </div>
-      <div>
-        <div class="deliv-title">Annual Environmental Statement (Form V)</div>
-        <div class="deliv-desc">Prepared and submitted Form V covering all 12 months of environmental performance data — resource consumption, pollutant loads, waste handled — by the 30 September deadline.</div>
-      </div>
-    </div>
-    <div class="deliv-card reveal">
-      <div class="sp-card-icon">
-        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      </div>
-      <div>
-        <div class="deliv-title">Compliance Calendar &amp; Deadline Tracker</div>
-        <div class="deliv-desc">Facility-specific compliance calendar listing every GPCB deadline — consent expiry, monitoring schedule, return filing dates — with automated reminders 90, 60 and 30 days in advance.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── WHO THIS IS FOR ─── -->
-<section class="svc-section reveal">
-  <div class="who-section">
-    <div class="who-inner">
-      <div class="who-label">Who This Is For</div>
-      <div class="who-title">Right for your organisation if you are…</div>
-      <div class="who-chips">
-        <span class="who-chip">New industry requiring CTE before construction</span>
-        <span class="who-chip">Operating unit approaching CTO renewal deadline</span>
-        <span class="who-chip">Red or Orange category facility with high compliance burden</span>
-        <span class="who-chip">Company holding hazardous waste on-site without authorization</span>
-        <span class="who-chip">Manufacturer subject to EPR under e-waste / battery / plastic rules</span>
-        <span class="who-chip">Healthcare facility needing bio-medical waste authorization</span>
-        <span class="who-chip">Industry that has received a GPCB show-cause notice</span>
-        <span class="who-chip">Expanding facility requiring consent amendment</span>
-        <span class="who-chip">Business seeking a full GPCB compliance health check</span>
-      </div>
-
-      <div class="sectors-wrap">
-        <div class="sectors-label">Industries We Serve</div>
-        <div class="sectors-grid">
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Chemicals &amp; Dyes</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Pharmaceuticals</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Textiles &amp; Apparel</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Engineering &amp; Fabrication</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Food &amp; Agribusiness</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Steel &amp; Metals</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Healthcare &amp; Labs</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Electronics &amp; EEE</span></div>
+        <div class="sectors-wrap">
+          <div class="sectors-label">Industries We Serve</div>
+          <div class="sectors-grid">
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Chemicals &amp;
+                Dyes</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Pharmaceuticals</span>
+            </div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Textiles &amp;
+                Apparel</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Engineering &amp;
+                Fabrication</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Food &amp;
+                Agribusiness</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Steel &amp; Metals</span>
+            </div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Healthcare &amp;
+                Labs</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Electronics &amp;
+                EEE</span></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── FAQ ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">FAQ</div>
-    <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+  <!-- ─── FAQ ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-title">Frequently asked <em>questions</em></h2>
 
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          What happens if my CTO expires before I file for renewal?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-ans"><p>Operating after CTO expiry is an offence under the Water Act 1974 and Air Act 1981 and can attract a show-cause notice, closure direction and prosecution. GPCB also has the authority to seal plant and machinery. Filing before expiry — ideally 30–90 days before — is essential to avoid any gap. We track renewal windows for all clients and initiate the process 90 days before expiry.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          Does my company need hazardous waste authorization even if we only generate small quantities?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-ans"><p>Yes. Hazardous Waste Rules 2016 do not prescribe a minimum quantity threshold for authorization. Any unit generating waste listed in Schedule I, II or III of the Rules requires authorization. Common examples include spent solvents, ETP sludge, used oils, electroplating waste and paint sludge. We first conduct a waste stream audit to identify all applicable schedules before preparing the authorization application.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          How long does a typical CTO application take to be granted?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-ans"><p>Processing times vary by category and GPCB regional office workload. A well-prepared application for Green/Orange category typically receives consent within 30–60 days of submission. Red category applications involve a site inspection and additional scrutiny, typically taking 60–90 days. Incomplete applications or query responses from GPCB can extend timelines significantly — which is why we ensure first-time accuracy in document preparation.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          We are expanding our plant capacity — do we need a new CTE?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-ans"><p>Any expansion, addition of new products, installation of additional DG sets or boilers, or significant change in raw material or process requires a consent amendment. Operating an expanded facility without amendment is a violation. We assess whether your proposed change requires a fresh CTE or an amendment to existing consent, and manage the amendment application accordingly.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" onclick="toggleFaq(this)">
-          What is the e-Gujcop portal and do you handle submissions on it?
-          <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-        </button>
-        <div class="faq-ans"><p>e-Gujcop is GPCB's online portal for all consent and authorization applications, compliance report submissions and fee payments. All GPCB applications must now be submitted online through e-Gujcop — physical submissions are no longer accepted. We manage the complete portal workflow including account setup, application filling, document upload, fee calculation and real-time status tracking on your behalf.</p></div>
+      <div class="faq-wrap">
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            What happens if my CTO expires before I file for renewal?
+            <span class="faq-icon"><svg viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span>
+          </button>
+          <div class="faq-ans">
+            <p>Operating after CTO expiry is an offence under the Water Act 1974 and Air Act 1981 and can attract a
+              show-cause notice, closure direction and prosecution. GPCB also has the authority to seal plant and
+              machinery. Filing before expiry — ideally 30–90 days before — is essential to avoid any gap. We track
+              renewal windows for all clients and initiate the process 90 days before expiry.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            Does my company need hazardous waste authorization even if we only generate small quantities?
+            <span class="faq-icon"><svg viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span>
+          </button>
+          <div class="faq-ans">
+            <p>Yes. Hazardous Waste Rules 2016 do not prescribe a minimum quantity threshold for authorization. Any unit
+              generating waste listed in Schedule I, II or III of the Rules requires authorization. Common examples
+              include spent solvents, ETP sludge, used oils, electroplating waste and paint sludge. We first conduct a
+              waste stream audit to identify all applicable schedules before preparing the authorization application.
+            </p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            How long does a typical CTO application take to be granted?
+            <span class="faq-icon"><svg viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span>
+          </button>
+          <div class="faq-ans">
+            <p>Processing times vary by category and GPCB regional office workload. A well-prepared application for
+              Green/Orange category typically receives consent within 30–60 days of submission. Red category
+              applications involve a site inspection and additional scrutiny, typically taking 60–90 days. Incomplete
+              applications or query responses from GPCB can extend timelines significantly — which is why we ensure
+              first-time accuracy in document preparation.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            We are expanding our plant capacity — do we need a new CTE?
+            <span class="faq-icon"><svg viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span>
+          </button>
+          <div class="faq-ans">
+            <p>Any expansion, addition of new products, installation of additional DG sets or boilers, or significant
+              change in raw material or process requires a consent amendment. Operating an expanded facility without
+              amendment is a violation. We assess whether your proposed change requires a fresh CTE or an amendment to
+              existing consent, and manage the amendment application accordingly.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            What is the e-Gujcop portal and do you handle submissions on it?
+            <span class="faq-icon"><svg viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span>
+          </button>
+          <div class="faq-ans">
+            <p>e-Gujcop is GPCB's online portal for all consent and authorization applications, compliance report
+              submissions and fee payments. All GPCB applications must now be submitted online through e-Gujcop —
+              physical submissions are no longer accepted. We manage the complete portal workflow including account
+              setup, application filling, document upload, fee calculation and real-time status tracking on your behalf.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── RELATED SERVICES ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">Related Services</div>
-  <h2 class="sec-title">Services that <em>complement GPCB compliance</em></h2>
+  <!-- ─── RELATED SERVICES ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">Related Services</div>
+    <h2 class="sec-title">Services that <em>complement GPCB compliance</em></h2>
 
-  <div class="related-grid">
-    <a href="svc-eia.html" class="related-card reveal">
-      <div class="related-card-cat">Approvals &amp; Clearances</div>
-      <div class="related-card-title">Environmental Impact Assessment</div>
-      <div class="related-card-desc">Category A/B projects require a full EIA before Environmental Clearance. Our NABET-linked EIA preparation ensures TOR compliance and successful public hearing.</div>
-      <div class="related-card-link">Learn more →</div>
-    </a>
-    <a href="svc-ec.html" class="related-card reveal">
-      <div class="related-card-cat">Approvals &amp; Clearances</div>
-      <div class="related-card-title">Environmental Clearance</div>
-      <div class="related-card-desc">EC from MoEFCC or SEIAA Gujarat is a prerequisite for large-scale projects. We manage the complete EC application, appraisal and post-EC compliance reporting.</div>
-      <div class="related-card-link">Learn more →</div>
-    </a>
-    <a href="svc-iso.html" class="related-card reveal">
-      <div class="related-card-cat">Systems &amp; Certifications</div>
-      <div class="related-card-title">ISO 14001 / ISO 45001</div>
-      <div class="related-card-desc">ISO 14001 environmental management certification aligns directly with GPCB compliance requirements, reducing audit risk and strengthening your GPCB consent file.</div>
-      <div class="related-card-link">Learn more →</div>
-    </a>
-  </div>
-</section>
+    <div class="related-grid">
+      <a href="svc-eia.html" class="related-card reveal">
+        <div class="related-card-cat">Approvals &amp; Clearances</div>
+        <div class="related-card-title">Environmental Impact Assessment</div>
+        <div class="related-card-desc">Category A/B projects require a full EIA before Environmental Clearance. Our
+          NABET-linked EIA preparation ensures TOR compliance and successful public hearing.</div>
+        <div class="related-card-link">Learn more →</div>
+      </a>
+      <a href="svc-ec.html" class="related-card reveal">
+        <div class="related-card-cat">Approvals &amp; Clearances</div>
+        <div class="related-card-title">Environmental Clearance</div>
+        <div class="related-card-desc">EC from MoEFCC or SEIAA Gujarat is a prerequisite for large-scale projects. We
+          manage the complete EC application, appraisal and post-EC compliance reporting.</div>
+        <div class="related-card-link">Learn more →</div>
+      </a>
+      <a href="svc-iso.html" class="related-card reveal">
+        <div class="related-card-cat">Systems &amp; Certifications</div>
+        <div class="related-card-title">ISO 14001 / ISO 45001</div>
+        <div class="related-card-desc">ISO 14001 environmental management certification aligns directly with GPCB
+          compliance requirements, reducing audit risk and strengthening your GPCB consent file.</div>
+        <div class="related-card-link">Learn more →</div>
+      </a>
+    </div>
+  </section>
 
-<!-- ─── CTA BAND ─── -->
-<section class="reveal" style="padding:0 3rem 4rem;max-width:1260px;margin:0 auto;">
+  <!-- ─── CTA BAND ─── -->
+  <section class="reveal" style="padding:0 3rem 4rem;max-width:1260px;margin:0 auto;">
     <div class="cta-band reveal">
-  <div class="cta-left">
-    <h3>Ready to secure your compliance?</h3>
-    <p>Speak with our technical experts to build your sustainability roadmap.</p>
-  </div>
-  <div class="cta-band-btns">
+      <div class="cta-left">
+        <h3>Ready to secure your compliance?</h3>
+        <p>Speak with our technical experts to build your sustainability roadmap.</p>
+      </div>
+      <div class="cta-band-btns">
         <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
       </div>
     </div>
-</section>
+  </section>
 
-<!-- ─── FOOTER ─── -->
-<div id="footer-root"></div>
+  <!-- ─── FOOTER ─── -->
+  <div id="footer-root"></div>
 
-<script type="module" src="/src/js/main.js"></script>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const ans = item.querySelector('.faq-ans');
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-ans').style.maxHeight = null;
-    });
-    if (!open) {
-      item.classList.add('open');
-      ans.style.maxHeight = ans.scrollHeight + 'px';
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const ans = item.querySelector('.faq-ans');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-ans').style.maxHeight = null;
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
     }
-  }
-</script>
+  </script>
 </body>
+
 </html>

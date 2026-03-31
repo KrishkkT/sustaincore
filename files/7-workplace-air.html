@@ -9,6 +9,14 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="sustaincore-shared.css" />
   <style>
+    .svc-hero-pills {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      margin-top: 16rem;
+      align-items: flex-end;
+    }
+
     /* TWA / STEL limits visual */
     .exposure-grid {
       display: grid;
@@ -127,7 +135,7 @@
 
 <body>
 
-<div id="header-root"></div>
+  <div id="header-root"></div>
   <!-- Category Navigation Bar -->
   <nav class="sp-sub-nav">
     <div class="sp-sub-nav-inner">
@@ -196,7 +204,7 @@
       </div>
       <!-- 07 Air Monitoring -->
       <div class="sp-sub-nav-item">
-        <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle">Air Monitoring</a>
+        <a href="/air-monitoring.html" class="sp-sub-nav-link active sp-dropdown-toggle">Air Monitoring</a>
         <div class="sp-dropdown">
           <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack Monitoring</a>
           <a href="/air-monitoring.html#ambient" class="sp-dropdown-link">Ambient Air Quality</a>
@@ -208,74 +216,78 @@
   </nav>
 
 
-  <div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
   <section class="svc-hero reveal">
-    <div class="svc-hero-inner">
-      <div class="bc">
-        <a href="/index.html">Home</a>
-        <span class="sep">/</span>
-        <a href="/sustaincore_services.html">Air Quality Monitoring</a>
-        <span class="sep">/</span>
-        <span>Workplace Air Quality Monitoring</span>
-      </div>
+      <div class="svc-hero-inner">
+    <div class="bc">
+      <a href="/index.html">Home</a>
+      <span class="sep">/</span>
+      <a href="/air-monitoring.html">Air Monitoring</a>
+      <span class="sep">/</span>
+      <span>Workplace Air Quality</span>
+    </div>
 
-      <div class="svc-hero-body">
-        <div class="svc-hero-left">
-          <h1 class="svc-hero-title">
-            Workplace Air<br>
-            <em>Quality Monitoring</em><br>
-            <span class="bt">OEL &middot; TWA &middot; STEL Assessment</span>
-          </h1>
-          <p class="svc-hero-desc">
-            Workplace air quality monitoring measures the concentration of airborne chemical, dust and biological hazards at worker breathing zones inside your facility &mdash; comparing them against Occupational Exposure Limits (OELs). <strong>It is a legal duty under the Factories Act, 1948, the Manufacture, Storage and Import of Hazardous Chemicals Rules and ISO 45001.</strong> It also directly drives your EcoVadis Labour score and BRSR Principle 5 disclosures on worker health and safety.
-          </p>
-          <div style="margin-top:.5rem;">
-            <a href="/index.html#consultation" class="btn-primary">Secure Your Compliance</a>
-          </div>
-        </div>
-        <div class="svc-hero-pills">
-          <div class="svc-hero-pill">
-            <span class="pill-icon"></span>
-            <span><strong>Factories Act</strong> 1948 Compliance</span>
-          </div>
-          <div class="svc-hero-pill blue">
-            <span class="pill-icon"></span>
-            <span>ACGIH TLV / IS 5182 Methods</span>
-          </div>
-          <div class="svc-hero-pill">
-            <span class="pill-icon"></span>
-            <span><strong>Personal &amp; Area</strong> Sampling</span>
-          </div>
-          <div class="svc-hero-pill blue">
-            <span class="pill-icon"></span>
-            <span>NABL Accredited Analysis</span>
-          </div>
-          <div class="svc-hero-pill">
-            <span class="pill-icon"></span>
-            <span>ISO 45001 aligned</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
-      <div class="svc-hero-img">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80" alt="Workplace air quality monitoring industrial hygiene sampling" />
-        <div class="svc-hero-img-caption">
-          <div class="svc-hero-img-title">Protecting Workers<br><em>at the Breathing Zone</em></div>
-          <div class="svc-hero-stat-row">
-            <div class="svc-hero-stat">
-              <div class="svc-hero-stat-v">700+</div>
-              <div class="svc-hero-stat-l">OEL Limits</div>
+        <div class="svc-hero-body">
+          <div class="svc-hero-left">
+            <h1 class="svc-hero-title">
+              Workplace Air<br>
+              <em>Quality Monitoring</em><br>
+              <span class="bt">OEL &middot; TWA &middot; STEL Assessment</span>
+            </h1>
+            <p class="svc-hero-desc">
+              Workplace air quality monitoring measures the concentration of airborne chemical, dust and biological
+              hazards at worker breathing zones inside your facility &mdash; comparing them against Occupational
+              Exposure Limits (OELs). <strong>It is a legal duty under the Factories Act, 1948, the Manufacture, Storage
+                and Import of Hazardous Chemicals Rules and ISO 45001.</strong> It also directly drives your EcoVadis
+              Labour score and BRSR Principle 5 disclosures on worker health and safety.
+            </p>
+            <div style="margin-top:.5rem;">
+              <a href="/index.html#consultation" class="btn-primary">Secure Your Compliance</a>
             </div>
-            <div class="svc-hero-stat">
-              <div class="svc-hero-stat-v">8 hr</div>
-              <div class="svc-hero-stat-l">TWA Reference</div>
+          </div>
+          <div class="svc-hero-pills">
+            <div class="svc-hero-pill">
+              <span class="pill-icon"></span>
+              <span><strong>Factories Act</strong> 1948 Compliance</span>
+            </div>
+            <div class="svc-hero-pill blue">
+              <span class="pill-icon"></span>
+              <span>ACGIH TLV / IS 5182 Methods</span>
+            </div>
+            <div class="svc-hero-pill">
+              <span class="pill-icon"></span>
+              <span><strong>Personal &amp; Area</strong> Sampling</span>
+            </div>
+            <div class="svc-hero-pill blue">
+              <span class="pill-icon"></span>
+              <span>NABL Accredited Analysis</span>
+            </div>
+            <div class="svc-hero-pill">
+              <span class="pill-icon"></span>
+              <span>ISO 45001 aligned</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+        <div class="svc-hero-img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80"
+            alt="Workplace air quality monitoring industrial hygiene sampling" />
+          <div class="svc-hero-img-caption">
+            <div class="svc-hero-img-title">Protecting Workers<br><em>at the Breathing Zone</em></div>
+            <div class="svc-hero-stat-row">
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">700+</div>
+                <div class="svc-hero-stat-l">OEL Limits</div>
+              </div>
+              <div class="svc-hero-stat">
+                <div class="svc-hero-stat-v">8 hr</div>
+                <div class="svc-hero-stat-l">TWA Reference</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="rule" style="margin-top:3rem;"></div>
 
     <!-- STATS -->
@@ -784,42 +796,42 @@
       <div class="sec-label">Related services</div>
       <h2 class="sec-title">Services that <em>complement workplace monitoring</em></h2>
       <div class="related-grid mt2">
-        <a href="4-stack-monitoring.html" class="related-card reveal">
+        <a href="/air-monitoring.html#stack" class="related-card reveal">
           <div class="related-card-cat">Air Quality Monitoring</div>
           <div class="related-card-title">Stack Emission Monitoring</div>
           <div class="related-card-desc">Source-level stack emission data confirms that control equipment is working
             &mdash; complementing the worker-level exposure data from indoor monitoring.</div>
           <div class="related-card-link">Learn more &rarr;</div>
         </a>
-        <a href="svc-ecovadis.html" class="related-card reveal">
+        <a href="3-ecovadis.html" class="related-card reveal">
           <div class="related-card-cat">Assessments &amp; Ratings</div>
           <div class="related-card-title">EcoVadis Assessment</div>
-          <div class="related-card-desc">Documented workplace air quality monitoring with corrective actions is one of
-            the strongest evidence sources for improving your EcoVadis Labour &amp; Human Rights theme score.</div>
+          <div class="related-card-desc">NABL-accredited manual stack emission monitoring for all industrial processes
+            &mdash; essential for CTO compliance and pollution control audits.</div>
           <div class="related-card-link">Learn more &rarr;</div>
         </a>
-        <a href="svc-iso.html" class="related-card reveal">
-          <div class="related-card-cat">Systems &amp; Certifications</div>
-          <div class="related-card-title">ISO 45001 Certification</div>
-          <div class="related-card-desc">Workplace air quality monitoring is a core evidence requirement for ISO 45001
-            Clause 6.1 hazard identification and Clause 8.1 operational control compliance.</div>
+        <a href="/management-systems.html#iso45001" class="related-card reveal">
+          <div class="related-card-cat">Env. Audits</div>
+          <div class="related-card-title">ISO 45001 Health & Safety</div>
+          <div class="related-card-desc">Workplace air quality data is a primary requirement for ISO 45001 audits and
+            maintaining safe working environments.</div>
           <div class="related-card-link">Learn more &rarr;</div>
         </a>
       </div>
     </div>
 
-  <!-- ─── CTA BAND ─── -->
-  <section class="svc-section">
-    <div class="cta-band reveal">
-  <div class="cta-left">
-    <h3>Ready to secure your compliance?</h3>
-    <p>Speak with our technical experts to build your sustainability roadmap.</p>
-  </div>
-  <div class="cta-band-btns">
-        <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
+    <!-- ─── CTA BAND ─── -->
+    <section class="svc-section">
+      <div class="cta-band reveal">
+        <div class="cta-left">
+          <h3>Ready to secure your compliance?</h3>
+          <p>Speak with our technical experts to build your sustainability roadmap.</p>
+        </div>
+        <div class="cta-band-btns">
+          <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   </div>
 
   <!-- ─── FOOTER ─── -->
@@ -846,4 +858,5 @@
     });
   </script>
 </body>
+
 </html>

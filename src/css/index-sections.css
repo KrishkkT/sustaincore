@@ -39,7 +39,7 @@
   padding: 0 !important;
 }
 
-.hero > * {
+.hero>* {
   margin: 0 !important;
 }
 
@@ -1161,6 +1161,7 @@ canvas {
 .s3-header {
   padding: 4rem 3rem 2.5rem;
   display: grid;
+  margin-top: -1.5rem;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: end;

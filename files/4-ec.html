@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
   <meta charset="UTF-8" />
@@ -18,6 +19,7 @@
       gap: 1.1rem;
       margin-top: 1.75rem;
     }
+
     .ec-type-card {
       background: var(--w);
       border: 1px solid var(--bdr);
@@ -27,43 +29,67 @@
       overflow: hidden;
       transition: transform .2s, box-shadow .2s, border-color .2s;
     }
+
     .ec-type-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 32px rgba(26,74,107,.1);
+      box-shadow: 0 12px 32px rgba(26, 74, 107, .1);
       border-color: var(--g35);
     }
+
     .ec-type-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: linear-gradient(to right, var(--g), var(--b));
     }
+
     .ec-type-icon {
-      width: 38px; height: 38px;
+      width: 38px;
+      height: 38px;
       border-radius: 10px;
       background: var(--g10);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: .85rem;
     }
+
     .ec-type-icon svg {
-      width: 18px; height: 18px;
-      stroke: var(--g); fill: none;
-      stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+      width: 18px;
+      height: 18px;
+      stroke: var(--g);
+      fill: none;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
+
     .ec-type-tag {
-      font-size: 10px; font-weight: 500;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--g); margin-bottom: .35rem;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--g);
+      margin-bottom: .35rem;
     }
+
     .ec-type-title {
-      font-size: 14px; font-weight: 600;
-      color: var(--text); margin-bottom: .45rem;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .45rem;
     }
+
     .ec-type-desc {
-      font-size: 12.5px; font-weight: 300;
-      color: var(--muted); line-height: 1.75;
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.75;
     }
+
     /* doc checklist */
     .doc-cols {
       display: grid;
@@ -71,114 +97,177 @@
       gap: 1rem;
       margin-top: 1.5rem;
     }
+
     .doc-group {
       background: var(--bg2);
       border-radius: 14px;
       border: 1px solid var(--bdr);
       padding: 1.4rem;
     }
+
     .doc-group-title {
-      font-size: 13px; font-weight: 600;
-      color: var(--text); margin-bottom: .85rem;
-      display: flex; align-items: center; gap: .5rem;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .85rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
     }
+
     .doc-group-title span {
-      width: 6px; height: 6px;
-      border-radius: 50%; background: var(--g);
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--g);
       flex-shrink: 0;
     }
+
     .doc-list {
       list-style: none;
-      display: flex; flex-direction: column; gap: .5rem;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
     }
+
     .doc-list li {
-      font-size: 12.5px; font-weight: 300;
-      color: var(--muted); padding-left: 1rem;
-      position: relative; line-height: 1.6;
-    }
-    .doc-list li::before {
-      content: '✓';
-      position: absolute; left: 0;
-      color: var(--g); font-size: 11px;
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--muted);
+      padding-left: 1rem;
+      position: relative;
       line-height: 1.6;
     }
+
+    .doc-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--g);
+      font-size: 11px;
+      line-height: 1.6;
+    }
+
     /* conditions tracker */
     .cond-grid {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: .85rem;
       margin-top: 1.5rem;
     }
+
     .cond-item {
       background: var(--w);
       border: 1px solid var(--bdr);
       border-radius: 12px;
       padding: 1.1rem 1.2rem;
-      display: flex; gap: .85rem; align-items: flex-start;
+      display: flex;
+      gap: .85rem;
+      align-items: flex-start;
     }
+
     .cond-badge {
-      width: 36px; height: 36px;
-      border-radius: 9px;
+      width: 45px;
+      height: 45px;
       background: var(--b10);
       flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 600;
-      color: var(--b); text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--b);
+      text-align: center;
       line-height: 1.2;
     }
+
     .cond-title {
-      font-size: 13px; font-weight: 600;
-      color: var(--text); margin-bottom: .2rem;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .2rem;
     }
+
     .cond-desc {
-      font-size: 12px; font-weight: 300;
-      color: var(--muted); line-height: 1.65;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
     }
+
     /* timeline strip */
     .ec-timeline {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 1px;
-      background: var(--bdr);
       border-radius: 16px;
       overflow: hidden;
       margin-top: 1.75rem;
     }
+
     .ec-tl-step {
       background: var(--w);
       padding: 1.4rem 1.1rem;
       position: relative;
     }
+
     .ec-tl-num {
-      font-size: 28px; font-weight: 700;
-      color: var(--g10); line-height: 1;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--g10);
+      line-height: 1;
       margin-bottom: .4rem;
     }
+
     .ec-tl-title {
-      font-size: 12.5px; font-weight: 600;
-      color: var(--text); margin-bottom: .3rem;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .3rem;
     }
+
     .ec-tl-time {
-      font-size: 11px; font-weight: 500;
-      color: var(--g); letter-spacing: .04em;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--g);
+      letter-spacing: .04em;
       margin-bottom: .4rem;
     }
+
     .ec-tl-desc {
-      font-size: 11.5px; font-weight: 300;
-      color: var(--muted); line-height: 1.6;
+      font-size: 11.5px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
     }
+
     .ec-tl-arrow {
       position: absolute;
-      top: 1.4rem; right: -8px;
-      width: 16px; height: 16px;
+      top: 1.4rem;
+      right: -8px;
+      width: 16px;
+      height: 16px;
       border-radius: 50%;
       background: var(--bg);
       border: 1px solid var(--bdr);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 9px; color: var(--g); z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: var(--g);
+      z-index: 2;
+    }
+
+    .svc-hero-pills {
+      display: flex;
+      margin-top: 16rem;
+      flex-direction: column;
+      gap: .7rem;
+      align-items: flex-end;
     }
   </style>
 </head>
+
 <body>
 
   <div id="header-root"></div>
@@ -270,9 +359,9 @@
       <div class="bc">
         <a href="/index.html">Home</a>
         <span class="sep">/</span>
-        <a href="/clearances-eia.html">GPCB Compliance</a>
+        <a href="/clearances-eia.html">GPCB & Environmental Clearances</a>
         <span class="sep">/</span>
-        <span>Environmental Clearance</span>
+        <span>Environmental Clearance (EC)</span>
       </div>
 
       <div class="svc-hero-body">
@@ -282,7 +371,10 @@
             <span class="bt">MoEFCC &amp; SEIAA</span>
           </h1>
           <p class="svc-hero-desc">
-            Environmental Clearance is the single most consequential regulatory approval for any large project in India — no construction, no financing, no land acquisition proceeding can be completed without it. <strong>A rejected or delayed EC can cost months and hundreds of crores.</strong> We manage the complete EC lifecycle: application, appraisal representation, EC grant and post-EC compliance.
+            Environmental Clearance is the single most consequential regulatory approval for any large project in India
+            — no construction, no financing, no land acquisition proceeding can be completed without it. <strong>A
+              rejected or delayed EC can cost months and hundreds of crores.</strong> We manage the complete EC
+            lifecycle: application, appraisal representation, EC grant and post-EC compliance.
           </p>
           <div style="margin-top:.5rem;">
             <a href="/index.html#consultation" class="btn-primary">Secure Your Clearance</a>
@@ -313,507 +405,664 @@
       </div>
     </div>
 
-  <div style="max-width:1260px;margin:0 auto;padding:0 3rem 3rem;">
-    <div class="svc-hero-img">
-      <img src="../assets/ec-hero.jpg" alt="Environmental Clearance — Project appraisal" />
-      <div class="svc-hero-img-caption">
-        <div class="svc-hero-img-title">From application to <em>project commencement</em></div>
-        <div class="svc-hero-stat-row">
-          <div class="svc-hero-stat">
-            <div class="svc-hero-stat-v">5 Years</div>
-            <div class="svc-hero-stat-l">EC Validity</div>
+    <div style="max-width:1260px;margin:0 auto;padding:0 3rem 3rem;">
+      <div class="svc-hero-img">
+        <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?q=80&w=2670&auto=format&fit=crop"
+          alt="Environmental Clearance — Project appraisal" />
+        <div class="svc-hero-img-caption">
+          <div class="svc-hero-img-title">From application to <em>project commencement</em></div>
+          <div class="svc-hero-stat-row">
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">5 Years</div>
+              <div class="svc-hero-stat-l">EC Validity</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">6-Monthly</div>
+              <div class="svc-hero-stat-l">Compliance Reports</div>
+            </div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">Parivesh</div>
+              <div class="svc-hero-stat-l">Online Portal</div>
+            </div>
           </div>
-          <div class="svc-hero-stat">
-            <div class="svc-hero-stat-v">6-Monthly</div>
-            <div class="svc-hero-stat-l">Compliance Reports</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── STATS ─── -->
+  <section class="svc-section reveal">
+    <div class="stats-row">
+      <div class="stat-block">
+        <div class="stat-block-v">5 Yrs</div>
+        <div class="stat-block-l">EC validity for new projects</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">10 Yrs</div>
+        <div class="stat-block-l">EC validity for mining projects</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">6-Mo</div>
+        <div class="stat-block-l">Compliance report frequency</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">₹ EPA</div>
+        <div class="stat-block-l">Criminal liability for non-compliance</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── EC TYPES ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Types of EC</div>
+      <h2 class="sec-title">Environmental Clearance <em>categories we manage</em></h2>
+      <p class="sec-sub">From first-time greenfield approvals to expansions, amendments and validity extensions — we
+        cover the complete EC lifecycle.</p>
+
+      <div class="ec-types-grid">
+        <div class="ec-type-card reveal">
+          <div class="ec-type-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <polyline points="2 17 12 22 22 17" />
+              <polyline points="2 12 12 17 22 12" />
+            </svg>
           </div>
-          <div class="svc-hero-stat">
-            <div class="svc-hero-stat-v">Parivesh</div>
-            <div class="svc-hero-stat-l">Online Portal</div>
+          <div class="ec-type-tag">New Project</div>
+          <div class="ec-type-title">Fresh Environmental Clearance</div>
+          <div class="ec-type-desc">First-time EC for greenfield or new projects crossing EIA Notification Schedule
+            thresholds. Full EIA process required — TOR, baseline, EIA report, public hearing, appraisal and EC grant.
+            Valid 5 years (10 years for mining).</div>
+        </div>
+
+        <div class="ec-type-card reveal">
+          <div class="ec-type-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="23 4 23 10 17 10" />
+              <polyline points="1 20 1 14 7 14" />
+              <path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+            </svg>
+          </div>
+          <div class="ec-type-tag">Capacity Expansion</div>
+          <div class="ec-type-title">EC for Project Expansion</div>
+          <div class="ec-type-desc">Required when existing projects exceed 25% capacity expansion or add new
+            products/activities crossing Schedule thresholds. May require updated baseline data and supplementary EIA.
+            Managed through Parivesh as an expansion EC application.</div>
+        </div>
+
+        <div class="ec-type-card reveal">
+          <div class="ec-type-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+            </svg>
+          </div>
+          <div class="ec-type-tag">Change in Scope</div>
+          <div class="ec-type-title">EC Amendment</div>
+          <div class="ec-type-desc">For changes within existing EC parameters — technology modification, process
+            changes, raw material substitution or minor capacity adjustments not crossing expansion thresholds. Filed
+            through Parivesh amendment module with supporting justification report.</div>
+        </div>
+
+        <div class="ec-type-card reveal">
+          <div class="ec-type-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </div>
+          <div class="ec-type-tag">EC Running Out</div>
+          <div class="ec-type-title">Validity Extension</div>
+          <div class="ec-type-desc">EC validity can be extended if the project is not commissioned before the 5-year
+            expiry. Extension application requires evidence of project progress, updated compliance status and
+            justification for delay. Must be filed before EC lapses to avoid fresh EC.</div>
+        </div>
+
+        <div class="ec-type-card reveal">
+          <div class="ec-type-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+          </div>
+          <div class="ec-type-tag">Ownership Change</div>
+          <div class="ec-type-title">EC Transfer</div>
+          <div class="ec-type-desc">When a project changes ownership through sale, merger, demerger or inheritance, the
+            EC must be formally transferred to the new entity. We manage the transfer application with all supporting
+            corporate documentation.</div>
+        </div>
+
+        <div class="ec-type-card reveal">
+          <div class="ec-type-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <div class="ec-type-tag">Ongoing Obligation</div>
+          <div class="ec-type-title">Post-EC Compliance Reporting</div>
+          <div class="ec-type-desc">Six-monthly compliance reports (Half-yearly and Annual reports to MoEFCC/SEIAA and
+            regional office) are mandatory throughout the project lifecycle. Non-submission attracts legal action. We
+            prepare and file all reports on schedule.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── EC TIMELINE ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">Application to Approval</div>
+    <h2 class="sec-title">EC process — <em>from submission to grant</em></h2>
+    <p class="sec-sub">The EC process is distinct from EIA preparation — it covers the post-EIA regulatory pathway. Here
+      is what happens after your EIA report is ready.</p>
+
+    <div class="ec-timeline">
+      <div class="ec-tl-step">
+        <div class="ec-tl-arrow">→</div>
+        <div class="sp-step-num">01</div>
+        <div class="ec-tl-title">Parivesh Submission</div>
+        <div class="ec-tl-time">Week 1–2</div>
+        <div class="ec-tl-desc">Upload EIA report, public hearing minutes, Form 1, Form 2 and all annexures to the
+          Parivesh portal. Screening for completeness before formal submission.</div>
+      </div>
+      <div class="ec-tl-step">
+        <div class="ec-tl-arrow">→</div>
+        <div class="sp-step-num">02</div>
+        <div class="ec-tl-title">Scrutiny &amp; Deficiency</div>
+        <div class="ec-tl-time">Week 2–6</div>
+        <div class="ec-tl-desc">MoEFCC/SEIAA reviews the application for completeness and may raise deficiency queries.
+          We respond to all queries with supplementary data within the prescribed timeline.</div>
+      </div>
+      <div class="ec-tl-step">
+        <div class="ec-tl-arrow">→</div>
+        <div class="sp-step-num">03</div>
+        <div class="ec-tl-title">EAC / SEAC Appraisal</div>
+        <div class="ec-tl-time">Month 2–4</div>
+        <div class="ec-tl-desc">The Expert Appraisal Committee (EAC) or SEAC Gujarat schedules a presentation meeting.
+          We prepare the detailed presentation and represent the project proponent at the appraisal.</div>
+      </div>
+      <div class="ec-tl-step">
+        <div class="ec-tl-arrow">→</div>
+        <div class="sp-step-num">04</div>
+        <div class="ec-tl-title">Additional Information</div>
+        <div class="ec-tl-time">Month 3–5</div>
+        <div class="ec-tl-desc">EAC/SEAC typically requests additional data — risk modelling, groundwater studies,
+          revised EMP budgets. We compile and submit complete responses within the stipulated period.</div>
+      </div>
+      <div class="ec-tl-step">
+        <div class="sp-step-num">05</div>
+        <div class="ec-tl-title">EC Order Issued</div>
+        <div class="ec-tl-time">Month 4–6</div>
+        <div class="ec-tl-desc">EC order issued with specific conditions. We review all conditions, flag compliance
+          obligations and set up the post-EC compliance tracking system before project commencement.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── DOCUMENTS ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Documentation</div>
+      <h2 class="sec-title">What goes into the <em>EC application file</em></h2>
+      <p class="sec-sub">An incomplete or poorly organised EC application is a leading cause of multiple appraisal
+        rounds and timeline slippage. We compile every document to appraiser-ready standard.</p>
+
+      <div class="doc-cols">
+        <div class="doc-group">
+          <div class="doc-group-title"><span></span>Statutory &amp; Corporate Documents</div>
+          <ul class="doc-list">
+            <li>Form 1 / Form 1A (signed by authorised signatory)</li>
+            <li>Pre-feasibility report with project cost breakdown</li>
+            <li>Land documents — ownership, lease, land use conversion</li>
+            <li>NOC from local body (Municipality/Gram Panchayat)</li>
+            <li>Consent letter from project proponent</li>
+            <li>Corporate environmental policy (board-approved)</li>
+            <li>MoA / AoA for company identification</li>
+            <li>Board resolution authorising EC application</li>
+          </ul>
+        </div>
+        <div class="doc-group">
+          <div class="doc-group-title"><span></span>Technical &amp; Environmental Documents</div>
+          <ul class="doc-list">
+            <li>Complete EIA report (all chapters, NABL reports, maps)</li>
+            <li>Environmental Management Plan with implementation budget</li>
+            <li>Risk assessment and Disaster Management Plan</li>
+            <li>Public hearing minutes and response-to-comments document</li>
+            <li>Air dispersion and groundwater modelling outputs</li>
+            <li>Ecology impact assessment and greenbelt proposal</li>
+            <li>Water balance and effluent/emission summary</li>
+            <li>Six-monthly monitoring plan and KPI framework</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── POST-EC CONDITIONS ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">Post-EC Compliance</div>
+    <h2 class="sec-title">EC conditions — <em>your binding obligations</em></h2>
+    <p class="sec-sub">An EC order is not the finish line — it is the start of a legally binding compliance programme.
+      Every EC carries Specific and General conditions that must be tracked, implemented and reported every six months.
+    </p>
+
+    <div class="cond-grid">
+      <div class="cond-item reveal">
+        <div class="cond-badge">6-Mo<br>Report</div>
+        <div>
+          <div class="cond-title">Half-Yearly Compliance Reports</div>
+          <div class="cond-desc">Mandatory six-monthly reports to MoEFCC/SEIAA covering all EC conditions —
+            environmental monitoring results, EMP implementation status, expenditure and upcoming commitments.</div>
+        </div>
+      </div>
+      <div class="cond-item reveal">
+        <div class="cond-badge">EMP<br>Fund</div>
+        <div>
+          <div class="cond-title">Environmental Management Plan Implementation</div>
+          <div class="cond-desc">EMP budget commitments are binding. Annual expenditure on pollution control, greenbelt,
+            community development and monitoring must be documented and reported against EC commitments.</div>
+        </div>
+      </div>
+      <div class="cond-item reveal">
+        <div class="cond-badge">Trees<br>&amp; Green</div>
+        <div>
+          <div class="cond-title">Greenbelt &amp; Afforestation</div>
+          <div class="cond-desc">Most industrial ECs mandate greenbelt development — typically 33% of project land —
+            with prescribed species and survival rate reporting. Annual plantation and survival count required.</div>
+        </div>
+      </div>
+      <div class="cond-item reveal">
+        <div class="cond-badge">Water<br>Mgmt</div>
+        <div>
+          <div class="cond-title">Water Conservation Compliance</div>
+          <div class="cond-desc">EC conditions on water source, maximum withdrawal, recycling ratios and zero liquid
+            discharge (for high-risk sectors) must be tracked against actual operational data every six months.</div>
+        </div>
+      </div>
+      <div class="cond-item reveal">
+        <div class="cond-badge">Air<br>Qual</div>
+        <div>
+          <div class="cond-title">Ambient &amp; Stack Monitoring</div>
+          <div class="cond-desc">Periodic ambient air, stack emission and noise monitoring per EC-specified frequencies.
+            Results compared to EC conditions and baseline values — deviations must be explained in compliance reports.
+          </div>
+        </div>
+      </div>
+      <div class="cond-item reveal">
+        <div class="cond-badge">CSR<br>Dev</div>
+        <div>
+          <div class="cond-title">Community Development Spending</div>
+          <div class="cond-desc">Many EC orders specify minimum CSR/community development expenditure in the project's
+            local area. Expenditure must be documented with utilisation certificates and beneficiary records for
+            compliance reports.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── DELIVERABLES ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Key Deliverables</div>
+      <h2 class="sec-title">What you receive from every <em>EC engagement</em></h2>
+
+      <div class="deliverables-grid">
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+          </div>
+          <div>
+            <div class="deliv-title">Complete Parivesh Application File</div>
+            <div class="deliv-desc">All forms, reports, annexures and supporting documents organised per Parivesh portal
+              upload requirements — structured for zero-deficiency submission.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
+          <div>
+            <div class="deliv-title">EAC / SEAC Presentation</div>
+            <div class="deliv-desc">Professional appraisal committee presentation covering project overview, impact
+              summary, mitigation commitments and EMP — prepared to answer the standard EAC/SEAC question set.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="9 11 12 14 22 4" />
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+            </svg>
+          </div>
+          <div>
+            <div class="deliv-title">Environmental Clearance Order</div>
+            <div class="deliv-desc">The final EC order from MoEFCC or SEIAA Gujarat — the primary legal document
+              authorising project commencement. Stored with all conditions indexed for compliance tracking.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+            </svg>
+          </div>
+          <div>
+            <div class="deliv-title">Query Response Documents</div>
+            <div class="deliv-desc">Complete written responses to all EAC/SEAC additional information requests — with
+              supporting data, modelling outputs and technical justifications — submitted within the stipulated period.
+            </div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            </svg>
+          </div>
+          <div>
+            <div class="deliv-title">EC Conditions Register</div>
+            <div class="deliv-desc">Indexed register of all Specific and General conditions from your EC order — each
+              condition tagged with responsible owner, implementation timeline, monitoring method and reporting
+              frequency.</div>
+          </div>
+        </div>
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </div>
+          <div>
+            <div class="deliv-title">Six-Monthly Compliance Reports</div>
+            <div class="deliv-desc">Prepared and filed half-yearly compliance reports to MoEFCC/SEIAA covering all EC
+              conditions — environmental monitoring, EMP implementation, afforestation and community development
+              expenditure.</div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── STATS ─── -->
-<section class="svc-section reveal">
-  <div class="stats-row">
-    <div class="stat-block">
-      <div class="stat-block-v">5 Yrs</div>
-      <div class="stat-block-l">EC validity for new projects</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-block-v">10 Yrs</div>
-      <div class="stat-block-l">EC validity for mining projects</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-block-v">6-Mo</div>
-      <div class="stat-block-l">Compliance report frequency</div>
-    </div>
-    <div class="stat-block">
-      <div class="stat-block-v">₹ EPA</div>
-      <div class="stat-block-l">Criminal liability for non-compliance</div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── EC TYPES ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Types of EC</div>
-    <h2 class="sec-title">Environmental Clearance <em>categories we manage</em></h2>
-    <p class="sec-sub">From first-time greenfield approvals to expansions, amendments and validity extensions — we cover the complete EC lifecycle.</p>
-
-    <div class="ec-types-grid">
-      <div class="ec-type-card reveal">
-        <div class="ec-type-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+  <!-- ─── WHO THIS IS FOR ─── -->
+  <section class="svc-section reveal">
+    <div class="who-section">
+      <div class="who-inner">
+        <div class="who-label">Who This Is For</div>
+        <div class="who-title">Right for your organisation if you are…</div>
+        <div class="who-chips">
+          <span class="who-chip">Greenfield project requiring first-time EC before construction</span>
+          <span class="who-chip">Expanding project crossing EIA Notification Schedule thresholds</span>
+          <span class="who-chip">Company with an existing EC approaching expiry</span>
+          <span class="who-chip">Project with pending EAC or SEAC queries requiring technical response</span>
+          <span class="who-chip">Business acquiring a project that requires EC transfer</span>
+          <span class="who-chip">Organisation falling behind on post-EC six-monthly compliance reports</span>
+          <span class="who-chip">Project with EC amendment needed for process / technology change</span>
+          <span class="who-chip">Infrastructure developer managing EC across multiple project phases</span>
         </div>
-        <div class="ec-type-tag">New Project</div>
-        <div class="ec-type-title">Fresh Environmental Clearance</div>
-        <div class="ec-type-desc">First-time EC for greenfield or new projects crossing EIA Notification Schedule thresholds. Full EIA process required — TOR, baseline, EIA report, public hearing, appraisal and EC grant. Valid 5 years (10 years for mining).</div>
-      </div>
 
-      <div class="ec-type-card reveal">
-        <div class="ec-type-icon">
-          <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
-        </div>
-        <div class="ec-type-tag">Capacity Expansion</div>
-        <div class="ec-type-title">EC for Project Expansion</div>
-        <div class="ec-type-desc">Required when existing projects exceed 25% capacity expansion or add new products/activities crossing Schedule thresholds. May require updated baseline data and supplementary EIA. Managed through Parivesh as an expansion EC application.</div>
-      </div>
-
-      <div class="ec-type-card reveal">
-        <div class="ec-type-icon">
-          <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        </div>
-        <div class="ec-type-tag">Change in Scope</div>
-        <div class="ec-type-title">EC Amendment</div>
-        <div class="ec-type-desc">For changes within existing EC parameters — technology modification, process changes, raw material substitution or minor capacity adjustments not crossing expansion thresholds. Filed through Parivesh amendment module with supporting justification report.</div>
-      </div>
-
-      <div class="ec-type-card reveal">
-        <div class="ec-type-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <div class="ec-type-tag">EC Running Out</div>
-        <div class="ec-type-title">Validity Extension</div>
-        <div class="ec-type-desc">EC validity can be extended if the project is not commissioned before the 5-year expiry. Extension application requires evidence of project progress, updated compliance status and justification for delay. Must be filed before EC lapses to avoid fresh EC.</div>
-      </div>
-
-      <div class="ec-type-card reveal">
-        <div class="ec-type-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <div class="ec-type-tag">Ownership Change</div>
-        <div class="ec-type-title">EC Transfer</div>
-        <div class="ec-type-desc">When a project changes ownership through sale, merger, demerger or inheritance, the EC must be formally transferred to the new entity. We manage the transfer application with all supporting corporate documentation.</div>
-      </div>
-
-      <div class="ec-type-card reveal">
-        <div class="ec-type-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        </div>
-        <div class="ec-type-tag">Ongoing Obligation</div>
-        <div class="ec-type-title">Post-EC Compliance Reporting</div>
-        <div class="ec-type-desc">Six-monthly compliance reports (Half-yearly and Annual reports to MoEFCC/SEIAA and regional office) are mandatory throughout the project lifecycle. Non-submission attracts legal action. We prepare and file all reports on schedule.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── EC TIMELINE ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">Application to Approval</div>
-  <h2 class="sec-title">EC process — <em>from submission to grant</em></h2>
-  <p class="sec-sub">The EC process is distinct from EIA preparation — it covers the post-EIA regulatory pathway. Here is what happens after your EIA report is ready.</p>
-
-  <div class="ec-timeline">
-    <div class="ec-tl-step">
-      <div class="ec-tl-arrow">→</div>
-      <div class="sp-step-num">01</div>
-      <div class="ec-tl-title">Parivesh Submission</div>
-      <div class="ec-tl-time">Week 1–2</div>
-      <div class="ec-tl-desc">Upload EIA report, public hearing minutes, Form 1, Form 2 and all annexures to the Parivesh portal. Screening for completeness before formal submission.</div>
-    </div>
-    <div class="ec-tl-step">
-      <div class="ec-tl-arrow">→</div>
-      <div class="sp-step-num">02</div>
-      <div class="ec-tl-title">Scrutiny &amp; Deficiency</div>
-      <div class="ec-tl-time">Week 2–6</div>
-      <div class="ec-tl-desc">MoEFCC/SEIAA reviews the application for completeness and may raise deficiency queries. We respond to all queries with supplementary data within the prescribed timeline.</div>
-    </div>
-    <div class="ec-tl-step">
-      <div class="ec-tl-arrow">→</div>
-      <div class="sp-step-num">03</div>
-      <div class="ec-tl-title">EAC / SEAC Appraisal</div>
-      <div class="ec-tl-time">Month 2–4</div>
-      <div class="ec-tl-desc">The Expert Appraisal Committee (EAC) or SEAC Gujarat schedules a presentation meeting. We prepare the detailed presentation and represent the project proponent at the appraisal.</div>
-    </div>
-    <div class="ec-tl-step">
-      <div class="ec-tl-arrow">→</div>
-      <div class="sp-step-num">04</div>
-      <div class="ec-tl-title">Additional Information</div>
-      <div class="ec-tl-time">Month 3–5</div>
-      <div class="ec-tl-desc">EAC/SEAC typically requests additional data — risk modelling, groundwater studies, revised EMP budgets. We compile and submit complete responses within the stipulated period.</div>
-    </div>
-    <div class="ec-tl-step">
-      <div class="sp-step-num">05</div>
-      <div class="ec-tl-title">EC Order Issued</div>
-      <div class="ec-tl-time">Month 4–6</div>
-      <div class="ec-tl-desc">EC order issued with specific conditions. We review all conditions, flag compliance obligations and set up the post-EC compliance tracking system before project commencement.</div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── DOCUMENTS ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Documentation</div>
-    <h2 class="sec-title">What goes into the <em>EC application file</em></h2>
-    <p class="sec-sub">An incomplete or poorly organised EC application is a leading cause of multiple appraisal rounds and timeline slippage. We compile every document to appraiser-ready standard.</p>
-
-    <div class="doc-cols">
-      <div class="doc-group">
-        <div class="doc-group-title"><span></span>Statutory &amp; Corporate Documents</div>
-        <ul class="doc-list">
-          <li>Form 1 / Form 1A (signed by authorised signatory)</li>
-          <li>Pre-feasibility report with project cost breakdown</li>
-          <li>Land documents — ownership, lease, land use conversion</li>
-          <li>NOC from local body (Municipality/Gram Panchayat)</li>
-          <li>Consent letter from project proponent</li>
-          <li>Corporate environmental policy (board-approved)</li>
-          <li>MoA / AoA for company identification</li>
-          <li>Board resolution authorising EC application</li>
-        </ul>
-      </div>
-      <div class="doc-group">
-        <div class="doc-group-title"><span></span>Technical &amp; Environmental Documents</div>
-        <ul class="doc-list">
-          <li>Complete EIA report (all chapters, NABL reports, maps)</li>
-          <li>Environmental Management Plan with implementation budget</li>
-          <li>Risk assessment and Disaster Management Plan</li>
-          <li>Public hearing minutes and response-to-comments document</li>
-          <li>Air dispersion and groundwater modelling outputs</li>
-          <li>Ecology impact assessment and greenbelt proposal</li>
-          <li>Water balance and effluent/emission summary</li>
-          <li>Six-monthly monitoring plan and KPI framework</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── POST-EC CONDITIONS ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">Post-EC Compliance</div>
-  <h2 class="sec-title">EC conditions — <em>your binding obligations</em></h2>
-  <p class="sec-sub">An EC order is not the finish line — it is the start of a legally binding compliance programme. Every EC carries Specific and General conditions that must be tracked, implemented and reported every six months.</p>
-
-  <div class="cond-grid">
-    <div class="cond-item reveal">
-      <div class="cond-badge">6-Mo<br>Report</div>
-      <div>
-        <div class="cond-title">Half-Yearly Compliance Reports</div>
-        <div class="cond-desc">Mandatory six-monthly reports to MoEFCC/SEIAA covering all EC conditions — environmental monitoring results, EMP implementation status, expenditure and upcoming commitments.</div>
-      </div>
-    </div>
-    <div class="cond-item reveal">
-      <div class="cond-badge">EMP<br>Fund</div>
-      <div>
-        <div class="cond-title">Environmental Management Plan Implementation</div>
-        <div class="cond-desc">EMP budget commitments are binding. Annual expenditure on pollution control, greenbelt, community development and monitoring must be documented and reported against EC commitments.</div>
-      </div>
-    </div>
-    <div class="cond-item reveal">
-      <div class="cond-badge">Trees<br>&amp; Green</div>
-      <div>
-        <div class="cond-title">Greenbelt &amp; Afforestation</div>
-        <div class="cond-desc">Most industrial ECs mandate greenbelt development — typically 33% of project land — with prescribed species and survival rate reporting. Annual plantation and survival count required.</div>
-      </div>
-    </div>
-    <div class="cond-item reveal">
-      <div class="cond-badge">Water<br>Mgmt</div>
-      <div>
-        <div class="cond-title">Water Conservation Compliance</div>
-        <div class="cond-desc">EC conditions on water source, maximum withdrawal, recycling ratios and zero liquid discharge (for high-risk sectors) must be tracked against actual operational data every six months.</div>
-      </div>
-    </div>
-    <div class="cond-item reveal">
-      <div class="cond-badge">Air<br>Qual</div>
-      <div>
-        <div class="cond-title">Ambient &amp; Stack Monitoring</div>
-        <div class="cond-desc">Periodic ambient air, stack emission and noise monitoring per EC-specified frequencies. Results compared to EC conditions and baseline values — deviations must be explained in compliance reports.</div>
-      </div>
-    </div>
-    <div class="cond-item reveal">
-      <div class="cond-badge">CSR<br>Dev</div>
-      <div>
-        <div class="cond-title">Community Development Spending</div>
-        <div class="cond-desc">Many EC orders specify minimum CSR/community development expenditure in the project's local area. Expenditure must be documented with utilisation certificates and beneficiary records for compliance reports.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── DELIVERABLES ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Key Deliverables</div>
-    <h2 class="sec-title">What you receive from every <em>EC engagement</em></h2>
-
-    <div class="deliverables-grid">
-      <div class="deliv-card reveal">
-        <div class="sp-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        </div>
-        <div>
-          <div class="deliv-title">Complete Parivesh Application File</div>
-          <div class="deliv-desc">All forms, reports, annexures and supporting documents organised per Parivesh portal upload requirements — structured for zero-deficiency submission.</div>
-        </div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="sp-card-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div>
-          <div class="deliv-title">EAC / SEAC Presentation</div>
-          <div class="deliv-desc">Professional appraisal committee presentation covering project overview, impact summary, mitigation commitments and EMP — prepared to answer the standard EAC/SEAC question set.</div>
-        </div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="sp-card-icon">
-          <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <div>
-          <div class="deliv-title">Environmental Clearance Order</div>
-          <div class="deliv-desc">The final EC order from MoEFCC or SEIAA Gujarat — the primary legal document authorising project commencement. Stored with all conditions indexed for compliance tracking.</div>
-        </div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="sp-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </div>
-        <div>
-          <div class="deliv-title">Query Response Documents</div>
-          <div class="deliv-desc">Complete written responses to all EAC/SEAC additional information requests — with supporting data, modelling outputs and technical justifications — submitted within the stipulated period.</div>
-        </div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="sp-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-        </div>
-        <div>
-          <div class="deliv-title">EC Conditions Register</div>
-          <div class="deliv-desc">Indexed register of all Specific and General conditions from your EC order — each condition tagged with responsible owner, implementation timeline, monitoring method and reporting frequency.</div>
-        </div>
-      </div>
-      <div class="deliv-card reveal">
-        <div class="sp-card-icon">
-          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        </div>
-        <div>
-          <div class="deliv-title">Six-Monthly Compliance Reports</div>
-          <div class="deliv-desc">Prepared and filed half-yearly compliance reports to MoEFCC/SEIAA covering all EC conditions — environmental monitoring, EMP implementation, afforestation and community development expenditure.</div>
+        <div class="sectors-wrap">
+          <div class="sectors-label">Industries We Serve</div>
+          <div class="sectors-grid">
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Chemicals &amp;
+                Petrochemicals</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Mining &amp;
+                Minerals</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Power &amp; Renewable
+                Energy</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Real Estate &amp;
+                Townships</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Ports &amp; Coastal
+                Projects</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Industrial Estates /
+                SEZs</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Food &amp;
+                Beverages</span></div>
+            <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Steel &amp; Cement</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── WHO THIS IS FOR ─── -->
-<section class="svc-section reveal">
-  <div class="who-section">
-    <div class="who-inner">
-      <div class="who-label">Who This Is For</div>
-      <div class="who-title">Right for your organisation if you are…</div>
-      <div class="who-chips">
-        <span class="who-chip">Greenfield project requiring first-time EC before construction</span>
-        <span class="who-chip">Expanding project crossing EIA Notification Schedule thresholds</span>
-        <span class="who-chip">Company with an existing EC approaching expiry</span>
-        <span class="who-chip">Project with pending EAC or SEAC queries requiring technical response</span>
-        <span class="who-chip">Business acquiring a project that requires EC transfer</span>
-        <span class="who-chip">Organisation falling behind on post-EC six-monthly compliance reports</span>
-        <span class="who-chip">Project with EC amendment needed for process / technology change</span>
-        <span class="who-chip">Infrastructure developer managing EC across multiple project phases</span>
+  <!-- ─── FRAMEWORKS ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Regulatory Alignment</div>
+      <h2 class="sec-title">EC compliance <em>cross-mapped to all major frameworks</em></h2>
+      <p class="sec-sub">Environmental Clearance compliance intersects with multiple regulatory and voluntary
+        frameworks. Our EC work builds documentation that simultaneously serves GPCB, CSRD and lender requirements.</p>
+
+      <div class="framework-badges" style="margin-top:1.5rem;">
+        <span class="fw-badge g">EIA Notification 2006</span>
+        <span class="fw-badge g">Environment Protection Act 1986</span>
+        <span class="fw-badge b">GPCB Consent Conditions</span>
+        <span class="fw-badge b">MoEFCC Office Memoranda</span>
+        <span class="fw-badge n">IFC Performance Standards</span>
+        <span class="fw-badge n">Equator Principles</span>
+        <span class="fw-badge g">CSRD Scope 3 — EU Buyers</span>
+        <span class="fw-badge b">BRSR Supply Chain Provisions</span>
+        <span class="fw-badge n">ISO 14001 EMS</span>
+        <span class="fw-badge n">GRI Universal Standards 2021</span>
       </div>
 
-      <div class="sectors-wrap">
-        <div class="sectors-label">Industries We Serve</div>
-        <div class="sectors-grid">
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Chemicals &amp; Petrochemicals</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Mining &amp; Minerals</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Power &amp; Renewable Energy</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Real Estate &amp; Townships</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Ports &amp; Coastal Projects</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Industrial Estates / SEZs</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Food &amp; Beverages</span></div>
-          <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Steel &amp; Cement</span></div>
+      <div style="margin-top:2rem;padding:1.5rem;background:var(--w);border-radius:14px;border:1px solid var(--bdr);">
+        <p style="font-size:13.5px;font-weight:300;color:var(--muted);line-height:1.85;max-width:700px;">
+          <strong style="color:var(--text);font-weight:500;">Lender and investor EC requirements.</strong> International
+          lenders (World Bank, ADB, DFIs) and ESG-focused private equity increasingly require EC compliance as a
+          disbursement condition — not just a statutory obligation. Our EC management includes documentation structured
+          for lender due diligence and Equator Principles reporting, ensuring your project finance process is not
+          delayed by an environmental compliance gap.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- ─── FAQ ─── -->
+  <section class="svc-section reveal">
+    <div class="sec-label">FAQ</div>
+    <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What is the difference between Environmental Clearance and GPCB Consent?
+          <span class="faq-icon"><svg viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span>
+        </button>
+        <div class="faq-ans">
+          <p>Environmental Clearance (EC) and GPCB Consent are separate approvals from different authorities. EC is
+            issued by MoEFCC (for Category A projects) or SEIAA Gujarat (Category B), and authorises the project itself
+            under the EIA Notification 2006. GPCB Consent to Establish (CTE) and Consent to Operate (CTO) are issued by
+            Gujarat Pollution Control Board under the Water Act and Air Act, and govern the pollution control standards
+            the facility must meet. Both are required — EC before construction, GPCB CTE/CTO before operations. They
+            have different documentation, different timelines and different post-approval obligations. We manage both
+            processes and ensure they proceed on parallel tracks.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          My EC was granted but we have not started the project — can we extend validity?
+          <span class="faq-icon"><svg viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span>
+        </button>
+        <div class="faq-ans">
+          <p>Yes, EC validity can be extended. For new projects, the standard validity is 5 years (10 for mining),
+            extendable by up to 5 more years by MoEFCC or SEIAA. The extension application must be filed before the EC
+            lapses — a lapsed EC cannot be extended and a fresh EC process is then required. The extension application
+            must demonstrate project progress, ongoing EMP compliance and reasons for the delay. We file extension
+            applications well before expiry with a strong progress justification to maximise approval probability.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          What happens if we miss the six-monthly compliance report deadline?
+          <span class="faq-icon"><svg viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span>
+        </button>
+        <div class="faq-ans">
+          <p>Non-submission of six-monthly compliance reports is a violation of EC conditions and can trigger a
+            show-cause notice from MoEFCC or SEIAA, and potentially a referral to the state pollution control board.
+            Repeated non-compliance can result in suspension or revocation of the EC. The reports are also monitored by
+            the Regional Offices of MoEFCC, which conduct periodic site inspections. Missing a report deadline is
+            treated as evidence of non-compliance with EC conditions — regardless of whether the actual environmental
+            performance is satisfactory.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          We acquired a project that already has EC — do we need a new one?
+          <span class="faq-icon"><svg viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span>
+        </button>
+        <div class="faq-ans">
+          <p>No — but you must formally transfer the EC to your entity. Operating a project with EC in another company's
+            name is a technical violation. MoEFCC/SEIAA permit EC transfer through an application on Parivesh, supported
+            by proof of ownership transfer (sale deed, share purchase agreement, demerger order), the transferee's
+            corporate documents and a commitment letter accepting all existing EC conditions. We manage the complete
+            transfer application so there is no gap in EC validity during the acquisition process.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          Does a Category B2 project still require any public consultation?
+          <span class="faq-icon"><svg viewBox="0 0 24 24">
+              <line x1="12" y1="5" x2="12" y2="19" />
+              <line x1="5" y1="12" x2="19" y2="12" />
+            </svg></span>
+        </button>
+        <div class="faq-ans">
+          <p>No. Category B2 projects are explicitly exempted from the public hearing requirement under EIA Notification
+            2006. These are smaller-scale or lower-risk projects where SEAC determines that public consultation is not
+            required. However, B2 projects still require a full EIA study, Form 1 submission, TOR application and SEAC
+            appraisal. The absence of public hearing typically shortens the overall timeline by 1–2 months compared to
+            B1 projects. We confirm B1 or B2 classification early in the engagement to set the correct process and
+            timeline expectations.</p>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div class="rule"></div>
+  <div class="rule"></div>
 
-<!-- ─── FRAMEWORKS ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Regulatory Alignment</div>
-    <h2 class="sec-title">EC compliance <em>cross-mapped to all major frameworks</em></h2>
-    <p class="sec-sub">Environmental Clearance compliance intersects with multiple regulatory and voluntary frameworks. Our EC work builds documentation that simultaneously serves GPCB, CSRD and lender requirements.</p>
+  <!-- ─── RELATED SERVICES ─── -->
+  <section class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Related Services</div>
+      <h2 class="sec-title">Services that <em>complete your EC journey</em></h2>
 
-    <div class="framework-badges" style="margin-top:1.5rem;">
-      <span class="fw-badge g">EIA Notification 2006</span>
-      <span class="fw-badge g">Environment Protection Act 1986</span>
-      <span class="fw-badge b">GPCB Consent Conditions</span>
-      <span class="fw-badge b">MoEFCC Office Memoranda</span>
-      <span class="fw-badge n">IFC Performance Standards</span>
-      <span class="fw-badge n">Equator Principles</span>
-      <span class="fw-badge g">CSRD Scope 3 — EU Buyers</span>
-      <span class="fw-badge b">BRSR Supply Chain Provisions</span>
-      <span class="fw-badge n">ISO 14001 EMS</span>
-      <span class="fw-badge n">GRI Universal Standards 2021</span>
+      <div class="related-grid">
+        <a href="4-eia.html" class="related-card reveal">
+          <div class="related-card-cat">Approvals &amp; Clearances</div>
+          <div class="related-card-title">Environmental Impact Assessment</div>
+          <div class="related-card-desc">We prepare the complete EIA report needed for Category A and B projects to
+            secure Environmental Clearance.</div>
+          <div class="related-card-link">Learn more →</div>
+        </a>
+        <a href="4-gpcp.html" class="related-card reveal">
+          <div class="related-card-cat">Approvals &amp; Clearances</div>
+          <div class="related-card-title">GPCB Compliance</div>
+          <div class="related-card-desc">EC conditions require parallel GPCB CTO/CTE compliance. We manage both
+            processes simultaneously.</div>
+          <div class="related-card-link">Learn more →</div>
+        </a>
+        <a href="3-epd.html" class="related-card reveal">
+          <div class="related-card-cat">Assessments &amp; Ratings</div>
+          <div class="related-card-title">Environmental Product Declaration</div>
+          <div class="related-card-desc">EPD and LCA studies build on the environmental baseline collected during your
+            EC process.</div>
+          <div class="related-card-link">Learn more →</div>
+        </a>
+        <a href="svc-materiality.html" class="related-card">
+          <div class="related-card-cat">Assessments &amp; Ratings</div>
+          <div class="related-card-title">Materiality Assessment</div>
+          <div class="related-card-desc">A formal materiality assessment strengthens EAC/SEAC appraisal by demonstrating
+            systematic identification of significant environmental and social impacts beyond the EIA scope.</div>
+          <div class="related-card-link">Learn more →</div>
+        </a>
+      </div>
     </div>
+  </section>
 
-    <div style="margin-top:2rem;padding:1.5rem;background:var(--w);border-radius:14px;border:1px solid var(--bdr);">
-      <p style="font-size:13.5px;font-weight:300;color:var(--muted);line-height:1.85;max-width:700px;">
-        <strong style="color:var(--text);font-weight:500;">Lender and investor EC requirements.</strong> International lenders (World Bank, ADB, DFIs) and ESG-focused private equity increasingly require EC compliance as a disbursement condition — not just a statutory obligation. Our EC management includes documentation structured for lender due diligence and Equator Principles reporting, ensuring your project finance process is not delayed by an environmental compliance gap.
-      </p>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── FAQ ─── -->
-<section class="svc-section reveal">
-  <div class="sec-label">FAQ</div>
-  <h2 class="sec-title">Frequently asked <em>questions</em></h2>
-
-  <div class="faq-wrap">
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
-        What is the difference between Environmental Clearance and GPCB Consent?
-        <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-      </button>
-      <div class="faq-ans"><p>Environmental Clearance (EC) and GPCB Consent are separate approvals from different authorities. EC is issued by MoEFCC (for Category A projects) or SEIAA Gujarat (Category B), and authorises the project itself under the EIA Notification 2006. GPCB Consent to Establish (CTE) and Consent to Operate (CTO) are issued by Gujarat Pollution Control Board under the Water Act and Air Act, and govern the pollution control standards the facility must meet. Both are required — EC before construction, GPCB CTE/CTO before operations. They have different documentation, different timelines and different post-approval obligations. We manage both processes and ensure they proceed on parallel tracks.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
-        My EC was granted but we have not started the project — can we extend validity?
-        <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-      </button>
-      <div class="faq-ans"><p>Yes, EC validity can be extended. For new projects, the standard validity is 5 years (10 for mining), extendable by up to 5 more years by MoEFCC or SEIAA. The extension application must be filed before the EC lapses — a lapsed EC cannot be extended and a fresh EC process is then required. The extension application must demonstrate project progress, ongoing EMP compliance and reasons for the delay. We file extension applications well before expiry with a strong progress justification to maximise approval probability.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
-        What happens if we miss the six-monthly compliance report deadline?
-        <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-      </button>
-      <div class="faq-ans"><p>Non-submission of six-monthly compliance reports is a violation of EC conditions and can trigger a show-cause notice from MoEFCC or SEIAA, and potentially a referral to the state pollution control board. Repeated non-compliance can result in suspension or revocation of the EC. The reports are also monitored by the Regional Offices of MoEFCC, which conduct periodic site inspections. Missing a report deadline is treated as evidence of non-compliance with EC conditions — regardless of whether the actual environmental performance is satisfactory.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
-        We acquired a project that already has EC — do we need a new one?
-        <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-      </button>
-      <div class="faq-ans"><p>No — but you must formally transfer the EC to your entity. Operating a project with EC in another company's name is a technical violation. MoEFCC/SEIAA permit EC transfer through an application on Parivesh, supported by proof of ownership transfer (sale deed, share purchase agreement, demerger order), the transferee's corporate documents and a commitment letter accepting all existing EC conditions. We manage the complete transfer application so there is no gap in EC validity during the acquisition process.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
-        Does a Category B2 project still require any public consultation?
-        <span class="faq-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-      </button>
-      <div class="faq-ans"><p>No. Category B2 projects are explicitly exempted from the public hearing requirement under EIA Notification 2006. These are smaller-scale or lower-risk projects where SEAC determines that public consultation is not required. However, B2 projects still require a full EIA study, Form 1 submission, TOR application and SEAC appraisal. The absence of public hearing typically shortens the overall timeline by 1–2 months compared to B1 projects. We confirm B1 or B2 classification early in the engagement to set the correct process and timeline expectations.</p></div>
-    </div>
-  </div>
-</section>
-
-<div class="rule"></div>
-
-<!-- ─── RELATED SERVICES ─── -->
-<section class="svc-section alt reveal">
-  <div class="svc-section-inner">
-    <div class="sec-label">Related Services</div>
-    <h2 class="sec-title">Services that <em>complete your EC journey</em></h2>
-
-    <div class="related-grid">
-      <a href="svc-eia.html" class="related-card">
-        <div class="related-card-cat">Approvals &amp; Clearances</div>
-        <div class="related-card-title">Environmental Impact Assessment</div>
-        <div class="related-card-desc">The EIA report is a prerequisite for EC. We prepare the complete EIA — baseline studies, impact assessment, EMP and public hearing management — before EC application.</div>
-        <div class="related-card-link">Learn more →</div>
-      </a>
-      <a href="svc-gpcb.html" class="related-card">
-        <div class="related-card-cat">Approvals &amp; Clearances</div>
-        <div class="related-card-title">GPCB Compliance Services</div>
-        <div class="related-card-desc">EC and GPCB CTE/CTO run on parallel tracks. We manage both simultaneously so your project is not delayed waiting for one while the other is ready.</div>
-        <div class="related-card-link">Learn more →</div>
-      </a>
-      <a href="svc-materiality.html" class="related-card">
-        <div class="related-card-cat">Assessments &amp; Ratings</div>
-        <div class="related-card-title">Materiality Assessment</div>
-        <div class="related-card-desc">A formal materiality assessment strengthens EAC/SEAC appraisal by demonstrating systematic identification of significant environmental and social impacts beyond the EIA scope.</div>
-        <div class="related-card-link">Learn more →</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CTA BAND ─── -->
+  <!-- ─── CTA BAND ─── -->
   <section class="reveal" style="padding:0 3rem 4rem;max-width:1260px;margin:0 auto;">
     <div class="cta-band reveal">
-  <div class="cta-left">
-    <h3>Ready to secure your compliance?</h3>
-    <p>Speak with our technical experts to build your sustainability roadmap.</p>
-  </div>
-  <div class="cta-band-btns">
+      <div class="cta-left">
+        <h3>Ready to secure your compliance?</h3>
+        <p>Speak with our technical experts to build your sustainability roadmap.</p>
+      </div>
+      <div class="cta-band-btns">
         <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
       </div>
     </div>
-</section>
+  </section>
 
-<!-- ─── FOOTER ─── -->
-<div id="footer-root"></div>
+  <!-- ─── FOOTER ─── -->
+  <div id="footer-root"></div>
 
-<script type="module" src="/src/js/main.js"></script>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: .12 });
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  <script type="module" src="/src/js/main.js"></script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  function toggleFaq(btn) {
-    const item = btn.closest('.faq-item');
-    const ans = item.querySelector('.faq-ans');
-    const open = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(i => {
-      i.classList.remove('open');
-      i.querySelector('.faq-ans').style.maxHeight = null;
-    });
-    if (!open) {
-      item.classList.add('open');
-      ans.style.maxHeight = ans.scrollHeight + 'px';
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const ans = item.querySelector('.faq-ans');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-ans').style.maxHeight = null;
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
     }
-  }
-</script>
+  </script>
 </body>
+
 </html>

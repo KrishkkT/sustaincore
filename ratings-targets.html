@@ -6,17 +6,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ratings & Targets | SustainCore</title>
-  <link rel="stylesheet" href="/src/css/main.css">
-  <link rel="stylesheet" href="/src/css/service-pages.css">
+  <link rel="stylesheet" href="files/sustaincore-shared.css">
   <link rel="icon" href="/Frame 4.svg">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
     rel="stylesheet">
 </head>
 
-<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
+<body>
   <div id="header-root"></div>
-
+  <!-- Category Navigation Bar -->
   <nav class="sp-sub-nav">
     <div class="sp-sub-nav-inner">
       <!-- 01 ESG Reporting -->
@@ -47,7 +45,7 @@
         <div class="sp-dropdown">
           <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
           <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Strategy</a>
-          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Environmental Product Declaration(EPD)</a>
+          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
           <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
         </div>
       </div>
@@ -55,18 +53,20 @@
       <div class="sp-sub-nav-item">
         <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle">GPCB Compliance</a>
         <div class="sp-dropdown">
-          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Environment Clearance (EC)</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (EC)</a>
           <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
-          <a href="/clearances-eia.html#gpcb" class="sp-dropdown-link">GPCB/SPCB Compliance</a>
+          <a href="/clearances-eia.html#consent" class="sp-dropdown-link">Consent Management</a>
+          <a href="/clearances-eia.html#waste" class="sp-dropdown-link">Waste Authorizations</a>
+          <a href="/clearances-eia.html#epr" class="sp-dropdown-link">EPR Compliance</a>
         </div>
       </div>
       <!-- 05 Environmental Audits -->
       <div class="sp-sub-nav-item">
         <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle">Environmental Audits</a>
         <div class="sp-dropdown">
-          <a href="/management-systems.html#iso14001" class="sp-dropdown-link">ISO 14001</a>
-          <a href="/management-systems.html#iso45001" class="sp-dropdown-link">ISO 45001</a>
-          <a href="/management-systems.html#iso50001" class="sp-dropdown-link">ISO 50001</a>
+          <a href="/management-systems.html#iso14001" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#iso50001" class="sp-dropdown-link">Energy Mgmt (ISO 50001)</a>
+          <a href="/management-systems.html#iso45001" class="sp-dropdown-link">Health & Safety (ISO 45001)</a>
           <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a>
         </div>
       </div>
@@ -93,38 +93,62 @@
     </div>
   </nav>
 
-
   <main>
-    <section class="sp-hero">
-      <div class="sp-container">
-        <div class="sp-hero-grid">
-          <div>
-            <h1 class="sp-hero-title">Sustainability Assessment & ESG Rating</h1>
-            <p class="sp-hero-desc">Elevate your standing in global sustainability indices. We manage your performance
+    <section class="svc-hero reveal">
+      <div class="svc-hero-inner">
+        <div class="bc">
+          <a href="/index.html">Home</a>
+          <span class="sep">/</span>
+          <span>ESG Ratings & Strategic Targets</span>
+        </div>
+        <div class="svc-hero-body">
+          <div class="svc-hero-left">
+            <h1 class="svc-hero-title">Sustainability Assessment &<br><em>ESG Rating</em></h1>
+            <p class="svc-hero-desc">Elevate your standing in global sustainability indices. We manage your performance
               across EcoVadis, CDP, and SBTi to ensure your corporate ratings reflect your true commitment to
               excellence.</p>
-            <a href="/index.html#consultation" class="btn-primary"
-              style="display: inline-block; text-decoration: none;">Improve My Rating</a>
+            <div style="margin-top:.5rem;">
+              <a href="/index.html#consultation" class="btn-primary">Improve My Rating</a>
+            </div>
           </div>
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80" alt="Ratings & Targets"
-            class="sp-hero-img">
+          <div class="svc-hero-pills">
+            <div class="svc-hero-pill">
+              <span class="pill-icon"></span>
+              <span><strong>EcoVadis</strong> Medal Strategy</span>
+            </div>
+            <div class="svc-hero-pill blue">
+              <span class="pill-icon"></span>
+              <span>SBTi Validation Ready</span>
+            </div>
+            <div class="svc-hero-pill">
+              <span class="pill-icon"></span>
+              <span><strong>Double Materiality</strong> Focus</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+        <div class="svc-hero-img">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
+            alt="Sustainability assessment and ESG ratings dashboard">
+          <div class="svc-hero-img-caption">
+            <div class="svc-hero-img-title">Strategic ESG<br><em>Performance</em></div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- What's Included -->
-    <section class="sp-included">
-      <div class="sp-container">
-        <div class="sp-section-h">
-          <h2 class="sp-section-t" style="color: var(--sp-blue);">What's Included</h2>
-          <p class="sp-section-sub">Strategic support for global sustainability benchmarks.</p>
-        </div>
-        <div class="svc-container">
+    <section class="svc-section reveal">
+      <div class="svc-section-inner">
+        <div class="sec-label">What's Included</div>
+        <h2 class="sec-title">Strategic support for global<br><em>sustainability benchmarks</em></h2>
+        <div class="svc-container mt3">
           <!-- Materiality Card -->
           <div class="svc-card" id="materiality">
             <div class="svc-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80"
-                alt="Materiality Assessment" class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2670&auto=format&fit=crop"
+                alt="Materiality Assessment stakeholder meeting strategy" class="svc-card-img">
               <div class="svc-card-chip">STRATEGIC FOCUS · DOUBLE MATERIALITY</div>
             </div>
             <div class="svc-card-body">
@@ -146,8 +170,8 @@
           <!-- EcoVadis Card -->
           <div class="svc-card" id="ecovadis">
             <div class="svc-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="EcoVadis Assessment"
-                class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=2676&auto=format&fit=crop"
+                alt="EcoVadis Assessment certification" class="svc-card-img">
               <div class="svc-card-chip">SUPPLY CHAIN · SUSTAINABILITY</div>
             </div>
             <div class="svc-card-body">
@@ -169,8 +193,8 @@
           <!-- EPD Card -->
           <div class="svc-card" id="epd">
             <div class="svc-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?w=800&q=80"
-                alt="Environmental Product Declaration" class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=2672&auto=format&fit=crop"
+                alt="Environmental Product Declaration labeling" class="svc-card-img">
               <div class="svc-card-chip">LCA VERIFIED · TRANSPARENCY</div>
             </div>
             <div class="svc-card-body">
@@ -192,8 +216,8 @@
           <!-- SBTi Card -->
           <div class="svc-card" id="sbti">
             <div class="svc-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&q=80"
-                alt="Science Based Targets" class="svc-card-img">
+              <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2670&auto=format&fit=crop"
+                alt="Science Based Targets climate action" class="svc-card-img">
               <div class="svc-card-chip">SCIENCE-BASED · 1.5°C ALIGNED</div>
             </div>
             <div class="svc-card-body">
@@ -223,19 +247,16 @@
         </div>
         <div class="sp-card-grid">
           <div class="sp-card">
-            <div class="sp-card-icon"></div>
             <h3 class="sp-card-title">Complex Questionnaires</h3>
             <p class="sp-card-text">CDP and EcoVadis surveys are massive, technical, and require deep evidence-based
               answers that generic teams often struggle to provide.</p>
           </div>
           <div class="sp-card">
-            <div class="sp-card-icon"></div>
             <h3 class="sp-card-title">Evidence Misalignment</h3>
             <p class="sp-card-text">Many companies have the right policies but fail to present "evidence" in the
               specific format required by global rating agencies.</p>
           </div>
           <div class="sp-card">
-            <div class="sp-card-icon"></div>
             <h3 class="sp-card-title">Benchmark Competition</h3>
             <p class="sp-card-text">Your competitors are improving. Staying at a "Bronze" or "Silver" level while the
               industry moves to "Gold" is a competitive disadvantage.</p>

@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const parts = href.split('#');
                 const targetPage = parts[0];
                 const targetId = parts[1];
-                
+
                 // If we are already on the target page, we can just activate existing tabs/scroll
                 if (window.location.pathname.includes(targetPage)) {
                     e.preventDefault();
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Toggle the clicked one
             item.classList.toggle('active');
-            
+
             // Handle maxHeight for animation
             if (ans) {
                 if (item.classList.contains('active')) {
@@ -282,8 +282,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // Touch devices + all devices: click to toggle
         if (trigger) {
             trigger.addEventListener('click', (e) => {
-                // Only use click-to-toggle on touch devices OR when the trigger is a non-link
-                if (isTouchDevice() || !trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
+                const href = trigger.getAttribute('href');
+                const isAnchorOnly = !href || href === '#';
+
+                // If the menu already has the open class (from hover or previous tap) and is a real link,
+                // we allow the default navigation to occur on click.
+                if (container.classList.contains(openClass) && !isAnchorOnly) {
+                    return;
+                }
+
+                // If it's a touch device or doesn't have a real link, toggle it instead of navigating.
+                if (isTouchDevice() || isAnchorOnly) {
                     toggleMenu(e);
                 }
             });
@@ -447,7 +456,7 @@ document.addEventListener('submit', async (e) => {
     // Target any form with "newsletter" or "subscribe" in its ID/class
     if (form.id.includes('newsletter') || form.id.includes('subscribe') || form.classList.contains('subscribe-form')) {
         e.preventDefault();
-        
+
         const emailInput = form.querySelector('input[type="email"]');
         const submitBtn = form.querySelector('button[type="submit"]');
         if (!emailInput || !submitBtn) return;
