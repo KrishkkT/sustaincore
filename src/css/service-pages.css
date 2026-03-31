@@ -82,6 +82,7 @@
 .sp-pain {
   background: var(--sp-slate);
   padding: 8rem 0;
+  margin-top: -2rem !important;
 }
 
 .sp-section-h {
@@ -163,6 +164,7 @@
 /* --- Protocol Section --- */
 .sp-protocol {
   padding: 10rem 0;
+  margin-top: -2rem !important;
   background: white;
 }
 
@@ -257,6 +259,7 @@
   color: white;
   border-radius: 4rem;
   margin: 2rem;
+  margin-top: -2rem !important;
 }
 
 .sp-deliver .sp-section-t {
@@ -372,6 +375,7 @@
 /* --- FAQ Section --- */
 .sp-faq {
   padding: 8rem 0;
+  margin-top: -2rem !important;
   background: var(--sp-slate);
 }
 
@@ -503,6 +507,7 @@
 /* --- What's Included Section --- */
 .sp-included {
   padding: 8rem 0;
+  margin-top: -1.5rem !important;
   background: linear-gradient(to bottom, #ffffff, #f9fafb);
   position: relative;
 }
@@ -580,7 +585,7 @@
   border-radius: 100px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: top 0.35s ease, width 0.35s ease, max-width 0.35s ease,
-              padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease;
+    padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease;
   overflow: visible;
 }
 
@@ -988,8 +993,8 @@
   visibility: hidden;
   transform: translateX(-50%) translateY(6px);
   transition: opacity 0.2s ease,
-              visibility 0.2s ease,
-              transform 0.2s ease;
+    visibility 0.2s ease,
+    transform 0.2s ease;
   z-index: 9999;
   pointer-events: none;
 }
