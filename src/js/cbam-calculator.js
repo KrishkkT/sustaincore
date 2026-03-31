@@ -113,11 +113,6 @@ function simpleCalc() {
     const etsDisplay = document.getElementById('s-ets-val');
     if (etsDisplay) {
         etsDisplay.textContent = c.sym + Math.round(ets);
-        // Remove symbol from parent if it's hardcoded
-        const parent = etsDisplay.parentElement;
-        if (parent.innerHTML.includes('€')) {
-            parent.innerHTML = parent.innerHTML.replace('€', '');
-        }
     }
 
     // Granular inputs
@@ -141,7 +136,10 @@ function simpleCalc() {
         resSave.className = saving >= 0 ? 'text-green-500 font-bold' : 'text-red-500 font-bold';
     }
 
-    // Detail breakdown removed.
+    const breakdown = document.getElementById('s-breakdown');
+    if (breakdown) {
+        breakdown.innerHTML = `${fv(vol)} t × ${ft(defEf, 3)} EF × ${(factor * 100).toFixed(1)}% factor × ${c.sym}${Math.round(ets)}`;
+    }
 
     const box = document.getElementById('rib-save');
     if (saving > 100) {
@@ -274,12 +272,7 @@ function detailCalc() {
     // Update live display for ETS price if it exists
     const etsDisplay = document.getElementById('d-ets-val');
     if (etsDisplay) {
-        etsDisplay.textContent = c.sym + Math.round(ets);
-        // Remove symbol from parent if it's hardcoded
-        const parent = etsDisplay.parentElement;
-        if (parent.innerHTML.includes('€')) {
-            parent.innerHTML = parent.innerHTML.replace('€', '');
-        }
+        etsDisplay.textContent = c.sym + Math.round(ets) + '/t';
     }
 
     const factor = CBAM_FACTORS[yr] || 0.025;
@@ -287,6 +280,7 @@ function detailCalc() {
 
     let totalCostDef = 0;
     let totalCostAct = 0;
+    let totalVol = 0;
     let tableHtml = '';
 
     rows.forEach(row => {
@@ -324,6 +318,7 @@ function detailCalc() {
 
         totalCostDef += costDef;
         totalCostAct += costAct;
+        totalVol += vol;
 
         tableHtml += `
             <tr class="border-b border-slate-100 dark:border-slate-800/50 hover:bg-white dark:hover:bg-slate-800/50 transition-colors text-[10px]">
@@ -351,6 +346,17 @@ function detailCalc() {
 
     const totalSaving = totalCostDef - totalCostAct;
     if (savingEl) savingEl.textContent = fe(totalSaving);
+
+    // Update Footer Summary
+    const footVol = document.getElementById('det-total-vol');
+    const footDef = document.getElementById('det-total-def');
+    const footAct = document.getElementById('det-total-act');
+    const footSave = document.getElementById('det-total-save');
+
+    if (footVol) footVol.textContent = fv(totalVol) + ' t';
+    if (footDef) footDef.textContent = fe(totalCostDef);
+    if (footAct) footAct.textContent = fe(totalCostAct);
+    if (footSave) footSave.textContent = fe(totalSaving);
 
     const savingBadge = document.getElementById('dt-saving-badge');
     if (savingBadge) {

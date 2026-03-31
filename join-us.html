@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <style>
     *,
@@ -40,9 +40,9 @@
       --forest-pale: #EBF4EF;
       --text: #1A1A1A;
       --text-mid: #4A4A4A;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Jost', sans-serif;
-      --caps: 'Cinzel', serif;
+      --serif: 'Outfit', sans-serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --caps: 'Outfit', sans-serif;
       --shadow-sm: 0 2px 16px rgba(13, 35, 64, 0.06);
       --shadow-md: 0 8px 40px rgba(13, 35, 64, 0.11);
     }
@@ -565,7 +565,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 2px;
-      background: var(--beige-mid);
+      border-right: 1px solid var(--beige-mid);
       border: 1px solid var(--beige-mid);
     }
 
@@ -613,11 +613,6 @@
       inset: 0;
       border-radius: 50%;
       background: var(--forest-pale);
-      transform: scale(0);
-      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
-
-    .offer-card:hover .offer-icon-bg {
       transform: scale(1);
     }
 
@@ -628,102 +623,14 @@
       z-index: 1;
     }
 
-    /* Dev icon */
+    /* Dev icon — static, no animation */
     .icon-dev .bar {
       transform-origin: bottom;
-      transform: scaleY(0);
     }
 
-    .icon-dev .bar-a {
-      transition: transform 0.35s ease 0s;
-    }
+    /* Leaf icon — static, no animation */
 
-    .icon-dev .bar-b {
-      transition: transform 0.35s ease 0.1s;
-    }
-
-    .icon-dev .bar-c {
-      transition: transform 0.35s ease 0.2s;
-    }
-
-    .offer-card:hover .icon-dev .bar {
-      transform: scaleY(1);
-    }
-
-    .icon-dev .aline {
-      stroke-dasharray: 70;
-      stroke-dashoffset: 70;
-      transition: stroke-dashoffset 0.5s ease 0.38s;
-    }
-
-    .icon-dev .atip {
-      stroke-dasharray: 24;
-      stroke-dashoffset: 24;
-      transition: stroke-dashoffset 0.3s ease 0.78s;
-    }
-
-    .offer-card:hover .icon-dev .aline,
-    .offer-card:hover .icon-dev .atip {
-      stroke-dashoffset: 0;
-    }
-
-    /* Leaf icon */
-    .icon-leaf .ring {
-      stroke-dasharray: 200;
-      stroke-dashoffset: 200;
-      transition: stroke-dashoffset 1s ease;
-    }
-
-    .icon-leaf .leaf {
-      stroke-dasharray: 140;
-      stroke-dashoffset: 140;
-      transition: stroke-dashoffset 0.7s ease 0.65s;
-    }
-
-    .icon-leaf .stem {
-      stroke-dasharray: 28;
-      stroke-dashoffset: 28;
-      transition: stroke-dashoffset 0.3s ease 1.25s;
-    }
-
-    .offer-card:hover .icon-leaf .ring,
-    .offer-card:hover .icon-leaf .leaf,
-    .offer-card:hover .icon-leaf .stem {
-      stroke-dashoffset: 0;
-    }
-
-    /* Star icon */
-    .icon-star .star {
-      stroke-dasharray: 280;
-      stroke-dashoffset: 280;
-      transition: stroke-dashoffset 0.9s ease;
-    }
-
-    .icon-star .ray {
-      stroke-dasharray: 18;
-      stroke-dashoffset: 18;
-    }
-
-    .icon-star .r1 {
-      transition: stroke-dashoffset 0.3s ease 0.75s;
-    }
-
-    .icon-star .r2 {
-      transition: stroke-dashoffset 0.3s ease 0.88s;
-    }
-
-    .icon-star .r3 {
-      transition: stroke-dashoffset 0.3s ease 1.01s;
-    }
-
-    .icon-star .r4 {
-      transition: stroke-dashoffset 0.3s ease 1.14s;
-    }
-
-    .offer-card:hover .icon-star .star,
-    .offer-card:hover .icon-star .ray {
-      stroke-dashoffset: 0;
-    }
+    /* Star icon — static, no animation */
 
     .offer-num {
       font-family: var(--serif);
@@ -1184,7 +1091,6 @@
                 stroke-linejoin="round" fill="none" />
             </svg>
           </div>
-          <div class="offer-num">01</div>
           <div class="offer-title">Professional Development</div>
           <div class="offer-text">
             Take ownership, expand your expertise, and grow alongside a company shaping
@@ -1206,7 +1112,6 @@
                 stroke-linecap="round" />
             </svg>
           </div>
-          <div class="offer-num">02</div>
           <div class="offer-title">Sustainability at the Core</div>
           <div class="offer-text">
             Be part of a team dedicated to advancing environmental responsibility.
@@ -1226,7 +1131,6 @@
                 stroke="#2C5F3F" stroke-width="1.5" stroke-linejoin="round" fill="none" />
             </svg>
           </div>
-          <div class="offer-num">03</div>
           <div class="offer-title">Perks &amp; Culture</div>
           <div class="offer-text">
             Competitive compensation, flexible working arrangements, and remote

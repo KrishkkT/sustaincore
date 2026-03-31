@@ -137,6 +137,11 @@
   color: var(--sp-green);
 }
 
+.sp-card-icon::before {
+  content: '⚡';
+  font-size: 1.5rem;
+}
+
 .sp-card-icon svg {
   fill: currentColor;
 }
@@ -167,6 +172,7 @@
   position: relative;
   max-width: 1200px;
   margin: 0 auto;
+  counter-reset: step-counter;
 }
 
 .sp-step-flow::before {
@@ -202,6 +208,15 @@
   justify-content: center;
   margin: 0 auto 2rem;
   font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  color: var(--sp-green);
+  counter-increment: step-counter;
+}
+
+.sp-step-num::before {
+  content: '0' counter(step-counter);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
   font-weight: 800;
   color: var(--sp-green);
 }
@@ -552,10 +567,10 @@
 /* --- Sub-Navigation Bar (Premium Centered Pill) --- */
 .sp-sub-nav {
   position: fixed;
-  top: 85px;
-  /* Perfectly clears the main navbar */
-  left: 50%;
-  transform: translateX(-50%);
+  top: 73px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   z-index: 45;
   background: white;
   width: max-content;
@@ -564,17 +579,17 @@
   border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 100px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: top 0.35s ease, transform 0.35s ease, width 0.35s ease, max-width 0.35s ease;
+  transition: top 0.35s ease, width 0.35s ease, max-width 0.35s ease,
+              padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease;
   overflow: visible;
-  perspective: 1000px;
 }
 
 .sp-sub-nav.scrolled {
-  top: 70px;
-  /* under the fixed main navbar */
+  top: 60px;
   left: 0;
   right: 0;
-  transform: translateX(0);
+  justify-content: center;
+  margin: 0;
   width: 100%;
   max-width: 100%;
   padding: 0.5rem 0.9rem;
@@ -583,12 +598,8 @@
 }
 
 .sp-sub-nav.scrolled .sp-sub-nav-inner {
-  transform: translateX(75px);
-  transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
-}
-
-.sp-sub-nav-inner {
-  transition: transform 0.5s cubic-bezier(0.2, 0, 0, 1);
+  padding-left: 10rem;
+  transition: padding-left 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .sp-sub-nav-inner {
@@ -596,11 +607,10 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 1rem;
-  overflow-x: auto;
-  overflow-y: visible;
-  -webkit-overflow-scrolling: touch;
+  overflow: visible;
   scrollbar-width: none;
   justify-content: flex-start;
+  transition: padding-left 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .sp-sub-nav-inner::-webkit-scrollbar {
@@ -655,6 +665,7 @@
     padding: 0 0.5rem;
     overflow-x: auto;
     overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
     width: 100%;
   }
 
@@ -957,30 +968,50 @@
   transition: transform 0.3s ease;
 }
 
-.sp-sub-nav-item:hover .sp-dropdown-toggle::after {
+.sp-sub-nav-item:hover .sp-dropdown-toggle::after,
+.sp-sub-nav-item.dropdown-open .sp-dropdown-toggle::after {
   transform: rotate(180deg);
 }
 
 .sp-dropdown {
-  position: fixed;
+  position: absolute;
+  top: 100%;
+  left: 50%;
   background: white;
   min-width: 250px;
-  border-radius: 1.5rem;
+  border-radius: 1.5rem !important;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(0, 0, 0, 0.08);
   padding: 0.75rem;
+  padding-top: 1.25rem;
   opacity: 0;
   visibility: hidden;
-  transform: scale(0.95) translateY(-10px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%) translateY(6px);
+  transition: opacity 0.2s ease,
+              visibility 0.2s ease,
+              transform 0.2s ease;
   z-index: 9999;
   pointer-events: none;
 }
 
-.sp-sub-nav-item:hover .sp-dropdown {
+/* Hover bridge — invisible area connecting trigger to dropdown */
+.sp-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  right: 0;
+  height: 1.5rem;
+  background: transparent;
+  z-index: 1;
+}
+
+/* Show via CSS hover OR JS-managed .dropdown-open class */
+.sp-sub-nav-item:hover .sp-dropdown,
+.sp-sub-nav-item.dropdown-open .sp-dropdown {
   opacity: 1;
   visibility: visible;
-  transform: scale(1) translateY(0px);
+  transform: translateX(-50%) translateY(0);
   pointer-events: auto;
 }
 
@@ -1015,10 +1046,11 @@
     min-width: 0;
     width: 100%;
     margin-top: 0.5rem;
+    pointer-events: auto;
   }
 
-  /* Show dropdown on hover/tap for mobile too, but inline */
-  .sp-sub-nav-item:hover .sp-dropdown {
+  /* Show dropdown on tap for mobile, inline */
+  .sp-sub-nav-item.dropdown-open .sp-dropdown {
     display: block;
     opacity: 1;
     visibility: visible;

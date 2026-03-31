@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&family=Cinzel:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet" />
   <style>
     *,
@@ -42,9 +42,9 @@
       --text: #1A1A1A;
       --text-mid: #4A4A4A;
       --text-muted: #7A7A7A;
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Jost', sans-serif;
-      --caps: 'Cinzel', serif;
+      --serif: 'Outfit', sans-serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --caps: 'Outfit', sans-serif;
     }
 
     html {
@@ -349,8 +349,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255, 255, 255, 0.1);
+      border-inline: 1px solid var(--forest-light);
     }
 
     .why-stat {
@@ -411,8 +410,6 @@
     .types-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2px;
-      background: var(--beige-mid);
       border: 1px solid var(--beige-mid);
     }
 
@@ -479,7 +476,7 @@
     }
 
     .type-card:hover .type-icon {
-      background: var(--forest);
+      background: var(--forest-pale);
     }
 
     .type-icon svg {
@@ -617,13 +614,13 @@
       background: var(--navy);
       padding: 6rem 5vw;
       position: relative;
+      border-radius: 0 !important;
       overflow: hidden;
     }
 
     .open-call::before {
-      content: 'PARTNER';
+      content: 'PARTNERS';
       position: absolute;
-      right: -1rem;
       top: 50%;
       transform: translateY(-50%);
       font-family: var(--caps);

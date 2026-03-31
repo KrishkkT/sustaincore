@@ -58,7 +58,7 @@
 
 
   <section class="hero">
-    <video autoplay muted loop playsinline class="hero-video">
+    <video autoplay muted playsinline class="hero-video" id="hero-video">
       <source src="/hero_animation.mp4" type="video/mp4">
     </video>
     <div class="hero-canvas"><canvas id="c"></canvas></div>
@@ -598,6 +598,64 @@
 
   <script type="module" src="/src/js/main.js"></script>
   <script type="module" src="/src/js/index-scripts.js"></script>
+  
+  <!-- Hero Video Reverse Loop Script -->
+  <script type="module">
+    import { gsap } from 'gsap';
+    
+    (function() {
+      const video = document.getElementById('hero-video');
+      let isPlayingForward = true;
+      
+      // Wait for video to load
+      video.addEventListener('loadeddata', function() {
+        console.log('Video loaded, duration:', video.duration);
+        video.playbackRate = 1.0;
+        video.play().catch(err => console.error('Play error:', err));
+      });
+      
+      // Monitor for end of forward playback
+      video.addEventListener('timeupdate', function() {
+        if (isPlayingForward && video.currentTime >= video.duration - 0.05) {
+          console.log('Forward complete - pausing for 1 second');
+          video.pause();
+          
+          setTimeout(() => {
+            console.log('Starting GSAP smooth reverse');
+            isPlayingForward = false;
+            startGSAPReverse();
+          }, 1000);
+        }
+      });
+      
+      // Ultra-smooth GSAP-powered reverse animation
+      function startGSAPReverse() {
+        // Kill any existing tweens on this video
+        gsap.killTweensOf(video);
+        
+        // Create a smooth tween from current time to 0
+        gsap.to(video, {
+          currentTime: 0,
+          duration: video.duration, // Match the video's actual duration
+          ease: "none", // Linear - constant speed, no easing
+          onUpdate: function() {
+            // Continuously update during the tween
+          },
+          onComplete: function() {
+            console.log('Reverse complete - pausing for 1 second');
+            video.currentTime = 0;
+            
+            setTimeout(() => {
+              console.log('Starting forward playback');
+              isPlayingForward = true;
+              video.playbackRate = 1.0;
+              video.play().catch(err => console.error('Forward play error:', err));
+            }, 1000);
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 
 </html>

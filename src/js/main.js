@@ -231,26 +231,94 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Services Dropdown Toggle (Desktop Navbar)
+    // ─── Premium Dropdown Controller ───
+    // Handles both Navbar mega-menu and Category Bar dropdowns
+    // with debounced close, touch detection, and smooth transitions.
+
+    const isTouchDevice = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    /**
+     * Sets up debounced hover interaction for a dropdown container.
+     * @param {HTMLElement} container - The parent element (trigger + dropdown wrapper)
+     * @param {Object} opts - Configuration
+     * @param {number} opts.closeDelay - Milliseconds to wait before closing (default 150)
+     * @param {string} opts.openClass - Class to toggle (default 'dropdown-open')
+     * @param {HTMLElement} [opts.trigger] - Optional trigger element for click-to-toggle
+     */
+    const setupDropdown = (container, opts = {}) => {
+        const closeDelay = opts.closeDelay || 150;
+        const openClass = opts.openClass || 'dropdown-open';
+        const trigger = opts.trigger || container.querySelector('a, button');
+        let closeTimer = null;
+
+        const openMenu = () => {
+            clearTimeout(closeTimer);
+            container.classList.add(openClass);
+        };
+
+        const closeMenu = () => {
+            closeTimer = setTimeout(() => {
+                container.classList.remove(openClass);
+            }, closeDelay);
+        };
+
+        const toggleMenu = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            // Close all sibling dropdowns first
+            const siblings = container.parentElement?.querySelectorAll('.' + openClass);
+            if (siblings) {
+                siblings.forEach(s => { if (s !== container) s.classList.remove(openClass); });
+            }
+            container.classList.toggle(openClass);
+        };
+
+        // Desktop: hover with debounced close
+        if (!isTouchDevice()) {
+            container.addEventListener('mouseenter', openMenu);
+            container.addEventListener('mouseleave', closeMenu);
+        }
+
+        // Touch devices + all devices: click to toggle
+        if (trigger) {
+            trigger.addEventListener('click', (e) => {
+                // Only use click-to-toggle on touch devices OR when the trigger is a non-link
+                if (isTouchDevice() || !trigger.getAttribute('href') || trigger.getAttribute('href') === '#') {
+                    toggleMenu(e);
+                }
+            });
+        }
+    };
+
+    // 1) Navbar mega-menu
     const navServicesDropdown = document.getElementById('nav-services-dropdown');
     const navServicesToggle = document.getElementById('nav-services-toggle');
-    
-    if (navServicesDropdown && navServicesToggle) {
-        // Handle click to toggle
-        navServicesToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            navServicesDropdown.classList.toggle('group/mega');
-        });
-        
-        // Handle hover to show (already handled by Tailwind group-hover, but this ensures click persistence)
-        navServicesDropdown.addEventListener('mouseenter', () => {
-            navServicesDropdown.classList.add('group/mega');
-        });
-        
-        navServicesDropdown.addEventListener('mouseleave', () => {
-            navServicesDropdown.classList.remove('group/mega');
+    if (navServicesDropdown) {
+        setupDropdown(navServicesDropdown, {
+            closeDelay: 150,
+            trigger: navServicesToggle
         });
     }
+
+    // 2) Category bar dropdowns (service pages)
+    document.querySelectorAll('.sp-sub-nav-item').forEach(item => {
+        const toggle = item.querySelector('.sp-dropdown-toggle');
+        if (toggle && item.querySelector('.sp-dropdown')) {
+            setupDropdown(item, {
+                closeDelay: 120,
+                trigger: toggle
+            });
+        }
+    });
+
+    // Close all dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-item-services') && !e.target.closest('.sp-sub-nav-item')) {
+            document.querySelectorAll('.dropdown-open').forEach(el => {
+                el.classList.remove('dropdown-open');
+            });
+        }
+    });
 });
 
 // Toast Notification System
