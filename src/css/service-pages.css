@@ -1215,3 +1215,134 @@
 .dark .sp-cta-section {
   background: #060a0f;
 }
+
+/* ─── BREADCRUMB ─── */
+.bcc {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: -2rem !important;
+  margin-top: 5rem !important;
+  margin-left: 8rem !important;
+}
+
+.bcc a,
+.bcc span {
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.bcc a {
+  color: var(--g);
+}
+
+.bcc a:hover {
+  color: var(--b);
+}
+
+.bcc .sep {
+  color: rgba(90, 110, 97, .3);
+}
+
+
+/* --- Mobile UX/UI Premium Optimization --- */
+@media (max-width: 767px) {
+  .sp-container {
+    padding: 0 1.25rem;
+  }
+
+  .sp-hero {
+    padding-top: 8rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .sp-hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sp-hero-title {
+    font-size: 2.25rem !important;
+    line-height: 1.15;
+  }
+
+  .sp-hero-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .sp-hero-img {
+    height: 300px !important;
+    margin-top: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  /* Sub-nav mobile bar fixes */
+  .sp-sub-nav {
+    top: 64px !important;
+    max-width: 96%;
+    padding: 2px;
+  }
+
+  .sp-sub-nav-link {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.65rem;
+  }
+
+  /* Section padding */
+  .sp-pain,
+  .sp-protocol,
+  .sp-included,
+  .sp-specs,
+  .sp-faq {
+    padding: 4rem 0 !important;
+  }
+
+  .sp-section-h {
+    margin-bottom: 2.5rem;
+  }
+
+  .sp-section-t {
+    font-size: 1.85rem;
+  }
+
+  /* Grid stacks */
+  .sp-card-grid,
+  .sp-inc-grid,
+  .sp-spec-grid,
+  .sp-deliver-list {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .sp-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .sp-step {
+    width: 100%;
+  }
+
+  .sp-deliver {
+    margin: 1rem;
+    padding: 4rem 1.25rem !important;
+    border-radius: 2rem;
+  }
+
+  .sp-spec-card {
+    padding: 1.5rem;
+  }
+
+  .sp-faq-btn {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .sp-faq-ans {
+    padding: 0 1.5rem;
+  }
+}

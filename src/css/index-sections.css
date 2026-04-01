@@ -1822,3 +1822,75 @@ a.s5-contact-text:hover {
     gap: 2.5rem;
   }
 }
+
+/* --- Mobile UX/UI Premium Optimization --- */
+@media (max-width: 767px) {
+  .hero-headline {
+    font-size: clamp(3.5rem, 12vw, 5rem) !important;
+    line-height: 1;
+    margin-bottom: 2rem;
+  }
+
+  .hero-content {
+    padding: 0 1.5rem 3rem !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .hero-sub {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .hero-stats {
+    width: 100%;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .stat-val {
+    font-size: 28px;
+  }
+
+  /* CBAM Counter Section (S2) */
+  .s2-inner {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .s2-counter {
+    font-size: 6rem !important;
+    letter-spacing: -2px;
+  }
+
+  .s2-context {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  /* Section Spacing */
+  .s2, .s3, .s4, .s5 {
+    padding: 4rem 1.25rem !important;
+  }
+
+  /* Main Nav Overrides */
+  .hero-nav {
+    padding: 1.25rem !important;
+  }
+
+  /* Footer */
+  .s5-footer-grid {
+    padding-top: 2rem;
+  }
+
+  /* Scrolling Hint hide on tiny screens */
+  .scroll-hint {
+    display: none;
+  }
+}

@@ -289,65 +289,92 @@ function detailCalc() {
         if (!cnSel) return;
 
         const opt = cnSel.options[cnSel.selectedIndex];
+        if (!opt) return;
+
         const cnFull = opt.text;
         const cnCode = opt.value;
         const cnName = cnFull.includes(' — ') ? cnFull.split(' — ')[1].split(' [')[0] : 'Product';
         // Cleaner CN Name in summary
         const shortName = cnCode + ' ' + (cnName.length > 20 ? cnName.substring(0, 18) + '...' : cnName);
 
-        const defEfDirectBase = parseFloat(opt.getAttribute('data-direct')) || 0;
-        const defEfIndirectBase = parseFloat(opt.getAttribute('data-indirect')) || 0;
         const defEfBase = parseFloat(opt.getAttribute('data-def')) || 0;
 
         const sectorSel = row.querySelector('select');
         const sector = sectorSel ? sectorSel.value : 'steel';
         const markup = getMarkup(sector, yr);
-
-        const defEfDirect = defEfDirectBase * markup;
         const defEf = defEfBase * markup;
 
         const vol = parseFloat(document.getElementById('vol-' + id).value) || 0;
         const aefInput = document.getElementById('aef-' + id);
-        const actEf = aefInput && aefInput.value ? parseFloat(aefInput.value) : null;
+        const actEf = (aefInput && aefInput.value !== '') ? parseFloat(aefInput.value) : null;
 
         const costDef = vol * defEf * factor * ets;
-
-        const certsAct = actEf !== null ? vol * actEf * factor : (vol * defEf * factor);
-        const costAct = certsAct * ets;
+        const costAct = actEf !== null ? (vol * actEf * factor * ets) : costDef;
         const saving = costDef - costAct;
 
         totalCostDef += costDef;
         totalCostAct += costAct;
         totalVol += vol;
 
+        let savingClass = 'text-slate-400';
+        let savingText = '—';
+
+        if (Math.abs(saving) > 0.01) {
+            savingClass = saving > 0 ? 'text-brand-blue' : 'text-red-500';
+            savingText = fe(saving);
+        }
+
         tableHtml += `
             <tr class="border-b border-slate-100 dark:border-slate-800/50 hover:bg-white dark:hover:bg-slate-800/50 transition-colors text-[10px]">
                 <td class="py-4 px-4 font-bold max-w-[150px] truncate" title="${cnFull}">${shortName}</td>
                 <td class="py-4 px-2 text-slate-500 font-medium">${fv(vol)}</td>
-                <td class="py-4 px-2 text-red-500 font-bold">${ft(defEf, 2)}</td>
-                <td class="py-4 px-2 font-bold ${actEf !== null ? 'text-emerald-500' : 'text-slate-400'}">${actEf !== null ? ft(actEf, 2) : 'Default'}</td>
+                <td class="py-4 px-2 text-red-500 font-bold">${ft(defEf, 3)}</td>
+                <td class="py-4 px-2 font-bold ${actEf !== null ? 'text-emerald-500' : 'text-slate-400'}">${actEf !== null ? ft(actEf, 3) : 'Default'}</td>
                 <td class="py-4 px-2 text-slate-700 dark:text-white font-bold text-red-400">${fe(costDef)}</td>
                 <td class="py-4 px-2 text-emerald-500 font-bold">${fe(costAct)}</td>
-                <td class="py-4 px-4 font-black ${saving > 0.01 ? 'text-brand-blue' : 'text-slate-400'}">${saving > 0.01 ? fe(saving) : '—'}</td>
+                <td class="py-4 px-4 font-black ${savingClass}">${savingText}</td>
             </tr>
         `;
     });
 
     const tbody = document.getElementById('det-tbody');
-    if (tbody) tbody.innerHTML = tableHtml;
+    if (tbody) tbody.innerHTML = tableHtml || `<tr><td colspan="7" class="py-8 text-center text-slate-400 italic">No products added yet. Click above to begin.</td></tr>`;
 
-    // Update summary entries
+    // Global Totals and Savings
+    const totalSaving = Math.max(0, totalCostDef - totalCostAct);
+
+    // Update Sticky Summary Sidebar
     const defCostEl = document.getElementById('dt-cost-def');
     const actCostEl = document.getElementById('dt-cost-act');
     const savingEl = document.getElementById('dt-saving');
+    const savingBadge = document.getElementById('dt-saving-badge');
 
     if (defCostEl) defCostEl.textContent = fe(totalCostDef);
     if (actCostEl) actCostEl.textContent = fe(totalCostAct);
+    if (savingEl) {
+        savingEl.textContent = fe(totalSaving);
+        let colorClass = "text-white/30";
+        if (totalSaving > 0.01) colorClass = "text-white";
+        if (totalSaving < -0.01) colorClass = "text-red-400";
+        savingEl.className = `text-4xl font-display font-black ${colorClass} leading-none tracking-tighter`;
+    }
 
-    const totalSaving = totalCostDef - totalCostAct;
-    if (savingEl) savingEl.textContent = fe(totalSaving);
+    if (savingBadge) {
+        const pct = totalCostDef > 0 ? Math.round((totalSaving / totalCostDef) * 100) : 0;
+        if (totalSaving > 0.01) {
+            savingBadge.className = 'inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-amber-400/20 text-amber-400';
+            savingBadge.textContent = `SAVE ${pct}%`;
+        } else if (totalSaving < -0.01) {
+            savingBadge.className = 'inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-red-500/20 text-red-400';
+            savingBadge.textContent = `EXCESS COST`;
+        } else {
+            savingBadge.className = 'inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest bg-white/10 text-white/30';
+            savingBadge.textContent = `NO SAVING`;
+        }
+        savingBadge.style.display = 'inline-flex';
+    }
 
-    // Update Footer Summary
+    // Update Table Footer Summary
     const footVol = document.getElementById('det-total-vol');
     const footDef = document.getElementById('det-total-def');
     const footAct = document.getElementById('det-total-act');
@@ -356,13 +383,9 @@ function detailCalc() {
     if (footVol) footVol.textContent = fv(totalVol) + ' t';
     if (footDef) footDef.textContent = fe(totalCostDef);
     if (footAct) footAct.textContent = fe(totalCostAct);
-    if (footSave) footSave.textContent = fe(totalSaving);
-
-    const savingBadge = document.getElementById('dt-saving-badge');
-    if (savingBadge) {
-        const pct = totalCostDef > 0 ? Math.round((totalSaving / totalCostDef) * 100) : 0;
-        savingBadge.className = `inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-widest ml-2 ${totalSaving > 0.01 ? 'bg-amber-400/20 text-amber-400' : 'bg-slate-800 text-slate-500'}`;
-        savingBadge.textContent = totalSaving > 0.01 ? `SAVE ${pct}%` : 'NO SAVING';
+    if (footSave) {
+        footSave.textContent = Math.abs(totalSaving) > 0.01 ? fe(totalSaving) : '—';
+        footSave.className = `py-5 px-4 font-black ${totalSaving > 0.01 ? 'text-brand-blue' : (totalSaving < -0.01 ? 'text-red-500' : 'text-slate-400')}`;
     }
 }
 
@@ -549,6 +572,97 @@ function initAll() {
     }
 }
 
+function downloadDetailedExcel() {
+    const yr = parseInt(document.getElementById('d-year').value) || 2026;
+    const ets = parseFloat(document.getElementById('d-ets').value) || 70; // This is always EUR in input base
+    const factor = CBAM_FACTORS[yr] || 0.025;
+    const rows = document.querySelectorAll('#product-rows .product-row');
+
+    const excelData = [];
+    let totalDefCost = 0;
+    let totalActCost = 0;
+    let totalSavings = 0;
+
+    rows.forEach(row => {
+        const id = row.id.replace('prow-', '');
+        const cnSel = document.getElementById('cn-sel-' + id);
+        if (!cnSel) return;
+
+        const opt = cnSel.options[cnSel.selectedIndex];
+        const cnFull = opt.text;
+        const cnCode = opt.value;
+        const cnName = cnFull.includes(' — ') ? cnFull.split(' — ')[1].split(' [')[0] : 'Product';
+
+        const sectorSel = row.querySelector('select');
+        const sectorVal = sectorSel ? sectorSel.value : 'steel';
+        const sectorLabel = ALL_SECTORS.find(s => s.val === sectorVal)?.label || sectorVal;
+        const markup = getMarkup(sectorVal, yr);
+
+        const defEfBase = parseFloat(opt.getAttribute('data-def')) || 0;
+        const defEf = defEfBase * markup;
+
+        const vol = parseFloat(document.getElementById('vol-' + id).value) || 0;
+        const aefInput = document.getElementById('aef-' + id);
+        const actEf = aefInput && aefInput.value ? parseFloat(aefInput.value) : null;
+
+        const costDef = vol * defEf * factor * ets;
+        const costAct = actEf !== null ? (vol * actEf * factor * ets) : costDef;
+        const saving = costDef - costAct;
+
+        totalDefCost += costDef;
+        totalActCost += costAct;
+        totalSavings += saving;
+
+        excelData.push({
+            "Sector": sectorLabel,
+            "CN Code": cnCode,
+            "Product Name": cnName,
+            "Volume (t/yr)": vol,
+            "Default EF": Number(defEf.toFixed(3)),
+            "Actual EF": actEf !== null ? Number(actEf.toFixed(3)) : "Using Default",
+            "Total Default Cost (€)": Number(costDef.toFixed(2)),
+            "Actual Cost (€)": Number(costAct.toFixed(2)),
+            "Savings (€)": Number(saving.toFixed(2)),
+            "Status": saving > 0.01 ? "Saving" : (saving < -0.01 ? "Excess Cost" : "Neutral")
+        });
+    });
+
+    // Add totals row
+    const summarySheet = [
+        ...excelData,
+        {}, // Empty row
+        {
+            "Sector": "TOTAL",
+            "Volume (t/yr)": Number(excelData.reduce((s, r) => s + r["Volume (t/yr)"], 0).toFixed(0)),
+            "Total Default Cost (€)": Number(totalDefCost.toFixed(2)),
+            "Actual Cost (€)": Number(totalActCost.toFixed(2)),
+            "Savings (€)": Number(totalSavings.toFixed(2))
+        }
+    ];
+
+    const worksheet = XLSX.utils.json_to_sheet(summarySheet);
+    const workbook = XLSX.utils.book_new();
+
+    // Bold headers & Auto Width logic
+    const range = XLSX.utils.decode_range(worksheet['!ref']);
+    const wscols = [];
+    for (let C = range.s.c; C <= range.e.c; ++C) {
+        let max_len = 15;
+        for (let R = range.s.r; R <= range.e.r; ++R) {
+            const cell = worksheet[XLSX.utils.encode_cell({ r: R, c: C })];
+            if (cell && cell.v) {
+                const len = cell.v.toString().length;
+                if (len > max_len) max_len = len;
+            }
+        }
+        wscols.push({ wch: max_len + 2 });
+    }
+    worksheet['!cols'] = wscols;
+
+    XLSX.utils.book_append_sheet(workbook, worksheet, "CBAM Exposure");
+    XLSX.writeFile(workbook, "CBAM_Exposure_Summary.xlsx");
+}
+
 // Expose functions to window for inline onclick handlers
 window.setCurrency = setCurrency;
 window.sectorChange = sectorChange;
@@ -562,3 +676,4 @@ window.phaseCalc = phaseCalc;
 window.switchCalcTab = switchCalcTab;
 window.setDL = setDL;
 window.updateEvolutionTimeline = updateEvolutionTimeline;
+window.downloadDetailedExcel = downloadDetailedExcel;

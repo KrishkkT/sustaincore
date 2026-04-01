@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./src/css/main.css">
     <link rel="stylesheet" href="./src/css/index-sections.css">
     <link rel="stylesheet" href="/src/css/service-pages.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <style>
         @keyframes marquee {
             0% {
@@ -1781,6 +1782,17 @@
                                             </tr>
                                         </tfoot>
                                     </table>
+                                </div>
+
+                                <!-- Excel Download Button -->
+                                <div class="mt-8 flex justify-end">
+                                    <button onclick="window.downloadDetailedExcel()" 
+                                        class="bg-brand-blue hover:bg-[#0d2a3f] text-white px-8 py-4 rounded-xl font-bold uppercase text-[10px] tracking-widest transition-all shadow-lg flex items-center gap-3 group">
+                                        <svg class="w-4 h-4 text-white transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                        </svg>
+                                        Download as Excel (.xlsx)
+                                    </button>
                                 </div>
                             </div>
                             <!-- Tab 3: Projection -->

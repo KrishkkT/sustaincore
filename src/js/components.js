@@ -8,55 +8,55 @@ export const header = `
   <div class="hidden md:flex items-center gap-8 navbar-items">
     <a href="/" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Home</a>
     <div class="nav-item-services group/mega" id="nav-services-dropdown">
-      <a class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200 flex items-center gap-1 cursor-pointer" id="nav-services-toggle">
+      <a href="/services.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200 flex items-center gap-1 cursor-pointer" id="nav-services-toggle">
         Services 
         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-300 group-hover/mega:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
       </a>
       
       <div class="mega-menu">
-        <a href="/esg-reporting.html" class="mega-item">
+        <a href="/services.html#esg" class="mega-item">
           <div>
             <span class="title">ESG Reporting & Sustainability Disclosure</span>
             <span class="desc">BRSR, CDP, GRI, SASB & TCFD disclosures.</span>
           </div>
         </a>
         
-        <a href="/carbon-climate.html" class="mega-item">
+        <a href="/services.html#carbon" class="mega-item">
           <div>
             <span class="title">Carbon Management & Climate Action</span>
             <span class="desc">GHG inventory, CBAM, PCF & Carbon Credits.</span>
           </div>
         </a>
 
-        <a href="/ratings-targets.html" class="mega-item">
+        <a href="/services.html#ratings" class="mega-item">
           <div>
             <span class="title">Sustainability Assessment & ESG Rating</span>
             <span class="desc">EcoVadis, SBTi, EPD & Materiality analysis.</span>
           </div>
         </a>
 
-        <a href="/clearances-eia.html" class="mega-item">
+        <a href="/services.html#gpcb" class="mega-item">
           <div>
             <span class="title">GPCB Compliance & Env. Approval</span>
             <span class="desc">EC, EIA, Consent management & EPR.</span>
           </div>
         </a>
 
-        <a href="/management-systems.html" class="mega-item">
+        <a href="/services.html#env" class="mega-item">
           <div>
             <span class="title">Environmental Audits</span>
             <span class="desc">ISO 14001, 45001, 50001 & Compliance audits.</span>
           </div>
         </a>
 
-        <a href="/water-testing.html" class="mega-item">
+        <a href="/services.html#water" class="mega-item">
           <div>
             <span class="title">Water and Wastewater Quality Testing</span>
             <span class="desc">Effluent analysis, Groundwater & Water audits.</span>
           </div>
         </a>
 
-        <a href="/air-monitoring.html" class="mega-item">
+        <a href="/services.html#air" class="mega-item">
           <div>
             <span class="title">Air Quality Monitoring & Emission Testing</span>
             <span class="desc">Stack, Ambient, CEMS & Workplace air quality.</span>

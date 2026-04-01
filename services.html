@@ -2,2319 +2,518 @@
 <html lang="en">
 
 <head>
+  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Strategic Environmental & ESG Solutions</title>
+  <title>Global Services | SustainCore - Leading Sustainability Consulting</title>
   <meta name="description"
-    content="Comprehensive ESG, climate, and compliance solutions. From carbon inventory and CBAM advisory to NABL-accredited water and air monitoring.">
-  <meta property="og:title" content="Services | SustainCore Environmental Solutions">
-  <meta property="og:description"
-    content="Specialized ESG, carbon footprinting, and environmental compliance solutions for corporate resilience.">
-  <meta property="og:image" content="/Frame 4.svg">
+    content="Explore SustainCore's full spectrum of ESG, Carbon, and Environmental services. From regulatory compliance to voluntary leadership, we cover all your sustainability needs.">
+  <link rel="stylesheet" href="/src/css/main.css">
+  <link rel="stylesheet" href="/src/css/service-pages.css">
   <link rel="icon" href="/Frame 4.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="/src/css/services-dossier.css">
   <style>
-    .tab-bar {
+    /* Custom styles for Services Landing Page */
+    .hero-global {
       position: relative;
-      overflow: visible !important;
+      min-height: 85vh;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
+      height: 100vh;
+      border-radius: 0 !important;
+      margin-top: 0rem !important;
+      align-items: center;
+      padding-top: 150px;
+      overflow: hidden;
     }
 
-    .tab-btn-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-
-    .tab-dropdown {
+    .hero-global::after {
+      content: '';
       position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 240px;
-      background: white;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      border-radius: 16px;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-      padding: 0.75rem;
-      z-index: 100;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(10px);
-      transition: all 0.2s ease;
+      inset: 0;
+      background: url('/images/services-hero.png') no-repeat center center;
+      background-size: cover;
+      z-index: 0;
+      opacity: 0.2;
     }
 
-    .dark .tab-dropdown {
-      background: #1e293b;
+    .dark .hero-global::after {
+      opacity: 0.5;
+    }
+
+    .hero-global::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--hero-overlay);
+      z-index: 1;
+    }
+
+    .hero-global-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .stat-tag-card {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 200px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-tag-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .stat-tag-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--b);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-tag-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+    }
+
+    .dark .stat-tag-card {
+      background: rgba(30, 41, 59, 0.85);
       border-color: rgba(255, 255, 255, 0.1);
     }
 
-    .tab-btn-wrapper:hover .tab-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
+    .dark .stat-tag-val {
+      color: var(--gl);
     }
 
-    .dropdown-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.6rem 1rem;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #475569;
-      text-decoration: none;
-      transition: all 0.2s;
+    .services-grid-section {
+      padding: 100px 0;
+      background: #fdfaf5;
     }
 
-    .dark .dropdown-item {
-      color: #94a3b8;
+    .trust-section {
+      padding: 80px 0;
+      background: #f7f2e9;
+      text-align: center;
     }
 
-    .dropdown-item:hover {
-      background: #f1f5f9;
-      color: var(--brand-blue-light);
+    .why-section {
+      padding: 100px 0;
+      background: #f9f5ee;
     }
 
-    .dark .dropdown-item:hover {
-      background: #334155;
-      color: #60a5fa;
-    }
-
-    .dropdown-item .external-link {
-      opacity: 0.5;
-      font-size: 10px;
-      margin-left: 8px;
-    }
-
-    .dropdown-item:hover .external-link {
-      opacity: 1;
-    }
-
-    /* Ensure category bar stays on top */
-    .tab-wrap {
-      z-index: 50;
-    }
-
-    .svc-learn-more {
-      display: inline-flex;
-      align-items: center;
-      margin-top: 1.5rem;
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--brand-blue-light);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      text-decoration: none;
+    .differentiator-card {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      text-align: center;
       transition: all 0.3s ease;
     }
 
-    .svc-learn-more:hover {
-      color: var(--brand-green);
-      transform: translateX(5px);
+    .differentiator-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(26, 74, 107, 0.06);
+    }
+
+    .diff-icon {
+      width: 64px;
+      height: 64px;
+      background: var(--gp);
+      color: var(--g);
+      border-radius: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      font-size: 1.75rem;
+    }
+
+    .svc-card {
+      cursor: pointer;
+    }
+
+    .dark .differentiator-card {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .dark .diff-icon {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--gl);
+    }
+
+    .faq-global {
+      background: #fdfaf5;
+      padding: 100px 0;
+    }
+
+    .hero-stats-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      align-items: flex-end;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-stats-stack {
+        align-items: center;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 3rem;
+      }
+
+      .stat-tag-card {
+        width: 160px;
+        padding: 1.25rem;
+      }
+
+      .stat-tag-val {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
-  <!-- Header Placeholder -->
   <div id="header-root"></div>
 
-  <main class="pt-32 pb-32">
-    <div id="services-scroll-target" class="absolute -top-40"></div>
-
+  <main>
     <!-- Hero Section -->
-    <div class="px-8 mb-24 max-w-[1440px] mx-auto text-center" data-aos="fade-up">
-      <div class="inline-block px-4 py-1.5 mb-6 bg-brand-blue-light/10 border border-brand-blue-light/20 rounded-full">
-        <span class="text-sm font-bold text-brand-blue-light uppercase tracking-widest">Scientific Stewardship</span>
-      </div>
-      <h1 class="font-display text-5xl md:text-7xl font-extrabold text-brand-charcoal mb-8 leading-[1.1]">
-        ESG, Compliance & <br />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-blue-light to-brand-green">Specialized
-          Solutions</span>
-      </h1>
-      <p class="text-xl md:text-2xl text-brand-charcoal/70 max-w-3xl mx-auto leading-relaxed">
-        From carbon inventory and CBAM advisory to NABL-accredited testing — we deliver the precision and proof required
-        for corporate resilience.
-      </p>
-    </div>
-
-    <!-- Services Overview Grid -->
-    <div class="px-8 mb-24 max-w-[1440px] mx-auto" id="services-overview">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- 01: ESG Reporting -->
-        <a href="#esg-reporting"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-blue-50 dark:bg-blue-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
+    <section class="hero-global">
+      <div class="sp-container hero-global-content">
+        <div class="sp-hero-grid">
+          <div>
+            <h1 class="sp-hero-title" style="color: var(--b);">
+              Every service your business needs <br> to lead sustainably
+            </h1>
+            <p class="sp-hero-desc" style="color: var(--muted); max-width: 580px; font-weight: 400;">
+              From mandatory regulatory compliance to voluntary ESG leadership — SustainCore covers the full spectrum of
+              environmental and sustainability services. One partner. Complete delivery.
+            </p>
+            <a href="/contact.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Technical
+              Consultation</a>
           </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">ESG Reporting</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">BRSR, GRI, and SASB aligned
-            disclosures for listed entities.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 02: Carbon & Climate -->
-        <a href="#carbon-climate"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Carbon & Climate</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Net Zero roadmaps, Scope
-            1-3 audits, and CBAM advisory.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 03: Ratings & Targets -->
-        <a href="#ratings-targets"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-purple-50 dark:bg-purple-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Ratings & Targets</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">EcoVadis, CDP, and SBTi
-            performance optimization.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 04: Clearances & EIA -->
-        <a href="#clearances-eia"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-amber-50 dark:bg-amber-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Clearances & EIA</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Regulatory clearances,
-            impact studies, and EC advisory.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 05: Licenses & EPR -->
-        <a href="#licenses-epr"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-indigo-50 dark:bg-indigo-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Licenses & EPR</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">EPR registration, Rule 9,
-            and waste management permits.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 06: Management Systems -->
-        <a href="#management-systems"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-slate-50 dark:bg-slate-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Mgmt. Systems</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">ISO 14001, 45001, and 50001
-            implementation & audit.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 07: Water Testing -->
-        <a href="#water-testing"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-cyan-50 dark:bg-cyan-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Water Testing</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">IS 10500 analysis, effluent
-            monitoring, and ZLD audits.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-
-        <!-- 08: Air Monitoring -->
-        <a href="#air-monitoring"
-          class="group bg-white dark:bg-slate-800 p-8 rounded-3xl border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-2xl hover:border-brand-blue-light/30 transition-all duration-500 no-underline">
-          <div
-            class="w-12 h-12 bg-sky-50 dark:bg-sky-900/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-            </svg>
-          </div>
-          <h3 class="font-display text-xl font-bold text-brand-charcoal dark:text-white mb-2">Air Monitoring</h3>
-          <p class="text-sm text-brand-charcoal/60 dark:text-slate-400 leading-relaxed mb-4">Isokinetic sampling, CEMS,
-            and workplace air monitoring.</p>
-          <div class="flex items-center text-xs font-bold text-brand-blue-light uppercase tracking-wider">
-            Jump to section <span class="ml-2 group-hover:translate-x-1 transition-transform">↓</span>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="tab-wrap" id="services-nav-anchor">
-      <div class="tab-bar" id="tabBar">
-        <!-- 01 ESG Reporting -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn active" data-tab="esg-reporting"><span class="n">01</span>ESG Reporting</button>
-          <div class="tab-dropdown">
-            <a href="#brsr-reporting" class="dropdown-item">BRSR Reporting <span class="external-link">→</span></a>
-            <a href="#cdp-disclosure" class="dropdown-item">CDP Disclosure <span class="external-link">→</span></a>
-            <a href="#gri-reporting" class="dropdown-item">GRI Reporting <span class="external-link">→</span></a>
-            <a href="#sasb-standards" class="dropdown-item">SASB Standards <span class="external-link">→</span></a>
-            <a href="#tcfd-reporting" class="dropdown-item">TCFD Reporting <span class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 02 Carbon & Climate -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="carbon-climate"><span class="n">02</span>Carbon &amp; Climate</button>
-          <div class="tab-dropdown">
-            <a href="#cbam-advisory" class="dropdown-item">CBAM Advisory <span class="external-link">→</span></a>
-            <a href="#ghg-inventory" class="dropdown-item">GHG Inventory <span class="external-link">→</span></a>
-            <a href="#ghg-verification" class="dropdown-item">GHG Verification <span class="external-link">→</span></a>
-            <a href="#pcf-accounting" class="dropdown-item">Product Carbon Footprint <span
-                class="external-link">→</span></a>
-            <a href="#carbon-credits" class="dropdown-item">Carbon Credits <span class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 03 Ratings & Targets -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="ratings-targets"><span class="n">03</span>Ratings &amp; Targets</button>
-          <div class="tab-dropdown">
-            <a href="#materiality-assessment" class="dropdown-item">Materiality Assessment <span
-                class="external-link">→</span></a>
-            <a href="#ecovadis-assessment" class="dropdown-item">EcoVadis Assessment <span
-                class="external-link">→</span></a>
-            <a href="#epd-declaration" class="dropdown-item">EPD Declaration <span class="external-link">→</span></a>
-            <a href="#sbti-targets" class="dropdown-item">SBTi Targets <span class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 04 Clearances & EIA -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="clearances-eia"><span class="n">04</span>Clearances &amp; EIA</button>
-          <div class="tab-dropdown">
-            <a href="#eia-studies" class="dropdown-item">EIA Studies <span class="external-link">→</span></a>
-            <a href="#ec-renewals" class="dropdown-item">EC Renewals <span class="external-link">→</span></a>
-            <a href="#cgwa-permission" class="dropdown-item">CGWA Permission <span class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 05 Licenses & EPR -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="licenses-epr"><span class="n">05</span>Licenses &amp; EPR</button>
-          <div class="tab-dropdown">
-            <a href="#epr-compliance" class="dropdown-item">EPR Compliance <span class="external-link">→</span></a>
-            <a href="#cte-cto-consents" class="dropdown-item">CTE / CTO Consents <span
-                class="external-link">→</span></a>
-            <a href="#rule-9-auth" class="dropdown-item">Rule 9 Authorisation <span class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 06 Management Systems -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="management-systems"><span class="n">06</span>Mgmt. Systems</button>
-          <div class="tab-dropdown">
-            <a href="#ems-implementation" class="dropdown-item">EMS (ISO 14001) <span class="external-link">→</span></a>
-            <a href="#iso-certification" class="dropdown-item">ISO Certification <span
-                class="external-link">→</span></a>
-            <a href="#regulatory-audits" class="dropdown-item">Regulatory Audits <span
-                class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 07 Water Testing -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="water-testing"><span class="n">07</span>Water Testing</button>
-          <div class="tab-dropdown">
-            <a href="#drinking-water" class="dropdown-item">Drinking Water <span class="external-link">→</span></a>
-            <a href="#wastewater-analysis" class="dropdown-item">Wastewater Analysis <span
-                class="external-link">→</span></a>
-            <a href="#effluent-analysis" class="dropdown-item">Effluent Analysis <span
-                class="external-link">→</span></a>
-          </div>
-        </div>
-
-        <!-- 08 Air Monitoring -->
-        <div class="tab-btn-wrapper">
-          <button class="tab-btn" data-tab="air-monitoring"><span class="n">08</span>Air Monitoring</button>
-          <div class="tab-dropdown">
-            <a href="#stack-monitoring" class="dropdown-item">Stack Monitoring <span class="external-link">→</span></a>
-            <a href="#workplace-air" class="dropdown-item">Workplace Air <span class="external-link">→</span></a>
+          <div class="hero-stats-stack">
+            <div class="stat-tag-card">
+              <span class="stat-tag-val">8</span>
+              <span class="stat-tag-label">Service areas</span>
+            </div>
+            <div class="stat-tag-card">
+              <span class="stat-tag-val">30+</span>
+              <span class="stat-tag-label">Sub-services</span>
+            </div>
+            <div class="stat-tag-card">
+              <span class="stat-tag-val">15+</span>
+              <span class="stat-tag-label">ESG frameworks</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="panels">
-
-      <!-- ═══════════════════════════════
-     T1 — ESG & Sustainability Reporting
-═══════════════════════════════ -->
-      <div class="panel active" id="esg-reporting">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-          <div class="sec-sub">Five internationally recognised frameworks. One integrated data collection process.
-            Delivered end to end.</div>
+    <!-- Services Section -->
+    <section class="services-grid-section">
+      <div class="sp-container">
+        <div class="sp-section-h">
+          <h2 class="sp-section-t" style="color: var(--b);">Core Service Solutions</h2>
+          <p class="sp-section-sub">Comprehensive environmental and sustainability expertise delivered with scientific
+            integrity.</p>
         </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
 
-          <div class="svc-card">
+        <div class="svc-grid" style="grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));">
+          <!-- 01: ESG Reporting -->
+          <div class="svc-card" id="esg">
             <div class="svc-img">
-              <!-- BRSR: India's stock exchange building — SEBI regulatory context -->
-              <img src="https://images.unsplash.com/photo-1605792657660-596af9009e82?w=700&q=80"
-                alt="BSE Mumbai stock exchange" />
-              <span class="img-badge">SEBI Mandatory · India</span>
+              <img src="/images/esg-reporting.png" alt="ESG Reporting">
+              <div class="img-badge">Strategy</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">BRSR Reporting</div>
-              <div class="svc-desc">Business Responsibility &amp; Sustainability Reporting is mandatory for India's top
-                1000 listed companies under SEBI. We manage the complete lifecycle — materiality assessment, data gap
-                analysis, 98-indicator data collection, and final board-ready submission. The BRSR Core
-                (assurance-required subset) applies to the top 150 companies from FY 2023-24, expanding to 1000 by FY
-                2026-27. Our structured cross-functional data framework reduces internal reporting burden by up to 40%.
+              <h3 class="svc-name">ESG Reporting & Disclosure</h3>
+              <p class="sp-card-text">Audit-ready reporting for BRSR, GRI, SASB, and TCFD to satisfy global investor and
+                regulatory demands.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/esg-reporting.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
               </div>
-              </ul>
-              <a href="files/1-brsr.html" class="svc-learn-more">Learn More & Case Studies →</a>
             </div>
           </div>
 
-          <div class="svc-card">
+          <!-- 02: Carbon Management -->
+          <div class="svc-card" id="carbon">
             <div class="svc-img">
-              <!-- CDP: A smokestack with emissions data chart overlay concept — carbon disclosure -->
-              <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=700&q=80"
-                alt="Carbon emissions monitoring infrastructure" />
-              <span class="img-badge">Investor Grade · Global</span>
+              <img src="/images/carbon-management.png" alt="Carbon Management">
+              <div class="img-badge">Engineering</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">CDP Disclosure</div>
-              <div class="svc-desc">CDP is the standard demanded by institutional investors and global procurement teams
-                for environmental transparency. Over 23,000 companies disclosed through CDP in 2023 alone. We cover
-                Climate, Water Security and Forest modules — with gap analysis against your prior-year scores, response
-                drafting aligned with TCFD, and a targeted strategy to reach Leadership band. A strong CDP score
-                protects supplier contracts, attracts ESG-focused capital and signals genuine climate commitment to
-                markets.</div>
-              </ul>
-              <a href="files/1-cdp.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="gri-reporting">
-            <div class="svc-img">
-              <!-- GRI: A printed sustainability report document being reviewed at a desk -->
-              <img src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=700&q=80"
-                alt="Sustainability report review at desk" />
-              <span class="img-badge">Global Standard · GRI 2021</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">GRI Reporting</div>
-              <div class="svc-desc">GRI is the world's most widely used sustainability reporting standard, referenced by
-                over 10,000 organisations globally. We build full GRI Universal Standards 2021-aligned reports covering
-                environmental, social and governance performance with the rigour demanded by NGOs, regulators and
-                institutional investors. Our team manages stakeholder engagement, topic standards selection, all
-                required disclosures and the GRI Content Index, producing a report that reflects genuine performance —
-                not just compliance.</div>
-              <ul class="svc-feats">
-                <li>GRI Universal Standards 2021 — all mandatory disclosures</li>
-                <li>Topic standards selection aligned to sector and materiality</li>
-                <li>Stakeholder engagement facilitation and documentation</li>
-                <li>Double materiality determination (impact + financial)</li>
-                <li>GRI Content Index preparation and with-reference declaration</li>
-              </ul>
-              <a href="files/1-gri.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="sasb-standards">
-            <div class="svc-img">
-              <!-- SASB: Financial data and investment metrics — investor-grade ESG metrics -->
-              <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=700&q=80"
-                alt="Investor ESG financial data analysis" />
-              <span class="img-badge">Investor-grade · Industry-specific</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">SASB Standards</div>
-              <div class="svc-desc">SASB standards deliver investor-grade, industry-specific ESG metrics now integrated
-                into ISSB's IFRS S1 and S2. We identify your applicable SASB standards from the SICS industry
-                classification system, collect financially material ESG data, and integrate disclosures into your annual
-                or integrated report. Quantitative metrics, management discussion narratives and cross-framework
-                linkages to GRI and TCFD are handled together, eliminating data duplication and keeping all disclosures
-                internally consistent.</div>
-              <ul class="svc-feats">
-                <li>SICS industry classification and applicable standard identification</li>
-                <li>Financially material ESG metric data collection and verification</li>
-                <li>Quantitative disclosures with prior-year comparatives</li>
-                <li>SASB-TCFD-GRI integration to eliminate duplicate data collection</li>
-                <li>ISSB IFRS S1/S2 readiness alignment guidance</li>
-              </ul>
-              <a href="files/1-sasb.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="tcfd-reporting">
-            <div class="svc-img">
-              <!-- TCFD: A flooded city street or extreme weather event — physical climate risk -->
-              <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=700&q=80"
-                alt="Climate risk extreme weather flood" />
-              <span class="img-badge">Climate Risk · Regulatory Trend</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">TCFD Reporting</div>
-              <div class="svc-desc">TCFD translates climate risk into financial language — governance, strategy, risk
-                management and metrics — which is precisely what regulators and institutional investors now require. We
-                conduct climate scenario analysis across 1.5°C, 2°C and 4°C pathways, quantify physical and transition
-                risk exposure, and build a disclosure that satisfies both regulatory requirements and investor climate
-                due diligence. TCFD is increasingly mandatory in the UK, EU and will follow in India for large listed
-                companies.</div>
-              <ul class="svc-feats">
-                <li>Climate scenario analysis across 1.5°C / 2°C / 4°C pathways</li>
-                <li>Physical risk: acute hazards (floods, heatwaves) and chronic shifts</li>
-                <li>Transition risk: regulatory, technology and market scenarios</li>
-                <li>Financial impact quantification with sensitivity analysis</li>
-                <li>Governance structure review and board climate oversight alignment</li>
-              </ul>
-              <a href="files/1-tcfd.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- PROCESS — uniform 5-step grid for all tabs -->
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Scoping &amp; Framework Selection</div>
-              <div class="ps-desc">Identify mandatory frameworks, reporting boundaries, materiality topics and
-                regulatory obligations for your sector.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Data Collection &amp; Gap Analysis</div>
-              <div class="ps-desc">Map data needs across departments, identify gaps and build reliable collection
-                processes using structured templates.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Disclosure Drafting</div>
-              <div class="ps-desc">Write all required disclosures per framework — quantitative data, management
-                narratives and supporting context.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">04</div>
-              <div class="ps-name">Review &amp; Assurance Prep</div>
-              <div class="ps-desc">Support third-party assurance readiness and facilitate sign-off across legal, finance
-                and leadership teams.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">05</div>
-              <div class="ps-name">Publication &amp; Submission</div>
-              <div class="ps-desc">Finalise to board standard, submit to regulators and prepare stakeholder
-                communication materials.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Listed company on NSE / BSE</span><span class="wc">Export-oriented
-                manufacturer</span><span class="wc">Supplier to global MNCs</span><span class="wc">PE-backed business
-                preparing for exit</span><span class="wc">Seeking ESG-rated green financing</span><span
-                class="wc">Responding to customer ESG questionnaires</span><span class="wc">Building institutional
-                investor credibility</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Is BRSR mandatory for my company? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>BRSR is currently mandatory for the top 1000 listed companies by market cap on Indian exchanges,
-                effective FY 2022-23. BRSR Core — the assured subset of 39 KPIs — applies to the top 150 companies from
-                FY 2023-24, expanding to the top 1000 by FY 2026-27. Even if below these thresholds, voluntary
-                disclosure is strongly advisable as investor and procurement expectations are rising sharply across all
-                listed and large unlisted businesses.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How long does a full ESG report take? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>First-time reports take 10–16 weeks from kickoff to publication. Annual cycles from the second year run
-                in 6–8 weeks because baseline systems and data templates are already in place. The largest variable is
-                how quickly internal teams supply verified data — we compress this with pre-built templates and phased
-                data review that prevents last-minute bottlenecks.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Can you handle multiple frameworks simultaneously? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Yes — and we recommend it. GRI, BRSR, TCFD and SASB share substantial data overlap. Our integrated
-                approach collects data once and maps it across all frameworks simultaneously, reducing internal effort
-                by 35–40% versus separate workstreams. A unified data architecture keeps every disclosure consistent and
-                audit-ready across all frameworks.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Do you support third-party assurance? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>We prepare your data and systems for assurance and work alongside your chosen assurance provider — or
-                recommend an accredited partner. When all data is traceable and evidence-documented before the assurance
-                engagement begins, fees typically fall 20–30% and turnaround shortens significantly because auditors
-                spend less time chasing evidence.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What if our sustainability data is incomplete? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>This is the norm for first-time reporters. We begin with a data maturity assessment — identifying what
-                exists, what is missing and what can be estimated using defensible proxy methods. We also design
-                internal data systems so that each successive year requires less effort and delivers higher-quality
-                disclosures. Most clients report a 50–60% reduction in data preparation time by their third reporting
-                cycle.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Ready to start your ESG report?</h3>
-            <p>Free 45-minute scoping call — we'll map your framework obligations and outline a delivery timeline on the
-              spot.</p>
-          </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Book free call →</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/esg-reporting.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore ESG Deep-Dive</a>
-        </div>
-      </div><!-- /t1 -->
-
-      <!-- ═══════════════════════════════
-     T2 — Carbon & Climate
-═══════════════════════════════ -->
-      <div class="panel" id="carbon-climate">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-          <div class="sec-sub">From emissions accounting to verified carbon credits — a full climate services suite
-            under one roof.</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-
-          <div class="svc-card" id="cbam-advisory">
-            <div class="svc-img">
-              <!-- CBAM: Steel or aluminium factory — exactly the sectors CBAM covers -->
-              <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=700&q=80"
-                alt="Steel manufacturing facility CBAM sector" />
-              <span class="img-badge">EU Regulation · Mandatory 2026</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">CBAM Advisory &amp; Reporting</div>
-              <div class="svc-desc">The EU Carbon Border Adjustment Mechanism taxes the embedded carbon in goods
-                exported into the EU. From 2026, exporters of steel, aluminium, cement, fertilisers and electricity must
-                purchase CBAM certificates matching embedded emissions — with penalties proportional to the EU carbon
-                price (currently above €60/tonne). Indian exporters without a compliant CBAM process face both direct
-                financial exposure and risk of losing EU market access as enforcement escalates each year. We calculate,
-                report and manage CBAM compliance before it becomes a crisis.</div>
-              <ul class="svc-feats">
-                <li>Embedded emissions calculation per product line — direct and indirect</li>
-                <li>CBAM quarterly transition period reports for EU importers</li>
-                <li>Supplier data collection system design and ongoing management</li>
-                <li>Authorised CBAM declarant registration support</li>
-                <li>Certificate obligation monitoring and annual financial exposure modelling</li>
-              </ul>
-              <a href="files/2-cbam.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="ghg-inventory">
-            <div class="svc-img">
-              <!-- GHG Inventory: Energy meters, utility consumption tracking — Scope 1/2 data -->
-              <img
-                src="https://images.unsplash.com/photo-1691927458684-8b30380b9412?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Energy meters and utility consumption monitoring" />
-              <span class="img-badge">GHG Protocol · Foundation</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">GHG Inventory &amp; Accounting</div>
-              <div class="svc-desc">Accurate emissions accounting is the foundation of every credible climate strategy.
-                We build GHG inventories aligned with the GHG Protocol Corporate Standard — used by over 9,200 companies
-                globally — covering all three scopes. We use primary data wherever available, supplemented by
-                peer-reviewed emission factor databases (IPCC, DEFRA, ecoinvent), with full uncertainty analysis and a
-                documented audit trail that withstands third-party verification without requiring extensive rework. The
-                result is a defensible, data-rich inventory ready for CDP, SBTi or investor disclosure.</div>
-              <ul class="svc-feats">
-                <li>Scope 1: direct combustion, industrial process and fugitive emissions</li>
-                <li>Scope 2: market-based and location-based electricity accounting</li>
-                <li>Scope 3: all 15 categories screened; highest-emission categories calculated</li>
-                <li>Base year setting, intensity ratios and year-on-year comparison</li>
-                <li>Emission factor documentation for assurance and regulatory use</li>
-              </ul>
-              <a href="files/2-ghg.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="ghg-verification">
-            <div class="svc-img">
-              <!-- GHG Verification: A third-party auditor with clipboard reviewing industrial data -->
-              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&q=80"
-                alt="Third party auditor reviewing environmental data" />
-              <span class="img-badge">ISO 14064-3 · Third-party Verified</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">GHG Verification (ISO 14064)</div>
-              <div class="svc-desc">Third-party verification of your GHG inventory is increasingly required by CDP,
-                SBTi, major procurement programmes and green finance providers. ISO 14064-3 verification confirms your
-                inventory is complete, consistent, transparent and accurate. We prepare your inventory to verification
-                standard and coordinate with accredited verifiers, reducing verification time by 30–40% through
-                pre-submission preparation — ensuring your verifier finds a clean, well-documented inventory rather than
-                a set of problems to untangle. Limited and reasonable assurance pathways both supported.</div>
-              <ul class="svc-feats">
-                <li>ISO 14064-3 verification readiness assessment and gap closure</li>
-                <li>Complete evidence documentation and audit trail preparation</li>
-                <li>Accredited verifier selection, coordination and RFP support</li>
-                <li>Limited assurance (review) and reasonable assurance pathways</li>
-                <li>Post-verification corrective actions and next-cycle improvement plan</li>
-              </ul>
-              <a href="files/2-ghg.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="pcf-accounting">
-            <div class="svc-img">
-              <!-- Product Carbon Footprint: A product manufacturing line / LCA concept -->
-              <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80"
-                alt="Product manufacturing line lifecycle assessment" />
-              <span class="img-badge">ISO 14064-1 · ISO 14067 · LCA</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Organisational &amp; Product Carbon Footprint</div>
-              <div class="svc-desc">A Corporate Carbon Footprint (CCF) establishes your total emissions baseline. A
-                Product Carbon Footprint (PCF) quantifies embedded emissions per unit of output — critical for CBAM
-                compliance, Environmental Product Declarations and customer due diligence requests. Life Cycle
-                Assessment (LCA) covers environmental impact across the full product lifecycle. Our hotspot analysis
-                identifies the highest-impact reduction opportunities, producing an abatement cost curve that guides
-                where investment in decarbonisation delivers the most value per rupee spent.</div>
-              <ul class="svc-feats">
-                <li>Corporate Carbon Footprint (CCF) — ISO 14064-1 methodology</li>
-                <li>Product Carbon Footprint (PCF) — ISO 14067</li>
-                <li>Life Cycle Assessment (LCA) — cradle-to-gate and cradle-to-grave</li>
-                <li>Emissions hotspot identification and abatement cost curve</li>
-                <li>Reduction roadmap aligned with SBTi near-term pathways</li>
-              </ul>
-              <a href="files/2-pcf.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-          <div class="svc-card" id="carbon-credits">
-            <div class="svc-img">
-              <!-- Carbon Credits: A forest or reforestation project — nature-based solutions -->
-              <img
-                src="https://images.unsplash.com/photo-1705313382153-ed294af4b0a7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Forest carbon offset reforestation project" />
-              <span class="img-badge">Gold Standard · Verra VCS</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Carbon Credits</div>
-              <div class="svc-desc">High-quality carbon credits are a credible bridge for emissions that cannot yet be
-                eliminated — and the Science Based Targets initiative endorses their use for residual unavoidable
-                emissions. We source, validate and retire credits to Gold Standard and Verra VCS standards, screening
-                every project for additionality, permanence, co-benefits and freedom from double-counting. We also
-                navigate India's emerging Carbon Credit Trading Scheme (CCTS) under the Energy Conservation Act,
-                ensuring your offset claims stand up to both scientific and investor scrutiny.</div>
-              <ul class="svc-feats">
-                <li>Credit sourcing from Gold Standard, Verra VCS and Indian CCTS projects</li>
-                <li>Quality screening: additionality, permanence, co-benefits, no double-counting</li>
-                <li>Scope 1, 2 and 3 offset strategy design aligned with net zero commitment</li>
-                <li>Official credit retirement with certificates and public registry records</li>
-                <li>Net zero strategy alignment and carbon claims defensibility review</li>
-              </ul>
-              <a href="files/2-cc.html" class="svc-learn-more">Learn More & Case Studies →</a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Boundary &amp; Scope Setting</div>
-              <div class="ps-desc">Define organisational boundaries and determine which emission scopes apply to your
-                business model and supply chain.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Data Collection</div>
-              <div class="ps-desc">Gather activity data across energy, fleet, supply chain and travel using structured,
-                verifiable data collection templates.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Emissions Calculation</div>
-              <div class="ps-desc">Apply globally recognised emission factors (IPCC, GHG Protocol, DEFRA) with full
-                uncertainty analysis and documentation.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">04</div>
-              <div class="ps-name">Reduction Strategy</div>
-              <div class="ps-desc">Identify high-impact reduction opportunities and build a time-bound roadmap aligned
-                to science-based pathways.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">05</div>
-              <div class="ps-name">Report &amp; Verify</div>
-              <div class="ps-desc">Produce disclosure-ready reports and support third-party verification to give your
-                emissions data external credibility.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Exporting goods to the European Union</span><span
-                class="wc">Responding to customer carbon audits</span><span class="wc">Setting a science-based net zero
-                target</span><span class="wc">Applying for green or sustainability-linked finance</span><span
-                class="wc">Seeking CDP Climate A-list rating</span><span class="wc">Under pressure from Scope 3 customer
-                demands</span><span class="wc">Manufacturing with energy-intensive processes</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is CBAM and how does it affect Indian exporters? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>CBAM levies a carbon price on the embedded emissions of goods imported into the EU, currently covering
-                steel, aluminium, cement, fertilisers, electricity and hydrogen. Indian exporters in these sectors must
-                file quarterly CBAM reports during the transition period and from January 2026 must purchase CBAM
-                certificates matching embedded emissions. Financial exposure grows each year in line with the EU carbon
-                price. Companies without a compliant CBAM process face penalties and risk losing EU market access.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is the difference between Scope 1, 2 and 3? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Scope 1 are direct emissions from sources you own or control — boilers, company vehicles, industrial
-                processes. Scope 2 are indirect emissions from purchased energy — electricity, steam, heat. Scope 3
-                covers all other indirect emissions across your value chain — supply chain, employee travel, product use
-                and end-of-life treatment. For most companies, Scope 3 accounts for 70–90% of total emissions and is
-                where both the greatest reduction opportunities and the most urgent customer pressures exist.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Are carbon credits a credible path to net zero? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Yes — when used correctly and transparently. SBTi and the Oxford Principles endorse high-quality
-                credits for neutralising residual unavoidable emissions. The critical factors are quality and integrity:
-                we source only from Gold Standard and Verra-certified projects with clear additionality and no
-                double-counting. Credits must complement, not replace, a genuine time-bound reduction strategy. We build
-                claims that are both scientifically robust and investor-defensible.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How accurate is a product carbon footprint? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Accuracy depends on data quality. We use primary supplier data wherever possible, supplemented by
-                emission factor databases (ecoinvent, GaBi, DEFRA) for gaps. ISO 14067 requires explicit uncertainty
-                analysis and full documentation of assumptions. Our PCFs carry ±10–15% uncertainty at first iteration —
-                sufficient for disclosure and benchmarking. Accuracy improves each cycle as supplier data matures and
-                primary data replaces proxies.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How does GHG verification differ from ESG assurance? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>GHG verification (ISO 14064-3) is a focused technical process validating the accuracy and completeness
-                of your emissions inventory — examining calculation methodology, emission factor selection and boundary
-                completeness. ESG assurance is broader, covering governance disclosures, social metrics and policies.
-                Most companies start with GHG verification (2–4 weeks, lower cost) as a stepping stone to full ESG
-                assurance (8–12 weeks, higher cost).</p>
-            </div>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/carbon-climate.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore Carbon Deep-Dive</a>
-        </div>
-      </div><!-- /t2 -->
-
-      <!-- ═══════════════════════════════
-     T3 — Assessments, Ratings & Targets
-═══════════════════════════════ -->
-      <div class="panel" id="ratings-targets">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-
-          <div class="svc-card" id="materiality-assessment">
-            <div class="svc-img">
-              <!-- Materiality: A stakeholder workshop / focus group around a table discussing -->
-              <img
-                src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Stakeholder materiality workshop" />
-              <span class="img-badge">GRI 2021 · ISSB · CSRD</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Materiality Assessment</div>
-              <div class="svc-desc">Materiality determines what you report, how much detail you provide, and why it
-                matters to stakeholders — making it the foundation of every credible sustainability report. We
-                facilitate structured stakeholder engagement across investors, customers, employees and communities,
-                mapping topics to both business impact and financial risk using double materiality methodology. The
-                output is a board-approved materiality matrix with topic narratives and disclosure priorities, driving
-                your entire reporting programme and satisfying GRI 2021, ISSB and CSRD requirements simultaneously.
+              <h3 class="svc-name">Carbon & Climate Action</h3>
+              <p class="sp-card-text">High-precision GHG accounting (Scope 1, 2 & 3), CBAM advisory, and strategic
+                Net-Zero transition engineering.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/carbon-climate.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
               </div>
-              <ul class="svc-feats">
-                <li>Stakeholder universe mapping and survey instrument design</li>
-                <li>Impact materiality (inside-out) assessment across environment, social and governance</li>
-                <li>Financial materiality (outside-in) assessment — ISSB/CSRD aligned</li>
-                <li>Management interviews and expert panel facilitation</li>
-                <li>Materiality matrix, topic narratives and disclosure prioritisation report</li>
-              </ul>
             </div>
           </div>
 
-          <div class="svc-card" id="ecovadis-assessment">
+          <!-- 03: Ratings & Targets -->
+          <div class="svc-card" id="ratings">
             <div class="svc-img">
-              <!-- EcoVadis: A supply chain — logistics, trucks, warehousing — supply chain ratings -->
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80"
-                alt="Supply chain logistics EcoVadis assessment" />
-              <span class="img-badge">100,000+ companies · Global</span>
+              <img src="/images/ratings-targets.png" alt="Ratings & Targets">
+              <div class="img-badge">Performance</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">EcoVadis Assessment</div>
-              <div class="svc-desc">EcoVadis is used by over 100,000 companies globally to assess supply chain
-                sustainability across four themes: Environment, Labour &amp; Human Rights, Ethics and Sustainable
-                Procurement. A Silver medal (55+) or Gold (70+) is increasingly prerequisite for contracts with MNCs in
-                automotive, pharma, retail and technology. We run gap analysis against your industry benchmark, prepare
-                all documentation evidence and guide you to a measurably higher score — most clients achieve 10–20 point
-                improvements in their first engagement with us.</div>
-              <ul class="svc-feats">
-                <li>Gap analysis vs industry peer benchmarks across all four themes</li>
-                <li>Policy documentation: environment, ethics, labour and procurement</li>
-                <li>Action plan prioritised by scoring impact per effort required</li>
-                <li>Evidence collection, formatting and portal submission support</li>
-                <li>Year-on-year improvement planning and score tracking</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="svc-card" id="epd-declaration">
-            <div class="svc-img">
-              <!-- EPD: A building material / construction product with spec sheet -->
-              <img
-                src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Construction materials EPD environmental product declaration" />
-              <span class="img-badge">ISO 21930 · EN 15804 · LCA-based</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Environmental Product Declaration (EPD)</div>
-              <div class="svc-desc">An EPD is an independently verified, standardised declaration of a product's
-                environmental performance across its full lifecycle, based on a certified Life Cycle Assessment. EPDs
-                are mandatory for construction products under LEED, BREEAM and the EU Construction Products Regulation,
-                and increasingly required in manufacturing supply chains for export. Indian manufacturers exporting to
-                the EU should treat an EPD as a competitive necessity within 2–3 years — and a significant advantage if
-                obtained before competitors. We manage LCA, Programme Operator submission, peer review and registration
-                end to end.</div>
-              <ul class="svc-feats">
-                <li>Life Cycle Assessment (LCA) as the EPD technical foundation</li>
-                <li>ISO 21930 and EN 15804 alignment for construction products</li>
-                <li>Product Category Rule (PCR) identification and compliance</li>
-                <li>Programme Operator selection, submission and peer review management</li>
-                <li>EPD registration, public publication and marketing use guidance</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="svc-card" id="sbti-targets">
-            <div class="svc-img">
-              <!-- SBTi: A renewable energy installation (solar/wind) representing the 1.5°C transition -->
-              <img src="https://images.unsplash.com/photo-1543286386-2e659306cd6c?w=700&q=80"
-                alt="Solar wind renewable energy science based targets" />
-              <span class="img-badge">SBTi · Net Zero Standard</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Science Based Targets (SBTi)</div>
-              <div class="svc-desc">Setting a science-based target is today the most credible way to demonstrate climate
-                ambition to institutional investors, customers and regulators. The SBTi Net Zero Standard requires
-                companies to halve emissions by 2030 and reach net zero by 2050 in line with 1.5°C pathways. We guide
-                you through near-term and long-term target-setting including the complex Scope 3 boundary determination,
-                cross-sector pathway selection and formal SBTi validation submission. Our clients' submissions
-                consistently pass with fewer than three revision cycles, significantly reducing time to validated
-                targets.</div>
-              <ul class="svc-feats">
-                <li>Near-term 1.5°C pathway target — Scope 1, 2 and 3 (5–10 year horizon)</li>
-                <li>Long-term net zero target aligned to 2050 SBTi Net Zero Standard</li>
-                <li>Scope 3 boundary determination and category screening</li>
-                <li>SBTi commitment letter submission and formal validation management</li>
-                <li>Annual progress reporting and public disclosure support</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps five">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Current State Analysis</div>
-              <div class="ps-desc">Benchmark existing policies, data and practices against target programme requirements
-                and peer performance.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Gap Identification</div>
-              <div class="ps-desc">Map specific gaps between current performance and the score, certification or
-                validation being targeted.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Evidence &amp; Documentation</div>
-              <div class="ps-desc">Build all policy documents, data records and procedural evidence required by the
-                programme assessor.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">04</div>
-              <div class="ps-name">Submission &amp; Validation</div>
-              <div class="ps-desc">Submit applications, respond to assessor queries and manage the certification or
-                validation process.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">05</div>
-              <div class="ps-name">Improvement Planning</div>
-              <div class="ps-desc">Use results to plan the next cycle — scores and targets all require annual renewal
-                and progressive improvement.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Supplier to MNCs requiring EcoVadis Silver or Gold</span><span
-                class="wc">Construction material manufacturer exporting to EU</span><span class="wc">Company seeking
-                institutional investor credibility</span><span class="wc">Business making a public net zero
-                commitment</span><span class="wc">Responding to procurement sustainability audits</span><span
-                class="wc">Seeking LEED / BREEAM contractor approval</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What EcoVadis score do I need? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Requirements vary by customer. Many MNCs set a minimum of 45/100 (Bronze) for supplier listing, while
-                premium programmes often require Silver (55+) or Gold (70+). We start by reviewing your specific
-                customers' requirements, then target the score that protects and expands your contracts. Most clients
-                gain 10–20 points in their first engagement — including several who moved from a failing score to Silver
-                within one assessment cycle.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How long does SBTi validation take? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>SBTi validation typically takes 6–18 months from commitment registration to validated targets.
-                Preparation — GHG inventory, Scope 3 screening, target pathway modelling — takes 3–6 months. The formal
-                SBTi review adds another 3–12 months depending on queue length. We submit a well-documented proposal
-                that minimises back-and-forth with SBTi reviewers, and our clients consistently pass with fewer than
-                three revision cycles.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Is an EPD required for export markets? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>EPDs are mandatory for construction products in EU, UK, US and Australia — required by LEED credits,
-                BREEAM certification and building codes. For manufacturing exports beyond construction, EPDs are rapidly
-                becoming a differentiator demanded by sustainability-conscious buyers. Indian manufacturers exporting to
-                the EU should treat an EPD as a competitive necessity within 2–3 years, and a significant advantage if
-                obtained earlier than sector peers.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is double materiality? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Double materiality assesses sustainability from two directions: financial materiality (how
-                sustainability issues affect your company's finances — outside-in) and impact materiality (how your
-                company affects the environment and society — inside-out). It is required by the EU CSRD and recommended
-                by GRI 2021. Single materiality (SASB, ISSB) captures only the financial direction. Double materiality
-                gives a fuller picture of risk, responsibility and stakeholder expectations — and is the emerging global
-                standard for comprehensive ESG disclosure.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Does SBTi require targets for all of Scope 3? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>SBTi requires Scope 3 targets if total Scope 3 emissions represent 40% or more of combined Scope 1+2+3.
-                You must include categories accounting for at least 67% of total Scope 3 emissions. In practice, this
-                means addressing purchased goods and services, use of sold products and end-of-life treatment for most
-                business models. We screen all 15 Scope 3 categories to determine your specific boundary and model
-                reduction pathways for each required category.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Improve your EcoVadis score.</h3>
-            <p>Our gap analysis identifies the fastest route to the score your customers require — delivered in 5
-              working days.</p>
-          </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Start gap analysis →</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/ratings-targets.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore Ratings Deep-Dive</a>
-        </div>
-      </div><!-- /t3 -->
-
-      <!-- ═══════════════════════════════
-     T4 — Approvals & Clearances
-═══════════════════════════════ -->
-      <div class="panel" id="clearances-eia">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-          <div class="svc-card">
-            <div class="svc-img">
-              <!-- EC: India's MoEF building / government regulatory office -->
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80"
-                alt="Government regulatory building MoEF SEIAA" />
-              <span class="img-badge">MoEF · SEIAA · Schedule B</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Environmental Clearance (SEIAA / MoEF)</div>
-              <div class="svc-desc">Environmental Clearance is required for all projects listed in Schedule B of the EIA
-                Notification 2006 — manufacturing plants, industrial estates, mining, infrastructure and more. We manage
-                the complete EC lifecycle: Form 1/1A preparation, Terms of Reference application, EAC/SEAC presentation,
-                public hearing coordination and compliance condition monitoring post-order. Our experience with EAC/SEAC
-                processes allows us to anticipate common queries and pre-address them in submissions, consistently
-                reducing approval timelines versus industry averages.</div>
-              <ul class="svc-feats">
-                <li>Form 1 / 1A preparation and supporting technical documents</li>
-                <li>Terms of Reference (ToR) application and EAC/SEAC follow-up</li>
-                <li>Public hearing preparation, facilitation and response documentation</li>
-                <li>EC order procurement and compliance condition register setup</li>
-                <li>Six-monthly and annual EC compliance status reports to MoEF</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="eia-studies">
-            <div class="svc-img">
-              <!-- EIA: Field team conducting environmental baseline survey in a natural area -->
-              <img src="https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=700&q=80"
-                alt="Environmental field survey baseline data collection" />
-              <span class="img-badge">Baseline · Impact · Mitigation</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Environmental Impact Assessment (EIA)</div>
-              <div class="svc-desc">An EIA systematically identifies, predicts and evaluates the environmental effects
-                of a proposed project. Our expert team conducts comprehensive studies spanning air quality, water
-                resources, soil, ecology, socioeconomics and cultural heritage — collecting seasonal baseline data,
-                modelling impact significance using internationally accepted methodologies and designing mitigation
-                measures that withstand Expert Appraisal Committee scrutiny. We prepare the full EIA report to MoEF's
-                generic structure with all baseline data, impact matrices and environmental management plans.</div>
-              <ul class="svc-feats">
-                <li>Seasonal baseline data — air, water, soil, noise, ecology (3 seasons)</li>
-                <li>Impact prediction using validated dispersion and hydrological models</li>
-                <li>Significance evaluation matrix and mitigation hierarchy design</li>
-                <li>Environmental Management Plan (EMP) and monitoring programme</li>
-                <li>Full EIA report to MoEF generic structure — submission ready</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="ec-renewals">
-            <div class="svc-img">
-              <!-- EC Renewal: A clock or calendar showing deadline management — time-critical -->
-              <img src="https://images.unsplash.com/photo-1495364141860-b0d03eccd065?w=700&q=80"
-                alt="Deadline management EC renewal tracking" />
-              <span class="img-badge">Renewal · Amendment · Expansion</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">EC Renewals &amp; Amendments</div>
-              <div class="svc-desc">Existing Environmental Clearances require renewal and amendment when capacity, area
-                or product categories change. A lapsed EC exposes your project to legal shutdown, criminal liability and
-                project finance withdrawal. We track your EC validity dates, initiate renewal processes 4–6 months
-                before expiry and manage all EAC/SEAC interactions, compliance track record documentation and supporting
-                addenda. For capacity expansions, we prepare amendment applications with updated Form 1 data and EIA
-                addenda covering the incremental impacts of the expansion.</div>
-              <ul class="svc-feats">
-                <li>EC validity calendar tracking and proactive 4-month advance renewal</li>
-                <li>Renewal application — revised Form 1 and compliance track record</li>
-                <li>Capacity expansion amendment applications with EIA addenda</li>
-                <li>Change of scope and technology amendment management</li>
-                <li>Compliance condition gap analysis and corrective action planning</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="cgwa-permission">
-            <div class="svc-img">
-              <!-- CGWA: A borewell or groundwater pump in an industrial setting -->
-              <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=700&q=80"
-                alt="Industrial water extraction groundwater permit" />
-              <span class="img-badge">CGWA · Groundwater · Mandatory</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Groundwater Permission (CGWA)</div>
-              <div class="svc-desc">Central Groundwater Authority permission is mandatory for any industrial unit
-                extracting more than 10 m³/day of groundwater, or for any project in notified over-exploited or critical
-                groundwater zones regardless of quantity. We prepare the complete CGWA NOC application package,
-                coordinate the hydrogeological assessment with accredited agencies, design the mandated rainwater
-                harvesting and recharge system, and submit annual groundwater extraction and conservation compliance
-                reports on your behalf. Operating without CGWA permission attracts penalties under the Environment
-                Protection Act.</div>
-              <ul class="svc-feats">
-                <li>CGWA NOC application preparation and online portal submission</li>
-                <li>Hydrogeological study coordination with accredited agencies</li>
-                <li>Rainwater harvesting and aquifer recharge plan design</li>
-                <li>Water audit preparation and water-positive commitment framework</li>
-                <li>Annual CGWA compliance reporting and permit renewal management</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Project Screening</div>
-              <div class="ps-desc">Determine applicable clearances based on project category, location and scale under
-                EIA Notification 2006.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Baseline Data Collection</div>
-              <div class="ps-desc">Conduct field surveys, seasonal sampling and ecological assessments across the
-                prescribed study area.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Report Preparation</div>
-              <div class="ps-desc">Prepare EIA, Form 1 and all supporting documents meeting MoEF generic structure and
-                committee review standards.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">04</div>
-              <div class="ps-name">Regulatory Submission</div>
-              <div class="ps-desc">Submit to SEIAA/MoEF, respond to Expert Appraisal Committee queries and manage public
-                hearing support.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">05</div>
-              <div class="ps-name">Order &amp; Compliance</div>
-              <div class="ps-desc">Obtain clearance order and set up compliance systems for all EC conditions, including
-                periodic status reports.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Setting up a new industrial facility</span><span
-                class="wc">Expanding capacity at an existing plant</span><span class="wc">Operating in a Schedule B
-                project category</span><span class="wc">Extracting groundwater above 10 m³/day</span><span
-                class="wc">Seeking project finance requiring EC</span><span class="wc">Facing an EC renewal
-                deadline</span><span class="wc">Manufacturing near an ecologically sensitive zone</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Does my project require an EIA? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Projects in Schedule B of the EIA Notification 2006 require Environmental Clearance. Category A
-                projects (large-scale mining, thermal power, ports, petroleum) are reviewed by MoEF's central EAC.
-                Category B covers medium-scale manufacturing, chemical industries, cement plants, distilleries and many
-                real estate developments — reviewed by state SEIAA. We conduct a free project screening to confirm your
-                EC category and requirements within 24 hours of receiving your project details.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How long does Environmental Clearance take? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Category A projects: 12–24 months from ToR application to EC order. Category B1 (with EIA): 9–18
-                months. Category B2 (EIA-exempted): 3–6 months. Timeline depends heavily on submission completeness and
-                committee scheduling. Our experience with EAC/SEAC processes and committee secretariats allows us to
-                anticipate common queries and pre-address them — consistently reducing approval timelines versus
-                industry averages.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Can construction start before EC is granted? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>No. Commencing construction before obtaining EC is a criminal offence under the Environment Protection
-                Act 1986, punishable by up to 5 years imprisonment and ₹1 lakh per day in fines. Courts have ordered
-                demolition of structures built without clearance. The National Green Tribunal actively takes cognisance
-                of such violations on suo motu basis. We strongly advise completing the EC process before any site
-                activity.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What ongoing compliance is required after EC? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Every EC order contains legally binding conditions across construction, operation and decommissioning
-                phases. Key obligations include: six-monthly compliance status reports to the MoEF Regional Office;
-                annual compliance reports with environmental monitoring data; environmental monitoring as specified in
-                the EMP; compliance with green belt, water harvesting, pollution control and CSR conditions. We set up
-                automated compliance tracking and prepare all periodic reports on your behalf.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Is CGWA permission needed for borewells? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>CGWA NOC is required for industrial and mining projects extracting more than 10 m³/day, and for all
-                projects in notified over-exploited, critical or semi-critical groundwater zones regardless of quantity.
-                Residential complexes above 20 units also require permission. Applications require a hydrogeological
-                assessment, water audit and rainwater harvesting plan — all prepared and submitted by our team.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Avoid costly project delays.</h3>
-            <p>Free EC screening in 24 hours — we'll confirm exactly which clearances your project needs and how long
-              each takes.</p>
-          </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Get free EC screening →</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/clearances-eia.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore EC Deep-Dive</a>
-        </div>
-      </div><!-- /t4 -->
-
-      <!-- ═══════════════════════════════
-     T5 — Licenses & Authorizations
-═══════════════════════════════ -->
-      <div class="panel" id="licenses-epr">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-          <div class="svc-card" id="epr-compliance">
-            <div class="svc-img">
-              <!-- EPR: Recycling facility sorting plastic bottles — plastic EPR obligation -->
-              <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=700&q=80"
-                alt="Plastic recycling facility EPR compliance" />
-              <span class="img-badge">Plastic · E-waste · Battery · Tyre</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">EPR Compliance</div>
-              <div class="svc-desc">Extended Producer Responsibility mandates that producers, importers and brand owners
-                (PIBOs) take responsibility for end-of-life management of plastics, e-waste, batteries and tyres.
-                Mandatory collection ratios increase annually, reaching 100% for certain categories by 2027.
-                Non-registered entities face NGT proceedings and product seizure risks. We handle EPR registration on
-                the MoEF/CPCB portal, annual collection target computation, EPR credit procurement from registered
-                recyclers at the best available market price, credit reconciliation and annual compliance filing —
-                completely managing your EPR obligations.</div>
-              <ul class="svc-feats">
-                <li>EPR registration on MoEF/CPCB portal across all applicable categories</li>
-                <li>Annual plastic, e-waste, battery and tyre target computation</li>
-                <li>EPR credit procurement from CPCB-registered recyclers at competitive rates</li>
-                <li>Credit reconciliation, retirement and official certificate management</li>
-                <li>Annual EPR compliance filing and regulatory correspondence management</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="cte-cto-consents">
-            <div class="svc-img">
-              <!-- CTE/CTO: Pollution control board office or environmental inspector visit -->
-              <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=700&q=80"
-                alt="Pollution control board compliance documentation" />
-              <span class="img-badge">Water Act · Air Act · GPCB/SPCB</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Consent to Establish / Operate (CTE / CTO)</div>
-              <div class="svc-desc">Every industry with environmental impact must obtain Consent to Establish before
-                construction and Consent to Operate before production under the Water Act 1974 and Air Act 1981.
-                Operating with an expired CTO is a criminal violation — state PCBs conduct surprise inspections and can
-                issue closure directions on the spot. We manage the complete CTE/CTO lifecycle across all state
-                pollution control boards with particular depth in GPCB, MPCB, TNPCB and KSPCB. Our automated renewal
-                calendar initiates every renewal 3 months before expiry to provide buffer for PCB processing delays.
+              <h3 class="svc-name">Ratings & Targets Optimization</h3>
+              <p class="sp-card-text">Benchmark and optimize your performance for EcoVadis, CDP, and SBTi to build
+                institutional trust.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/ratings-targets.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
               </div>
-              <ul class="svc-feats">
-                <li>CTE application for new projects and major capacity expansions</li>
-                <li>CTO application, renewal and capacity amendment management</li>
-                <li>Consent condition gap analysis and corrective action support</li>
-                <li>GPCB / SPCB inspection preparation and accompaniment</li>
-                <li>Automated renewal calendar with 3-month advance initiation</li>
-              </ul>
             </div>
           </div>
-          <div class="svc-card" id="rule-9-auth">
+
+          <!-- 04: GPCB Compliance -->
+          <div class="svc-card" id="gpcb">
             <div class="svc-img">
-              <!-- Rule 9: Hazardous waste drums in a secure storage facility -->
-              <img
-                src="https://images.unsplash.com/photo-1657742239061-64b6de9e0c4a?q=80&w=1330&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Hazardous waste storage drums Rule 9 authorisation" />
-              <span class="img-badge">HWM Rules 2016 · Rule 9</span>
+              <img src="/images/gpcb-compliance.png" alt="GPCB Compliance">
+              <div class="img-badge">Regulatory</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">Hazardous Waste Authorisation (Rule 9)</div>
-              <div class="svc-desc">Industries generating, handling, storing, transporting, importing or exporting
-                hazardous waste require authorisation under the Hazardous and Other Wastes Rules 2016. Rule 9 governs
-                utilisation, co-processing, import and export — including transboundary movement under the Basel
-                Convention. We conduct waste stream audits to determine your exact Schedule I, II and III applicability,
-                prepare comprehensive authorisation applications and manage the mandatory manifest system, annual
-                hazardous waste returns and all cross-border movement documentation required for imports or exports of
-                hazardous materials.</div>
-              <ul class="svc-feats">
-                <li>Waste stream audit and Rule 9 applicability determination by category</li>
-                <li>Hazardous waste authorisation application — fresh and renewal</li>
-                <li>Waste manifest system design and transporter network coordination</li>
-                <li>Basel Convention transboundary movement documentation</li>
-                <li>Annual hazardous waste returns and inventory reporting to SPCB</li>
-              </ul>
+              <h3 class="svc-name">GPCB & CPCB Compliance</h3>
+              <p class="sp-card-text">End-to-end management of CTE/CTO, EC, EIA, and ongoing consent compliance for
+                industrial operations.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/clearances-eia.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps four">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Compliance Audit</div>
-              <div class="ps-desc">Identify all licences required based on your industry, production processes, waste
-                streams and operating locations.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Application Preparation</div>
-              <div class="ps-desc">Compile required documentation, environmental monitoring data and technical
-                specifications for each application.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Submission &amp; Follow-up</div>
-              <div class="ps-desc">Submit to the relevant authority, track application status and follow up regularly
-                until licence issuance.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">04</div>
-              <div class="ps-name">Licence Maintenance</div>
-              <div class="ps-desc">Maintain renewal calendar, monitor validity and initiate renewals 3 months before
-                expiry to prevent any lapse.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Manufacturing company operating in India</span><span
-                class="wc">Plastic packaging producer or brand owner</span><span class="wc">Electronics, IT or battery
-                manufacturer or importer</span><span class="wc">Chemical, pharma or petrochemical company</span><span
-                class="wc">Hazardous waste generator or handler</span><span class="wc">Company facing PCB inspection or
-                show-cause notice</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is EPR and does it apply to my business? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>EPR applies to producers, importers and brand owners of plastic packaging, e-waste (electrical and
-                electronic equipment), batteries (including lithium-ion) and tyres. If you manufacture or import
-                products incorporating any of these materials, you are legally required to register on the MoEF/CPCB EPR
-                portal and meet annual collection targets. Registration is free — the cost lies in meeting targets,
-                which we manage through India's growing EPR credit marketplace.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What happens if my CTO expires? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Operating with an expired CTO violates both the Water Act 1974 and Air Act 1981. State PCBs conduct
-                surprise inspections and can issue closure directions immediately on finding an expired consent.
-                Criminal prosecution of directors is well established in case law. Banks and insurers also increasingly
-                require valid CTO copies for facility financing and insurance renewal. We initiate all renewals
-                automatically 3 months before expiry, providing buffer for PCB processing delays.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How are EPR targets calculated? <span class="faq-icon"><svg
-                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>EPR targets are the quantity of material placed on the market in the preceding year multiplied by
-                mandatory collection ratios set by MoEF. Ratios increase annually, approaching 100% for most categories
-                by 2027. Targets can be met through own-collection infrastructure or by purchasing EPR credits from
-                registered processors on the CPCB portal. We model your full obligation, source credits at competitive
-                prices and manage the annual reconciliation filing.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Can you manage licences across multiple states? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Yes. We work across all state PCBs with particular depth in GPCB, MPCB, TNPCB, KSPCB and UPPCB. Each
-                SPCB has its own portal, fee structure and procedural requirements. For multi-site clients we provide a
-                centralised licence register covering all locations with automated renewal alerts, ensuring no site is
-                ever at risk of operating on a lapsed consent.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What categories require Rule 9 authorisation? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Rule 9 covers industries generating, handling or transporting wastes in Schedules I, II and III of the
-                HWM Rules 2016 — spent solvents, spent catalysts, paint waste, ETP sludge, discarded containers with
-                residues, lead-acid batteries, e-waste, chemical process waste and pharmaceutical process waste. We
-                conduct a waste stream characterisation exercise to determine your exact Schedule applicability and the
-                scope of authorisation required.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Are your licences current?</h3>
-            <p>Free compliance audit — we identify every licence you need and flag all gaps within 48 hours.</p>
-          </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Free licence audit →</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/licenses-epr.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Explore
-            License Deep-Dive</a>
-        </div>
-      </div><!-- /t5 -->
-
-      <!-- ═══════════════════════════════
-     T6 — Audits & ISO
-═══════════════════════════════ -->
-      <div class="panel" id="management-systems">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-          <div class="svc-card" id="ems-implementation">
+          <!-- 05: Environmental Audits -->
+          <div class="svc-card" id="env">
             <div class="svc-img">
-              <!-- EMS: A factory with environmental monitoring gauges and controls visible -->
-              <img
-                src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Environmental management system industrial controls" />
-              <span class="img-badge">ISO 14001:2015 · All Clauses</span>
+              <img src="/images/environmental-audits.png" alt="Environmental Audits">
+              <div class="img-badge">Assurance</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">Environmental Management Systems (EMS)</div>
-              <div class="svc-desc">An EMS is a structured framework for systematically managing your environmental
-                responsibilities — identifying significant impacts, setting measurable objectives, implementing
-                operational controls and continuously improving performance. We design, implement and embed an EMS fully
-                aligned with all ISO 14001:2015 clauses, building context analysis, aspects and impacts registers, a
-                legal compliance register, operational controls, a monitoring programme and the management review
-                process required for an effective, auditable system. Our implementation embeds the system into real
-                operations — not just documentation.</div>
-              <ul class="svc-feats">
-                <li>Context of organisation and interested parties analysis (Clause 4)</li>
-                <li>Environmental aspects and impacts register with significance criteria</li>
-                <li>Legal register — applicable legislation, permits and consent conditions</li>
-                <li>Objectives, targets and environmental improvement programmes</li>
-                <li>Operational controls, emergency preparedness and response procedures</li>
-              </ul>
+              <h3 class="svc-name">Environmental Audits & Systems</h3>
+              <p class="sp-card-text">Implementation and auditing of ISO 14001, 45001, and 50001 management systems for
+                operational excellence.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/management-systems.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="svc-card" id="iso-certification">
+
+          <!-- 06: Water Testing -->
+          <div class="svc-card" id="water">
             <div class="svc-img">
-              <!-- ISO Certification: A certification body auditor with clipboard at a factory -->
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=80"
-                alt="ISO certification auditor factory inspection" />
-              <span class="img-badge">ISO 14001 · ISO 50001 · ISO 45001</span>
+              <img src="/images/water-testing.png" alt="Water Testing">
+              <div class="img-badge">Scientific</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">ISO Certification</div>
-              <div class="svc-desc">ISO certification validates your management systems to a globally recognised
-                standard — accepted by buyers, regulators and investors in every market. We prepare organisations for
-                certification across ISO 14001 (Environmental Management), ISO 50001 (Energy Management) and ISO 45001
-                (Occupational Health and Safety), ensuring first-time pass rates through rigorous gap analysis,
-                documentation development, staff training and a comprehensive internal pre-audit that closes all
-                nonconformities before the external certification body arrives. We accompany your team through every
-                Stage 1 and Stage 2 audit.</div>
-              <ul class="svc-feats">
-                <li>Comprehensive gap analysis against all ISO standard clauses</li>
-                <li>Environmental Manual, procedures, work instructions and record formats</li>
-                <li>Staff awareness training and clause-specific competence development</li>
-                <li>Full internal audit against all ISO 14001 / 50001 / 45001 clauses</li>
-                <li>Stage 1 and Stage 2 certification audit support and accompaniment</li>
-              </ul>
+              <h3 class="svc-name">Water & Wastewater Testing</h3>
+              <p class="sp-card-text">NABL-aligned analysis for Effluent, Groundwater, and comprehensive Water Audits
+                for resource management.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/water-testing.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="svc-card" id="regulatory-audits">
+
+          <!-- 07: Air Monitoring -->
+          <div class="svc-card" id="air">
             <div class="svc-img">
-              <!-- Regulatory audit: An environmental inspector reviewing compliance records -->
-              <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80"
-                alt="Regulatory compliance audit environmental inspection" />
-              <span class="img-badge">PCB Inspection · Pre-audit · Mock</span>
+              <img src="/images/air-monitoring.png" alt="Air Monitoring">
+              <div class="img-badge">Scientific</div>
             </div>
             <div class="svc-body">
-              <div class="svc-name">Regulatory Audits &amp; Renewals</div>
-              <div class="svc-desc">PCB inspections, MoEF Regional Office visits, CPCB surveys and industry association
-                audits are high-stakes but entirely manageable with the right preparation. Our team conducts mock
-                inspections replicating the specific checks used by your relevant PCB, identifies all gaps before the
-                official visit, prepares a complete documentation evidence pack and accompanies your team on the day to
-                provide real-time support. We have a strong track record resolving show-cause notices and helping
-                clients convert adverse inspection outcomes into clean compliance records.</div>
-              <ul class="svc-feats">
-                <li>Pre-audit compliance gap assessment across all regulatory conditions</li>
-                <li>Mock PCB inspection with corrective action priority ranking</li>
-                <li>Full documentation pack: consents, monitoring data and annual returns</li>
-                <li>Legal register update against current PCB norms and amendments</li>
-                <li>Post-audit NCR closure and repeat inspection clearance support</li>
-              </ul>
+              <h3 class="svc-name">Air Quality & Emission Testing</h3>
+              <p class="sp-card-text">Stack monitoring, Ambient air analysis, and CEMS solutions to ensure regulatory
+                emission compliance.</p>
+              <div style="margin-top: auto; padding-top: 1.5rem;">
+                <a href="/air-monitoring.html" class="svc-learn-more"
+                  style="font-weight: 700; color: var(--g); text-decoration: none; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em; display: flex; align-items: center; gap: 0.5rem;">
+                  Learn More
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14m-7-7 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
+    <!-- Why Choose Us Section -->
+    <section class="why-section">
+      <div class="sp-container">
+        <div class="sp-section-h">
+          <h2 class="sp-section-t">Why partner with SustainCore</h2>
+          <p class="sp-section-sub">We bridge the gap between scientific precision and corporate ambition.</p>
+        </div>
+        <div class="sp-card-grid">
+          <div class="differentiator-card">
+            <div class="diff-icon">🔬</div>
+            <h3 class="sp-card-title">Scientific Integrity</h3>
+            <p class="sp-card-text">Our data isn't just estimated; it's engineered. We use NABL-aligned protocols to
+              ensure every metric withstands technical scrutiny.</p>
           </div>
-          <div class="proc-steps">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Gap Analysis</div>
-              <div class="ps-desc">Assess current systems against all ISO standard clauses and identify documentation
-                and procedural gaps.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">System Design</div>
-              <div class="ps-desc">Develop or update the Environmental Manual, procedures, work instructions and records
-                formats.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Implementation</div>
-              <div class="ps-desc">Train staff, implement operational controls and run the system for a minimum 3-month
-                evidence period.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">04</div>
-              <div class="ps-name">Internal Audit</div>
-              <div class="ps-desc">Conduct a full internal audit against all ISO clauses and close every nonconformity
-                before external audit.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">05</div>
-              <div class="ps-name">Certification Audit</div>
-              <div class="ps-desc">Support Stage 1 and Stage 2 audits by the accredited certification body and achieve
-                certificate issuance.</div>
-            </div>
+          <div class="differentiator-card">
+            <div class="diff-icon">⚖️</div>
+            <h3 class="sp-card-title">Regulatory Mastery</h3>
+            <p class="sp-card-text">We navigate the evolving landscape of BRSR, CBAM, and EU CSRD, ensuring you remain
+              ahead of shifting global mandates.</p>
+          </div>
+          <div class="differentiator-card">
+            <div class="diff-icon">🚀</div>
+            <h3 class="sp-card-title">Strategic Growth</h3>
+            <p class="sp-card-text">Sustainability isn't just about compliance; it's a lever for growth. We help you
+              unlock capital and build long-term brand equity.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Exporter to ISO-demanding markets</span><span class="wc">Supplier to
-                corporations requiring ISO 14001</span><span class="wc">Company seeking government tenders requiring
-                EMS</span><span class="wc">Business with PCB compliance concerns or notices</span><span
-                class="wc">Aiming to reduce energy costs via ISO 50001</span><span class="wc">Preparing for ESG due
-                diligence or PE investment</span></div>
+    <!-- FAQ Section -->
+    <section class="faq-global">
+      <div class="sp-container">
+        <div class="sp-section-h">
+          <h2 class="sp-section-t">Frequently Asked Questions</h2>
+          <p class="sp-section-sub">Quick answers to common questions about our service delivery.</p>
+        </div>
+        <div class="sp-faq-list">
+          <div class="sp-faq-item">
+            <button class="sp-faq-btn">
+              Do you offer integrated service packages?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+            <div class="sp-faq-ans">
+              Yes. Most of our clients prefer an integrated approach, such as combining BRSR reporting with Carbon
+              Footprint accounting or Water Audits. We offer multi-service engagements that streamline data collection
+              and reduce overall administrative burden.
+            </div>
+          </div>
+          <div class="sp-faq-item">
+            <button class="sp-faq-btn">
+              Is your technical team available for board presentations?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+            <div class="sp-faq-ans">
+              Absolutely. Our experts regularly present findings and strategies to C-suite executives and Board members
+              to help them understand the financial and operational implications of sustainability performance and
+              regulatory risks.
+            </div>
+          </div>
+          <div class="sp-faq-item">
+            <button class="sp-faq-btn">
+              How do you ensure the confidentiality of our data?
+              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+            <div class="sp-faq-ans">
+              Data security is paramount. We use enterprise-grade secure data pipelines and strictly adhere to
+              non-disclosure agreements. Your operational and financial data is only processed for the purpose of
+              compliance and reporting optimization.
+            </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How long does ISO 14001 certification take? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>First-time certification takes 4–8 months from gap analysis to certificate. This includes 1–2 months
-                for system design, 2–3 months of implementation and evidence accumulation, 1 month for internal audit
-                and corrective action closure, and the final external certification audit. Organisations with an
-                existing ISO 9001 QMS typically move 30–40% faster because system architecture elements already exist.
-              </p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is the difference between an EMS and ISO 14001? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>An EMS is the actual management system — the policies, processes, controls, objectives and monitoring
-                that your organisation uses. ISO 14001 is the international standard specifying what requirements a
-                well-designed EMS must meet. You can have an EMS without ISO 14001, but certification provides
-                third-party validation that the system is properly designed and implemented. For export and procurement
-                purposes, the certificate is typically what buyers require as proof.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How often does ISO certification need renewal? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>ISO certificates are valid for 3 years. Annual surveillance audits by the certification body occur in
-                Year 1 and Year 2. A full recertification audit is conducted in Year 3. We provide ongoing EMS
-                maintenance support to keep your system audit-ready throughout the 3-year cycle and accompany you
-                through every surveillance and recertification visit.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Can you support multi-site ISO implementation? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Yes. We regularly support multi-site ISO 14001 implementations across manufacturing groups with 3–20
-                plant locations. Multi-site certification audits a representative sample of sites each cycle, reducing
-                overall audit cost. We design a unified EMS framework with a common policy and procedure set,
-                supplemented by site-specific aspects registers and targets — significantly reducing per-site cost
-                compared to independent certifications.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Does ISO 14001 guarantee regulatory compliance? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>ISO 14001 requires you to identify all applicable legal requirements and commit to compliance as a core
-                EMS obligation (Clause 9.1.2) — maintaining a legal register, monitoring compliance against every
-                condition and taking corrective action for gaps before they become violations. Certification does not
-                guarantee zero violations, but ISO 14001-certified organisations have demonstrably fewer PCB
-                non-compliances than non-certified peers and respond faster to emerging obligations.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Get ISO certified.</h3>
-            <p>Tell us your target standard — we'll send a tailored gap analysis and certification roadmap within 48
-              hours.</p>
-          </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Start certification →</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/management-systems.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore ISO Deep-Dive</a>
-        </div>
-      </div><!-- /t6 -->
-
-      <!-- ═══════════════════════════════
-     T7 — Water Testing
-═══════════════════════════════ -->
-      <div class="panel" id="water-testing">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-          <div class="svc-card" id="drinking-water">
-            <div class="svc-img">
-              <!-- Drinking water: Clean tap water or drinking water sample collection -->
-              <img src="https://images.unsplash.com/photo-1559825481-12a05cc00344?w=800&q=80"
-                alt="Drinking water quality testing sample collection" />
-              <span class="img-badge">BIS IS 10500 · Physical · Chemical · Biological</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Drinking Water Testing</div>
-              <div class="svc-desc">Safe drinking water for employees and surrounding communities is both a legal
-                obligation under the Factories Act and a fundamental duty of care. We test water supply sources against
-                BIS IS 10500:2012 revised standards across physical, chemical, bacteriological and radiological
-                parameters. Results are delivered with a compliance assessment table comparing each parameter against IS
-                10500 permissible limits — a clear, actionable compliance status report ready for management review,
-                regulatory submission and any third-party audit that requests evidence of water safety management.</div>
-              <ul class="svc-feats">
-                <li>Physical parameters: pH, colour, turbidity, TDS, total hardness, conductivity</li>
-                <li>Chemical parameters: heavy metals (Pb, As, Cd, Cr, Hg), fluorides, nitrates</li>
-                <li>Bacteriological analysis: total coliforms, E. coli, faecal coliforms</li>
-                <li>Radiological screening where required by plant location or water source</li>
-                <li>IS 10500 compliance assessment report — submission-ready format</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="wastewater-analysis">
-            <div class="svc-img">
-              <!-- Wastewater analysis: Industrial water testing and chemical analysis -->
-              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=700&q=80"
-                alt="Industrial Wastewater Chemical Analysis" />
-              <span class="img-badge">ETP Performance · CGWA Compliance</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Water &amp; Wastewater Analysis</div>
-              <div class="svc-desc">Comprehensive analysis of process water, cooling water, boiler feed water and
-                treated effluents across all parameters required for ETP performance monitoring, CGWA groundwater permit
-                compliance and SPCB/GPCB regulatory submissions. All analysis is conducted at NABL-accredited
-                laboratories with full chain-of-custody documentation. Results are delivered in a compliance-formatted
-                report comparing each parameter against your consent conditions and applicable Schedule I limits —
-                suitable for direct PCB submission without further reformatting or additional evidence gathering.</div>
-              <ul class="svc-feats">
-                <li>Primary parameters: BOD, COD, TSS, TDS, pH, oil and grease</li>
-                <li>Heavy metal suite: Cr, Pb, Cd, Hg, As, Cu, Ni, Zn — full quantification</li>
-                <li>Nutrient parameters: total nitrogen, phosphorus, ammoniacal nitrogen</li>
-                <li>ETP/STP performance evaluation: inlet versus treated outlet comparison</li>
-                <li>CGWA seasonal groundwater quality compliance report</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="effluent-analysis">
-            <div class="svc-img">
-              <!-- Effluent: Industrial effluent discharge pipe into treatment system — ZLD -->
-              <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?w=700&q=80"
-                alt="Industrial effluent discharge treatment ZLD compliance" />
-              <span class="img-badge">CTO Compliance · ZLD Verification</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Effluent Analysis</div>
-              <div class="svc-desc">Trade effluent quality monitoring is a legally binding condition of virtually every
-                industrial Consent to Operate. We conduct comprehensive effluent characterisation against parameters in
-                your CTO and applicable Schedule I limits, flagging any exceedances before they reach the regulator so
-                corrective action can be taken proactively. For ZLD-mandated sectors — textile, distillery,
-                pharmaceutical, tanneries — we design ZLD performance monitoring protocols, conduct outlet verification
-                tests and produce the ZLD compliance reports required by state PCBs and MoEF, with mass balance analysis
-                confirming true zero-liquid-discharge status.</div>
-              <ul class="svc-feats">
-                <li>Trade effluent characterisation against CTO consent conditions</li>
-                <li>Schedule I limit compliance assessment — all applicable parameters</li>
-                <li>ZLD verification testing: outlet monitoring and mass balance analysis</li>
-                <li>ETP performance optimisation recommendations on any exceedance</li>
-                <li>Monthly, quarterly or as-required PCB compliance reports</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps four">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Sampling Plan Design</div>
-              <div class="ps-desc">Identify sampling locations, frequency and parameters required by your regulatory
-                conditions and reporting obligations.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Sample Collection</div>
-              <div class="ps-desc">Collect grab or composite samples using chain-of-custody procedures ensuring full
-                sample integrity and traceability.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Laboratory Analysis</div>
-              <div class="ps-desc">Analyse at NABL-accredited partner laboratories using standard methods — IS, APHA and
-                EPA where applicable.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">04</div>
-              <div class="ps-name">Report &amp; Recommendations</div>
-              <div class="ps-desc">Deliver compliance-formatted reports comparing results to regulatory limits with
-                actionable corrective recommendations.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Industrial unit with effluent discharge consent
-                conditions</span><span class="wc">Factory with employee drinking water supply</span><span
-                class="wc">CGWA groundwater permit holder requiring monitoring</span><span class="wc">ETP / STP operator
-                needing performance verification</span><span class="wc">ZLD-mandated sector: textile, pharma or
-                distillery</span><span class="wc">Company facing PCB effluent-related show-cause notice</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How often must effluent testing be done? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Monitoring frequency is specified in your Consent to Operate. Red category (highly polluting)
-                industries typically require monthly or quarterly monitoring. Orange and Green category industries may
-                have quarterly or half-yearly requirements. Some parameters require continuous online monitoring via
-                CEQMS connected to the PCB server. We audit your CTO conditions and design a compliant testing schedule
-                that meets all frequency requirements without unnecessary over-testing.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is ZLD and is it mandatory for my sector? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Zero Liquid Discharge means all process water and treated effluent is recovered and recycled — no
-                treated or untreated liquid is discharged outside plant boundaries. ZLD is mandatory in India for
-                textile dyeing, distilleries, tanneries, pharmaceutical bulk drug manufacturers and other sectors in
-                specific river basins and water-stressed regions. We design ZLD monitoring protocols, conduct
-                performance tests and produce the PCB compliance reports needed to demonstrate ZLD status.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Are NABL results required for PCB submissions? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>For submissions to SPCBs and CPCB, NABL-accredited laboratory results are either explicitly required or
-                strongly preferred. Courts and the NGT routinely question non-NABL results in enforcement proceedings.
-                All our testing uses NABL-accredited laboratories with full chain-of-custody documentation — your
-                results will be accepted by PCBs without question and will withstand legal scrutiny.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What should I do if my effluent exceeds limits? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Immediate and documented corrective action is essential. Identify the exceedance source (process upset,
-                ETP failure, raw material change), implement interim containment, begin ETP optimisation and —
-                critically — proactively notify the SPCB in writing with your root cause analysis and corrective action
-                plan. Voluntary self-reporting consistently results in significantly lower penalties than waiting for an
-                inspection to identify the issue. Our exceedance response service covers root cause analysis and
-                corrective action support.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Can drinking water testing be done on-site? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Basic field parameters — pH, TDS, temperature, turbidity, dissolved oxygen — can be measured on-site
-                with calibrated instruments. The full IS 10500 parameter suite including chemical, heavy metal and
-                bacteriological parameters must be analysed under controlled conditions in a NABL-accredited laboratory.
-                We handle on-site collection with correct preservation and temperature-controlled transport, delivering
-                a complete compliance report within 5–7 working days.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Schedule water testing.</h3>
-            <p>Our field team covers Gujarat and major industrial zones — on-site for sample collection within 48 hours.
+    <!-- CTA Section -->
+    <section class="sp-cta-section" style="background: var(--bg2);">
+      <div class="sp-container">
+        <div class="sp-cta-box">
+          <div class="sp-cta-content">
+            <h2 class="sp-cta-title">Ready to lead sustainably?</h2>
+            <p class="sp-cta-text">Join hundreds of industry leaders trust SustainCore for their environmental success.
             </p>
           </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Book testing →</a></div>
+          <a href="/contact.html" class="btn-primary">Technical Consultation</a>
         </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/water-testing.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore Water Deep-Dive</a>
-        </div>
-      </div><!-- /t7 -->
-
-      <!-- ═══════════════════════════════
-     T8 — Air Quality
-═══════════════════════════════ -->
-      <div class="panel" id="air-monitoring">
-        <!-- Hero Removed -->
-
-        <div class="sec-h">
-          <div class="sec-t">What's included</div>
-        </div>
-        <div class="svc-grid-hint">Scroll or swipe to explore services →</div>
-        <div class="svc-grid">
-          <div class="svc-card" id="stack-monitoring">
-            <div class="svc-img">
-              <!-- Stack monitoring: Sampling probe inserted into a chimney stack flue gas -->
-              <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&q=80"
-                alt="Stack flue gas sampling isokinetic emission monitoring" />
-              <span class="img-badge">Isokinetic · CPCB Method</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Stack / Emission Monitoring</div>
-              <div class="svc-desc">Stack emission testing measures pollutants released from industrial chimneys,
-                furnaces, boilers, DG sets and process vents. We conduct isokinetic sampling — the internationally and
-                CPCB-mandated method for particulate measurement — alongside multi-parameter gaseous analysis to
-                quantify SPM, PM2.5, PM10, SO₂, NOₓ, CO, HCl, HF and sector-specific pollutants. Reports are formatted
-                to PCB submission requirements with each source result tabulated against its specific CPCB/SPCB
-                consented limit, providing a compliance status table ready for direct regulatory use without additional
-                formatting work by your team.</div>
-              <ul class="svc-feats">
-                <li>Isokinetic particulate sampling — SPM, PM10 and PM2.5 quantification</li>
-                <li>Gaseous pollutants: SO₂, NOₓ, CO, HCl, HF, NH₃ and VOCs</li>
-                <li>Flue gas velocity, flow rate and composition measurement</li>
-                <li>Source-by-source compliance table against CPCB/SPCB limits</li>
-                <li>PCB-formatted report with prior-period comparison and trend analysis</li>
-              </ul>
-            </div>
-          </div>
-          <div class="svc-card" id="workplace-air">
-            <div class="svc-img">
-              <!-- Workplace air: A worker in PPE (mask/respirator) in a dusty or chemical factory -->
-              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=700&q=80"
-                alt="Worker PPE respirator workplace air quality monitoring" />
-              <span class="img-badge">Factories Act · OSHA · OEL</span>
-            </div>
-            <div class="svc-body">
-              <div class="svc-name">Workplace Air Quality Monitoring</div>
-              <div class="svc-desc">Indoor air quality directly affects employee health, productivity and your legal
-                exposure under the Factories Act 1948 and Schedule 1 occupational health regulations. We conduct
-                comprehensive workplace monitoring for chemical contaminants, respirable dust, metal fumes and solvent
-                vapours against OSHA Permissible Exposure Limits and BIS occupational health standards. Results are
-                benchmarked against Threshold Limit Values (TLVs) by job category and work area, with prioritised
-                engineering and administrative control recommendations for any exceedances — and supporting evidence for
-                ISO 45001 and occupational health insurance requirements.</div>
-              <ul class="svc-feats">
-                <li>Respirable and inhalable dust characterisation by work area and job category</li>
-                <li>Chemical vapour monitoring: VOCs, solvents, acid mists, aldehydes</li>
-                <li>Metal fume analysis: lead, chromium, manganese, nickel and cadmium</li>
-                <li>OEL / TLV compliance assessment with job-specific exposure profiles</li>
-                <li>Engineering and administrative control improvement recommendations</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="proc-wrap">
-          <div class="sec-h">
-            <div class="sec-t">How we deliver it</div>
-          </div>
-          <div class="proc-steps four">
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">01</div>
-              <div class="ps-name">Source Identification</div>
-              <div class="ps-desc">Map all emission sources — stacks, fugitive vents, process exhausts and workplace
-                areas — requiring monitoring.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">02</div>
-              <div class="ps-name">Monitoring Plan</div>
-              <div class="ps-desc">Design a monitoring plan based on CTO conditions, applicable CPCB/SPCB norms and
-                production schedules.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-arrow">→</div>
-              <div class="ps-n">03</div>
-              <div class="ps-name">Field Measurement</div>
-              <div class="ps-desc">Deploy calibrated instruments on-site, conduct isokinetic stack sampling and ambient
-                or workplace air monitoring.</div>
-            </div>
-            <div class="ps">
-              <div class="ps-n">04</div>
-              <div class="ps-name">Analysis &amp; PCB Report</div>
-              <div class="ps-desc">Analyse at accredited lab, compare to applicable norms and produce PCB-ready
-                compliance report with trend data.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="who">
-          <div class="who-in">
-            <div class="who-tag">Who this is for</div>
-            <div class="who-title">Right for you if you are…</div>
-            <div class="who-chips"><span class="wc">Boiler, furnace or kiln operator</span><span class="wc">DG set
-                operator requiring periodic stack testing</span><span class="wc">Chemical, pharmaceutical or pesticide
-                manufacturer</span><span class="wc">Cement, mineral or glass processing unit</span><span
-                class="wc">Factory near a residential area or sensitive zone</span><span class="wc">CEMS-mandated
-                industry: power, cement, steel</span><span class="wc">Employer with dusty or chemical-heavy
-                workplaces</span></div>
-          </div>
-        </div>
-
-        <div class="faq-wrap">
-          <div class="sec-h">
-            <div class="sec-t">Frequently asked questions</div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">How often is stack emission monitoring required? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Monitoring frequency is specified in your Consent to Operate. Large boilers and furnaces typically
-                require quarterly monitoring. DG sets above 75 kVA are typically half-yearly. Smaller sources may
-                require annual monitoring. CPCB mandates real-time CEMS for 17 categories of highly polluting industries
-                — thermal power plants, cement, iron and steel, pulp and paper, petrochemicals — with 15-minute data
-                uploads to the CPCB central server required continuously. We audit your source inventory and CTO
-                conditions to build the most efficient compliant monitoring schedule.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is isokinetic sampling and why is it required? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Isokinetic sampling requires the probe velocity to exactly match the stack gas velocity — ensuring the
-                particle size distribution in the sample precisely replicates what is actually being emitted.
-                Non-isokinetic sampling over- or under-represents particle sizes by 20–30%, making results
-                scientifically invalid for compliance purposes. CPCB's stack monitoring manual explicitly requires
-                isokinetic sampling for all particulate measurements used in regulatory submissions and compliance
-                determination.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What are the legal stack emission limits? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Limits are set under Schedule I and II of the Environment Protection Rules 1986 with sector-specific
-                notifications. Example: coal-fired boilers below 500 TPH have an SPM limit of 150 mg/Nm³. DG sets above
-                800 kVA have SO₂ limits of 75 mg/kWh. Your CTO specifies applicable limits per source — which may be
-                stricter than national standards in sensitive zones. SPCB norms can differ from CPCB norms. We verify
-                the correct, current limits for each of your specific sources before conducting any sampling.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">Is workplace air monitoring mandatory under Indian law? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>Workplace air monitoring is mandatory under the Factories Act 1948 for all hazardous process industries
-                in Schedule 1 — chemical, pharmaceutical, rubber, petroleum, textile, electroplating and several other
-                sectors. Beyond legal requirements, monitoring is essential for ISO 45001, insurance risk assessment and
-                defending against occupational disease claims. We recommend annual baseline monitoring for all
-                manufacturing operations regardless of legal obligation.</p>
-            </div>
-          </div>
-          <div class="faq-item"><button class="faq-btn">What is CEMS and does my plant need it? <span
-                class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <line x1="12" y1="5" x2="12" y2="19" />
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                </svg></span></button>
-            <div class="faq-ans">
-              <p>CEMS measures stack emissions continuously in real time and uploads 15-minute average data to the CPCB
-                ENVIS server. It is mandatory for 17 categories of highly polluting industries. Data gaps exceeding 2
-                consecutive days are treated as exceedances, triggering automatic penalties and PCB notices. We provide
-                CEMS installation technical support, vendor evaluation, pre-commissioning calibration and ongoing data
-                quality management including the quarterly QA/QC certification required to maintain CEMS data validity
-                with CPCB.</p>
-            </div>
-          </div>
-        </div>
-        <div class="cta-band">
-          <div class="cta-left">
-            <h3>Schedule emission monitoring.</h3>
-            <p>Our field team covers Gujarat, Maharashtra and major industrial clusters — on-site within 48 hours.</p>
-          </div>
-          <div class="cta-btns"><a href="/contact.html" class="btn-s">Book monitoring visit →</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 4rem;">
-          <a href="/air-monitoring.html" class="btn-primary"
-            style="display: inline-block; text-decoration: none;">Explore Air Deep-Dive</a>
-        </div>
-      </div><!-- /t8 -->
-
-    </div><!-- /panels -->
+      </div>
+    </section>
   </main>
 
-  <!-- Footer Placeholder -->
   <div id="footer-root"></div>
 
   <script type="module" src="/src/js/main.js"></script>
-  <script type="module" src="/src/js/animations.js"></script>
-  <script type="module" src="/src/js/slider.js"></script>
+  <script>
+    // Service card click handler
+    document.querySelectorAll('.svc-card').forEach(card => {
+      card.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'A' && !e.target.closest('a')) {
+          const link = this.querySelector('a.svc-learn-more');
+          if (link) link.click();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
