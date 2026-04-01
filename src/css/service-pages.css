@@ -20,7 +20,7 @@
   padding-top: 13.5rem;
   /* Accommodates fixed navbar + pill sub-nav */
   padding-bottom: 4rem;
-  background: white;
+  background: #fdfaf5;
   overflow: hidden;
 }
 
@@ -80,7 +80,7 @@
 
 /* --- Pain Points Section --- */
 .sp-pain {
-  background: var(--sp-slate);
+  background: #f9f5ee;
   padding: 8rem 0;
   margin-top: -2rem !important;
 }
@@ -165,7 +165,7 @@
 .sp-protocol {
   padding: 10rem 0;
   margin-top: -2rem !important;
-  background: white;
+  background: #faf7f1;
 }
 
 .sp-step-flow {
@@ -319,7 +319,7 @@
 /* --- Technical Specs Section --- */
 .sp-specs {
   padding: 8rem 0;
-  background: white;
+  background: #fdfaf5;
 }
 
 .sp-spec-grid {
@@ -374,9 +374,9 @@
 
 /* --- FAQ Section --- */
 .sp-faq {
-  padding: 8rem 0;
+  padding: 8rem 0 2rem;
   margin-top: -2rem !important;
-  background: var(--sp-slate);
+  background: #f9f5ee;
 }
 
 .sp-faq-list {
@@ -508,7 +508,7 @@
 .sp-included {
   padding: 8rem 0;
   margin-top: -1.5rem !important;
-  background: linear-gradient(to bottom, #ffffff, #f9fafb);
+  background: linear-gradient(to bottom, #fdfaf5, #f7f2e9);
   position: relative;
 }
 
@@ -676,7 +676,7 @@
 
   /* Prevent dropdown from being clipped when scrolling horizontally */
   .sp-sub-nav-inner .sp-sub-nav-item {
-    position: static;
+    position: relative;
   }
 
   .sp-sub-nav-inner .sp-dropdown {
@@ -824,11 +824,11 @@
 }
 
 .svc-card {
-  background: white;
   border-radius: 2rem;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.03);
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
@@ -849,6 +849,8 @@
   background: transparent;
   z-index: 5;
   cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .svc-card-img-wrap {
@@ -1134,8 +1136,9 @@
 
 /* --- CTA Section --- */
 .sp-cta-section {
-  padding: 8rem 0;
-  background: white;
+  padding: 2rem 3rem 0rem;
+  background: #f9f5ee;
+  height: 100%;
 }
 
 .sp-cta-box {

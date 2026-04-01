@@ -108,7 +108,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1.25rem 1.5rem;
   border-radius: 1.5rem;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   gap: 1.25rem;
@@ -1321,8 +1321,8 @@ main,
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    visibility 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;

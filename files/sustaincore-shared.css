@@ -412,6 +412,7 @@ h5 {
   z-index: 1;
   max-width: 1260px;
   margin: 0 auto;
+  overflow: visible;
 }
 
 .svc-hero-tag {
@@ -440,7 +441,9 @@ h5 {
   line-height: 1;
   letter-spacing: -1.5px;
   margin-bottom: 2rem;
+  white-space: nowrap;
   margin-left: 3rem !important;
+  grid-column: 1 / -1;
 }
 
 .svc-hero-title em {
