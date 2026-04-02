@@ -623,7 +623,6 @@ function downloadDetailedExcel() {
             "Total Default Cost (€)": Number(costDef.toFixed(2)),
             "Actual Cost (€)": Number(costAct.toFixed(2)),
             "Savings (€)": Number(saving.toFixed(2)),
-            "Status": saving > 0.01 ? "Saving" : (saving < -0.01 ? "Excess Cost" : "Neutral")
         });
     });
 

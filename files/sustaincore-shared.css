@@ -1185,11 +1185,12 @@ h5 {
 .faq-ans {
   max-height: 0;
   overflow: hidden;
+  border-radius: 0 !important;
   transition: max-height .35s ease;
 }
 
 .faq-ans p {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300;
   color: var(--muted);
   line-height: 1.9;
@@ -1875,7 +1876,10 @@ h5 {
   }
 
   /* Grid stacks */
-  .why-grid, .deliverables-grid, .related-grid, .wedo-grid {
+  .why-grid,
+  .deliverables-grid,
+  .related-grid,
+  .wedo-grid {
     grid-template-columns: 1fr !important;
     gap: 1rem !important;
   }

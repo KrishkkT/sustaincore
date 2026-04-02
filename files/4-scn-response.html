@@ -2,520 +2,485 @@
 <html lang="en">
 
 <head>
+  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SCN Response &amp; Compliance Defence — SustainCore Environmental Solutions</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
+  <link rel="icon" href="/Frame 4.svg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="sustaincore-shared.css" />
+  <link rel="stylesheet" href="sustaincore-shared.css">
   <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-d1 {
-      transition-delay: .1s;
-    }
-
-    .reveal-d2 {
-      transition-delay: .2s;
-    }
-
-    .reveal-d3 {
-      transition-delay: .3s;
-    }
-
-    .reveal-d4 {
-      transition-delay: .4s;
-    }
-
     .svc-hero-pills {
-      display: flex;
-      flex-direction: column;
-      gap: .7rem;
-      margin-top: 16rem;
-      align-items: flex-end;
+      margin-top: 17rem;
+    }
+
+    .svc-hero-disc {
+      margin-top: -15rem !important;
+    }
+
+    .svc-hero-title {
+      margin-left: 0rem !important;
     }
   </style>
 </head>
 
 <body>
-  <nav class="sc-nav">
-    <a href="../index.html" class="sc-nav-logo"><svg viewBox="0 0 200 38" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path d="M16 3C16 3 5 9 5 19C5 26.5 10 32.5 16 34C16 34 12.5 27 12.5 19C12.5 13 14.5 8 16 3Z" fill="#4a7c59" />
-        <path d="M16 3C16 3 27 9 27 19C27 26.5 22 32.5 16 34C16 34 19.5 27 19.5 19C19.5 13 17.5 8 16 3Z"
-          fill="#1a4a6b" />
-        <text x="34" y="24" font-family="'DM Sans',sans-serif" font-weight="600" font-size="17"
-          fill="#4a7c59">Sustain</text>
-        <text x="108" y="24" font-family="'DM Sans',sans-serif" font-weight="400" font-size="17"
-          fill="#1a4a6b">Core</text>
-        <text x="34" y="33" font-family="'DM Sans',sans-serif" font-weight="400" font-size="7" fill="#5a6e61"
-          letter-spacing="1.4">SUSTAINABILITY AT CORE</text>
-      </svg></a>
-    <ul class="sc-nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../sustaincore_services.html" class="active">Services</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Insights</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <a href="#contact" class="sc-nav-cta">Free Consultation</a>
+  <div id="header-root"></div>
+  <!-- Category Navigation Bar -->
+  <nav class="sp-sub-nav">
+    <div class="sp-sub-nav-inner">
+      <!-- 01 ESG Reporting -->
+      <div class="sp-sub-nav-item">
+        <a href="/esg-reporting.html" class="sp-sub-nav-link sp-dropdown-toggle">ESG Reporting</a>
+        <div class="sp-dropdown">
+          <a href="/esg-reporting.html#brsr" class="sp-dropdown-link">BRSR Reporting</a>
+          <a href="/esg-reporting.html#cdp" class="sp-dropdown-link">CDP Disclosure</a>
+          <a href="/esg-reporting.html#gri" class="sp-dropdown-link">GRI Reporting</a>
+          <a href="/esg-reporting.html#sasb" class="sp-dropdown-link">SASB Standards</a>
+          <a href="/esg-reporting.html#tcfd" class="sp-dropdown-link">TCFD Disclosure</a>
+        </div>
+      </div>
+      <!-- 02 Carbon Management -->
+      <div class="sp-sub-nav-item">
+        <a href="/carbon-climate.html" class="sp-sub-nav-link sp-dropdown-toggle">Carbon Management</a>
+        <div class="sp-dropdown">
+          <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
+          <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Accounting & Inventory</a>
+          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
+          <a href="/carbon-climate.html#pcf" class="sp-dropdown-link">PCF Assessment</a>
+          <a href="/carbon-climate.html#irec" class="sp-dropdown-link">I-REC Certification</a>
+        </div>
+      </div>
+      <!-- 03 Ratings & Targets -->
+      <div class="sp-sub-nav-item">
+        <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle">Ratings & Targets</a>
+        <div class="sp-dropdown">
+          <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Strategy</a>
+          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Env. Product Decl. (EPD)</a>
+          <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
+        </div>
+      </div>
+      <!-- 04 SPCB Compliance -->
+      <div class="sp-sub-nav-item">
+        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle">SPCB Compliance</a>
+        <div class="sp-dropdown">
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (EC)</a>
+          <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
+          <a href="/clearances-eia.html#consent" class="sp-dropdown-link">Consent Management</a>
+          <a href="/clearances-eia.html#waste" class="sp-dropdown-link">Waste Authorizations</a>
+          <a href="/clearances-eia.html#epr" class="sp-dropdown-link">EPR Compliance</a>
+        </div>
+      </div>
+      <!-- 05 Environmental Audits -->
+      <div class="sp-sub-nav-item">
+        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle">Environmental Audits</a>
+        <div class="sp-dropdown">
+          <a href="/management-systems.html#iso14001" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
+          <a href="/management-systems.html#iso50001" class="sp-dropdown-link">Energy Mgmt (ISO 50001)</a>
+          <a href="/management-systems.html#iso45001" class="sp-dropdown-link">Health & Safety (ISO 45001)</a>
+          <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a>
+        </div>
+      </div>
+      <!-- 06 Water Testing -->
+      <div class="sp-sub-nav-item">
+        <a href="/water-testing.html" class="sp-sub-nav-link sp-dropdown-toggle">Water Testing</a>
+        <div class="sp-dropdown">
+          <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
+          <a href="/water-testing.html#groundwater" class="sp-dropdown-link">Groundwater Analysis</a>
+          <a href="/water-testing.html#audit" class="sp-dropdown-link">Water Audit</a>
+          <a href="/water-testing.html#risk" class="sp-dropdown-link">Water Risk Assessment</a>
+        </div>
+      </div>
+      <!-- 07 Air Monitoring -->
+      <div class="sp-sub-nav-item">
+        <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle">Air Monitoring</a>
+        <div class="sp-dropdown">
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack Monitoring</a>
+          <a href="/air-monitoring.html#ambient" class="sp-dropdown-link">Ambient Air Quality</a>
+          <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
+          <a href="/air-monitoring.html#cems" class="sp-dropdown-link">CEMS Solutions</a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <div style="max-width:1260px;margin:0 auto;padding:2rem 3rem 0;">
+  <!-- HERO -->
+  <section class="svc-hero reveal">
+    <div class="svc-hero-inner">
+      <div class="bc">
+        <a href="/index.html">Home</a>
+        <span class="sep">/</span>
+        <a href="/services.html">Services</a>
+        <span class="sep">/</span>
+        <a href="/clearances-eia.html">SPCB Compliance</a>
+        <span class="sep">/</span>
+        <span>SCN Response &amp; Compliance Defence</span>
+      </div>
 
-    <div class="bc">
-      <a href="../index.html">Home</a>
-      <span class="sep">/</span>
-      <a href="../sustaincore_services.html">Services</a>
-      <span class="sep">/</span>
-      <a href="../sustaincore_services.html">GPCB Compliance</a>
-      <span class="sep">/</span>
-      <span class="sep">SCN Response &amp; Compliance Defence</span>
-    </div>
-
-    <!-- HERO -->
-    <section class="svc-hero">
-      <div class="svc-hero-inner">
-        <div class="svc-hero-tag">GPCB Compliance · Enforcement Response</div>
-        <h1 class="svc-hero-title">SCN Response &amp;<br><em>Compliance</em><br><span class='bt'>Defence against GPCB
-            Enforcement</span></h1>
-        <div class="svc-hero-body">
-          <p class="svc-hero-desc">A Show-Cause Notice (SCN) from GPCB is a critical juncture — an inadequate or delayed
+      <div class="svc-hero-body">
+        <div class="svc-hero-left">
+          <h1 class="svc-hero-title">
+            SCN Response &amp;<br><em>Compliance</em> Defence<br>
+            <span class='bt'>Against GPCB Enforcement</span>
+          </h1>
+          <p class="svc-hero-desc">
+            A Show-Cause Notice (SCN) from GPCB is a critical juncture — an inadequate or delayed
             response can lead to closure directions, prosecution and suspension of consent. <strong>The response you
               file within the notice period defines the outcome.</strong> Our team drafts technically precise, legally
             grounded SCN responses and represents your facility through hearings — turning enforcement actions into
-            opportunities to demonstrate compliance commitment.</p>
-          <div class="svc-hero-pills">
-            <div class="svc-hero-pill"><span class="pill-icon"></span><strong>Time-critical</strong> notice response
-            </div>
-            <div class="svc-hero-pill blue"><span class="pill-icon"></span>Technical + legal expertise</div>
-            <div class="svc-hero-pill"><span class="pill-icon"></span><strong>GPCB hearing</strong> representation</div>
-            <div class="svc-hero-pill blue"><span class="pill-icon"></span>Closure direction defence</div>
-            <div class="svc-hero-pill"><span class="pill-icon"></span>Post-SCN remediation</div>
+            opportunities to demonstrate compliance commitment.
+          </p>
+          <div style="margin-top:.5rem;">
+            <a href="/index.html#consultation" class="btn-primary">Secure Emergency Response</a>
           </div>
         </div>
-      </div>
-      <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
-        <div class="svc-hero-img">
-          <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80"
-            alt="Legal compliance defence and regulatory response" />
-          <div class="svc-hero-img-caption">
-            <div class="svc-hero-img-title">Protecting Your Operations<br><em>Through Expert Response</em></div>
-            <div class="svc-hero-stat-row">
-              <div class="svc-hero-stat">
-                <div class="svc-hero-stat-v">48hr</div>
-                <div class="svc-hero-stat-l">Emergency response initiation</div>
-              </div>
-              <div class="svc-hero-stat">
-                <div class="svc-hero-stat-v">SCN</div>
-                <div class="svc-hero-stat-l">Through to hearing closure</div>
-              </div>
-              <div class="svc-hero-stat">
-                <div class="svc-hero-stat-v">Full</div>
-                <div class="svc-hero-stat-l">GPCB hearing representation</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="rule" style="margin-top:3rem;"></div>
-
-    <!-- STATS ROW -->
-    <div class="svc-section">
-      <div class="stats-row reveal">
-        <div class="stat-block">
-          <div class="stat-block-v">48hr</div>
-          <div class="stat-block-l">Emergency engagement initiation</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-block-v">EPA</div>
-          <div class="stat-block-l">Sec. 5 &amp; Sec. 15 coverage</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-block-v">Full</div>
-          <div class="stat-block-l">GPCB hearing representation</div>
-        </div>
-        <div class="stat-block">
-          <div class="stat-block-v">Post-SCN</div>
-          <div class="stat-block-l">Remediation planning</div>
-        </div>
-      </div>
-
-      <div class="sec-label">Why it matters</div>
-      <h2 class="sec-title">A wrong SCN response<br><em>escalates the enforcement action.</em></h2>
-      <p class="sec-sub">Show-Cause Notices are the gateway to closure directions, prosecution and consent suspension.
-        How you respond — and how fast — determines whether the matter is resolved or escalated.</p>
-      <div class="why-grid mt2">
-        <div class="why-card reveal reveal-d1">
-          <div class="why-card-n">01</div>
-          <div class="why-card-title">Narrow Response Window</div>
-          <div class="why-card-desc">GPCB SCNs typically allow 15–21 days for response. Missing the deadline or filing
-            an incomplete response is treated as non-cooperation — substantially increasing the likelihood of a closure
-            direction or prosecution being initiated without further opportunity to be heard.</div>
-        </div>
-        <div class="why-card reveal reveal-d2">
-          <div class="why-card-n">02</div>
-          <div class="why-card-title">Technical Precision is Critical</div>
-          <div class="why-card-desc">SCN responses require accurate technical rebuttal of alleged violations — emission
-            data, treatment plant performance, monitoring records, waste disposal documentation. Generic or vague
-            responses that do not directly address each allegation with evidence are invariably treated adversely by
-            GPCB.</div>
-        </div>
-        <div class="why-card reveal reveal-d3">
-          <div class="why-card-n">03</div>
-          <div class="why-card-title">Hearing Representation Matters</div>
-          <div class="why-card-desc">GPCB conducts personal hearings before issuing closure or prosecution orders. The
-            hearing is your best — and sometimes only — opportunity to present your compliance position in person. An
-            unprepared or unrepresented hearing leads to orders that are far harder to challenge subsequently.</div>
-        </div>
-        <div class="why-card reveal reveal-d4">
-          <div class="why-card-n">04</div>
-          <div class="why-card-title">Remediation Commitment is Expected</div>
-          <div class="why-card-desc">GPCB's enforcement approach rewards demonstrable corrective action — facilities
-            that proactively remediate violations and file a follow-up compliance report receive far more favourable
-            outcomes than those that only contest the notice. Combining a strong response with a concrete remediation
-            plan is the most effective defence strategy.</div>
+        <div class="svc-hero-pills">
+          <div class="svc-hero-pill"><span class="pill-icon"></span><strong>Time-critical</strong> notice response</div>
+          <div class="svc-hero-pill blue"><span class="pill-icon"></span>Technical + legal expertise</div>
+          <div class="svc-hero-pill"><span class="pill-icon"></span><strong>GPCB hearing</strong> representation</div>
+          <div class="svc-hero-pill blue"><span class="pill-icon"></span>Closure direction defence</div>
+          <div class="svc-hero-pill"><span class="pill-icon"></span>Post-SCN remediation</div>
         </div>
       </div>
     </div>
-
-    <div class="rule"></div>
-
-    <!-- WHAT WE DO -->
-    <div class="svc-section alt">
-      <div class="svc-section-inner">
-        <div class="sec-label">Our service scope</div>
-        <h2 class="sec-title">Notice receipt to<br><em>hearing closure and remediation</em></h2>
-        <p class="sec-sub">We engage from the moment you receive an SCN — providing technical, documentary and
-          representational support through every stage of the enforcement proceeding.</p>
-        <div class="process-steps mt3">
-          <div class="process-step reveal reveal-d1">
-            <div class="step-num">01</div>
-            <div class="step-body">
-              <div class="step-title">SCN Analysis &amp; Strategy</div>
-              <div class="step-desc">We analyse the SCN in detail — identifying each allegation, the specific statutory
-                provisions invoked, the evidence cited by GPCB and any procedural defects in the notice itself. We then
-                prepare a response strategy that addresses strong allegations with evidence and challenges weak or
-                unsupported ones on technical and legal grounds.</div>
+    <div style="padding:0 3rem;max-width:1260px;margin:2rem auto 0;">
+      <div class="svc-hero-img">
+        <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1400&q=80"
+          alt="Legal compliance defence and regulatory response" />
+        <div class="svc-hero-img-caption">
+          <div class="svc-hero-img-title">Protecting Your Operations<br><em>Through Expert Response</em></div>
+          <div class="svc-hero-stat-row">
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">48hr</div>
+              <div class="svc-hero-stat-l">Emergency response initiation</div>
             </div>
-          </div>
-          <div class="process-step reveal reveal-d2">
-            <div class="step-num">02</div>
-            <div class="step-body">
-              <div class="step-title">Evidence Compilation</div>
-              <div class="step-desc">We work with your team to compile all relevant supporting documents — monitoring
-                records, laboratory analysis reports, equipment maintenance logs, consent conditions, waste disposal
-                manifests, staff training records and investment evidence — organizing them into a structured response
-                bundle that directly counters each allegation.</div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">SCN</div>
+              <div class="svc-hero-stat-l">Through to hearing closure</div>
             </div>
-          </div>
-          <div class="process-step reveal reveal-d3">
-            <div class="step-num">03</div>
-            <div class="step-body">
-              <div class="step-title">SCN Response Drafting &amp; Filing</div>
-              <div class="step-desc">We draft a technically and legally precise written response to GPCB — including a
-                point-by-point rebuttal of each allegation, supporting evidence references, an explanation of any
-                genuine violations and a concrete corrective action plan with committed timelines. The response is filed
-                within the stipulated period with acknowledgement retained.</div>
-            </div>
-          </div>
-          <div class="process-step reveal reveal-d4">
-            <div class="step-num">04</div>
-            <div class="step-body">
-              <div class="step-title">GPCB Hearing Representation &amp; Follow-up</div>
-              <div class="step-desc">We represent your facility at the GPCB personal hearing — presenting your
-                compliance position, answering technical queries and submitting additional evidence. Post-hearing, we
-                prepare the compliance report demonstrating remediation completion and follow up with GPCB until the
-                matter is formally closed.</div>
+            <div class="svc-hero-stat">
+              <div class="svc-hero-stat-v">Full</div>
+              <div class="svc-hero-stat-l">GPCB hearing representation</div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </section>
+  <div class="rule" style="margin-top:3rem;"></div>
 
-    <div class="rule"></div>
+  <!-- STATS ROW -->
+  <div class="svc-section reveal">
+    <div class="stats-row reveal">
+      <div class="stat-block">
+        <div class="stat-block-v">48hr</div>
+        <div class="stat-block-l">Emergency engagement initiation</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">EPA</div>
+        <div class="stat-block-l">Sec. 5 &amp; Sec. 15 coverage</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">Full</div>
+        <div class="stat-block-l">GPCB hearing representation</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-block-v">Post-SCN</div>
+        <div class="stat-block-l">Remediation planning</div>
+      </div>
+    </div>
 
-    <!-- NOTICE TYPES -->
-    <div class="svc-section">
-      <div class="sec-label">What we cover</div>
-      <h2 class="sec-title">SCN types we defend<br><em>across all violation categories</em></h2>
-      <div class="deliverables-grid mt2">
-        <div class="deliv-card reveal reveal-d1">
-          <div class="deliv-icon"><svg viewBox="0 0 24 24">
+    <!-- WHY IT MATTERS -->
+    <div class="sec-label">Why it matters</div>
+    <h2 class="sec-title">A wrong SCN response<br><em>escalates the enforcement action.</em></h2>
+    <p class="sec-sub">Show-Cause Notices are the gateway to closure directions, prosecution and consent suspension.
+      How you respond — and how fast — determines whether the matter is resolved or escalated.</p>
+    <div class="why-grid mt2">
+      <div class="why-card reveal reveal-d1">
+        <div class="sp-step-num">01</div>
+        <div class="why-card-title">Narrow Response Window</div>
+        <div class="why-card-desc">GPCB SCNs typically allow 15–21 days for response. Missing the deadline or filing
+          an incomplete response is treated as non-cooperation — substantially increasing the likelihood of a closure
+          direction or prosecution being initiated without further opportunity to be heard.</div>
+      </div>
+      <div class="why-card reveal reveal-d2">
+        <div class="sp-step-num">02</div>
+        <div class="why-card-title">Technical Precision is Critical</div>
+        <div class="why-card-desc">SCN responses require accurate technical rebuttal of alleged violations — emission
+          data, treatment plant performance, monitoring records, waste disposal documentation. Generic or vague
+          responses that do not directly address each allegation with evidence are invariably treated adversely by
+          GPCB.</div>
+      </div>
+      <div class="why-card reveal reveal-d3">
+        <div class="sp-step-num">03</div>
+        <div class="why-card-title">Hearing Representation Matters</div>
+        <div class="why-card-desc">GPCB conducts personal hearings before issuing closure or prosecution orders. The
+          hearing is your best — and sometimes only — opportunity to present your compliance position in person. An
+          unprepared or unrepresented hearing leads to orders that are far harder to challenge subsequently.</div>
+      </div>
+      <div class="why-card reveal reveal-d4">
+        <div class="sp-step-num">04</div>
+        <div class="why-card-title">Remediation Commitment is Expected</div>
+        <div class="why-card-desc">GPCB's enforcement approach rewards demonstrable corrective action — facilities
+          that proactively remediate violations and file a follow-up compliance report receive far more favourable
+          outcomes than those that only contest the notice.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHAT WE DO -->
+  <div class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">What we do</div>
+      <h2 class="sec-title">Complete SCN management —<br><em>from audit to final closure</em></h2>
+      <p class="sec-sub">We manage every element of the SCN response cycle — identifying technical gaps, drafting
+        evidence-based rebuttals, and representing your facility at GPCB hearings to secure a formal withdrawal of
+        enforcement actions.</p>
+      <div class="wedo-grid mt3 reveal">
+        <div class="wedo-img">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=80"
+            alt="Regulatory compliance hearing and documentation review" />
+        </div>
+        <div class="wedo-body">
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Notice & Compliance Review</div>
+              <div class="wedo-item-desc">We conduct an immediate review of the Show-Cause Notice to identify the
+                specific rule
+                violations alleged, the evidence cited by GPCB, and the potential enforcement impact. We then audit your
+                facility data to build a technical rebuttal against each allegation.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Technical Rebuttal Drafting</div>
+              <div class="wedo-item-desc">We draft a point-by-point technical and legal response to each allegation —
+                incorporating monitoring reports, maintenance logs, waste manifest records and any other documentary
+                evidence that mitigates the alleged non-compliance.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">GPCB Hearing Representation</div>
+              <div class="wedo-item-desc">We represent your unit before GPCB officers during the personal hearing —
+                presenting the
+                technical defence, clarifying operational realities, and demonstrating the remediation steps already
+                taken to resolve the concerns cited in the notice.</div>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <div class="wedo-dot"></div>
+            <div>
+              <div class="wedo-item-title">Compliance Restoration filing</div>
+              <div class="wedo-item-desc">Post-remediation, we prepare and file the formal Compliance Report with GPCB,
+                including all necessary photographic evidence and technical data, to secure the formal withdrawal of the
+                SCN or restart directions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <div class="svc-section reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Our process</div>
+      <h2 class="sec-title">How we <em>resolve enforcement actions</em></h2>
+      <p class="sec-sup mb4">A time-critical 4-phase approach from receipt of notice through to hearing and final
+        closure
+        of the proceeding.</p>
+      <div class="process-steps p5 reveal">
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">01</div>
+          <div class="ps-title">Notice Audit</div>
+          <div class="ps-desc">Review of SCN allegations vs. facility data to identify gaps and build the technical
+            rebuttal
+            strategy within 48 hours of engagement.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">02</div>
+          <div class="ps-title">Response Drafting</div>
+          <div class="ps-desc">Preparation of evidence-backed written response addressing each point of the SCN with
+            supporting documentation and remediation plans.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">03</div>
+          <div class="ps-title">Hearing Support</div>
+          <div class="ps-desc">Expert representation at GPCB regional or head office hearings to defend the facility's
+            compliance record and current remediation steps.</div>
+        </div>
+        <div class="ps">
+          <div class="ps-arrow">&rarr;</div>
+          <div class="sp-step-num">04</div>
+          <div class="ps-title">Closure Recommendation</div>
+          <div class="ps-desc">Final compliance filing and liaison with GPCB to ensure the SCN is formally withdrawn and
+            enforcement proceedings are closed.</div>
+        </div>
+        <div class="ps">
+          <div class="sp-step-num">05</div>
+          <div class="ps-title">Post-Closure Compliance Stabilization</div>
+          <div class="ps-desc">We implement corrective and preventive measures based on the SCN root cause — including
+            process changes, documentation updates, monitoring improvements.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELIVERABLES -->
+  <div class="svc-section alt reveal">
+    <div class="svc-section-inner">
+      <div class="sec-label">Key deliverables</div>
+      <h2 class="sec-title">What you receive from every<br><em>SCN defence engagement</em></h2>
+      <div class="deliverables-grid mt3">
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon"><svg viewBox="0 0 24 24">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
               <polyline points="14 2 14 8 20 8" />
             </svg></div>
           <div>
-            <div class="deliv-title">Consent Condition Violations</div>
-            <div class="deliv-desc">SCNs for exceeding emission or effluent limits, operating beyond permitted capacity,
-              or non-compliance with consent-specific conditions.</div>
+            <div class="deliv-title">Technical Rebuttal Dossier</div>
+            <div class="deliv-desc">Complete written response to the GPCB Show-Cause Notice, addressing every technical
+              allegation with supporting evidence and legal framing.</div>
           </div>
         </div>
-        <div class="deliv-card reveal reveal-d2">
-          <div class="deliv-icon"><svg viewBox="0 0 24 24">
-              <polyline points="9 11 12 14 22 4" />
-              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon"><svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
             </svg></div>
           <div>
-            <div class="deliv-title">Hazardous Waste Violations</div>
-            <div class="deliv-desc">SCNs for unauthorized storage, disposal or transfer of hazardous waste including
-              used oil, ETP sludge, spent solvents and e-waste.</div>
+            <div class="deliv-title">Hearing Representation Brief</div>
+            <div class="deliv-desc">Expert technical representation at GPCB hearings, with a prepared brief and
+              technical
+              experts to defend the facility's compliance position.</div>
           </div>
         </div>
-        <div class="deliv-card reveal reveal-d3">
-          <div class="deliv-icon"><svg viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg></div>
-          <div>
-            <div class="deliv-title">Consent Expiry &amp; Operation Without CTO</div>
-            <div class="deliv-desc">SCNs for operating after CTO expiry, failure to renew in time, or operating
-              facilities without a valid Consent to Establish or Operate.</div>
-          </div>
-        </div>
-        <div class="deliv-card reveal reveal-d4">
-          <div class="deliv-icon"><svg viewBox="0 0 24 24">
-              <line x1="8" y1="6" x2="21" y2="6" />
-              <line x1="8" y1="12" x2="21" y2="12" />
-              <line x1="8" y1="18" x2="21" y2="18" />
-              <line x1="3" y1="6" x2="3.01" y2="6" />
-              <line x1="3" y1="12" x2="3.01" y2="12" />
-              <line x1="3" y1="18" x2="3.01" y2="18" />
-            </svg></div>
-          <div>
-            <div class="deliv-title">Annual Return Non-filing</div>
-            <div class="deliv-desc">SCNs for non-filing or late filing of Annual Environmental Statement, hazardous
-              waste returns or BMW annual returns.</div>
-          </div>
-        </div>
-        <div class="deliv-card reveal reveal-d1">
-          <div class="deliv-icon"><svg viewBox="0 0 24 24">
+        <div class="deliv-card reveal">
+          <div class="sp-card-icon"><svg viewBox="0 0 24 24">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
               <polyline points="22 4 12 14.01 9 11.01" />
             </svg></div>
           <div>
-            <div class="deliv-title">EPR Non-compliance</div>
-            <div class="deliv-desc">CPCB and GPCB notices for failure to register under battery, plastic or e-waste EPR
-              frameworks or failure to meet annual collection targets.</div>
-          </div>
-        </div>
-        <div class="deliv-card reveal reveal-d2">
-          <div class="deliv-icon"><svg viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-              <line x1="8" y1="21" x2="16" y2="21" />
-              <line x1="12" y1="17" x2="12" y2="21" />
-            </svg></div>
-          <div>
-            <div class="deliv-title">Bio-Medical Waste Violations</div>
-            <div class="deliv-desc">GPCB notices to healthcare facilities for improper BMW segregation, unauthorized
-              disposal, missing CBWTF linkage or staff training non-compliance.</div>
+            <div class="deliv-title">Compliance Restoration Review</div>
+            <div class="deliv-desc">Formal assessment of remediation steps taken, with a verified compliance report
+              ready
+              for GPCB submission to secure the withdrawal of notice.</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- WHO IS THIS FOR -->
-    <div class="svc-section" style="padding-top:0;">
-      <div class="who-section">
-        <div class="who-inner">
-          <div class="who-label">Who needs this service</div>
-          <div class="who-title">Contact us immediately if you have received —</div>
-          <div class="who-chips">
-            <span class="who-chip">A GPCB Show-Cause Notice (SCN) for any violation</span>
-            <span class="who-chip">A GPCB closure direction under Section 5 of EPA</span>
-            <span class="who-chip">A CPCB notice for EPR non-compliance</span>
-            <span class="who-chip">A GPCB inspection report with adverse findings</span>
-            <span class="who-chip">A prosecution notice under Section 15 of the EPA</span>
-            <span class="who-chip">A direction to appear for a personal hearing at GPCB</span>
-            <span class="who-chip">An NGT notice or contempt notice on environmental grounds</span>
-            <span class="who-chip">A direction to stop operations pending compliance</span>
-          </div>
-          <div class="sectors-wrap">
-            <div class="sectors-label">Sectors We Support</div>
-            <div class="sectors-grid">
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Chemicals &amp;
-                  Dyes</span></div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Pharmaceuticals</span>
-              </div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Textiles &amp;
-                  Apparel</span></div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Healthcare &amp;
-                  Labs</span></div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Engineering &amp;
-                  Steel</span></div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Electronics &amp;
-                  EEE</span></div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Food Processing</span>
-              </div>
-              <div class="sector-pill"><span class="sector-dot"></span><span class="sector-name">Mining &amp;
-                  Quarrying</span></div>
-            </div>
-          </div>
+  <!-- WHO + SECTORS -->
+  <div class="svc-section reveal">
+    <div class="who-section reveal mb4">
+      <div class="who-inner">
+        <div class="who-label">Who this is for</div>
+        <div class="who-title">Right for your organisation if you have received&hellip;</div>
+        <div class="who-chips">
+          <span class="who-chip">GPCB Show-Cause Notice (SCN) for any violation</span>
+          <span class="who-chip">Directions for closure of operations under Section 5</span>
+          <span class="who-chip">Directions for personal hearing before GPCB officers</span>
+          <span class="who-chip">Notice of violation based on GPCB inspection report</span>
+          <span class="who-chip">Notice of environmental damage compensation or penalty</span>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="rule"></div>
+  <div class="rule"></div>
 
-    <!-- FAQ -->
-    <div class="svc-section">
+  <!-- FAQ -->
+  <div class="svc-section alt reveal">
+    <div class="svc-section-inner">
       <div class="sec-label">FAQ</div>
-      <h2 class="sec-title">Frequently asked<br><em>questions</em></h2>
-      <div class="faq-wrap mt3">
+      <h2 class="sec-title">Frequently asked <em>questions</em></h2>
+      <div class="faq-wrap">
         <div class="faq-item">
-          <button class="faq-btn">We received a GPCB SCN — how quickly do we need to act? <span class="faq-icon"><svg
+          <button class="faq-btn">How quickly do we need to respond to a GPCB SCN? <span class="faq-icon"><svg
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg></span></button>
           <div class="faq-ans">
-            <p>Immediately. GPCB SCNs typically allow 15 to 21 days for written response — and in some cases of alleged
-              serious or continuing violations, even shorter windows. You should engage professional support within
-              24–48 hours of receiving the notice to allow adequate time for evidence gathering, response drafting,
-              internal review and filing. We treat SCN engagements as priority matters and initiate assessment within 48
-              hours of receiving the notice and related documents from you.</p>
+            <p>Immediately. Most GPCB notices provide a 15-day window for response. Missing this deadline signals
+              non-compliance and can lead to immediate closure directions without further notice. We recommend
+              initiating the response process within 48 hours of receiving the notice.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-btn">What happens if we do not respond to the SCN within the deadline? <span
-              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg></span></button>
-          <div class="faq-ans">
-            <p>Non-response or late response is treated by GPCB as admission of the alleged violations and/or
-              non-cooperation with the regulatory process. GPCB may then issue a closure direction under Section 5 of
-              the EPA or initiate prosecution under Section 15 — in either case without the benefit of your hearing.
-              Challenging these orders subsequently — through the Environmental Appellate Authority or High Court — is
-              far more difficult, time-consuming and costly than responding correctly at the SCN stage.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn">Can you represent us at the GPCB personal hearing? <span class="faq-icon"><svg
+          <button class="faq-btn">Can we stay operational during the SCN period? <span class="faq-icon"><svg
                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg></span></button>
           <div class="faq-ans">
-            <p>Yes. Our team attends GPCB personal hearings as authorized representatives of your organization —
-              presenting your compliance position, responding to technical questions from GPCB officers and submitting
-              any additional evidence requested at the hearing. We prepare a detailed hearing brief and conduct a mock
-              hearing with your team beforehand to ensure your designated plant or management officer is fully prepared
-              for the questions likely to arise. Our presence at hearings significantly improves the quality and
-              credibility of your presentation.</p>
+            <p>A Show-Cause Notice is a warning, not a closure order. You can typically remain operational while you
+              prepare your response. However, if the notice includes an "interim direction" to stop certain processes,
+              those must be obeyed immediately to avoid criminal charges. We help you interpret the specific legal
+              mandate of your notice.</p>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn">Some violations in the SCN are genuine — can we still defend ourselves? <span
-              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg></span></button>
-          <div class="faq-ans">
-            <p>Yes — and acknowledging genuine violations strategically while presenting a concrete remediation plan is
-              often more effective than contesting every allegation. GPCB's enforcement approach favours facilities that
-              demonstrate corrective intent. A response that honestly acknowledges what went wrong, explains the root
-              cause, presents evidence of immediate corrective action already taken and commits to a monitored
-              remediation plan typically receives more favourable treatment than one that contests everything without
-              supporting evidence. We calibrate the strategy to what the specific violations and evidence record
-              actually supports.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-btn">Can you help us challenge a GPCB closure direction after it has been issued? <span
-              class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg></span></button>
-          <div class="faq-ans">
-            <p>Yes. Closure directions under Section 5 of the EPA may be challenged before the Environmental Appellate
-              Authority or through a writ petition before the Gujarat High Court. In parallel, we prepare a compliance
-              restoration plan to bring the facility back into compliance — which is often the most effective route to
-              securing a stay on the closure direction and demonstrating to GPCB that operations should be permitted to
-              resume. Both litigation support and technical compliance remediation are required simultaneously in these
-              situations.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- RELATED SERVICES -->
-    <div class="svc-section alt">
-      <div class="svc-section-inner">
-        <div class="sec-label">Related services</div>
-        <h2 class="sec-title">Services that <em>prevent the next SCN</em></h2>
-        <div class="related-grid mt2">
-          <a href="svc-gpcp.html" class="related-card">
-            <div class="related-card-cat">GPCB Compliance</div>
-            <div class="related-card-title">GPCB Compliance Services</div>
-            <div class="related-card-desc">Proactive consent management, renewal tracking and statutory filing to
-              prevent the consent violations that trigger most SCNs.</div>
-            <div class="related-card-link">Learn more &rarr;</div>
-          </a>
-          <a href="svc-annual-env-statement.html" class="related-card">
-            <div class="related-card-cat">GPCB Compliance</div>
-            <div class="related-card-title">Annual Environmental Statement</div>
-            <div class="related-card-desc">Timely Form V preparation and filing to eliminate the most common non-filing
-              violation cited in GPCB SCNs and CTO renewals.</div>
-            <div class="related-card-link">Learn more &rarr;</div>
-          </a>
-          <a href="svc-used-oil.html" class="related-card">
-            <div class="related-card-cat">GPCB Compliance</div>
-            <div class="related-card-title">Used Oil Authorization</div>
-            <div class="related-card-desc">GPCB authorization for used oil disposal — one of the most commonly cited
-              hazardous waste violations in SCNs to industrial facilities.</div>
-            <div class="related-card-link">Learn more &rarr;</div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="svc-section" id="contact">
-      <div class="cta-band blue reveal">
-        <div>
-          <div class="cta-band-title">Received a GPCB notice? Contact us today.</div>
-          <div class="cta-band-sub">We initiate SCN response preparation within 48 hours &mdash; call or WhatsApp us
-            immediately with the notice details.</div>
-        </div>
-        <div class="cta-band-btns">
-          <a href="mailto:info@sustaincore.in" class="btn-wh blue">Emergency consultation &rarr;</a>
-          <a href="https://wa.me/919327635935" class="btn-out">WhatsApp now</a>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="float">
-    <a href="https://wa.me/919327635935" class="float-wa" target="_blank">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path
-          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-        <path
-          d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.854L.059 23.94l6.27-1.643A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.823 9.823 0 0 1-5.013-1.374l-.36-.213-3.724.976.993-3.626-.234-.372A9.797 9.797 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z" />
-      </svg>
-      WhatsApp
-    </a>
-    <a href="#contact" class="float-cb">
-      <div class="pulse"></div>Emergency consultation
-    </a>
+  <!-- RELATED SERVICES -->
+  <div class="svc-section reveal">
+    <div class="sec-label">Related services</div>
+    <h2 class="sec-title">Services that <em>prevent further enforcement</em></h2>
+    <div class="related-grid mt2">
+      <a href="4-cto.html" class="related-card reveal">
+        <div class="related-card-cat">SPCB Compliance</div>
+        <div class="related-card-title">Consent Management</div>
+        <div class="related-card-desc">Maintaining active CTE/CTO status is the first line of defence against GPCB
+          enforcement actions and show-cause notices.</div>
+        <div class="related-card-link">Learn more &rarr;</div>
+      </a>
+      <a href="4-annual-env-statement.html" class="related-card reveal">
+        <div class="related-card-cat">SPCB Compliance</div>
+        <div class="related-card-title">Annual Env. Statement</div>
+        <div class="related-card-desc">Timely submission of Form V returns eliminates the most common bureaucratic
+          reason for GPCB SCN issuance.</div>
+        <div class="related-card-link">Learn more &rarr;</div>
+      </a>
+    </div>
   </div>
-  <footer class="sc-foot">
-    <p>&copy; 2026 <a href="../index.html">SustainCore</a> Environmental Solutions Pvt. Ltd. &nbsp;&middot;&nbsp; <a
-        href="#">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="#">Terms of Use</a> &nbsp;&middot;&nbsp; Ahmedabad,
-      India &nbsp;&middot;&nbsp; Germany</p>
-  </footer>
+
+  <!-- CTA -->
+  <section class="svc-section" id="contact">
+    <div class="cta-band reveal">
+      <div class="cta-left">
+        <h3>Ready to secure your compliance?</h3>
+        <p>Speak with our technical experts to build your sustainability roadmap.</p>
+      </div>
+      <div class="cta-band-btns">
+        <a href="/index.html#consultation" class="btn-wh">Technical Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-root"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
   <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
     document.querySelectorAll('.faq-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
@@ -528,10 +493,6 @@
         if (!open) { item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
       });
     });
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-    }, { threshold: .12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 

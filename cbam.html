@@ -411,7 +411,7 @@
             gap: 1rem;
         }
 
-        @media (min-width: 1280px) {
+        @media (min-width: 768px) {
             .formula-notes {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -741,7 +741,7 @@
 
     <main class="pt-0 pb-8">
         <!-- HERO -->
-        <section class="cbam-hero relative overflow-hidden px-6 pt-[180px] pb-16">
+        <section class="cbam-hero relative overflow-hidden px-5 sm:px-6 pt-[260px] md:pt-[180px] pb-12 md:pb-16">
             <div
                 class="absolute inset-0 bg-gradient-to-br from-brand-charcoal to-[#0d2a3f] dark:from-slate-900 dark:to-slate-900 transition-colors duration-500">
             </div>
@@ -749,22 +749,22 @@
                 style="background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px); background-size: 60px 60px;">
             </div>
             <div class="max-w-7xl mx-auto relative z-10 w-full overflow-visible">
-                <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-center mt-8">
+                <div class="grid grid-cols-1 xl:grid-cols-12 gap-10 lg:gap-12 items-center mt-4 md:mt-8">
                     <!-- Left: Heading and Text -->
-                    <div class="xl:col-span-5 space-y-6 pr-0 xl:pr-4 xl:mt-12">
+                    <div class="xl:col-span-5 space-y-6 pr-0 xl:pr-4 xl:mt-12 text-center md:text-left">
                         <h1
-                            class="text-5xl md:text-[90.5px] font-display font-black text-white leading-[0.9] tracking-tighter mb-4">
+                            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90.5px] font-display font-black text-white leading-[1.1] md:leading-[0.9] tracking-tighter mb-4">
                             CBAM — EU's <span class="text-brand-green italic font-light">Carbon Border</span>
-                            <br />Adjustment Mechanism
+                            <br class="hidden md:block" />Adjustment Mechanism
                         </h1>
                         <p
-                            class="text-lg md:text-xl text-white/60 leading-relaxed max-w-[28rem] xl:max-w-none border-l-2 border-brand-green/40 pl-6 mb-8 font-light">
+                            class="text-base md:text-xl text-white/60 leading-relaxed max-w-[28rem] mx-auto md:mx-0 xl:max-w-none border-l-2 border-brand-green/40 pl-6 mb-8 font-light">
                             From 2026, EU-bound exports of steel, aluminium, cement, fertilisers, and hydrogen face
-                            mandatory carbon pricing. Calculate verify, and protect your market margins today.
+                            mandatory carbon pricing. Calculate, verify, and protect your market margins today.
                         </p>
-                        <div class="flex flex-wrap gap-4">
+                        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
                             <a href="/index.html#consultation"
-                                class="bg-brand-green text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-white hover:text-brand-charcoal transition-all shadow-lg flex items-center gap-2">
+                                class="w-full sm:w-auto bg-brand-green text-white px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-white hover:text-brand-charcoal transition-all shadow-lg flex items-center justify-center gap-2">
                                 Get Expert Strategy <svg class="w-3 h-3" width="12" height="12" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -772,7 +772,7 @@
                                 </svg>
                             </a>
                             <a href="#how-we-help"
-                                class="bg-white/10 text-white/80 border border-white/20 px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-white/20 transition-all backdrop-blur-sm">
+                                class="w-full sm:w-auto bg-white/10 text-white/80 border border-white/20 px-8 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-white/20 transition-all backdrop-blur-sm text-center">
                                 Explore Methodology
                             </a>
                         </div>
@@ -781,41 +781,45 @@
                     <!-- Right: Custom Horizontal Dash Box -->
                     <div class="xl:col-span-7 w-full flex xl:justify-end xl:translate-x-12">
                         <div
-                            class="deadline-box bg-white/5 border border-white/10 rounded-[2rem] p-6 md:p-6 backdrop-blur-xl group max-w-full xl:max-w-[800px] w-full shadow-2xl overflow-hidden shrink-0">
-                            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                            class="deadline-box bg-white/5 border border-white/10 rounded-[2rem] p-5 sm:p-6 backdrop-blur-xl group max-w-full xl:max-w-[800px] w-full shadow-2xl overflow-hidden shrink-0">
+                            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
                                 <!-- Horizontal Dashboard Interior... -->
                                 <!-- Countdown Part (Left within box) -->
                                 <div
-                                    class="md:col-span-5 border-b md:border-b-0 md:border-r border-white/10 pb-6 md:pb-0 md:pr-6">
+                                    class="md:col-span-5 border-b md:border-b-0 md:border-r border-white/10 pb-8 md:pb-0 md:pr-6">
                                     <div
-                                        class="cd-tag text-[8px] font-bold text-brand-green tracking-widest uppercase mb-1.5">
+                                        class="cd-tag text-[8px] font-bold text-brand-green tracking-widest uppercase mb-2">
                                         ESG · CARBON · COMPLIANCE</div>
-                                    <div class="cd-name text-lg font-black text-white mb-0.5" id="cd-name">First Annual
+                                    <div class="cd-name text-lg font-black text-white mb-1" id="cd-name">First Annual
                                         Declaration (2026 imports)</div>
-                                    <div class="cd-date text-[10px] text-white/50 mb-4" id="cd-date">Due: 30 September
+                                    <div class="cd-date text-[10px] text-white/50 mb-6" id="cd-date">Due: 30 September
                                         2027</div>
 
-                                    <div class="cd-units grid grid-cols-4 gap-2 mb-4">
-                                        <div class="cd-u bg-white/10 rounded-xl p-2.5 text-center">
-                                            <div class="cd-v text-2xl font-display font-black text-white" id="cd-d">--
+                                    <div class="cd-units grid grid-cols-4 gap-2 mb-6">
+                                        <div class="cd-u bg-white/10 rounded-xl p-2 sm:p-2.5 text-center">
+                                            <div class="cd-v text-xl sm:text-2xl font-display font-black text-white"
+                                                id="cd-d">--
                                             </div>
                                             <div class="cd-l text-[7px] text-white/60 uppercase tracking-widest">Days
                                             </div>
                                         </div>
-                                        <div class="cd-u bg-white/10 rounded-xl p-2.5 text-center">
-                                            <div class="cd-v text-2xl font-display font-black text-white" id="cd-h">--
+                                        <div class="cd-u bg-white/10 rounded-xl p-2 sm:p-2.5 text-center">
+                                            <div class="cd-v text-xl sm:text-2xl font-display font-black text-white"
+                                                id="cd-h">--
                                             </div>
                                             <div class="cd-l text-[7px] text-white/60 uppercase tracking-widest">Hours
                                             </div>
                                         </div>
-                                        <div class="cd-u bg-white/10 rounded-xl p-2.5 text-center">
-                                            <div class="cd-v text-2xl font-display font-black text-white" id="cd-m">--
+                                        <div class="cd-u bg-white/10 rounded-xl p-2 sm:p-2.5 text-center">
+                                            <div class="cd-v text-xl sm:text-2xl font-display font-black text-white"
+                                                id="cd-m">--
                                             </div>
                                             <div class="cd-l text-[7px] text-white/60 uppercase tracking-widest">Mins
                                             </div>
                                         </div>
-                                        <div class="cd-u bg-white/10 rounded-xl p-2.5 text-center">
-                                            <div class="cd-v text-2xl font-display font-black text-white" id="cd-s">--
+                                        <div class="cd-u bg-white/10 rounded-xl p-2 sm:p-2.5 text-center">
+                                            <div class="cd-v text-xl sm:text-2xl font-display font-black text-white"
+                                                id="cd-s">--
                                             </div>
                                             <div class="cd-l text-[7px] text-white/60 uppercase tracking-widest">Secs
                                             </div>
@@ -824,13 +828,13 @@
 
                                     <div class="cd-sw flex flex-wrap gap-2">
                                         <button style="color: white;"
-                                            class="cd-sw-btn px-2.5 py-1 rounded-full border border-white/10 text-[7px] font-bold uppercase tracking-widest"
+                                            class="cd-sw-btn px-2.5 py-1.5 rounded-full border border-white/10 text-[7px] font-bold uppercase tracking-widest bg-white/5"
                                             onclick="setDL(0)">Declarant reg.</button>
                                         <button style="color: white;"
-                                            class="cd-sw-btn active px-2.5 py-1 rounded-full border border-white/10 text-[7px] font-bold uppercase tracking-widest"
+                                            class="cd-sw-btn active px-2.5 py-1.5 rounded-full border border-white/10 text-[7px] font-bold uppercase tracking-widest"
                                             onclick="setDL(1)">Annual decl.</button>
                                         <button style="color: white;"
-                                            class="cd-sw-btn px-2.5 py-1 rounded-full border border-white/10 text-[7px] font-bold uppercase tracking-widest"
+                                            class="cd-sw-btn px-2.5 py-1.5 rounded-full border border-white/10 text-[7px] font-bold uppercase tracking-widest bg-white/5"
                                             onclick="setDL(2)">Certificate sale</button>
                                     </div>
                                 </div>
@@ -1021,7 +1025,7 @@
                 <!-- Iron & Steel -->
                 <div class="sector-card">
                     <div class="sector-img">
-                        <img src="https://images.unsplash.com/photo-1530973428-5bf2db2e4d71?w=600&q=80"
+                        <img src="https://images.unsplash.com/photo-1697698532634-ea59b636ccea?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Iron and steel blast furnace" />
                     </div>
                     <div class="sector-body">
@@ -1055,7 +1059,7 @@
                 <!-- Aluminium -->
                 <div class="sector-card">
                     <div class="sector-img">
-                        <img src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80"
+                        <img src="https://images.unsplash.com/photo-1709244596182-a7c6542be59c?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Aluminium production" />
                     </div>
                     <div class="sector-body">
@@ -1089,7 +1093,7 @@
                 <!-- Cement -->
                 <div class="sector-card">
                     <div class="sector-img">
-                        <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?w=600&q=80"
+                        <img src="https://images.unsplash.com/photo-1560435650-7ec2e17ba926?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Cement plant kiln" />
                     </div>
                     <div class="sector-body">
@@ -1123,7 +1127,7 @@
                 <!-- Fertilisers -->
                 <div class="sector-card">
                     <div class="sector-img">
-                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&q=80"
+                        <img src="https://images.unsplash.com/photo-1655130944329-b3a63166f6b5?q=80&w=1033&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Fertiliser production" />
                     </div>
                     <div class="sector-body">
@@ -1153,7 +1157,7 @@
                 <!-- Hydrogen -->
                 <div class="sector-card">
                     <div class="sector-img">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80"
+                        <img src="https://plus.unsplash.com/premium_photo-1693225746473-fbc063bffe41?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                             alt="Hydrogen production renewable" />
                     </div>
                     <div class="sector-body">
@@ -1183,8 +1187,7 @@
                 <!-- Electricity -->
                 <div class="sector-card">
                     <div class="sector-img">
-                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80"
-                            alt="Electricity power grid" />
+                        <img src="/images/cbam-electricity.png" alt="Electricity power grid" />
                     </div>
                     <div class="sector-body">
                         <div class="sector-name">Electricity</div>
@@ -1459,22 +1462,22 @@
                         class="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-[2.5rem] shadow-2xl overflow-hidden">
                         <!-- Tabs Navigation -->
                         <div
-                            class="flex border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
+                            class="flex overflow-x-auto no-scrollbar border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30">
                             <button onclick="switchCalcTab('simple', this)"
-                                class="calc-tab flex-1 py-6 px-4 text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b-2 border-transparent transition-all active">
+                                class="calc-tab flex-1 min-w-[140px] py-5 md:py-6 px-4 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b-2 border-transparent transition-all active">
                                 01. Simple Estimator
                             </button>
                             <button onclick="switchCalcTab('detailed', this)"
-                                class="calc-tab flex-1 py-6 px-4 text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b-2 border-transparent transition-all">
+                                class="calc-tab flex-1 min-w-[140px] py-5 md:py-6 px-4 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b-2 border-transparent transition-all">
                                 02. Detailed (CN Based)
                             </button>
                             <button onclick="switchCalcTab('projection', this)"
-                                class="calc-tab flex-1 py-6 px-4 text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b-2 border-transparent transition-all">
-                                03. 2026-2034 Projection
+                                class="calc-tab flex-1 min-w-[140px] py-5 md:py-6 px-4 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-slate-400 border-b-2 border-transparent transition-all">
+                                03. 2026-34 Projection
                             </button>
                         </div>
 
-                        <div class="p-8 md:p-12">
+                        <div class="p-5 sm:p-8 md:p-12">
                             <!-- Tab 1: Simple -->
                             <div id="calc-simple" class="calc-content block">
                                 <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-8">
@@ -1517,7 +1520,7 @@
 
                                         <!-- Row 2: Full-Width ETS Slider -->
                                         <div
-                                            class="space-y-4 p-8 bg-slate-50/50 dark:bg-slate-800/20 rounded-[2rem] border border-slate-100 dark:border-slate-800">
+                                            class="space-y-4 p-5 sm:p-8 bg-slate-50/50 dark:bg-slate-800/20 rounded-[1.5rem] md:rounded-[2rem] border border-slate-100 dark:border-slate-800">
                                             <div class="flex justify-between items-center px-2">
                                                 <div class="flex flex-col">
                                                     <span
@@ -1525,7 +1528,7 @@
                                                         Price (ETS)</span>
                                                     <span class="text-[9px] text-slate-500 font-light italic">Drag to
                                                         adjust
-                                                        the projected EU ETS price per tonne of CO₂e</span>
+                                                        the price per tCO₂e</span>
                                                 </div>
                                                 <span class="text-xl font-black text-brand-blue"
                                                     id="s-ets-val">€70</span>
@@ -1534,7 +1537,7 @@
                                                 oninput="simpleCalc()"
                                                 class="w-full h-3 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-blue">
                                             <div
-                                                class="flex justify-between px-1 text-11px] font-bold text-slate-800 uppercase tracking-tighter">
+                                                class="flex justify-between px-1 text-[9px] md:text-[11px] font-bold text-slate-800 dark:text-white uppercase tracking-tighter">
                                                 <span id="s-ets-l1">€10</span>
                                                 <span id="s-ets-l2">€45</span>
                                                 <span id="s-ets-l3">€80</span>
@@ -1564,7 +1567,7 @@
 
                                     <div class="space-y-6 sticky top-20 self-start">
                                         <div
-                                            class="p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl">
+                                            class="p-5 sm:p-8 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-xl mt-4 md:mt-0">
                                             <div class="grid grid-cols-1 gap-4">
                                                 <div
                                                     class="p-5 bg-slate-50 dark:bg-slate-800/50 rounded-2xl border border-slate-100 dark:border-slate-700">
@@ -1572,25 +1575,25 @@
                                                         class="text-[10px] font-bold text-slate-400 uppercase mb-2 tracking-widest">
                                                         Default Compliance Cost</div>
                                                     <div id="s-breakdown"
-                                                        class="text-[13px] font-semibold text-slate-700 dark:text-slate-200">
+                                                        class="text-[12px] md:text-[13px] font-semibold text-slate-700 dark:text-slate-200">
                                                         --</div>
                                                     <div
                                                         class="mt-2 flex justify-between items-end text-[10px] uppercase text-red-500 font-black tracking-wider">
                                                         <span>Total</span>
                                                         <span id="s-res-def"
-                                                            class="text-2xl font-black text-red-500">--</span>
+                                                            class="text-xl md:text-2xl font-black text-red-500">--</span>
                                                     </div>
                                                 </div>
                                                 <div
                                                     class="p-5 bg-emerald-50/30 dark:bg-emerald-900/10 rounded-2xl border border-emerald-100 dark:border-emerald-900/20">
                                                     <div
                                                         class="text-[10px] font-bold text-emerald-600 dark:text-emerald-300 uppercase mb-2 tracking-widest">
-                                                        Actual Data Power</div>
+                                                        Actual Data Impact</div>
                                                     <div id="s-res-act"
-                                                        class="text-2xl font-black text-emerald-600 dark:text-emerald-300">
+                                                        class="text-xl md:text-2xl font-black text-emerald-600 dark:text-emerald-300">
                                                         --</div>
                                                     <p
-                                                        class="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed mt-2">
+                                                        class="text-[10px] md:text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed mt-2">
                                                         Verified actual data substitution impact.</p>
                                                 </div>
                                                 <div
@@ -1598,8 +1601,10 @@
                                                     <div class="text-[10px] font-bold uppercase mb-2 tracking-widest">
                                                         Verified Savings</div>
                                                     <div id="s-res-save"
-                                                        class="text-3xl font-black leading-none tracking-tight">--</div>
-                                                    <p class="text-[10px] text-white/70 mt-2">Estimated savings vs
+                                                        class="text-2xl md:text-3xl font-black leading-none tracking-tight">
+                                                        --</div>
+                                                    <p class="text-[9px] md:text-[10px] text-white/70 mt-2">Estimated
+                                                        savings vs
                                                         default factors.</p>
                                                 </div>
                                             </div>
@@ -1708,9 +1713,9 @@
                                         </button>
                                     </div>
 
-                                    <div class="h-full flex items-start">
+                                    <div class="h-full flex items-start mt-8 xl:mt-0">
                                         <div
-                                            class="bg-brand-charcoal text-white p-6 rounded-[2.5rem] shadow-2xl sticky top-8 w-full max-w-xs">
+                                            class="bg-brand-charcoal text-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl sticky top-8 w-full xl:max-w-xs">
                                             <h5
                                                 class="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-8">
                                                 Total Exposure Summary</h5>
@@ -1786,10 +1791,12 @@
 
                                 <!-- Excel Download Button -->
                                 <div class="mt-8 flex justify-end">
-                                    <button onclick="window.downloadDetailedExcel()" 
+                                    <button onclick="window.downloadDetailedExcel()"
                                         class="bg-brand-blue hover:bg-[#0d2a3f] text-white px-8 py-4 rounded-xl font-bold uppercase text-[10px] tracking-widest transition-all shadow-lg flex items-center gap-3 group">
-                                        <svg class="w-4 h-4 text-white transition-transform group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                        <svg class="w-4 h-4 text-white transition-transform group-hover:-translate-y-1"
+                                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                         </svg>
                                         Download as Excel (.xlsx)
                                     </button>
@@ -1834,8 +1841,8 @@
                                         </div>
                                     </div>
 
-                                    <div class="h-full">
-                                        <table class="w-full text-left">
+                                    <div class="h-full overflow-x-auto no-scrollbar">
+                                        <table class="w-full text-left min-w-[500px] lg:min-w-0">
                                             <thead class="bg-slate-50 dark:bg-slate-800">
                                                 <tr
                                                     class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">
@@ -1924,12 +1931,13 @@
 
                     <!-- Full Width Formula Box -->
                     <div class="pt-8">
-                        <div class="formula-main text-center max-w-4xl mx-auto">
-                            <div class="mt-6 md:mt-2">
+                        <div class="formula-main text-center max-w-4xl mx-auto px-4">
+                            <div class="mt-6 md:mt-2 text-sm sm:text-base md:text-xl lg:text-2xl">
                                 <span class="hl">CBAM Certificate Cost (€)</span> <span class="eq">=</span> <span
                                     class="hl">Volume (t)</span> <span class="eq">×</span> <span class="hl">Embedded EF
                                     (tCO₂e/t)</span> <span class="eq">×</span> <span class="hl">CBAM Phase-in
-                                    Factor</span><br> <span class="eq">×</span> <span class="hl">ETS Price
+                                    Factor</span><br class="hidden md:block"> <span class="eq md:hidden">×</span> <span
+                                    class="eq hidden md:inline">×</span> <span class="hl">ETS Price
                                     (€/tCO₂e)</span>
                             </div>
                         </div>
@@ -2295,15 +2303,20 @@
                 </section>
 
                 <!-- CTA SECTION -->
-                <section class="sp-cta-section">
+                <section class="sp-cta-section px-4">
                     <div class="sp-container">
-                        <div class="sp-cta-box">
+                        <div
+                            class="sp-cta-box flex flex-col md:flex-row items-center md:justify-between text-center md:text-left gap-8">
                             <div class="sp-cta-content">
-                                <h2 class="sp-cta-title">Ready to secure your compliance?</h2>
-                                <p class="sp-cta-text">Speak with our technical experts to build your sustainability
+                                <h2 class="sp-cta-title text-2xl md:text-3xl font-black text-white mb-2">Ready to secure
+                                    your compliance?</h2>
+                                <p class="sp-cta-text text-white/70 font-light text-sm md:text-base">Speak with our
+                                    technical experts to build your sustainability
                                     roadmap.</p>
                             </div>
-                            <a href="/index.html#consultation" class="btn-primary">Technical Consultation</a>
+                            <a href="/index.html#consultation"
+                                class="btn-primary w-full md:w-auto px-8 py-4 bg-brand-green text-white rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-white hover:text-brand-charcoal transition-all text-center">Technical
+                                Consultation</a>
                         </div>
                     </div>
                 </section>

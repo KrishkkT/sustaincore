@@ -16,7 +16,7 @@ export const header = `
       <div class="mega-menu">
         <a href="/services.html#esg" class="mega-item">
           <div>
-            <span class="title">ESG Reporting & Sustainability Disclosure</span>
+            <span class="title">Environmental, Social, and Governance(ESG) Reporting & Sustainability Disclosure</span>
             <span class="desc">BRSR, CDP, GRI, SASB & TCFD disclosures.</span>
           </div>
         </a>
@@ -37,7 +37,7 @@ export const header = `
 
         <a href="/services.html#gpcb" class="mega-item">
           <div>
-            <span class="title">GPCB Compliance & Env. Approval</span>
+            <span class="title">SPCB Compliance & Environmental Approval</span>
             <span class="desc">EC, EIA, Consent management & EPR.</span>
           </div>
         </a>
@@ -91,7 +91,7 @@ export const header = `
       <a href="/esg-reporting.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">ESG Reporting</a>
       <a href="/carbon-climate.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Carbon Management</a>
       <a href="/ratings-targets.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Sustainability Ratings</a>
-      <a href="/clearances-eia.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">GPCB Compliance</a>
+      <a href="/clearances-eia.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">SPCB Compliance</a>
       <a href="/management-systems.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Environmental Audits</a>
       <a href="/water-testing.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Water Testing</a>
       <a href="/air-monitoring.html" class="text-base font-medium text-slate-700 dark:text-slate-300 py-2">Air Monitoring</a>
@@ -127,7 +127,7 @@ export const footer = `
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">ESG Reporting</a></li>
         <li><a href="/carbon-climate.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Ratings & Targets</a></li>
-        <li><a href="/clearances-eia.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">GPCB Compliance</a></li>
+        <li><a href="/clearances-eia.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">SPCB Compliance</a></li>
         <li><a href="/management-systems.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Environmental Audits</a></li>
         <li><a href="/water-testing.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Water Testing</a></li>
         <li><a href="/air-monitoring.html" class="hover:text-brand-blue dark:hover:text-white transition-colors">Air Monitoring</a></li>

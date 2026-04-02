@@ -1246,9 +1246,14 @@
   color: rgba(90, 110, 97, .3);
 }
 
-
 /* --- Mobile UX/UI Premium Optimization --- */
 @media (max-width: 767px) {
+  .bcc {
+    margin-top: 5rem !important;
+    margin-bottom: 0rem !important;
+    margin-left: 4rem !important;
+  }
+
   .sp-container {
     padding: 0 1.25rem;
   }

@@ -18,6 +18,79 @@
     margin-top: 16rem;
     align-items: flex-end;
   }
+
+  /* ─── WHAT WE DO — image + content split ─── */
+  .wedo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+  }
+
+  .wedo-grid.reverse {
+    direction: rtl;
+  }
+
+  .wedo-grid.reverse>* {
+    direction: ltr;
+  }
+
+  .wedo-img {
+    border-radius: 18px;
+    overflow: hidden;
+    height: 380px;
+    position: relative;
+    box-shadow: 0 20px 52px rgba(26, 74, 107, .14);
+  }
+
+  .wedo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .wedo-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--b20) 0%, transparent 55%);
+  }
+
+  .wedo-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: -11rem !important;
+  }
+
+  .wedo-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .wedo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--g);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .wedo-item-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: .2rem;
+  }
+
+  .wedo-item-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.75;
+  }
 </style>
 
 <body>
@@ -58,9 +131,9 @@
           <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
         </div>
       </div>
-      <!-- 04 GPCB Compliance -->
+      <!-- 04 SPCB Compliance -->
       <div class="sp-sub-nav-item">
-        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle">GPCB Compliance</a>
+        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle">SPCB Compliance</a>
         <div class="sp-dropdown">
           <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Env. Clearance (EC)</a>
           <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Impact Assessment (EIA)</a>
@@ -257,54 +330,45 @@
     <h2 class="sec-title">Understanding <em>CDP Water</em></h2>
     <p class="sec-sub">CDP Water questionnaire assesses water accounting, risk assessment, governance, strategy, and
       targets. Responses are scored A to D- with public disclosure of scores.</p>
-
-    <div class="wedo-grid mt3">
-      <div class="wedo-body">
-        <div class="wedo-item">
-          <span class="wedo-dot"></span>
-          <div>
-            <h4 class="wedo-item-title">Water Accounting</h4>
-            <p class="wedo-item-desc">Detailed reporting of water withdrawals by source, consumption, discharge by
-              destination, and water recycling. Data quality, verification, and boundary coverage are assessed.</p>
-          </div>
-        </div>
-        <div class="wedo-item">
-          <span class="wedo-dot"></span>
-          <div>
-            <h4 class="wedo-item-title">Risk Assessment</h4>
-            <p class="wedo-item-desc">Identification of water-related risks — physical (scarcity, flooding, quality),
-              regulatory (permits, pricing, allocation), and reputational. Assessment of financial implications and
-              response strategies.</p>
-          </div>
-        </div>
-        <div class="wedo-item">
-          <span class="wedo-dot"></span>
-          <div>
-            <h4 class="wedo-item-title">Business Strategy</h4>
-            <p class="wedo-item-desc">Integration of water into business strategy, scenario analysis, water-related
-              opportunities, and value chain engagement. Board oversight and management accountability.</p>
-          </div>
-        </div>
-        <div class="wedo-item">
-          <span class="wedo-dot"></span>
-          <div>
-            <h4 class="wedo-item-title">Targets & Goals</h4>
-            <p class="wedo-item-desc">Water quantity and quality targets, progress tracking, and alignment with
-              contextual water targets. Science-based approaches and basin-level considerations.</p>
-          </div>
-        </div>
-        <div class="wedo-item">
-          <span class="wedo-dot"></span>
-          <div>
-            <h4 class="wedo-item-title">Governance</h4>
-            <p class="wedo-item-desc">Board-level oversight, management responsibility, incentives linked to water
-              performance, and integration with enterprise risk management.</p>
-          </div>
-        </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="sp-step-num">01</div>
+        <h3 class="why-card-title">Basin-Level Risk Assessment</h3>
+        <p class="why-card-desc">Analysis of each facility's water risk using WRI Aqueduct, WWF Water Risk Filter, and
+          local data. Physical risk (baseline water stress, drought, flood), regulatory risk, and reputational risk
+          mapping.</p>
       </div>
-      <div class="wedo-img">
-        <img src="https://images.unsplash.com/photo-1498084393753-b411b2d26b34?q=80&w=1400&auto=format&fit=crop"
-          alt="Water risk assessment and global resource monitoring">
+      <div class="why-card reveal">
+        <div class="sp-step-num">02</div>
+        <h3 class="why-card-title">Water Data Compilation</h3>
+        <p class="why-card-desc">Collection and verification of water withdrawal, consumption, and discharge data
+          across all facilities. Source categorisation, destination classification, and data quality assessment per
+          CDP requirements.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="sp-step-num">03</div>
+        <h3 class="why-card-title">Risk & Opportunity Analysis</h3>
+        <p class="why-card-desc">Identification of substantive water risks with potential financial impact
+          quantification. Assessment of water-related opportunities including efficiency gains, new products, and
+          market access.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="sp-step-num">04</div>
+        <h3 class="why-card-title">Strategy & Target Development</h3>
+        <p class="why-card-desc">Support for developing water strategy, setting meaningful targets, and aligning with
+          contextual water approaches. Integration with business strategy and capital planning.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="sp-step-num">05</div>
+        <h3 class="why-card-title">CDP Response Preparation</h3>
+        <p class="why-card-desc">Complete CDP Water questionnaire preparation — response drafting, evidence
+          compilation, internal review facilitation, and submission support. Score improvement recommendations.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="sp-step-num">06</div>
+        <h3 class="why-card-title">Score Improvement Roadmap</h3>
+        <p class="why-card-desc">Gap analysis against CDP scoring methodology with prioritised improvement actions.
+          Multi-year roadmap for score progression targeting A-List recognition.</p>
       </div>
     </div>
   </section>
@@ -318,45 +382,52 @@
       <h2 class="sec-title">Comprehensive <em>water risk & CDP services</em></h2>
       <p class="sec-sub">From facility-level risk assessment to disclosure-ready CDP Water response — we provide
         end-to-end support for water risk management and reporting.</p>
-      <div class="why-grid">
-        <div class="why-card reveal">
-          <div class="sp-step-num">01</div>
-          <h3 class="why-card-title">Basin-Level Risk Assessment</h3>
-          <p class="why-card-desc">Analysis of each facility's water risk using WRI Aqueduct, WWF Water Risk Filter, and
-            local data. Physical risk (baseline water stress, drought, flood), regulatory risk, and reputational risk
-            mapping.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="sp-step-num">02</div>
-          <h3 class="why-card-title">Water Data Compilation</h3>
-          <p class="why-card-desc">Collection and verification of water withdrawal, consumption, and discharge data
-            across all facilities. Source categorisation, destination classification, and data quality assessment per
-            CDP requirements.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="sp-step-num">03</div>
-          <h3 class="why-card-title">Risk & Opportunity Analysis</h3>
-          <p class="why-card-desc">Identification of substantive water risks with potential financial impact
-            quantification. Assessment of water-related opportunities including efficiency gains, new products, and
-            market access.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="sp-step-num">04</div>
-          <h3 class="why-card-title">Strategy & Target Development</h3>
-          <p class="why-card-desc">Support for developing water strategy, setting meaningful targets, and aligning with
-            contextual water approaches. Integration with business strategy and capital planning.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="sp-step-num">05</div>
-          <h3 class="why-card-title">CDP Response Preparation</h3>
-          <p class="why-card-desc">Complete CDP Water questionnaire preparation — response drafting, evidence
-            compilation, internal review facilitation, and submission support. Score improvement recommendations.</p>
-        </div>
-        <div class="why-card reveal">
-          <div class="sp-step-num">06</div>
-          <h3 class="why-card-title">Score Improvement Roadmap</h3>
-          <p class="why-card-desc">Gap analysis against CDP scoring methodology with prioritised improvement actions.
-            Multi-year roadmap for score progression targeting A-List recognition.</p>
+      <div class="wedo-img">
+        <img src="/images/waterrisk-whatwedo.png" alt="Water risk assessment and global resource monitoring">
+      </div>
+      <div class="wedo-grid mt3">
+        <div class="wedo-body">
+          <div class="wedo-item">
+            <span class="wedo-dot"></span>
+            <div>
+              <h4 class="wedo-item-title">Water Accounting</h4>
+              <p class="wedo-item-desc">Detailed reporting of water withdrawals by source, consumption, discharge by
+                destination, and water recycling. Data quality, verification, and boundary coverage are assessed.</p>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <span class="wedo-dot"></span>
+            <div>
+              <h4 class="wedo-item-title">Risk Assessment</h4>
+              <p class="wedo-item-desc">Identification of water-related risks — physical (scarcity, flooding, quality),
+                regulatory (permits, pricing, allocation), and reputational. Assessment of financial implications and
+                response strategies.</p>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <span class="wedo-dot"></span>
+            <div>
+              <h4 class="wedo-item-title">Business Strategy</h4>
+              <p class="wedo-item-desc">Integration of water into business strategy, scenario analysis, water-related
+                opportunities, and value chain engagement. Board oversight and management accountability.</p>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <span class="wedo-dot"></span>
+            <div>
+              <h4 class="wedo-item-title">Targets & Goals</h4>
+              <p class="wedo-item-desc">Water quantity and quality targets, progress tracking, and alignment with
+                contextual water targets. Science-based approaches and basin-level considerations.</p>
+            </div>
+          </div>
+          <div class="wedo-item">
+            <span class="wedo-dot"></span>
+            <div>
+              <h4 class="wedo-item-title">Governance</h4>
+              <p class="wedo-item-desc">Board-level oversight, management responsibility, incentives linked to water
+                performance, and integration with enterprise risk management.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
