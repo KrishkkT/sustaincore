@@ -497,12 +497,24 @@
 
   /*Mission Section*/
   .mission-big {
-    font-family: var(--serif); font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 300; color: var(--navy); line-height: 1.1;
+    font-family: var(--serif);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: var(--navy);
+    line-height: 1.1;
     margin-bottom: 1.5rem;
   }
-  .mission-big em { font-style: italic; color: var(--forest); }
-  .mission-body { font-size: 1rem; color: var(--text-mid); line-height: 1.9; }
+
+  .mission-big em {
+    font-style: italic;
+    color: var(--forest);
+  }
+
+  .mission-body {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
 
 
   /* ── MORE SECTION ── */
@@ -626,88 +638,215 @@
   }
 
   /* ── OUR PRESENCE ── */
-  .presence-section { background: var(--beige); padding: 7rem 4rem; }
-  .presence-inner { max-width: 1200px; margin: 0 auto; }
-  .presence-header { margin-bottom: 4rem; }
-  .presence-header .section-label { margin-bottom: 1rem; }
+  .presence-section {
+    background: var(--beige);
+    padding: 7rem 4rem;
+  }
+
+  .presence-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .presence-header {
+    margin-bottom: 4rem;
+  }
+
+  .presence-header .section-label {
+    margin-bottom: 1rem;
+  }
+
   .presence-headline {
-    font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.2rem);
-    font-weight: 300; line-height: 1.1; color: var(--navy); margin-bottom: 1.25rem;
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--navy);
+    margin-bottom: 1.25rem;
   }
-  .presence-headline em { font-style: italic; color: var(--forest); display: block; }
+
+  .presence-headline em {
+    font-style: italic;
+    color: var(--forest);
+    display: block;
+  }
+
   .presence-sub {
-    font-size: 0.95rem; color: var(--text-muted); max-width: 520px; line-height: 1.85;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.85;
   }
+
   .presence-cards {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
   }
+
   .presence-card {
-    position: relative; border-radius: 12px; overflow: hidden;
-    min-height: 420px; display: flex; flex-direction: column; justify-content: flex-end;
-    cursor: default; margin-top: -2rem;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: default;
+    margin-top: -2rem;
   }
+
   .presence-card img {
-    position: absolute; inset: 0; width: 100%; height: 100%;
-    object-fit: cover; transition: transform 0.7s ease;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
     filter: contrast(1.05) saturate(0.75);
   }
-  .presence-card:hover img { transform: scale(1.04); }
+
+  .presence-card:hover img {
+    transform: scale(1.04);
+  }
+
   .presence-card-overlay {
-    position: absolute; inset: 0;
+    position: absolute;
+    inset: 0;
     background: linear-gradient(to top,
-    rgba(5,12,20,0.92) 0%,
-    rgba(5,12,20,0.55) 45%,
-    rgba(5,12,20,0.1) 100%);
+        rgba(5, 12, 20, 0.92) 0%,
+        rgba(5, 12, 20, 0.55) 45%,
+        rgba(5, 12, 20, 0.1) 100%);
     transition: background 0.4s ease;
   }
+
   .presence-card:hover .presence-card-overlay {
     background: linear-gradient(to top,
-    rgba(13,35,64,0.95) 0%,
-    rgba(44,95,63,0.25) 55%,
-    rgba(5,12,20,0.05) 100%);
+        rgba(13, 35, 64, 0.95) 0%,
+        rgba(44, 95, 63, 0.25) 55%,
+        rgba(5, 12, 20, 0.05) 100%);
   }
+
   .presence-card-content {
-    position: relative; z-index: 1; padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+    padding: 2.5rem;
   }
+
   .presence-card-eyebrow {
-    display: flex; align-items: center; gap: 0.75rem;
-    font-size: 0.62rem; font-weight: 500; letter-spacing: 0.22em;
-    text-transform: uppercase; color: var(--forest-light); margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--forest-light);
+    margin-bottom: 1rem;
   }
-  .presence-card-eyebrow::before { content: '—'; color: var(--forest-light); }
+
+  .presence-card-eyebrow::before {
+    content: '—';
+    color: var(--forest-light);
+  }
+
   .presence-card-city {
-    font-family: var(--serif); font-size: 2.2rem; font-weight: 600;
-    color: #fff; line-height: 1.1; margin-bottom: 1rem;
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
+
   .presence-card-body {
-    font-size: 0.84rem; color: rgba(255,255,255,0.68);
-    line-height: 1.75; max-width: 380px; margin-bottom: 1.5rem;
+    font-size: 0.84rem;
+    color: rgba(255, 255, 255, 0.68);
+    line-height: 1.75;
+    max-width: 380px;
+    margin-bottom: 1.5rem;
   }
+
   .presence-card-contact {
-    display: flex; flex-direction: column; gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
+
   .presence-card-contact-item {
-    display: flex; align-items: center; gap: 0.65rem;
-    font-size: 0.82rem; color: rgba(255,255,255,0.55);
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.55);
   }
-  .presence-card-contact-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .presence-card-contact-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
 
   @media (max-width: 1024px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-right { height: 50vw; }
-    .vision-grid, .mission-grid, .newsletter-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .values-grid { grid-template-columns: 1fr 1fr; }
-    .more-grid { grid-template-columns: 1fr; }
-    .more-card { aspect-ratio: 16/9; }
-    .presence-cards { grid-template-columns: 1fr; }
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-right {
+      height: 50vw;
+    }
+
+    .vision-grid,
+    .mission-grid,
+    .newsletter-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .more-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .more-card {
+      aspect-ratio: 16/9;
+    }
+
+    .presence-cards {
+      grid-template-columns: 1fr;
+    }
   }
+
   @media (max-width: 640px) {
-    nav { padding: 1rem 5vw; }
-    .nav-links, .nav-cta { display: none; }
-    .values-grid { grid-template-columns: 1fr; }
-    .intro-strip { flex-direction: column; gap: 1rem; }
-    .intro-strip-divider { display: none; }
-    .presence-section { padding: 5rem 1.5rem; }
+    nav {
+      padding: 1rem 5vw;
+    }
+
+    .nav-links,
+    .nav-cta {
+      display: none;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .intro-strip {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .intro-strip-divider {
+      display: none;
+    }
+
+    .presence-section {
+      padding: 5rem 1.5rem;
+    }
   }
 </style>
 </head>
@@ -727,7 +866,7 @@
         and sustainability strategists united by one belief:
         that enterprise and ecology are not in conflict — they are in partnership.
       </p>
-      <a href="/index.html#consultation" class="page-hero-cta reveal d3">
+      <a href="/contact.html" class="page-hero-cta reveal d3">
         Say hi <span class="page-hero-cta-arrow">→</span>
       </a>
     </div>
@@ -906,7 +1045,9 @@
       <div class="more-grid">
         <!-- Partners card -->
         <div class="more-card reveal-left">
-          <img src="https://images.unsplash.com/photo-1496115965489-21be7e6e59a0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Partners" />
+          <img
+            src="https://images.unsplash.com/photo-1496115965489-21be7e6e59a0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Partners" />
           <div class="more-card-overlay"></div>
           <div class="more-card-content">
             <div class="more-card-eyebrow">Work With Us</div>
@@ -920,7 +1061,8 @@
         </div>
         <!-- Join Us card -->
         <div class="more-card reveal-right">
-          <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          <img
+            src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="Join SustainCore team" />
           <div class="more-card-overlay"></div>
           <div class="more-card-content">
@@ -959,8 +1101,8 @@
         <!-- India -->
         <div class="presence-card reveal-left">
           <img
-                  src="https://images.unsplash.com/photo-1573457046516-b4e3b5dd50dd?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Ahmedabad, Gujarat"/>
+            src="https://images.unsplash.com/photo-1573457046516-b4e3b5dd50dd?q=80&w=692&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Ahmedabad, Gujarat" />
           <div class="presence-card-overlay"></div>
           <div class="presence-card-content">
             <div class="presence-card-eyebrow">India — Headquarters</div>
@@ -976,8 +1118,8 @@
         <!-- Germany -->
         <div class="presence-card reveal-right">
           <img
-                  src="https://images.unsplash.com/photo-1621978766642-2d64b83eed24?q=80&w=1236&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Stuttgart, Germany"/>
+            src="https://images.unsplash.com/photo-1621978766642-2d64b83eed24?q=80&w=1236&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Stuttgart, Germany" />
           <div class="presence-card-overlay"></div>
           <div class="presence-card-content">
             <div class="presence-card-city">Stuttgart, Germany</div>

@@ -17,49 +17,49 @@ export const header = `
         <a href="/services.html#esg" class="mega-item">
           <div>
             <span class="title">Environmental, Social, and Governance(ESG) Reporting & Sustainability Disclosure</span>
-            <span class="desc">BRSR, CDP, GRI, SASB & TCFD disclosures.</span>
+            <span class="desc">BRSR, CDP, GRI, SASB & TCFD</span>
           </div>
         </a>
         
         <a href="/services.html#carbon" class="mega-item">
           <div>
             <span class="title">Carbon Management & Climate Action</span>
-            <span class="desc">GHG inventory, CBAM, PCF & Carbon Credits.</span>
+            <span class="desc">CBAM, GHG, PCF, Carbon Credits & I-REC</span>
           </div>
         </a>
 
         <a href="/services.html#ratings" class="mega-item">
           <div>
-            <span class="title">Sustainability Assessment & ESG Rating</span>
-            <span class="desc">EcoVadis, SBTi, EPD & Materiality analysis.</span>
+            <span class="title">Ratings & Targets</span>
+            <span class="desc">Materiality Assessment, EcoVadis, EPD, SBTI</span>
           </div>
         </a>
 
         <a href="/services.html#gpcb" class="mega-item">
           <div>
             <span class="title">SPCB Compliance & Environmental Approval</span>
-            <span class="desc">EC, EIA, Consent management & EPR.</span>
+            <span class="desc">SPCB, EC, EIA, CTO/R/E, Waste Authorization</span>
           </div>
         </a>
 
         <a href="/services.html#env" class="mega-item">
           <div>
             <span class="title">Environmental Audits</span>
-            <span class="desc">ISO 14001, 45001, 50001 & Compliance audits.</span>
+            <span class="desc">ISO 14001, 45001, 50001</span>
           </div>
         </a>
 
         <a href="/services.html#water" class="mega-item">
           <div>
             <span class="title">Water and Wastewater Quality Testing</span>
-            <span class="desc">Effluent analysis, Groundwater & Water audits.</span>
+            <span class="desc">Effluent analysis, Groundwater & Water audits, Water Risk</span>
           </div>
         </a>
 
         <a href="/services.html#air" class="mega-item">
           <div>
             <span class="title">Air Quality Monitoring & Emission Testing</span>
-            <span class="desc">Stack, Ambient, CEMS & Workplace air quality.</span>
+            <span class="desc">Stack, Ambient, Workplace air quality & CEMS</span>
           </div>
         </a>
       </div>

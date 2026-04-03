@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const LABEL_COLOR = 'rgba(255,255,255,0.9)';
         const FONT = { family: 'Inter', size: 10, weight: 500 };
 
-        function baseOpts(xTitle, yTitle) {
+        function baseOpts(xTitle, yTitle, unit) {
             return {
                 responsive: true,
                 maintainAspectRatio: false,
@@ -37,7 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         backgroundColor: '#111',
                         padding: 12,
                         cornerRadius: 8,
-                        displayColors: false
+                        displayColors: false,
+                        callbacks: {
+                            label: function(context) {
+                                let val = context.parsed.y;
+                                if (unit === '$T') return `$${val}T`;
+                                return `${val}${unit || ''}`;
+                            }
+                        }
                     } 
                 },
                 scales: {
@@ -83,15 +90,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }]
                 },
                 options: { 
-                    ...baseOpts('Year', 'Temp. Rise (°C)'), 
+                    ...baseOpts('Year', 'Temp. Rise (°C)', '°C'), 
                     scales: { 
-                        ...baseOpts('Year', 'Temp. Rise (°C)').scales, 
+                        ...baseOpts('Year', 'Temp. Rise (°C)', '°C').scales, 
                         y: { 
-                            ...baseOpts('Year', 'Temp. Rise (°C)').scales.y, 
+                            ...baseOpts('Year', 'Temp. Rise (°C)', '°C').scales.y, 
                             min: 0, 
                             max: 2.0, 
                             ticks: { 
-                                ...baseOpts('Year', 'Temp. Rise (°C)').scales.y.ticks, 
+                                ...baseOpts('Year', 'Temp. Rise (°C)', '°C').scales.y.ticks, 
                                 stepSize:0.5 
                             } 
                         } 
@@ -112,15 +119,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }]
                 },
                 options: { 
-                    ...baseOpts('Year', 'CO₂ Emissions (Gt)'), 
+                    ...baseOpts('Year', 'CO₂ Emissions (Gt)', 'Gt'), 
                     scales: { 
-                        ...baseOpts('Year', 'CO₂ Emissions (Gt)').scales, 
+                        ...baseOpts('Year', 'CO₂ Emissions (Gt)', 'Gt').scales, 
                         y: { 
-                            ...baseOpts('Year', 'CO₂ Emissions (Gt)').scales.y, 
+                            ...baseOpts('Year', 'CO₂ Emissions (Gt)', 'Gt').scales.y, 
                             min: 20, 
                             max: 40, 
                             ticks: { 
-                                ...baseOpts('Year', 'CO₂ Emissions (Gt)').scales.y.ticks, 
+                                ...baseOpts('Year', 'CO₂ Emissions (Gt)', 'Gt').scales.y.ticks, 
                                 stepSize:5 
                             } 
                         } 
@@ -141,15 +148,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }]
                 },
                 options: { 
-                    ...baseOpts('Year', 'GDP Loss ($ Trillion)'), 
+                    ...baseOpts('Year', 'GDP Loss ($ Trillion)', '$T'), 
                     scales: { 
-                        ...baseOpts('Year', 'GDP Loss ($ Trillion)').scales, 
+                        ...baseOpts('Year', 'GDP Loss ($ Trillion)', '$T').scales, 
                         y: { 
-                            ...baseOpts('Year', 'GDP Loss ($ Trillion)').scales.y, 
+                            ...baseOpts('Year', 'GDP Loss ($ Trillion)', '$T').scales.y, 
                             min: 0, 
                             max: 45, 
                             ticks: { 
-                                ...baseOpts('Year', 'GDP Loss ($ Trillion)').scales.y.ticks, 
+                                ...baseOpts('Year', 'GDP Loss ($ Trillion)', '$T').scales.y.ticks, 
                                 stepSize:10 
                             } 
                         } 
@@ -172,15 +179,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     }]
                 },
                 options: { 
-                    ...baseOpts('Year', 'Market Size ($ Trillion)'), 
+                    ...baseOpts('Year', 'Market Size ($ Trillion)', '$T'), 
                     scales: { 
-                        ...baseOpts('Year', 'Market Size ($ Trillion)').scales, 
+                        ...baseOpts('Year', 'Market Size ($ Trillion)', '$T').scales, 
                         y: { 
-                            ...baseOpts('Year', 'Market Size ($ Trillion)').scales.y, 
+                            ...baseOpts('Year', 'Market Size ($ Trillion)', '$T').scales.y, 
                             min: 0, 
                             max: 16, 
                             ticks: { 
-                                ...baseOpts('Year', 'Market Size ($ Trillion)').scales.y.ticks, 
+                                ...baseOpts('Year', 'Market Size ($ Trillion)', '$T').scales.y.ticks, 
                                 stepSize:4 
                             } 
                         } 

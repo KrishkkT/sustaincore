@@ -16,140 +16,746 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/src/css/main.css">
     <link rel="stylesheet" href="/src/css/index-sections.css">
+    <style>
+        .ct-page {
+            background: #fdfaf5;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+
+        .dark .ct-page {
+            background: #060a0f;
+        }
+
+        .ct-page::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -180px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74, 124, 89, 0.06) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .ct-page::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -150px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(26, 74, 107, 0.04) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .ct-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 11rem 2rem 6rem;
+        }
+
+        /* ─── SPLIT LAYOUT ─── */
+        .ct-split {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* ─── LEFT COLUMN ─── */
+        .ct-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            position: sticky;
+            top: 8rem;
+        }
+
+        /* Header inside left column */
+        .ct-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #4a7c59;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .ct-label::before {
+            content: '';
+            width: 28px;
+            height: 1.5px;
+            background: #4a7c59;
+            display: block;
+        }
+
+        .ct-headline {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: clamp(48px, 5.5vw, 78px);
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #0f172a;
+            line-height: 0.88;
+            letter-spacing: -2px;
+            margin-bottom: 1.25rem;
+        }
+
+        .dark .ct-headline {
+            color: #ffffff;
+        }
+
+        .ct-headline .green {
+            color: #4a7c59;
+        }
+
+        .ct-headline .outline {
+            -webkit-text-stroke: 1.5px #0f172a;
+            color: transparent;
+            opacity: 0.15;
+        }
+
+        .dark .ct-headline .outline {
+            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+        }
+
+        .ct-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 14.5px;
+            font-weight: 300;
+            color: #64748b;
+            max-width: 400px;
+            line-height: 1.8;
+            border-left: 2px solid #4a7c59;
+            padding-left: 1.25rem;
+        }
+
+        /* Info cards */
+        .ct-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.65rem;
+        }
+
+        .ct-info-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 18px !important;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .dark .ct-info-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.06);
+            box-shadow: none;
+        }
+
+        .ct-info-card:hover {
+            transform: translateX(4px);
+            border-color: rgba(74, 124, 89, 0.2);
+        }
+
+        .ct-info-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ct-info-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .ct-info-icon.green {
+            background: rgba(74, 124, 89, 0.1);
+            color: #4a7c59;
+        }
+
+        .ct-info-icon.blue {
+            background: rgba(26, 74, 107, 0.08);
+            color: #1a4a6b;
+        }
+
+        .ct-info-body {
+            min-width: 0;
+        }
+
+        .ct-info-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+            letter-spacing: -0.01em;
+            margin-bottom: 2px;
+        }
+
+        .dark .ct-info-title {
+            color: #ffffff;
+        }
+
+        .ct-info-val {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: #64748b;
+            line-height: 1.4;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
+        }
+
+        a.ct-info-val:hover {
+            color: #4a7c59;
+        }
+
+        /* Trust + Response */
+        .ct-bottom-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .ct-response {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ct-response-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50% !important;
+            background: #4caf7d;
+            animation: ctPulse 2s ease-in-out infinite;
+            flex-shrink: 0;
+        }
+
+        @keyframes ctPulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(76, 175, 125, 0.4);
+            }
+
+            50% {
+                opacity: 0.4;
+                box-shadow: 0 0 0 4px rgba(76, 175, 125, 0);
+            }
+        }
+
+        .ct-response-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            color: #94a3b8;
+        }
+
+        .ct-trust {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .ct-trust-pill {
+            font-family: 'Inter', sans-serif;
+            font-size: 8px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 100px !important;
+            background: rgba(74, 124, 89, 0.06);
+            border: 1px solid rgba(74, 124, 89, 0.12);
+            color: #4a7c59;
+        }
+
+        .dark .ct-trust-pill {
+            background: rgba(74, 124, 89, 0.08);
+            border-color: rgba(74, 124, 89, 0.2);
+            color: #6aaa80;
+        }
+
+        /* ─── RIGHT: FORM ─── */
+        .ct-right {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        /* Stats row above form */
+        .ct-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.65rem;
+        }
+
+        .ct-stat {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            border-radius: 16px !important;
+            padding: 1.25rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .dark .ct-stat {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: rgba(255, 255, 255, 0.06);
+        }
+
+        .ct-stat:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(74, 124, 89, 0.06);
+        }
+
+        .ct-stat-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: #1a4a6b;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .dark .ct-stat-val {
+            color: #60a5fa;
+        }
+
+        .ct-stat-val.green {
+            color: #4a7c59;
+        }
+
+        .dark .ct-stat-val.green {
+            color: #6aaa80;
+        }
+
+        .ct-stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #94a3b8;
+            line-height: 1.3;
+        }
+
+        /* Form card */
+        .ct-form-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 24px !important;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(26, 43, 33, 0.06);
+        }
+
+        .dark .ct-form-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(24px);
+            border-color: rgba(255, 255, 255, 0.08);
+            box-shadow: none;
+        }
+
+        .ct-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #4a7c59, #1a4a6b, transparent);
+        }
+
+        .ct-form-card::after {
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: -60px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(74, 124, 89, 0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .ct-form-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+            letter-spacing: -0.02em;
+        }
+
+        .dark .ct-form-title {
+            color: #ffffff;
+        }
+
+        .ct-form-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 300;
+            color: #94a3b8;
+            margin-bottom: 1.75rem;
+        }
+
+        .ct-field {
+            margin-bottom: 1.1rem;
+        }
+
+        .ct-field-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #4a7c59;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .ct-field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+
+        .ct-input,
+        .ct-select,
+        .ct-textarea {
+            width: 100%;
+            background: #f8f5ef;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 12px !important;
+            padding: 13px 16px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #0f172a;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .dark .ct-input,
+        .dark .ct-select,
+        .dark .ct-textarea {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+        }
+
+        .ct-input::placeholder,
+        .ct-textarea::placeholder {
+            color: #94a3b8;
+            opacity: 0.5;
+        }
+
+        .ct-input:focus,
+        .ct-select:focus,
+        .ct-textarea:focus {
+            border-color: #4a7c59;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.08);
+        }
+
+        .dark .ct-input:focus,
+        .dark .ct-select:focus,
+        .dark .ct-textarea:focus {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(74, 124, 89, 0.5);
+        }
+
+        .ct-select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+
+        .ct-select option {
+            background: #ffffff;
+            color: #0f172a;
+        }
+
+        .dark .ct-select option {
+            background: #0f172a;
+            color: #ffffff;
+        }
+
+        .ct-textarea {
+            resize: none;
+            min-height: 100px;
+        }
+
+        .ct-submit {
+            width: 100%;
+            padding: 15px 32px;
+            background: #4a7c59;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 12px !important;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-top: 0.5rem;
+            box-shadow: 0 8px 24px rgba(74, 124, 89, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+
+        .ct-submit:hover {
+            background: #1a4a6b;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(26, 74, 107, 0.25);
+        }
+
+        .ct-submit:active {
+            transform: scale(0.98);
+        }
+
+        .ct-secure {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 0.85rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            color: #94a3b8;
+        }
+
+        .ct-secure svg {
+            width: 12px;
+            height: 12px;
+            color: #94a3b8;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 900px) {
+            .ct-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .ct-inner {
+                padding: 8rem 1.25rem 3rem;
+            }
+
+            .ct-left {
+                position: static;
+            }
+
+            .ct-headline {
+                font-size: clamp(40px, 10vw, 58px);
+            }
+
+            .ct-form-card {
+                padding: 1.75rem 1.5rem;
+            }
+
+            .ct-field-row {
+                grid-template-columns: 1fr;
+            }
+
+            .ct-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .ct-bottom-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
 
 <body class="overflow-x-hidden">
     <!-- Header Placeholder -->
     <div id="header-root"></div>
 
-    <main class="pt-40">
-        <section class="max-w-5xl mx-auto px-6 mb-32">
-            <div class="text-center mb-24">
-                <h1
-                    class="text-5xl md:text-8xl font-display font-extrabold text-brand-charcoal dark:text-white mb-8 tracking-tighter">
-                    Initiate <span class="text-brand-blue dark:text-brand-green">Dialogue.</span>
-                </h1>
-                <p class="text-xl text-brand-charcoal dark:text-white opacity-70 max-w-xl mx-auto leading-relaxed">
-                    Connect with our technical lead to discuss your specific regulatory or ESG mandate.
-                </p>
-            </div>
+    <main style="padding:0 !important; margin:0 !important;">
+        <div class="ct-page">
+            <div class="ct-inner">
+                <div class="ct-split">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-start">
-                <!-- Contact Details -->
-                <div class="space-y-16">
-                    <div>
-                        <h2 class="text-xs font-bold tracking-widest text-brand-charcoal opacity-40 uppercase mb-8">
-                            Direct Channels</h2>
-                        <div class="space-y-6">
-                            <a href="mailto:sustaincore.es@gmail.com" class="block group">
-                                <div class="text-[10px] font-bold text-brand-blue uppercase mb-1">Electronic Mail</div>
-                                <div
-                                    class="text-2xl font-bold text-brand-charcoal dark:text-white border-b-2 border-brand-softGray dark:border-slate-800 group-hover:border-brand-blue transition-all inline-block">
-                                    sustaincore.es@gmail.com</div>
-                            </a>
-                            <a href="tel:+919327635935" class="block group">
-                                <div class="text-[10px] font-bold text-brand-blue uppercase mb-1">Telephonic Support
-                                </div>
-                                <div
-                                    class="text-2xl font-bold text-brand-charcoal dark:text-white border-b-2 border-brand-softGray dark:border-slate-800 group-hover:border-brand-blue transition-all inline-block">
-                                    +91 93276 35935 (India) <br />
-                                    +49 17687966904 (Germany)</div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h2 class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-400 uppercase mb-8">
-                            Global HQ</h2>
-                        <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
-                            Ahmedabad, Gujarat, India
-                        </p>
-                    </div>
-
-                    <div
-                        class="p-8 rounded-3xl glass dark:bg-slate-900/60 dark:border-slate-800 border-brand-blue/10 flex items-center gap-6">
-                        <div
-                            class="w-12 h-12 bg-brand-blue text-white rounded-full flex items-center justify-center font-bold">
-                            IN</div>
+                    <!-- ─── LEFT: HEADLINE + INFO ─── -->
+                    <div class="ct-left">
                         <div>
-                            <div class="text-sm font-bold text-brand-charcoal dark:text-white">Operational Hours</div>
-                            <div class="text-xs text-slate-500 dark:text-slate-300 uppercase tracking-widest">09:00 —
-                                18:00 IST</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form (Visible immediately) -->
-                <div class="card p-12 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-2xl relative">
-                    <form class="space-y-8" id="contact-form" action="https://formspree.io/f/maqlwazp" method="POST">
-                        <div class="space-y-2">
-                            <label for="name"
-                                class="text-[11px] font-bold uppercase tracking-widest text-brand-green">Full
-                                Name</label>
-                            <input type="text" id="name" name="name" required placeholder="John Doe"
-                                class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition-all text-brand-charcoal dark:text-white">
+                            <div class="ct-label">Advisory Connect</div>
+                            <h1 class="ct-headline">
+                                Let's build<br>
+                                your <span class="green">sustainable</span><br>
+                                <span class="outline">future.</span>
+                            </h1>
+                            <p class="ct-subtitle">
+                                Connect with our senior consultants to discuss your specific regulatory, ESG, or
+                                environmental compliance mandate.
+                            </p>
                         </div>
 
-                        <div class="space-y-2">
-                            <label for="email"
-                                class="text-[11px] font-bold uppercase tracking-widest text-brand-green">Corporate
-                                Email</label>
-                            <input type="email" id="email" name="email" required placeholder="john@company.com"
-                                class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition-all text-brand-charcoal dark:text-white">
-                        </div>
-
-                        <div class="space-y-2">
-                            <label for="mandate"
-                                class="text-[11px] font-bold uppercase tracking-widest text-brand-green">Global
-                                Mandate</label>
-                            <div class="relative">
-                                <select id="mandate" name="mandate"
-                                    class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition-all appearance-none text-brand-charcoal dark:text-white font-medium">
-                                    <option value="" disabled selected>Select Mandate Area</option>
-                                    <option value="cbam">CBAM Compliance</option>
-                                    <option value="esg">ESG Disclosures</option>
-                                    <option value="carbon">Carbon Inventory</option>
-                                    <option value="other">General Advisory</option>
-                                </select>
-                                <div
-                                    class="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path d="m6 9 6 6 6-6" />
+                        <div class="ct-info">
+                            <div class="ct-info-card">
+                                <div class="ct-info-icon green">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
                                     </svg>
+                                </div>
+                                <div class="ct-info-body">
+                                    <div class="ct-info-title">Electronic Mail</div>
+                                    <a href="mailto:sustaincore.es@gmail.com"
+                                        class="ct-info-val">sustaincore.es@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="ct-info-card">
+                                <div class="ct-info-icon blue">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div class="ct-info-body">
+                                    <div class="ct-info-title">Global Headquarters</div>
+                                    <div class="ct-info-val">Ahmedabad, Gujarat, India</div>
+                                </div>
+                            </div>
+
+                            <div class="ct-info-card">
+                                <div class="ct-info-icon green">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                </div>
+                                <div class="ct-info-body">
+                                    <div class="ct-info-title">Operational Hours</div>
+                                    <div class="ct-info-val">Mon — Fri · 09:00 — 18:00 IST</div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="space-y-2">
-                            <label for="message"
-                                class="text-[11px] font-bold uppercase tracking-widest text-brand-green">Message /
-                                Brief</label>
-                            <textarea id="message" name="message" rows="4" placeholder="How can we help?"
-                                class="w-full bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 rounded-xl py-4 px-5 focus:outline-none focus:ring-2 focus:ring-brand-green/20 focus:border-brand-green transition-all text-brand-charcoal dark:text-white placeholder:opacity-30 resize-none"
-                                required></textarea>
+                    <!-- ─── RIGHT: FORM ─── -->
+                    <div class="ct-right">
+                        <!-- Form Card -->
+                        <div class="ct-form-card">
+                            <div class="ct-form-title">Book a free consultation</div>
+                            <div class="ct-form-sub">No jargon, no obligation — just a conversation with an expert.
+                            </div>
+
+                            <form id="contact-form" action="https://formspree.io/f/maqlwazp" method="POST">
+                                <div class="ct-field">
+                                    <div class="ct-field-row">
+                                        <div>
+                                            <label class="ct-field-label" for="ct-name">Full Name</label>
+                                            <input type="text" id="ct-name" name="name" class="ct-input"
+                                                placeholder="John Doe" required>
+                                        </div>
+                                        <div>
+                                            <label class="ct-field-label" for="ct-company">Company</label>
+                                            <input type="text" id="ct-company" name="company" class="ct-input"
+                                                placeholder="Acme Corp">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ct-field">
+                                    <label class="ct-field-label" for="ct-email">Corporate Email</label>
+                                    <input type="email" id="ct-email" name="email" class="ct-input"
+                                        placeholder="john@company.com" required>
+                                </div>
+
+                                <div class="ct-field">
+                                    <label class="ct-field-label" for="ct-mandate">Mandate Area</label>
+                                    <select id="ct-mandate" name="mandate" class="ct-select" required>
+                                        <option value="" disabled selected>Select your area of interest</option>
+                                        <option value="esg">ESG & Sustainability Reporting</option>
+                                        <option value="carbon">Carbon & Climate Solutions</option>
+                                        <option value="cbam">CBAM Compliance</option>
+                                        <option value="ratings">Ratings & Targets (EcoVadis / SBTi)</option>
+                                        <option value="clearances">Environmental Clearances & EIA</option>
+                                        <option value="monitoring">Environmental Monitoring</option>
+                                        <option value="water">Water Stewardship</option>
+                                        <option value="other">General Advisory</option>
+                                    </select>
+                                </div>
+
+                                <div class="ct-field">
+                                    <label class="ct-field-label" for="ct-message">Message / Brief</label>
+                                    <textarea id="ct-message" name="message" class="ct-textarea"
+                                        placeholder="Tell us about your project, compliance challenge, or sustainability goals..."
+                                        required></textarea>
+                                </div>
+
+                                <button type="submit" class="ct-submit">Send Dispatch →</button>
+
+                                <div class="ct-secure">
+                                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                    </svg>
+                                    256-bit SSL encrypted · Your data is private
+                                </div>
+                            </form>
                         </div>
+                    </div>
 
-                        <button type="submit"
-                            class="w-full btn-primary py-5 uppercase tracking-widest text-sm font-bold shadow-xl shadow-brand-blue/20">Send Dispatch</button>
-                    </form>
+                </div>
+
+                <!-- ─── CENTERED GOOGLE MAP ─── -->
+                <div class="ct-map-section" style="margin-top: 4rem;">
+                    <div
+                        style="background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 28px !important; overflow: hidden; height: 450px; box-shadow: 0 20px 60px rgba(26, 43, 33, 0.06);">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.914283088004!2d77.1352!3d28.5292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1952a65f123d%3A0x6523f2a895a!2sVasant%20Kunj%2C%20New%20Delhi%2C%20Delhi%20110070!5e0!3m2!1sen!2sin!4v1709715000000!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
             </div>
-
-            <!-- Google Map (Visible immediately) -->
-            <div class="mt-32 rounded-4xl overflow-hidden shadow-2xl h-[500px]">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14013.914283088004!2d77.1352!3d28.5292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1952a65f123d%3A0x6523f2a895a!2sVasant%20Kunj%2C%20New%20Delhi%2C%20Delhi%20110070!5e0!3m2!1sen!2sin!4v1709715000000!5m2!1sen!2sin"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </section>
+        </div>
     </main>
 
     <!-- Footer Placeholder -->

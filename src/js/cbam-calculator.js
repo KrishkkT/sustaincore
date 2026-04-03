@@ -21,7 +21,7 @@ const SECTOR_DEFAULTS = {
 };
 
 const DEADLINES = [
-    { name: 'Authorised Declarant Registration Deadline', date: new Date('2026-03-31T23:59:00') },
+    { name: 'Authorised Declarant Registration Deadline', date: new Date('2026-12-31T23:59:00') },
     { name: 'First Annual Declaration (2026 imports)', date: new Date('2027-09-30T23:59:00') },
     { name: 'CBAM Certificate Sales Open', date: new Date('2027-02-01T00:00:00') }
 ];
@@ -466,7 +466,16 @@ function switchCalcTab(name, btn) {
 let curDL = 1;
 function setDL(i) {
     curDL = i;
-    document.querySelectorAll('.cd-sw-btn').forEach((b, j) => b.classList.toggle('active', j === i));
+    document.querySelectorAll('.cd-sw-btn').forEach((b, j) => {
+        const isActive = j === i;
+        b.classList.toggle('active', isActive);
+        // Toggle the background class: active buttons shouldn't have bg-white/5, inactive ones should
+        if (isActive) {
+            b.classList.remove('bg-white/5');
+        } else {
+            b.classList.add('bg-white/5');
+        }
+    });
     const d = DEADLINES[i];
     document.getElementById('cd-name').textContent = d.name;
     const dateStr = d.date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
