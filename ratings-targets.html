@@ -12,6 +12,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
     rel="stylesheet">
+  <style>
+    .svc-card {
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
@@ -37,8 +42,8 @@
         <div class="sp-dropdown">
           <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
           <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Accounting & Inventory</a>
-          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
           <a href="/carbon-climate.html#pcf" class="sp-dropdown-link">PCF Assessment</a>
+          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
           <a href="/carbon-climate.html#irec" class="sp-dropdown-link">I-REC Certification</a>
         </div>
       </div>
@@ -70,7 +75,7 @@
           <a href="/management-systems.html#iso14001" class="sp-dropdown-link">Env. Mgmt (ISO 14001)</a>
           <a href="/management-systems.html#iso50001" class="sp-dropdown-link">Energy Mgmt (ISO 50001)</a>
           <a href="/management-systems.html#iso45001" class="sp-dropdown-link">Health & Safety (ISO 45001)</a>
-          <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a>
+          <!-- <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a> -->
         </div>
       </div>
       <!-- 06 Water Testing -->
@@ -451,6 +456,17 @@
   <div id="footer-root"></div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script>
+    // Service card click handler
+    document.querySelectorAll('.svc-card').forEach(card => {
+      card.addEventListener('click', function (e) {
+        if (e.target.tagName !== 'A') {
+          const link = this.querySelector('.svc-learn-more');
+          if (link) link.click();
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>

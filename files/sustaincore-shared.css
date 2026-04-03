@@ -42,7 +42,7 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
@@ -64,6 +64,7 @@ h2,
 h3,
 h4,
 h5 {
+  font-family: 'Outfit', sans-serif;
   font-weight: 600;
   line-height: 1.1;
   letter-spacing: -.02em;
@@ -203,7 +204,7 @@ h5 {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   transition: all 0.3s ease;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .sp-sub-nav-link span {
@@ -290,7 +291,7 @@ h5 {
   text-decoration: none;
   border-radius: 0.75rem;
   transition: background 0.2s ease, color 0.2s ease;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   white-space: normal;
 }
 
@@ -1036,7 +1037,7 @@ h5 {
 }
 
 .sectors-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: .18em;
   text-transform: uppercase;
@@ -1047,7 +1048,6 @@ h5 {
 .sectors-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: .75rem;
 }
 
 .sector-pill {
@@ -1056,7 +1056,7 @@ h5 {
   padding: .85rem 1rem;
   border: 1px solid var(--bdr);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: .65rem;
   transition: border-color .2s, background .2s;
 }
@@ -1072,12 +1072,14 @@ h5 {
   border-radius: 50%;
   background: var(--g);
   flex-shrink: 0;
+  margin-top: 6px;
 }
 
 .sector-name {
-  font-size: 12.5px;
-  font-weight: 400;
+  font-size: 11px;
+  font-weight: 500;
   color: var(--text2);
+  line-height: 1.4;
 }
 
 /* ─── STATS ROW ─── */
@@ -1101,6 +1103,7 @@ h5 {
 }
 
 .stat-block-v {
+  display: block;
   font-size: 36px;
   font-weight: 600;
   color: var(--text);
@@ -1113,6 +1116,7 @@ h5 {
 }
 
 .stat-block-l {
+  display: block;
   font-size: 11px;
   font-weight: 300;
   color: var(--muted);
@@ -1142,7 +1146,7 @@ h5 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: var(--text);
@@ -1306,7 +1310,7 @@ h5 {
   border-radius: 100px;
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
   box-shadow: 0 8px 15px rgba(74, 124, 89, 0.2);
 }
 
@@ -1335,7 +1339,7 @@ h5 {
   text-decoration: none;
   border: 2px solid rgba(74, 124, 89, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn-out:hover {
@@ -1461,7 +1465,7 @@ h5 {
   text-decoration: none;
   box-shadow: 0 6px 20px rgba(37, 211, 102, .38);
   transition: transform .2s;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .float-wa:hover {
@@ -1488,7 +1492,7 @@ h5 {
   text-transform: uppercase;
   box-shadow: 0 6px 20px rgba(26, 74, 107, .28);
   transition: transform .2s, background .2s;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .float-cb:hover {

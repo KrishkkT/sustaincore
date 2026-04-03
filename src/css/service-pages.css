@@ -1137,8 +1137,8 @@
 /* --- CTA Section --- */
 .sp-cta-section {
   padding: 2rem 3rem 0rem;
-  background: #f9f5ee;
   height: 100%;
+  width: 80rem !important;
 }
 
 .sp-cta-box {
@@ -1147,6 +1147,7 @@
   padding: 5rem;
   border-radius: 4rem;
   display: flex;
+  width: auto;
   justify-content: space-between;
   align-items: center;
   color: white;
