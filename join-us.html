@@ -886,17 +886,97 @@
 
     /* ══ RESPONSIVE ══ */
     @media (max-width: 1024px) {
+
+      /* Absolute lockdown of horizontal scrolling */
+      html,
+      body {
+        overflow-x: hidden !important;
+        width: 100%;
+        position: relative;
+      }
+
+      .hero,
+      .why-section,
+      .offer-section,
+      .cv-section,
+      .intro-band,
+      .section-pad {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative !important;
+      }
+
+      /* Disable horizontal shifting for reveal animations on mobile to prevent overflow */
+      .reveal-left,
+      .reveal-right {
+        transform: translateY(30px) !important;
+      }
+
+      .reveal-left.in,
+      .reveal-right.in {
+        transform: translateY(0) !important;
+      }
+
+      /* Fix floating background text alignment */
+      .cv-section::before {
+        right: 0 !important;
+        font-size: 14vw !important;
+      }
+
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
+        padding-top: 100px !important;
+      }
+
+      .hero-left {
+        padding: 5rem 6vw 4rem 6vw !important;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-eyebrow {
+        justify-content: center;
+      }
+
+      .hero-eyebrow::before {
+        display: none;
+      }
+
+      .hero-headline {
+        font-size: 3.5rem !important;
+      }
+
+      .hero-body {
+        margin-inline: auto;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem !important;
+      }
+
+      .hero-btn-primary,
+      .hero-btn-secondary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
       }
 
       .hero-right {
-        min-height: 80vw;
+        margin-top: 0 !important;
+        /* Fix the overlap */
+        min-height: auto !important;
       }
 
       .growth-panel {
-        padding: 4rem 5vw;
+        padding: 4rem 6vw !important;
+      }
+
+      .growth-heading {
+        font-size: 4.5rem !important;
+        text-align: center;
       }
 
       .why-grid,
@@ -911,11 +991,17 @@
 
       .intro-band {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem !important;
+        text-align: center;
+        padding: 3rem 6vw !important;
       }
 
       .intro-band-rule {
         display: none;
+      }
+
+      .intro-band-tag {
+        text-align: center;
       }
     }
 

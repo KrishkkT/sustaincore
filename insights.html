@@ -31,20 +31,24 @@
     <main class="pt-24 md:pt-28">
         <!-- Header: Intelligence Hub Hero -->
         <section class="max-w-7xl mx-auto px-6 mb-20">
-            <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand-blue/5 border border-brand-blue/10 text-brand-blue mb-10 transition-all hover:bg-brand-blue/10">
+            <div
+                class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-brand-blue/5 border border-brand-blue/10 text-brand-blue mb-10 transition-all hover:bg-brand-blue/10">
                 <span class="w-1.5 h-1.5 rounded-full bg-brand-blue animate-pulse"></span>
                 <span class="text-[10px] font-bold tracking-[0.4em] uppercase">Intelligence Hub</span>
             </div>
-            
-            <h1 class="text-7xl md:text-[140px] font-display font-black text-brand-charcoal dark:text-white mb-10 tracking-tighter leading-[0.8] max-w-5xl">
-                Global <br/>
+
+            <h1
+                class="text-7xl md:text-[140px] font-display font-black text-brand-charcoal dark:text-white mb-10 tracking-tighter leading-[0.8] max-w-5xl">
+                Global <br />
                 <span class="italic text-brand-blue dark:text-brand-green font-light pr-4">Intelligence.</span>
             </h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
-                <p class="text-2xl text-brand-charcoal dark:text-slate-400 opacity-80 leading-relaxed font-light max-w-xl">
-                    Technical analysis and regulatory deep-dives for the sustainability-conscious enterprise. 
-                    We transform <span class="text-brand-charcoal dark:text-white font-medium">complexity</span> into actionable insights.
+                <p
+                    class="text-2xl text-brand-charcoal dark:text-slate-400 opacity-80 leading-relaxed font-light max-w-xl">
+                    Technical analysis and regulatory deep-dives for the sustainability-conscious enterprise.
+                    We transform <span class="text-brand-charcoal dark:text-white font-medium">complexity</span> into
+                    actionable insights.
                 </p>
                 <div class="flex items-center gap-6 pb-2">
                     <div class="h-[1px] flex-grow bg-slate-200 dark:bg-slate-800"></div>
@@ -293,6 +297,62 @@
             #modal-body strong {
                 color: #0f172a;
                 font-weight: 800;
+            }
+
+            @media (max-width: 767px) {
+                h1 {
+                    font-size: 4rem !important;
+                    line-height: .9 !important;
+                }
+
+                .grid.grid-cols-2.gap-8 {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    /* Restore 2 column grid */
+                    gap: 0.5rem !important;
+                    margin-left: -0.5rem !important;
+                    margin-right: -0.5rem !important;
+                }
+
+                .grid.grid-cols-2.gap-8 .text-5xl {
+                    font-size: 2.25rem !important;
+                    /* Scale down to fit 2-across */
+                }
+
+                .grid.grid-cols-2.gap-8 .p-8 {
+                    padding: 1.5rem 0.5rem !important;
+                }
+
+                #data-narrative {
+                    padding: 4rem 1rem !important;
+                    margin: 0 1rem 5rem 1rem !important;
+                }
+
+                .grid.grid-cols-1.lg\:grid-cols-2.gap-4.mt-12 {
+                    gap: 1.5rem !important;
+                }
+
+                .p-6.bg-\[\#0a0a0a\] {
+                    padding: 2rem 1rem !important;
+                    /* Wider graphs, less padding */
+                    border-radius: 1.5rem !important;
+                    width: 100% !important;
+                }
+
+                .text-7xl {
+                    font-size: 3rem !important;
+                }
+
+                /* Newsletter Callout Margin Fix */
+                div.ml-14.mr-14 {
+                    margin-left: 1rem !important;
+                    margin-right: 1rem !important;
+                    padding: 2.5rem 1.5rem !important;
+                    border-radius: 2rem !important;
+                }
+
+                #insights-grid {
+                    gap: 1.5rem !important;
+                }
             }
         </style>
 

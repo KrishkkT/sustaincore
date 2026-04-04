@@ -51,13 +51,15 @@
       scroll-behavior: smooth;
     }
 
-    body {
+    html, body {
       background: var(--white);
       color: var(--text);
       font-family: var(--sans);
       font-weight: 300;
       line-height: 1.7;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
+      position: relative;
+      width: 100%;
     }
 
     /* Removed legacy Nav CSS - now powered by main.js and global components */
@@ -917,13 +919,22 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
+      .hero, .why-strip, .section-wrap, .open-call, .presence-section {
+        overflow-x: hidden !important; 
+        /* Total security against horizontal scroll */
+      }
+
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
       }
 
       .hero-right {
-        min-height: 55vw;
+        min-height: 70vw !important;
+      }
+      
+      .hero-right-overlay {
+        inset: 2rem !important;
       }
 
       .types-intro {
@@ -936,15 +947,13 @@
       }
 
       .process-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr !important;
       }
 
       .process-step {
         border-bottom: 1px solid var(--beige-mid);
-      }
-
-      .process-step:nth-child(even) {
-        border-right: none;
+        border-right: none !important;
+        padding: 2.5rem 1.5rem !important;
       }
 
       .process-arrow {
@@ -957,11 +966,22 @@
       }
 
       .benefits-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .benefit-card {
+        padding: 2rem 1.5rem !important; /* Reduced padding to prevent squash */
       }
 
       .why-strip-inner {
         grid-template-columns: 1fr;
+      }
+      
+      .hero-badge {
+         margin-bottom: 2rem !important;
+         right: 1.5rem !important;
+         padding: 1rem 1.5rem !important;
       }
     }
 

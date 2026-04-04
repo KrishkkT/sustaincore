@@ -165,8 +165,8 @@ h5 {
 }
 
 .sp-sub-nav.scrolled .sp-sub-nav-inner {
-  padding-left: 10rem;
-  transition: padding-left 0.5s cubic-bezier(0.2, 0, 0, 1);
+  padding-left: 0;
+  justify-content: center;
 }
 
 .sp-sub-nav-inner {
@@ -176,8 +176,8 @@ h5 {
   padding: 0 1rem;
   overflow: visible;
   scrollbar-width: none;
-  justify-content: flex-start;
-  transition: padding-left 0.5s cubic-bezier(0.2, 0, 0, 1);
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .sp-sub-nav-inner::-webkit-scrollbar {
@@ -1675,27 +1675,68 @@ h5 {
 
   /* Mobile category nav adjustments */
   .sp-sub-nav {
-    top: 108px;
-    max-width: 94%;
+    top: 85px;
+    /* Clear floating mobile header */
+    max-width: 95%;
+    width: 95%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0;
+    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.3s ease;
+  }
+
+  .sp-sub-nav.scrolled {
+    top: 64px;
+    /* Align with shrunken mobile navbar */
+    width: 96%;
+    max-width: 96%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    padding: 6px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
   }
 
   .sp-sub-nav-inner {
-    padding: 0 0.5rem;
+    padding: 0 1.25rem;
     overflow-x: auto;
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     width: 100%;
+    justify-content: flex-start;
+    /* Fix for scroll clipping */
   }
 
   .sp-sub-nav-inner .sp-sub-nav-item {
     position: static;
+    /* Prevent scroll clipping */
   }
 
   .sp-sub-nav-inner .sp-dropdown {
-    left: 1rem;
-    right: 1rem;
-    width: auto;
-    min-width: 0;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 220px;
+    opacity: 0;
+    visibility: hidden;
+    background: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.75rem;
+    display: block;
+    transition: all 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sp-sub-nav-item.dropdown-open .sp-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
   }
 
   .sp-sub-nav-inner::after {
@@ -1810,42 +1851,97 @@ h5 {
 /* --- Mobile UX/UI Premium Optimization --- */
 @media (max-width: 767px) {
   .svc-hero {
-    padding: 6.5rem 1.25rem 0 !important;
-    text-align: center;
+    padding: 10rem 1.25rem 0 !important;
+    /* Increased to clear fixed nav bar + reveal title */
+    text-align: center !important;
   }
 
   .svc-hero-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 
   .svc-hero-title {
-    font-size: 2.25rem !important;
-    margin-left: 0 !important;
+    font-size: 2rem !important;
+    margin: 0 auto 1.5rem !important;
     white-space: normal !important;
-    line-height: 1.1;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    display: block !important;
+    visibility: visible !important;
   }
 
   .svc-hero-body {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
     margin-right: 0 !important;
-    gap: 2rem;
+    gap: 1.5rem !important;
+    margin-top: 0 !important;
   }
 
   .svc-hero-left {
     margin-left: 0 !important;
-    align-items: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
   }
 
   .svc-hero-desc {
     font-size: 0.95rem;
-    padding-left: 1rem;
-    text-align: left;
+    padding: 0 1rem !important;
+    /* Proper breathing room on sides */
+    text-align: center !important;
+    border-left: none !important;
+    margin: 0 auto 2rem !important;
+    /* Overrides inline hacks in cat 4-7 */
+    max-width: 100%;
+    line-height: 1.6;
   }
 
   .svc-hero-pills {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1rem !important;
+    /* More space between pills */
+    width: 100%;
+    margin-top: 1.5rem !important;
+    /* Overrides massive 14rem inline gap */
+    padding: 0 0.5rem;
+  }
+
+  .svc-hero-pill {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 70px !important;
+    /* Uniform height for grid symmetry */
+    display: flex !important;
+    flex-direction: column !important;
+    /* Stack icon/strong tag over description if needed */
+    justify-content: center !important;
     align-items: center !important;
+    text-align: center;
+    padding: 1rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 16px;
+    gap: 0.5rem !important;
+    line-height: 1.3;
+    background: white;
+  }
+
+  .svc-hero-pill .pill-icon {
+    width: 8px !important;
+    height: 8px !important;
+    margin-bottom: 2px;
+  }
+
+  .svc-hero-pill strong {
+    display: block;
+    font-size: 0.8rem;
   }
 
   .svc-hero-img {
@@ -1882,28 +1978,106 @@ h5 {
     font-size: 0.9rem;
   }
 
-  /* Grid stacks */
-  .why-grid,
-  .deliverables-grid,
-  .related-grid,
   .wedo-grid {
-    grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
   }
 
   .wedo-img {
-    height: 240px !important;
+    height: 320px !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+    order: -1;
+    overflow: hidden;
   }
 
-  /* Process steps */
+  .wedo-img img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .wedo-body {
+    margin-top: 0 !important;
+  }
+
+  .wedo-item-title {
+    font-size: 1.15rem !important;
+  }
+
+  .wedo-item-desc {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .sectors-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+    margin-left: -1rem;
+  }
+
+  .sector-pill {
+    padding: 0.65rem 0.75rem !important;
+    gap: 0.6rem !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+    justify-content: flex-start !important;
+    height: 100%;
+  }
+
+  .sector-name {
+    font-size: 0.8rem !important;
+    line-height: 1.2;
+  }
+
+  .sector-dot {
+    width: 6px !important;
+    height: 6px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Process steps: 2 columns in mobile view */
   .process-steps {
-    flex-direction: column !important;
-    gap: 2rem;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    flex-direction: row !important;
+  }
+
+  .ps {
+    width: 100% !important;
+    border: 1px solid var(--bdr) !important;
+    padding: 1.5rem !important;
+    border-radius: 1rem !important;
+    text-align: center;
   }
 
   .ps-arrow {
-    transform: rotate(90deg);
-    margin: 0.5rem auto;
+    display: none !important;
+  }
+
+  /* CTA box visibility fix */
+  .cta-band {
+    width: 92% !important;
+    padding: 2.5rem 1.5rem !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: 1.5rem !important;
+    min-height: auto !important;
+    margin: 2rem auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .cta-band-title {
+    font-size: 22px !important;
+    line-height: 1.2;
+  }
+
+  .cta-band-sub {
+    font-size: 14px !important;
+    margin: 0 auto;
   }
 
   /* Framework badges */

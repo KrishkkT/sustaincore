@@ -12,32 +12,10 @@ class SustainTranslator {
         
         // STATIC SHIELD: Hard-coded translations for the most critical sections
         // This ensures 0% AI reliance and 100% instant speed for the 3 key Index sections.
-        this.LOCAL_DICTIONARY = {
-            'hi': {
-                'Start': 'शुरू करें', 'Today.': 'आज।', 'Lead': 'नेतृत्व करें', 'Tomorrow.': 'कल।',
-                'Why today can’t wait': 'क्यों आज इंतजार नहीं कर सकता',
-                'The scale of the crisis.': 'संकट का पैमाना।',
-                'Explore the Data': 'डेटा देखें',
-                'The SustainCore Response': 'सस्टेनकोर प्रतिक्रिया',
-                'The crisis is real.': 'संकट वास्तविक है।',
-                'The opportunity': 'अवसर',
-                'is bigger.': 'और भी बड़ा है।',
-                '$19 return': '$19 रिटर्न',
-                'for every $1 invested in sustainability': 'स्थिरता में प्रत्येक $1 निवेश के लिए',
-                'See how we help you act': 'देखें कि हम कैसे मदद करते हैं'
-            },
-            'gu': {
-                'Start': 'શરૂ કરો', 'Today.': 'આજે.', 'Lead': 'નેતૃત્વ કરો', 'Tomorrow.': 'આવતીકાલે.',
-                'Why today can’t wait': 'કેમ આજે રાહ જોઈ શકતા નથી',
-                'The scale of the crisis.': 'સંકટનું પ્રમાણ.',
-                'Explore the Data': 'ડેટા એક્સપ્લોર કરો'
-            }
-        };
+        this.LOCAL_DICTIONARY = {};
 
         this.langMetadata = {
             'en': { flag: '🇺🇸', label: 'EN' },
-            'hi': { flag: '🇮🇳', label: 'HI' },
-            'gu': { flag: '🇮🇳', label: 'GU' },
             'de': { flag: '🇩🇪', label: 'DE' },
             'fr': { flag: '🇫🇷', label: 'FR' },
             'es': { flag: '🇲🇽', label: 'ES' }

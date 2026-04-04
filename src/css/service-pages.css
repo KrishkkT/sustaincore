@@ -603,8 +603,8 @@
 }
 
 .sp-sub-nav.scrolled .sp-sub-nav-inner {
-  padding-left: 10rem;
-  transition: padding-left 0.5s cubic-bezier(0.2, 0, 0, 1);
+  padding-left: 0;
+  justify-content: center;
 }
 
 .sp-sub-nav-inner {
@@ -614,8 +614,8 @@
   padding: 0 1rem;
   overflow: visible;
   scrollbar-width: none;
-  justify-content: flex-start;
-  transition: padding-left 0.5s cubic-bezier(0.2, 0, 0, 1);
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
 .sp-sub-nav-inner::-webkit-scrollbar {
@@ -661,29 +661,78 @@
 
 @media (max-width: 1024px) {
   .sp-sub-nav {
-    top: 108px;
-    /* Clears mobile navbar overlap */
-    max-width: 94%;
+    top: 85px;
+    /* Clear floating mobile header */
+    max-width: 95%;
+    width: 95%;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    margin: 0;
+    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      background-color 0.3s ease;
+  }
+
+  .sp-sub-nav.scrolled {
+    top: 64px;
+    /* Align with shrunken mobile navbar */
+    width: 96%;
+    max-width: 96%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100px;
+    padding: 6px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
   }
 
   .sp-sub-nav-inner {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     overflow-x: auto;
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
     width: 100%;
+    justify-content: flex-start;
+    /* Prevent clipping for horizontal scroll */
   }
 
-  /* Prevent dropdown from being clipped when scrolling horizontally */
   .sp-sub-nav-inner .sp-sub-nav-item {
-    position: relative;
+    position: static;
+    /* Allows absolute dropdown to relate to main bar, avoiding scroll clipping */
   }
 
   .sp-sub-nav-inner .sp-dropdown {
-    left: 1rem;
-    right: 1rem;
-    width: auto;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    width: 220px;
     min-width: 0;
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    /* Use opacity for transition */
+    background: white;
+    border-radius: 1.25rem !important;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.75rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  .sp-sub-nav-item.dropdown-open .sp-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: auto;
+  }
+
+  .sp-dropdown-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 0.75rem;
   }
 
   .sp-sub-nav-inner::after {
@@ -818,9 +867,10 @@
 /* --- Detailed Service Cards --- */
 .svc-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(413px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-top: 4rem;
+  margin-left: -1rem;
 }
 
 .svc-card {
@@ -1039,34 +1089,39 @@
 }
 
 @media (max-width: 1024px) {
+  .sp-sub-nav-inner .sp-sub-nav-item {
+    position: static;
+  }
+
   .sp-sub-nav-inner .sp-dropdown {
-    position: relative;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    background: white;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.75rem;
+    z-index: 9999;
+    min-width: 220px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+
+  /* Show via JS-managed .dropdown-open class */
+  .sp-sub-nav-item.dropdown-open .sp-dropdown {
     opacity: 1;
     visibility: visible;
-    display: none;
-    transform: none;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    min-width: 0;
-    width: 100%;
-    margin-top: 0.5rem;
+    transform: translateX(-50%) translateY(0);
     pointer-events: auto;
   }
 
-  /* Show dropdown on tap for mobile, inline */
-  .sp-sub-nav-item.dropdown-open .sp-dropdown {
-    display: block;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-  }
-
   .sp-dropdown-link {
-    padding: 0.5rem;
-    font-size: 0.75rem;
+    padding: 0.65rem 1rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -1159,7 +1214,8 @@
   min-height: 260px;
   margin-left: auto;
   margin-right: auto;
-  text-align: left; /* Reset text align for safety */
+  text-align: left;
+  /* Reset text align for safety */
 }
 
 .dark .cta-band {
@@ -1196,7 +1252,8 @@
 .cta-band-sub {
   font-size: 15px;
   font-weight: 300;
-  color: #5a6e61; /* --muted from shared */
+  color: #5a6e61;
+  /* --muted from shared */
   line-height: 1.6;
   max-width: 500px;
 }
@@ -1240,6 +1297,7 @@
     gap: 2.5rem;
     width: 95%;
   }
+
   .cta-band-btns {
     justify-content: center;
   }
@@ -1281,10 +1339,13 @@
 
 /* --- Mobile UX/UI Premium Optimization --- */
 @media (max-width: 767px) {
+
+  /* BREADCRUMB MOBILE */
   .bcc {
-    margin-top: 5rem !important;
+    margin-top: 4.5rem !important;
     margin-bottom: 0rem !important;
-    margin-left: 4rem !important;
+    margin-left: 1.25rem !important;
+    justify-content: center;
   }
 
   .sp-container {
@@ -1292,8 +1353,8 @@
   }
 
   .sp-hero {
-    padding-top: 8rem;
-    padding-bottom: 2.5rem;
+    padding-top: 9rem;
+    padding-bottom: 3rem;
     text-align: center;
   }
 
@@ -1314,21 +1375,85 @@
   }
 
   .sp-hero-img {
-    height: 300px !important;
+    height: 320px !important;
     margin-top: 1rem;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
   }
 
   /* Sub-nav mobile bar fixes */
   .sp-sub-nav {
-    top: 64px !important;
+    top: 76px;
+    max-width: 98%;
+    width: 98%;
+    padding: 4px;
+    border-radius: 100px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+
+  .sp-sub-nav.scrolled {
+    top: 60px;
+    /* Snug fit under mobile header */
+    border-radius: 100px;
+    /* Maintain pill shape on mobile */
+    padding: 4px;
+    width: 96%;
     max-width: 96%;
-    padding: 2px;
   }
 
   .sp-sub-nav-link {
-    padding: 0.4rem 0.65rem;
+    padding: 0.45rem 0.75rem;
     font-size: 0.65rem;
+  }
+
+  /* sp-step-flow: 2 columns in mobile view */
+  .sp-step-flow {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
+    flex-direction: row !important;
+  }
+
+  .sp-step {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .sp-step-list {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sp-step-list li {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .sp-step-list li::before {
+    display: none;
+  }
+
+  /* CTA box visibility fix */
+  .cta-band {
+    width: 92% !important;
+    padding: 2.5rem 1.5rem !important;
+    margin-bottom: 4rem;
+    display: flex !important;
+    flex-direction: column;
+    gap: 1.5rem !important;
+    min-height: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .cta-band-title {
+    font-size: 22px !important;
+  }
+
+  .cta-band-sub {
+    font-size: 14px !important;
+    margin: 0 auto;
   }
 
   /* Section padding */
@@ -1337,11 +1462,11 @@
   .sp-included,
   .sp-specs,
   .sp-faq {
-    padding: 4rem 0 !important;
+    padding: 5rem 0 !important;
   }
 
   .sp-section-h {
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
 
   .sp-section-t {
@@ -1354,25 +1479,50 @@
   .sp-spec-grid,
   .sp-deliver-list {
     grid-template-columns: 1fr !important;
-    gap: 1rem !important;
+    gap: 1.25rem !important;
   }
 
   .sp-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .sp-step {
-    width: 100%;
+    padding: 2.5rem 1.5rem;
   }
 
   .sp-deliver {
-    margin: 1rem;
-    padding: 4rem 1.25rem !important;
-    border-radius: 2rem;
+    margin: 1.25rem;
+    padding: 4.5rem 1.5rem !important;
+    border-radius: 2.5rem;
   }
 
   .sp-spec-card {
-    padding: 1.5rem;
+    padding: 2.25rem 1.5rem !important;
+    border-radius: 1.5rem !important;
+    background: white !important; /* Premium contrast on sand background */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .sp-spec-h {
+    font-size: 1.25rem !important;
+    margin-bottom: 1.5rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .sp-spec-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.25rem !important;
+    padding: 1rem 0 !important;
+  }
+
+  .sp-spec-label {
+    font-size: 0.8rem;
+    color: var(--sp-muted);
+    font-weight: 500;
+  }
+
+  .sp-spec-val {
+    font-size: 0.95rem;
+    color: var(--sp-blue);
+    font-weight: 700;
+    line-height: 1.4;
   }
 
   .sp-faq-btn {

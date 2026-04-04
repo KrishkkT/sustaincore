@@ -84,14 +84,6 @@ export const header = `
             <span class="text-base">🇺🇸</span>
             <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">English</span>
           </button>
-          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="hi" data-flag="🇮🇳">
-            <span class="text-base">🇮🇳</span>
-            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">हिंदी (Hindi)</span>
-          </button>
-          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="gu" data-flag="🇮🇳">
-            <span class="text-base">🇮🇳</span>
-            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">ગુજરાતી (Gujarati)</span>
-          </button>
           <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="de" data-flag="🇩🇪">
             <span class="text-base">🇩🇪</span>
             <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">Deutsch (German)</span>
@@ -99,6 +91,10 @@ export const header = `
           <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="fr" data-flag="🇫🇷">
             <span class="text-base">🇫🇷</span>
             <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">Français (French)</span>
+          </button>
+          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="es" data-flag="🇲🇽">
+            <span class="text-base">🇲🇽</span>
+            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">Español (Spanish)</span>
           </button>
         </div>
       </div>
@@ -146,14 +142,14 @@ export const header = `
         <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="en" data-flag="🇺🇸">
           <span>🇺🇸</span> English
         </button>
-        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="hi" data-flag="🇮🇳">
-          <span>🇮🇳</span> हिंदी
-        </button>
-        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="gu" data-flag="🇮🇳">
-          <span>🇮🇳</span> ગુજરાતી
-        </button>
         <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="de" data-flag="🇩🇪">
           <span>🇩🇪</span> German
+        </button>
+        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="fr" data-flag="🇫🇷">
+          <span>🇫🇷</span> French
+        </button>
+        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="es" data-flag="🇲🇽">
+          <span>🇲🇽</span> Spanish
         </button>
       </div>
     </div>
