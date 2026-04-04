@@ -1,5 +1,6 @@
 import '../css/main.css';
 import { header, footer } from './components.js';
+import './translator.js';
 // import './cbam-calculator.js';
 // import './cbam-timer.js';
 
@@ -10,6 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (headerPlaceholder) headerPlaceholder.innerHTML = header;
     if (footerPlaceholder) footerPlaceholder.innerHTML = footer;
+    
+    // Refresh Translator UI in case it loaded before components
+    if (window.sustainTranslator) {
+        window.sustainTranslator.setupUIListeners();
+    }
 
     // Theme Toggle Logic
     const themeToggleBtn = document.getElementById('theme-toggle');

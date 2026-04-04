@@ -233,11 +233,20 @@ draw();
         formattedValue = Math.floor(value);
       }
 
-      // Add units based on ID
+      // Add localized units based on ID
+      const lang = localStorage.getItem('sustain-lang') || 'en';
+      
       if (obj.id === 'stat-temp') {
-        obj.innerHTML = formattedValue + '°C';
+        const unit = (lang === 'hi' || lang === 'gu') ? '°C' : '°C';
+        obj.innerHTML = formattedValue + unit;
       } else if (obj.id === 'stat-gdp') {
-        obj.innerHTML = '$' + formattedValue + 'T';
+        if (lang === 'hi') {
+          obj.innerHTML = '₹' + formattedValue + ' ट्रिलियन';
+        } else if (lang === 'gu') {
+          obj.innerHTML = 'રૂ. ' + formattedValue + ' ટ્રીલિયન';
+        } else {
+          obj.innerHTML = '$' + formattedValue + 'T';
+        }
       } else {
         obj.innerHTML = formattedValue;
       }

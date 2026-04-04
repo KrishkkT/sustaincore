@@ -1,6 +1,6 @@
 export const header = `
 <nav class="fixed top-0 left-0 right-0 mx-auto w-[92%] max-w-6xl z-50 bg-white/80 dark:bg-slate-900/90 backdrop-blur-xl border border-brand-softGray dark:border-white/10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)] rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="main-nav">
-  <a href="/" class="flex items-center gap-3 group">
+  <a href="/" class="flex items-center gap-3 group notranslate">
     <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
     <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
   </a>
@@ -69,6 +69,44 @@ export const header = `
     <a href="/insights.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Insights</a>
     <a href="/join-us.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Careers</a>
     <a href="/partners.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green dark:text-slate-300 dark:hover:text-brand-green transition-colors duration-200">Partners</a>
+    
+    <!-- Premium Language Selector -->
+    <div class="relative group/lang" id="lang-selector-root">
+      <button class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 text-[12px] font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all duration-300" id="current-lang-btn">
+        <span id="current-lang-flag">🇺🇸</span>
+        <span id="current-lang-label" class="uppercase">EN</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" class="opacity-40"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      
+      <div class="absolute top-full right-0 mt-2 w-48 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-2xl shadow-2xl overflow-hidden opacity-0 invisible group-hover/lang:opacity-100 group-hover/lang:visible transition-all duration-300 z-[60] translate-y-2 group-hover/lang:translate-y-0">
+        <div class="p-2 grid grid-cols-1 gap-1">
+          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="en" data-flag="🇺🇸">
+            <span class="text-base">🇺🇸</span>
+            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">English</span>
+          </button>
+          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="hi" data-flag="🇮🇳">
+            <span class="text-base">🇮🇳</span>
+            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">हिंदी (Hindi)</span>
+          </button>
+          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="gu" data-flag="🇮🇳">
+            <span class="text-base">🇮🇳</span>
+            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">ગુજરાતી (Gujarati)</span>
+          </button>
+          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="de" data-flag="🇩🇪">
+            <span class="text-base">🇩🇪</span>
+            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">Deutsch (German)</span>
+          </button>
+          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 dark:hover:bg-white/5 transition-colors text-left" data-lang="fr" data-flag="🇫🇷">
+            <span class="text-base">🇫🇷</span>
+            <span class="text-[13px] font-medium text-slate-700 dark:text-slate-300">Français (French)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden native Google Translate element -->
+    <div id="google_translate_element" style="display:none !important;"></div>
+
     <a href="/contact.html" class="px-7 py-2.5 bg-brand-green text-white rounded-full text-[13px] font-bold tracking-wide uppercase hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">Free Consultation</a>
   </div>
 
@@ -100,6 +138,25 @@ export const header = `
     <a href="/about.html" class="text-xl font-display font-bold text-slate-900 dark:text-white py-3 border-b border-slate-100 dark:border-slate-800">About</a>
     <a href="/insights.html" class="text-xl font-display font-bold text-slate-900 dark:text-white py-3 border-b border-slate-100 dark:border-slate-800">Insights</a>
     <a href="/contact.html" class="mt-4 px-8 py-4 bg-brand-green text-white rounded-full text-xl font-bold text-center shadow-xl shadow-brand-green/20">Contact Us</a>
+    
+    <!-- Mobile Language Selector -->
+    <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+      <p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-4 px-2">Select Language</p>
+      <div class="grid grid-cols-2 gap-2">
+        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="en" data-flag="🇺🇸">
+          <span>🇺🇸</span> English
+        </button>
+        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="hi" data-flag="🇮🇳">
+          <span>🇮🇳</span> हिंदी
+        </button>
+        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="gu" data-flag="🇮🇳">
+          <span>🇮🇳</span> ગુજરાતી
+        </button>
+        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 text-slate-700 dark:text-slate-200 text-sm font-medium" data-lang="de" data-flag="🇩🇪">
+          <span>🇩🇪</span> German
+        </button>
+      </div>
+    </div>
 </div>
 `;
 
@@ -115,10 +172,24 @@ export const footer = `
         Defining the future of verifiable sustainability through scientific integrity and data transparency.
       </p>
       <div class="flex gap-2">
-        <a href="#" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-brand-blue dark:hover:bg-brand-green hover:text-white dark:hover:text-white hover:border-transparent transition-all">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-      </div>
+
+  <!-- X (Twitter) -->
+  <a href="https://x.com" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-black hover:text-white hover:border-transparent transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2H21l-6.56 7.5L22 22h-6.828l-5.35-6.993L3.5 22H1l7.02-8.02L2 2h6.828l4.85 6.35L18.244 2Zm-2.396 18h1.884L8.244 4H6.228l9.62 16Z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://instagram.com" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-pink-500 hover:text-white hover:border-transparent transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+      <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </svg>
+  </a>
+
+</div>
     </div>
     
     <div>
