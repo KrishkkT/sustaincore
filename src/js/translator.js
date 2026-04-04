@@ -10,8 +10,7 @@ class SustainTranslator {
         this.currentLang = localStorage.getItem('sustain-lang') || 'en';
         this.isTranslating = false;
         
-        // STATIC SHIELD: Hard-coded translations for the most critical sections
-        // This ensures 0% AI reliance and 100% instant speed for the 3 key Index sections.
+        // This will be populated from translations.json
         this.LOCAL_DICTIONARY = {};
 
         this.langMetadata = {
@@ -24,9 +23,11 @@ class SustainTranslator {
         this.init();
     }
 
-    init() {
+    async init() {
+        // 1. Fetch the master dictionary (Zero AI / Zero Cost)
+        await this.loadDictionary();
+
         if (this.currentLang !== 'en') {
-            // SILENT translation for persistence (no toast)
             this.translateFullPage(false); 
             
             // MULTI-PASS SANITIZER: Catch race conditions (GSAP, delayed injections)
@@ -35,7 +36,7 @@ class SustainTranslator {
             });
         }
 
-        // Observer for dynamic content AND content modified by other scripts (like stats)
+        // Observer for dynamic content
         this.observer = new MutationObserver((mutations) => {
             if (this.currentLang === 'en' || this.isTranslating) return;
             
@@ -56,7 +57,7 @@ class SustainTranslator {
             this.observer.observe(document.body, { childList: true, subtree: true, characterData: true });
         } else {
             document.addEventListener('DOMContentLoaded', () => {
-                this.observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+                if (document.body) this.observer.observe(document.body, { childList: true, subtree: true, characterData: true });
             });
         }
 
@@ -67,6 +68,20 @@ class SustainTranslator {
         }
 
         this.injectStyles();
+    }
+
+    async loadDictionary() {
+        try {
+            const response = await fetch('/translations.json?v=' + Date.now());
+            if (response.ok) {
+                this.LOCAL_DICTIONARY = await response.json();
+                console.log(`[SustainTranslator] Dictionary Loaded. Languages: ${Object.keys(this.LOCAL_DICTIONARY).join(', ')}`);
+            } else {
+                console.warn('[SustainTranslator] Could not find translations.json in public/. AI Fallback missing.');
+            }
+        } catch (e) {
+            console.error('[SustainTranslator] Dictionary Fetch Error:', e.message);
+        }
     }
 
     setupUIListeners() {
@@ -90,7 +105,7 @@ class SustainTranslator {
             return;
         }
 
-        // FORCE WIPE markers to allow instant re-translation between HI/GU/etc.
+        // FORCE WIPE markers to allow instant re-translation
         document.querySelectorAll('*').forEach(el => {
             el.__translatedText = null;
         });
@@ -102,12 +117,8 @@ class SustainTranslator {
         if (this.isTranslating) return;
         this.isTranslating = true;
         
-        if (showToast && window.showToast) {
-            window.showToast('Language Policy', `Applying ${this.langMetadata[this.currentLang].label} localized content...`, 'success');
-        }
-
         const textNodes = this.getTextNodes(document.body);
-        await this.translateTextBatch(textNodes);
+        this.translateTextBatch(textNodes);
         
         this.isTranslating = false;
     }
@@ -133,33 +144,23 @@ class SustainTranslator {
 
         let node;
         while (node = walk.nextNode()) {
-            // WHITESPACE COLLAPSE: Replace all newlines, tabs and multi-spaces with single space
-            // This ensures perfect matching regardless of HTML indentation.
             if (!node.__orig) {
                 node.__orig = node.textContent.replace(/\s+/g, ' ').trim();
             }
             textNodes.push(node);
         }
 
-        // 2. Extra Coverage: Buttons, Inputs, Alts, and Tooltips
         const selector = 'button,input[type="button"],input[type="submit"],input[placeholder],[placeholder],[alt],[title]';
         const elements = parent.querySelectorAll ? parent.querySelectorAll(selector) : [];
         
         elements.forEach(el => {
             if (el.closest('.notranslate')) return;
 
-            // Handle Value (for buttons)
             if (el.tagName === 'INPUT' && (el.type === 'button' || el.type === 'submit') && el.value) {
                 if (!el.__origValue) el.__origValue = el.value.trim();
                 textNodes.push({ type: 'value', el, __orig: el.__origValue });
             }
 
-            // Handle Text Content (for buttons that are elements)
-            if (el.tagName === 'BUTTON' && el.textContent.trim().length > 0) {
-                // TreeWalker usually catches this, but some frameworks hide them
-            }
-
-            // Handle Attributes (placeholder, alt, title)
             ['placeholder', 'alt', 'title'].forEach(attr => {
                 const val = el.getAttribute(attr);
                 if (val && val.trim().length > 1) {
@@ -173,52 +174,15 @@ class SustainTranslator {
         return textNodes;
     }
 
-    async translateTextBatch(nodes) {
-        const translationMap = {};
+    translateTextBatch(nodes) {
         const langDict = this.LOCAL_DICTIONARY[this.currentLang] || {};
-        const missingOriginals = [];
 
-        // 1. Resolve LOCAL STATIC SHIELD first (Instant, 0 AI)
         nodes.forEach(node => {
             const orig = node.__orig;
-            if (langDict[orig]) {
-                translationMap[orig] = langDict[orig];
-            } else {
-                missingOriginals.push(orig);
-            }
-        });
-
-        // 2. Resolve missing via API (Dictionary/Cache/AI)
-        const uniqueMissing = [...new Set(missingOriginals)];
-        if (uniqueMissing.length > 0) {
-            const chunkSize = 70;
-            const fetchPromises = [];
-
-            for (let i = 0; i < uniqueMissing.length; i += chunkSize) {
-                const chunk = uniqueMissing.slice(i, i + chunkSize);
-                const promise = fetch('/api/translate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ texts: chunk, targetLang: this.currentLang })
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.error || !data.translated) return;
-                    chunk.forEach((orig, idx) => {
-                        translationMap[orig] = data.translated[idx];
-                    });
-                })
-                .catch(() => {});
-                fetchPromises.push(promise);
-            }
-            await Promise.all(fetchPromises);
-        }
-
-        // Apply results
-        nodes.forEach(node => {
-            const trans = translationMap[node.__orig];
+            const trans = langDict[orig];
+            
             if (trans) {
-                if (node.nodeType === 3) {
+                if (node.nodeType === Node.TEXT_NODE) {
                     node.textContent = trans;
                     node.__translatedText = trans;
                 } else if (node.type === 'attribute') {
@@ -254,3 +218,4 @@ class SustainTranslator {
 }
 
 window.sustainTranslator = new SustainTranslator();
+
