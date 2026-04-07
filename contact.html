@@ -5,7 +5,8 @@
     <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Advisory Connect for ESG & Compliance</title>
+    <title data-i18n="contact.contact_advisory_connect_for_esg_complia">Contact | Advisory Connect for ESG &amp;
+        Compliance</title>
     <meta name="description"
         content="Engage with SustainCore's senior consultants. Strategic support for corporate sustainability, regulatory mandates, and environmental monitoring.">
     <meta property="og:title" content="Contact | SustainCore Advisory Connect">
@@ -14,9 +15,9 @@
     <meta property="og:image" content="/favicon.svg">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link
-        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;700;900&amp;family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/src/css/main.css">
     <link rel="stylesheet" href="/src/css/index-sections.css">
@@ -126,13 +127,8 @@
         }
 
         .ct-headline .outline {
-            -webkit-text-stroke: 1.5px #0f172a;
-            color: transparent;
-            opacity: 0.15;
-        }
-
-        .dark .ct-headline .outline {
-            -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.25);
+            color: #4a7c59;
+            outline-style: none !important;
         }
 
         .ct-subtitle {
@@ -565,42 +561,73 @@
             color: #94a3b8;
         }
 
-        /* ─── RESPONSIVE ─── */
-        @media (max-width: 900px) {
-            .ct-split {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+        /* ─── RESPONSIVENESS (Advanced Adaptability) ─── */
+
+        /* Fluid Typography for Contact Page */
+        .ct-headline { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.05; }
+
+        /* --- SMALL MOBILE (320px - 480px) --- */
+        @media (max-width: 480px) {
+            .ct-inner {
+                padding: 7rem 1.25rem 3rem;
             }
 
-            .ct-inner {
-                padding: 8rem 1.25rem 3rem;
+            .ct-split {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
 
             .ct-left {
                 position: static;
+                text-align: center;
+                align-items: center;
             }
 
-            .ct-headline {
-                font-size: clamp(40px, 10vw, 58px);
+            .ct-label { justify-content: center; }
+
+            .ct-info {
+                grid-template-columns: 1fr;
             }
 
             .ct-form-card {
-                padding: 1.75rem 1.5rem;
+                padding: 2rem 1.25rem;
             }
 
             .ct-field-row {
                 grid-template-columns: 1fr;
             }
 
-            .ct-stats {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .ct-bottom-row {
-                flex-direction: column;
-                align-items: flex-start;
+            .ct-map-section div {
+                height: 300px !important;
             }
         }
+
+        /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .ct-inner { padding: 8rem 2rem 4rem; }
+            .ct-split { grid-template-columns: 1fr; gap: 3rem; }
+            .ct-left { position: static; text-align: center; align-items: center; }
+            .ct-label { justify-content: center; }
+            .ct-info { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* --- TABLET LANDSCAPE (769px - 1024px) --- */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .ct-split { grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
+            .ct-headline { font-size: clamp(3.5rem, 6vw, 4.5rem); }
+        }
+
+        /* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
+        @media (min-width: 1025px) and (max-width: 1440px) {
+            .ct-inner { max-width: 1100px; }
+        }
+
+        /* --- ULTRA-WIDE SCREENS (1921px+) --- */
+        @media (min-width: 1921px) {
+            .ct-inner { max-width: 1500px; }
+            .ct-headline { font-size: 6rem; }
+        }
+
     </style>
 </head>
 
@@ -616,13 +643,13 @@
                     <!-- ─── LEFT: HEADLINE + INFO ─── -->
                     <div class="ct-left">
                         <div>
-                            <div class="ct-label">Advisory Connect</div>
-                            <h1 class="ct-headline">
-                                Let's build<br>
-                                your <span class="green">sustainable</span><br>
-                                <span class="outline">future.</span>
+                            <div class="ct-label" data-i18n="contact.advisory_connect">Advisory Connect</div>
+                            <h1 class="ct-headline"><span data-i18n="contact.lets_build">Let's build</span><br><span
+                                    data-i18n="contact.your">your</span><br /><span class="green"
+                                    data-i18n="contact.sustainable">sustainable</span><br>
+                                <span class="outline" data-i18n="contact.future">future.</span>
                             </h1>
-                            <p class="ct-subtitle">
+                            <p class="ct-subtitle" data-i18n="contact.connect_with_our_senior_consultants_to_d">
                                 Connect with our senior consultants to discuss your specific regulatory, ESG, or
                                 environmental compliance mandate.
                             </p>
@@ -634,14 +661,15 @@
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round">
                                         <path
-                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                        <polyline points="22,6 12,13 2,6" />
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                        </path>
+                                        <polyline points="22,6 12,13 2,6"></polyline>
                                     </svg>
                                 </div>
                                 <div class="ct-info-body">
-                                    <div class="ct-info-title">Electronic Mail</div>
-                                    <a href="mailto:sustaincore.es@gmail.com"
-                                        class="ct-info-val">sustaincore.es@gmail.com</a>
+                                    <div class="ct-info-title" data-i18n="contact.electronic_mail">Electronic Mail</div>
+                                    <a href="mailto:sustaincore.es@gmail.com" class="ct-info-val"
+                                        data-i18n="contact.sustaincoreesgmailcom">sustaincore.es@gmail.com</a>
                                 </div>
                             </div>
 
@@ -649,13 +677,15 @@
                                 <div class="ct-info-icon blue">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                        <circle cx="12" cy="10" r="3" />
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
                                     </svg>
                                 </div>
                                 <div class="ct-info-body">
-                                    <div class="ct-info-title">Global Headquarters</div>
-                                    <div class="ct-info-val">Ahmedabad, Gujarat, India</div>
+                                    <div class="ct-info-title" data-i18n="contact.global_headquarters">Global
+                                        Headquarters</div>
+                                    <div class="ct-info-val" data-i18n="contact.ahmedabad_gujarat_india">Ahmedabad,
+                                        Gujarat, India</div>
                                 </div>
                             </div>
 
@@ -663,13 +693,15 @@
                                 <div class="ct-info-icon green">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <polyline points="12 6 12 12 16 14" />
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
                                     </svg>
                                 </div>
                                 <div class="ct-info-body">
-                                    <div class="ct-info-title">Operational Hours</div>
-                                    <div class="ct-info-val">Mon — Fri · 09:00 — 18:00 IST</div>
+                                    <div class="ct-info-title" data-i18n="contact.operational_hours">Operational Hours
+                                    </div>
+                                    <div class="ct-info-val" data-i18n="contact.mon_fri_0900_1800_ist">Mon — Fri · 09:00
+                                        — 18:00 IST</div>
                                 </div>
                             </div>
                         </div>
@@ -679,63 +711,84 @@
                     <div class="ct-right">
                         <!-- Form Card -->
                         <div class="ct-form-card">
-                            <div class="ct-form-title">Book a free consultation</div>
-                            <div class="ct-form-sub">No jargon, no obligation — just a conversation with an expert.
+                            <div class="ct-form-title" data-i18n="contact.book_a_free_consultation">Book a free
+                                consultation</div>
+                            <div class="ct-form-sub" data-i18n="contact.no_jargon_no_obligation_just_a_conversat">No
+                                jargon, no obligation — just a conversation with an expert.
                             </div>
 
                             <form id="contact-form" action="https://formspree.io/f/maqlwazp" method="POST">
                                 <div class="ct-field">
                                     <div class="ct-field-row">
                                         <div>
-                                            <label class="ct-field-label" for="ct-name">Full Name</label>
+                                            <label class="ct-field-label" for="ct-name"
+                                                data-i18n="contact.full_name">Full Name</label>
                                             <input type="text" id="ct-name" name="name" class="ct-input"
-                                                placeholder="John Doe" required>
+                                                placeholder="John Doe" required=""
+                                                data-i18n-attr="placeholder:contact.attr_placeholder_john_doe">
                                         </div>
                                         <div>
-                                            <label class="ct-field-label" for="ct-company">Company</label>
+                                            <label class="ct-field-label" for="ct-company"
+                                                data-i18n="contact.company">Company</label>
                                             <input type="text" id="ct-company" name="company" class="ct-input"
-                                                placeholder="Acme Corp">
+                                                placeholder="Acme Corp"
+                                                data-i18n-attr="placeholder:contact.attr_placeholder_acme_corp">
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="ct-field">
-                                    <label class="ct-field-label" for="ct-email">Corporate Email</label>
+                                    <label class="ct-field-label" for="ct-email"
+                                        data-i18n="contact.corporate_email">Corporate Email</label>
                                     <input type="email" id="ct-email" name="email" class="ct-input"
-                                        placeholder="john@company.com" required>
+                                        placeholder="john@company.com" required=""
+                                        data-i18n-attr="placeholder:contact.attr_placeholder_johncompanycom">
                                 </div>
 
                                 <div class="ct-field">
-                                    <label class="ct-field-label" for="ct-mandate">Mandate Area</label>
-                                    <select id="ct-mandate" name="mandate" class="ct-select" required>
-                                        <option value="" disabled selected>Select your area of interest</option>
-                                        <option value="esg">ESG & Sustainability Reporting</option>
-                                        <option value="carbon">Carbon & Climate Solutions</option>
-                                        <option value="cbam">CBAM Compliance</option>
-                                        <option value="ratings">Ratings & Targets (EcoVadis / SBTi)</option>
-                                        <option value="clearances">Environmental Clearances & EIA</option>
-                                        <option value="monitoring">Environmental Monitoring</option>
-                                        <option value="water">Water Stewardship</option>
-                                        <option value="other">General Advisory</option>
+                                    <label class="ct-field-label" for="ct-mandate"
+                                        data-i18n="contact.mandate_area">Mandate Area</label>
+                                    <select id="ct-mandate" name="mandate" class="ct-select" required="">
+                                        <option value="" disabled="" selected=""
+                                            data-i18n="contact.select_your_area_of_interest">Select your area of
+                                            interest</option>
+                                        <option value="esg" data-i18n="contact.esg_sustainability_reporting">ESG &amp;
+                                            Sustainability Reporting</option>
+                                        <option value="carbon" data-i18n="contact.carbon_climate_solutions">Carbon &amp;
+                                            Climate Solutions</option>
+                                        <option value="cbam" data-i18n="contact.cbam_compliance">CBAM Compliance
+                                        </option>
+                                        <option value="ratings" data-i18n="contact.ratings_targets_ecovadis_sbti">
+                                            Ratings &amp; Targets (EcoVadis / SBTi)</option>
+                                        <option value="clearances" data-i18n="contact.environmental_clearances_eia">
+                                            Environmental Clearances &amp; EIA</option>
+                                        <option value="monitoring" data-i18n="contact.environmental_monitoring">
+                                            Environmental Monitoring</option>
+                                        <option value="water" data-i18n="contact.water_stewardship">Water Stewardship
+                                        </option>
+                                        <option value="other" data-i18n="contact.general_advisory">General Advisory
+                                        </option>
                                     </select>
                                 </div>
 
                                 <div class="ct-field">
-                                    <label class="ct-field-label" for="ct-message">Message / Brief</label>
+                                    <label class="ct-field-label" for="ct-message"
+                                        data-i18n="contact.message_brief">Message / Brief</label>
                                     <textarea id="ct-message" name="message" class="ct-textarea"
                                         placeholder="Tell us about your project, compliance challenge, or sustainability goals..."
-                                        required></textarea>
+                                        required=""
+                                        data-i18n-attr="placeholder:contact.attr_placeholder_tell_us_about_your_project_compliance_ch"></textarea>
                                 </div>
 
-                                <button type="submit" class="ct-submit">Send Dispatch →</button>
+                                <button type="submit" class="ct-submit" data-i18n="contact.send">Send</button>
 
                                 <div class="ct-secure">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-                                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                                    </svg>
-                                    256-bit SSL encrypted · Your data is private
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg><span data-i18n="contact.256_bit_ssl_encrypted_your_data_is_priva">256-bit SSL
+                                        encrypted · Your data is private</span>
                                 </div>
                             </form>
                         </div>
@@ -764,6 +817,8 @@
     <script type="module" src="/src/js/main.js"></script>
     <script type="module" src="/src/js/animations.js"></script>
     <script type="module" src="/src/js/form-handler.js"></script>
+
+
 </body>
 
 </html>

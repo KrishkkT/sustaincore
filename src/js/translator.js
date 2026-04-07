@@ -1,221 +1,201 @@
-/**
- * SustainTranslator (Zero-Touch Edition)
- * A powerful, client-side translation engine that scans the entire page 
- * and translates it via the /api/translate endpoint using Groq (LLM).
- * Supports persistence, dynamic content, and all 50+ pages automatically.
- */
 
 class SustainTranslator {
     constructor() {
         this.currentLang = localStorage.getItem('sustain-lang') || 'en';
-        this.isTranslating = false;
-        
-        // This will be populated from translations.json
-        this.LOCAL_DICTIONARY = {};
-
-        this.langMetadata = {
-            'en': { flag: '🇺🇸', label: 'EN' },
-            'de': { flag: '🇩🇪', label: 'DE' },
-            'fr': { flag: '🇫🇷', label: 'FR' },
-            'es': { flag: '🇲🇽', label: 'ES' }
-        };
-
-        this.init();
+        this.translations = {};
+        this.observer = null;
     }
 
     async init() {
-        // 1. Fetch the master dictionary (Zero AI / Zero Cost)
-        await this.loadDictionary();
-
-        if (this.currentLang !== 'en') {
-            this.translateFullPage(false); 
-            
-            // MULTI-PASS SANITIZER: Catch race conditions (GSAP, delayed injections)
-            [1000, 2500, 5000].forEach(delay => {
-                setTimeout(() => this.translateFullPage(false), delay);
-            });
-        }
-
-        // Observer for dynamic content
-        this.observer = new MutationObserver((mutations) => {
-            if (this.currentLang === 'en' || this.isTranslating) return;
-            
-            let shouldScan = false;
-            mutations.forEach(m => {
-                if (m.type === 'characterData' || m.addedNodes.length > 0) {
-                    shouldScan = true;
-                }
-            });
-
-            if (shouldScan) {
-                clearTimeout(this.throttleTimer);
-                this.throttleTimer = setTimeout(() => this.translateFullPage(false), 400);
-            }
-        });
-
-        if (document.body) {
-            this.observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-        } else {
-            document.addEventListener('DOMContentLoaded', () => {
-                if (document.body) this.observer.observe(document.body, { childList: true, subtree: true, characterData: true });
-            });
-        }
-
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.setupUIListeners());
-        } else {
-            this.setupUIListeners();
-        }
-
-        this.injectStyles();
-    }
-
-    async loadDictionary() {
+        console.log(`[Translator] Initializing. Current localStorage lang: ${localStorage.getItem('sustain-lang')}`);
         try {
-            const response = await fetch('/translations.json?v=' + Date.now());
-            if (response.ok) {
-                this.LOCAL_DICTIONARY = await response.json();
-                console.log(`[SustainTranslator] Dictionary Loaded. Languages: ${Object.keys(this.LOCAL_DICTIONARY).join(', ')}`);
-            } else {
-                console.warn('[SustainTranslator] Could not find translations.json in public/. AI Fallback missing.');
-            }
+            // 1. Setup observer FIRST so it catches header/footer injection in main.js
+            this.setupMutationObserver();
+            
+            // 2. Load translations for the saved language
+            await this.loadTranslations(this.currentLang);
+            
+            // 3. Initial translation pass
+            this.translatePage();
+            this.updateUI();
+            this.setupUIListeners();
+            
+            console.log('[Translator] Initialization complete for:', this.currentLang);
         } catch (e) {
-            console.error('[SustainTranslator] Dictionary Fetch Error:', e.message);
+            console.error('[Translator] Initialization failed:', e);
         }
     }
 
-    setupUIListeners() {
-        document.querySelectorAll('.lang-option').forEach(opt => {
-            opt.addEventListener('click', () => {
-                const lang = opt.getAttribute('data-lang');
-                if (lang === this.currentLang) return;
-                this.setLanguage(lang, true);
-            });
-        });
-        this.updateUIState(this.currentLang);
+    async loadTranslations(lang) {
+        const url = `/locales/${lang}.json`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Status ${response.status}`);
+            const json = await response.json();
+            
+            this.translations[lang] = json;
+            this.currentLang = lang;
+            localStorage.setItem('sustain-lang', lang);
+            document.documentElement.lang = lang;
+            console.log(`[Translator] Loaded ${lang} successfully`);
+        } catch (error) {
+            console.warn(`[Translator] Could not load ${lang} from ${url}, falling back to English.`, error);
+            if (lang !== 'en') {
+                await this.loadTranslations('en');
+            }
+        }
     }
 
-    async setLanguage(langCode, isManual = false) {
-        this.currentLang = langCode;
-        localStorage.setItem('sustain-lang', langCode);
-        this.updateUIState(langCode);
-
-        if (langCode === 'en') {
-            window.location.reload(); 
+    translatePage() {
+        const langData = this.translations[this.currentLang];
+        if (!langData) {
+            console.error(`[Translator] No data loaded for ${this.currentLang}`);
             return;
         }
 
-        // FORCE WIPE markers to allow instant re-translation
-        document.querySelectorAll('*').forEach(el => {
-            el.__translatedText = null;
-        });
+        const elements = document.querySelectorAll('[data-i18n], [data-i18n-attr]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            const attrData = el.getAttribute('data-i18n-attr');
 
-        await this.translateFullPage(isManual);
-    }
-
-    async translateFullPage(showToast = true) {
-        if (this.isTranslating) return;
-        this.isTranslating = true;
-        
-        const textNodes = this.getTextNodes(document.body);
-        this.translateTextBatch(textNodes);
-        
-        this.isTranslating = false;
-    }
-
-    getTextNodes(parent) {
-        if (!parent) return [];
-        const textNodes = [];
-
-        const walk = document.createTreeWalker(parent, NodeFilter.SHOW_TEXT, {
-            acceptNode: (node) => {
-                const p = node.parentElement;
-                if (!p || 
-                    ['SCRIPT', 'STYLE', 'IFRAME', 'NOSCRIPT'].includes(p.tagName) || 
-                    p.closest('.notranslate') ||
-                    p.closest('#lang-selector-root') || 
-                    node.textContent.trim().length === 0
-                ) {
-                    return NodeFilter.FILTER_REJECT;
+            if (key) {
+                const translation = this.getNestedTranslation(key);
+                if (translation !== null && translation !== undefined) {
+                    if (translation.includes('<')) {
+                        el.innerHTML = translation;
+                    } else {
+                        el.textContent = translation;
+                    }
                 }
-                return NodeFilter.FILTER_ACCEPT;
             }
-        }, false);
 
-        let node;
-        while (node = walk.nextNode()) {
-            if (!node.__orig) {
-                node.__orig = node.textContent.replace(/\s+/g, ' ').trim();
+            if (attrData) {
+                const pairs = attrData.split(',').map(p => p.trim());
+                pairs.forEach(pair => {
+                    const [attr, attrKey] = pair.split(':').map(s => s.trim());
+                    const translation = this.getNestedTranslation(attrKey);
+                    if (translation !== null && translation !== undefined) {
+                        el.setAttribute(attr, translation);
+                    }
+                });
             }
-            textNodes.push(node);
+        });
+        
+        // Sync selects
+        document.querySelectorAll('.lang-selector').forEach(sel => {
+            if (sel.value !== this.currentLang) sel.value = this.currentLang;
+        });
+    }
+
+    getNestedTranslation(key) {
+        if (!this.translations[this.currentLang]) return null;
+
+        // Try direct hierarchical lookup first
+        let result = key.split('.').reduce((obj, k) => obj && obj[k], this.translations[this.currentLang]);
+
+        if (result === null || result === undefined) {
+            // Global Fallback Search
+            // If the key is e.g. "files_1-brsr.top_1000", find "top_1000" globally
+            const parts = key.split('.');
+            const baseKey = parts[parts.length - 1];
+            
+            // Search sections in priority order
+            const searchSections = ['shared', 'navbar', 'footer', 'index', 'services', 'air-monitoring', 'carbon-climate', 'esg-reporting', 'ratings-targets', 'clearances-eia', 'environmental-audits', 'water-testing'];
+            
+            for (const section of searchSections) {
+                const sectionObj = this.translations[this.currentLang][section];
+                if (sectionObj && sectionObj[baseKey] !== undefined) {
+                    return sectionObj[baseKey];
+                }
+            }
+
+            // Ultimate fallback: Search EVERY section
+            const langData = this.translations[this.currentLang];
+            for (const sectionName in langData) {
+                if (typeof langData[sectionName] === 'object' && langData[sectionName][baseKey] !== undefined) {
+                    return langData[sectionName][baseKey];
+                }
+            }
         }
 
-        const selector = 'button,input[type="button"],input[type="submit"],input[placeholder],[placeholder],[alt],[title]';
-        const elements = parent.querySelectorAll ? parent.querySelectorAll(selector) : [];
+        return result;
+    }
+
+    async setLanguage(lang) {
+        if (lang === this.currentLang) return;
+        await this.loadTranslations(lang);
+        this.translatePage();
+        this.updateUI();
         
-        elements.forEach(el => {
-            if (el.closest('.notranslate')) return;
+        // Dispatch event for other components to react
+        window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+    }
 
-            if (el.tagName === 'INPUT' && (el.type === 'button' || el.type === 'submit') && el.value) {
-                if (!el.__origValue) el.__origValue = el.value.trim();
-                textNodes.push({ type: 'value', el, __orig: el.__origValue });
+    updateUI() {
+        // Update language selector buttons
+        const currentLangLabel = document.getElementById('current-lang-label');
+        const currentLangFlag = document.getElementById('current-lang-flag');
+        
+        if (currentLangLabel && currentLangFlag) {
+            const btn = document.querySelector(`.lang-option[data-lang="${this.currentLang}"]`);
+            if (btn) {
+                currentLangLabel.textContent = this.currentLang.toUpperCase();
+                currentLangFlag.textContent = btn.getAttribute('data-flag');
             }
+        }
 
-            ['placeholder', 'alt', 'title'].forEach(attr => {
-                const val = el.getAttribute(attr);
-                if (val && val.trim().length > 1) {
-                    const key = `__orig_${attr}`;
-                    if (!el[key]) el[key] = val.trim();
-                    textNodes.push({ type: 'attribute', el, attr, __orig: el[key] });
+        // Highlight active language
+        document.querySelectorAll('.lang-option').forEach(opt => {
+            if (opt.getAttribute('data-lang') === this.currentLang) {
+                opt.classList.add('bg-slate-100', 'dark:bg-white/10');
+            } else {
+                opt.classList.remove('bg-slate-100', 'dark:bg-white/10');
+            }
+        });
+    }
+
+    setupUIListeners() {
+        // Find language options in the navbar
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.lang-option');
+            if (btn) {
+                const lang = btn.getAttribute('data-lang');
+                this.setLanguage(lang);
+            }
+        });
+    }
+
+    setupMutationObserver() {
+        if (this.observer) this.observer.disconnect();
+        
+        this.observer = new MutationObserver((mutations) => {
+            let shouldTranslate = false;
+            mutations.forEach(mutation => {
+                if (mutation.addedNodes.length > 0) {
+                    mutation.addedNodes.forEach(node => {
+                        if (node.nodeType === 1) { // Element node
+                            if (node.hasAttribute('data-i18n') || node.hasAttribute('data-i18n-attr') || node.querySelector('[data-i18n], [data-i18n-attr]')) {
+                                shouldTranslate = true;
+                            }
+                        }
+                    });
                 }
             });
-        });
-
-        return textNodes;
-    }
-
-    translateTextBatch(nodes) {
-        const langDict = this.LOCAL_DICTIONARY[this.currentLang] || {};
-
-        nodes.forEach(node => {
-            const orig = node.__orig;
-            const trans = langDict[orig];
             
-            if (trans) {
-                if (node.nodeType === Node.TEXT_NODE) {
-                    node.textContent = trans;
-                    node.__translatedText = trans;
-                } else if (node.type === 'attribute') {
-                    node.el.setAttribute(node.attr, trans);
-                } else if (node.type === 'value') {
-                    node.el.value = trans;
-                }
+            if (shouldTranslate) {
+                // Throttle translation to avoid recursion
+                if (this._timeout) clearTimeout(this._timeout);
+                this._timeout = setTimeout(() => {
+                    this.translatePage();
+                    this.updateUI(); 
+                }, 50);
             }
         });
-    }
 
-    updateUIState(langCode) {
-        const meta = this.langMetadata[langCode] || this.langMetadata['en'];
-        const flagEl = document.getElementById('current-lang-flag');
-        const labelEl = document.getElementById('current-lang-label');
-        if (flagEl) flagEl.textContent = meta.flag;
-        if (labelEl) labelEl.textContent = meta.label;
-        document.querySelectorAll('.lang-option').forEach(opt => {
-            opt.classList.toggle('active', opt.getAttribute('data-lang') === langCode);
-        });
-    }
-
-    injectStyles() {
-        if (document.getElementById('sustain-translator-styles')) return;
-        const style = document.createElement('style');
-        style.id = 'sustain-translator-styles';
-        style.innerHTML = `
-            .notranslate { translate: no !important; }
-            [lang]:not([lang="en"]) .hero-headline span { white-space: nowrap; }
-        `;
-        document.head.appendChild(style);
+        this.observer.observe(document.body, { childList: true, subtree: true });
     }
 }
 
-window.sustainTranslator = new SustainTranslator();
-
+// Export the class and a singleton instance
+export default SustainTranslator;
+export const translator = new SustainTranslator();

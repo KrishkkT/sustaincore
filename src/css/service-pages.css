@@ -1337,200 +1337,99 @@
   color: rgba(90, 110, 97, .3);
 }
 
-/* --- Mobile UX/UI Premium Optimization --- */
-@media (max-width: 767px) {
+/* ==========================================================================
+   ADVANCED RESPONSIVENESS & ADAPTABILITY
+   ========================================================================== */
 
-  /* BREADCRUMB MOBILE */
+/* Systematic Breakpoints for Service Category Pages */
+
+/* --- SMALL MOBILE (320px - 480px) --- */
+@media (max-width: 480px) {
   .bcc {
     margin-top: 4.5rem !important;
-    margin-bottom: 0rem !important;
-    margin-left: 1.25rem !important;
-    justify-content: center;
+    margin-left: 1rem !important;
+    justify-content: flex-start;
   }
 
-  .sp-container {
-    padding: 0 1.25rem;
-  }
+  .sp-container { padding: 0 1rem; }
 
   .sp-hero {
-    padding-top: 9rem;
+    padding-top: 8rem;
     padding-bottom: 3rem;
     text-align: center;
   }
 
-  .sp-hero-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
   .sp-hero-title {
-    font-size: 2.25rem !important;
-    line-height: 1.15;
+    font-size: clamp(2rem, 10vw, 2.5rem) !important;
+    line-height: 1.1;
   }
 
   .sp-hero-desc {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
   }
 
   .sp-hero-img {
-    height: 320px !important;
-    margin-top: 1rem;
-    border-radius: 2rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    height: 280px !important;
+    margin-top: 1.5rem;
   }
 
-  /* Sub-nav mobile bar fixes */
-  .sp-sub-nav {
-    top: 76px;
-    max-width: 98%;
-    width: 98%;
-    padding: 4px;
-    border-radius: 100px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-  }
-
-  .sp-sub-nav.scrolled {
-    top: 60px;
-    /* Snug fit under mobile header */
-    border-radius: 100px;
-    /* Maintain pill shape on mobile */
-    padding: 4px;
-    width: 96%;
-    max-width: 96%;
-  }
-
-  .sp-sub-nav-link {
-    padding: 0.45rem 0.75rem;
-    font-size: 0.65rem;
-  }
-
-  /* sp-step-flow: 2 columns in mobile view */
   .sp-step-flow {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 2rem !important;
-    flex-direction: row !important;
-  }
-
-  .sp-step {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .sp-step-list {
-    margin-left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .sp-step-list li {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .sp-step-list li::before {
-    display: none;
-  }
-
-  /* CTA box visibility fix */
-  .cta-band {
-    width: 92% !important;
-    padding: 2.5rem 1.5rem !important;
-    margin-bottom: 4rem;
-    display: flex !important;
-    flex-direction: column;
-    gap: 1.5rem !important;
-    min-height: auto !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
-  }
-
-  .cta-band-title {
-    font-size: 22px !important;
-  }
-
-  .cta-band-sub {
-    font-size: 14px !important;
-    margin: 0 auto;
-  }
-
-  /* Section padding */
-  .sp-pain,
-  .sp-protocol,
-  .sp-included,
-  .sp-specs,
-  .sp-faq {
-    padding: 5rem 0 !important;
-  }
-
-  .sp-section-h {
-    margin-bottom: 3rem;
-  }
-
-  .sp-section-t {
-    font-size: 1.85rem;
-  }
-
-  /* Grid stacks */
-  .sp-card-grid,
-  .sp-inc-grid,
-  .sp-spec-grid,
-  .sp-deliver-list {
     grid-template-columns: 1fr !important;
-    gap: 1.25rem !important;
+    gap: 2.5rem !important;
   }
+  
+  .sp-card-grid, .sp-inc-grid, .sp-spec-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .cta-band {
+    width: 96% !important;
+    padding: 2.5rem 1rem !important;
+  }
+}
 
-  .sp-card {
-    padding: 2.5rem 1.5rem;
+/* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
+@media (min-width: 481px) and (max-width: 768px) {
+  .sp-hero { padding-top: 9rem; text-align: center; }
+  
+  .sp-hero-title { font-size: 2.75rem !important; }
+  
+  .sp-step-flow { grid-template-columns: 1fr 1fr !important; }
+  
+  .sp-card-grid, .sp-inc-grid, .sp-spec-grid {
+    grid-template-columns: 1fr !important;
   }
+}
 
-  .sp-deliver {
-    margin: 1.25rem;
-    padding: 4.5rem 1.5rem !important;
-    border-radius: 2.5rem;
-  }
+/* --- TABLET LANDSCAPE (769px - 1024px) --- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sp-hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 2rem; }
+  
+  .sp-hero-title { font-size: 3rem !important; }
+  
+  .sp-card-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  
+  .sp-step-flow { grid-template-columns: repeat(2, 1fr) !important; }
+}
 
-  .sp-spec-card {
-    padding: 2.25rem 1.5rem !important;
-    border-radius: 1.5rem !important;
-    background: white !important; /* Premium contrast on sand background */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-  }
+/* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .sp-container { max-width: 1200px; }
+  
+  .sp-hero-title { font-size: 3.5rem !important; }
+}
 
-  .sp-spec-h {
-    font-size: 1.25rem !important;
-    margin-bottom: 1.5rem !important;
-    gap: 0.75rem !important;
-  }
+/* --- ULTRA-WIDE SCREENS (1921px+) --- */
+@media (min-width: 1921px) {
+  .sp-container { max-width: 1600px; }
+  
+  .sp-hero-title { font-size: 5rem !important; }
+  
+  .sp-card-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 4rem; }
+}
 
-  .sp-spec-item {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.25rem !important;
-    padding: 1rem 0 !important;
-  }
-
-  .sp-spec-label {
-    font-size: 0.8rem;
-    color: var(--sp-muted);
-    font-weight: 500;
-  }
-
-  .sp-spec-val {
-    font-size: 0.95rem;
-    color: var(--sp-blue);
-    font-weight: 700;
-    line-height: 1.4;
-  }
-
-  .sp-faq-btn {
-    padding: 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  .sp-faq-ans {
-    padding: 0 1.5rem;
-  }
+/* Base Fixes for consistency */
+.sp-hero, .sp-pain, .sp-protocol, .sp-included, .sp-specs, .sp-faq {
+  overflow: visible;
 }

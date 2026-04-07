@@ -5,14 +5,20 @@
   <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Water Testing & Analysis | SustainCore</title>
+  <title data-i18n="water-testing.water_testing_analysis_sustaincore">Water Testing &amp; Analysis | SustainCore</title>
   <link rel="stylesheet" href="/src/css/main.css">
   <link rel="stylesheet" href="/src/css/service-pages.css">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap"
     rel="stylesheet">
+  <style>
+    .svc-card-img-wrap img {
+      object-fit: fill;
+    }
+  </style>
 </head>
+
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
   <div id="header-root"></div>
@@ -21,74 +27,109 @@
     <div class="sp-sub-nav-inner">
       <!-- 01 ESG Reporting -->
       <div class="sp-sub-nav-item">
-        <a href="/esg-reporting.html" class="sp-sub-nav-link sp-dropdown-toggle">ESG Reporting</a>
+        <a href="/esg-reporting.html" class="sp-sub-nav-link sp-dropdown-toggle"
+          data-i18n="water-testing.esg_reporting">ESG Reporting</a>
         <div class="sp-dropdown">
-          <a href="/esg-reporting.html#brsr" class="sp-dropdown-link">BRSR Reporting</a>
-          <a href="/esg-reporting.html#cdp" class="sp-dropdown-link">CDP Disclosure</a>
-          <a href="/esg-reporting.html#gri" class="sp-dropdown-link">GRI Reporting</a>
-          <a href="/esg-reporting.html#sasb" class="sp-dropdown-link">SASB Standards</a>
-          <a href="/esg-reporting.html#tcfd" class="sp-dropdown-link">TCFD Disclosure</a>
+          <a href="/esg-reporting.html#brsr" class="sp-dropdown-link" data-i18n="water-testing.brsr_reporting">BRSR
+            Reporting</a>
+          <a href="/esg-reporting.html#cdp" class="sp-dropdown-link" data-i18n="water-testing.cdp_disclosure">CDP
+            Disclosure</a>
+          <a href="/esg-reporting.html#gri" class="sp-dropdown-link" data-i18n="water-testing.gri_reporting">GRI
+            Reporting</a>
+          <a href="/esg-reporting.html#sasb" class="sp-dropdown-link" data-i18n="water-testing.sasb_standards">SASB
+            Standards</a>
+          <a href="/esg-reporting.html#tcfd" class="sp-dropdown-link" data-i18n="water-testing.tcfd_disclosure">TCFD
+            Disclosure</a>
         </div>
       </div>
       <!-- 02 Carbon & Climate -->
       <div class="sp-sub-nav-item">
-        <a href="/carbon-climate.html" class="sp-sub-nav-link sp-dropdown-toggle">Carbon Management</a>
+        <a href="/carbon-climate.html" class="sp-sub-nav-link sp-dropdown-toggle"
+          data-i18n="water-testing.carbon_management">Carbon Management</a>
         <div class="sp-dropdown">
-          <a href="/carbon-climate.html#cbam" class="sp-dropdown-link">CBAM Advisory</a>
-          <a href="/carbon-climate.html#ghg" class="sp-dropdown-link">GHG Accounting & Inventory</a>
-          <a href="/carbon-climate.html#pcf" class="sp-dropdown-link">PCF Assessment</a>
+          <a href="/carbon-climate.html#cbam" class="sp-dropdown-link" data-i18n="water-testing.cbam_advisory">CBAM
+            Advisory</a>
+          <a href="/carbon-climate.html#ghg" class="sp-dropdown-link"
+            data-i18n="water-testing.ghg_accounting_inventory">GHG Accounting &amp; Inventory</a>
+          <a href="/carbon-climate.html#pcf" class="sp-dropdown-link" data-i18n="water-testing.pcf_assessment">PCF
+            Assessment</a>
 
-          <a href="/carbon-climate.html#credits" class="sp-dropdown-link">Carbon Credits</a>
-          <a href="/carbon-climate.html#irec" class="sp-dropdown-link">I-REC Certification</a>
+          <a href="/carbon-climate.html#credits" class="sp-dropdown-link"
+            data-i18n="water-testing.carbon_credits">Carbon Credits</a>
+          <a href="/carbon-climate.html#irec" class="sp-dropdown-link"
+            data-i18n="water-testing.i_rec_certification">I-REC Certification</a>
         </div>
       </div>
       <!-- 03 Ratings & Targets -->
       <div class="sp-sub-nav-item">
-        <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle">Ratings & Targets</a>
+        <a href="/ratings-targets.html" class="sp-sub-nav-link sp-dropdown-toggle"
+          data-i18n="water-testing.ratings_targets">Ratings &amp; Targets</a>
         <div class="sp-dropdown">
-          <a href="/ratings-targets.html#materiality" class="sp-dropdown-link">Materiality Assessment</a>
-          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link">EcoVadis Strategy</a>
-          <a href="/ratings-targets.html#epd" class="sp-dropdown-link">Environmental Product Declaration(EPD)</a>
-          <a href="/ratings-targets.html#sbti" class="sp-dropdown-link">Science Based Targets</a>
+          <a href="/ratings-targets.html#materiality" class="sp-dropdown-link"
+            data-i18n="water-testing.materiality_assessment">Materiality Assessment</a>
+          <a href="/ratings-targets.html#ecovadis" class="sp-dropdown-link"
+            data-i18n="water-testing.ecovadis_strategy">EcoVadis Strategy</a>
+          <a href="/ratings-targets.html#epd" class="sp-dropdown-link"
+            data-i18n="water-testing.environmental_product_declarationepd">Environmental Product Declaration(EPD)</a>
+          <a href="/ratings-targets.html#sbti" class="sp-dropdown-link"
+            data-i18n="water-testing.science_based_targets">Science Based Targets</a>
         </div>
       </div>
       <!-- 04 GPCB & Environmental Approval -->
       <div class="sp-sub-nav-item">
-        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle">SPCB Compliance</a>
+        <a href="/clearances-eia.html" class="sp-sub-nav-link sp-dropdown-toggle"
+          data-i18n="water-testing.spcb_compliance">SPCB Compliance</a>
         <div class="sp-dropdown">
-          <a href="/clearances-eia.html#gpcb" class="sp-dropdown-link">SPCB Compliance</a>
-          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link">Environment Clearance (EC)</a>
-          <a href="/clearances-eia.html#eia" class="sp-dropdown-link">Environmental Impact Assessment (EIA)</a>
+          <a href="/clearances-eia.html#gpcb" class="sp-dropdown-link" data-i18n="water-testing.spcb_compliance">SPCB
+            Compliance</a>
+          <a href="/clearances-eia.html#clearance" class="sp-dropdown-link"
+            data-i18n="water-testing.environment_clearance_ec">Environment Clearance (EC)</a>
+          <a href="/clearances-eia.html#eia" class="sp-dropdown-link"
+            data-i18n="water-testing.environmental_impact_assessment_eia">Environmental Impact Assessment (EIA)</a>
         </div>
       </div>
       <!-- 05 Environmental Audits -->
       <div class="sp-sub-nav-item">
-        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle">Environmental Audits</a>
+        <a href="/management-systems.html" class="sp-sub-nav-link sp-dropdown-toggle"
+          data-i18n="water-testing.environmental_audits">Environmental Audits</a>
         <div class="sp-dropdown">
-          <a href="/management-systems.html#iso14001" class="sp-dropdown-link">ISO 14001</a>
-          <a href="/management-systems.html#iso45001" class="sp-dropdown-link">ISO 45001</a>
-          <a href="/management-systems.html#iso50001" class="sp-dropdown-link">ISO 50001</a>
+          <a href="/management-systems.html#iso14001" class="sp-dropdown-link" data-i18n="water-testing.iso_14001">ISO
+            14001</a>
+          <a href="/management-systems.html#iso45001" class="sp-dropdown-link" data-i18n="water-testing.iso_45001">ISO
+            45001</a>
+          <a href="/management-systems.html#iso50001" class="sp-dropdown-link" data-i18n="water-testing.iso_50001">ISO
+            50001</a>
           <!-- <a href="/management-systems.html#audits" class="sp-dropdown-link">Compliance Audits</a> -->
         </div>
       </div>
       <!-- 06 Water Testing -->
       <div class="sp-sub-nav-item">
-        <a href="/water-testing.html" class="sp-sub-nav-link active sp-dropdown-toggle">Water Testing</a>
+        <a href="/water-testing.html" class="sp-sub-nav-link active sp-dropdown-toggle"
+          data-i18n="water-testing.water_testing">Water Testing</a>
         <div class="sp-dropdown">
-          <a href="/water-testing.html#effluent" class="sp-dropdown-link">Effluent Analysis</a>
-          <a href="/water-testing.html#groundwater" class="sp-dropdown-link">Groundwater Analysis</a>
-          <a href="/water-testing.html#audit" class="sp-dropdown-link">Water Audit</a>
-          <a href="/water-testing.html#risk" class="sp-dropdown-link">Water Risk Assessment</a>
+          <a href="/water-testing.html#effluent" class="sp-dropdown-link"
+            data-i18n="water-testing.effluent_analysis">Effluent Analysis</a>
+          <a href="/water-testing.html#groundwater" class="sp-dropdown-link"
+            data-i18n="water-testing.groundwater_analysis">Groundwater Analysis</a>
+          <a href="/water-testing.html#audit" class="sp-dropdown-link" data-i18n="water-testing.water_audit">Water
+            Audit</a>
+          <a href="/water-testing.html#risk" class="sp-dropdown-link"
+            data-i18n="water-testing.water_risk_assessment">Water Risk Assessment</a>
         </div>
       </div>
       <!-- 07 Air Monitoring -->
       <div class="sp-sub-nav-item">
-        <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle">Air Monitoring</a>
+        <a href="/air-monitoring.html" class="sp-sub-nav-link sp-dropdown-toggle"
+          data-i18n="water-testing.air_monitoring">Air Monitoring</a>
         <div class="sp-dropdown">
-          <a href="/air-monitoring.html#stack" class="sp-dropdown-link">Stack Monitoring</a>
-          <a href="/air-monitoring.html#ambient" class="sp-dropdown-link">Ambient Air Quality</a>
-          <a href="/air-monitoring.html#workplace" class="sp-dropdown-link">Workplace Air Quality</a>
-          <a href="/air-monitoring.html#cems" class="sp-dropdown-link">CEMS Solutions</a>
+          <a href="/air-monitoring.html#stack" class="sp-dropdown-link" data-i18n="water-testing.stack_monitoring">Stack
+            Monitoring</a>
+          <a href="/air-monitoring.html#ambient" class="sp-dropdown-link"
+            data-i18n="water-testing.ambient_air_quality">Ambient Air Quality</a>
+          <a href="/air-monitoring.html#workplace" class="sp-dropdown-link"
+            data-i18n="water-testing.workplace_air_quality">Workplace Air Quality</a>
+          <a href="/air-monitoring.html#cems" class="sp-dropdown-link" data-i18n="water-testing.cems_solutions">CEMS
+            Solutions</a>
         </div>
       </div>
     </div>
@@ -97,24 +138,28 @@
   <main>
     <section class="sp-hero">
       <div class="bcc">
-        <a href="/index.html">Home</a>
+        <a href="/index.html" data-i18n="water-testing.home">Home</a>
         <span class="sep">/</span>
-        <a href="/services.html">Services</a>
+        <a href="/services.html" data-i18n="water-testing.services">Services</a>
         <span class="sep">/</span>
-        <span>Water Testing</span>
+        <span data-i18n="water-testing.water_testing">Water Testing</span>
       </div>
       <div class="sp-container">
         <div class="sp-hero-grid">
           <div>
-            <h1 class="sp-hero-title">Water Testing & Audit Services</h1>
-            <p class="sp-hero-desc">Secure the purity of your operations with NABL-accredited precision. We provide
+            <h1 class="sp-hero-title" data-i18n="water-testing.water_testing_audit_services">Water Testing &amp; Audit
+              Services</h1>
+            <p class="sp-hero-desc" data-i18n="water-testing.secure_the_purity_of_your_operations_wit">Secure the purity
+              of your operations with NABL-accredited precision. We provide
               end-to-end monitoring for Drinking Water, Effluent, and Ground Water to ensure total regulatory
               compliance.</p>
-            <a href="/contact.html" class="btn-primary" style="display: inline-block; text-decoration: none;">Lab
+            <a href="/contact.html" class="btn-primary" style="display: inline-block; text-decoration: none;"
+              data-i18n="water-testing.lab_consultation">Lab
               Consultation</a>
           </div>
-          <img src="https://images.unsplash.com/photo-1688321960143-b890560e95fd?q=80&w=1200&auto=format&fit=crop"
-            alt="Water Testing" class="sp-hero-img">
+          <img
+            src="https://images.unsplash.com/photo-1688321960143-b890560e95fd?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
+            alt="Water Testing" class="sp-hero-img" data-i18n-attr="alt:water-testing.attr_alt_water_testing">
         </div>
       </div>
     </section>
@@ -123,101 +168,120 @@
     <section class="sp-included">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t" style="color: var(--sp-blue);">What's Included</h2>
-          <p class="sp-section-sub">High-precision aqueous analysis and auditing.</p>
+          <h2 class="sp-section-t" style="color: var(--sp-blue);" data-i18n="water-testing.whats_included">What's
+            Included</h2>
+          <p class="sp-section-sub" data-i18n="water-testing.high_precision_aqueous_analysis_and_audi">High-precision
+            aqueous analysis and auditing.</p>
         </div>
         <div class="svc-container">
           <!-- Effluent Analysis Card -->
           <div class="svc-card" id="effluent">
             <div class="svc-card-img-wrap">
               <img
-                src="https://images.unsplash.com/photo-1533077162801-86490c593afb?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Effluent Analysis" class="svc-card-img">
-              <div class="svc-card-chip">SPCB COMPLIANT · BOD/COD · NABL</div>
+                src="https://images.unsplash.com/photo-1533077162801-86490c593afb?q=80&amp;w=774&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Effluent Analysis" class="svc-card-img"
+                data-i18n-attr="alt:water-testing.attr_alt_effluent_analysis">
+              <div class="svc-card-chip" data-i18n="water-testing.spcb_compliant_bodcod_nabl">SPCB COMPLIANT · BOD/COD ·
+                NABL</div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title">Effluent Analysis</h3>
-              <p class="svc-card-desc">Periodic testing of industrial effluent to ensure discharge parameters meet State
+              <h3 class="svc-card-title" data-i18n="water-testing.effluent_analysis">Effluent Analysis</h3>
+              <p class="svc-card-desc" data-i18n="water-testing.periodic_testing_of_industrial_effluent_">Periodic
+                testing of industrial effluent to ensure discharge parameters meet State
                 Pollution Control Board (SPCB) limits.</p>
               <div class="svc-card-divider"></div>
               <ul class="svc-card-list">
-                <li>BOD & COD quantification</li>
-                <li>Total Dissolved Solids (TDS) monitoring</li>
-                <li>Oil & Grease (O&G) detection</li>
-                <li>Specialized organic pollutant scan</li>
-                <li>NABL certified test reports (Form X)</li>
+                <li data-i18n="water-testing.bod_cod_quantification">BOD &amp; COD quantification</li>
+                <li data-i18n="water-testing.total_dissolved_solids_tds_monitoring">Total Dissolved Solids (TDS)
+                  monitoring</li>
+                <li data-i18n="water-testing.oil_grease_og_detection">Oil &amp; Grease (O&amp;G) detection</li>
+                <li data-i18n="water-testing.specialized_organic_pollutant_scan">Specialized organic pollutant scan</li>
+                <li data-i18n="water-testing.nabl_certified_test_reports_form_x">NABL certified test reports (Form X)
+                </li>
               </ul>
-              <a href="files/6-effluent.html" class="svc-learn-more">Learn More</a>
+              <a href="files/6-effluent.html" class="svc-learn-more" data-i18n="water-testing.learn_more">Learn More</a>
             </div>
           </div>
 
           <!-- Groundwater Analysis Card -->
           <div class="svc-card" id="groundwater">
             <div class="svc-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1605878479894-a25162acb8d2?q=80&w=800&auto=format&fit=crop"
-                alt="Groundwater Analysis" class="svc-card-img">
-              <div class="svc-card-chip">CGWA · BOREWELL · MONITORING</div>
+              <img
+                src="https://images.unsplash.com/photo-1605878479894-a25162acb8d2?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                alt="Groundwater Analysis" class="svc-card-img"
+                data-i18n-attr="alt:water-testing.attr_alt_groundwater_analysis">
+              <div class="svc-card-chip" data-i18n="water-testing.cgwa_borewell_monitoring">CGWA · BOREWELL · MONITORING
+              </div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title">Groundwater Analysis</h3>
-              <p class="svc-card-desc">Hydrogeological assessment and monitoring of borewell water quality to ensure
+              <h3 class="svc-card-title" data-i18n="water-testing.groundwater_analysis">Groundwater Analysis</h3>
+              <p class="svc-card-desc" data-i18n="water-testing.hydrogeological_assessment_and_monitorin">
+                Hydrogeological assessment and monitoring of borewell water quality to ensure
                 compliance with CGWA No Objection Certificates (NOC).</p>
               <div class="svc-card-divider"></div>
               <ul class="svc-card-list">
-                <li>Multi-point borewell sampling</li>
-                <li>Aquifer contamination mapping</li>
-                <li>Heavy metal & pesticide screening</li>
-                <li>Pre-monsoon & Post-monsoon trends</li>
-                <li>Piezometric level correlation</li>
+                <li data-i18n="water-testing.multi_point_borewell_sampling">Multi-point borewell sampling</li>
+                <li data-i18n="water-testing.aquifer_contamination_mapping">Aquifer contamination mapping</li>
+                <li data-i18n="water-testing.heavy_metal_pesticide_screening">Heavy metal &amp; pesticide screening</li>
+                <li data-i18n="water-testing.pre_monsoon_post_monsoon_trends">Pre-monsoon &amp; Post-monsoon trends</li>
+                <li data-i18n="water-testing.piezometric_level_correlation">Piezometric level correlation</li>
               </ul>
-              <a href="files/6-groundwater.html" class="svc-learn-more">Learn More</a>
+              <a href="files/6-groundwater.html" class="svc-learn-more" data-i18n="water-testing.learn_more">Learn
+                More</a>
             </div>
           </div>
 
           <!-- Water Audit Card -->
           <div class="svc-card" id="audit">
             <div class="svc-card-img-wrap">
-              <img src="https://images.unsplash.com/photo-1628864005140-7770b9b8e7dd?q=80&w=800&auto=format&fit=crop"
-                alt="Water Audit" class="svc-card-img">
-              <div class="svc-card-chip">RESOURCE OPTIMIZATION · NPC</div>
+              <img
+                src="https://images.unsplash.com/photo-1628864005140-7770b9b8e7dd?q=80&amp;w=800&amp;auto=format&amp;fit=crop"
+                alt="Water Audit" class="svc-card-img" data-i18n-attr="alt:water-testing.attr_alt_water_audit">
+              <div class="svc-card-chip" data-i18n="water-testing.resource_optimization_npc">RESOURCE OPTIMIZATION · NPC
+              </div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title">Water Audit</h3>
-              <p class="svc-card-desc">Comprehensive quantification of water use across your facility to identify
+              <h3 class="svc-card-title" data-i18n="water-testing.water_audit">Water Audit</h3>
+              <p class="svc-card-desc" data-i18n="water-testing.comprehensive_quantification_of_water_us">Comprehensive
+                quantification of water use across your facility to identify
                 conservation opportunities and optimize resource efficiency.</p>
               <div class="svc-card-divider"></div>
               <ul class="svc-card-list">
-                <li>Source-to-sink water mapping</li>
-                <li>Specific Water Consumption (SWC)</li>
-                <li>Treatment plant efficiency audit</li>
-                <li>Leak detection & loss mitigation</li>
-                <li>Rainwater harvesting potential</li>
+                <li data-i18n="water-testing.source_to_sink_water_mapping">Source-to-sink water mapping</li>
+                <li data-i18n="water-testing.specific_water_consumption_swc">Specific Water Consumption (SWC)</li>
+                <li data-i18n="water-testing.treatment_plant_efficiency_audit">Treatment plant efficiency audit</li>
+                <li data-i18n="water-testing.leak_detection_loss_mitigation">Leak detection &amp; loss mitigation</li>
+                <li data-i18n="water-testing.rainwater_harvesting_potential">Rainwater harvesting potential</li>
               </ul>
-              <a href="files/6-water audit.html" class="svc-learn-more">Learn More</a>
+              <a href="files/6-water audit.html" class="svc-learn-more" data-i18n="water-testing.learn_more">Learn
+                More</a>
             </div>
           </div>
 
           <!-- Water Risk Assessment Card -->
           <div class="svc-card" id="risk">
             <div class="svc-card-img-wrap">
-              <img
-                src="https://images.unsplash.com/photo-1549660567-54419f7fd629?q=80&w=1041&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Water Risk Assessment" class="svc-card-img">
-              <div class="svc-card-chip">WATERSHED · SCARCITY · STRATEGY</div>
+              <img src="/images/esg-cdp.png" alt="Water Risk Assessment" class="svc-card-img"
+                data-i18n-attr="alt:water-testing.attr_alt_water_risk_assessment">
+              <div class="svc-card-chip" data-i18n="water-testing.watershed_scarcity_strategy">WATERSHED · SCARCITY ·
+                STRATEGY</div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title">Water Risk Assessment</h3>
-              <p class="svc-card-desc">Evaluating physical, regulatory, and reputational water risks at the watershed
+              <h3 class="svc-card-title" data-i18n="water-testing.water_risk_assessment">Water Risk Assessment</h3>
+              <p class="svc-card-desc" data-i18n="water-testing.evaluating_physical_regulatory_and_reput">Evaluating
+                physical, regulatory, and reputational water risks at the watershed
                 level to ensure long-term operational resilience.</p>
               <div class="svc-card-divider"></div>
               <ul class="svc-card-list">
-                <li>Watershed stress & scarcity mapping</li>
-                <li>Regulatory compliance risk audit</li>
-                <li>Community impact assessment</li>
-                <li>Long-term replenishment strategy</li>
-                <li>Climate-water nexus modeling</li>
+                <li data-i18n="water-testing.watershed_stress_scarcity_mapping">Watershed stress &amp; scarcity mapping
+                </li>
+                <li data-i18n="water-testing.regulatory_compliance_risk_audit">Regulatory compliance risk audit</li>
+                <li data-i18n="water-testing.community_impact_assessment">Community impact assessment</li>
+                <li data-i18n="water-testing.long_term_replenishment_strategy">Long-term replenishment strategy</li>
+                <li data-i18n="water-testing.climate_water_nexus_modeling">Climate-water nexus modeling</li>
               </ul>
-              <a href="files/6-water_risk_assessment.html" class="svc-learn-more">Learn More</a>
+              <a href="files/6-water_risk_assessment.html" class="svc-learn-more"
+                data-i18n="water-testing.learn_more">Learn More</a>
             </div>
           </div>
         </div>
@@ -227,23 +291,27 @@
     <section class="sp-pain">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">Water-quality risks</h2>
-          <p class="sp-section-sub">Contamination can lead to immediate plant closures and hefty SPCB fines.</p>
+          <h2 class="sp-section-t" data-i18n="water-testing.water_quality_risks">Water-quality risks</h2>
+          <p class="sp-section-sub" data-i18n="water-testing.contamination_can_lead_to_immediate_plan">Contamination can
+            lead to immediate plant closures and hefty SPCB fines.</p>
         </div>
         <div class="sp-card-grid">
           <div class="sp-card">
-            <h3 class="sp-card-title">Sampling Errors</h3>
-            <p class="sp-card-text">Poor sampling techniques in the field lead to flawed lab results. We use scientific,
+            <h3 class="sp-card-title" data-i18n="water-testing.sampling_errors">Sampling Errors</h3>
+            <p class="sp-card-text" data-i18n="water-testing.poor_sampling_techniques_in_the_field_le">Poor sampling
+              techniques in the field lead to flawed lab results. We use scientific,
               multi-point collection to ensure data representativeness.</p>
           </div>
           <div class="sp-card">
-            <h3 class="sp-card-title">ETP Performance</h3>
-            <p class="sp-card-text">Testing is reactive; optimizing your Effluent Treatment Plant is proactive. We
+            <h3 class="sp-card-title" data-i18n="water-testing.etp_performance">ETP Performance</h3>
+            <p class="sp-card-text" data-i18n="water-testing.testing_is_reactive_optimizing_your_effl">Testing is
+              reactive; optimizing your Effluent Treatment Plant is proactive. We
               identify why your parameters are over the legal limit.</p>
           </div>
           <div class="sp-card">
-            <h3 class="sp-card-title">Legal Deadlines</h3>
-            <p class="sp-card-text">Missing a mandatory CTO/CTE testing cycle creates a liability. We manage your
+            <h3 class="sp-card-title" data-i18n="water-testing.legal_deadlines">Legal Deadlines</h3>
+            <p class="sp-card-text" data-i18n="water-testing.missing_a_mandatory_ctocte_testing_cycle">Missing a
+              mandatory CTO/CTE testing cycle creates a liability. We manage your
               testing calendar so you never miss a deadline.</p>
           </div>
         </div>
@@ -253,44 +321,45 @@
     <section class="sp-protocol">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">The Analysis Protocol</h2>
-          <p class="sp-section-sub">A technical path to total water quality oversight.</p>
+          <h2 class="sp-section-t" data-i18n="water-testing.the_analysis_protocol">The Analysis Protocol</h2>
+          <p class="sp-section-sub" data-i18n="water-testing.a_technical_path_to_total_water_quality_">A technical path
+            to total water quality oversight.</p>
         </div>
         <div class="sp-step-flow">
           <div class="sp-step">
             <div class="sp-step-num"></div>
-            <h3 class="sp-step-title">Sampling</h3>
+            <h3 class="sp-step-title" data-i18n="water-testing.sampling">Sampling</h3>
             <ul class="sp-step-list">
-              <li>Scientific Collection</li>
-              <li>Cold-chain Logistics</li>
-              <li>Chain of Custody</li>
+              <li data-i18n="water-testing.scientific_collection">Scientific Collection</li>
+              <li data-i18n="water-testing.cold_chain_logistics">Cold-chain Logistics</li>
+              <li data-i18n="water-testing.chain_of_custody">Chain of Custody</li>
             </ul>
           </div>
           <div class="sp-step">
             <div class="sp-step-num"></div>
-            <h3 class="sp-step-title">Lab Analysis</h3>
+            <h3 class="sp-step-title" data-i18n="water-testing.lab_analysis">Lab Analysis</h3>
             <ul class="sp-step-list">
-              <li>NABL Procedures</li>
-              <li>BOD/COD Profiles</li>
-              <li>Heavy Metal Trace</li>
+              <li data-i18n="water-testing.nabl_procedures">NABL Procedures</li>
+              <li data-i18n="water-testing.bodcod_profiles">BOD/COD Profiles</li>
+              <li data-i18n="water-testing.heavy_metal_trace">Heavy Metal Trace</li>
             </ul>
           </div>
           <div class="sp-step">
             <div class="sp-step-num"></div>
-            <h3 class="sp-step-title">Validation</h3>
+            <h3 class="sp-step-title" data-i18n="water-testing.validation">Validation</h3>
             <ul class="sp-step-list">
-              <li>Result Comparison</li>
-              <li>Anomaly Mapping</li>
-              <li>Strategy Review</li>
+              <li data-i18n="water-testing.result_comparison">Result Comparison</li>
+              <li data-i18n="water-testing.anomaly_mapping">Anomaly Mapping</li>
+              <li data-i18n="water-testing.strategy_review">Strategy Review</li>
             </ul>
           </div>
           <div class="sp-step">
             <div class="sp-step-num"></div>
-            <h3 class="sp-step-title">Reporting</h3>
+            <h3 class="sp-step-title" data-i18n="water-testing.reporting">Reporting</h3>
             <ul class="sp-step-list">
-              <li>Audit Ready PDFs</li>
-              <li>Digital Trends</li>
-              <li>Legal Submission</li>
+              <li data-i18n="water-testing.audit_ready_pdfs">Audit Ready PDFs</li>
+              <li data-i18n="water-testing.digital_trends">Digital Trends</li>
+              <li data-i18n="water-testing.legal_submission">Legal Submission</li>
             </ul>
           </div>
         </div>
@@ -301,15 +370,26 @@
       <div class="sp-container">
         <div class="sp-deliver-grid">
           <div>
-            <h2 class="sp-section-t" style="color: white;">Analysis Assets</h2>
-            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);">We deliver a full technical suite for your
+            <h2 class="sp-section-t" style="color: white;" data-i18n="water-testing.analysis_assets">Analysis Assets
+            </h2>
+            <p class="sp-section-sub" style="color: rgba(255,255,255,0.7);"
+              data-i18n="water-testing.we_deliver_a_full_technical_suite_for_yo">We deliver a full technical suite for
+              your
               water quality management.</p>
           </div>
           <div class="sp-deliver-list">
-            <div class="sp-deliver-item"><span></span>Technical Advisory & Framework Alignment</div>
-            <div class="sp-deliver-item"><span></span>Audit-Ready Documentation & Evidence</div>
-            <div class="sp-deliver-item"><span></span>Global Regulatory Compliance Support</div>
-            <div class="sp-deliver-item"><span></span>ESG Performance Optimization & Tracking</div>
+            <div class="sp-deliver-item"><span></span><span
+                data-i18n="water-testing.technical_advisory_framework_alignment">Technical Advisory &amp; Framework
+                Alignment</span></div>
+            <div class="sp-deliver-item"><span></span><span
+                data-i18n="water-testing.audit_ready_documentation_evidence">Audit-Ready Documentation &amp;
+                Evidence</span></div>
+            <div class="sp-deliver-item"><span></span><span
+                data-i18n="water-testing.global_regulatory_compliance_support">Global Regulatory Compliance
+                Support</span></div>
+            <div class="sp-deliver-item"><span></span><span
+                data-i18n="water-testing.esg_performance_optimization_tracking">ESG Performance Optimization &amp;
+                Tracking</span></div>
           </div>
         </div>
       </div>
@@ -319,34 +399,39 @@
     <section class="sp-specs">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">Technical Parameters</h2>
-          <p class="sp-section-sub">Analytical standards for high-precision water quality monitoring.</p>
+          <h2 class="sp-section-t" data-i18n="water-testing.technical_parameters">Technical Parameters</h2>
+          <p class="sp-section-sub" data-i18n="water-testing.analytical_standards_for_high_precision_">Analytical
+            standards for high-precision water quality monitoring.</p>
         </div>
         <div class="sp-spec-grid">
           <div class="sp-spec-card">
             <div class="sp-spec-h">
               <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.675.337a4 4 0 01-2.547.414l-2.433-.487a2 2 0 00-1.285.238L3 17.5V21h18v-4.572l-1.572-1.001zM12 3h.01M9.167 6.667h.01M14.833 6.667h.01M6.667 10h.01M17.333 10h.01" />
-              </svg>
-              Regulatory Limits
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.675.337a4 4 0 01-2.547.414l-2.433-.487a2 2 0 00-1.285.238L3 17.5V21h18v-4.572l-1.572-1.001zM12 3h.01M9.167 6.667h.01M14.833 6.667h.01M6.667 10h.01M17.333 10h.01">
+                </path>
+              </svg><span data-i18n="water-testing.regulatory_limits">Regulatory Limits</span>
             </div>
             <ul class="sp-spec-list">
               <li class="sp-spec-item">
-                <span class="sp-spec-label">IS 10500:2012</span>
-                <span class="sp-spec-val">Drinking Water (Essential & Toxic)</span>
+                <span class="sp-spec-label" data-i18n="water-testing.is_105002012">IS 10500:2012</span>
+                <span class="sp-spec-val" data-i18n="water-testing.drinking_water_essential_toxic">Drinking Water
+                  (Essential &amp; Toxic)</span>
               </li>
               <li class="sp-spec-item">
-                <span class="sp-spec-label">Effluent (ETP)</span>
-                <span class="sp-spec-val">BOD, COD, TSS, TDS, O&G limits</span>
+                <span class="sp-spec-label" data-i18n="water-testing.effluent_etp">Effluent (ETP)</span>
+                <span class="sp-spec-val" data-i18n="water-testing.bod_cod_tss_tds_og_limits">BOD, COD, TSS, TDS,
+                  O&amp;G limits</span>
               </li>
               <li class="sp-spec-item">
-                <span class="sp-spec-label">Sewage (STP)</span>
-                <span class="sp-spec-val">Fecal Coliform & Nutrients (N/P)</span>
+                <span class="sp-spec-label" data-i18n="water-testing.sewage_stp">Sewage (STP)</span>
+                <span class="sp-spec-val" data-i18n="water-testing.fecal_coliform_nutrients_np">Fecal Coliform &amp;
+                  Nutrients (N/P)</span>
               </li>
               <li class="sp-spec-item">
-                <span class="sp-spec-label">ZLD Verification</span>
-                <span class="sp-spec-val">Mass balance of water & salt recovery</span>
+                <span class="sp-spec-label" data-i18n="water-testing.zld_verification">ZLD Verification</span>
+                <span class="sp-spec-val" data-i18n="water-testing.mass_balance_of_water_salt_recovery">Mass balance of
+                  water &amp; salt recovery</span>
               </li>
             </ul>
           </div>
@@ -354,26 +439,29 @@
             <div class="sp-spec-h">
               <svg class="w-6 h-6 text-brand-blue-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Laboratory Standards
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg><span data-i18n="water-testing.laboratory_standards">Laboratory Standards</span>
             </div>
             <ul class="sp-spec-list">
               <li class="sp-spec-item">
-                <span class="sp-spec-label">ISO/IEC 17025</span>
-                <span class="sp-spec-val">NABL Accreditation for Chemical & Bio</span>
+                <span class="sp-spec-label" data-i18n="water-testing.isoiec_17025">ISO/IEC 17025</span>
+                <span class="sp-spec-val" data-i18n="water-testing.nabl_accreditation_for_chemical_bio">NABL
+                  Accreditation for Chemical &amp; Bio</span>
               </li>
               <li class="sp-spec-item">
-                <span class="sp-spec-label">Sampling Protocol</span>
-                <span class="sp-spec-val">IS 3025 & APHA 24th Edition</span>
+                <span class="sp-spec-label" data-i18n="water-testing.sampling_protocol">Sampling Protocol</span>
+                <span class="sp-spec-val" data-i18n="water-testing.is_3025_apha_24th_edition">IS 3025 &amp; APHA 24th
+                  Edition</span>
               </li>
               <li class="sp-spec-item">
-                <span class="sp-spec-label">Traceability</span>
-                <span class="sp-spec-val">Digital Chain of Custody (CoC) management</span>
+                <span class="sp-spec-label" data-i18n="water-testing.traceability">Traceability</span>
+                <span class="sp-spec-val" data-i18n="water-testing.digital_chain_of_custody_coc_management">Digital
+                  Chain of Custody (CoC) management</span>
               </li>
               <li class="sp-spec-item">
-                <span class="sp-spec-label">Heavy Metals</span>
-                <span class="sp-spec-val">ICP-MS/OES for PPB level detection</span>
+                <span class="sp-spec-label" data-i18n="water-testing.heavy_metals">Heavy Metals</span>
+                <span class="sp-spec-val" data-i18n="water-testing.icp_msoes_for_ppb_level_detection">ICP-MS/OES for PPB
+                  level detection</span>
               </li>
             </ul>
           </div>
@@ -385,44 +473,45 @@
     <section class="sp-faq">
       <div class="sp-container">
         <div class="sp-section-h">
-          <h2 class="sp-section-t">Frequently Asked Questions</h2>
-          <p class="sp-section-sub">Technical guidance on aqueous analysis.</p>
+          <h2 class="sp-section-t" data-i18n="water-testing.frequently_asked_questions">Frequently Asked Questions</h2>
+          <p class="sp-section-sub" data-i18n="water-testing.technical_guidance_on_aqueous_analysis">Technical guidance
+            on aqueous analysis.</p>
         </div>
         <div class="sp-faq-list">
           <div class="sp-faq-item">
-            <button class="sp-faq-btn">
-              How frequent should effluent testing be?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <button class="sp-faq-btn"><span data-i18n="water-testing.how_frequent_should_effluent_testing_be">How
+                frequent should effluent testing be?</span><svg class="sp-faq-icon" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
               </svg>
             </button>
-            <div class="sp-faq-ans">
+            <div class="sp-faq-ans" data-i18n="water-testing.as_per_spcbspcb_norms_most_industries_ne">
               As per SPCB/SPCB norms, most industries need to monitor discharge parameters daily (internal) and conduct
               NABL-certified third-party testing monthly or quarterly, depending on their "Red/Orange" category and
               consent conditions.
             </div>
           </div>
           <div class="sp-faq-item">
-            <button class="sp-faq-btn">
-              What are the NABL parameters for drinking water safety?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <button class="sp-faq-btn"><span data-i18n="water-testing.what_are_the_nabl_parameters_for_drinkin">What are
+                the NABL parameters for drinking water safety?</span><svg class="sp-faq-icon" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
               </svg>
             </button>
-            <div class="sp-faq-ans">
+            <div class="sp-faq-ans" data-i18n="water-testing.the_is_105002012_standard_specifies_arou">
               The IS 10500:2012 standard specifies around 33 essential parameters including pH, TDS, Heavy Metals (Lead,
               Mercury), and microbiological counts (E.coli). Our NABL reports provide a pass/fail summary against these
               specific limits.
             </div>
           </div>
           <div class="sp-faq-item">
-            <button class="sp-faq-btn">
-              Do we need ZLD (Zero Liquid Discharge) verification?
-              <svg class="sp-faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            <button class="sp-faq-btn"><span data-i18n="water-testing.do_we_need_zld_zero_liquid_discharge_ver">Do we
+                need ZLD (Zero Liquid Discharge) verification?</span><svg class="sp-faq-icon" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
               </svg>
             </button>
-            <div class="sp-faq-ans">
+            <div class="sp-faq-ans" data-i18n="water-testing.if_your_cto_consent_to_operate_specifies">
               If your CTO (Consent to Operate) specifies ZLD conditions, you must maintain exhaustive water-balance
               charts and salt recovery logs. We provide technical auditing to verify that no untreated wastewater is
               leaving the perimeter.
@@ -436,11 +525,14 @@
     <section class="svc-section" id="contact">
       <div class="cta-band reveal">
         <div class="cta-content">
-          <h3 class="cta-band-title">Ready to secure your compliance?</h3>
-          <p class="cta-band-sub">Speak with our technical experts to build your sustainability roadmap.</p>
+          <h3 class="cta-band-title" data-i18n="water-testing.ready_to_secure_your_compliance">Ready to secure your
+            compliance?</h3>
+          <p class="cta-band-sub" data-i18n="water-testing.speak_with_our_technical_experts_to_buil">Speak with our
+            technical experts to build your sustainability roadmap.</p>
         </div>
         <div class="cta-band-btns">
-          <a href="/contact.html" class="btn-wh">Technical Consultation</a>
+          <a href="/contact.html" class="btn-wh" data-i18n="water-testing.technical_consultation">Technical
+            Consultation</a>
         </div>
       </div>
     </section>
@@ -460,6 +552,8 @@
       });
     });
   </script>
+
+
 </body>
 
 </html>

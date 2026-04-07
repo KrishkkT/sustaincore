@@ -365,7 +365,6 @@ h5 {
   align-items: center;
   gap: 6px;
   margin-top: 5rem !important;
-  margin-left: 3rem !important;
 }
 
 .bc a,
@@ -411,8 +410,9 @@ h5 {
 .svc-hero-inner {
   position: relative;
   z-index: 1;
-  max-width: 1260px;
+  max-width: 1152px;
   margin: 0 auto;
+  padding: 0 1.5rem;
   overflow: visible;
 }
 
@@ -443,7 +443,6 @@ h5 {
   letter-spacing: -1.5px;
   margin-bottom: 2rem;
   white-space: nowrap;
-  margin-left: 3rem !important;
   grid-column: 1 / -1;
 }
 
@@ -463,14 +462,12 @@ h5 {
   gap: 4rem;
   align-items: flex-start;
   padding-bottom: 2rem;
-  margin-right: 3rem !important;
 }
 
 .svc-hero-left {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-left: 3rem !important;
 }
 
 .svc-hero-desc {
