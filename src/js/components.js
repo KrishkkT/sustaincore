@@ -103,7 +103,7 @@ export const header = `
     <!-- Hidden native Google Translate element -->
     <div id="google_translate_element" style="display:none !important;"></div>
 
-    <a href="/contact.html" class="px-7 py-2.5 bg-brand-green text-white rounded-full text-[13px] font-bold tracking-wide uppercase hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" data-i18n="navbar.cta">Free Consultation</a>
+    <a href="/contact.html" class="px-5 py-2 bg-brand-green text-white rounded-full text-[12px] font-bold tracking-wide uppercase hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" data-i18n="navbar.cta">Free Consultation</a>
   </div>
 
   <button class="md:hidden text-slate-800 dark:text-white p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors" id="mobile-menu-btn">

@@ -275,26 +275,45 @@
 
 .sp-deliver-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  width: 100%;
 }
 
 .sp-deliver-item {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
+  padding: 1.75rem;
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-weight: 600;
   display: flex;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: all 0.3s ease;
+  height: 100%;
 }
 
-.sp-deliver-item span {
-  width: 10px;
-  height: 10px;
+.sp-deliver-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+}
+
+.sp-deliver-item span:first-child {
+  width: 12px;
+  height: 12px;
   background: var(--sp-green);
   border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  /* Align with first line of text */
+  box-shadow: 0 0 12px rgba(45, 122, 79, 0.4);
+}
+
+.sp-deliver-item span:last-child {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #ffffff;
 }
 
 /* --- Framework Row --- */
@@ -1351,7 +1370,9 @@
     justify-content: flex-start;
   }
 
-  .sp-container { padding: 0 1rem; }
+  .sp-container {
+    padding: 0 1rem;
+  }
 
   .sp-hero {
     padding-top: 8rem;
@@ -1378,11 +1399,13 @@
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
-  
-  .sp-card-grid, .sp-inc-grid, .sp-spec-grid {
+
+  .sp-card-grid,
+  .sp-inc-grid,
+  .sp-spec-grid {
     grid-template-columns: 1fr !important;
   }
-  
+
   .cta-band {
     width: 96% !important;
     padding: 2.5rem 1rem !important;
@@ -1391,45 +1414,79 @@
 
 /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
 @media (min-width: 481px) and (max-width: 768px) {
-  .sp-hero { padding-top: 9rem; text-align: center; }
-  
-  .sp-hero-title { font-size: 2.75rem !important; }
-  
-  .sp-step-flow { grid-template-columns: 1fr 1fr !important; }
-  
-  .sp-card-grid, .sp-inc-grid, .sp-spec-grid {
+  .sp-hero {
+    padding-top: 9rem;
+    text-align: center;
+  }
+
+  .sp-hero-title {
+    font-size: 2.75rem !important;
+  }
+
+  .sp-step-flow {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .sp-card-grid,
+  .sp-inc-grid,
+  .sp-spec-grid {
     grid-template-columns: 1fr !important;
   }
 }
 
 /* --- TABLET LANDSCAPE (769px - 1024px) --- */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .sp-hero-grid { grid-template-columns: 1.2fr 0.8fr; gap: 2rem; }
-  
-  .sp-hero-title { font-size: 3rem !important; }
-  
-  .sp-card-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  
-  .sp-step-flow { grid-template-columns: repeat(2, 1fr) !important; }
+  .sp-hero-grid {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2rem;
+  }
+
+  .sp-hero-title {
+    font-size: 3rem !important;
+  }
+
+  .sp-card-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .sp-step-flow {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  .sp-container { max-width: 1200px; }
-  
-  .sp-hero-title { font-size: 3.5rem !important; }
+  .sp-container {
+    max-width: 1200px;
+  }
+
+  .sp-hero-title {
+    font-size: 3.5rem !important;
+  }
 }
 
 /* --- ULTRA-WIDE SCREENS (1921px+) --- */
 @media (min-width: 1921px) {
-  .sp-container { max-width: 1600px; }
-  
-  .sp-hero-title { font-size: 5rem !important; }
-  
-  .sp-card-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 4rem; }
+  .sp-container {
+    max-width: 1600px;
+  }
+
+  .sp-hero-title {
+    font-size: 5rem !important;
+  }
+
+  .sp-card-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 4rem;
+  }
 }
 
 /* Base Fixes for consistency */
-.sp-hero, .sp-pain, .sp-protocol, .sp-included, .sp-specs, .sp-faq {
+.sp-hero,
+.sp-pain,
+.sp-protocol,
+.sp-included,
+.sp-specs,
+.sp-faq {
   overflow: visible;
 }

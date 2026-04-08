@@ -796,5 +796,91 @@
     "attr_placeholder_tell_us_about_your_project_compliance_ch": "Cuéntanos sobre tu proyecto, desafío de cumplimiento u objetivos de sostenibilidad...",
     "send": "Enviar",
     "256_bit_ssl_encrypted_your_data_is_priva": "Cifrado SSL de 256 bits · Tus datos son privados"
+  },
+  "air-monitoring": {
+    "cems_solutions": "Soluciones CEMS",
+    "stack_monitoring": "Monitoreo de Chimeneas",
+    "ambient_air_quality": "Calidad del Aire Ambiente",
+    "workplace_air_quality": "Calidad del Aire en el Trabajo",
+    "technical_consultation": "Consulta Técnica",
+    "air_monitoring": "Monitoreo del Aire",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "carbon-climate": {
+    "cbam_advisory": "Asesoría CBAM",
+    "ghg_accounting_inventory": "Contabilidad e Inventario de GEI",
+    "pcf_assessment": "Evaluación PCF",
+    "carbon_credits": "Créditos de Carbono",
+    "i_rec_certification": "Certificación I-REC",
+    "technical_consultation": "Consulta Técnica",
+    "carbon_management": "Gestión de Carbono",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "clearances-eia": {
+    "spcb_compliance": "Cumplimiento de SPCB",
+    "environment_clearance_ec": "Autorización Ambiental (EC)",
+    "environmental_impact_assessment_eia": "Evaluación de Impacto Ambiental (EIA)",
+    "technical_consultation": "Consulta Técnica",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "esg-reporting": {
+    "brsr_reporting": "Informes BRSR",
+    "cdp_disclosure": "Divulgación CDP",
+    "gri_reporting": "Informes GRI",
+    "sasb_standards": "Estándares SASB",
+    "tcfd_disclosure": "Divulgación TCFD",
+    "technical_consultation": "Consulta Técnica",
+    "esg_reporting": "Informes ESG",
+    "whats_included": "Qué está incluido",
+    "why_modern_reporting_is_difficult": "¿Por qué es difícil el informe moderno?",
+    "the_sustaincore_protocol": "El Protocolo SustainCore",
+    "what_you_receive": "Lo que recibe",
+    "technical_frameworks": "Marcos Técnicos",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "management-systems": {
+    "iso_14001": "ISO 14001",
+    "iso_45001": "ISO 45001",
+    "iso_50001": "ISO 50001",
+    "technical_consultation": "Consulta Técnica",
+    "environmental_audits": "Auditorías Ambientales",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "water-testing": {
+    "effluent_analysis": "Análisis de Efluentes",
+    "groundwater_analysis": "Análisis de Aguas Subterráneas",
+    "water_audit": "Auditoría de Agua",
+    "water_risk_assessment": "Evaluación de Riesgo Hídrico",
+    "technical_consultation": "Consulta Técnica",
+    "water_testing": "Pruebas de Agua",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
+  },
+  "ratings-targets": {
+    "materiality_assessment": "Evaluación de Materialidad",
+    "ecovadis_strategy": "Estrategia EcoVadis",
+    "environmental_product_declaration_epd": "Declaración Ambiental de Producto (EPD)",
+    "science_based_targets": "Objetivos Basados en la Ciencia",
+    "technical_consultation": "Consulta Técnica",
+    "ratings_targets": "Calificaciones y Objetivos",
+    "whats_included": "Qué está incluido",
+    "the_rating_dilemma": "El dilema de las calificaciones",
+    "the_scoring_protocol": "El Protocolo de Puntuación",
+    "rating_assets": "Activos de Calificación",
+    "benchmarking_frameworks": "Marcos de Referencia",
+    "frequently_asked_questions": "Preguntas Frecuentes",
+    "home": "Inicio",
+    "services": "Servicios"
   }
 }
