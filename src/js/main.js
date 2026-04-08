@@ -21,21 +21,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         translator.translatePage();
     }
 
-    // 3. Theme & Mobile Setup
-    const htmlElement = document.documentElement;
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('sustain-theme') || 'light';
-    if (savedTheme === 'dark') htmlElement.classList.add('dark');
-
-    if (themeToggleBtn) {
-        themeToggleBtn.setAttribute('aria-checked', savedTheme === 'dark');
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = htmlElement.classList.toggle('dark');
-            localStorage.setItem('sustain-theme', isDark ? 'dark' : 'light');
-            themeToggleBtn.setAttribute('aria-checked', isDark);
-        });
-    }
-
+    // 3. Mobile Setup
     const setupMobileMenu = () => {
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu');

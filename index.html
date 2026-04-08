@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script>(function () { const t = localStorage.getItem('sustain-theme') || (window.matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light'); if (t === 'dark') document.documentElement.classList.add('dark'); })();</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="index.sustaincore_enterprise_esg_consulting_en">SustainCore | Enterprise ESG Consulting &amp;
@@ -45,6 +45,25 @@
       transform: translateY(16px);
       animation: slideUpIn 0.8s ease-out forwards;
     }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        margin-top: 25rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content {
+        margin-top: 10rem !important;
+      }
+    }
+
+    @media (max-width: 320px) {
+      .hero-content {
+        margin-top: 6rem !important;
+      }
+    }
+
 
     @keyframes slideUpIn {
       to {
@@ -909,21 +928,20 @@
   </div>
   <!-- Success Modal -->
   <div id="success-modal" class="modal-overlay">
-    <div class="modal-content bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 shadow-2xl">
+    <div class="modal-content bg-white border border-slate-200 shadow-2xl">
       <div class="modal-icon success">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
         </svg>
       </div>
-      <h2 class="modal-title text-brand-charcoal dark:text-white" data-i18n="index.request_received">Request Received
+      <h2 class="modal-title text-brand-charcoal" data-i18n="index.request_received">Request Received
       </h2>
-      <p class="modal-message text-slate-500 dark:text-slate-400"
-        data-i18n="index.thank_you_for_reaching_out_an_esg_consul">
+      <p class="modal-message text-slate-500" data-i18n="index.thank_you_for_reaching_out_an_esg_consul">
         Thank you for reaching out. An ESG consultant from SustainCore will contact you within 24 hours to discuss your
         project.
       </p>
       <button onclick="closeModal()"
-        class="mt-8 px-8 py-3 bg-brand-charcoal text-white dark:bg-[#e2e8f0] dark:text-[#0f172a] rounded-full font-bold uppercase text-xs tracking-widest hover:opacity-90 transition-opacity"
+        class="mt-8 px-8 py-3 bg-brand-charcoal text-white rounded-full font-bold uppercase text-xs tracking-widest hover:opacity-90 transition-opacity"
         data-i18n="index.dismiss">
         Dismiss
       </button>

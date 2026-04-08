@@ -766,122 +766,57 @@
 }
 
 /* --- Dark Mode Overrides (Premium Slate) --- */
-.dark .sp-hero {
-  background: var(--bg);
-}
 
-.dark .sp-hero-title {
-  color: var(--text);
-}
 
-.dark .sp-hero-desc {
-  color: var(--text2);
-}
 
-.dark .sp-pain {
-  background: var(--bg2);
-}
 
-.dark .sp-card {
-  background: var(--bg3);
-  border-color: rgba(255, 255, 255, 0.05);
-}
 
-.dark .sp-card-title {
-  color: var(--text);
-}
 
-.dark .sp-card-icon {
-  background: rgba(255, 255, 255, 0.08);
-  /* subtle contrast */
-  color: #ffffff;
-  /* make icon visible */
-}
 
-.dark .sp-protocol {
-  background: var(--bg);
-}
 
-.dark .sp-step-num {
-  background: var(--bg);
-  border-color: var(--gl);
-  color: var(--gl);
-}
 
-.dark .sp-step-title {
-  color: var(--text);
-}
 
-.dark .sp-step-list li::before {
-  color: var(--gl);
-}
 
-.dark .sp-specs {
-  background: var(--bg);
-}
 
-.dark .sp-spec-card {
-  background: var(--bg2);
-  border-color: rgba(255, 255, 255, 0.1);
-}
 
-.dark .sp-spec-h {
-  color: var(--text);
-}
 
-.dark .sp-spec-label {
-  color: var(--text2);
-}
 
-.dark .sp-spec-item {
-  border-color: rgba(255, 255, 255, 0.1);
-}
 
-.dark .sp-faq {
-  background: var(--bg2);
-}
 
-.dark .sp-faq-item {
-  background: var(--bg3);
-  border-color: rgba(255, 255, 255, 0.05);
-}
 
-.dark .sp-faq-btn {
-  color: var(--text);
-}
 
-.dark .sp-faq-btn:hover {
-  background: rgba(255, 255, 255, 0.02);
-}
 
-.dark .sp-included {
-  background: linear-gradient(to bottom, var(--bg), var(--bg2));
-}
 
-.dark .sp-inc-item {
-  background: var(--bg3);
-  border-color: rgba(255, 255, 255, 0.05);
-}
 
-.dark .sp-inc-text {
-  color: var(--text);
-}
 
-.dark .sp-sub-nav {
-  background: var(--bg2);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
 
-.dark .sp-sub-nav-link:hover {
-  background: var(--bg3);
-  color: var(--text);
-}
 
-.dark .sp-sub-nav-link.active {
-  background: var(--g);
-  color: white;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* --- Detailed Service Cards --- */
 .svc-container {
@@ -1144,69 +1079,35 @@
   }
 }
 
-.dark .svc-card {
-  background: var(--bg2);
-  border-color: rgba(255, 255, 255, 0.05);
-}
 
-.dark .svc-card-title {
-  color: var(--text);
-}
 
-.dark .svc-card-desc {
-  color: var(--text2);
-}
 
-.dark .svc-card-list li {
-  color: var(--text2);
-}
 
-.dark .svc-card-chip {
-  background: rgba(30, 41, 59, 0.8);
-  color: var(--gl);
-}
 
-.dark .svc-card-divider {
-  background: rgba(255, 255, 255, 0.1);
-}
 
-.dark .svc-learn-more {
-  color: var(--gl);
-}
 
-.dark .sp-dropdown {
-  background: var(--bg2);
-  border-color: rgba(255, 255, 255, 0.1);
-}
 
-.dark .sp-dropdown-link:hover {
-  background: var(--bg3);
-  color: var(--text);
-}
 
-.dark .sp-hero {
-  background: var(--bg);
-}
 
-.dark .sp-dropdown-link {
-  color: var(--text2);
-}
 
-.dark .sp-section-t {
-  color: var(--text);
-}
 
-.dark .sp-section-sub {
-  color: var(--text2);
-}
 
-.dark .sp-sub-nav-link {
-  color: var(--text2);
-}
 
-.dark .sp-sub-nav-link:hover {
-  color: var(--g);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ─── CTA BAND (Standardized) ─── */
 .svc-section {
@@ -1237,11 +1138,7 @@
   /* Reset text align for safety */
 }
 
-.dark .cta-band {
-  background: #0a120c;
-  border: 1px solid rgba(74, 124, 89, 0.2);
-  box-shadow: none;
-}
+
 
 .cta-band::before {
   content: '';
@@ -1264,9 +1161,7 @@
   line-height: 1.1;
 }
 
-.dark .cta-band-title {
-  color: #fff;
-}
+
 
 .cta-band-sub {
   font-size: 15px;
@@ -1322,9 +1217,7 @@
   }
 }
 
-.dark .sp-cta-section {
-  background: #060a0f;
-}
+
 
 /* ─── BREADCRUMB ─── */
 .bcc {

@@ -196,29 +196,29 @@ function addProductRow(sectorDefault = 'steel') {
     const cnOpts = getSectorCNOptions(sectorDefault);
 
     const row = document.createElement('div');
-    row.className = 'product-row relative bg-slate-50 dark:bg-slate-800/30 border border-slate-100 dark:border-slate-800 rounded-3xl p-8 animate-slide-up';
+    row.className = 'product-row relative bg-slate-50 border border-slate-100 rounded-3xl p-8 animate-slide-up';
     row.id = `prow-${id}`;
     row.innerHTML = `
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 items-end">
             <div class="space-y-2">
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Sector</label>
-                <select class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.updateCnList(${id}, this.value)">${sectorOpts}</select>
+                <select class="w-full bg-white border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.updateCnList(${id}, this.value)">${sectorOpts}</select>
             </div>
             <div class="space-y-2 lg:col-span-2">
                 <div class="flex justify-between items-center">
                     <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Product / CN Code</label>
                     <div id="def-hint-${id}" class="text-[9px] text-brand-green font-bold"></div>
                 </div>
-                <select id="cn-sel-${id}" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.onCnChange(${id})">${cnOpts}</select>
+                <select id="cn-sel-${id}" class="w-full bg-white border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" onchange="window.onCnChange(${id})">${cnOpts}</select>
             </div>
             <div class="space-y-2">
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Vol (t/yr)</label>
-                <input type="number" id="vol-${id}" value="1000" min="0" class="w-full bg-white dark:bg-slate-900 border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" oninput="window.detailCalc()" />
+                <input type="number" id="vol-${id}" value="1000" min="0" class="w-full bg-white border-none rounded-xl px-4 py-3 text-xs font-medium outline-none" oninput="window.detailCalc()" />
             </div>
             <div class="space-y-2 relative">
                 <button onclick="window.removeRow(${id})" class="absolute -top-6 right-0 text-red-500 hover:text-red-600 text-xs font-bold transition-colors" title="Remove row">✕ Remove</button>
                 <label class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Actual EF</label>
-                <input type="number" id="aef-${id}" step="0.001" placeholder="Verified" class="w-full bg-emerald-50/50 dark:bg-emerald-900/5 border border-emerald-100 dark:border-emerald-900/20 rounded-xl px-4 py-3 text-xs font-bold text-emerald-600 dark:text-emerald-400 outline-none" oninput="window.detailCalc()" />
+                <input type="number" id="aef-${id}" step="0.001" placeholder="Verified" class="w-full bg-emerald-50/50 border border-emerald-100 rounded-xl px-4 py-3 text-xs font-bold text-emerald-600 outline-none" oninput="window.detailCalc()" />
             </div>
         </div>
     `;
@@ -325,12 +325,12 @@ function detailCalc() {
         }
 
         tableHtml += `
-            <tr class="border-b border-slate-100 dark:border-slate-800/50 hover:bg-white dark:hover:bg-slate-800/50 transition-colors text-[10px]">
+            <tr class="border-b border-slate-100 hover:bg-white transition-colors text-[10px]">
                 <td class="py-4 px-4 font-bold max-w-[150px] truncate" title="${cnFull}">${shortName}</td>
                 <td class="py-4 px-2 text-slate-500 font-medium">${fv(vol)}</td>
                 <td class="py-4 px-2 text-red-500 font-bold">${ft(defEf, 3)}</td>
                 <td class="py-4 px-2 font-bold ${actEf !== null ? 'text-emerald-500' : 'text-slate-400'}">${actEf !== null ? ft(actEf, 3) : 'Default'}</td>
-                <td class="py-4 px-2 text-slate-700 dark:text-white font-bold text-red-400">${fe(costDef)}</td>
+                <td class="py-4 px-2 text-slate-700 font-bold text-red-400">${fe(costDef)}</td>
                 <td class="py-4 px-2 text-emerald-500 font-bold">${fe(costAct)}</td>
                 <td class="py-4 px-4 font-black ${savingClass}">${savingText}</td>
             </tr>

@@ -1,6 +1,6 @@
 export default {
     mode: 'jit',
-    darkMode: 'class',
+    darkMode: false,
     content: [
         "./*.html",
         "./files/*.html",
