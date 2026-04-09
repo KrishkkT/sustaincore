@@ -49,18 +49,23 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
-    html,
+    section {
+      width: 100%;
+      overflow-x: clip !important;
+    }
+
     body {
       background: var(--white);
       color: var(--text);
       font-family: var(--sans);
       font-weight: 300;
       line-height: 1.7;
-      overflow-x: hidden !important;
       position: relative;
       width: 100%;
+      margin: 0;
     }
 
     /* Removed legacy Nav CSS - now powered by main.js and global components */
@@ -1057,401 +1062,403 @@
 
   <div id="header-root"></div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-breadcrumb">
-        <a href="/about.html" data-i18n="partners.about">About</a>
-        <span class="hero-breadcrumb-sep">/</span>
-        <span class="hero-breadcrumb-cur" data-i18n="partners.partners">Partners</span>
-      </div>
-      <div class="hero-eyebrow reveal" data-i18n="partners.partnership_programme">Partnership Programme</div>
-      <h1 class="hero-headline reveal d1"><span data-i18n="partners.building_a_network">Building a
-          network</span><br><span data-i18n="partners.for">for</span> <em
-          data-i18n="partners.credible">credible</em><br><span
-          data-i18n="partners.sustainability">sustainability.</span></h1>
-      <p class="hero-body reveal d2" data-i18n="partners.sustaincore_is_actively_seeking_partners">
-        SustainCore is actively seeking partnerships with organisations that share
-        our commitment to evidence-based, science-led sustainability action.
-        If that sounds like your organisation — let's talk.
-      </p>
-      <a href="#express-interest" class="btn-light reveal d3" data-i18n="partners.express_interest_">Express Interest
-        →</a>
-    </div>
-    <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&amp;q=85"
-        alt="Partnership collaboration" data-i18n-attr="alt:partners.attr_alt_partnership_collaboration">
-      <div class="hero-right-overlay"></div>
-      <div class="hero-badge">
-        <div class="hero-badge-icon"></div>
-        <div class="hero-badge-text"><span data-i18n="partners.open_for">Open for</span><br><span
-            data-i18n="partners.partnerships">Partnerships</span></div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY PARTNER STRIP -->
-  <div class="why-strip">
-    <div class="why-strip-inner">
-      <div class="why-stat reveal">
-        <div class="why-stat-num">7</div>
-        <div class="why-stat-label" data-i18n="partners.service_verticals">Service Verticals</div>
-        <div class="why-stat-body" data-i18n="partners.from_esg_reporting_to_environmental_clea">From ESG reporting to
-          environmental clearances — a wide surface area for meaningful
-          collaboration.</div>
-      </div>
-      <div class="why-stat reveal d1">
-        <div class="why-stat-num" data-i18n="partners.15">15+</div>
-        <div class="why-stat-label" data-i18n="partners.esg_frameworks">ESG Frameworks</div>
-        <div class="why-stat-body" data-i18n="partners.deep_fluency_across_global_and_india_spe">Deep fluency across
-          global and India-specific standards, creating natural alignment
-          with certifying bodies and platforms.</div>
-      </div>
-      <div class="why-stat reveal d2">
-        <div class="why-stat-num">∞</div>
-        <div class="why-stat-label" data-i18n="partners.open_to_ideas">Open to Ideas</div>
-        <div class="why-stat-body" data-i18n="partners.we_dont_limit_partnership_to_predefined_">We don't limit
-          partnership to predefined categories. If you see an opportunity to
-          advance sustainability together, we want to hear it.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PARTNERSHIP TYPES -->
-  <section class="section-wrap types-section">
-    <div class="inner">
-      <div class="types-intro">
-        <div class="reveal-left">
-          <div class="label" data-i18n="partners.who_we_partner_with">Who We Partner With</div>
-          <h2 class="heading"><span data-i18n="partners.four_kinds_of_partners">Four kinds of partners</span><br><span
-              data-i18n="partners.were">we're</span> <em data-i18n="partners.actively_seeking">actively seeking.</em>
-          </h2>
+  <main style="position: relative;">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-breadcrumb">
+          <a href="/about.html" data-i18n="partners.about">About</a>
+          <span class="hero-breadcrumb-sep">/</span>
+          <span class="hero-breadcrumb-cur" data-i18n="partners.partners">Partners</span>
         </div>
-        <div class="reveal-right">
-          <p class="types-body-right" data-i18n="partners.we_believe_sustainability_advances_faste">
-            We believe sustainability advances fastest when the right organisations
-            work together. We are building a partner ecosystem that spans industry,
-            technology, academia, and certification — united by one standard: credibility.
+        <div class="hero-eyebrow reveal" data-i18n="partners.partnership_programme">Partnership Programme</div>
+        <h1 class="hero-headline reveal d1"><span data-i18n="partners.building_a_network">Building a
+            network</span><br><span data-i18n="partners.for">for</span> <em
+            data-i18n="partners.credible">credible</em><br><span
+            data-i18n="partners.sustainability">sustainability.</span></h1>
+        <p class="hero-body reveal d2" data-i18n="partners.sustaincore_is_actively_seeking_partners">
+          SustainCore is actively seeking partnerships with organisations that share
+          our commitment to evidence-based, science-led sustainability action.
+          If that sounds like your organisation — let's talk.
+        </p>
+        <a href="#express-interest" class="btn-light reveal d3" data-i18n="partners.express_interest_">Express Interest
+          →</a>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&amp;q=85"
+          alt="Partnership collaboration" data-i18n-attr="alt:partners.attr_alt_partnership_collaboration">
+        <div class="hero-right-overlay"></div>
+        <div class="hero-badge">
+          <div class="hero-badge-icon"></div>
+          <div class="hero-badge-text"><span data-i18n="partners.open_for">Open for</span><br><span
+              data-i18n="partners.partnerships">Partnerships</span></div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY PARTNER STRIP -->
+    <div class="why-strip">
+      <div class="why-strip-inner">
+        <div class="why-stat reveal">
+          <div class="why-stat-num">7</div>
+          <div class="why-stat-label" data-i18n="partners.service_verticals">Service Verticals</div>
+          <div class="why-stat-body" data-i18n="partners.from_esg_reporting_to_environmental_clea">From ESG reporting to
+            environmental clearances — a wide surface area for meaningful
+            collaboration.</div>
+        </div>
+        <div class="why-stat reveal d1">
+          <div class="why-stat-num" data-i18n="partners.15">15+</div>
+          <div class="why-stat-label" data-i18n="partners.esg_frameworks">ESG Frameworks</div>
+          <div class="why-stat-body" data-i18n="partners.deep_fluency_across_global_and_india_spe">Deep fluency across
+            global and India-specific standards, creating natural alignment
+            with certifying bodies and platforms.</div>
+        </div>
+        <div class="why-stat reveal d2">
+          <div class="why-stat-num">∞</div>
+          <div class="why-stat-label" data-i18n="partners.open_to_ideas">Open to Ideas</div>
+          <div class="why-stat-body" data-i18n="partners.we_dont_limit_partnership_to_predefined_">We don't limit
+            partnership to predefined categories. If you see an opportunity to
+            advance sustainability together, we want to hear it.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNERSHIP TYPES -->
+    <section class="section-wrap types-section">
+      <div class="inner">
+        <div class="types-intro">
+          <div class="reveal-left">
+            <div class="label" data-i18n="partners.who_we_partner_with">Who We Partner With</div>
+            <h2 class="heading"><span data-i18n="partners.four_kinds_of_partners">Four kinds of partners</span><br><span
+                data-i18n="partners.were">we're</span> <em data-i18n="partners.actively_seeking">actively seeking.</em>
+            </h2>
+          </div>
+          <div class="reveal-right">
+            <p class="types-body-right" data-i18n="partners.we_believe_sustainability_advances_faste">
+              We believe sustainability advances fastest when the right organisations
+              work together. We are building a partner ecosystem that spans industry,
+              technology, academia, and certification — united by one standard: credibility.
+            </p>
+          </div>
+        </div>
+
+        <div class="types-grid">
+
+          <!-- Industry & Trade Bodies -->
+          <div class="type-card reveal d1">
+            <div class="type-watermark" data-i18n="partners.01">01</div>
+            <div class="type-icon">
+              <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="8" width="22" height="16" rx="1.5"></rect>
+                <path d="M8 8V6a5 5 0 0 1 10 0v2"></path>
+                <line x1="13" y1="13" x2="13" y2="19"></line>
+                <line x1="10" y1="16" x2="16" y2="16"></line>
+              </svg>
+            </div>
+            <div class="type-title" data-i18n="partners.industry_trade_bodies">Industry &amp; Trade Bodies</div>
+            <div class="type-body" data-i18n="partners.national_and_sectoral_associations_whose">
+              National and sectoral associations whose members face ESG compliance
+              requirements. We can support member education, framework guidance,
+              and policy-aligned sustainability programming.
+            </div>
+          </div>
+
+          <!-- Certification & Standards -->
+          <div class="type-card reveal d2">
+            <div class="type-watermark" data-i18n="partners.02">02</div>
+            <div class="type-icon">
+              <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="13" cy="13" r="10"></circle>
+                <polyline points="9 13 12 16 17 10"></polyline>
+              </svg>
+            </div>
+            <div class="type-title" data-i18n="partners.certification_standards_agencies">Certification &amp; Standards
+              Agencies</div>
+            <div class="type-body" data-i18n="partners.bodies_that_issue_environmental_certific">
+              Bodies that issue environmental certifications and standards. We can
+              serve as an implementation and advisory partner, helping enterprises
+              prepare for and achieve certification under your standards.
+            </div>
+          </div>
+
+          <!-- Technology Platforms -->
+          <div class="type-card reveal d1">
+            <div class="type-watermark" data-i18n="partners.03">03</div>
+            <div class="type-icon">
+              <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="22" height="15" rx="1.5"></rect>
+                <line x1="8" y1="23" x2="18" y2="23"></line>
+                <line x1="13" y1="18" x2="13" y2="23"></line>
+                <path d="M7 10 L10 13 L13 9 L16 12 L19 8"></path>
+              </svg>
+            </div>
+            <div class="type-title" data-i18n="partners.technology_software_platforms">Technology &amp; Software Platforms
+            </div>
+            <div class="type-body" data-i18n="partners.esg_data_tools_carbon_tracking_software_">
+              ESG data tools, carbon tracking software, and environmental reporting
+              platforms. We can co-develop workflows, refer clients, and provide
+              the consulting layer that turns data into action.
+            </div>
+          </div>
+
+          <!-- Academic & Research -->
+          <div class="type-card reveal d2">
+            <div class="type-watermark" data-i18n="partners.04">04</div>
+            <div class="type-icon">
+              <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 9 L13 4 L24 9 L13 14 Z"></path>
+                <path d="M6 11.5 V18 Q13 22 20 18 V11.5"></path>
+                <line x1="24" y1="9" x2="24" y2="16"></line>
+              </svg>
+            </div>
+            <div class="type-title" data-i18n="partners.academic_research_institutions">Academic &amp; Research
+              Institutions</div>
+            <div class="type-body" data-i18n="partners.universities_research_centres_and_think_">
+              Universities, research centres, and think tanks working on sustainability,
+              climate science, or environmental policy. We welcome collaboration on
+              applied research, training programmes, and knowledge exchange.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Open category -->
+        <div
+          style="margin-top: 2px; background: var(--navy); padding: 3rem 3.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;"
+          class="reveal">
+          <div>
+            <div
+              style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--forest-light); margin-bottom: 0.6rem;"
+              data-i18n="partners.open_category">
+              Open Category</div>
+            <div
+              style="font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--beige); line-height: 1.3;">
+              <span data-i18n="partners.dont_fit_neatly_into_any_of_the_above">Don't fit neatly into any of the
+                above?</span><br><em style="color: var(--forest-light);"
+                data-i18n="partners.neither_did_some_of_the_best_ideas">Neither did some of the
+                best ideas.</em></div>
+          </div>
+          <a href="#express-interest"
+            style="display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 1rem 2.2rem; background: var(--forest); color: var(--white); text-decoration: none; flex-shrink: 0; transition: background 0.25s;"
+            data-i18n="partners.tell_us_your_idea_">
+            Tell us your idea →
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section-wrap process-section">
+      <div class="inner">
+        <div class="label reveal" data-i18n="partners.how_it_works">How It Works</div>
+        <h2 class="heading reveal d1"><span data-i18n="partners.from_first_conversation">From first
+            conversation</span><br><span data-i18n="partners.to">to</span> <em
+            data-i18n="partners.active_collaboration">active collaboration.</em></h2>
+        <div class="process-grid">
+          <div class="process-step reveal d1">
+            <div class="process-arrow">→</div>
+            <div class="process-num" data-i18n="partners.01">01</div>
+            <div class="process-title" data-i18n="partners.express_interest">Express Interest</div>
+            <div class="process-body" data-i18n="partners.fill_in_the_short_form_below_with_your_o">Fill in the short form
+              below with your organisation details and what kind of
+              collaboration you have in mind. No commitment required at this stage.</div>
+          </div>
+          <div class="process-step reveal d2">
+            <div class="process-arrow">→</div>
+            <div class="process-num" data-i18n="partners.02">02</div>
+            <div class="process-title" data-i18n="partners.introductory_call">Introductory Call</div>
+            <div class="process-body" data-i18n="partners.well_follow_up_within_3_business_days_to">We'll follow up within
+              3 business days to schedule a short exploratory call. We'll
+              listen first, ask questions, and see where the genuine overlap lies.</div>
+          </div>
+          <div class="process-step reveal d3">
+            <div class="process-arrow">→</div>
+            <div class="process-num" data-i18n="partners.03">03</div>
+            <div class="process-title" data-i18n="partners.scope_the_collaboration">Scope the Collaboration</div>
+            <div class="process-body" data-i18n="partners.together_we_define_what_a_partnership_lo">Together we define
+              what a partnership looks like — whether that's a referral
+              arrangement, co-delivery, joint research, or something we design from scratch.</div>
+          </div>
+          <div class="process-step reveal d4">
+            <div class="process-num" data-i18n="partners.04">04</div>
+            <div class="process-title" data-i18n="partners.partner_grow">Partner &amp; Grow</div>
+            <div class="process-body" data-i18n="partners.we_formalise_the_arrangement_and_get_to_">We formalise the
+              arrangement and get to work. We measure what we're achieving
+              together, and we evolve the partnership as both organisations grow.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section-wrap benefits-section">
+      <div class="inner">
+        <div class="label reveal" data-i18n="partners.what_you_get">What You Get</div>
+        <h2 class="heading reveal d1"><span data-i18n="partners.what_sustaincore">What SustainCore</span><br><em
+            data-i18n="partners.brings_to_the_table">brings to the table.</em></h2>
+        <div class="benefits-grid">
+          <div class="benefit-card reveal d1">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 6v6l4 2"></path>
+              </svg>
+            </div>
+            <div class="benefit-title" data-i18n="partners.deep_domain_expertise">Deep Domain Expertise</div>
+            <div class="benefit-body" data-i18n="partners.access_to_a_team_that_lives_and_breathes">Access to a team that
+              lives and breathes India's ESG regulatory landscape — BRSR,
+              SPCB, MoEFCC, EPR, carbon frameworks and more. We know the detail that matters.</div>
+          </div>
+          <div class="benefit-card reveal d2">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="benefit-title" data-i18n="partners.a_growing_client_network">A Growing Client Network</div>
+            <div class="benefit-body" data-i18n="partners.we_are_building_relationships_with_enter">We are building
+              relationships with enterprises across manufacturing, FMCG,
+              infrastructure, and financial services — all actively navigating sustainability requirements.</div>
+          </div>
+          <div class="benefit-card reveal d3">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <div class="benefit-title" data-i18n="partners.science_led_credibility">Science-Led Credibility</div>
+            <div class="benefit-body" data-i18n="partners.we_anchor_everything_in_verifiable_metho">We anchor everything
+              in verifiable methodology and regulatory fact. Partnering with
+              SustainCore means your name sits alongside advice that holds up under scrutiny.</div>
+          </div>
+          <div class="benefit-card reveal d1">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="benefit-title" data-i18n="partners.integrity_as_a_foundation">Integrity as a Foundation</div>
+            <div class="benefit-body" data-i18n="partners.we_only_enter_partnerships_we_genuinely_">We only enter
+              partnerships we genuinely believe add value to clients and to the
+              sustainability mission. Your reputation is as important to us as our own.</div>
+          </div>
+          <div class="benefit-card reveal d2">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="benefit-title" data-i18n="partners.co_marketing_opportunities">Co-Marketing Opportunities</div>
+            <div class="benefit-body" data-i18n="partners.joint_thought_leadership_newsletters_and">Joint thought
+              leadership, newsletters, and content. We actively promote our
+              partners' work to our growing network of sustainability professionals and enterprise clients.</div>
+          </div>
+          <div class="benefit-card reveal d3">
+            <div class="benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                <path d="M4.93 4.93a10 10 0 0 0 0 14.14"></path>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                <path d="M8.46 8.46a5 5 0 0 0 0 7.07"></path>
+              </svg>
+            </div>
+            <div class="benefit-title" data-i18n="partners.flexibility_in_structure">Flexibility in Structure</div>
+            <div class="benefit-body" data-i18n="partners.we_dont_have_a_rigid_partnership_templat">We don't have a rigid
+              partnership template. Whether you want a formal MoU, a
+              referral arrangement, or a project-by-project collaboration — we'll design it around what works for both
+              sides.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPRESS INTEREST FORM -->
+    <section class="open-call" id="express-interest">
+      <div class="open-call-inner">
+        <div>
+          <div class="label on-dark reveal" data-i18n="partners.express_your_interest">Express Your Interest</div>
+          <h2 class="heading light reveal d1"><span data-i18n="partners.lets_explore_whats">Let's explore
+              what's</span><br><em data-i18n="partners.possible_together">possible together.</em>
+          </h2>
+          <p class="body-text light reveal d2" style="max-width: 420px; margin-top: 0.5rem;"
+            data-i18n="partners.tell_us_a_little_about_your_organisation">
+            Tell us a little about your organisation and what collaboration might look like.
+            There's no commitment at this stage — just a conversation.
+            We'll follow up personally within 3 business days.
           </p>
         </div>
-      </div>
 
-      <div class="types-grid">
-
-        <!-- Industry & Trade Bodies -->
-        <div class="type-card reveal d1">
-          <div class="type-watermark" data-i18n="partners.01">01</div>
-          <div class="type-icon">
-            <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="8" width="22" height="16" rx="1.5"></rect>
-              <path d="M8 8V6a5 5 0 0 1 10 0v2"></path>
-              <line x1="13" y1="13" x2="13" y2="19"></line>
-              <line x1="10" y1="16" x2="16" y2="16"></line>
-            </svg>
-          </div>
-          <div class="type-title" data-i18n="partners.industry_trade_bodies">Industry &amp; Trade Bodies</div>
-          <div class="type-body" data-i18n="partners.national_and_sectoral_associations_whose">
-            National and sectoral associations whose members face ESG compliance
-            requirements. We can support member education, framework guidance,
-            and policy-aligned sustainability programming.
-          </div>
-        </div>
-
-        <!-- Certification & Standards -->
-        <div class="type-card reveal d2">
-          <div class="type-watermark" data-i18n="partners.02">02</div>
-          <div class="type-icon">
-            <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="13" cy="13" r="10"></circle>
-              <polyline points="9 13 12 16 17 10"></polyline>
-            </svg>
-          </div>
-          <div class="type-title" data-i18n="partners.certification_standards_agencies">Certification &amp; Standards
-            Agencies</div>
-          <div class="type-body" data-i18n="partners.bodies_that_issue_environmental_certific">
-            Bodies that issue environmental certifications and standards. We can
-            serve as an implementation and advisory partner, helping enterprises
-            prepare for and achieve certification under your standards.
-          </div>
-        </div>
-
-        <!-- Technology Platforms -->
-        <div class="type-card reveal d1">
-          <div class="type-watermark" data-i18n="partners.03">03</div>
-          <div class="type-icon">
-            <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="3" width="22" height="15" rx="1.5"></rect>
-              <line x1="8" y1="23" x2="18" y2="23"></line>
-              <line x1="13" y1="18" x2="13" y2="23"></line>
-              <path d="M7 10 L10 13 L13 9 L16 12 L19 8"></path>
-            </svg>
-          </div>
-          <div class="type-title" data-i18n="partners.technology_software_platforms">Technology &amp; Software Platforms
-          </div>
-          <div class="type-body" data-i18n="partners.esg_data_tools_carbon_tracking_software_">
-            ESG data tools, carbon tracking software, and environmental reporting
-            platforms. We can co-develop workflows, refer clients, and provide
-            the consulting layer that turns data into action.
-          </div>
-        </div>
-
-        <!-- Academic & Research -->
-        <div class="type-card reveal d2">
-          <div class="type-watermark" data-i18n="partners.04">04</div>
-          <div class="type-icon">
-            <svg viewBox="0 0 26 26" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2 9 L13 4 L24 9 L13 14 Z"></path>
-              <path d="M6 11.5 V18 Q13 22 20 18 V11.5"></path>
-              <line x1="24" y1="9" x2="24" y2="16"></line>
-            </svg>
-          </div>
-          <div class="type-title" data-i18n="partners.academic_research_institutions">Academic &amp; Research
-            Institutions</div>
-          <div class="type-body" data-i18n="partners.universities_research_centres_and_think_">
-            Universities, research centres, and think tanks working on sustainability,
-            climate science, or environmental policy. We welcome collaboration on
-            applied research, training programmes, and knowledge exchange.
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Open category -->
-      <div
-        style="margin-top: 2px; background: var(--navy); padding: 3rem 3.5rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;"
-        class="reveal">
-        <div>
-          <div
-            style="font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--forest-light); margin-bottom: 0.6rem;"
-            data-i18n="partners.open_category">
-            Open Category</div>
-          <div
-            style="font-family: var(--serif); font-size: 1.5rem; font-weight: 300; color: var(--beige); line-height: 1.3;">
-            <span data-i18n="partners.dont_fit_neatly_into_any_of_the_above">Don't fit neatly into any of the
-              above?</span><br><em style="color: var(--forest-light);"
-              data-i18n="partners.neither_did_some_of_the_best_ideas">Neither did some of the
-              best ideas.</em></div>
-        </div>
-        <a href="#express-interest"
-          style="display: inline-flex; align-items: center; gap: 0.7rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 1rem 2.2rem; background: var(--forest); color: var(--white); text-decoration: none; flex-shrink: 0; transition: background 0.25s;"
-          data-i18n="partners.tell_us_your_idea_">
-          Tell us your idea →
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section-wrap process-section">
-    <div class="inner">
-      <div class="label reveal" data-i18n="partners.how_it_works">How It Works</div>
-      <h2 class="heading reveal d1"><span data-i18n="partners.from_first_conversation">From first
-          conversation</span><br><span data-i18n="partners.to">to</span> <em
-          data-i18n="partners.active_collaboration">active collaboration.</em></h2>
-      <div class="process-grid">
-        <div class="process-step reveal d1">
-          <div class="process-arrow">→</div>
-          <div class="process-num" data-i18n="partners.01">01</div>
-          <div class="process-title" data-i18n="partners.express_interest">Express Interest</div>
-          <div class="process-body" data-i18n="partners.fill_in_the_short_form_below_with_your_o">Fill in the short form
-            below with your organisation details and what kind of
-            collaboration you have in mind. No commitment required at this stage.</div>
-        </div>
-        <div class="process-step reveal d2">
-          <div class="process-arrow">→</div>
-          <div class="process-num" data-i18n="partners.02">02</div>
-          <div class="process-title" data-i18n="partners.introductory_call">Introductory Call</div>
-          <div class="process-body" data-i18n="partners.well_follow_up_within_3_business_days_to">We'll follow up within
-            3 business days to schedule a short exploratory call. We'll
-            listen first, ask questions, and see where the genuine overlap lies.</div>
-        </div>
-        <div class="process-step reveal d3">
-          <div class="process-arrow">→</div>
-          <div class="process-num" data-i18n="partners.03">03</div>
-          <div class="process-title" data-i18n="partners.scope_the_collaboration">Scope the Collaboration</div>
-          <div class="process-body" data-i18n="partners.together_we_define_what_a_partnership_lo">Together we define
-            what a partnership looks like — whether that's a referral
-            arrangement, co-delivery, joint research, or something we design from scratch.</div>
-        </div>
-        <div class="process-step reveal d4">
-          <div class="process-num" data-i18n="partners.04">04</div>
-          <div class="process-title" data-i18n="partners.partner_grow">Partner &amp; Grow</div>
-          <div class="process-body" data-i18n="partners.we_formalise_the_arrangement_and_get_to_">We formalise the
-            arrangement and get to work. We measure what we're achieving
-            together, and we evolve the partnership as both organisations grow.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHAT YOU GET -->
-  <section class="section-wrap benefits-section">
-    <div class="inner">
-      <div class="label reveal" data-i18n="partners.what_you_get">What You Get</div>
-      <h2 class="heading reveal d1"><span data-i18n="partners.what_sustaincore">What SustainCore</span><br><em
-          data-i18n="partners.brings_to_the_table">brings to the table.</em></h2>
-      <div class="benefits-grid">
-        <div class="benefit-card reveal d1">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M12 6v6l4 2"></path>
-            </svg>
-          </div>
-          <div class="benefit-title" data-i18n="partners.deep_domain_expertise">Deep Domain Expertise</div>
-          <div class="benefit-body" data-i18n="partners.access_to_a_team_that_lives_and_breathes">Access to a team that
-            lives and breathes India's ESG regulatory landscape — BRSR,
-            SPCB, MoEFCC, EPR, carbon frameworks and more. We know the detail that matters.</div>
-        </div>
-        <div class="benefit-card reveal d2">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <div class="benefit-title" data-i18n="partners.a_growing_client_network">A Growing Client Network</div>
-          <div class="benefit-body" data-i18n="partners.we_are_building_relationships_with_enter">We are building
-            relationships with enterprises across manufacturing, FMCG,
-            infrastructure, and financial services — all actively navigating sustainability requirements.</div>
-        </div>
-        <div class="benefit-card reveal d3">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-            </svg>
-          </div>
-          <div class="benefit-title" data-i18n="partners.science_led_credibility">Science-Led Credibility</div>
-          <div class="benefit-body" data-i18n="partners.we_anchor_everything_in_verifiable_metho">We anchor everything
-            in verifiable methodology and regulatory fact. Partnering with
-            SustainCore means your name sits alongside advice that holds up under scrutiny.</div>
-        </div>
-        <div class="benefit-card reveal d1">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-          </div>
-          <div class="benefit-title" data-i18n="partners.integrity_as_a_foundation">Integrity as a Foundation</div>
-          <div class="benefit-body" data-i18n="partners.we_only_enter_partnerships_we_genuinely_">We only enter
-            partnerships we genuinely believe add value to clients and to the
-            sustainability mission. Your reputation is as important to us as our own.</div>
-        </div>
-        <div class="benefit-card reveal d2">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="2" y="3" width="20" height="14" rx="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-          </div>
-          <div class="benefit-title" data-i18n="partners.co_marketing_opportunities">Co-Marketing Opportunities</div>
-          <div class="benefit-body" data-i18n="partners.joint_thought_leadership_newsletters_and">Joint thought
-            leadership, newsletters, and content. We actively promote our
-            partners' work to our growing network of sustainability professionals and enterprise clients.</div>
-        </div>
-        <div class="benefit-card reveal d3">
-          <div class="benefit-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#2C5F3F" stroke-width="1.5" stroke-linecap="round"
-              stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
-              <path d="M4.93 4.93a10 10 0 0 0 0 14.14"></path>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-              <path d="M8.46 8.46a5 5 0 0 0 0 7.07"></path>
-            </svg>
-          </div>
-          <div class="benefit-title" data-i18n="partners.flexibility_in_structure">Flexibility in Structure</div>
-          <div class="benefit-body" data-i18n="partners.we_dont_have_a_rigid_partnership_templat">We don't have a rigid
-            partnership template. Whether you want a formal MoU, a
-            referral arrangement, or a project-by-project collaboration — we'll design it around what works for both
-            sides.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPRESS INTEREST FORM -->
-  <section class="open-call" id="express-interest">
-    <div class="open-call-inner">
-      <div>
-        <div class="label on-dark reveal" data-i18n="partners.express_your_interest">Express Your Interest</div>
-        <h2 class="heading light reveal d1"><span data-i18n="partners.lets_explore_whats">Let's explore
-            what's</span><br><em data-i18n="partners.possible_together">possible together.</em>
-        </h2>
-        <p class="body-text light reveal d2" style="max-width: 420px; margin-top: 0.5rem;"
-          data-i18n="partners.tell_us_a_little_about_your_organisation">
-          Tell us a little about your organisation and what collaboration might look like.
-          There's no commitment at this stage — just a conversation.
-          We'll follow up personally within 3 business days.
-        </p>
-      </div>
-
-      <div class="open-call-right reveal-right">
-        <div class="open-call-title" data-i18n="partners.partnership_enquiry">Partnership Enquiry</div>
-        <form class="interest-form" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" data-i18n="partners.your_name">Your Name</label>
-              <input type="text" class="form-input" placeholder="Full name" required=""
-                data-i18n-attr="placeholder:partners.attr_placeholder_full_name">
+        <div class="open-call-right reveal-right">
+          <div class="open-call-title" data-i18n="partners.partnership_enquiry">Partnership Enquiry</div>
+          <form class="interest-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" data-i18n="partners.your_name">Your Name</label>
+                <input type="text" class="form-input" placeholder="Full name" required=""
+                  data-i18n-attr="placeholder:partners.attr_placeholder_full_name">
+              </div>
+              <div class="form-field">
+                <label class="form-label" data-i18n="partners.organisation">Organisation</label>
+                <input type="text" class="form-input" placeholder="Organisation name" required=""
+                  data-i18n-attr="placeholder:partners.attr_placeholder_organisation_name">
+              </div>
             </div>
-            <div class="form-field">
-              <label class="form-label" data-i18n="partners.organisation">Organisation</label>
-              <input type="text" class="form-input" placeholder="Organisation name" required=""
-                data-i18n-attr="placeholder:partners.attr_placeholder_organisation_name">
+            <div class="form-row">
+              <div class="form-field">
+                <label class="form-label" data-i18n="partners.email_address">Email Address</label>
+                <input type="email" class="form-input" placeholder="work@organisation.com" required=""
+                  data-i18n-attr="placeholder:partners.attr_placeholder_workorganisationcom">
+              </div>
+              <div class="form-field">
+                <label class="form-label" data-i18n="partners.organisation_type">Organisation Type</label>
+                <select class="form-select form-input">
+                  <option value="" disabled="" selected="" data-i18n="partners.select_type">Select type</option>
+                  <option data-i18n="partners.industry_trade_body">Industry / Trade Body</option>
+                  <option data-i18n="partners.certification_standards_agency">Certification / Standards Agency</option>
+                  <option data-i18n="partners.technology_software_platform">Technology / Software Platform</option>
+                  <option data-i18n="partners.academic_research_institution">Academic / Research Institution</option>
+                  <option data-i18n="partners.other">Other</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label" data-i18n="partners.email_address">Email Address</label>
-              <input type="email" class="form-input" placeholder="work@organisation.com" required=""
-                data-i18n-attr="placeholder:partners.attr_placeholder_workorganisationcom">
+            <div class="form-field full">
+              <label class="form-label" data-i18n="partners.what_kind_of_collaboration_do_you_have_i">What kind of
+                collaboration do you have in mind?</label>
+              <textarea class="form-textarea"
+                placeholder="Tell us briefly — no need to have all the details figured out yet."
+                data-i18n-attr="placeholder:partners.attr_placeholder_tell_us_briefly_no_need_to_have_all_the_"></textarea>
             </div>
-            <div class="form-field">
-              <label class="form-label" data-i18n="partners.organisation_type">Organisation Type</label>
-              <select class="form-select form-input">
-                <option value="" disabled="" selected="" data-i18n="partners.select_type">Select type</option>
-                <option data-i18n="partners.industry_trade_body">Industry / Trade Body</option>
-                <option data-i18n="partners.certification_standards_agency">Certification / Standards Agency</option>
-                <option data-i18n="partners.technology_software_platform">Technology / Software Platform</option>
-                <option data-i18n="partners.academic_research_institution">Academic / Research Institution</option>
-                <option data-i18n="partners.other">Other</option>
-              </select>
-            </div>
-          </div>
-          <div class="form-field full">
-            <label class="form-label" data-i18n="partners.what_kind_of_collaboration_do_you_have_i">What kind of
-              collaboration do you have in mind?</label>
-            <textarea class="form-textarea"
-              placeholder="Tell us briefly — no need to have all the details figured out yet."
-              data-i18n-attr="placeholder:partners.attr_placeholder_tell_us_briefly_no_need_to_have_all_the_"></textarea>
-          </div>
-          <button type="submit" class="form-submit" data-i18n="partners.express_interest_">Express Interest →</button>
-          <div class="form-note" id="form-success" style="display:none; color: var(--forest-light);"
-            data-i18n="partners._received_well_be_in_touch_within_3_busi">✓ Received. We'll
-            be in touch within 3 business days.</div>
-          <div class="form-note" data-i18n="partners.we_respond_to_every_enquiry_personally_n">We respond to every
-            enquiry personally. No automated replies.</div>
-        </form>
+            <button type="submit" class="form-submit" data-i18n="partners.express_interest_">Express Interest →</button>
+            <div class="form-note" id="form-success" style="display:none; color: var(--forest-light);"
+              data-i18n="partners._received_well_be_in_touch_within_3_busi">✓ Received. We'll
+              be in touch within 3 business days.</div>
+            <div class="form-note" data-i18n="partners.we_respond_to_every_enquiry_personally_n">We respond to every
+              enquiry personally. No automated replies.</div>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EQUAL OPP -->
-  <div class="equal-opp" data-i18n="partners.sustaincore_is_an_equal_opportunity_empl">
-    SustainCore is an equal opportunity employer. We welcome applicants from all backgrounds, experiences, and
-    perspectives.
-  </div>
+    <!-- EQUAL OPP -->
+    <div class="equal-opp" data-i18n="partners.sustaincore_is_an_equal_opportunity_empl">
+      SustainCore is an equal opportunity employer. We welcome applicants from all backgrounds, experiences, and
+      perspectives.
+    </div>
+  </main>
 
   <div id="footer-root"></div>
 
