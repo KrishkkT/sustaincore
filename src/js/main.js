@@ -26,8 +26,25 @@ document.addEventListener('DOMContentLoaded', async () => {
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.remove('translate-x-full'));
-        if (closeBtn && mobileMenu) closeBtn.addEventListener('click', () => mobileMenu.classList.add('translate-x-full'));
+        const servicesToggle = document.getElementById('mobile-services-toggle');
+        const servicesList = document.getElementById('mobile-services-list');
+
+        if (menuBtn && mobileMenu) menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        });
+        
+        if (closeBtn && mobileMenu) closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            document.body.style.overflow = ''; // Restore scroll
+        });
+
+        if (servicesToggle && servicesList) {
+            servicesToggle.addEventListener('click', () => {
+                const isHidden = servicesList.classList.toggle('hidden');
+                servicesToggle.querySelector('svg').classList.toggle('rotate-180', !isHidden);
+            });
+        }
     };
     setupMobileMenu();
 
@@ -99,23 +116,61 @@ function setupUnifiedUI() {
         const trigger = opts.trigger || container.querySelector('a, button');
         let timer = null;
 
+        // Desktop Hover
         container.addEventListener('mouseenter', () => {
-            clearTimeout(timer);
-            container.classList.add(openClass);
+            if (window.innerWidth >= 1024) {
+                clearTimeout(timer);
+                container.classList.add(openClass);
+            }
         });
         container.addEventListener('mouseleave', () => {
-            timer = setTimeout(() => container.classList.remove(openClass), 150);
+            if (window.innerWidth >= 1024) {
+                timer = setTimeout(() => container.classList.remove(openClass), 150);
+            }
         });
 
+        // Mobile/Tablet Click
         if (trigger) {
             trigger.addEventListener('click', (e) => {
-                if (window.innerWidth < 1024 || trigger.getAttribute('href') === '#') {
+                if (window.innerWidth < 1024) {
+                    const isOpen = container.classList.contains(openClass);
+                    
+                    // Allow navigation if clicking an already open dropdown link
+                    if (trigger.tagName === 'A' && trigger.getAttribute('href') !== '#' && isOpen) {
+                        return; // Let the default navigation happen
+                    }
+                    
                     e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close other open dropdowns in the same nav
+                    const siblings = container.parentElement.querySelectorAll('.' + openClass);
+                    siblings.forEach(s => { if (s !== container) s.classList.remove(openClass); });
+                    
                     container.classList.toggle(openClass);
                 }
             });
         }
     };
+
+    // --- Mobile Flip Cards ---
+    const setupFlipCards = () => {
+        const cards = document.querySelectorAll('.flip-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (window.innerWidth < 1024) {
+                    // If they clicked a link in the back, don't flip back immediately
+                    if (e.target.closest('.flip-btn') || e.target.closest('.svc-learn-more')) return;
+                    
+                    const isFlipped = this.classList.toggle('is-flipped');
+                    
+                    // Close other cards
+                    cards.forEach(c => { if (c !== this) c.classList.remove('is-flipped'); });
+                }
+            });
+        });
+    };
+    setupFlipCards();
 
     document.querySelectorAll('.sp-sub-nav-item, #nav-services-dropdown').forEach(el => setupDropdown(el));
 

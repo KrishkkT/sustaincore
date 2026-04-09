@@ -138,18 +138,18 @@ export const header = `
     <!-- Mobile Language Selector -->
     <div class="mt-6 pt-6 border-t border-slate-100">
       <p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-4 px-2" data-i18n="navbar.mobile_lang_select">Select Language</p>
-      <div class="grid grid-cols-2 gap-2">
-        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-slate-700 text-sm font-medium" data-lang="en" data-flag="🇺🇸">
-          <span>🇺🇸</span> <span data-i18n="navbar.lang_en">English</span>
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+        <button class="lang-switch-btn" data-lang="en" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
+          <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">English</span>
         </button>
-        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-slate-700 text-sm font-medium" data-lang="de" data-flag="🇩🇪">
-          <span>🇩🇪</span> <span data-i18n="navbar.lang_de">German</span>
+        <button class="lang-switch-btn" data-lang="de" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
+          <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">German</span>
         </button>
-        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-slate-700 text-sm font-medium" data-lang="fr" data-flag="🇫🇷">
-          <span>🇫🇷</span> <span data-i18n="navbar.lang_fr">French</span>
+        <button class="lang-switch-btn" data-lang="fr" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
+          <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">French</span>
         </button>
-        <button class="lang-option flex items-center gap-2 px-4 py-3 rounded-xl bg-slate-50 text-slate-700 text-sm font-medium" data-lang="es" data-flag="🇲🇽">
-          <span>🇲🇽</span> <span data-i18n="navbar.lang_es">Spanish</span>
+        <button class="lang-switch-btn" data-lang="es" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
+          <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">Spanish</span>
         </button>
       </div>
     </div>

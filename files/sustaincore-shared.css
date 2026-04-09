@@ -1828,16 +1828,25 @@ h5 {
     flex-direction: column !important;
     align-items: center !important;
     width: 100% !important;
+    padding: 0 1.25rem !important;
   }
 
   .svc-hero-title {
-    font-size: 2rem !important;
+    font-size: 2.25rem !important;
     margin: 0 auto 1.5rem !important;
     white-space: normal !important;
-    line-height: 1.2 !important;
+    line-height: 1.1 !important;
     text-align: center !important;
     display: block !important;
     visibility: visible !important;
+    max-width: 90%;
+  }
+
+  .bc {
+    justify-content: center !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    width: 100%;
   }
 
   .svc-hero-body {
@@ -1873,12 +1882,12 @@ h5 {
   .svc-hero-pills {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
-    gap: 1rem !important;
-    /* More space between pills */
-    width: 100%;
-    margin-top: 1.5rem !important;
-    /* Overrides massive 14rem inline gap */
-    padding: 0 0.5rem;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 1.5rem auto 0 !important;
+    padding: 0 10px !important;
+    justify-content: center !important;
   }
 
   .svc-hero-pill {
@@ -2058,5 +2067,40 @@ h5 {
   .fw-badge {
     font-size: 10px;
     padding: 4px 10px;
+  }
+
+  /* Sub-service page grid fixes */
+  .param-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* General container padding fix for category 6-7 */
+  .svc-hero > div[style*="padding"] {
+    padding: 0 1.25rem !important;
+  }
+
+  .std-row {
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    padding: 0 1rem;
+  }
+
+  .stat-block-v {
+    font-size: 1.75rem !important;
+  }
+
+  .svc-hero-stat-row {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 0.75rem !important;
+    margin-top: 1rem !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .svc-hero-pills {
+    grid-template-columns: 1fr !important;
   }
 }

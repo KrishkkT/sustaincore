@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="esg-reporting.esg_sustainability_reporting_sustaincore">ESG &amp; Sustainability Reporting |
@@ -13,14 +13,21 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap"
     rel="stylesheet">
-  <style>
-    .svc-card-img {
-      object-fit: contain;
-    }
-  </style>
+
 </head>
 
-
+<style>
+  .svc-card-img-wrap-sasb img {
+    max-width: 100%;
+    max-height: 100%;
+    width: 60%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s ease;
+  }
+</style>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
   <div id="header-root"></div>
@@ -183,7 +190,8 @@
               <div class="svc-card-chip" data-i18n="esg-reporting.sebi_mandatory_india">SEBI MANDATORY · INDIA</div>
             </div>
             <div class="svc-card-body">
-              <h3 class="svc-card-title" data-i18n="esg-reporting.business_responsibility_sustainability_reporting_brsr">Business
+              <h3 class="svc-card-title"
+                data-i18n="esg-reporting.business_responsibility_sustainability_reporting_brsr">Business
                 Responsibility &amp; Sustainability Reporting(BRSR)</h3>
               <p class="svc-card-desc" data-i18n="esg-reporting.business_responsibility_sustainability_r">Business
                 Responsibility &amp; Sustainability Reporting is mandatory for India's top
@@ -207,8 +215,8 @@
           <!-- CDP Card -->
           <div class="svc-card" id="cdp">
             <div class="svc-card-img-wrap">
-              <img style="object-fit: contain;" src="/images/esg-cdp.png?fit=contain" alt="CDP Disclosure"
-                class="svc-card-img" data-i18n-attr="alt:esg-reporting.attr_alt_cdp_disclosure">
+              <img src="/images/esg-cdp.png?fit=contain" alt="CDP Disclosure" class="svc-card-img"
+                data-i18n-attr="alt:esg-reporting.attr_alt_cdp_disclosure">
               <div class="svc-card-chip" data-i18n="esg-reporting.global_standard_climate">GLOBAL STANDARD · CLIMATE
               </div>
             </div>
@@ -262,7 +270,7 @@
 
           <!-- SASB Card -->
           <div class="svc-card" id="sasb">
-            <div class="svc-card-img-wrap">
+            <div class="svc-card-img-wrap-sasb">
               <img
                 src="https://imgs.search.brave.com/KHcMVUBQxKlkD1u0DNc0wve5ZtWsdqRN2OY0qW6W3Lg/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvY29tbW9ucy90/aHVtYi85LzkxL1NB/U0JfTG9nb19SR0It/UmVnLXRtLmpwZy81/MTJweC1TQVNCX0xv/Z29fUkdCLVJlZy10/bS5qcGc?fit=contain"
                 alt="SASB Standards" class="svc-card-img" data-i18n-attr="alt:esg-reporting.attr_alt_sasb_standards">

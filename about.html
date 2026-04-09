@@ -1,876 +1,925 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="about.about_us_sustaincore">About Us | SustainCore</title>
-<meta name="description" content="Learn about SustainCore’s mission to help organizations navigate environmental regulations and build future-ready operations with science-based consulting.">
-<meta property="og:title" content="About SustainCore | Enterprise ESG &amp; Environmental Advisory">
-<meta property="og:description" content="Guided by science, integrity, and sustainability, we help organizations build responsible, future-ready operations.">
-<meta property="og:image" content="/favicon.svg">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
-<style>
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  :root {
-    --beige: #fdfaf5;
-    --beige-dark: #f8f5ee;
-    --beige-mid: #eef2f3;
-    --navy: #0D2340;
-    --navy-mid: #1A3A5C;
-    --navy-light: #2E5480;
-    --forest: #2C5F3F;
-    --forest-mid: #3D7A54;
-    --forest-light: #5A9E72;
-    --forest-pale: #E8F2EC;
-    --text: #1A1A1A;
-    --text-mid: #4A4A4A;
-    --serif: 'Outfit', sans-serif;
-    --sans: 'Inter', system-ui, sans-serif;
-    --caps: 'Outfit', sans-serif;
-    --shadow-sm: 0 2px 12px rgba(13, 35, 64, 0.07);
-    --shadow-md: 0 8px 40px rgba(13, 35, 64, 0.12);
-    --shadow-lg: 0 20px 60px rgba(13, 35, 64, 0.15);
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  body {
-    color: var(--text);
-    font-family: var(--sans);
-    font-weight: 300;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* ── HERO ── */
-  .page-hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 0;
-    overflow: hidden;
-    margin-top: 0 !important;
-  }
-
-  .page-hero-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5rem 5vw;
-    background: var(--beige);
-  }
-
-  .page-hero-eyebrow {
-    font-family: var(--sans);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--forest);
-    margin-bottom: 2rem;
-  }
-
-  .page-hero-headline {
-    font-family: var(--serif);
-    font-size: clamp(3rem, 6vw, 5.2rem);
-    font-weight: 400;
-    line-height: 1.05;
-    color: var(--navy);
-    margin-bottom: 2.5rem;
-    letter-spacing: -0.02em;
-  }
-
-  .page-hero-headline em {
-    font-style: italic;
-    color: var(--forest);
-  }
-
-  .page-hero-body {
-    font-family: var(--sans);
-    font-size: 1.15rem;
-    color: var(--text-mid);
-    max-width: 540px;
-    margin-bottom: 3.5rem;
-  }
-
-  .page-hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 1.2rem;
-    font-family: var(--sans);
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--navy);
-    transition: gap 0.3s;
-  }
-
-  .page-hero-cta:hover {
-    gap: 1.8rem;
-  }
-
-  .page-hero-cta-arrow {
-    font-size: 1.2rem;
-  }
-
-  .page-hero-right {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4rem;
-  }
-
-  .page-hero-right img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
-  }
-
-  /* ── STRIP ── */
-  .intro-strip {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4rem 10vw;
-    border-radius: 0 !important;
-    margin-top: -1rem !important;
-    background: var(--navy);
-    color: #fff;
-  }
-
-  .intro-strip-text {
-    font-family: var(--serif);
-    font-size: 1.8rem;
-    font-style: italic;
-    font-weight: 300;
-    max-width: 600px;
-    line-height: 1.4;
-  }
-
-  .intro-strip-divider {
-    width: 1px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 0 4rem;
-  }
-
-  .intro-strip-tag {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--forest-light);
-    line-height: 2;
-  }
-
-  /* ── SECTION CORE ── */
-  .section {
-    padding: 10rem 0;
-  }
-
-  .section-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 5vw;
-  }
-
-  .section-label {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--forest);
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .section-label::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--forest);
-  }
-
-  .section-title {
-    font-family: var(--serif);
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 400;
-    line-height: 1.15;
-    color: var(--navy);
-    margin-bottom: 3rem;
-  }
-
-  .section-title em {
-    font-style: italic;
-    color: var(--forest);
-  }
-
-  .section-body {
-    font-family: var(--sans);
-    font-size: 1rem;
-    color: var(--text-mid);
-    max-width: 600px;
-  }
-
-  /* ── VISION ── */
-  .vision-section {
-    background: var(--beige);
-  }
-
-  .vision-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .vision-image-wrap {
-    position: relative;
-  }
-
-  .vision-image-wrap img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-    filter: contrast(1.02) saturate(0.9);
-  }
-
-  .vision-image-accent {
-    position: absolute;
-    bottom: -2rem;
-    right: -2rem;
-    width: 140px;
-    height: 140px;
-    background: var(--forest-pale);
-    border: 2px solid var(--forest-light);
-    z-index: -1;
-  }
-
-  .vision-image-line {
-    position: absolute;
-    top: -2rem;
-    left: -2rem;
-    width: 60px;
-    height: 60px;
-    border-top: 2px solid var(--navy);
-    border-left: 2px solid var(--navy);
-  }
-
-  .vision-quote {
-    font-family: var(--serif);
-    font-size: 1.35rem;
-    font-style: italic;
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--navy);
-    border-left: 3px solid var(--forest);
-    padding-left: 2rem;
-    margin: 2.5rem 0;
-  }
-
-  /* ── MISSION ── */
-  .mission-section {
-    background: var(--beige-dark);
-  }
-
-  .mission-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-
-  .mission-image-wrap img {
-    width: 100%;
-    aspect-ratio: 4/5;
-    object-fit: cover;
-  }
-
-  /* ── VALUES ── */
-  .values-section {
-    background: var(--navy);
-    margin-left: -10vw;
-    margin-right: -10vw;
-    padding-left: 10vw;
-    padding-right: 10vw;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    margin-top: 0 !important;
-    border-radius: 20px !important;
-  }
-
-  .values-section .section-label {
-    color: var(--forest-light);
-  }
-
-  .values-section .section-label::before {
-    background: var(--forest-light);
-  }
-
-  .values-section .section-title {
-    color: var(--beige);
-  }
-
-  .values-section .section-title em {
-    color: var(--forest-light);
-  }
-
-  .values-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    border: 1px solid rgba(245, 240, 232, 0.08);
-  }
-
-  .value-card {
-    background: var(--navy);
-    padding: 2rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.35s;
-    cursor: default;
-  }
-
-  .value-card:hover {
-    background: var(--navy-mid);
-  }
-
-  .value-title {
-    font-family: var(--serif);
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--beige);
-    margin-bottom: 1.2rem;
-  }
-
-  .value-text {
-    font-family: var(--sans);
-    font-size: 0.95rem;
-    color: rgba(253, 250, 232, 0.65);
-    line-height: 1.6;
-  }
-
-  /* ── REVEALS ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  .reveal-left {
-    opacity: 0;
-    transform: translateX(-32px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .reveal-left.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  .reveal-right {
-    opacity: 0;
-    transform: translateX(32px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-
-  .reveal-right.visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  .d1 {
-    transition-delay: 0.1s;
-  }
-
-  .d2 {
-    transition-delay: 0.2s;
-  }
-
-  .d3 {
-    transition-delay: 0.3s;
-  }
-
-  .d4 {
-    transition-delay: 0.4s;
-  }
-
-  /* ── PURPOSE ── */
-  .purpose-section {
-    background: var(--forest-pale);
-  }
-
-  .purpose-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-
-  .purpose-rotated {
-    font-family: var(--caps);
-    font-size: 0.62rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--forest);
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    white-space: nowrap;
-    border-left: 1px solid var(--forest-mid);
-    padding-left: 1rem;
-  }
-
-  .purpose-content {
-    padding: 5rem 0;
-  }
-
-  .purpose-text {
-    font-family: var(--serif);
-    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
-    font-weight: 300;
-    line-height: 1.6;
-    color: var(--navy);
-  }
-
-  .purpose-text em {
-    font-style: italic;
-    color: var(--forest);
-  }
-
-  .purpose-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    margin-top: 2rem;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--forest);
-    padding: 0.6rem 1.2rem;
-    border: 1px solid var(--forest);
-  }
-
-  .purpose-pill::before {
-    content: '';
-    display: block;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--forest);
-  }
-
-  /*Mission Section*/
-  .mission-big {
-    font-family: var(--serif);
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 300;
-    color: var(--navy);
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-  }
-
-  .mission-big em {
-    font-style: italic;
-    color: var(--forest);
-  }
-
-  .mission-body {
-    font-size: 1rem;
-    color: var(--text-mid);
-    line-height: 1.9;
-  }
-
-
-  /* ── MORE SECTION ── */
-  .more-section {
-    background: var(--white);
-  }
-
-  .more-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    margin-top: 4rem;
-  }
-
-  .more-card {
-    position: relative;
-    height: 450px;
-    overflow: hidden;
-  }
-
-  .more-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s;
-  }
-
-  .more-card:hover img {
-    transform: scale(1.05);
-  }
-
-  .more-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(13, 35, 64, 0.9) 0%, transparent 100%);
-  }
-
-  .more-card-content {
-    position: absolute;
-    bottom: 3rem;
-    left: 3rem;
-    right: 3rem;
-    color: #fff;
-  }
-
-  .more-card-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--forest-light);
-    margin-bottom: 1rem;
-  }
-
-  .more-card-title {
-    font-family: var(--serif);
-    font-size: 2.2rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .more-card-body {
-    font-size: 0.95rem;
-    opacity: 0.7;
-    margin-bottom: 2rem;
-    max-width: 400px;
-  }
-
-  .more-card-link {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 0.5rem;
-    transition: border-color 0.3s;
-  }
-
-  .more-card-link:hover {
-    border-color: #fff;
-  }
-
-  @media (max-width: 1024px) {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="about.about_us_sustaincore">About Us | SustainCore</title>
+  <meta name="description"
+    content="Learn about SustainCore’s mission to help organizations navigate environmental regulations and build future-ready operations with science-based consulting.">
+  <meta property="og:title" content="About SustainCore | Enterprise ESG &amp; Environmental Advisory">
+  <meta property="og:description"
+    content="Guided by science, integrity, and sustainability, we help organizations build responsible, future-ready operations.">
+  <meta property="og:image" content="/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --beige: #fdfaf5;
+      --beige-dark: #f8f5ee;
+      --beige-mid: #eef2f3;
+      --navy: #0D2340;
+      --navy-mid: #1A3A5C;
+      --navy-light: #2E5480;
+      --forest: #2C5F3F;
+      --forest-mid: #3D7A54;
+      --forest-light: #5A9E72;
+      --forest-pale: #E8F2EC;
+      --text: #1A1A1A;
+      --text-mid: #4A4A4A;
+      --serif: 'Outfit', sans-serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --caps: 'Outfit', sans-serif;
+      --shadow-sm: 0 2px 12px rgba(13, 35, 64, 0.07);
+      --shadow-md: 0 8px 40px rgba(13, 35, 64, 0.12);
+      --shadow-lg: 0 20px 60px rgba(13, 35, 64, 0.15);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      color: var(--text);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
     .page-hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-
-    .page-hero-right {
-      order: -1;
-      height: 400px;
-    }
-
-    .vision-grid,
-    .mission-grid,
-    .more-grid {
-      grid-template-columns: 1fr;
-      gap: 4rem;
-    }
-
-    .mission-image-wrap {
-      order: -1;
-    }
-
-    .values-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .intro-strip {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .intro-strip-divider {
-      display: none;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .values-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  /* ── OUR PRESENCE ── */
-  .presence-section {
-    background: var(--beige);
-    padding: 7rem 4rem;
-  }
-
-  .presence-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .presence-header {
-    margin-bottom: 4rem;
-  }
-
-  .presence-header .section-label {
-    margin-bottom: 1rem;
-  }
-
-  .presence-headline {
-    font-family: var(--serif);
-    font-size: clamp(2.2rem, 5vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.1;
-    color: var(--navy);
-    margin-bottom: 1.25rem;
-  }
-
-  .presence-headline em {
-    font-style: italic;
-    color: var(--forest);
-    display: block;
-  }
-
-  .presence-sub {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    max-width: 520px;
-    line-height: 1.85;
-  }
-
-  .presence-cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-  }
-
-  .presence-card {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    min-height: 420px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    cursor: default;
-    margin-top: -1rem;
-  }
-
-  .presence-card img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.7s ease;
-    filter: contrast(1.05) saturate(0.75);
-  }
-
-  .presence-card:hover img {
-    transform: scale(1.04);
-  }
-
-  .presence-card-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top,
-        rgba(5, 12, 20, 0.92) 0%,
-        rgba(5, 12, 20, 0.55) 45%,
-        rgba(5, 12, 20, 0.1) 100%);
-    transition: background 0.4s ease;
-  }
-
-  .presence-card:hover .presence-card-overlay {
-    background: linear-gradient(to top,
-        rgba(13, 35, 64, 0.95) 0%,
-        rgba(44, 95, 63, 0.25) 55%,
-        rgba(5, 12, 20, 0.05) 100%);
-  }
-
-  .presence-card-content {
-    position: relative;
-    z-index: 1;
-    padding: 2.5rem;
-  }
-
-  .presence-card-eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 0.62rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--forest-light);
-    margin-bottom: 1rem;
-  }
-
-  .presence-card-eyebrow::before {
-    content: '—';
-    color: var(--forest-light);
-  }
-
-  .presence-card-city {
-    font-family: var(--serif);
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: #fff;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-
-  .presence-card-body {
-    font-size: 0.84rem;
-    color: rgba(255, 255, 255, 0.68);
-    line-height: 1.75;
-    max-width: 380px;
-    margin-bottom: 1.5rem;
-  }
-
-  .presence-card-contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .presence-card-contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.65rem;
-    font-size: 0.82rem;
-    color: rgba(255, 255, 255, 0.55);
-  }
-
-  .presence-card-contact-item svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-  }
-
-  /* ── RESPONSIVENESS (Advanced Adaptability) ── */
-
-  /* Fluid Typography for About Page */
-  .page-hero-headline { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; }
-  .section-title { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; }
-
-  /* --- SMALL MOBILE (320px - 480px) --- */
-  @media (max-width: 480px) {
-    .page-hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-      padding-top: 80px !important;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 0;
+      overflow: hidden;
+      margin-top: 0 !important;
     }
 
     .page-hero-left {
-      padding: 4rem 1.25rem 3rem !important;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5rem 5vw;
+      background: var(--beige);
+    }
+
+    .page-hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 2rem;
+    }
+
+    .page-hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .page-hero-headline em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .page-hero-body {
+      font-family: var(--sans);
+      font-size: 1.15rem;
+      color: var(--text-mid);
+      max-width: 540px;
+      margin-bottom: 3.5rem;
+    }
+
+    .page-hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--navy);
+      transition: gap 0.3s;
+    }
+
+    .page-hero-cta:hover {
+      gap: 1.8rem;
+    }
+
+    .page-hero-cta-arrow {
+      font-size: 1.2rem;
     }
 
     .page-hero-right {
-      height: 300px !important;
-      padding: 0 !important;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem;
     }
 
+    .page-hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    /* ── STRIP ── */
     .intro-strip {
-      flex-direction: column;
-      text-align: center;
-      padding: 3rem 1.25rem !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 10vw;
+      border-radius: 0 !important;
+      margin-top: -1rem !important;
+      background: var(--navy);
+      color: #fff;
     }
 
-    .intro-strip-divider { display: none; }
+    .intro-strip-text {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-style: italic;
+      font-weight: 300;
+      max-width: 600px;
+      line-height: 1.4;
+    }
 
-    .vision-grid, .mission-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
+    .intro-strip-divider {
+      width: 1px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.15);
+      margin: 0 4rem;
+    }
+
+    .intro-strip-tag {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--forest-light);
+      line-height: 2;
+    }
+
+    /* ── SECTION CORE ── */
+    .section {
+      padding: 10rem 0;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5vw;
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--forest);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--forest);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 3rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .section-body {
+      font-family: var(--sans);
+      font-size: 1rem;
+      color: var(--text-mid);
+      max-width: 600px;
+    }
+
+    /* ── VISION ── */
+    .vision-section {
+      background: var(--beige);
+    }
+
+    .vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .vision-image-wrap {
+      position: relative;
+    }
+
+    .vision-image-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      filter: contrast(1.02) saturate(0.9);
+    }
+
+    .vision-image-accent {
+      position: absolute;
+      bottom: -2rem;
+      right: -2rem;
+      width: 140px;
+      height: 140px;
+      background: var(--forest-pale);
+      border: 2px solid var(--forest-light);
+      z-index: -1;
+    }
+
+    .vision-image-line {
+      position: absolute;
+      top: -2rem;
+      left: -2rem;
+      width: 60px;
+      height: 60px;
+      border-top: 2px solid var(--navy);
+      border-left: 2px solid var(--navy);
+    }
+
+    .vision-quote {
+      font-family: var(--serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--navy);
+      border-left: 3px solid var(--forest);
+      padding-left: 2rem;
+      margin: 2.5rem 0;
+    }
+
+    /* ── MISSION ── */
+    .mission-section {
+      background: var(--beige-dark);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .mission-image-wrap img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+    }
+
+    /* ── VALUES ── */
+    .values-section {
+      background: var(--navy);
+      margin-left: -10vw;
+      margin-right: -10vw;
+      padding-left: 10vw;
+      padding-right: 10vw;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      margin-top: 0 !important;
+      border-radius: 20px !important;
+    }
+
+    .values-section .section-label {
+      color: var(--forest-light);
+    }
+
+    .values-section .section-label::before {
+      background: var(--forest-light);
+    }
+
+    .values-section .section-title {
+      color: var(--beige);
+    }
+
+    .values-section .section-title em {
+      color: var(--forest-light);
     }
 
     .values-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      border: 1px solid rgba(245, 240, 232, 0.08);
+    }
+
+    .value-card {
+      background: var(--navy);
+      padding: 2rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s;
+      cursor: default;
+    }
+
+    .value-card:hover {
+      background: var(--navy-mid);
+    }
+
+    .value-title {
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--beige);
+      margin-bottom: 1.2rem;
+    }
+
+    .value-text {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: rgba(253, 250, 232, 0.65);
+      line-height: 1.6;
+    }
+
+    /* ── REVEALS ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .d1 {
+      transition-delay: 0.1s;
+    }
+
+    .d2 {
+      transition-delay: 0.2s;
+    }
+
+    .d3 {
+      transition-delay: 0.3s;
+    }
+
+    .d4 {
+      transition-delay: 0.4s;
+    }
+
+    /* ── PURPOSE ── */
+    .purpose-section {
+      background: var(--forest-pale);
+    }
+
+    .purpose-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .purpose-rotated {
+      font-family: var(--caps);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--forest);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      white-space: nowrap;
+      border-left: 1px solid var(--forest-mid);
+      padding-left: 1rem;
+    }
+
+    .purpose-content {
+      padding: 5rem 0;
+    }
+
+    .purpose-text {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--navy);
+    }
+
+    .purpose-text em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .purpose-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--forest);
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--forest);
+    }
+
+    .purpose-pill::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--forest);
+    }
+
+    /*Mission Section*/
+    .mission-big {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .mission-big em {
+      font-style: italic;
+      color: var(--forest);
+    }
+
+    .mission-body {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.9;
+    }
+
+
+    /* ── MORE SECTION ── */
+    .more-section {
+      background: var(--white);
     }
 
     .more-grid {
-      grid-template-columns: 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 2rem;
+      margin-top: 4rem;
+    }
+
+    .more-card {
+      position: relative;
+      height: 450px;
+      overflow: hidden;
+    }
+
+    .more-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s;
+    }
+
+    .more-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .more-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13, 35, 64, 0.9) 0%, transparent 100%);
+    }
+
+    .more-card-content {
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      right: 3rem;
+      color: #fff;
+    }
+
+    .more-card-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--forest-light);
+      margin-bottom: 1rem;
+    }
+
+    .more-card-title {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .more-card-body {
+      font-size: 0.95rem;
+      opacity: 0.7;
+      margin-bottom: 2rem;
+      max-width: 400px;
+    }
+
+    .more-card-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 0.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .more-card-link:hover {
+      border-color: #fff;
+    }
+
+    @media (max-width: 1024px) {
+      .page-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .page-hero-right {
+        order: -1;
+        height: 400px;
+      }
+
+      .vision-grid,
+      .mission-grid,
+      .more-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .mission-image-wrap {
+        order: -1;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .intro-strip {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .intro-strip-divider {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── OUR PRESENCE ── */
+    .presence-section {
+      background: var(--beige);
+      padding: 7rem 4rem;
+    }
+
+    .presence-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .presence-header {
+      margin-bottom: 4rem;
+    }
+
+    .presence-header .section-label {
+      margin-bottom: 1rem;
+    }
+
+    .presence-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+
+    .presence-headline em {
+      font-style: italic;
+      color: var(--forest);
+      display: block;
+    }
+
+    .presence-sub {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.85;
     }
 
     .presence-cards {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
     }
 
-    /* Newsletter Box Fix */
-    div.ml-14.mr-14 {
-      margin-left: 1rem !important;
-      margin-right: 1rem !important;
-      padding: 3rem 1.5rem !important;
-      border-radius: 2rem !important;
-      flex-direction: column !important;
-      gap: 2.5rem !important;
+    .presence-card {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      cursor: default;
+      margin-top: -1rem;
     }
-  }
 
-  /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
-  @media (min-width: 481px) and (max-width: 768px) {
-    .page-hero { grid-template-columns: 1fr; min-height: auto; }
-    .page-hero-right { height: 400px !important; }
-    .vision-grid, .mission-grid { grid-template-columns: 1fr; }
-    .values-grid { grid-template-columns: 1fr 1fr; }
-    .presence-cards { grid-template-columns: 1fr; }
-  }
+    .presence-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+      filter: contrast(1.05) saturate(0.75);
+    }
 
-  /* --- TABLET LANDSCAPE (769px - 1024px) --- */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .page-hero { grid-template-columns: 1.1fr 0.9fr; }
-    .values-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+    .presence-card:hover img {
+      transform: scale(1.04);
+    }
 
-  /* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
-  @media (min-width: 1025px) and (max-width: 1440px) {
-    .section-inner { max-width: 1100px; }
-  }
+    .presence-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(5, 12, 20, 0.92) 0%,
+          rgba(5, 12, 20, 0.55) 45%,
+          rgba(5, 12, 20, 0.1) 100%);
+      transition: background 0.4s ease;
+    }
 
-  /* --- ULTRA-WIDE SCREENS (1921px+) --- */
-  @media (min-width: 1921px) {
-    .section-inner { max-width: 1600px; }
-    .page-hero-left { padding-left: 10vw; padding-right: 10vw; }
-    .values-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 3rem !important; }
-  }
+    .presence-card:hover .presence-card-overlay {
+      background: linear-gradient(to top,
+          rgba(13, 35, 64, 0.95) 0%,
+          rgba(44, 95, 63, 0.25) 55%,
+          rgba(5, 12, 20, 0.05) 100%);
+    }
 
-</style>
+    .presence-card-content {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem;
+    }
+
+    .presence-card-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--forest-light);
+      margin-bottom: 1rem;
+    }
+
+    .presence-card-eyebrow::before {
+      content: '—';
+      color: var(--forest-light);
+    }
+
+    .presence-card-city {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .presence-card-body {
+      font-size: 0.84rem;
+      color: rgba(255, 255, 255, 0.68);
+      line-height: 1.75;
+      max-width: 380px;
+      margin-bottom: 1.5rem;
+    }
+
+    .presence-card-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .presence-card-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .presence-card-contact-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── RESPONSIVENESS (Advanced Adaptability) ── */
+
+    /* Fluid Typography for About Page */
+    .page-hero-headline {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 1.1;
+    }
+
+    /* --- SMALL MOBILE (320px - 480px) --- */
+    @media (max-width: 480px) {
+      .page-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding-top: 80px !important;
+      }
+
+      .page-hero-left {
+        padding: 4rem 1.25rem 3rem !important;
+        text-align: center;
+      }
+
+      .page-hero-right {
+        height: 300px !important;
+        padding: 0 !important;
+      }
+
+      .intro-strip {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.25rem !important;
+      }
+
+      .intro-strip-divider {
+        display: none;
+      }
+
+      .vision-grid,
+      .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .more-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .presence-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      /* Newsletter Box Fix */
+      div.ml-14.mr-14 {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        padding: 3rem 1.5rem !important;
+        border-radius: 2rem !important;
+        flex-direction: column !important;
+        gap: 2.5rem !important;
+      }
+    }
+
+    /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
+    @media (min-width: 481px) and (max-width: 768px) {
+      .page-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .page-hero-right {
+        height: 400px !important;
+      }
+
+      .vision-grid,
+      .mission-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .presence-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* --- TABLET LANDSCAPE (769px - 1024px) --- */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .page-hero {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
+    @media (min-width: 1025px) and (max-width: 1440px) {
+      .section-inner {
+        max-width: 1100px;
+      }
+    }
+
+    /* --- ULTRA-WIDE SCREENS (1921px+) --- */
+    @media (min-width: 1921px) {
+      .section-inner {
+        max-width: 1600px;
+      }
+
+      .page-hero-left {
+        padding-left: 10vw;
+        padding-right: 10vw;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 3rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden m-0 p-0">
@@ -880,18 +929,21 @@
   <section class="page-hero">
     <div class="page-hero-left">
       <div class="page-hero-eyebrow reveal" data-i18n="about.about_sustaincore">About SustainCore</div>
-      <h1 class="page-hero-headline reveal d1"><span data-i18n="about.the_firm_built">The Firm Built</span><br><span data-i18n="about.for">for</span><em data-i18n="about.whats_next">What's Next.</em>
+      <h1 class="page-hero-headline reveal d1"><span data-i18n="about.the_firm_built">The Firm Built</span><br><span
+          data-i18n="about.for">for</span> <em data-i18n="about.whats_next">What's Next.</em>
       </h1>
       <p class="page-hero-body reveal d2" data-i18n="about.we_are_a_team_of_environmental_scientist">
         We are a team of environmental scientists, regulatory experts,
         and sustainability strategists united by one belief:
         that enterprise and ecology are not in conflict — they are in partnership.
       </p>
-      <a href="/contact.html" class="page-hero-cta reveal d3"><span data-i18n="about.say_hi">Say hi</span><span class="page-hero-cta-arrow">→</span>
+      <a href="/contact.html" class="page-hero-cta reveal d3"><span data-i18n="about.say_hi">Say hi</span><span
+          class="page-hero-cta-arrow">→</span>
       </a>
     </div>
     <div class="page-hero-right">
-      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&amp;q=85" alt="SustainCore office and team" data-i18n-attr="alt:about.attr_alt_sustaincore_office_and_team">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&amp;q=85"
+        alt="SustainCore office and team" data-i18n-attr="alt:about.attr_alt_sustaincore_office_and_team">
     </div>
   </section>
 
@@ -901,7 +953,8 @@
       "Sustainability is not a compliance exercise. It is the most important business decision of this decade."
     </div>
     <div class="intro-strip-divider"></div>
-    <div class="intro-strip-tag reveal d2"><span data-i18n="about.esg_environmental">ESG · Environmental</span><br><span data-i18n="about.regulatory_carbon">Regulatory · Carbon</span></div>
+    <div class="intro-strip-tag reveal d2"><span data-i18n="about.esg_environmental">ESG · Environmental</span><br><span
+        data-i18n="about.regulatory_carbon">Regulatory · Carbon</span></div>
   </div>
 
   <!-- VISION -->
@@ -910,15 +963,19 @@
       <div class="vision-grid">
         <div class="reveal-left">
           <div class="vision-image-wrap">
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&amp;q=85" alt="Sustainable vision" data-i18n-attr="alt:about.attr_alt_sustainable_vision">
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&amp;q=85"
+              alt="Sustainable vision" data-i18n-attr="alt:about.attr_alt_sustainable_vision">
             <div class="vision-image-accent"></div>
             <div class="vision-image-line"></div>
           </div>
         </div>
         <div class="reveal-right">
           <div class="section-label" data-i18n="about.our_vision">Our Vision</div>
-          <h2 class="section-title"><span data-i18n="about.making_sustainability_the_default_">Making sustainability the default —</span><br>
-            <em data-i18n="about.not_the_exception">not the exception</em><span data-i18n="about._for_indian_enterprise">— for Indian enterprise.</span></h2>
+          <h2 class="section-title"><span data-i18n="about.making_sustainability_the_default_">Making sustainability the
+              default —</span><br>
+            <em data-i18n="about.not_the_exception">not the exception</em> <span
+              data-i18n="about._for_indian_enterprise">— for Indian enterprise.</span>
+          </h2>
           <blockquote class="vision-quote" data-i18n="about.to_be_the_most_trusted_esg_and_environme">
             "To be the most trusted ESG and environmental advisory firm for businesses
             operating in and out of India — known not just for what we deliver,
@@ -939,10 +996,14 @@
     <div class="purpose-inner">
       <div class="purpose-rotated reveal" data-i18n="about.our_purpose">Our Purpose</div>
       <div class="purpose-content">
-        <p class="purpose-text reveal d1"><span data-i18n="about.guided_by">Guided by</span><em data-i18n="about.science_integrity">science, integrity,</em><span data-i18n="about.and_sustainability_we_help_organizations">and sustainability, we help organizations
-          navigate environmental regulations and build responsible,</span><em data-i18n="about.future_ready_operations">future-ready operations.</em>
+        <p class="purpose-text reveal d1"><span data-i18n="about.guided_by">Guided by</span> <em
+            data-i18n="about.science_integrity">science, integrity,</em> <span
+            data-i18n="about.and_sustainability_we_help_organizations">and sustainability, we help organizations
+            navigate environmental regulations and build responsible,</span> <em
+            data-i18n="about.future_ready_operations">future-ready operations.</em>
         </p>
-        <div class="purpose-pill reveal d2" data-i18n="about.esg_environmental_regulatory_carbon">ESG · Environmental · Regulatory · Carbon</div>
+        <div class="purpose-pill reveal d2" data-i18n="about.esg_environmental_regulatory_carbon">ESG · Environmental ·
+          Regulatory · Carbon</div>
       </div>
     </div>
   </section>
@@ -953,7 +1014,9 @@
       <div class="mission-grid">
         <div class="reveal-left">
           <div class="section-label" data-i18n="about.our_mission">Our Mission</div>
-          <div class="mission-big"><span data-i18n="about.helping_businesses_act_on_sustainability">Helping businesses act on sustainability with</span><em data-i18n="about.clarity_science">clarity, science,</em><span data-i18n="about.and_accountability">and accountability.</span></div>
+          <div class="mission-big"><span data-i18n="about.helping_businesses_act_on_sustainability">Helping businesses
+              act on sustainability with</span> <em data-i18n="about.clarity_science">clarity, science,</em> <span
+              data-i18n="about.and_accountability">and accountability.</span></div>
           <p class="mission-body" data-i18n="about.we_bring_together_regulatory_expertise_e">
             We bring together regulatory expertise, environmental science, and commercial
             thinking so that enterprises of every size can move from intention to action —
@@ -965,7 +1028,8 @@
         <div class="reveal-right">
           <div class="mission-image-wrap">
             <div class="mission-image-stripe"></div>
-            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&amp;q=85" alt="Sustainable future" data-i18n-attr="alt:about.attr_alt_sustainable_future">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&amp;q=85"
+              alt="Sustainable future" data-i18n-attr="alt:about.attr_alt_sustainable_future">
           </div>
         </div>
       </div>
@@ -976,32 +1040,42 @@
   <section class="section values-section">
     <div class="section-inner">
       <div class="section-label reveal" data-i18n="about.our_values">Our Values</div>
-      <h2 class="section-title reveal d1"><span data-i18n="about.principles_we_wont">Principles we won't</span><em data-i18n="about.compromise_on">compromise on.</em></h2>
+      <h2 class="section-title reveal d1"><span data-i18n="about.principles_we_wont">Principles we won't</span> <em
+          data-i18n="about.compromise_on">compromise on.</em></h2>
       <div class="values-grid">
 
         <!-- Integrity -->
         <div class="value-card reveal d1">
           <div class="value-icon-wrap">
-            <svg class="value-icon-svg icon-integrity" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle class="circle-ring" cx="32" cy="32" r="26" stroke="#5A9E72" stroke-width="1.5" fill="none"></circle>
-              <path class="check-path" d="M20 32 L28 40 L44 24" stroke="#5A9E72" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <svg class="value-icon-svg icon-integrity" viewBox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle class="circle-ring" cx="32" cy="32" r="26" stroke="#5A9E72" stroke-width="1.5" fill="none">
+              </circle>
+              <path class="check-path" d="M20 32 L28 40 L44 24" stroke="#5A9E72" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" fill="none"></path>
             </svg>
           </div>
           <div class="value-title" data-i18n="about.integrity">Integrity</div>
-          <div class="value-text" data-i18n="about.we_say_what_the_data_says_not_what_clien">We say what the data says, not what clients want to hear. Our advice is only worth
+          <div class="value-text" data-i18n="about.we_say_what_the_data_says_not_what_clien">We say what the data says,
+            not what clients want to hear. Our advice is only worth
             something if it is honest — every time, without exception.</div>
         </div>
 
         <!-- Responsibility -->
         <div class="value-card reveal d2">
           <div class="value-icon-wrap">
-            <svg class="value-icon-svg icon-responsibility" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path class="leaf-path" d="M32 52 C32 52 12 40 12 24 C12 16 20 10 32 10 C44 10 52 16 52 24 C52 40 32 52 32 52Z" stroke="#5A9E72" stroke-width="1.5" fill="none" stroke-linejoin="round"></path>
-              <line class="leaf-vein" x1="32" y1="52" x2="32" y2="22" stroke="#5A9E72" stroke-width="1.5" stroke-linecap="round"></line>
+            <svg class="value-icon-svg icon-responsibility" viewBox="0 0 64 64" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="leaf-path"
+                d="M32 52 C32 52 12 40 12 24 C12 16 20 10 32 10 C44 10 52 16 52 24 C52 40 32 52 32 52Z" stroke="#5A9E72"
+                stroke-width="1.5" fill="none" stroke-linejoin="round"></path>
+              <line class="leaf-vein" x1="32" y1="52" x2="32" y2="22" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round"></line>
             </svg>
           </div>
           <div class="value-title" data-i18n="about.responsibility">Responsibility</div>
-          <div class="value-text" data-i18n="about.we_take_full_ownership_of_every_mandate_">We take full ownership of every mandate — from first assessment to final submission.
+          <div class="value-text" data-i18n="about.we_take_full_ownership_of_every_mandate_">We take full ownership of
+            every mandate — from first assessment to final submission.
             We don't hand off and disappear.</div>
         </div>
 
@@ -1009,13 +1083,17 @@
         <div class="value-card reveal d3">
           <div class="value-icon-wrap">
             <svg class="value-icon-svg icon-clarity" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line class="line1" x1="14" y1="22" x2="50" y2="22" stroke="#5A9E72" stroke-width="1.5" stroke-linecap="round"></line>
-              <line class="line2" x1="14" y1="32" x2="42" y2="32" stroke="#5A9E72" stroke-width="1.5" stroke-linecap="round"></line>
-              <line class="line3" x1="14" y1="42" x2="34" y2="42" stroke="#5A9E72" stroke-width="1.5" stroke-linecap="round"></line>
+              <line class="line1" x1="14" y1="22" x2="50" y2="22" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round"></line>
+              <line class="line2" x1="14" y1="32" x2="42" y2="32" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round"></line>
+              <line class="line3" x1="14" y1="42" x2="34" y2="42" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round"></line>
             </svg>
           </div>
           <div class="value-title" data-i18n="about.clarity">Clarity</div>
-          <div class="value-text" data-i18n="about.the_sustainability_space_thrives_on_comp">The sustainability space thrives on complexity. We cut through it. Every
+          <div class="value-text" data-i18n="about.the_sustainability_space_thrives_on_comp">The sustainability space
+            thrives on complexity. We cut through it. Every
             recommendation we make is actionable, explainable, and grounded in fact.</div>
         </div>
 
@@ -1024,12 +1102,15 @@
           <div class="value-icon-wrap">
             <svg class="value-icon-svg icon-impact" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle class="circle-bg" cx="32" cy="32" r="6" fill="rgba(90,158,114,0.2)" stroke="none"></circle>
-              <line class="arrow-shaft" x1="32" y1="50" x2="32" y2="20" stroke="#5A9E72" stroke-width="1.5" stroke-linecap="round"></line>
-              <path class="arrow-head" d="M22 28 L32 18 L42 28" stroke="#5A9E72" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              <line class="arrow-shaft" x1="32" y1="50" x2="32" y2="20" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round"></line>
+              <path class="arrow-head" d="M22 28 L32 18 L42 28" stroke="#5A9E72" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
             </svg>
           </div>
           <div class="value-title" data-i18n="about.impact">Impact</div>
-          <div class="value-text" data-i18n="about.we_measure_ourselves_by_outcomes_not_out">We measure ourselves by outcomes, not outputs. A report filed means nothing. A
+          <div class="value-text" data-i18n="about.we_measure_ourselves_by_outcomes_not_out">We measure ourselves by
+            outcomes, not outputs. A report filed means nothing. A
             business genuinely reducing its footprint — that's why we exist.</div>
         </div>
 
@@ -1041,39 +1122,47 @@
   <section class="section more-section">
     <div class="section-inner">
       <div class="section-label reveal" data-i18n="about.more_about_us">More About Us</div>
-      <h2 class="section-title reveal d1"><span data-i18n="about.two_ways_to">Two ways to</span><em data-i18n="about.get_closer">get closer.</em></h2>
+      <h2 class="section-title reveal d1"><span data-i18n="about.two_ways_to">Two ways to</span> <em
+          data-i18n="about.get_closer">get closer.</em></h2>
       <div class="more-grid">
         <!-- Partners card -->
         <div class="more-card reveal-left">
           <a href="/partners.html">
-            <img src="https://images.unsplash.com/photo-1496115965489-21be7e6e59a0?q=80&amp;w=687&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Partners" data-i18n-attr="alt:about.attr_alt_partners">
+            <img
+              src="https://images.unsplash.com/photo-1496115965489-21be7e6e59a0?q=80&amp;w=687&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Partners" data-i18n-attr="alt:about.attr_alt_partners">
             <div class="more-card-overlay"></div>
-            </a><div class="more-card-content"><a href="/partners.html">
+          </a>
+          <div class="more-card-content"><a href="/partners.html">
               <div class="more-card-eyebrow" data-i18n="about.work_with_us">Work With Us</div>
               <div class="more-card-title" data-i18n="about.partners">Partners</div>
               <div class="more-card-body" data-i18n="about.we_are_building_partnerships_with_indust">
                 We are building partnerships with industry bodies, certification agencies, and
                 technology platforms that share our commitment to credible sustainability action.
               </div>
-              </a><a href="/partners.html" class="more-card-link" data-i18n="about.explore_partnerships_">Explore partnerships →</a>
-            </div>
-          
+            </a><a href="/partners.html" class="more-card-link" data-i18n="about.explore_partnerships_">Explore
+              partnerships →</a>
+          </div>
+
         </div>
         <!-- Join Us card -->
         <div class="more-card reveal-right">
           <a href="/join-us.html">
-            <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Join SustainCore team" data-i18n-attr="alt:about.attr_alt_join_sustaincore_team">
+            <img
+              src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Join SustainCore team" data-i18n-attr="alt:about.attr_alt_join_sustaincore_team">
             <div class="more-card-overlay"></div>
-            </a><div class="more-card-content"><a href="/join-us.html">
+          </a>
+          <div class="more-card-content"><a href="/join-us.html">
               <div class="more-card-eyebrow" data-i18n="about.careers">Careers</div>
               <div class="more-card-title" data-i18n="about.join_us">Join Us</div>
               <div class="more-card-body" data-i18n="about.sustaincore_is_a_new_firm_with_a_big_mis">
                 SustainCore is a new firm with a big mission. If you have a background in ESG,
                 environmental science, or regulatory affairs — we'd love to hear from you.
               </div>
-              </a><a href="/join-us.html" class="more-card-link" data-i18n="about.see_open_roles_">See open roles →</a>
-            </div>
-          
+            </a><a href="/join-us.html" class="more-card-link" data-i18n="about.see_open_roles_">See open roles →</a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1085,7 +1174,8 @@
 
       <div class="presence-header">
         <div class="section-label reveal" data-i18n="about.our_presence">Our Presence</div>
-        <h2 class="presence-headline reveal d1"><span data-i18n="about.india_germany_">India &amp; Germany —</span><em data-i18n="about.both_sides_of_the_regulation">both sides of the regulation.</em>
+        <h2 class="presence-headline reveal d1"><span data-i18n="about.india_germany_">India &amp; Germany —</span> <em
+            data-i18n="about.both_sides_of_the_regulation">both sides of the regulation.</em>
         </h2>
         <p class="presence-sub reveal d2" data-i18n="about.our_dual_country_presence_is_not_a_comme">
           Our dual-country presence is not a commercial gesture. It reflects where the most
@@ -1098,7 +1188,9 @@
 
         <!-- India -->
         <div class="presence-card reveal-left">
-          <img src="https://images.unsplash.com/photo-1573457046516-b4e3b5dd50dd?q=80&amp;w=692&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ahmedabad, Gujarat" data-i18n-attr="alt:about.attr_alt_ahmedabad_gujarat">
+          <img
+            src="https://images.unsplash.com/photo-1573457046516-b4e3b5dd50dd?q=80&amp;w=692&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Ahmedabad, Gujarat" data-i18n-attr="alt:about.attr_alt_ahmedabad_gujarat">
           <div class="presence-card-overlay"></div>
           <div class="presence-card-content">
             <div class="presence-card-eyebrow" data-i18n="about.india_headquarters">India — Headquarters</div>
@@ -1113,7 +1205,9 @@
 
         <!-- Germany -->
         <div class="presence-card reveal-right">
-          <img src="https://images.unsplash.com/photo-1621978766642-2d64b83eed24?q=80&amp;w=1236&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Stuttgart, Germany" data-i18n-attr="alt:about.attr_alt_stuttgart_germany">
+          <img
+            src="https://images.unsplash.com/photo-1621978766642-2d64b83eed24?q=80&amp;w=1236&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Stuttgart, Germany" data-i18n-attr="alt:about.attr_alt_stuttgart_germany">
           <div class="presence-card-overlay"></div>
           <div class="presence-card-content">
             <div class="presence-card-city" data-i18n="about.stuttgart_germany">Stuttgart, Germany</div>
@@ -1129,17 +1223,25 @@
   </section>
 
   <!-- Newsletter Callout -->
-  <div class="lg:col-span-2 ml-14 mr-14 bg-brand-blue rounded-4xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-16 text-white mt-12 relative overflow-hidden">
+  <div
+    class="lg:col-span-2 ml-14 mr-14 bg-brand-blue rounded-4xl p-8 md:p-12 flex flex-col lg:flex-row items-center gap-16 text-white mt-12 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 blur-[100px] rounded-full"></div>
     <div class="max-w-xl text-center lg:text-left relative z-10">
-      <h2 class="text-3xl md:text-5xl font-display font-black mb-6 leading-tight"><span data-i18n="about.stay_ahead_of_the">Stay ahead of the</span><span class="text-brand-green italic font-light" data-i18n="about.mandate">mandate.</span>
+      <h2 class="text-3xl md:text-5xl font-display font-black mb-6 leading-tight"><span
+          data-i18n="about.stay_ahead_of_the">Stay ahead of the</span><span class="text-brand-green italic font-light"
+          data-i18n="about.mandate">mandate.</span>
       </h2>
-      <p class="text-white/70 text-lg leading-relaxed mb-0" data-i18n="about.get_our_monthly_regulatory_brief_deliver">Get our monthly regulatory brief delivered
+      <p class="text-white/70 text-lg leading-relaxed mb-0" data-i18n="about.get_our_monthly_regulatory_brief_deliver">
+        Get our monthly regulatory brief delivered
         to your corporate inbox. No jargon, just technical utility.</p>
     </div>
     <form id="newsletter-form" class="flex-grow w-full lg:w-auto relative z-10 flex flex-col sm:flex-row gap-4">
-      <input type="email" id="subscriber-email" name="email" placeholder="Corporate Email" required="" class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-brand-green" data-i18n-attr="placeholder:about.attr_placeholder_corporate_email">
-      <button type="submit" id="subscribe-btn" class="px-8 py-4 bg-white text-brand-blue rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all whitespace-nowrap" data-i18n="about.subscribe_to_brief">Subscribe
+      <input type="email" id="subscriber-email" name="email" placeholder="Corporate Email" required=""
+        class="flex-grow bg-white/10 border border-white/20 rounded-2xl px-6 py-4 text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-brand-green"
+        data-i18n-attr="placeholder:about.attr_placeholder_corporate_email">
+      <button type="submit" id="subscribe-btn"
+        class="px-8 py-4 bg-white text-brand-blue rounded-2xl font-bold uppercase text-[10px] tracking-widest hover:bg-brand-green hover:text-white transition-all whitespace-nowrap"
+        data-i18n="about.subscribe_to_brief">Subscribe
         to Brief</button>
     </form>
 
@@ -1179,4 +1281,6 @@
   </script>
 
 
-</body></html>
+</body>
+
+</html>

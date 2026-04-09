@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="files_4-ec.environmental_clearance_sustaincore_envi">Environmental Clearance — SustainCore
@@ -96,48 +96,63 @@
     /* doc checklist */
     .doc-cols {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2.5rem;
+      align-items: stretch;
+      margin-top: 3rem;
     }
 
     .doc-group {
-      background: var(--bg2);
-      border-radius: 14px;
-      border: 1px solid var(--bdr);
-      padding: 1.4rem;
+      background: #fdfaf5;
+      border-radius: 24px;
+      border: 1px solid var(--bdr2);
+      padding: 3rem 2.5rem;
+      height: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
     }
 
     .doc-group-title {
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 700;
       color: var(--text);
-      margin-bottom: .85rem;
+      margin-bottom: 2.5rem;
       display: flex;
-      align-items: center;
-      gap: .5rem;
+      align-items: flex-start;
+      gap: 1.25rem;
+      line-height: 1.4;
+      width: 100%;
     }
 
-    .doc-group-title span {
-      width: 6px;
-      height: 6px;
+    .doc-group-title span:first-child {
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: var(--g);
       flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .doc-group-title span:last-child {
+      flex: 1; /* Ensures text takes full width and doesn't squeeze */
     }
 
     .doc-list {
-      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: .5rem;
+      gap: 1.25rem;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
     .doc-list li {
-      font-size: 12.5px;
-      font-weight: 300;
+      font-size: 13.5px;
+      font-weight: 400;
       color: var(--muted);
-      padding-left: 1rem;
+      padding-left: 2rem;
       position: relative;
       line-height: 1.6;
     }
@@ -147,41 +162,52 @@
       position: absolute;
       left: 0;
       color: var(--g);
-      font-size: 11px;
-      line-height: 1.6;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     /* conditions tracker */
     .cond-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: .85rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
 
     .cond-item {
       background: var(--w);
       border: 1px solid var(--bdr);
-      border-radius: 12px;
-      padding: 1.1rem 1.2rem;
+      border-radius: 16px;
+      padding: 1.5rem;
       display: flex;
-      gap: .85rem;
-      align-items: flex-start;
+      gap: 1.25rem;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .cond-item:hover {
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      border-color: var(--g35);
     }
 
     .cond-badge {
-      width: 45px;
-      height: 45px;
+      width: 4.5rem;
+      height: 4.5rem;
+      min-width: 4.5rem;
       background: var(--b10);
-      flex-shrink: 0;
+      border-radius: 50%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      font-size: 10px;
-      font-weight: 600;
+      font-size: 9px;
+      font-weight: 700;
       color: var(--b);
-      text-align: center;
       line-height: 1.2;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid var(--b20);
     }
 
     .cond-title {
@@ -201,16 +227,18 @@
     /* timeline strip */
     .ec-timeline {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
       border-radius: 16px;
-      overflow: hidden;
+      overflow: visible;
       margin-top: 1.75rem;
     }
 
     .ec-tl-step {
       background: var(--w);
-      padding: 1.4rem 1.1rem;
+      padding: 1.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--bdr);
       position: relative;
     }
 
@@ -752,7 +780,7 @@
 
     <div class="cond-grid">
       <div class="cond-item reveal">
-        <div class="cond-badge"><span data-i18n="files_4-ec.6_mo">6-Mo</span><br><span
+        <div class="cond-badge"><span data-i18n="files_4-ec.6_mo">6-Mo</span><span
             data-i18n="files_4-ec.report">Report</span></div>
         <div>
           <div class="cond-title" data-i18n="files_4-ec.half_yearly_compliance_reports">Half-Yearly Compliance Reports
@@ -763,7 +791,7 @@
         </div>
       </div>
       <div class="cond-item reveal">
-        <div class="cond-badge"><span data-i18n="files_4-ec.emp">EMP</span><br><span
+        <div class="cond-badge"><span data-i18n="files_4-ec.emp">EMP</span><span
             data-i18n="files_4-ec.fund">Fund</span></div>
         <div>
           <div class="cond-title" data-i18n="files_4-ec.environmental_management_plan_implementa">Environmental
@@ -774,7 +802,7 @@
         </div>
       </div>
       <div class="cond-item reveal">
-        <div class="cond-badge"><span data-i18n="files_4-ec.trees">Trees</span><br><span
+        <div class="cond-badge"><span data-i18n="files_4-ec.trees">Trees</span><span
             data-i18n="files_4-ec._green">&amp; Green</span></div>
         <div>
           <div class="cond-title" data-i18n="files_4-ec.greenbelt_afforestation">Greenbelt &amp; Afforestation</div>
@@ -784,7 +812,7 @@
         </div>
       </div>
       <div class="cond-item reveal">
-        <div class="cond-badge"><span data-i18n="files_4-ec.water">Water</span><br><span
+        <div class="cond-badge"><span data-i18n="files_4-ec.water">Water</span><span
             data-i18n="files_4-ec.mgmt">Mgmt</span></div>
         <div>
           <div class="cond-title" data-i18n="files_4-ec.water_conservation_compliance">Water Conservation Compliance
@@ -795,7 +823,7 @@
         </div>
       </div>
       <div class="cond-item reveal">
-        <div class="cond-badge"><span data-i18n="files_4-ec.air">Air</span><br><span
+        <div class="cond-badge"><span data-i18n="files_4-ec.air">Air</span><span
             data-i18n="files_4-ec.qual">Qual</span></div>
         <div>
           <div class="cond-title" data-i18n="files_4-ec.ambient_stack_monitoring">Ambient &amp; Stack Monitoring</div>
@@ -806,7 +834,7 @@
         </div>
       </div>
       <div class="cond-item reveal">
-        <div class="cond-badge"><span data-i18n="files_4-ec.csr">CSR</span><br><span
+        <div class="cond-badge"><span data-i18n="files_4-ec.csr">CSR</span><span
             data-i18n="files_4-ec.dev">Dev</span></div>
         <div>
           <div class="cond-title" data-i18n="files_4-ec.community_development_spending">Community Development Spending
@@ -827,7 +855,7 @@
     <div class="svc-section-inner">
       <div class="sec-label" data-i18n="files_4-ec.key_deliverables">Key Deliverables</div>
       <h2 class="sec-title"><span data-i18n="files_4-ec.what_you_receive_from_every">What you receive from
-          every</span><em data-i18n="files_4-ec.ec_engagement">EC engagement</em></h2>
+          every</span> <em data-i18n="files_4-ec.ec_engagement">EC engagement</em></h2>
 
       <div class="deliverables-grid">
         <div class="deliv-card reveal">
@@ -1168,7 +1196,7 @@
             EC process.</div>
           <div class="related-card-link" data-i18n="files_4-ec.learn_more_">Learn more →</div>
         </a>
-        <a href="svc-materiality.html" class="related-card">
+        <a href="3-materiality.html" class="related-card">
           <div class="related-card-cat" data-i18n="files_4-ec.assessments_ratings">Assessments &amp; Ratings</div>
           <div class="related-card-title" data-i18n="files_4-ec.materiality_assessment">Materiality Assessment</div>
           <div class="related-card-desc" data-i18n="files_4-ec.a_formal_materiality_assessment_strength">A formal
