@@ -1,3 +1,4 @@
+@import './responsive.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -1255,9 +1256,9 @@ main,
 
 .mega-menu {
   position: absolute;
-  top: 2rem;
+  top: 2.5rem;
   left: 50%;
-  transform: translateX(-50%) translateY(8px);
+  transform: translateX(calc(-50% + 100px)) translateY(8px);
   width: min(92vw, 880px);
   max-width: 880px;
   background: rgba(255, 255, 255, 0.97);
@@ -1284,10 +1285,10 @@ main,
 .mega-menu::before {
   content: '';
   position: absolute;
-  top: -1.5rem;
+  top: -2.5rem;
   left: 0;
   right: 0;
-  height: 2rem;
+  height: 3rem;
   background: transparent;
   z-index: 1;
 }
@@ -1304,7 +1305,7 @@ main,
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(calc(-50% + 100px)) translateY(0);
 }
 
 
@@ -2440,7 +2441,8 @@ body,
     flex-wrap: wrap;
   }
 
-  .bc a, .bc span {
+  .bc a,
+  .bc span {
     font-size: 10px;
   }
 
@@ -2485,7 +2487,8 @@ body,
     letter-spacing: -0.5px !important;
   }
 
-  .btn-primary, .btn-secondary {
+  .btn-primary,
+  .btn-secondary {
     width: 100%;
     text-align: center;
     padding: 0.85rem 1.5rem;
@@ -2511,13 +2514,26 @@ img {
 }
 
 /* Systematic Typography Scaling (Fluid) */
-h1 { font-size: clamp(2.25rem, 6vw, 5rem); }
-h2 { font-size: clamp(1.75rem, 4vw, 3.5rem); }
-h3 { font-size: clamp(1.25rem, 2.5vw, 2.25rem); }
-p { font-size: clamp(0.95rem, 1.1vw, 1.125rem); }
+h1 {
+  font-size: clamp(2.25rem, 6vw, 5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 3.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+}
+
+p {
+  font-size: clamp(0.95rem, 1.1vw, 1.125rem);
+}
 
 /* Global Container System Fix */
-.inner, .container, .section-padding {
+.inner,
+.container,
+.section-padding {
   max-width: var(--container-max-width) !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -2530,31 +2546,43 @@ p { font-size: clamp(0.95rem, 1.1vw, 1.125rem); }
 
 /* --- SMALL MOBILE (320px - 480px) --- */
 @media (max-width: 480px) {
-  :root { --section-padding-x: 1rem; }
-  
+  :root {
+    --section-padding-x: 1rem;
+  }
+
   .hero-headline {
     font-size: 2.5rem !important;
     line-height: 1.1 !important;
   }
-  
-  .svc-grid, .grid-cols-2, .grid-cols-3, .grid-cols-4 {
+
+  .svc-grid,
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
   }
 
-  .nav-links { display: none; } /* Ensure mobile menu is used */
+  .nav-links {
+    display: none;
+  }
+
+  /* Ensure mobile menu is used */
 }
 
 /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
 @media (min-width: 481px) and (max-width: 768px) {
-  .svc-grid, .grid-cols-3, .grid-cols-4 {
+
+  .svc-grid,
+  .grid-cols-3,
+  .grid-cols-4 {
     grid-template-columns: 1fr !important;
   }
-  
+
   .grid-cols-2 {
     grid-template-columns: 1fr !important;
   }
-  
+
   .hero-headline {
     font-size: 3.5rem !important;
   }
@@ -2562,14 +2590,17 @@ p { font-size: clamp(0.95rem, 1.1vw, 1.125rem); }
 
 /* --- TABLET LANDSCAPE (769px - 1024px) --- */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .svc-grid, .grid-cols-3, .grid-cols-4 {
+
+  .svc-grid,
+  .grid-cols-3,
+  .grid-cols-4 {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  
+
   .hero-headline {
     font-size: 4.5rem !important;
   }
-  
+
   .section-padding {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -2578,8 +2609,10 @@ p { font-size: clamp(0.95rem, 1.1vw, 1.125rem); }
 
 /* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
 @media (min-width: 1025px) and (max-width: 1440px) {
-  :root { --container-max-width: 1200px; }
-  
+  :root {
+    --container-max-width: 1200px;
+  }
+
   .hero-headline {
     font-size: clamp(5rem, 8vw, 7rem) !important;
   }
@@ -2587,15 +2620,16 @@ p { font-size: clamp(0.95rem, 1.1vw, 1.125rem); }
 
 /* --- ULTRA-WIDE SCREENS (1921px+) --- */
 @media (min-width: 1921px) {
-  :root { 
-    --container-max-width: 1600px; 
+  :root {
+    --container-max-width: 1600px;
     --section-padding-x: 4rem;
   }
-  
+
   body {
-    font-size: 1.25rem; /* Larger base font for massive screens */
+    font-size: 1.25rem;
+    /* Larger base font for massive screens */
   }
-  
+
   .hero-content {
     padding-left: 10vw;
     padding-right: 10vw;
@@ -2603,8 +2637,11 @@ p { font-size: clamp(0.95rem, 1.1vw, 1.125rem); }
 }
 
 /* 3. Consistency Fixes for Overlapping Content */
-.hero, .section-wrap, section {
-  overflow: visible !important; /* Allow animations/shadows to bleed */
+.hero,
+.section-wrap,
+section {
+  overflow: visible !important;
+  /* Allow animations/shadows to bleed */
 }
 
 /* Navbar Adaptability */

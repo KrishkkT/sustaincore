@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // 5. Global UI Handlers
     setupUnifiedUI();
     setupBackToTop();
+    setupSubNavScroll();
 });
 
 function setupUnifiedUI() {
@@ -143,15 +144,27 @@ function setupUnifiedUI() {
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    // Close other open dropdowns in the same nav
-                    const siblings = container.parentElement.querySelectorAll('.' + openClass);
-                    siblings.forEach(s => { if (s !== container) s.classList.remove(openClass); });
+                    // Close other open dropdowns
+                    document.querySelectorAll('.' + openClass).forEach(s => { 
+                        if (s !== container) s.classList.remove(openClass); 
+                    });
                     
                     container.classList.toggle(openClass);
                 }
             });
         }
     };
+
+    // Close dropdowns when clicking anywhere outside
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth < 1024) {
+            if (!e.target.closest('.sp-sub-nav-item') && !e.target.closest('#nav-services-dropdown')) {
+                document.querySelectorAll('.dropdown-open').forEach(el => {
+                    el.classList.remove('dropdown-open');
+                });
+            }
+        }
+    });
 
     // --- Mobile Flip Cards ---
     const setupFlipCards = () => {
@@ -202,4 +215,54 @@ const setupBackToTop = () => {
     document.body.appendChild(btn);
     window.addEventListener('scroll', () => btn.classList.toggle('show', window.scrollY > 400));
     btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+};
+
+const setupSubNavScroll = () => {
+    const nav = document.querySelector('.sp-sub-nav');
+    const inner = document.querySelector('.sp-sub-nav-inner');
+    if (!nav || !inner) return;
+
+    // Inject Arrows
+    const leftArrow = document.createElement('button');
+    leftArrow.className = 'sp-nav-arrow left';
+    leftArrow.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
+    
+    const rightArrow = document.createElement('button');
+    rightArrow.className = 'sp-nav-arrow right';
+    rightArrow.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
+
+    nav.appendChild(leftArrow);
+    nav.appendChild(rightArrow);
+
+    const updateArrows = () => {
+        if (window.innerWidth > 1024) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+            return;
+        }
+
+        const isOverflowing = inner.scrollWidth > inner.clientWidth;
+        if (!isOverflowing) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+            return;
+        }
+
+        leftArrow.style.display = inner.scrollLeft > 10 ? 'flex' : 'none';
+        rightArrow.style.display = (inner.scrollLeft + inner.clientWidth < inner.scrollWidth - 10) ? 'flex' : 'none';
+    };
+
+    inner.addEventListener('scroll', updateArrows);
+    window.addEventListener('resize', updateArrows);
+    
+    leftArrow.addEventListener('click', () => {
+        inner.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    
+    rightArrow.addEventListener('click', () => {
+        inner.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+
+    // Initial check
+    setTimeout(updateArrows, 500);
 };

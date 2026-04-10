@@ -1,0 +1,301 @@
+/* 
+  SustainCore Responsive Design Extensions
+  This file adds support for mobile, tablet, and high-resolution screens
+  while preserving the original desktop layout.
+*/
+
+/* --- Variables & Breakpoints --- */
+:root {
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+}
+
+/* --- Global Spacing & Layout --- */
+.container-responsive {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) { .container-responsive { max-width: 640px; } }
+@media (min-width: 768px) { .container-responsive { max-width: 720px; } }
+@media (min-width: 1024px) { .container-responsive { max-width: 960px; } }
+@media (min-width: 1280px) { .container-responsive { max-width: 1140px; } }
+@media (min-width: 1536px) { .container-responsive { max-width: 1400px; } }
+
+/* --- Tablet & Mobile Adjustments ( <= 1024px ) --- */
+@media (max-width: 1024px) {
+  .section-padding {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+  }
+
+  /* Force Mobile Header Items to hide on tablet too */
+  .navbar-items {
+    display: none !important;
+  }
+
+  #mobile-menu-btn {
+    display: block !important;
+  }
+
+  /* Grid Conversions for Tablet */
+  .grid-cols-2, .grid-cols-3, .grid-cols-4, .svc-grid, .sp-card-grid, .sp-spec-grid, .sp-inc-grid, .s2-turn, .s5-cta, .s2-intro, .sc-response-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+
+  .sc-response-right {
+    flex-direction: row !important;
+    justify-content: center !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .sc-response-stat, .sc-response-btn {
+    width: auto !important;
+    min-width: 200px !important;
+  }
+
+  /* CTA Band Refinement */
+  .cta-band {
+    flex-direction: column !important;
+    text-align: center !important;
+    padding: 4rem 2rem !important;
+    gap: 3rem !important;
+    width: 95% !important;
+    margin: 0 auto !important;
+  }
+
+  .cta-band-btns {
+    justify-content: center !important;
+  }
+
+  /* Footer Adjustments for Tablet */
+  footer .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3rem !important;
+  }
+}
+
+/* --- Mobile Adjustments ( <= 768px ) --- */
+@media (max-width: 768px) {
+  /* Global Overrides */
+  section {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Header & Navigation */
+  #main-nav {
+    width: 95% !important;
+    padding: 0.75rem 1.25rem !important;
+  }
+  
+  .navbar-items {
+    display: none !important;
+  }
+
+  #mobile-menu-btn {
+    display: block !important;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    padding: 0 1.5rem 4rem !important;
+    justify-content: center !important;
+    text-align: center;
+  }
+
+  .hero-sub {
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-stats {
+    margin: 2rem auto 0 !important;
+    justify-content: center !important;
+  }
+
+  .stat {
+    text-align: center !important;
+  }
+
+  /* Grid Stacking */
+  .grid-cols-2, .grid-cols-3, .grid-cols-4, .svc-grid, .sp-card-grid, .sp-spec-grid, .sp-inc-grid, .s2-turn, .s5-cta, .s2-intro {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .s3-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  }
+
+  /* Section specific fixes */
+  .s2-turn {
+    padding: 3rem 1.5rem !important;
+    margin: 2rem 1rem !important;
+  }
+
+  .s2-turn-right {
+    align-items: center !important;
+  }
+
+  .s5-cta {
+    padding: 4rem 1.5rem !important;
+  }
+
+  /* Crisis Stats */
+  #crisis-cta .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #crisis-cta .order-2 {
+    order: 1 !important;
+  }
+
+  #crisis-cta .order-1 {
+    order: 2 !important;
+  }
+
+  /* Service Category Pages */
+  .sp-hero-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+
+  .sp-hero-img {
+    margin-top: 2rem !important;
+    height: 300px !important;
+  }
+
+  .sp-section-t {
+    font-size: 2rem !important;
+  }
+
+  .sp-deliver-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Responsive Spacing */
+  .py-32 {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+}
+
+/* --- Small Mobile ( <= 480px ) --- */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px; /* Slightly smaller base font */
+  }
+
+  .hero-headline {
+    font-size: 3.25rem !important;
+  }
+
+  .stat-val {
+    font-size: 2.25rem !important;
+  }
+
+  .hero-nav {
+    padding: 1rem !important;
+  }
+  
+  .sp-hero-title {
+    font-size: 1.85rem !important;
+  }
+
+  /* Card Padding */
+  .card, .svc-card, .sp-card, .sp-spec-card, .ph-left {
+    padding: 1.75rem 1.25rem !important;
+  }
+
+  .ph {
+    height: auto !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .ph-num {
+    font-size: 50px !important;
+    top: 0 !important;
+    right: 1rem !important;
+    opacity: 0.1;
+  }
+
+  .ph-title {
+    font-size: 1.5rem !important;
+  }
+
+  .ph-desc {
+    font-size: 0.85rem !important;
+  }
+
+  /* Contact Form */
+  .s5-form-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+  }
+  
+  footer .flex-col {
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  footer .max-w-7xl .flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+}
+
+/* --- High Resolution Improvements ( > 1440px ) --- */
+@media (min-width: 1441px) {
+  .max-w-7xl {
+    max-width: 1400px !important;
+  }
+
+  .max-w-6xl {
+    max-width: 1280px !important;
+  }
+}
+
+/* --- Fix for Horizontal Overflow --- */
+body, html {
+  overflow-x: hidden !important;
+  width: 100%;
+  position: relative;
+}
+
+/* --- Mobile Menu Fixes --- */
+#mobile-menu {
+  display: flex !important;
+  padding-top: 6rem;
+  background-color: white !important;
+  z-index: 1000 !important;
+}
+
+#mobile-menu a, #mobile-menu button {
+  font-family: 'Outfit', sans-serif !important;
+  text-align: left !important;
+}
+
+.lang-switch-btn {
+  transition: all 0.2s;
+  border: 1px solid #e2e8f0 !important;
+  background: white !important;
+}
+
+.lang-switch-btn:active {
+  background: #f1f5f9 !important;
+  transform: scale(0.95);
+}
+

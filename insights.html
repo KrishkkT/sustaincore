@@ -315,60 +315,69 @@
                 font-weight: 800;
             }
 
-            @media (max-width: 767px) {
+            @media (max-width: 1024px) {
                 h1 {
-                    font-size: 4rem !important;
+                    font-size: 5rem !important;
                     line-height: .9 !important;
                 }
 
                 .grid.grid-cols-2.gap-8 {
                     grid-template-columns: repeat(2, 1fr) !important;
-                    /* Restore 2 column grid */
-                    gap: 0.5rem !important;
-                    margin-left: -0.5rem !important;
-                    margin-right: -0.5rem !important;
+                    gap: 1rem !important;
                 }
 
                 .grid.grid-cols-2.gap-8 .text-5xl {
-                    font-size: 2.25rem !important;
-                    /* Scale down to fit 2-across */
+                    font-size: 3rem !important;
                 }
 
                 .grid.grid-cols-2.gap-8 .p-8 {
-                    padding: 1.5rem 0.5rem !important;
+                    padding: 2rem 1rem !important;
                 }
 
                 #data-narrative {
-                    padding: 4rem 1rem !important;
-                    margin: 0 1rem 5rem 1rem !important;
+                    padding: 5rem 2rem !important;
+                    margin: 0 1.5rem 5rem 1.5rem !important;
+                    border-radius: 3rem !important;
                 }
 
                 .grid.grid-cols-1.lg\:grid-cols-2.gap-4.mt-12 {
-                    gap: 1.5rem !important;
+                    gap: 2rem !important;
                 }
 
                 .p-6.bg-\[\#0a0a0a\] {
-                    padding: 2rem 1rem !important;
-                    /* Wider graphs, less padding */
-                    border-radius: 1.5rem !important;
+                    padding: 3rem 2rem !important;
+                    border-radius: 2.5rem !important;
                     width: 100% !important;
                 }
 
                 .text-7xl {
-                    font-size: 3rem !important;
+                    font-size: 4.5rem !important;
                 }
 
                 /* Newsletter Callout Margin Fix */
                 div.ml-14.mr-14 {
-                    margin-left: 1rem !important;
-                    margin-right: 1rem !important;
-                    padding: 2.5rem 1.5rem !important;
-                    border-radius: 2rem !important;
+                    margin-left: 1.5rem !important;
+                    margin-right: 1.5rem !important;
+                    padding: 4rem 2rem !important;
+                    border-radius: 3rem !important;
+                    flex-direction: column !important;
+                    text-align: center !important;
+                }
+
+                #newsletter-form {
+                    width: 100% !important;
                 }
 
                 #insights-grid {
-                    gap: 1.5rem !important;
+                    grid-template-columns: repeat(2, 1fr) !important;
+                    gap: 2rem !important;
                 }
+            }
+
+            @media (max-width: 640px) {
+                h1 { font-size: 3.5rem !important; }
+                .grid.grid-cols-2.gap-8 { grid-template-columns: 1fr !important; }
+                #insights-grid { grid-template-columns: 1fr !important; }
             }
         </style>
 

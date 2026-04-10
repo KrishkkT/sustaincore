@@ -1018,16 +1018,38 @@
     /* --- TABLET LANDSCAPE (769px - 1024px) --- */
     @media (min-width: 769px) and (max-width: 1024px) {
       .hero {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+        height: auto !important;
+      }
+
+      .hero-left {
+        padding: 10rem 5vw 6rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-body {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-right {
+        height: 500px;
+      }
+
+      .why-strip-inner {
+        grid-template-columns: 1fr;
       }
 
       .types-grid,
-      .benefits-grid {
+      .benefits-grid,
+      .process-grid {
         grid-template-columns: repeat(2, 1fr) !important;
       }
 
-      .process-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+      .open-call-inner {
+        grid-template-columns: 1fr;
+        gap: 4rem;
       }
     }
 

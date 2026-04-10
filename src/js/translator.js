@@ -157,7 +157,7 @@ class SustainTranslator {
     setupUIListeners() {
         // Find language options in the navbar
         document.addEventListener('click', (e) => {
-            const btn = e.target.closest('.lang-option');
+            const btn = e.target.closest('.lang-option, .lang-switch-btn');
             if (btn) {
                 const lang = btn.getAttribute('data-lang');
                 this.setLanguage(lang);

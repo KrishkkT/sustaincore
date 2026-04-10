@@ -1,3 +1,4 @@
+@import './responsive.css';
 /* SustainCore Professional Service Category Page Styles */
 
 :root {
@@ -631,14 +632,75 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 1rem;
-  overflow: visible;
-  scrollbar-width: none;
+  overflow: visible; /* Clear clipping on desktop */
   justify-content: center;
   transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
 
+@media (max-width: 1024px) {
+  .sp-sub-nav-inner {
+    overflow-x: auto;
+    scrollbar-width: none;
+    justify-content: flex-start;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 .sp-sub-nav-inner::-webkit-scrollbar {
   display: none;
+}
+
+/* Scroll Arrows for Mobile/Tablet */
+.sp-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  display: none; /* Shown via JS if overflow */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: var(--navy);
+}
+
+.sp-nav-arrow:hover {
+  background: var(--forest-pale);
+  border-color: var(--forest);
+}
+
+.sp-nav-arrow.left {
+  left: 6px;
+}
+
+.sp-nav-arrow.right {
+  right: 6px;
+}
+
+@media (max-width: 1024px) {
+  .sp-sub-nav {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+  
+  .sp-sub-nav-inner {
+    padding: 0 32px; /* Space for arrows */
+  }
+
+  .sp-sub-nav.scrolled {
+     padding: 0.5rem 0.5rem;
+  }
+  
+  .sp-sub-nav.scrolled .sp-sub-nav-inner {
+    padding: 0 32px;
+  }
 }
 
 .sp-sub-nav-link {
@@ -1052,8 +1114,8 @@
   }
 
   .sp-sub-nav-inner .sp-dropdown {
-    position: absolute;
-    top: calc(100% + 10px);
+    position: fixed; /* Fix clipping by using viewport positioning */
+    top: 118px; /* Refined position closer to nav pill */
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     opacity: 0;
@@ -1063,13 +1125,19 @@
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.08);
     padding: 0.75rem;
-    z-index: 9999;
-    min-width: 220px;
+    z-index: 10000;
+    min-width: 250px;
     pointer-events: none;
     transition: all 0.3s ease;
   }
 
-  /* Show via JS-managed .dropdown-open class */
+  /* Adjust for scrolled state */
+  .sp-sub-nav.scrolled + .sp-sub-nav-inner .sp-dropdown,
+  .sp-sub-nav.scrolled .sp-dropdown,
+  .sp-sub-nav.scrolled ~ .sp-sub-nav-inner .sp-dropdown {
+     top: 100px;
+  }
+
   .sp-sub-nav-item.dropdown-open .sp-dropdown {
     opacity: 1;
     visibility: visible;
@@ -1078,8 +1146,8 @@
   }
 
   .sp-dropdown-link {
-    padding: 0.65rem 1rem;
-    font-size: 0.8rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
 

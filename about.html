@@ -601,14 +601,38 @@
         min-height: auto;
       }
 
+      .page-hero-left {
+        padding: 8rem 8vw 5rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .page-hero-body {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       .page-hero-right {
         order: -1;
-        height: 400px;
+        height: 450px;
+        padding: 2rem;
+      }
+
+      .intro-strip {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+        padding: 5rem 8vw;
+      }
+
+      .intro-strip-divider {
+        display: none;
       }
 
       .vision-grid,
       .mission-grid,
-      .more-grid {
+      .more-grid,
+      .presence-cards {
         grid-template-columns: 1fr;
         gap: 4rem;
       }
@@ -618,22 +642,11 @@
       }
 
       .values-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .intro-strip {
-        flex-direction: column;
-        gap: 1rem;
-      }
-
-      .intro-strip-divider {
-        display: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .values-grid {
         grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 6rem 0;
       }
     }
 

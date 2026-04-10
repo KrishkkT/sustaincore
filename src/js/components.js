@@ -5,7 +5,7 @@ export const header = `
     <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
   </a>
   
-  <div class="hidden md:flex items-center gap-8 navbar-items">
+  <div class="hidden lg:flex items-center gap-8 navbar-items">
     <a href="/" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.home">Home</a>
     <div class="nav-item-services group/mega" id="nav-services-dropdown">
       <a href="/services.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200 flex items-center gap-1 cursor-pointer" id="nav-services-toggle">
@@ -106,13 +106,13 @@ export const header = `
     <a href="/contact.html" class="px-5 py-2 bg-brand-green text-white rounded-full text-[12px] font-bold tracking-wide uppercase hover:bg-brand-blue hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" data-i18n="navbar.cta">Free Consultation</a>
   </div>
 
-  <button class="md:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-lg transition-colors" id="mobile-menu-btn">
+  <button class="lg:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-lg transition-colors" id="mobile-menu-btn">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
   </button>
 </nav>
 
 <!-- Mobile Menu Overlay -->
-<div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-500 md:hidden flex flex-col pt-32 px-6 gap-4">
+<div id="mobile-menu" class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-500 lg:hidden flex flex-col pt-32 px-6 gap-4 overflow-y-auto">
     <button id="close-menu" class="absolute top-6 right-6 text-slate-800 p-2">
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
@@ -158,21 +158,21 @@ export const header = `
 
 export const footer = `
 <footer class="bg-brand-softGray text-brand-charcoal pt-14 pb-8 border-t border-slate-200">
-  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[320px_1fr_1fr_1fr] gap-6 mb-10">
-    <div class="flex flex-col items-start text-left max-w-[280px]">
-      <div class="flex items-center gap-2 mb-3 group">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[320px_1fr_1fr_1fr] gap-10 mb-10">
+    <div class="flex flex-col items-start text-left sm:col-span-2 lg:col-span-1 max-w-sm">
+      <div class="flex items-center gap-2 mb-4 group">
        <a href="/" class="flex items-center gap-3 group notranslate">
          <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
          <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
         </a>
       </div>
-      <p class="text-slate-500 leading-relaxed mb-3 text-sm" data-i18n="footer.tagline">
+      <p class="text-slate-500 leading-relaxed mb-6 text-sm" data-i18n="footer.tagline">
         Defining the future of verifiable sustainability through scientific integrity and data transparency.
       </p>
-      <div class="flex gap-2">
+      <div class="flex gap-3">
      <!-- LinkedIn -->
 <a href="https://linkedin.com" aria-label="LinkedIn"
-  class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-transparent transition-all">
+  class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-transparent transition-all shadow-sm">
   
   <svg xmlns="http://www.w3.org/2000/svg" 
        width="20" height="20" 
@@ -191,14 +191,14 @@ export const footer = `
 </a>
 
   <!-- X (Twitter) -->
-  <a href="https://x.com" class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-black hover:text-white hover:border-transparent transition-all">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+  <a href="https://x.com" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-black hover:text-white hover:border-transparent transition-all shadow-sm">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
       <path d="M18.244 2H21l-6.56 7.5L22 22h-6.828l-5.35-6.993L3.5 22H1l7.02-8.02L2 2h6.828l4.85 6.35L18.244 2Zm-2.396 18h1.884L8.244 4H6.228l9.62 16Z"/>
     </svg>
   </a>
 
   <!-- Instagram -->
-  <a href="https://instagram.com" class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center hover:bg-pink-500 hover:text-white hover:border-transparent transition-all">
+  <a href="https://instagram.com" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-pink-500 hover:text-white hover:border-transparent transition-all shadow-sm">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
       <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
@@ -208,9 +208,9 @@ export const footer = `
       </div>
     </div>
     
-    <div>
-      <h4 class="font-display font-bold text-brand-blue mb-3 tracking-wide" data-i18n="footer.solutions">Solutions</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
+    <div class="space-y-4">
+      <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.solutions">Solutions</h4>
+      <ul class="space-y-2.5 text-sm text-slate-500">
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.esg_reporting">ESG Reporting</a></li>
         <li><a href="/carbon-climate.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.carbon_management">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.ratings_title">Ratings & Targets</a></li>
@@ -221,9 +221,9 @@ export const footer = `
       </ul>
     </div>
 
-    <div>
-      <h4 class="font-display font-bold text-brand-blue mb-3 tracking-wide" data-i18n="footer.company">Company</h4>
-      <ul class="space-y-2 text-sm text-slate-500">
+    <div class="space-y-4">
+      <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.company">Company</h4>
+      <ul class="space-y-2.5 text-sm text-slate-500">
         <li><a href="/about.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.mission">Our Mission</a></li>
         <li><a href="/cbam.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.cbam">CBAM Advisory</a></li>
         <li><a href="/insights.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.insights">Insights</a></li>
@@ -233,18 +233,18 @@ export const footer = `
       </ul>
     </div>
 
-    <div>
-      <h4 class="font-display font-bold text-brand-blue mb-3 tracking-wide" data-i18n="footer.connect">Connect</h4>
-      <form id="subscribe-form" class="space-y-2">
-        <input type="email" name="email" required placeholder="Email Address" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm" data-i18n-attr="placeholder:footer.email_placeholder">
-        <button type="submit" class="w-full py-2.5 bg-brand-charcoal text-white rounded-xl font-bold hover:bg-brand-blue transition-all tracking-wider text-[13px] uppercase" data-i18n="footer.subscribe">SUBSCRIBE</button>
+    <div class="space-y-4">
+      <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.connect">Connect</h4>
+      <form id="subscribe-form" class="space-y-3">
+        <input type="email" name="email" required placeholder="Email Address" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm transition-all" data-i18n-attr="placeholder:footer.email_placeholder">
+        <button type="submit" class="w-full py-3 bg-brand-charcoal text-white rounded-xl font-bold hover:bg-brand-blue transition-all tracking-[0.1em] text-[11px] uppercase shadow-lg shadow-black/5" data-i18n="footer.subscribe">SUBSCRIBE</button>
       </form>
     </div>
   </div>
   
-  <div class="max-w-7xl mx-auto px-6 pt-3 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-3 text-slate-500 text-[13px]">
-    <p data-i18n="footer.copyright">© 2026 SustainCore Environmental Solutions Pvt. Ltd.</p>
-    <div class="flex gap-8">
+  <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-400 text-[12px] font-medium">
+    <p class="text-center md:text-left" data-i18n="footer.copyright">© 2026 SustainCore Environmental Solutions Pvt. Ltd.</p>
+    <div class="flex gap-8 items-center">
       <a href="/imprint.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.imprint">Imprint</a>
       <a href="/privacy.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.privacy">Privacy Policy</a>
     </div>

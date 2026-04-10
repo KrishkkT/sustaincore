@@ -1,6 +1,6 @@
 export default {
     mode: 'jit',
-    darkMode: false,
+    darkMode: 'media',
     content: [
         "./*.html",
         "./files/*.html",
