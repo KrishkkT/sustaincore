@@ -153,7 +153,7 @@ export const footer = `
         </a>
       </div>
       <p class="text-slate-500 leading-relaxed mb-6 text-sm" data-i18n="footer.tagline">
-        Defining the future of verifiable sustainability through scientific integrity and data transparency.
+        SustainCore, founded by Ritul Bhuva, is defining the future of verifiable sustainability through scientific integrity and data transparency.
       </p>
       <div class="flex gap-3">
      <!-- LinkedIn -->
@@ -229,7 +229,7 @@ export const footer = `
   </div>
   
   <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-400 text-[12px] font-medium">
-    <p class="text-center md:text-left" data-i18n="footer.copyright">© 2026 SustainCore Environmental Solutions Pvt. Ltd.</p>
+    <p class="text-center md:text-left" data-i18n="footer.copyright">© 2026 SustainCore by Ritul Bhuva. All Rights Reserved.</p>
     <div class="flex gap-8 items-center">
       <a href="/imprint.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.imprint">Imprint</a>
       <a href="/privacy.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.privacy">Privacy Policy</a>
