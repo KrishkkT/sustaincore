@@ -222,7 +222,9 @@ const setupSubNavScroll = () => {
     const inner = document.querySelector('.sp-sub-nav-inner');
     if (!nav || !inner) return;
 
-    // Inject Arrows
+    // Inject Arrows (only if they don't exist)
+    if (nav.querySelector('.sp-nav-arrow')) return;
+
     const leftArrow = document.createElement('button');
     leftArrow.className = 'sp-nav-arrow left';
     leftArrow.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';

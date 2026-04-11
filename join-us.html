@@ -1018,6 +1018,100 @@
         gap: 4rem !important;
       }
     }
+
+    /* ══ JOIN US RESPONSIVE ══ */
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        min-height: unset;
+        padding-top: 80px;
+      }
+
+      .hero-left {
+        padding: 4rem 1.5rem;
+        text-align: center;
+        align-items: center;
+      }
+
+      .hero-left::after {
+        display: none;
+      }
+
+      .hero-eyebrow {
+        justify-content: center;
+      }
+
+      .hero-body {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-right {
+        margin-top: 0 !important;
+        height: auto;
+        min-height: 500px;
+      }
+
+      .growth-panel {
+        padding: 4rem 1.5rem;
+        align-items: center;
+      }
+
+      .growth-eyebrow {
+        margin-top: 0;
+        justify-content: center;
+      }
+
+      .growth-heading {
+        text-align: center;
+        font-size: clamp(3rem, 15vw, 6rem);
+      }
+
+      .growth-rows {
+        width: 100%;
+        max-width: 450px;
+      }
+
+      .intro-band {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 3rem 1.5rem;
+      }
+
+      .intro-band-rule {
+        width: 60px;
+        height: 1px;
+      }
+
+      .intro-band-tag {
+        text-align: center;
+      }
+
+      .cv-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .cv-right {
+        padding: 2rem 1.5rem;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .offer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 
@@ -1179,7 +1273,8 @@
       <div class="offer-header">
         <div class="section-label reveal" data-i18n="join-us.what_we_offer">What We Offer</div>
         <h2 class="section-title reveal d1"><span data-i18n="join-us.three_things_you_can">Three things you can</span>
-          <em data-i18n="join-us.count_on">count on.</em></h2>
+          <em data-i18n="join-us.count_on">count on.</em>
+        </h2>
       </div>
       <div class="offer-grid">
 

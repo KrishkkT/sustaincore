@@ -1256,7 +1256,8 @@ main,
 
 .mega-menu {
   position: absolute;
-  top: 2.5rem;
+  top: 100%;
+  margin-top: 20px;
   left: 50%;
   transform: translateX(calc(-50% + 100px)) translateY(8px);
   width: min(92vw, 880px);
@@ -1285,10 +1286,10 @@ main,
 .mega-menu::before {
   content: '';
   position: absolute;
-  top: -2.5rem;
+  top: -20px;
   left: 0;
   right: 0;
-  height: 3rem;
+  height: 20px;
   background: transparent;
   z-index: 1;
 }

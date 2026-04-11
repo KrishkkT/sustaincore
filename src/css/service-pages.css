@@ -632,7 +632,8 @@
   align-items: center;
   gap: 0.25rem;
   padding: 0 1rem;
-  overflow: visible; /* Clear clipping on desktop */
+  overflow: visible;
+  /* Clear clipping on desktop */
   justify-content: center;
   transition: all 0.5s cubic-bezier(0.2, 0, 0, 1);
 }
@@ -644,6 +645,7 @@
     justify-content: flex-start;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    margin-top: -2rem;
   }
 }
 
@@ -661,7 +663,8 @@
   background: white;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 50%;
-  display: none; /* Shown via JS if overflow */
+  display: none;
+  /* Shown via JS if overflow */
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -677,11 +680,25 @@
 }
 
 .sp-nav-arrow.left {
-  left: 6px;
+  position: absolute !important;
+  left: 6px !important;
+  right: auto !important;
+}
+
+@media (max-width: 1024px) {
+  .sp-nav-arrow.left {
+    margin-top: -1rem;
+  }
+
+  .sp-nav-arrow.right {
+    margin-top: -1rem;
+  }
 }
 
 .sp-nav-arrow.right {
-  right: 6px;
+  position: absolute !important;
+  right: 6px !important;
+  left: auto !important;
 }
 
 @media (max-width: 1024px) {
@@ -689,15 +706,16 @@
     width: 95% !important;
     max-width: 95% !important;
   }
-  
+
   .sp-sub-nav-inner {
-    padding: 0 32px; /* Space for arrows */
+    padding: 0 44px;
+    /* Increased space for arrows */
   }
 
   .sp-sub-nav.scrolled {
-     padding: 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem;
   }
-  
+
   .sp-sub-nav.scrolled .sp-sub-nav-inner {
     padding: 0 32px;
   }
@@ -1114,8 +1132,10 @@
   }
 
   .sp-sub-nav-inner .sp-dropdown {
-    position: fixed; /* Fix clipping by using viewport positioning */
-    top: 118px; /* Refined position closer to nav pill */
+    position: fixed;
+    /* Fix clipping by using viewport positioning */
+    top: 118px;
+    /* Refined position closer to nav pill */
     left: 50%;
     transform: translateX(-50%) translateY(10px);
     opacity: 0;
@@ -1132,10 +1152,10 @@
   }
 
   /* Adjust for scrolled state */
-  .sp-sub-nav.scrolled + .sp-sub-nav-inner .sp-dropdown,
+  .sp-sub-nav.scrolled+.sp-sub-nav-inner .sp-dropdown,
   .sp-sub-nav.scrolled .sp-dropdown,
-  .sp-sub-nav.scrolled ~ .sp-sub-nav-inner .sp-dropdown {
-     top: 100px;
+  .sp-sub-nav.scrolled~.sp-sub-nav-inner .sp-dropdown {
+    top: 100px;
   }
 
   .sp-sub-nav-item.dropdown-open .sp-dropdown {

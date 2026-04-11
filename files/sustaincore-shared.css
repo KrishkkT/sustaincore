@@ -129,7 +129,7 @@ h5 {
 /* ─── CATEGORY SUB-NAVIGATION BAR ─── */
 .sp-sub-nav {
   position: fixed;
-  top: 73px;
+  top: 68px;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -143,8 +143,56 @@ h5 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   transition: top 0.35s ease, width 0.35s ease, max-width 0.35s ease,
     padding 0.35s ease, border-radius 0.35s ease, box-shadow 0.35s ease;
-  overflow: visible;
+  display: block !important;
+  /* Ensure it doesn't flex children */
 }
+
+@media (max-width: 1024px) {
+  .sp-sub-nav {
+    top: 62px !important;
+    width: 95% !important;
+  }
+}
+
+.sp-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  display: none;
+  /* Shown via JS if overflow */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  color: var(--navy);
+}
+
+.sp-nav-arrow:hover {
+  background: var(--forest-pale);
+  border-color: var(--forest);
+}
+
+.sp-nav-arrow.left {
+  position: absolute !important;
+  left: 6px !important;
+  right: auto !important;
+}
+
+
+
+.sp-nav-arrow.right {
+  position: absolute !important;
+  right: 6px !important;
+  left: auto !important;
+}
+
 
 
 
@@ -303,6 +351,8 @@ h5 {
   gap: 10px;
   text-decoration: none;
 }
+
+
 
 .sc-nav-logo svg {
   height: 30px;
@@ -621,9 +671,7 @@ h5 {
   padding: 0 2rem;
 }
 
-.svc-section
-
-.svc-section
+.svc-section .svc-section
 
 /* ─── SECTION HEADING ─── */
 .sec-label {
@@ -1747,9 +1795,7 @@ h5 {
   }
 
   .svc-section.alt .svc-section-inner,
-  .svc-section
-
-  .why-grid {
+  .svc-section .why-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2076,7 +2122,7 @@ h5 {
   }
 
   /* General container padding fix for category 6-7 */
-  .svc-hero > div[style*="padding"] {
+  .svc-hero>div[style*="padding"] {
     padding: 0 1.25rem !important;
   }
 
