@@ -241,6 +241,26 @@
     .svc-hero-img {
       margin-top: 2rem !important;
     }
+    @media (max-width: 1024px) {
+      .comp-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .svc-hero-pills {
+        margin-top: 2.5rem !important;
+        align-items: center !important;
+      }
+      .cat-compare {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .comp-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+    }
   </style>
 </head>
 

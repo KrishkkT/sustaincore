@@ -213,6 +213,36 @@ main,
   border-radius: 1.25rem !important;
 }
 
+/* --- Global Section Separator --- */
+/* Target semantic sections and common block classes. 
+   We use ::before at the top to ensure the line stays visible even when sections overlap via negative margins. */
+section:not(.hero):not(.sp-hero):not(.page-hero):not(.cbam-hero), 
+.s2, .s3, .s4, .s5, 
+.sp-pain, .sp-included, .sp-protocol, .sp-deliver, .sp-trust, .sp-specs, .sp-faq, 
+.intro-strip, .intro-band, .vision-section, .mission-section, .values-section, .presence-section, .purpose-section, .more-section,
+.why-section, .offer-section, .cv-section, .why-strip, .types-section, .process-section, .open-call, .benefits-section {
+  position: relative;
+}
+
+section:not(.hero):not(.sp-hero):not(.page-hero):not(.cbam-hero)::before, 
+.s2::before, .s3::before, .s4::before, .s5::before, 
+.sp-pain::before, .sp-included::before, .sp-protocol::before, .sp-deliver::before, .sp-trust::before, .sp-specs::before, .sp-faq::before, 
+.intro-strip::before, .intro-band::before, .vision-section::before, .mission-section::before, .values-section::before, .presence-section::before, .purpose-section::before, .more-section::before,
+.why-section::before, .offer-section::before, .cv-section::before, .why-strip::before, .types-section::before, .process-section::before, .open-call::before, .benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.08), transparent);
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+
+
 :root {
   --g: #4a7c59;
   --gd: #3a6347;
@@ -1990,8 +2020,8 @@ body,
 
 .sectors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.25rem;
 }
 
 .sector-card {
@@ -2034,7 +2064,7 @@ body,
 }
 
 .sector-body {
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
 .sector-name {

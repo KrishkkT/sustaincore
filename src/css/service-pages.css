@@ -496,16 +496,19 @@
   }
 
   .sp-step-flow {
-    flex-direction: column;
-    gap: 4rem;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3.5rem 2rem !important;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .sp-step-flow::before {
-    display: none;
+    display: none !important;
   }
 
   .sp-step {
-    width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -645,7 +648,6 @@
     justify-content: flex-start;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    margin-top: -2rem;
   }
 }
 
@@ -685,15 +687,7 @@
   right: auto !important;
 }
 
-@media (max-width: 1024px) {
-  .sp-nav-arrow.left {
-    margin-top: -1rem;
-  }
-
-  .sp-nav-arrow.right {
-    margin-top: -1rem;
-  }
-}
+@media (max-width: 1024px) {}
 
 .sp-nav-arrow.right {
   position: absolute !important;
@@ -760,7 +754,7 @@
 
 @media (max-width: 1024px) {
   .sp-sub-nav {
-    top: 85px;
+    top: 58px;
     /* Clear floating mobile header */
     max-width: 95%;
     width: 95%;
@@ -774,7 +768,7 @@
   }
 
   .sp-sub-nav.scrolled {
-    top: 64px;
+    top: 50px;
     /* Align with shrunken mobile navbar */
     width: 96%;
     max-width: 96%;
@@ -919,6 +913,7 @@
   position: relative;
   cursor: pointer;
 }
+
 
 .svc-card:hover {
   transform: translateY(-12px);
@@ -1381,8 +1376,32 @@
   }
 
   .sp-step-flow {
-    grid-template-columns: 1fr !important;
-    gap: 2.5rem !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2.5rem 1rem !important;
+    padding: 0 !important;
+    display: grid !important;
+  }
+
+  .sp-step {
+    width: auto !important;
+    padding: 1rem !important;
+  }
+
+  .sp-step-num {
+    width: 48px !important;
+    height: 48px !important;
+    margin-bottom: 1.25rem !important;
+    font-size: 1.15rem !important;
+  }
+
+  .sp-step-title {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .sp-step-list {
+    margin-left: 0.5rem !important;
+    font-size: 0.75rem !important;
   }
 
   .sp-card-grid,
@@ -1399,17 +1418,45 @@
 
 /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
 @media (min-width: 481px) and (max-width: 768px) {
-  .sp-hero {
-    padding-top: 9rem;
-    text-align: center;
-  }
-
-  .sp-hero-title {
-    font-size: 2.75rem !important;
-  }
-
   .sp-step-flow {
-    grid-template-columns: 1fr 1fr !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2rem 1.5rem !important;
+    padding: 0 !important;
+  }
+
+  .sp-step {
+    width: auto !important;
+    padding: 1.25rem !important;
+    text-align: center !important;
+  }
+
+  .sp-step-num {
+    width: 44px !important;
+    height: 44px !important;
+    margin-bottom: 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  .sp-step-title {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .sp-step-list {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    font-size: 0.75rem !important;
+    text-align: center !important;
+  }
+
+  .sp-step-list li {
+    padding-left: 0 !important;
+    list-style: none !important;
+  }
+
+  .sp-step-list li::before {
+    display: none !important;
   }
 
   .sp-card-grid,
@@ -1435,7 +1482,43 @@
   }
 
   .sp-step-flow {
+    display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3rem 2rem !important;
+    padding: 0 !important;
+  }
+
+  .sp-step {
+    width: auto !important;
+    padding: 1.5rem !important;
+  }
+
+  .sp-step-num {
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 1.5rem !important;
+    font-size: 1.25rem !important;
+  }
+
+  .sp-step-title {
+    font-size: 1.25rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .sp-step-list {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    font-size: 0.9rem !important;
+    text-align: center !important;
+  }
+
+  .sp-step-list li {
+    padding-left: 0 !important;
+    list-style: none !important;
+  }
+
+  .sp-step-list li::before {
+    display: none !important;
   }
 }
 

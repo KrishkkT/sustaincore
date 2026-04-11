@@ -255,6 +255,38 @@
     .svc-hero-img img {
       object-fit: inherit;
     }
+    @media (max-width: 1024px) {
+      .sub-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .cat-row {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .svc-hero-pills {
+        margin-top: 2.5rem !important;
+        align-items: center !important;
+      }
+      .sub-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+      .cat-row {
+        grid-template-columns: 1fr !important;
+        border-radius: 12px !important;
+      }
+      .cal-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .cat-cell {
+        border-bottom: 1px solid var(--bdr) !important;
+      }
+      .cat-cell:last-child {
+        border-bottom: none !important;
+      }
+    }
   </style>
 </head>
 

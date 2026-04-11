@@ -251,11 +251,9 @@
     text-align: center !important;
   }
 
-  footer .max-w-7xl .flex {
-    flex-direction: column !important;
-    gap: 1rem !important;
-  }
+  /* Removed aggressive flex-column override to allow horizontal social icons and link wrapping */
 }
+
 
 /* --- High Resolution Improvements ( > 1440px ) --- */
 @media (min-width: 1441px) {

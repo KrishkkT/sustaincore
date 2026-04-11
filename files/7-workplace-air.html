@@ -136,6 +136,32 @@
       color: var(--muted);
       line-height: 1.6;
     }
+    @media (max-width: 1024px) {
+      .exposure-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .svc-hero-pills {
+        margin-top: 2rem !important;
+        margin-left: 0 !important;
+        align-items: center !important;
+      }
+      .exposure-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .zone-strip {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        border: none !important;
+      }
+      .zone-block {
+        border: 1px solid var(--bdr) !important;
+        border-radius: 14px !important;
+      }
+    }
   </style>
 </head>
 

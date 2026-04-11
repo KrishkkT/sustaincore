@@ -46,29 +46,25 @@
       animation: slideUpIn 0.8s ease-out forwards;
     }
 
+    .hero-content {
+      padding-top: 5rem !important;
+    }
+
     @media (max-width: 768px) {
       .hero-content {
-        margin-top: 25rem !important;
+        margin-top: 28rem !important;
       }
     }
 
     @media (max-width: 480px) {
       .hero-content {
-        margin-top: 10rem !important;
+        margin-top: 13rem !important;
       }
     }
 
     @media (max-width: 320px) {
       .hero-content {
-        margin-top: 6rem !important;
-      }
-    }
-
-
-    @keyframes slideUpIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
+        margin-top: 8rem !important;
       }
     }
   </style>
@@ -78,15 +74,43 @@
 
 
   <section class="hero">
-    <video autoplay="" muted="" playsinline="" class="hero-video" id="hero-video">
+    <video autoplay muted playsinline loop preload="auto" class="hero-video" id="hero-video">
       <source src="/hero_animation.mp4" type="video/mp4">
     </video>
     <div class="hero-canvas"><canvas id="c"></canvas></div>
     <div class="hero-overlay"></div>
 
+    <script>
+      // Force autoplay for mobile devices
+      window.addEventListener('load', function () {
+        var video = document.getElementById('hero-video');
+        if (video) {
+          // Some browsers need muted to be set via JS to authorize autoplay
+          video.muted = true;
+          video.defaultMuted = true;
+
+          var playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.then(function () {
+              console.log("Autoplay started successfully");
+            }).catch(function (error) {
+              console.log("Autoplay prevented: ", error);
+              // Fallback: try to play on first user interaction if needed
+              document.body.addEventListener('touchstart', function () {
+                video.play();
+              }, { once: true });
+            });
+          }
+        }
+      });
+    </script>
+
     <div id="header-root"></div>
 
     <div class="hero-content">
+      <div class="hero-pre-title animate-slide-up"
+        style="animation-delay: 0s; margin-top: 1rem; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.2em; color: var(--hero-text-secondary); margin-bottom: 0.75rem;">
+        Pioneering the Shift Toward a Sustainable Future</div>
       <h1 class="hero-headline">
         <span class="hl-outline" data-i18n="index.start">Start</span>
         <span class="hl-green" data-i18n="index.today">Today.</span>
@@ -97,8 +121,7 @@
         <p class="hero-sub"><span data-i18n="index.the_global_market_rewards_businesses_tha">The global market rewards
             businesses that</span> <strong data-i18n="index.act_on_sustainability">act on sustainability</strong><span
             data-i18n="index._not_ones_that_plan_to_sustaincore_gets_">— not ones that plan
-            to.</span><br /><span>
-            SustainCore gets you moving, from day one.</span></p>
+            to.</span><br />SustainCore gets you moving from day one.</p>
         <div class="hero-stats">
           <div class="stat">
             <div class="stat-val" data-i18n="index.15">15+</div>
@@ -361,9 +384,9 @@
     <div class="s5-cta">
       <div class="s5-cta-left">
         <div class="s5-cta-label" data-i18n="index.get_in_touch">Get in touch</div>
-        <h2 class="s5-cta-headline"><span data-i18n="index.lets_build_your">Let's build your</span><br><span
-            class="green" data-i18n="index.sustainable">sustainable</span><br><span class="outline"
-            data-i18n="index.future">future</span><br><span class="green" data-i18n="index.together">Together</span>
+        <h2 class="s5-cta-headline"><span data-i18n="index.lets_build_your">Take a Step</span><br><span class="green"
+            data-i18n="index.sustainable">Closer</span><br><span class="outline" data-i18n="index.future">to
+            a</span><br><span>Sustainable</span><br /><span class="green" data-i18n="index.together">Future</span>
         </h2>
         <p class="s5-cta-sub" data-i18n="index.tell_us_about_your_business_and_your_sus">Tell us about your business and
           your sustainability goals. We'll take it from there — no

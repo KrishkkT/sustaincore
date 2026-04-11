@@ -156,6 +156,30 @@
       padding: 3px 10px;
       display: inline-block;
     }
+    @media (max-width: 1024px) {
+      .naaqs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+      .station-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .svc-hero-pills {
+        margin-top: 2rem !important;
+        margin-left: 0 !important;
+        align-items: center !important;
+      }
+      .naaqs-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+      .station-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+    }
   </style>
 </head>
 

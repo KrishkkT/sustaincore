@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="contact.contact_advisory_connect_for_esg_complia">Contact | Advisory Connect for ESG &amp;
@@ -564,7 +564,10 @@
         /* ─── RESPONSIVENESS (Advanced Adaptability) ─── */
 
         /* Fluid Typography for Contact Page */
-        .ct-headline { font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1.05; }
+        .ct-headline {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            line-height: 1.05;
+        }
 
         /* --- SMALL MOBILE (320px - 480px) --- */
         @media (max-width: 480px) {
@@ -583,7 +586,9 @@
                 align-items: center;
             }
 
-            .ct-label { justify-content: center; }
+            .ct-label {
+                justify-content: center;
+            }
 
             .ct-info {
                 grid-template-columns: 1fr;
@@ -604,30 +609,59 @@
 
         /* --- LARGE MOBILE / TABLET PORTRAIT (481px - 768px) --- */
         @media (min-width: 481px) and (max-width: 768px) {
-            .ct-inner { padding: 8rem 2rem 4rem; }
-            .ct-split { grid-template-columns: 1fr; gap: 3rem; }
-            .ct-left { position: static; text-align: center; align-items: center; }
-            .ct-label { justify-content: center; }
-            .ct-info { grid-template-columns: repeat(2, 1fr); }
+            .ct-inner {
+                padding: 8rem 2rem 4rem;
+            }
+
+            .ct-split {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .ct-left {
+                position: static;
+                text-align: center;
+                align-items: center;
+            }
+
+            .ct-label {
+                justify-content: center;
+            }
+
+            .ct-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         /* --- TABLET LANDSCAPE (769px - 1024px) --- */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .ct-split { grid-template-columns: 1fr 1.2fr; gap: 2.5rem; }
-            .ct-headline { font-size: clamp(3.5rem, 6vw, 4.5rem); }
+            .ct-split {
+                grid-template-columns: 1fr 1.2fr;
+                gap: 2.5rem;
+            }
+
+            .ct-headline {
+                font-size: clamp(3.5rem, 6vw, 4.5rem);
+            }
         }
 
         /* --- LAPTOP / SMALL DESKTOP (1025px - 1440px) --- */
         @media (min-width: 1025px) and (max-width: 1440px) {
-            .ct-inner { max-width: 1100px; }
+            .ct-inner {
+                max-width: 1100px;
+            }
         }
 
         /* --- ULTRA-WIDE SCREENS (1921px+) --- */
         @media (min-width: 1921px) {
-            .ct-inner { max-width: 1500px; }
-            .ct-headline { font-size: 6rem; }
-        }
+            .ct-inner {
+                max-width: 1500px;
+            }
 
+            .ct-headline {
+                font-size: 6rem;
+            }
+        }
     </style>
 </head>
 
@@ -644,10 +678,10 @@
                     <div class="ct-left">
                         <div>
                             <div class="ct-label" data-i18n="contact.advisory_connect">Advisory Connect</div>
-                            <h1 class="ct-headline"><span data-i18n="contact.lets_build">Let's build</span><br><span
-                                    data-i18n="contact.your">your</span><br /><span class="green"
-                                    data-i18n="contact.sustainable">sustainable</span><br>
-                                <span class="outline" data-i18n="contact.future">future.</span>
+                            <h1 class="ct-headline"><span data-i18n="contact.lets_build">Take a Step</span><br><span
+                                    data-i18n="contact.your">Closer</span><br /><span class="green"
+                                    data-i18n="contact.sustainable">to a</span><br>
+                                <span class="outline" data-i18n="contact.future">Future.</span>
                             </h1>
                             <p class="ct-subtitle" data-i18n="contact.connect_with_our_senior_consultants_to_d">
                                 Connect with our senior consultants to discuss your specific regulatory, ESG, or
@@ -668,8 +702,8 @@
                                 </div>
                                 <div class="ct-info-body">
                                     <div class="ct-info-title" data-i18n="contact.electronic_mail">Electronic Mail</div>
-                                    <a href="mailto:sustaincore.es@gmail.com" class="ct-info-val"
-                                        data-i18n="contact.sustaincoreesgmailcom">sustaincore.es@gmail.com</a>
+                                    <a href="mailto:support@sustaincore.in" class="ct-info-val"
+                                        data-i18n="contact.sustaincoreesgmailcom">support@sustaincore.in</a>
                                 </div>
                             </div>
 
@@ -689,7 +723,7 @@
                                 </div>
                             </div>
 
-                            <div class="ct-info-card">
+                            <!-- <div class="ct-info-card">
                                 <div class="ct-info-icon green">
                                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
                                         stroke-linecap="round" stroke-linejoin="round">
@@ -703,7 +737,7 @@
                                     <div class="ct-info-val" data-i18n="contact.mon_fri_0900_1800_ist">Mon — Fri · 09:00
                                         — 18:00 IST</div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -797,7 +831,7 @@
                 </div>
 
                 <!-- ─── CENTERED GOOGLE MAP ─── -->
-                <div class="ct-map-section" style="margin-top: 4rem;">
+                <!-- <div class="ct-map-section" style="margin-top: 4rem;">
                     <div
                         style="background: #ffffff; border: 1px solid rgba(0, 0, 0, 0.06); border-radius: 28px !important; overflow: hidden; height: 450px; box-shadow: 0 20px 60px rgba(26, 43, 33, 0.06);">
                         <iframe
@@ -806,7 +840,7 @@
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>

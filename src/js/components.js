@@ -65,7 +65,7 @@ export const header = `
       </div>
     </div>
     <a href="/cbam.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.cbam">CBAM</a>
-    <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About</a>
+    <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About Us</a>
     <a href="/insights.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.insights">Insights</a>
     <a href="/join-us.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.careers">Careers</a>
     <a href="/partners.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.partners">Partners</a>
@@ -87,14 +87,6 @@ export const header = `
           <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left" data-lang="de" data-flag="🇩🇪">
             <span class="text-base">🇩🇪</span>
             <span class="text-[13px] font-medium text-slate-700" data-i18n="navbar.lang_de">Deutsch (German)</span>
-          </button>
-          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left" data-lang="fr" data-flag="🇫🇷">
-            <span class="text-base">🇫🇷</span>
-            <span class="text-[13px] font-medium text-slate-700" data-i18n="navbar.lang_fr">Français (French)</span>
-          </button>
-          <button class="lang-option flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-slate-50 transition-colors text-left" data-lang="es" data-flag="🇲🇽">
-            <span class="text-base">🇲🇽</span>
-            <span class="text-[13px] font-medium text-slate-700" data-i18n="navbar.lang_es">Español (Spanish)</span>
           </button>
         </div>
       </div>
@@ -131,7 +123,7 @@ export const header = `
       <a href="/air-monitoring.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.air_monitoring">Air Monitoring</a>
     </div>
     <a href="/cbam.html" class="text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100" data-i18n="navbar.cbam">CBAM</a>
-    <a href="/about.html" class="text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100" data-i18n="navbar.about">About</a>
+    <a href="/about.html" class="text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100" data-i18n="navbar.about">About Us</a>
     <a href="/insights.html" class="text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100" data-i18n="navbar.insights">Insights</a>
     <a href="/contact.html" class="mt-4 px-8 py-4 bg-brand-green text-white rounded-full text-xl font-bold text-center shadow-xl shadow-brand-green/20" data-i18n="navbar.contact">Contact Us</a>
     
@@ -144,12 +136,6 @@ export const header = `
         </button>
         <button class="lang-switch-btn" data-lang="de" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
           <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">German</span>
-        </button>
-        <button class="lang-switch-btn" data-lang="fr" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
-          <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">French</span>
-        </button>
-        <button class="lang-switch-btn" data-lang="es" style="display: flex; align-items: center; justify-content: center; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; cursor: pointer;">
-          <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">Spanish</span>
         </button>
       </div>
     </div>
@@ -210,7 +196,7 @@ export const footer = `
     
     <div class="space-y-4">
       <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.solutions">Solutions</h4>
-      <ul class="space-y-2.5 text-sm text-slate-500">
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:flex-col lg:gap-0 lg:space-y-2.5 text-sm text-slate-500">
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.esg_reporting">ESG Reporting</a></li>
         <li><a href="/carbon-climate.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.carbon_management">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.ratings_title">Ratings & Targets</a></li>
@@ -218,14 +204,14 @@ export const footer = `
         <li><a href="/management-systems.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.environmental_audits">Environmental Audits</a></li>
         <li><a href="/water-testing.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.water_testing">Water Testing</a></li>
         <li><a href="/air-monitoring.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.air_monitoring">Air Monitoring</a></li>
+        <li><a href="/cbam.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.cbam">CBAM Advisory</a></li>
       </ul>
     </div>
 
     <div class="space-y-4">
       <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.company">Company</h4>
-      <ul class="space-y-2.5 text-sm text-slate-500">
-        <li><a href="/about.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.mission">Our Mission</a></li>
-        <li><a href="/cbam.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.cbam">CBAM Advisory</a></li>
+      <ul class="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:flex-col lg:gap-0 lg:space-y-2.5 text-sm text-slate-500">
+        <li><a href="/about.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.mission">About Us</a></li>
         <li><a href="/insights.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.insights">Insights</a></li>
         <li><a href="/join-us.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.careers">Careers</a></li>
         <li><a href="/partners.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.partners">Partners</a></li>

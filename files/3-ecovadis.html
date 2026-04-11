@@ -74,6 +74,22 @@
       color: var(--muted);
       line-height: 1.6;
     }
+    @media (max-width: 1024px) {
+      .medal-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .svc-hero-pills {
+        margin-top: 2rem !important;
+        align-items: center !important;
+      }
+      .medal-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+      }
+    }
   </style>
 </head>
 
