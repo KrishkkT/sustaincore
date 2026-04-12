@@ -165,7 +165,7 @@ draw();
     submitBtn.disabled = true;
 
     try {
-      const response = await fetch('https://formspree.io/f/maqlwazp', {
+      const response = await fetch('https://formsubmit.co/ajax/support@sustaincore.in', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

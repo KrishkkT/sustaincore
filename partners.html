@@ -1434,28 +1434,28 @@
 
         <div class="open-call-right reveal-right">
           <div class="open-call-title" data-i18n="partners.partnership_enquiry">Partnership Enquiry</div>
-          <form class="interest-form" onsubmit="handleSubmit(event)">
+          <form class="interest-form" id="partners-form">
             <div class="form-row">
               <div class="form-field">
                 <label class="form-label" data-i18n="partners.your_name">Your Name</label>
-                <input type="text" class="form-input" placeholder="Full name" required=""
+                <input type="text" name="name" class="form-input" placeholder="Full name" required=""
                   data-i18n-attr="placeholder:partners.attr_placeholder_full_name">
               </div>
               <div class="form-field">
                 <label class="form-label" data-i18n="partners.organisation">Organisation</label>
-                <input type="text" class="form-input" placeholder="Organisation name" required=""
+                <input type="text" name="organisation" class="form-input" placeholder="Organisation name" required=""
                   data-i18n-attr="placeholder:partners.attr_placeholder_organisation_name">
               </div>
             </div>
             <div class="form-row">
               <div class="form-field">
                 <label class="form-label" data-i18n="partners.email_address">Email Address</label>
-                <input type="email" class="form-input" placeholder="work@organisation.com" required=""
+                <input type="email" name="email" class="form-input" placeholder="work@organisation.com" required=""
                   data-i18n-attr="placeholder:partners.attr_placeholder_workorganisationcom">
               </div>
               <div class="form-field">
                 <label class="form-label" data-i18n="partners.organisation_type">Organisation Type</label>
-                <select class="form-select form-input">
+                <select name="type" class="form-select form-input">
                   <option value="" disabled="" selected="" data-i18n="partners.select_type">Select type</option>
                   <option data-i18n="partners.industry_trade_body">Industry / Trade Body</option>
                   <option data-i18n="partners.certification_standards_agency">Certification / Standards Agency</option>
@@ -1468,7 +1468,7 @@
             <div class="form-field full">
               <label class="form-label" data-i18n="partners.what_kind_of_collaboration_do_you_have_i">What kind of
                 collaboration do you have in mind?</label>
-              <textarea class="form-textarea"
+              <textarea name="message" class="form-textarea"
                 placeholder="Tell us briefly — no need to have all the details figured out yet."
                 data-i18n-attr="placeholder:partners.attr_placeholder_tell_us_briefly_no_need_to_have_all_the_"></textarea>
             </div>
@@ -1493,6 +1493,7 @@
   <div id="footer-root"></div>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/form-handler.js"></script>
   <script>
     // Scroll reveal
     const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
@@ -1500,12 +1501,6 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
     }, { threshold: 0.1 });
     allReveal.forEach(el => io.observe(el));
-
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('form-success').style.display = 'block';
-      e.target.reset();
-    }
   </script>
 
 

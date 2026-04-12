@@ -46,7 +46,7 @@
         }
     };
 
-    const handleFormSubmission = async (form, successTitle, successMessage) => {
+    const handleFormSubmission = async (form, targetEmail, successTitle, successMessage) => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData.entries());
         const submitBtn = form.querySelector('button[type="submit"]');
@@ -56,8 +56,7 @@
         submitBtn.disabled = true;
 
         try {
-            const formspreeId = 'maqlwazp';
-            const endpoint = `https://formspree.io/f/${formspreeId}`;
+            const endpoint = `https://formsubmit.co/ajax/${targetEmail}`;
 
             const response = await fetch(endpoint, {
                 method: 'POST',
@@ -83,6 +82,7 @@
             e.preventDefault();
             handleFormSubmission(
                 contactForm,
+                'support@sustaincore.in',
                 'Mandate Dispatched',
                 'Your communication has been successfully routed to SustainCore. We will contact you at {email} within 24 business hours.'
             );
@@ -96,8 +96,23 @@
             e.preventDefault();
             handleFormSubmission(
                 footerSubscribeForm,
+                'support@sustaincore.in',
                 'Subscription Success',
                 'Your email ({email}) has been added to our circular. You will receive the SustainCore quarterly update starting this week.'
+            );
+        });
+    }
+
+    // Handle Partners Form
+    const partnersForm = document.getElementById('partners-form');
+    if (partnersForm) {
+        partnersForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleFormSubmission(
+                partnersForm,
+                'partners@sustaincore.in',
+                'Partnership Enquiry Received',
+                'Thank you for your interest. A member of our partnership team will reach out to you within 3 business days.'
             );
         });
     }
