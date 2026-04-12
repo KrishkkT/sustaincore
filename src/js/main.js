@@ -26,6 +26,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
+    const heroVideo = document.getElementById('hero-video');
+
+    // Force Hero Video Autoplay (Mobile Fix)
+    const forceVideoPlay = () => {
+        if (heroVideo) {
+            heroVideo.muted = true;
+            heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
+        }
+    };
+
+    if (heroVideo) {
+        forceVideoPlay();
+        // Fallback for some browsers that require a tiny bit of interaction or re-trigger
+        window.addEventListener('load', forceVideoPlay);
+        document.body.addEventListener('touchstart', forceVideoPlay, { once: true });
+    }
         const servicesToggle = document.getElementById('mobile-services-toggle');
         const servicesList = document.getElementById('mobile-services-list');
 
@@ -136,20 +152,17 @@ function setupUnifiedUI() {
                 if (window.innerWidth < 1024) {
                     const isOpen = container.classList.contains(openClass);
                     
-                    // Allow navigation if clicking an already open dropdown link
-                    if (trigger.tagName === 'A' && trigger.getAttribute('href') !== '#' && isOpen) {
-                        return; // Let the default navigation happen
-                    }
-                    
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
                     // Close other open dropdowns
                     document.querySelectorAll('.' + openClass).forEach(s => { 
                         if (s !== container) s.classList.remove(openClass); 
                     });
                     
-                    container.classList.toggle(openClass);
+                    container.classList.toggle(openClass, !isOpen);
+                    
+                    // Prevent navigation if it's a dropdown trigger
+                    if (trigger.classList.contains('sp-dropdown-toggle') || trigger.id === 'nav-services-toggle') {
+                       e.preventDefault();
+                    }
                 }
             });
         }
@@ -183,7 +196,10 @@ function setupUnifiedUI() {
             });
         });
     };
+    // Initialize components
     setupFlipCards();
+    setupSubNavScroll();
+    setupBackToTop();
 
     document.querySelectorAll('.sp-sub-nav-item, #nav-services-dropdown').forEach(el => setupDropdown(el));
 

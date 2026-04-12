@@ -614,7 +614,8 @@ h5 {
 .svc-hero-img-title em {
   font-style: italic;
   font-weight: 300;
-  color: rgba(74, 124, 89, .9);
+  color: white;
+  font-weight: bold;
 }
 
 .svc-hero-stat-row {
@@ -876,8 +877,6 @@ h5 {
 .process-steps {
   display: grid;
   gap: 0;
-  border: 1px solid var(--bdr);
-  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -1248,7 +1247,7 @@ h5 {
 /* ─── CTA BAND ─── */
 .cta-band {
   margin-bottom: 6rem;
-  background: #fdfaf5;
+  background: #ffffff !important;
   border-radius: 24px;
   border: 1px solid rgba(74, 124, 89, 0.15);
   display: grid;
@@ -2075,6 +2074,7 @@ h5 {
     grid-template-columns: 1fr 1fr !important;
     gap: 1.5rem !important;
     flex-direction: row !important;
+    border: none !important;
   }
 
   .ps {
@@ -2173,16 +2173,4 @@ h5 {
 .related-grid {
   position: relative;
 }
-
-/* Major section separators (Top-aligned for overlapping layout support) */
-.svc-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.08), transparent);
-  pointer-events: none;
-  z-index: 20;
-}
+

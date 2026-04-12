@@ -49,6 +49,8 @@
 
     html {
       scroll-behavior: smooth;
+      height: 100% !important;
+      overflow: hidden !important;
     }
 
     body {
@@ -57,7 +59,10 @@
       font-family: var(--sans);
       font-weight: 300;
       line-height: 1.7;
-      overflow-x: hidden;
+      overflow-x: hidden !important;
+      overflow-y: scroll !important;
+      height: 100% !important;
+      position: relative;
     }
 
     /* Removed legacy Nav CSS - now powered by main.js and global components */
@@ -68,7 +73,6 @@
       display: grid;
       grid-template-columns: 52% 48%;
       padding-top: 76px;
-      overflow: hidden;
     }
 
     .hero-left {
@@ -1115,7 +1119,7 @@
   </style>
 </head>
 
-<body class="bg-brand-offWhite text-brand-charcoal overflow-x-hidden">
+<body class="bg-brand-offWhite text-brand-charcoal">
 
   <div id="header-root"></div>
 

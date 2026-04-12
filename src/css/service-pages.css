@@ -1205,7 +1205,7 @@
 
 .cta-band {
   margin-bottom: 6rem;
-  background: #fdfaf5;
+  background: #ffffff !important;
   border-radius: 24px;
   border: 1px solid rgba(74, 124, 89, 0.15);
   display: grid;

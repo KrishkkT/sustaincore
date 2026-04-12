@@ -153,7 +153,7 @@ export const footer = `
         </a>
       </div>
       <p class="text-slate-500 leading-relaxed mb-6 text-sm" data-i18n="footer.tagline">
-        SustainCore, founded by Ritul Bhuva, is defining the future of verifiable sustainability through scientific integrity and data transparency.
+        SustainCore is defining the future of verifiable sustainability through scientific integrity and data transparency.
       </p>
       <div class="flex gap-3">
      <!-- LinkedIn -->
