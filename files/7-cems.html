@@ -154,6 +154,7 @@
     .cems-arch {
       background: none;
     }
+
     @media (max-width: 1024px) {
       .cems-arch {
         grid-template-columns: repeat(2, 1fr) !important;
@@ -166,23 +167,27 @@
         margin-left: 0 !important;
         align-items: center !important;
       }
+
       .cems-arch {
         grid-template-columns: 1fr !important;
         background: none !important;
         border: none !important;
         gap: 1.5rem !important;
       }
+
       .ca-block {
         border: 1px solid var(--bdr) !important;
         border-radius: 18px !important;
         display: flex !important;
         flex-direction: column !important;
       }
+
       .ca-arrow {
         position: absolute !important;
-        bottom: 15px !important;
-        right: 15px !important;
-        transform: rotate(90deg) !important;
+        top: 100% !important;
+        bottom: auto !important;
+        left: 50% !important;
+        transform: translate(-50%, 0) rotate(90deg) !important;
         margin: 0 !important;
         z-index: 10 !important;
         width: 24px !important;
@@ -881,7 +886,7 @@
       <div class="faq-wrap mt3">
         <div class="faq-item">
           <button class="faq-btn"><span data-i18n="files_7-cems.is_cems_mandatory_for_my_industry">Is CEMS mandatory for
-              my industry?</span><span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              my industry?</span> <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -900,7 +905,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-btn"><span data-i18n="files_7-cems.what_happens_if_our_cems_stops_transmitt">What happens
-              if our CEMS stops transmitting data?</span><span class="faq-icon"><svg viewBox="0 0 24 24" fill="none"
+              if our CEMS stops transmitting data?</span> <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -918,7 +923,7 @@
         </div>
         <div class="faq-item">
           <button class="faq-btn"><span data-i18n="files_7-cems.what_is_the_difference_between_qal1_qal2">What is the
-              difference between QAL1, QAL2 and AST in CEMS?</span><span class="faq-icon"><svg viewBox="0 0 24 24"
+              difference between QAL1, QAL2 and AST in CEMS?</span> <span class="faq-icon"><svg viewBox="0 0 24 24"
                 fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>

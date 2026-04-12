@@ -407,14 +407,18 @@
         }
 
         .formula-notes {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
+            display: flex;
+            flex-direction: column;
             gap: 1rem;
+            padding-bottom: 1rem;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 1024px) {
             .formula-notes {
+                flex-direction: row;
+                display: grid;
                 grid-template-columns: repeat(3, 1fr);
+                padding-bottom: 0;
             }
         }
 
@@ -423,6 +427,17 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
             padding: 1.25rem;
+            /* Mobile-only box constraints */
+            width: 85%;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        @media (min-width: 1024px) {
+            .fn {
+                width: auto;
+                margin-right: 0;
+            }
         }
 
         .fn-label {
@@ -958,7 +973,7 @@
                     <div class="xl:col-span-5 space-y-6 pr-0 xl:pr-4 xl:mt-12 text-center md:text-left">
                         <h1
                             class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[90.5px] font-display font-black text-white leading-[1.1] md:leading-[0.9] tracking-tighter mb-4">
-                            <span data-i18n="cbam.cbam_eus">CBAM — EU's</span><span
+                            <span data-i18n="cbam.cbam_eus">CBAM — EU's</span> <span
                                 class="text-brand-green italic font-light" data-i18n="cbam.carbon_border">Carbon
                                 Border</span>
                             <br class="hidden md:block"><span data-i18n="cbam.adjustment_mechanism">Adjustment
@@ -1136,7 +1151,7 @@
         <!-- WHAT IS CBAM -->
         <section class="max-w-7xl mx-auto px-6 py-32">
             <div class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-green mb-8">
-                <span class="w-5 h-[1.5px] bg-brand-green"></span><span data-i18n="cbam.strategic_context">Strategic
+                <span class="w-5 h-[1.5px] bg-brand-green"></span> <span data-i18n="cbam.strategic_context">Strategic
                     Context</span>
             </div>
 
@@ -1159,16 +1174,16 @@
                                 under
                                 the EU Emissions Trading System (ETS).</span></p>
                         <p><span data-i18n="cbam.after_a_27_month_transitional_reporting_">After a 27-month transitional
-                                reporting phase,</span><span class="text-brand-blue font-medium"
+                                reporting phase,</span> <span class="text-brand-blue font-medium"
                                 data-i18n="cbam.cbam_entered_its_definitive_phase_on_1_j">CBAM
-                                entered its definitive phase on 1 January 2026.</span><span
+                                entered its definitive phase on 1 January 2026.</span> <span
                                 data-i18n="cbam.your_eu_importer_must_now_purchase_and_s">Your EU importer must now
                                 purchase and surrender CBAM certificates equal to the embedded emissions in goods
                                 imported
                                 from you.</span></p>
                         <p><span data-i18n="cbam.the_correct_cbam_cost_formula_per_regula">The correct CBAM cost formula
                                 per Regulation (EU) 2023/956 is based on a phase-out of ETS
-                                free allowances:</span><span class="text-brand-green font-medium"
+                                free allowances:</span> <span class="text-brand-green font-medium"
                                 data-i18n="cbam.25_in_2026_rising_to_100_by_2034">2.5% in 2026, rising to 100% by
                                 2034.</span></p>
                     </div>
@@ -1247,7 +1262,7 @@
                     data-i18n="cbam.regulatory_scope">Regulatory
                     Scope</span>
                 <h2 class="text-4xl md:text-5xl font-display font-black text-brand-charcoal tracking-tighter mb-6">
-                    <span data-i18n="cbam.six_sectors_in_scope">Six sectors in scope.</span><span
+                    <span data-i18n="cbam.six_sectors_in_scope">Six sectors in scope.</span> <span
                         class="text-brand-blue italic font-light" data-i18n="cbam.default_emission_values">Default
                         emission
                         values.</span>
@@ -1469,11 +1484,11 @@
             <div class="flex flex-col items-center text-center mb-20">
                 <div
                     class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-green mb-6">
-                    <span class="w-5 h-[1.5px] bg-brand-green"></span><span
+                    <span class="w-5 h-[1.5px] bg-brand-green"></span> <span
                         data-i18n="cbam.implementation_roadmap">Implementation Roadmap</span>
                 </div>
                 <h2 class="text-4xl md:text-6xl font-display font-black text-brand-charcoal tracking-tighter">
-                    <span data-i18n="cbam.cbam">CBAM</span><span class="text-brand-green italic font-light"
+                    <span data-i18n="cbam.cbam">CBAM</span> <span class="text-brand-green italic font-light"
                         data-i18n="cbam.evolutions">Evolutions</span>
                 </h2>
             </div>
@@ -1500,13 +1515,13 @@
                         <div
                             class="phase-card p-6 rounded-2xl bg-white border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-md">
                             <ul class="text-[11px] space-y-3 text-slate-500 font-light leading-relaxed">
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.quarterly_reporting_on_embedded_emission">Quarterly reporting on
                                         embedded emissions.</span></li>
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.no_financial_obligation_no_certificates">No financial obligation
                                         (no certificates).</span></li>
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.default_values_allowed_without_limit_reg">Default values allowed
                                         without limit (regulations
                                         apply).</span></li>
@@ -1535,11 +1550,11 @@
                                             verification</strong> <span data-i18n="cbam.by_eu_accredited_verifiers">by
                                             EU
                                             accredited verifiers.</span></span></li>
-                                <li class="flex gap-2"><span class="text-brand-blue">•</span><span
+                                <li class="flex gap-2"><span class="text-brand-blue">•</span> <span
                                         data-i18n="cbam.phase_in_factor_starts_at_25_reduction">Phase-in factor starts
                                         at
                                         2.5% reduction.</span></li>
-                                <li class="flex gap-2"><span class="text-brand-blue">•</span><span
+                                <li class="flex gap-2"><span class="text-brand-blue">•</span> <span
                                         data-i18n="cbam.first_annual_declaration_due_31_may_2027">First annual
                                         declaration
                                         due 31 May 2027.</span></li>
@@ -1568,10 +1583,10 @@
                                             data-i18n="cbam.indirect_emissions">indirect
                                             emissions</strong> <span data-i18n="cbam.for_more_sectors">for more
                                             sectors.</span></span></li>
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.gradual_phase_out_of_free_ets_allowances">Gradual phase-out of
                                         free ETS allowances.</span></li>
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.possible_scope_expansion_to_chemicalspol">Possible scope
                                         expansion to chemicals/polymers.</span></li>
                             </ul>
@@ -1598,10 +1613,10 @@
                                             liability</strong> <span data-i18n="cbam.no_ets_free_allowances">(No ETS
                                             free
                                             allowances).</span></span></li>
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.full_alignment_with_eu_carbon_leakage_go">Full alignment with EU
                                         carbon leakage goals.</span></li>
-                                <li class="flex gap-2"><span>•</span><span
+                                <li class="flex gap-2"><span>•</span> <span
                                         data-i18n="cbam.mature_secondary_certificate_market">Mature secondary
                                         certificate market.</span></li>
                             </ul>
@@ -1620,7 +1635,7 @@
                 <div class="relative z-10">
                     <div
                         class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-blue mb-8">
-                        <span class="w-5 h-[1.5px] bg-brand-blue"></span><span
+                        <span class="w-5 h-[1.5px] bg-brand-blue"></span> <span
                             data-i18n="cbam.strategic_readiness">Strategic Readiness</span>
                     </div>
                     <h2 class="text-4xl md:text-6xl font-display font-black text-brand-charcoal mb-16 tracking-tighter">
@@ -1724,12 +1739,12 @@
                         <div class="text-center md:text-left">
                             <div
                                 class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-blue mb-4">
-                                <span class="w-5 h-[1.5px] bg-brand-blue"></span><span
+                                <span class="w-5 h-[1.5px] bg-brand-blue"></span> <span
                                     data-i18n="cbam.interactive_modeller">Interactive Modeller</span>
                             </div>
                             <h2
                                 class="text-4xl md:text-5xl font-display font-black text-brand-charcoal tracking-tighter">
-                                <span data-i18n="cbam.exposure">Exposure</span><span
+                                <span data-i18n="cbam.exposure">Exposure</span> <span
                                     class="text-brand-blue italic font-light"
                                     data-i18n="cbam.calculator">Calculator</span>
                             </h2>
@@ -2205,7 +2220,8 @@
 
                         <div
                             class="flex items-center gap-2 text-[10px] font-bold tracking-[0.2em] uppercase text-brand-green mb-3">
-                            <span class="w-5 h-[1.5px] bg-brand-green"></span><span data-i18n="cbam.the_methodology">The
+                            <span class="w-5 h-[1.5px] bg-brand-green"></span> <span
+                                data-i18n="cbam.the_methodology">The
                                 Methodology</span>
                         </div>
                         <h2 class="text-4xl md:text-5xl font-display font-black mb-4 leading-[1.1] tracking-tighter">
@@ -2264,7 +2280,8 @@
                     <!-- Full Width Formula Box -->
                     <div class="pt-8">
                         <div class="formula-main text-center max-w-4xl mx-auto px-4">
-                            <div class="mt-6 md:mt-2 text-sm sm:text-base md:text-xl lg:text-2xl">
+                            <div
+                                class="mt-6 md:mt-2 text-sm sm:text-base md:text-xl lg:text-2xl flex flex-wrap justify-center items-center gap-x-2 gap-y-2">
                                 <span class="hl" data-i18n="cbam.cbam_certificate_cost_">CBAM Certificate Cost
                                     (€)</span> <span class="eq">=</span> <span class="hl"
                                     data-i18n="cbam.volume_t">Volume (t)</span> <span class="eq">×</span> <span
@@ -2277,7 +2294,7 @@
                             </div>
                         </div>
 
-                        <div class="formula-notes mt-16 max-w-6xl mx-auto">
+                        <div class="formula-notes mt-16 max-w-6xl">
                             <div class="fn">
                                 <div class="fn-label" data-i18n="cbam.embedded_ef">Embedded EF</div>
                                 <div class="fn-desc text-[10px] leading-relaxed"
@@ -2337,19 +2354,20 @@
                                     default values (no verified data)</div>
                                 <div class="cc-row"><span class="cc-row-lbl"
                                         data-i18n="cbam.default_ef_7208_world_avg">Default EF (7208, world
-                                        avg)</span><span class="cc-row-val" data-i18n="cbam.228_tcot">2.28 tCO₂/t</span>
+                                        avg)</span> <span class="cc-row-val" data-i18n="cbam.228_tcot">2.28
+                                        tCO₂/t</span>
                                 </div>
                                 <div class="cc-row"><span class="cc-row-lbl"
-                                        data-i18n="cbam.10_punitive_markup_2026">+10% punitive markup (2026)</span><span
-                                        class="cc-row-val" data-i18n="cbam.2508_tcot">2.508 tCO₂/t</span></div>
+                                        data-i18n="cbam.10_punitive_markup_2026">+10% punitive markup (2026)</span>
+                                    <span class="cc-row-val" data-i18n="cbam.2508_tcot">2.508 tCO₂/t</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl"
-                                        data-i18n="cbam.total_embedded_emissions">Total embedded emissions</span><span
+                                        data-i18n="cbam.total_embedded_emissions">Total embedded emissions</span> <span
                                         class="cc-row-val" data-i18n="cbam.25080_tco">25,080 tCO₂</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl" data-i18n="cbam.cbam_certificates_25">CBAM
-                                        certificates (× 2.5%)</span><span class="cc-row-val"
+                                        certificates (× 2.5%)</span> <span class="cc-row-val"
                                         data-i18n="cbam.627_tcoe">627 tCO₂e</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl" data-i18n="cbam.cbam_cost_2026">CBAM cost
-                                        (2026)</span><span class="cc-row-val" data-i18n="cbam.43890">€43,890</span>
+                                        (2026)</span> <span class="cc-row-val" data-i18n="cbam.43890">€43,890</span>
                                 </div>
                             </div>
                             <div class="comp-col cc-actual">
@@ -2357,19 +2375,19 @@
                                     verified actual data (SustainCore)</div>
                                 <div class="cc-row"><span class="cc-row-lbl"
                                         data-i18n="cbam.actual_verified_ef_installation">Actual verified EF
-                                        (installation)</span><span class="cc-row-val" data-i18n="cbam.160_tcot">1.60
+                                        (installation)</span> <span class="cc-row-val" data-i18n="cbam.160_tcot">1.60
                                         tCO₂/t</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl" data-i18n="cbam.punitive_markup">Punitive
-                                        markup</span><span class="cc-row-val" data-i18n="cbam._none">—
+                                        markup</span> <span class="cc-row-val" data-i18n="cbam._none">—
                                         None</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl"
-                                        data-i18n="cbam.total_embedded_emissions">Total embedded emissions</span><span
+                                        data-i18n="cbam.total_embedded_emissions">Total embedded emissions</span> <span
                                         class="cc-row-val" data-i18n="cbam.16000_tco">16,000 tCO₂</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl" data-i18n="cbam.cbam_certificates_25">CBAM
-                                        certificates (× 2.5%)</span><span class="cc-row-val"
+                                        certificates (× 2.5%)</span> <span class="cc-row-val"
                                         data-i18n="cbam.400_tcoe">400 tCO₂e</span></div>
                                 <div class="cc-row"><span class="cc-row-lbl" data-i18n="cbam.cbam_cost_2026">CBAM cost
-                                        (2026)</span><span class="cc-row-val" data-i18n="cbam.28000">€28,000</span>
+                                        (2026)</span> <span class="cc-row-val" data-i18n="cbam.28000">€28,000</span>
                                 </div>
                             </div>
                         </div>
@@ -2386,11 +2404,11 @@
                         <div class="penalty-sub" data-i18n="cbam.definitive_phase_2026_penalties_are_seve">Definitive
                             Phase (2026+) penalties are severe and retrospective.</div>
                         <div class="penalty-grid">
-                            <div class="pg"><span class="pg-val" data-i18n="cbam.100t">€100/t</span><span class="pg-lbl"
-                                    data-i18n="cbam.coe_penalty">CO₂e Penalty</span></div>
-                            <div class="pg"><span class="pg-val" data-i18n="cbam.uncapped">Uncapped</span><span
+                            <div class="pg"><span class="pg-val" data-i18n="cbam.100t">€100/t</span> <span
+                                    class="pg-lbl" data-i18n="cbam.coe_penalty">CO₂e Penalty</span></div>
+                            <div class="pg"><span class="pg-val" data-i18n="cbam.uncapped">Uncapped</span> <span
                                     class="pg-lbl" data-i18n="cbam.financial_risk">Financial Risk</span></div>
-                            <div class="pg"><span class="pg-val" data-i18n="cbam.ban">Ban</span><span class="pg-lbl"
+                            <div class="pg"><span class="pg-val" data-i18n="cbam.ban">Ban</span> <span class="pg-lbl"
                                     data-i18n="cbam.customs_clearance_risk">Customs clearance risk</span>
                             </div>
                         </div>
@@ -2411,7 +2429,7 @@
                         data-i18n="cbam.our_capacity">Our
                         Capacity</span>
                     <h2 class="text-4xl md:text-5xl font-display font-black text-brand-charcoal tracking-tighter mb-6">
-                        <span data-i18n="cbam.sustaincore">SustainCore</span><span
+                        <span data-i18n="cbam.sustaincore">SustainCore</span> <span
                             class="text-brand-blue italic font-light" data-i18n="cbam.cbam_solutions">CBAM
                             Solutions.</span>
                     </h2>

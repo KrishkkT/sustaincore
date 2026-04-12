@@ -107,7 +107,7 @@ draw();
       name: opt.text.split(' (')[0]
     };
   });
-  function updateFlag(sel) {
+  window.updateFlag = function(sel) {
     const c = countryData[sel.value];
     document.getElementById('flag-emoji').textContent = c.flag;
     document.getElementById('flag-code').textContent = c.code;
@@ -118,7 +118,7 @@ draw();
     wrap.classList.remove('phone-error','phone-valid');
     errMsg.style.display = 'none';
   }
-  function onPhoneInput(input) {
+  window.onPhoneInput = function(input) {
     const digits = input.value.replace(/\D/g,'');
     const sel = document.getElementById('country-select');
     const c = countryData[sel.value];
@@ -128,7 +128,7 @@ draw();
     if (digits.length === 0) { wrap.classList.remove('phone-error','phone-valid'); errMsg.style.display='none'; }
     else if (digits.length >= c.min && digits.length <= c.max) { wrap.classList.remove('phone-error'); wrap.classList.add('phone-valid'); errMsg.style.display='none'; }
   }
-  async function handleSubmit(e) {
+  window.handleSubmit = async function(e) {
     e.preventDefault();
     
     const form = e.target.closest('div'); // The form wrapper

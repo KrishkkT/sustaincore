@@ -229,7 +229,7 @@ export const footer = `
   </div>
   
   <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-400 text-[12px] font-medium">
-    <p class="text-center md:text-left" data-i18n="footer.copyright">© 2026 SustainCore by Ritul Bhuva. All Rights Reserved.</p>
+    <p class="text-center md:text-left" data-i18n="footer.copyright">© 2026 SustainCore. All rights reserved.</p>
     <div class="flex gap-8 items-center">
       <a href="/imprint.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.imprint">Imprint</a>
       <a href="/privacy.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.privacy">Privacy Policy</a>

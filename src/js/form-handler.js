@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Run immediately since module scripts are inherently deferred and DOM is ready
+(() => {
     const contactForm = document.getElementById('contact-form');
 
     // Create Modal Structure if not exists
@@ -89,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Handle Newsletter/Subscribe Form
-    const footerSubscribeForm = document.getElementById('subscribe-form');
+    const footerSubscribeForm = document.getElementById('subscribe-form') || document.getElementById('newsletter-form');
     if (footerSubscribeForm) {
         footerSubscribeForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -100,4 +101,4 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         });
     }
-});
+})();
