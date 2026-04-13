@@ -3034,13 +3034,10 @@ body, html {
   }
 }
 
-/* Sub-Nav Arrow Fix */
 .sp-nav-arrow {
   z-index: 5000 !important;
   pointer-events: auto !important;
   cursor: pointer !important;
-  display: flex !important;
-  opacity: 1 !important;
 }
 
 .sp-nav-arrow:active {

@@ -253,7 +253,7 @@ const setupSubNavScroll = () => {
     nav.appendChild(rightArrow);
 
     const updateArrows = () => {
-        if (window.innerWidth > 1024) {
+        if (window.innerWidth > 1210) {
             leftArrow.style.display = 'none';
             rightArrow.style.display = 'none';
             return;

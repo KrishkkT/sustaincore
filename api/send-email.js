@@ -9,9 +9,8 @@ export default async function handler(request, response) {
 
     const { subject, html, testEmail, templateType, articleData, subscriberEmail } = request.body;
 
-    // Gmail SMTP Configuration
-    const GMAIL_USER = process.env.GMAIL_USER;
-    const GMAIL_PASS = process.env.GMAIL_PASS; // 16-digit App Password
+    // Resend Configuration (Professional SMTP for Newsletters)
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
     // Determine Final HTML
     let finalHtml = html;
@@ -26,21 +25,24 @@ export default async function handler(request, response) {
     }
 
     // For prototyping without credentials
-    if (!GMAIL_USER || !GMAIL_PASS) {
+    if (!RESEND_API_KEY) {
         return response.status(200).json({
             success: true,
             isMock: true,
-            message: "Gmail SMTP simulated (No Credentials logged)."
+            message: "Developer Mode Simulation (No RESEND_API_KEY located in environment)."
         });
     }
 
     try {
-        // 1. Initialize Nodemailer Transporter
+        // 1. Initialize Nodemailer Transporter via Resend API
+        console.log(`[SMTP TRACE] Connecting to Resend Network...`);
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'smtp.resend.com',
+            port: 465,
+            secure: true,
             auth: {
-                user: GMAIL_USER,
-                pass: GMAIL_PASS
+                user: 'resend', // Resend requires the literal string 'resend' as the user
+                pass: RESEND_API_KEY // Your secret key
             }
         });
 
@@ -55,7 +57,7 @@ export default async function handler(request, response) {
             const protocol = request.headers['x-forwarded-proto'] || 'http';
             const host = request.headers.host || 'localhost:3001';
             const origin = `${protocol}://${host}`;
-            
+
             const subsRes = await fetch(`${origin}/api/subscribe`);
             const subsData = await subsRes.json();
             emails = subsData.data.map(s => s.email);
@@ -67,7 +69,12 @@ export default async function handler(request, response) {
 
         // 3. Send Mail
         await transporter.sendMail({
-            from: `"SustainCore Intelligence" <${GMAIL_USER}>`,
+            from: {
+                name: 'SustainCore Intelligence',
+                address: 'newsletter@sustaincore.in'
+            },
+            sender: 'newsletter@sustaincore.in',
+            replyTo: 'noreply@sustaincore.in',
             to: emails.join(','), // Gmail allows comma-separated list
             subject: subject || (templateType === 'welcome' ? 'Welcome to SustainCore Intelligence' : 'Technical Flash Brief'),
             html: finalHtml

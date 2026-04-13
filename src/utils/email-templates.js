@@ -44,8 +44,8 @@ export const welcomeTemplate = (email) => `
         <a href="https://sustaincore.vercel.app/insights.html" style="display: inline-block; background-color: #0047FF; color: #ffffff; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 14px;">Visit Insights Portal</a>
         
         <p style="font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 24px;">
-            SustainCore Advisory Group &copy; 2026<br/>
-            Unsubscribe from this technical sequence.
+            SustainCore Advisory Group &copy; 2026<br/><br/>
+            <i>Please note: Replies to this email are not monitored. For inquiries, please contact us directly at <a href="mailto:support@sustaincore.in" style="color: #0047FF; text-decoration: none;">support@sustaincore.in</a>.</i>
         </p>
     </div>
 `;
@@ -93,7 +93,8 @@ export const articleTemplate = (article) => {
         <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
             <p style="font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.8; margin: 0;">
                 AUTHENTICATION: TRANSMISSION ENCRYPTED // SustainCore Advisory Group &copy; 2026<br/>
-                This technical briefing is intended for members of the ${article.category} network.
+                This technical briefing is intended for members of the ${article.category} network.<br/><br/>
+                <i>Please note: Replies to this email are not monitored. For inquiries, please contact us directly at <a href="mailto:support@sustaincore.in" style="color: #0047FF; text-decoration: none;">support@sustaincore.in</a>.</i>
             </p>
         </div>
     </div>

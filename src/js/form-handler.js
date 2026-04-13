@@ -77,43 +77,64 @@
         }
     };
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+    document.addEventListener('submit', async (e) => {
+        const form = e.target;
+        
+        // 1. Handle Contact Form
+        if (form.id === 'contact-form') {
             e.preventDefault();
             handleFormSubmission(
-                contactForm,
+                form,
                 'support@sustaincore.in',
                 'Mandate Dispatched',
                 'Your communication has been successfully routed to SustainCore. We will contact you at {email} within 24 business hours.'
             );
-        });
-    }
+            return;
+        }
 
-    // Handle Newsletter/Subscribe Form
-    const footerSubscribeForm = document.getElementById('subscribe-form') || document.getElementById('newsletter-form');
-    if (footerSubscribeForm) {
-        footerSubscribeForm.addEventListener('submit', (e) => {
+        // 2. Handle Partners Form
+        if (form.id === 'partners-form') {
             e.preventDefault();
             handleFormSubmission(
-                footerSubscribeForm,
-                'support@sustaincore.in',
-                'Subscription Success',
-                'Your email ({email}) has been added to our circular. You will receive the SustainCore quarterly update starting this week.'
-            );
-        });
-    }
-
-    // Handle Partners Form
-    const partnersForm = document.getElementById('partners-form');
-    if (partnersForm) {
-        partnersForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            handleFormSubmission(
-                partnersForm,
+                form,
                 'partners@sustaincore.in',
                 'Partnership Enquiry Received',
                 'Thank you for your interest. A member of our partnership team will reach out to you within 3 business days.'
             );
-        });
-    }
+            return;
+        }
+
+        // 3. Handle Subscribe & Newsletter Forms
+        if (form.id === 'subscribe-form' || form.id === 'newsletter-form') {
+            e.preventDefault();
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Processing...';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(form);
+                const email = formData.get('email');
+                
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                if (!response.ok) throw new Error('API Error');
+
+                showModal('success', 'Subscription Success', `Your email (${email}) has been added to our circular. You will receive the SustainCore quarterly update starting this week.`);
+                form.reset();
+            } catch (error) {
+                console.error('Subscription failed:', error);
+                showModal('error', 'Transmission Failed', 'A network interruption prevented your subscription from reaching our systems.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+            return;
+        }
+    });
+
 })();

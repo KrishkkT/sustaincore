@@ -2,7 +2,7 @@ export const header = `
 <nav class="fixed top-0 left-0 right-0 mx-auto w-[92%] max-w-6xl z-50 bg-white/80 backdrop-blur-xl border border-brand-softGray shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="main-nav">
   <a href="/" class="flex items-center gap-3 group notranslate">
     <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
-    <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+    <img src="/main_logo.svg" alt="SustainCore Logo" class="h-7 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
   </a>
   
   <div class="hidden lg:flex items-center gap-8 navbar-items">
@@ -65,10 +65,10 @@ export const header = `
       </div>
     </div>
     <a href="/cbam.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.cbam">CBAM</a>
-    <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About Us</a>
     <a href="/insights.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.insights">Insights</a>
     <a href="/join-us.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.careers">Careers</a>
     <a href="/partners.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.partners">Partners</a>
+    <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About Us</a>
     
     <!-- Premium Language Selector -->
     <div class="relative group/lang" id="lang-selector-root">
@@ -149,7 +149,7 @@ export const footer = `
       <div class="flex items-center gap-2 mb-4 group">
        <a href="/" class="flex items-center gap-3 group notranslate">
          <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
-         <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+         <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-14 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
         </a>
       </div>
       <p class="text-slate-500 leading-relaxed mb-6 text-sm" data-i18n="footer.tagline">
@@ -219,8 +219,11 @@ export const footer = `
       </ul>
     </div>
 
-    <div class="space-y-4">
-      <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.connect">Connect</h4>
+    <div class="space-y-4 lg:w-[110%]">
+      <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs">Stay Updated</h4>
+      <p class="text-slate-500 text-sm leading-relaxed mb-4">
+        Get the latest tax updates, business tips, and financial insights delivered to your inbox.
+      </p>
       <form id="subscribe-form" class="space-y-3">
         <input type="email" name="email" required placeholder="Email Address" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm transition-all" data-i18n-attr="placeholder:footer.email_placeholder">
         <button type="submit" class="w-full py-3 bg-brand-charcoal text-white rounded-xl font-bold hover:bg-brand-blue transition-all tracking-[0.1em] text-[11px] uppercase shadow-lg shadow-black/5" data-i18n="footer.subscribe">SUBSCRIBE</button>
