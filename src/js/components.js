@@ -37,8 +37,8 @@ export const header = `
 
         <a href="/services.html#gpcb" class="mega-item">
           <div>
-            <span class="title" data-i18n="navbar.spcb_title">SPCB Compliance & Environmental Approval</span>
-            <span class="desc" data-i18n="navbar.spcb_desc">SPCB, EC, EIA, CTO/R/E, Waste Authorization</span>
+            <span class="title" data-i18n="navbar.GPCB_title">GPCB Compliance & Environmental Approval</span>
+            <span class="desc" data-i18n="navbar.GPCB_desc">GPCB, EC, EIA, CTO/R/E, Waste Authorization</span>
           </div>
         </a>
 
@@ -117,7 +117,7 @@ export const header = `
       <a href="/esg-reporting.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.esg_reporting">ESG Reporting</a>
       <a href="/carbon-climate.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.carbon_management">Carbon Management</a>
       <a href="/ratings-targets.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.ratings_title">Sustainability Ratings</a>
-      <a href="/clearances-eia.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.spcb_compliance">SPCB Compliance</a>
+      <a href="/clearances-eia.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.GPCB_compliance">GPCB Compliance</a>
       <a href="/management-systems.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.environmental_audits">Environmental Audits</a>
       <a href="/water-testing.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.water_testing">Water Testing</a>
       <a href="/air-monitoring.html" class="text-base font-medium text-slate-700 py-2" data-i18n="navbar.air_monitoring">Air Monitoring</a>
@@ -200,7 +200,7 @@ export const footer = `
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.esg_reporting">ESG Reporting</a></li>
         <li><a href="/carbon-climate.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.carbon_management">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.ratings_title">Ratings & Targets</a></li>
-        <li><a href="/clearances-eia.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.spcb_compliance">SPCB Compliance</a></li>
+        <li><a href="/clearances-eia.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.GPCB_compliance">GPCB Compliance</a></li>
         <li><a href="/management-systems.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.environmental_audits">Environmental Audits</a></li>
         <li><a href="/water-testing.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.water_testing">Water Testing</a></li>
         <li><a href="/air-monitoring.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.air_monitoring">Air Monitoring</a></li>

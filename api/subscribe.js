@@ -49,7 +49,19 @@ export default async function handler(request, response) {
     try {
         if (method === 'GET') {
             const db = getDb();
-            return response.status(200).json({ success: true, count: db.subscribers.length, data: db.subscribers });
+            
+            // Deduplicate for display
+            const uniqueSubscribers = [];
+            const seen = new Set();
+            for (const sub of db.subscribers) {
+                const lowerEmail = sub.email.toLowerCase();
+                if (!seen.has(lowerEmail)) {
+                    seen.add(lowerEmail);
+                    uniqueSubscribers.push(sub);
+                }
+            }
+
+            return response.status(200).json({ success: true, count: uniqueSubscribers.length, data: uniqueSubscribers });
         }
 
         if (method === 'POST') {
@@ -61,6 +73,16 @@ export default async function handler(request, response) {
 
             // Persistence Loop
             const db = getDb();
+            
+            // Prevent duplicate entries
+            const existingSub = db.subscribers.find(s => s.email.toLowerCase() === email.toLowerCase());
+            if (existingSub) {
+                return response.status(200).json({ 
+                    success: true, 
+                    message: "Email is already in the audience hub." 
+                });
+            }
+
             const newSub = { 
                 email, 
                 date: new Date().toISOString(), 
@@ -87,6 +109,46 @@ export default async function handler(request, response) {
                 });
             } catch (e) {
                 console.warn("Welcome trigger failed (Silently continuing):", e);
+            }
+
+            // [TRIGGER] Add to Resend Audience/Contacts
+            try {
+                const RESEND_API_KEY = process.env.RESEND_API_KEY;
+                if (RESEND_API_KEY) {
+                    let audienceId = process.env.RESEND_AUDIENCE_ID;
+                    
+                    if (!audienceId) {
+                        const audRes = await fetch('https://api.resend.com/audiences', {
+                            headers: { 'Authorization': `Bearer ${RESEND_API_KEY}` }
+                        });
+                        const audData = await audRes.json();
+                        if (audData && audData.data && audData.data.length > 0) {
+                            audienceId = audData.data[0].id;
+                        }
+                    }
+
+                    if (audienceId) {
+                        const contactRes = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+                            method: 'POST',
+                            headers: {
+                                'Authorization': `Bearer ${RESEND_API_KEY}`,
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ email: email, unsubscribed: false })
+                        });
+                        
+                        if (!contactRes.ok) {
+                            const errorData = await contactRes.json();
+                            console.warn("Failed to add to Resend Audience:", errorData);
+                        } else {
+                            console.log(`Successfully added ${email} to Resend Audience ${audienceId}`);
+                        }
+                    } else {
+                        console.warn("No Resend Audience found to add contact to. Create an audience in Resend or set RESEND_AUDIENCE_ID.");
+                    }
+                }
+            } catch (e) {
+                console.error("Resend contact sync failed:", e);
             }
 
             return response.status(200).json({ 

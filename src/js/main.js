@@ -1,6 +1,7 @@
 import '../css/main.css';
 import { header, footer } from './components.js';
 import { translator } from './translator.js';
+import './form-handler.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     // 1. Setup Translator
