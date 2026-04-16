@@ -6142,7 +6142,7 @@ def update_locales():
         "our_technical_philosophy": "Unsere technische Philosophie",
         "science_first_strategy_always": "Wissenschaft zuerst. Strategie immer.",
         "we_bridge_the_gap_between_technical_rig": "Wir schließen die Lücke zwischen technischer Strenge und unternehmerischer Ambition.",
-        "verifiable_data": "Verifizierbare Daten",
+        "verified_data": "Verifizierbare Daten",
         "no_estimations_where_measurements_are_po": "Keine Schätzungen, wo Messungen möglich sind. Wir liefern audit-bereite Daten.",
         "regulatory_mastery": "Regulatorische Meisterschaft",
         "navigating_the_evolving_landscape_of_in": "Navigation in der sich wandelnden Landschaft indischer und globaler Vorschriften.",

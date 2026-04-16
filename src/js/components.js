@@ -16,7 +16,7 @@ export const header = `
       <div class="mega-menu">
         <a href="/services.html#esg" class="mega-item">
           <div>
-            <span class="title" data-i18n="navbar.esg_title">Environmental, Social, and Governance(ESG) Reporting & Sustainability Disclosure</span>
+            <span class="title" data-i18n="navbar.esg_title">Environmental, Social, and Governance(ESG) Reporting & Disclosure</span>
             <span class="desc" data-i18n="navbar.esg_desc">BRSR, CDP, GRI, SASB & TCFD</span>
           </div>
         </a>
@@ -28,17 +28,17 @@ export const header = `
           </div>
         </a>
 
+        <a href="/services.html#gpcb" class="mega-item">
+          <div>
+            <span class="title" data-i18n="navbar.GPCB_title">GPCB & SPCB Compliance</span>
+            <span class="desc" data-i18n="navbar.GPCB_desc">GPCB, EC, EIA, CTO/R/E, Waste Authorization</span>
+          </div>
+        </a>
+
         <a href="/services.html#ratings" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.ratings_title">Ratings & Targets</span>
             <span class="desc" data-i18n="navbar.ratings_desc">Materiality Assessment, EcoVadis, EPD, SBTI</span>
-          </div>
-        </a>
-
-        <a href="/services.html#gpcb" class="mega-item">
-          <div>
-            <span class="title" data-i18n="navbar.GPCB_title">GPCB Compliance & Environmental Approval</span>
-            <span class="desc" data-i18n="navbar.GPCB_desc">GPCB, EC, EIA, CTO/R/E, Waste Authorization</span>
           </div>
         </a>
 
@@ -70,7 +70,7 @@ export const header = `
     <a href="/partners.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.partners">Partners</a>
     <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About Us</a>
     
-    <!-- Premium Language Selector -->
+    <!-- Premium Language Selector
     <div class="relative group/lang" id="lang-selector-root">
       <button class="flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-[12px] font-bold text-slate-600 hover:bg-slate-100 transition-all duration-300" id="current-lang-btn">
         <span id="current-lang-flag">🇺🇸</span>
@@ -90,7 +90,7 @@ export const header = `
           </button>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Hidden native Google Translate element -->
     <div id="google_translate_element" style="display:none !important;"></div>
@@ -148,19 +148,19 @@ export const footer = `
     <div class="flex flex-col items-start text-left sm:col-span-2 lg:col-span-1 max-w-sm">
       <div class="flex items-center gap-2 mb-4 group">
        <a href="/" class="flex items-center gap-3 group notranslate">
-         <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+         <img src="/favicon.svg" alt ="SustainCore Logo" class="h-12 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
          <img src="/main_logo_bgremoved.svg" alt="SustainCore Logo" class="h-14 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
         </a>
       </div>
       <p class="text-slate-500 leading-relaxed mb-6 text-sm" data-i18n="footer.tagline">
-        SustainCore is defining the future of verifiable sustainability through scientific integrity and data transparency.
+        SustainCore is defining the future of verified sustainability through scientific integrity and data transparency.
       </p>
       <div class="flex gap-3">
      <!-- LinkedIn -->
-<a href="https://linkedin.com" aria-label="LinkedIn"
-  class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-transparent transition-all shadow-sm">
+      <a href="https://linkedin.com" aria-label="LinkedIn"
+        class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-transparent transition-all shadow-sm">
   
-  <svg xmlns="http://www.w3.org/2000/svg" 
+        <svg xmlns="http://www.w3.org/2000/svg" 
        width="20" height="20" 
        viewBox="0 0 24 24" 
        fill="none" 
@@ -169,42 +169,26 @@ export const footer = `
        stroke-linecap="round" 
        stroke-linejoin="round">
        
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-    <rect width="4" height="12" x="2" y="9"/>
-    <circle cx="4" cy="4" r="2"/>
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect width="4" height="12" x="2" y="9"/>
+        <circle cx="4" cy="4" r="2"/>
     
-  </svg>
-</a>
-
-  <!-- X (Twitter) -->
-  <a href="https://x.com" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-black hover:text-white hover:border-transparent transition-all shadow-sm">
-    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2H21l-6.56 7.5L22 22h-6.828l-5.35-6.993L3.5 22H1l7.02-8.02L2 2h6.828l4.85 6.35L18.244 2Zm-2.396 18h1.884L8.244 4H6.228l9.62 16Z"/>
-    </svg>
-  </a>
-
-  <!-- Instagram -->
-  <a href="https://instagram.com" class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-pink-500 hover:text-white hover:border-transparent transition-all shadow-sm">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-      <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-    </svg>
-  </a>
+      </svg>
+      </a>
       </div>
     </div>
     
     <div class="space-y-4">
       <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs" data-i18n="footer.solutions">Solutions</h4>
       <ul class="flex flex-wrap gap-x-6 gap-y-3 justify-center lg:flex-col lg:gap-0 lg:space-y-2.5 text-sm text-slate-500">
+      <li><a href="/cbam.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.cbam">CBAM Advisory</a></li>
         <li><a href="/esg-reporting.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.esg_reporting">ESG Reporting</a></li>
+        <li><a href="/clearances-eia.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.GPCB_compliance">GPCB Compliance</a></li>
         <li><a href="/carbon-climate.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.carbon_management">Carbon Management</a></li>
         <li><a href="/ratings-targets.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.ratings_title">Ratings & Targets</a></li>
-        <li><a href="/clearances-eia.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.GPCB_compliance">GPCB Compliance</a></li>
         <li><a href="/management-systems.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.environmental_audits">Environmental Audits</a></li>
         <li><a href="/water-testing.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.water_testing">Water Testing</a></li>
         <li><a href="/air-monitoring.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.air_monitoring">Air Monitoring</a></li>
-        <li><a href="/cbam.html" class="hover:text-brand-blue transition-colors" data-i18n="footer.cbam">CBAM Advisory</a></li>
       </ul>
     </div>
 
@@ -222,7 +206,7 @@ export const footer = `
     <div class="space-y-4 lg:w-[110%]">
       <h4 class="font-display font-bold text-brand-blue tracking-wide uppercase text-xs">Stay Updated</h4>
       <p class="text-slate-500 text-sm leading-relaxed mb-4">
-        Get the latest tax updates, business tips, and financial insights delivered to your inbox.
+        Get the latest sustainability updates, insights, and news delivered to your inbox.
       </p>
       <form id="subscribe-form" class="space-y-3">
         <input type="email" name="email" required placeholder="Email Address" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-green/30 text-sm transition-all" data-i18n-attr="placeholder:footer.email_placeholder">

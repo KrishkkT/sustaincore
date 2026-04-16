@@ -2623,6 +2623,28 @@ p {
   }
 }
 
+/* Force hero-stats to extreme right on laptop and above */
+@media (min-width: 1024px) {
+  .hero-bottom {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .hero-stats {
+    position: absolute !important;
+    /* Pushes to the exact edge of the screen, overcoming the max-width limits */
+    right: calc(50% - 50vw + 0.5rem) !important;
+    bottom: 0 !important;
+    margin-left: auto !important;
+    margin-top: 0 !important;
+    justify-content: flex-end !important;
+  }
+  .stat {
+    text-align: right !important;
+  }
+}
+
 /* --- ULTRA-WIDE SCREENS (1921px+) --- */
 @media (min-width: 1921px) {
   :root {
