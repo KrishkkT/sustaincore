@@ -898,6 +898,80 @@
         .faq-item {
             margin-bottom: 0.75rem !important;
         }
+
+        /* TASK 5: Calci 2 cols in Mobile */
+        @media (max-width: 768px) {
+            .comp-cols {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+
+            .cc-label {
+                font-size: 0.65rem !important;
+            }
+
+            .cc-row-lbl,
+            .cc-row-val {
+                font-size: 0.65rem !important;
+            }
+
+            .comp-col {
+                padding: 1rem 0.75rem !important;
+            }
+
+            /* TASK 6: CBAM FAQ Adaptability */
+            .faq-wrap {
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-sizing: border-box;
+            }
+
+            .faq-btn {
+                text-align: left !important;
+                word-wrap: break-word !important;
+            }
+
+            .faq-item {
+                width: 100% !important;
+            }
+        }
+
+        @media(max-width: 768px) {
+
+            /* CBAM Mobile 2-cols enforcement */
+            .grid-cols-2.lg\\:grid-cols-7,
+            .comp-cols {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+            }
+
+            .grid-cols-2.lg\\:grid-cols-7>div {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                text-align: left !important;
+            }
+
+            /* Make CBAM FAQ responsive */
+            .faq-item {
+                width: 100% !important;
+                box-sizing: border-box !important;
+                margin: 0 0 10px 0 !important;
+            }
+
+            .faq-btn {
+                display: flex !important;
+                align-items: flex-start !important;
+                justify-content: space-between !important;
+                text-align: left !important;
+                word-wrap: break-word !important;
+            }
+
+            .faq-icon {
+                flex-shrink: 0 !important;
+            }
+        }
     </style>
 
 
@@ -2359,7 +2433,8 @@
                                 </div>
                                 <div class="cc-row"><span class="cc-row-lbl"
                                         data-i18n="cbam.10_punitive_markup_2026">+10% punitive markup (2026)</span>
-                                    <span class="cc-row-val" data-i18n="cbam.2508_tcot">2.508 tCO₂/t</span></div>
+                                    <span class="cc-row-val" data-i18n="cbam.2508_tcot">2.508 tCO₂/t</span>
+                                </div>
                                 <div class="cc-row"><span class="cc-row-lbl"
                                         data-i18n="cbam.total_embedded_emissions">Total embedded emissions</span> <span
                                         class="cc-row-val" data-i18n="cbam.25080_tco">25,080 tCO₂</span></div>

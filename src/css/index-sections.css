@@ -2032,3 +2032,35 @@ a.s5-contact-text:hover {
 .s5-form-grid {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
+
+/* TASK 1: FIX SC-RESPONSE MOBILE ADAPTABILITY */
+@media (max-width: 768px) {
+  .sc-response {
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sc-response-inner {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sc-response-headline {
+    word-break: break-word;
+    white-space: normal;
+  }
+
+  .sc-response-right {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .sc-response-stat,
+  .sc-response-btn {
+    width: 100% !important;
+    min-width: unset !important;
+    box-sizing: border-box;
+  }
+}

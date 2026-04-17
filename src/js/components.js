@@ -14,49 +14,49 @@ export const header = `
       </a>
       
       <div class="mega-menu">
-        <a href="/services.html#esg" class="mega-item">
+        <a href="/esg-reporting.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.esg_title">Environmental, Social, and Governance(ESG) Reporting & Disclosure</span>
             <span class="desc" data-i18n="navbar.esg_desc">BRSR, CDP, GRI, SASB & TCFD</span>
           </div>
         </a>
         
-        <a href="/services.html#carbon" class="mega-item">
+        <a href="/carbon-climate.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.carbon_title">Carbon Management & Climate Action</span>
             <span class="desc" data-i18n="navbar.carbon_desc">CBAM, GHG, PCF, Carbon Credits & I-REC</span>
           </div>
         </a>
 
-        <a href="/services.html#gpcb" class="mega-item">
+        <a href="/clearances-eia.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.GPCB_title">GPCB & SPCB Compliance</span>
             <span class="desc" data-i18n="navbar.GPCB_desc">GPCB, EC, EIA, CTO/R/E, Waste Authorization</span>
           </div>
         </a>
 
-        <a href="/services.html#ratings" class="mega-item">
+        <a href="/ratings-targets.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.ratings_title">Ratings & Targets</span>
             <span class="desc" data-i18n="navbar.ratings_desc">Materiality Assessment, EcoVadis, EPD, SBTI</span>
           </div>
         </a>
 
-        <a href="/services.html#env" class="mega-item">
+        <a href="/management-systems.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.audits_title">Environmental Audits</span>
             <span class="desc" data-i18n="navbar.audits_desc">ISO 14001, 45001, 50001</span>
           </div>
         </a>
 
-        <a href="/services.html#water" class="mega-item">
+        <a href="/water-testing.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.water_title">Water and Wastewater Quality Testing</span>
             <span class="desc" data-i18n="navbar.water_desc">Effluent analysis, Groundwater & Water audits, Water Risk</span>
           </div>
         </a>
 
-        <a href="/services.html#air" class="mega-item">
+        <a href="/air-monitoring.html" class="mega-item">
           <div>
             <span class="title" data-i18n="navbar.air_title">Air Quality Monitoring & Emission Testing</span>
             <span class="desc" data-i18n="navbar.air_desc">Stack, Ambient, Workplace air quality & CEMS</span>
@@ -109,7 +109,7 @@ export const header = `
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
     </button>
     <a href="/" class="text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100" data-i18n="navbar.home">Home</a>
-    <button id="mobile-services-toggle" class="flex items-center justify-between w-full text-left text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100">
+    <button id="mobile-services-toggle" class="flex items-center gap-2 w-full text-left text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100">
       <span data-i18n="navbar.services">Services</span>
       <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9" /></svg>
     </button>

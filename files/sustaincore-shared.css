@@ -204,14 +204,9 @@ h5 {
   margin: 0;
   width: 100%;
   max-width: 100%;
-  padding: 0.5rem 0.9rem;
+  padding: 0.5rem 0; /* Keep standard vertical padding */
   border-radius: 0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-}
-
-.sp-sub-nav.scrolled .sp-sub-nav-inner {
-  padding-left: 0;
-  justify-content: center;
 }
 
 .sp-sub-nav-inner {
@@ -1725,7 +1720,7 @@ h5 {
   }
 
   .sp-sub-nav-inner {
-    padding: 0 1.25rem;
+    padding: 0 2.5rem 0 1rem;
     overflow-x: auto;
     overflow-y: visible;
     -webkit-overflow-scrolling: touch;
@@ -2173,4 +2168,76 @@ h5 {
 .related-grid {
   position: relative;
 }
-
+
+
+/* TASKS 2, 3, 4: FIX MOBILE LAYOUT ISSUES */
+body { overflow-x: hidden; width: 100%; max-width: 100vw; }
+
+
+@media (max-width: 768px) {
+  /* TASK 2: FAQ Adaptability */
+  .faq-wrap { margin: 0; width: 100%; padding: 0 1rem; box-sizing: border-box; overflow: hidden; }
+  .faq-btn { text-align: left; word-break: break-word; flex-wrap: nowrap; width: 100%; }
+  .faq-ans p { word-break: break-word; }
+
+  /* TASK 3: Cards Empty Space (Prevent Overflow) */
+  .why-card { width: 100%; box-sizing: border-box; margin: 0; }
+  .why-grid { width: 100%; box-sizing: border-box; padding: 0 1.25rem; display: flex; flex-direction: column; overflow: hidden; }
+  .deliverables-grid, .related-grid, .wedo-grid, .process-steps, .sectors-grid { 
+    width: 100%; box-sizing: border-box; padding: 0 1.25rem; display: flex; flex-direction: column; overflow: hidden;
+  }
+  .svc-hero-title, .sec-title { white-space: normal !important; word-break: break-word; }
+  
+  /* Fix hardcoded inline styles causing overflow */
+  .svc-hero>div[style*="padding"] { padding: 0 1.25rem !important; width: 100% !important; box-sizing: border-box; margin: 2rem 0 !important; }
+}
+
+@media (max-width: 768px) {
+  /* TASK 2 specific for services.html */
+  .sp-faq-list { padding: 0 1rem; width: 100%; box-sizing: border-box; overflow: hidden; }
+  .sp-faq-btn { text-align: left; word-break: break-word; flex-wrap: nowrap; width: 100%; padding: 1rem 0; }
+  .sp-faq-ans { word-break: break-word; }
+  .faq-global { padding: 3rem 1.25rem !important; overflow: hidden; }
+}
+
+/* DEFINITIVE MOBILE FIXES BATCH 3 */
+@media (max-width: 768px) {
+  /* Fix CTA Band shifts and width blowing up */
+  .cta-band {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2rem 0 !important;
+    padding: 3rem 1.5rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .cta-content { width: 100% !important; text-align: center !important; }
+  .cta-band-btns { width: 100% !important; justify-content: center !important; flex-direction: column !important; }
+  .cta-band-btns a { width: 100% !important; justify-content: center !important; box-sizing: border-box !important; }
+  .cta-band-title { text-align: center !important; white-space: normal !important; word-break: break-word !important; width: 100% !important; }
+  .cta-band-sub { text-align: center !important; margin: 0 auto 1.5rem !important; width: 100% !important; }
+
+  /* Fix FAQ button spacing and arrow squash on all pages */
+  .faq-btn, .sp-faq-btn {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    padding: 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .faq-icon, .sp-faq-icon { flex-shrink: 0 !important; margin-top: 0.25rem !important; }
+  .faq-ans, .sp-faq-ans { padding: 0 1.5rem !important; }
+  .faq-item, .sp-faq-item { width: 100% !important; box-sizing: border-box !important; margin-bottom: 1rem !important; }
+  .faq-wrap, .sp-faq-list { padding: 0 !important; width: 100% !important; overflow: visible !important; }
+
+  
+}
+

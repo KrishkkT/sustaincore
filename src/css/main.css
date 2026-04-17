@@ -2732,7 +2732,7 @@ section {
   }
 
   /* Grid Conversions for Tablet */
-  .grid-cols-2, .grid-cols-3, .grid-cols-4, .svc-grid, .sp-card-grid, .sp-spec-grid, .sp-inc-grid, .s2-turn, .s5-cta, .s2-intro, .sc-response-inner {
+  .grid-cols-3, .grid-cols-4, .svc-grid, .sp-card-grid, .sp-spec-grid, .sp-inc-grid, .s2-turn, .s5-cta, .s2-intro, .sc-response-inner {
     grid-template-columns: 1fr !important;
     gap: 2.5rem !important;
   }
@@ -3098,3 +3098,49 @@ body, html {
 }
 
 
+
+/* DEFINITIVE MOBILE FIXES BATCH 3 */
+@media (max-width: 768px) {
+  /* Fix CTA Band shifts and width blowing up */
+  .cta-band {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 2rem 0 !important;
+    padding: 3rem 1.5rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .cta-content { width: 100% !important; text-align: center !important; }
+  .cta-band-btns { width: 100% !important; justify-content: center !important; flex-direction: column !important; }
+  .cta-band-btns a { width: 100% !important; justify-content: center !important; box-sizing: border-box !important; }
+  .cta-band-title { text-align: center !important; white-space: normal !important; word-break: break-word !important; width: 100% !important; }
+  .cta-band-sub { text-align: center !important; margin: 0 auto 1.5rem !important; width: 100% !important; }
+
+  /* Fix FAQ button spacing and arrow squash on all pages */
+  .faq-btn, .sp-faq-btn {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    word-break: break-word !important;
+    white-space: normal !important;
+    padding: 1.5rem !important;
+    gap: 1rem !important;
+  }
+  .faq-icon, .sp-faq-icon { flex-shrink: 0 !important; margin-top: 0.25rem !important; }
+  .faq-ans, .sp-faq-ans { padding: 0 1.5rem !important; }
+  .faq-item, .sp-faq-item { width: 100% !important; box-sizing: border-box !important; margin-bottom: 1rem !important; }
+  .faq-wrap, .sp-faq-list { padding: 0 !important; width: 100% !important; overflow: visible !important; }
+
+  /* Ensure grid-cols-2 maintains exactly 2 columns on mobile */
+  .grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem 0.75rem !important;
+  }
+}

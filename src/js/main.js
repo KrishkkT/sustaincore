@@ -27,22 +27,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         const menuBtn = document.getElementById('mobile-menu-btn');
         const closeBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
-    const heroVideo = document.getElementById('hero-video');
+        const heroVideo = document.getElementById('hero-video');
 
-    // Force Hero Video Autoplay (Mobile Fix)
-    const forceVideoPlay = () => {
+        // Force Hero Video Autoplay (Mobile Fix)
+        const forceVideoPlay = () => {
+            if (heroVideo) {
+                heroVideo.muted = true;
+                heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
+            }
+        };
+
         if (heroVideo) {
-            heroVideo.muted = true;
-            heroVideo.play().catch(e => console.log("Autoplay prevented:", e));
+            forceVideoPlay();
+            // Fallback for some browsers that require a tiny bit of interaction or re-trigger
+            window.addEventListener('load', forceVideoPlay);
+            document.body.addEventListener('touchstart', forceVideoPlay, { once: true });
         }
-    };
-
-    if (heroVideo) {
-        forceVideoPlay();
-        // Fallback for some browsers that require a tiny bit of interaction or re-trigger
-        window.addEventListener('load', forceVideoPlay);
-        document.body.addEventListener('touchstart', forceVideoPlay, { once: true });
-    }
         const servicesToggle = document.getElementById('mobile-services-toggle');
         const servicesList = document.getElementById('mobile-services-list');
 
@@ -50,14 +50,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             mobileMenu.classList.remove('translate-x-full');
             document.body.style.overflow = 'hidden'; // Prevent scroll
         });
-        
+
         if (closeBtn && mobileMenu) closeBtn.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
             document.body.style.overflow = ''; // Restore scroll
         });
 
         if (servicesToggle && servicesList) {
-            servicesToggle.addEventListener('click', () => {
+            let lastClickTime = 0;
+            servicesToggle.addEventListener('click', (e) => {
+                const currentTime = new Date().getTime();
+                if (currentTime - lastClickTime < 300) {
+                    window.location.href = '/services.html';
+                    return;
+                }
+                lastClickTime = currentTime;
+
                 const isHidden = servicesList.classList.toggle('hidden');
                 servicesToggle.querySelector('svg').classList.toggle('rotate-180', !isHidden);
             });
@@ -108,7 +116,7 @@ function setupUnifiedUI() {
             if (!item) return;
 
             const isManualToggle = item.classList.contains('active');
-            
+
             // Auto-Accordion: Close others in same list
             const siblings = item.parentElement?.querySelectorAll('.faq-item.active, .sp-faq-item.active');
             siblings?.forEach(activeItem => {
@@ -152,17 +160,17 @@ function setupUnifiedUI() {
             trigger.addEventListener('click', (e) => {
                 if (window.innerWidth < 1024) {
                     const isOpen = container.classList.contains(openClass);
-                    
+
                     // Close other open dropdowns
-                    document.querySelectorAll('.' + openClass).forEach(s => { 
-                        if (s !== container) s.classList.remove(openClass); 
+                    document.querySelectorAll('.' + openClass).forEach(s => {
+                        if (s !== container) s.classList.remove(openClass);
                     });
-                    
+
                     container.classList.toggle(openClass, !isOpen);
-                    
+
                     // Prevent navigation if it's a dropdown trigger
                     if (trigger.classList.contains('sp-dropdown-toggle') || trigger.id === 'nav-services-toggle') {
-                       e.preventDefault();
+                        e.preventDefault();
                     }
                 }
             });
@@ -184,13 +192,13 @@ function setupUnifiedUI() {
     const setupFlipCards = () => {
         const cards = document.querySelectorAll('.flip-card');
         cards.forEach(card => {
-            card.addEventListener('click', function(e) {
+            card.addEventListener('click', function (e) {
                 if (window.innerWidth < 1024) {
                     // If they clicked a link in the back, don't flip back immediately
                     if (e.target.closest('.flip-btn') || e.target.closest('.svc-learn-more')) return;
-                    
+
                     const isFlipped = this.classList.toggle('is-flipped');
-                    
+
                     // Close other cards
                     cards.forEach(c => { if (c !== this) c.classList.remove('is-flipped'); });
                 }
@@ -245,7 +253,7 @@ const setupSubNavScroll = () => {
     const leftArrow = document.createElement('button');
     leftArrow.className = 'sp-nav-arrow left';
     leftArrow.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
-    
+
     const rightArrow = document.createElement('button');
     rightArrow.className = 'sp-nav-arrow right';
     rightArrow.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
@@ -273,11 +281,11 @@ const setupSubNavScroll = () => {
 
     inner.addEventListener('scroll', updateArrows);
     window.addEventListener('resize', updateArrows);
-    
+
     leftArrow.addEventListener('click', () => {
         inner.scrollBy({ left: -200, behavior: 'smooth' });
     });
-    
+
     rightArrow.addEventListener('click', () => {
         inner.scrollBy({ left: 200, behavior: 'smooth' });
     });
