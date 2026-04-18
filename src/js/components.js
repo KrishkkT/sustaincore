@@ -1,8 +1,8 @@
 export const header = `
 <nav class="fixed top-0 left-0 right-0 mx-auto w-[92%] max-w-6xl z-50 bg-white/80 backdrop-blur-xl border border-brand-softGray shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl px-6 py-4 flex items-center justify-between transition-all duration-300" id="main-nav">
   <a href="/" class="flex items-center gap-3 group notranslate">
-    <img src="/favicon.svg" alt ="SustainCore Logo" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
-    <img src="/main_logo.svg" alt="SustainCore Logo" class="h-7 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+    <img src="/favicon.svg" alt ="SustainCore Logo - Environmental Solutions" title="SustainCore - Home" class="h-9 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
+    <img src="/main_logo.svg" alt="SustainCore Logo - ESG and Sustainability" title="SustainCore - Home" class="h-7 w-auto filter drop-shadow-sm group-hover:scale-105 transition-transform duration-300">
   </a>
   
   <div class="hidden lg:flex items-center gap-8 navbar-items">
@@ -64,11 +64,11 @@ export const header = `
         </a>
       </div>
     </div>
-    <a href="/cbam.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.cbam">CBAM</a>
-    <a href="/insights.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.insights">Insights</a>
-    <a href="/join-us.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.careers">Careers</a>
-    <a href="/partners.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.partners">Partners</a>
-    <a href="/about.html" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About Us</a>
+    <a href="/cbam.html" title="CBAM Advisory" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.cbam">CBAM</a>
+    <a href="/insights.html" title="Sustainability Insights" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.insights">Insights</a>
+    <a href="/join-us.html" title="Careers at SustainCore" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.careers">Careers</a>
+    <a href="/partners.html" title="SustainCore Partners" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.partners">Partners</a>
+    <a href="/about.html" title="About SustainCore Ahmedabad, Germany & Europe" class="text-[13px] font-semibold tracking-wide uppercase text-slate-600 hover:text-brand-green transition-colors duration-200" data-i18n="navbar.about">About Us</a>
     
     <!-- Premium Language Selector
     <div class="relative group/lang" id="lang-selector-root">
@@ -153,7 +153,7 @@ export const footer = `
         </a>
       </div>
       <p class="text-slate-500 leading-relaxed mb-6 text-sm" data-i18n="footer.tagline">
-        SustainCore is defining the future of verified sustainability through scientific integrity and data transparency.
+        SustainCore is defining the future of verified sustainability and <strong>Environmental Solutions</strong>.
       </p>
       <div class="flex gap-3">
      <!-- LinkedIn -->
