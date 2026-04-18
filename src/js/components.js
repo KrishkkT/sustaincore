@@ -157,7 +157,7 @@ export const footer = `
       </p>
       <div class="flex gap-3">
      <!-- LinkedIn -->
-      <a href="https://linkedin.com" aria-label="LinkedIn"
+      <a href="https://linkedin.com/in/sustaincore" aria-label="LinkedIn"
         class="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-transparent transition-all shadow-sm">
   
         <svg xmlns="http://www.w3.org/2000/svg" 
