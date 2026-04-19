@@ -127,7 +127,7 @@ export const header = `
     <a href="/insights.html" class="text-xl font-display font-bold text-slate-900 py-3 border-b border-slate-100" data-i18n="navbar.insights">Insights</a>
     <a href="/contact.html" class="mt-4 px-8 py-4 bg-brand-green text-white rounded-full text-xl font-bold text-center shadow-xl shadow-brand-green/20" data-i18n="navbar.contact">Contact Us</a>
     
-    <!-- Mobile Language Selector -->
+    <!-- Mobile Language Selector
     <div class="mt-6 pt-6 border-t border-slate-100">
       <p class="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-4 px-2" data-i18n="navbar.mobile_lang_select">Select Language</p>
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
@@ -138,7 +138,7 @@ export const header = `
           <span style="font-size: 0.875rem; font-weight: 500; color: #334155;">German</span>
         </button>
       </div>
-    </div>
+    </div> -->
 </div>
 `;
 
