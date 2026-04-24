@@ -755,6 +755,9 @@ h5 {
   position: relative;
   overflow: hidden;
   transition: transform .22s, box-shadow .22s, border-color .22s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .why-card:hover {
@@ -786,6 +789,8 @@ h5 {
   font-weight: 600;
   color: var(--text);
   margin-bottom: .5rem;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .why-card-desc {
@@ -793,6 +798,7 @@ h5 {
   font-weight: 300;
   color: var(--muted);
   line-height: 1.75;
+  hyphens: auto;
 }
 
 /* ─── WHAT WE DO — image + content split ─── */

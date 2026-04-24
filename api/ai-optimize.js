@@ -10,18 +10,38 @@ export default async function handler(request, response) {
         return response.status(400).json({ success: false, error: "Raw text must be at least 10 characters." });
     }
 
-    // Groq Configuration (Ultra-fast inference)
     const GROQ_API_KEY = process.env.GROQ_API_KEY;
 
     if (!GROQ_API_KEY) {
-        // High-Fidelity Mock for Engineering Confidence
         return response.status(200).json({
             success: true,
             isMock: true,
             data: {
                 title: "[AI MOCK] THE 2026 METHANE DELTA: REGULATORY INFRASTRUCTURE RISKS",
                 description: "Deep-dive analysis of the impending methane emission threshold updates and their impact on global transmission networks.",
-                content: "# I. CONTEXT & GLOBAL BENCHMARKS\nThe 2026 Methane Delta represents a critical shift in how industrial methane leakage is reported and taxed at the source. Historically, global benchmarks have focused on aggregate volumetric loss; however, the new standard enforces real-time nodal monitoring with a ±2% precision threshold. This transition is a key step towards the EU's 2030 decarbonization goals and requires immediate action from O&G infrastructure providers.\n\n# II. TECHNICAL RISK ASSESSMENT\nOur analysis identifies three critical technical risks: 1) Sensory drift in legacy scada systems, 2) Data latency in cross-border reporting pipelines, and 3) Calibration gaps in infrared monitoring arrays. If these are not addressed, companies face a 12% increase in non-compliance penalties and a significant loss in 'Green Tier' financing eligibility.\n\n# III. OPERATIONAL ROADMAP\n1. Initial Audit: Conduct a baseline precision test of all Grade 1 sensory nodes. 2. Implementation: Deploy AI-driven calibration software to reduce sensory drift by 80%. 3. Integration: Synchronize report logs with the SustainCore Intelligence Hub. 4. Redundancy: Install secondary IR arrays at all high-pressure transmission points. 5. Validation: Run a 30-day stress test against the new 2% precision mandate.\n\n# IV. FINANCIAL & ESG IMPACT\nStrategic compliance with the Methane Delta will directly improve the carbon-intensity profile of the enterprise, potentially unlocking up to $40M in additional carbon credits per annum. More importantly, it secures long-term capital efficiency by reducing unmeasured product loss by a projected 14.5% over the next decade. SustainCore remains the definitive partner for this technical transition."
+                content: `# I. CONTEXT & GLOBAL BENCHMARKS
+The **2026 Methane Delta** represents a tectonic shift in industrial emission standards. Historically, the oil and gas sector operated under volumetric estimations that often underreported actual leakage by up to **25%**. 
+
+# II. TECHNICAL RISK ASSESSMENT
+**Sensory Drift** is the primary technical failure point in legacy SCADA systems. Over time, chemical sensors exposed to harsh environmental conditions lose their calibration accuracy, leading to **False Compliance** reports. 
+
+# III. OPERATIONAL ROADMAP
+1. **Precision Audit**: Deploy mobile monitoring teams to calibrate all **Grade 1** sensors.
+2. **AI Layer Integration**: Install SustainCore’s predictive drift software.
+3. **Real-time Sync**: Connect all local PLC controllers to the cloud-based **Intelligence Hub**.
+4. **Hardware Redundancy**: Implement secondary infrared arrays.
+5. **Certification**: Finalize the **Net-Zero Compliance Shield** audit.
+
+# IV. FINANCIAL & ESG IMPACT
+Transitioning to the Methane Delta standard can unlock an estimated **$40M per annum** in high-value carbon credits. 
+
+# V. EXECUTIVE KEY TAKEAWAYS
+- Takeaway 1: Real-time nodal monitoring is no longer optional; it is a **Regulatory Mandate** that will be enforced starting Q1 2026. Companies failing to comply face immediate suspension of their green energy subsidies.
+- Takeaway 2: AI-driven calibration can extend sensor life by **300%** while maintaining ±1% precision, significantly reducing long-term maintenance costs.
+- Takeaway 3: Failure to bridge the methane data gap could result in **$10M+** in annual non-compliance fees and a severe drop in 'Green Tier' investor ratings.
+- Takeaway 4: Carbon credits are now strictly tied to **Direct Measurement** rather than volumetric modeling, rewarding companies with superior sensor infrastructure.
+- Takeaway 5: SustainCore's technical roadmap provides a **12-month** path to total methane neutrality, securing your competitive advantage in the new carbon economy.`,
+                imageUrl: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=1000"
             }
         });
     }
@@ -38,24 +58,32 @@ export default async function handler(request, response) {
                 messages: [
                     {
                         role: "system",
-                        content: `You are a Senior Environmental Strategist at SustainCore Intelligence Units. Your mission is to transform brief technical inputs into authoritative, multi-page Technical Briefings for C-Suites. 
+                        content: `You are a Lead Sustainability Analyst at SustainCore. transform technical inputs into an EXTREMELY DETAILED, LONG-FORM Technical Briefing.
 
 Output ONLY a JSON object with these keys:
-1. "title": A definitive, professional headline (e.g., "Methane Compliance: The 2026 Regulatory Delta").
-2. "description": A high-impact executive summary (max 180 chars).
-3. "content": A LONG-FORM, detailed professional article (min 500-800 words). Use double newlines for paragraphs. 
+1. "title": Headline.
+2. "description": Summary.
+3. "category": Category.
+4. "content": A MASSIVE technical article (1500-2000 words). Use double newlines for paragraphs. Use **bolding** for metrics.
+5. "imageUrl": Pick from VERIFIED list (DO NOT hallucinate URLs):
+   - https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1000
+   - https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000
+   - https://images.unsplash.com/photo-1509391366360-fe5bb58583bb?q=80&w=1000
+   - https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1000
 
-The "content" field MUST follow this strict structural layout:
-# I. CONTEXT & GLOBAL BENCHMARKS
-(Provide 2 detailed paragraphs on current standards and historical data).
-# II. TECHNICAL RISK ASSESSMENT
-(Analyze 3 specific technical risks or regulatory gaps).
-# III. OPERATIONAL ROADMAP
-(Provide a 5-step detailed plan for mitigation).
-# IV. FINANCIAL & ESG IMPACT
-(Discuss long-term capital efficiency and carbon credits).
+The "content" field MUST follow this structure:
+# I. GLOBAL CONTEXT & COMPLIANCE BENCHMARKS
+# II. TECHNICAL RISK ASSESSMENT & ENGINEERING GAPS
+# III. OPERATIONAL ROADMAP & IMPLEMENTATION
+# IV. FINANCIAL & ESG IMPACT ANALYSIS
+# V. EXECUTIVE KEY TAKEAWAYS
+- Takeaway 1: (Detailed 4-sentence paragraph).
+- Takeaway 2: (Detailed 4-sentence paragraph).
+- Takeaway 3: (Detailed 4-sentence paragraph).
+- Takeaway 4: (Detailed 4-sentence paragraph).
+- Takeaway 5: (Detailed 4-sentence paragraph).
 
-NOTE: If the input is short, use your vast internal knowledge of ESG and Sustainability to expand it into a full, technically accurate analysis. NEVER provide short or generic filler content.`
+NOTE: Section V MUST have exactly 5 detailed paragraphs. Avoid generic filler. Use your deep knowledge of ESG and GRI standards.`
                     },
                     { role: "user", content: `Transform this raw intelligence: ${rawText}` }
                 ],
@@ -64,16 +92,26 @@ NOTE: If the input is short, use your vast internal knowledge of ESG and Sustain
             })
         });
 
-        const data = await aiResponse.json();
-        const content = data.choices[0].message.content;
+        if (!aiResponse.ok) {
+            const errorText = await aiResponse.text();
+            console.error(`[Groq API Error] Status: ${aiResponse.status}`, errorText);
+            throw new Error(`AI Service Error: ${aiResponse.status}`);
+        }
 
+        const data = await aiResponse.json();
+        
+        if (!data.choices || !data.choices[0]) {
+            throw new Error("AI returned an empty or malformed response.");
+        }
+
+        const content = data.choices[0].message.content;
         return response.status(200).json({
             success: true,
             data: JSON.parse(content)
         });
 
     } catch (error) {
-        console.error("Groq AI Error:", error);
-        return response.status(500).json({ success: false, error: "Failed to reach Groq AI service." });
+        console.error("Critical AI Bridge Failure:", error.message);
+        return response.status(500).json({ success: false, error: error.message });
     }
 }

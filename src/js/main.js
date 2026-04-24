@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             servicesToggle.addEventListener('click', (e) => {
                 const currentTime = new Date().getTime();
                 if (currentTime - lastClickTime < 300) {
-                    window.location.href = '/services.html';
+                    window.location.href = '/services';
                     return;
                 }
                 lastClickTime = currentTime;
@@ -210,7 +210,7 @@ function setupUnifiedUI() {
     setupSubNavScroll();
     setupBackToTop();
 
-    document.querySelectorAll('.sp-sub-nav-item, #nav-services-dropdown').forEach(el => setupDropdown(el));
+    document.querySelectorAll('.sp-sub-nav-item, #nav-services-dropdown, #lang-selector-root').forEach(el => setupDropdown(el));
 
     // Handle Hash on Load
     const hash = window.location.hash.substring(1);

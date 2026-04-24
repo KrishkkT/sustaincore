@@ -5,10 +5,11 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="insights.insights_environmental_intelligence_indu">Insights | Environmental Intelligence &amp;
+    <title data-i18n="insights.insights_environmental_intelligence_indu">Insights | SustainCore - Environmental
+        Intelligence &amp;
         Industry Trends</title>
     <meta name="description"
-        content="Stay informed on the latest ESG regulations, carbon markets, and environmental monitoring best practices. Expert analysis from SustainCore.">
+        content="Stay informed on the latest ESG regulations, carbon markets, and environmental monitoring. Get expert analysis from SustainCore for sustainable growth.">
     <meta property="og:title" content="Insights | SustainCore Knowledge Hub">
     <meta property="og:description"
         content="Expert analysis on ESG regulations, carbon markets, and sustainability technology.">
@@ -115,7 +116,7 @@
 
             <h1
                 class="insights-h1 text-7xl md:text-[130px] font-display font-black text-brand-charcoal mb-10 tracking-tighter leading-[0.8] max-w-5xl">
-                <span data-i18n="insights.global">Global</span><br>
+                <span data-i18n="insights.global">SustainCore Global</span><br>
                 <span class="italic text-brand-blue font-light pr-4"
                     data-i18n="insights.intelligence">Intelligence.</span>
             </h1>
@@ -153,8 +154,8 @@
                         </h2>
                         <p class="text-xl text-slate-500 leading-relaxed max-w-xl"
                             data-i18n="insights.environmental_risk_is_no_longer_external">
-                            Environmental risk is no longer external. It is hitting balance sheets today. 2024 breached
-                            the 1.5°C threshold, signaling a permanent shift in industrial operating costs.
+                            Environmental risk is no longer external. It is hitting balance sheets today. SustainCore
+                            helps you navigate these shifts in industrial operating costs.
                         </p>
                     </div>
                     <div class="grid grid-cols-2 gap-8">
@@ -322,7 +323,7 @@
             <div class="relative w-full max-w-6xl max-h-[90vh] modal-card rounded-[3rem] border border-slate-200 shadow-[0_32px_128px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col transform translate-y-8 opacity-0 transition-all duration-500 scale-95"
                 id="modal-content">
                 <!-- Header -->
-                <div class="p-8 md:p-14 border-b border-slate-100 flex justify-between items-start">
+                <div class="p-8 md:p-10 border-b border-slate-100 flex justify-between items-start">
                     <div class="space-y-6">
                         <div id="modal-meta"
                             class="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-brand-blue">
@@ -343,13 +344,15 @@
                     </button>
                 </div>
                 <!-- Body -->
-                <div class="p-8 md:p-20 overflow-y-auto custom-scrollbar flex-grow text-slate-600 leading-relaxed space-y-12 text-xl font-light"
-                    id="modal-body">
-                    <!-- Injected -->
+                <div class="overflow-y-auto custom-scrollbar flex-grow" id="modal-body-container">
+                    <div class="p-8 md:p-20 text-slate-600 leading-relaxed space-y-12 text-xl font-light"
+                        id="modal-body">
+                        <!-- Injected -->
+                    </div>
                 </div>
                 <!-- Footer -->
                 <div
-                    class="p-8 md:p-12 border-t border-slate-100 bg-slate-50 flex justify-between items-center shrink-0">
+                    class="p-8 md:p-6 border-t border-slate-100 bg-slate-50 flex justify-between items-center shrink-0">
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-brand-blue flex items-center justify-center text-[12px] font-black italic text-white shadow-xl"
                             data-i18n="insights.sc">
@@ -359,14 +362,8 @@
                                 class="text-[10px] font-black uppercase tracking-[0.2em] text-slate-900"
                                 data-i18n="insights.sustaincore_analyst">SustainCore
                                 Analyst</div>
-                            <div class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-1"
-                                data-i18n="insights.global_intelligence_hub">Global
-                                Intelligence Hub</div>
                         </div>
                     </div>
-                    <div class="text-[10px] font-bold text-slate-200 uppercase tracking-widest"
-                        data-i18n="insights.transmission_encrypted">TRANSMISSION //
-                        ENCRYPTED</div>
                 </div>
             </div>
         </div>
@@ -505,20 +502,42 @@
                 const article = window.currentArticles.find(a => a.id === id);
                 if (!article) return;
 
-                document.getElementById('modal-title').textContent = article.title;
+                const isDe = (localStorage.getItem('sustain-lang') || 'en') === 'de';
+                const title = isDe ? (article.title_de || article.title) : article.title;
+                const content = isDe ? (article.content_de || article.content || article.description) : (article.content || article.description);
+
+                document.getElementById('modal-title').textContent = title;
                 document.getElementById('modal-meta').innerHTML = `
                     <span class="text-brand-${article.accent || 'blue'}">${article.category}</span>
                     <span class="w-1 h-1 rounded-full bg-white/20"></span>
                     <span class="opacity-50">${article.date}</span>
                     <span class="w-1 h-1 rounded-full bg-white/20"></span>
-                    <span class="opacity-50">${article.readTime}</span>
                 `;
 
                 document.getElementById('modal-author').textContent = (article.author || "SustainCore Analyst").toUpperCase();
 
-                // Format content with paragraphs
-                const content = article.content || article.description;
-                document.getElementById('modal-body').innerHTML = content.split('\n').map(p => p.trim() ? `<p>${p}</p>` : '').join('');
+                // Format content with paragraphs, lists, bolding, and headers
+                const bodyEl = document.getElementById('modal-body');
+                bodyEl.innerHTML = content.split('\n').map(line => {
+                    line = line.trim();
+                    if (!line) return '';
+
+                    // Handle Headers
+                    if (line.startsWith('# ')) {
+                        return `<h3 class="text-2xl font-black text-slate-900 tracking-tight mt-16 mb-8 uppercase border-l-4 border-brand-blue pl-6">${line.substring(2)}</h3>`;
+                    }
+
+                    // Handle Bold Text (**text**)
+                    line = line.replace(/\*\*(.*?)\*\*/g, '<b class="font-black text-slate-900">$1</b>');
+
+                    // Handle Lists
+                    if (line.startsWith('- ') || line.startsWith('* ') || line.startsWith('• ')) {
+                        return `<li class="ml-6 pl-2 list-disc marker:text-brand-blue mb-4">${line.substring(2)}</li>`;
+                    }
+
+                    return `<p class="mb-8">${line}</p>`;
+                }).join('');
+
 
                 const modal = document.getElementById('article-modal');
                 const contentEl = document.getElementById('modal-content');
@@ -579,21 +598,27 @@
                         return;
                     }
 
+                    const isDe = (localStorage.getItem('sustain-lang') || 'en') === 'de';
+
                     grid.innerHTML = data.data.map(art => `
                         <div class="insight-card glass hover-glass p-8 rounded-[2.5rem] flex flex-col justify-between transition-all duration-500 group">
                             <div class="space-y-6">
                                 <div class="flex justify-between items-center">
                                     <span class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-${art.accent || 'blue'}">${art.category}</span>
-                                    <span class="text-[10px] font-bold opacity-30 uppercase tracking-widest">${art.readTime}</span>
                                 </div>
+                                ${art.imageUrl ? `
+                                <div class="w-full h-48 rounded-2xl overflow-hidden mb-6 bg-slate-100">
+                                    <img src="${art.imageUrl}" alt="${art.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                </div>
+                                ` : ''}
                                 <h3 class="text-2xl font-display font-black tracking-tight leading-tight group-hover:text-brand-blue transition-colors">
-                                    ${art.title}
+                                    ${isDe ? (art.title_de || art.title) : art.title}
                                 </h3>
-                                <p class="text-sm opacity-50 leading-relaxed font-medium line-clamp-4">
-                                    ${art.description}
+                                <p class="text-sm opacity-50 leading-relaxed font-medium line-clamp-3">
+                                    ${isDe ? (art.description_de || art.description) : art.description}
                                 </p>
                                 <button onclick="openArticle('${art.id}')" class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-blue hover:text-brand-green transition-colors pt-2">
-                                    View Full Article →
+                                    ${isDe ? 'Vollständigen Artikel ansehen →' : 'View Full Article →'}
                                 </button>
                             </div>
                             <div class="mt-12 flex items-center justify-between border-t border-white/5 pt-8">
@@ -640,6 +665,11 @@
                 }
 
                 fetchArticles();
+
+                // Listen for language changes to re-render grid
+                window.addEventListener('languageChanged', () => {
+                    fetchArticles();
+                });
             });
         </script>
         <!-- Newsletter Callout -->

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
+  <url><loc>https://sustaincore.in/</loc><lastmod>2026-04-23</lastmod><priority>1.0</priority></url>
+  <url><loc>https://sustaincore.in/services</loc><lastmod>2026-04-23</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sustaincore.in/about</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/contact</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/insights</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/cbam</loc><lastmod>2026-04-23</lastmod><priority>0.9</priority></url>
+  <url><loc>https://sustaincore.in/join-us</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/partners</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/imprint</loc><lastmod>2026-04-23</lastmod><priority>0.5</priority></url>
+  <url><loc>https://sustaincore.in/privacy</loc><lastmod>2026-04-23</lastmod><priority>0.5</priority></url>
+
+  <!-- Category Pages -->
+  <url><loc>https://sustaincore.in/esg-reporting</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/carbon-climate</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/clearances-eia</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/ratings-targets</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/management-systems</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/water-testing</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/air-monitoring</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+  <url><loc>https://sustaincore.in/licenses-epr</loc><lastmod>2026-04-23</lastmod><priority>0.8</priority></url>
+
+  <!-- ESG Reporting Services -->
+  <url><loc>https://sustaincore.in/files/1-brsr</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/1-cdp</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/1-gri</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/1-sasb</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/1-tcfd</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+
+  <!-- Carbon Management Services -->
+  <url><loc>https://sustaincore.in/files/2-ghg</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/2-pcf</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/2-carboncredits</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/2-irec</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+
+  <!-- Ratings & Targets Services -->
+  <url><loc>https://sustaincore.in/files/3-materiality</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/3-ecovadis</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/3-epd</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/3-sbti</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+
+  <!-- GPCB & SPCB Compliance -->
+  <url><loc>https://sustaincore.in/files/4-gpcp</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/4-ec</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/4-eia</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/4-bio-medical</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/4-cte</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/4-hazardous</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+
+  <!-- Environmental Audits -->
+  <url><loc>https://sustaincore.in/files/5-iso14001</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/5-iso50001</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/5-iso45001</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+
+  <!-- Water Testing Services -->
+  <url><loc>https://sustaincore.in/files/6-effluent</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/6-groundwater</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/6-water%20audit</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/6-water_risk_assessment</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+
+  <!-- Air Monitoring Services -->
+  <url><loc>https://sustaincore.in/files/7-stack-monitoring</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/7-ambient-air</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/7-workplace-air</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+  <url><loc>https://sustaincore.in/files/7-cems</loc><lastmod>2026-04-23</lastmod><priority>0.7</priority></url>
+</urlset>
