@@ -76,7 +76,7 @@
 
     /* Removed legacy Nav CSS - now powered by main.js and global components */
 
-    /* â•â• HERO â•â• */
+    /* == HERO == */
     .hero {
       min-height: 100vh;
       display: grid;
@@ -189,7 +189,7 @@
       border-color: var(--forest);
     }
 
-    /* â•â• GROWTH PANEL â•â• */
+    /* == GROWTH PANEL == */
     .hero-right {
       position: relative;
       overflow: hidden;
@@ -335,7 +335,7 @@
       margin-top: 0.15rem;
     }
 
-    /* â•â• INTRO BAND â•â• */
+    /* == INTRO BAND == */
     .intro-band {
       background: var(--forest);
       padding: 2.2rem 5vw;
@@ -373,7 +373,7 @@
       line-height: 1.8;
     }
 
-    /* â•â• SHARED â•â• */
+    /* == SHARED == */
     .section-pad {
       padding: 8rem 5vw;
     }
@@ -443,7 +443,7 @@
       color: rgba(245, 240, 232, 0.6);
     }
 
-    /* â•â• WHY WORK HERE â•â• */
+    /* == WHY WORK HERE == */
     .why-section {
       background: var(--beige);
     }
@@ -565,7 +565,7 @@
       height: 10px;
     }
 
-    /* â•â• WHAT WE OFFER â•â• */
+    /* == WHAT WE OFFER == */
     .offer-section {
       background: var(--white);
     }
@@ -680,7 +680,7 @@
       font-style: italic;
     }
 
-    /* â•â• SEND CV â•â• */
+    /* == SEND CV == */
     .cv-section {
       background: var(--navy);
       position: relative;
@@ -802,7 +802,7 @@
       font-style: italic;
     }
 
-    /* â•â• EQUAL OPP + FOOTER â•â• */
+    /* == EQUAL OPP + FOOTER == */
     .equal-opp {
       background: var(--forest-pale);
       padding: 1.4rem 5vw;
@@ -859,7 +859,7 @@
       color: var(--forest-light);
     }
 
-    /* â•â• REVEAL â•â• */
+    /* == REVEAL == */
     .reveal {
       opacity: 0;
       transform: translateY(30px);
@@ -897,7 +897,7 @@
       transition-delay: 0.3s;
     }
 
-    /* â•â• RESPONSIVENESS (Advanced Adaptability) â•â• */
+    /* == RESPONSIVENESS (Advanced Adaptability) == */
 
     /* Fluid Typography for Join Us Page */
     .hero-headline {
@@ -1032,7 +1032,7 @@
       }
     }
 
-    /* â•â• JOIN US RESPONSIVE â•â• */
+    /* == JOIN US RESPONSIVE == */
     @media (max-width: 1024px) {
       .hero {
         grid-template-columns: 1fr;
@@ -1127,22 +1127,14 @@
     }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116601419"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
 
-  gtag('config', 'AW-18116601419');
-</script>
 
 
 <body class="bg-brand-offWhite text-brand-charcoal">
 
   <div id="header-root"></div>
 
-  <!-- â•â• HERO â•â• -->
+  <!-- == HERO == -->
   <section class="hero">
 
     <div class="hero-left">
@@ -1219,7 +1211,7 @@
 
   </section>
 
-  <!-- â•â• INTRO BAND â•â• -->
+  <!-- == INTRO BAND == -->
   <div class="intro-band">
     <div class="intro-band-quote" data-i18n="join-us.a_career_at_sustaincore_is_not_just_a_jo">"A career at SustainCore
       is not just a job â€” it's a contribution to something that
@@ -1229,7 +1221,7 @@
         data-i18n="join-us.india_beyond">India &amp; Beyond</span></div>
   </div>
 
-  <!-- â•â• WHY WORK HERE â•â• -->
+  <!-- == WHY WORK HERE == -->
   <section class="section-pad why-section" id="why-join">
     <div class="container">
       <div class="why-grid">
@@ -1290,7 +1282,7 @@
     </div>
   </section>
 
-  <!-- â•â• WHAT WE OFFER â•â• -->
+  <!-- == WHAT WE OFFER == -->
   <section class="section-pad offer-section">
     <div class="container">
       <div class="offer-header">
@@ -1371,7 +1363,7 @@
     </div>
   </section>
 
-  <!-- â•â• SEND CV â•â• -->
+  <!-- == SEND CV == -->
   <section class="section-pad cv-section" id="send-cv">
     <div class="container">
       <div class="cv-inner">
@@ -1421,7 +1413,7 @@
     </div>
   </section>
 
-  <!-- â•â• EQUAL OPPORTUNITY â•â• -->
+  <!-- == EQUAL OPPORTUNITY == -->
   <div class="equal-opp" data-i18n="join-us.sustaincore_is_an_equal_opportunity_empl">
     SustainCore is an equal opportunity employer. We welcome applicants from all backgrounds, experiences, and
     perspectives.
@@ -1431,7 +1423,7 @@
 
   <script type="module" src="/src/js/main.js"></script>
   <script>
-    // GROWTH rows â€” trigger on load
+    // GROWTH rows Ã¢â‚¬â€ trigger on load
     window.addEventListener('load', () => {
       document.querySelectorAll('.growth-row').forEach(r => r.classList.add('go'));
     });
